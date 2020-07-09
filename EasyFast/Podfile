@@ -14,6 +14,7 @@ target 'EasyFast' do
   pod 'DateTools'
   pod 'YYKit'
   pod 'LYEmptyView'
+  pod 'CYLTabBarController'
   # Pods for EasyFast
 
 end
