@@ -16,6 +16,7 @@ target 'EasyFast' do
   pod 'LYEmptyView'
   pod 'CYLTabBarController'
   pod 'QMUIKit/QMUIComponents/QMUIButton'
+  pod 'QMUIKit/QMUIComponents/QMUITableView'
   # Pods for EasyFast
 
 end

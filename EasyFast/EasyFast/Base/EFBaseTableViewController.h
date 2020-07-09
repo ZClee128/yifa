@@ -10,7 +10,7 @@
 #import "EFBaseTableView.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EFBaseTableViewController : EFBaseViewController<UITableViewDelegate,UITableViewDataSource>
+@interface EFBaseTableViewController : EFBaseViewController<QMUITableViewDataSource,QMUITableViewDelegate>
 
 
 @property (nonatomic,strong)EFBaseTableView *EFTableView;

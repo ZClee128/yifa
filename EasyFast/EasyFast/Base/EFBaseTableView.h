@@ -10,11 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EFBaseTableView : UITableView
+@interface EFBaseTableView : QMUITableView
 
 @property (nonatomic,assign)BOOL isOpenHit;
 
-+ (instancetype)defaultTableView:(id<UITableViewDelegate>)delegate dataSource:(id<UITableViewDataSource>)dataSource style:(UITableViewStyle)style;
++ (instancetype)defaultTableView:(id<QMUITableViewDelegate>)delegate dataSource:(id<QMUITableViewDataSource>)dataSource style:(UITableViewStyle)style;
 
 @end
 

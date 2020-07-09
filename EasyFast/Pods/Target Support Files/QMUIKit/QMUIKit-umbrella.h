@@ -11,6 +11,8 @@
 #endif
 
 #import "QMUIButton.h"
+#import "QMUITableView.h"
+#import "QMUITableViewProtocols.h"
 #import "QMUIKit.h"
 #import "QMUICommonDefines.h"
 #import "QMUIConfiguration.h"

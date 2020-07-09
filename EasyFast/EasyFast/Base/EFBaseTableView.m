@@ -29,7 +29,7 @@
     return self;
 }
 
-+ (instancetype)defaultTableView:(id<UITableViewDelegate>)delegate dataSource:(id<UITableViewDataSource>)dataSource style:(UITableViewStyle)style
++ (instancetype)defaultTableView:(id<QMUITableViewDelegate>)delegate dataSource:(id<QMUITableViewDataSource>)dataSource style:(UITableViewStyle)style
 {
     EFBaseTableView *tableView = [[EFBaseTableView alloc] initWithFrame:CGRectMake(0.0, NAVIGATION_BAR_HEIGHT, kPHONE_WIDTH, (kPHONE_HEIGHT - NAVIGATION_BAR_HEIGHT)) style:style];
     tableView.delegate = delegate;
