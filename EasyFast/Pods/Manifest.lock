@@ -23,6 +23,13 @@ PODS:
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
   - MJRefresh (3.3.1)
+  - QMUIKit/QMUIComponents/QMUIButton (4.1.3):
+    - QMUIKit/QMUICore
+  - QMUIKit/QMUICore (4.1.3):
+    - QMUIKit/QMUILog
+    - QMUIKit/QMUIWeakObjectContainer
+  - QMUIKit/QMUILog (4.1.3)
+  - QMUIKit/QMUIWeakObjectContainer (4.1.3)
   - ReactiveObjC (3.1.1)
   - SDWebImage (5.8.0):
     - SDWebImage/Core (= 5.8.0)
@@ -40,6 +47,7 @@ DEPENDENCIES:
   - Masonry
   - MBProgressHUD
   - MJRefresh
+  - QMUIKit/QMUIComponents/QMUIButton
   - ReactiveObjC
   - SDWebImage
   - YYKit
@@ -54,6 +62,7 @@ SPEC REPOS:
     - Masonry
     - MBProgressHUD
     - MJRefresh
+    - QMUIKit
     - ReactiveObjC
     - SDWebImage
     - YYKit
@@ -67,10 +76,11 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
+  QMUIKit: 1063a99f90aedd6e2dd65026ce0df46e6785e67b
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: fb538df960958a9bf1fcb22987df973363b62714
+PODFILE CHECKSUM: 7e291559309ca7ebb5c13ad3a79fbb3e23df6ef5
 
 COCOAPODS: 1.8.4

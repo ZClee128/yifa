@@ -25,6 +25,10 @@
     return YES;
 }
 
+- (UINavigationController *)thisAppRootViewController
+{
+    return (UINavigationController *)self.window.rootViewController;
+}
 
 
 @end

@@ -26,5 +26,5 @@
 #import "UIView+Frame.h"
 #import "UIView+Radius.h"
 #import "UIViewController+Runtime.h"
-
+#import <QMUIKit/QMUIKit.h>
 #endif /* Header_h */

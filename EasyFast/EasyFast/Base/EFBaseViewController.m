@@ -9,10 +9,10 @@
 #import "EFBaseViewController.h"
 
 
-NSString *const kFlagViewController = @"FlagViewController";
-NSString *const kDayViewController = @"DayViewController";
-NSString *const kFlishViewController = @"FlishViewController";
-
+NSString *const kEFHomeViewController = @"EFHomeViewController";
+NSString *const kEFClassifyViewController = @"EFClassifyViewController";
+NSString *const kEFFollowViewController = @"EFFollowViewController";
+NSString *const kEFMeViewController = @"EFMeViewController";
 
 @interface EFBaseViewController ()
 
@@ -39,7 +39,7 @@ NSString *const kFlishViewController = @"FlishViewController";
         @strongify(self);
         [self backClick];
     }];
-    self.hideCallBackButtonClasses = @[kDayViewController, kFlishViewController];
+    self.hideCallBackButtonClasses = @[kEFHomeViewController, kEFClassifyViewController,kEFFollowViewController,kEFMeViewController];
     [self.hideCallBackButtonClasses containsObject:NSStringFromClass(self.class)] ? [self.navView hiddenBackBtn] : [self.navView showBackBtn];
 }
 
