@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5331675373D39F1F29162855 /* Pods_EasyFast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 348080AF478B991137DDCFA5 /* Pods_EasyFast.framework */; };
 		84A8207824B6C61800EAC652 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8207724B6C61800EAC652 /* AppDelegate.m */; };
-		84A8207B24B6C61800EAC652 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8207A24B6C61800EAC652 /* SceneDelegate.m */; };
 		84A8207E24B6C61800EAC652 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8207D24B6C61800EAC652 /* ViewController.m */; };
 		84A8208124B6C61800EAC652 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A8207F24B6C61800EAC652 /* Main.storyboard */; };
 		84A8208324B6C62300EAC652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A8208224B6C62300EAC652 /* Assets.xcassets */; };
@@ -23,8 +22,6 @@
 		84A8207324B6C61800EAC652 /* EasyFast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyFast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A8207624B6C61800EAC652 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84A8207724B6C61800EAC652 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		84A8207924B6C61800EAC652 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		84A8207A24B6C61800EAC652 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		84A8207C24B6C61800EAC652 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		84A8207D24B6C61800EAC652 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		84A8208024B6C61800EAC652 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -87,8 +84,6 @@
 			children = (
 				84A8207624B6C61800EAC652 /* AppDelegate.h */,
 				84A8207724B6C61800EAC652 /* AppDelegate.m */,
-				84A8207924B6C61800EAC652 /* SceneDelegate.h */,
-				84A8207A24B6C61800EAC652 /* SceneDelegate.m */,
 				84A8207C24B6C61800EAC652 /* ViewController.h */,
 				84A8207D24B6C61800EAC652 /* ViewController.m */,
 				84A8207F24B6C61800EAC652 /* Main.storyboard */,
@@ -217,7 +212,6 @@
 				84A8207E24B6C61800EAC652 /* ViewController.m in Sources */,
 				84A8207824B6C61800EAC652 /* AppDelegate.m in Sources */,
 				84A8208924B6C62300EAC652 /* main.m in Sources */,
-				84A8207B24B6C61800EAC652 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
