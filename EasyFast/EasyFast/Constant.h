@@ -9,11 +9,6 @@
 #ifndef Constant_h
 #define Constant_h
 
-#define kUserManager [FGUserManager defaultManager]
-#define kNotiManager [NotiManager defaultManager]
-
-#define kcolors @[RGB16(0xF17E7E),colorFF8B52,colorFFC601,color9FD94D,color2CB0E5,colorB56FDD]
-
 //全局代理
 #define kAppDelegate ((AppDelegate*)[UIApplication sharedApplication].delegate)
 //主窗口 （keyWindow）
