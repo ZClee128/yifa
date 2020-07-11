@@ -17,6 +17,7 @@ target 'EasyFast' do
   pod 'CYLTabBarController'
   pod 'QMUIKit/QMUIComponents/QMUIButton'
   pod 'QMUIKit/QMUIComponents/QMUITableView'
+  pod 'GKNavigationBar'
   # Pods for EasyFast
 
 end

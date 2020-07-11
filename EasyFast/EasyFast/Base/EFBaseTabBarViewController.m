@@ -46,19 +46,21 @@
 
 - (NSArray *)viewControllersForTabBar {
     EFHomeViewController *firstViewController = [[EFHomeViewController alloc] init];
+    UINavigationController *firstNav = [UINavigationController rootVC:firstViewController];
     
     EFClassifyViewController *secondViewController = [[EFClassifyViewController alloc] init];
-    
+    UINavigationController *secondNav = [UINavigationController rootVC:secondViewController];
 
     EFFollowViewController *thirdViewController = [[EFFollowViewController alloc] init];
+    UINavigationController *thirdNav = [UINavigationController rootVC:thirdViewController];
     
     EFMeViewController *fourthViewController = [[EFMeViewController alloc] init];
-    
+    UINavigationController *fourNav = [UINavigationController rootVC:fourthViewController];
     NSArray *viewControllers = @[
-                                 firstViewController,
-                                 secondViewController,
-                                 thirdViewController,
-                                 fourthViewController
+                                 firstNav,
+                                 secondNav,
+                                 thirdNav,
+                                 fourNav
                                  ];
     return viewControllers;
 }

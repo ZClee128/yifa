@@ -8,62 +8,27 @@
 
 #import "EFBaseViewController.h"
 
-
-NSString *const kEFHomeViewController = @"EFHomeViewController";
-NSString *const kEFClassifyViewController = @"EFClassifyViewController";
-NSString *const kEFFollowViewController = @"EFFollowViewController";
-NSString *const kEFMeViewController = @"EFMeViewController";
-
 @interface EFBaseViewController ()
 
-@property (nonatomic,strong)NSArray *hideCallBackButtonClasses;
+
 @end
 
 @implementation EFBaseViewController
 
--(ConstomNavView *)navView
-{
-    if (_navView == nil) {
-        _navView = [[ConstomNavView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, NAVIGATION_BAR_HEIGHT)];
-    }
-    return _navView;
-}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
     self.navigationController.navigationBarHidden = YES;
-    @weakify(self);
-    [self addNav];
-    [self.navView.backClick subscribeNext:^(id  _Nullable x) {
-        @strongify(self);
-        [self backClick];
-    }];
-    self.hideCallBackButtonClasses = @[kEFHomeViewController, kEFClassifyViewController,kEFFollowViewController,kEFMeViewController];
-    [self.hideCallBackButtonClasses containsObject:NSStringFromClass(self.class)] ? [self.navView hiddenBackBtn] : [self.navView showBackBtn];
+
 }
 
-- (void)addNav {
-    [self.view addSubview:self.navView];
+- (BOOL)prefersStatusBarHidden {
+    return self.gk_statusBarHidden;
 }
 
-- (void)setNavTitle:(NSString *)title {
-    [self.navView setNavTitle:title];
-}
-
-- (void)setRightBtns:(NSArray *)imageNames {
-    [self.navView setRightBtns:imageNames];
-}
-
-- (void)HiddenNav {
-    [self.navView removeFromSuperview];
-}
-
-- (void)backClick {
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (UIButton *)getLeftBtn {
-    return [self.navView getLeftBtn];
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return self.gk_statusBarStyle;
 }
 @end

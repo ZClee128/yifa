@@ -27,4 +27,5 @@
 #import "UIView+Radius.h"
 #import "UIViewController+Runtime.h"
 #import <QMUIKit/QMUIKit.h>
+#import <GKNavigationBar/GKNavigationBar.h>
 #endif /* Header_h */

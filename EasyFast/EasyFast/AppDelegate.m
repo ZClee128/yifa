@@ -16,19 +16,33 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // 配置导航栏属性
+    [GKConfigure setupCustomConfigure:^(GKNavigationBarConfigure * _Nonnull configure) {
+        configure.gk_translationX = 15;
+        configure.gk_translationY = 20;
+        configure.gk_scaleX = 0.90;
+        configure.gk_scaleY = 0.92;
+        // 导航栏背景色
+        configure.backgroundColor = [UIColor whiteColor];
+        // 导航栏标题颜色
+        configure.titleColor = [UIColor blackColor];
+        // 导航栏标题字体
+        configure.titleFont = [UIFont systemFontOfSize:18.0f];
+        // 导航栏返回按钮样式
+        configure.backStyle = GKNavigationBarBackStyleBlack;
+        // 导航栏左右item间距
+        configure.gk_navItemLeftSpace = 12.0f;
+        configure.gk_navItemRightSpace = 12.0f;
+    }];
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[[EFBaseTabBarViewController alloc] initWithContext:@""]];
+    self.window.rootViewController = [[EFBaseTabBarViewController alloc] initWithContext:@""];
     [self.window makeKeyAndVisible];
     
     [[IQKeyboardManager sharedManager] setEnable:YES];
     return YES;
 }
 
-- (UINavigationController *)thisAppRootViewController
-{
-    return (UINavigationController *)self.window.rootViewController;
-}
 
 
 @end

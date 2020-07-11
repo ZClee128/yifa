@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle:@"关注"];
+    self.gk_navTitle = @"关注";
 }
 
 /*

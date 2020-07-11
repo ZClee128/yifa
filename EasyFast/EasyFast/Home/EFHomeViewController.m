@@ -16,7 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle:@"首页"];
+    self.gk_navTitle = @"首页";
+    
 }
 
 /*

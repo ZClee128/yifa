@@ -13,11 +13,5 @@
 @property (strong, nonatomic) UIWindow *window;
 
 
-/**
- UINavigationController -> app rootViewController
-
- @return UINavigationController
- */
-- (UINavigationController *)thisAppRootViewController;
 @end
 

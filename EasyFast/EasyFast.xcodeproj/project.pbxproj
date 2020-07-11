@@ -14,7 +14,6 @@
 		84A8208924B6C62300EAC652 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8208824B6C62300EAC652 /* main.m */; };
 		84A820A424B6CA0900EAC652 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8209224B6CA0700EAC652 /* BaseTableViewCell.m */; };
 		84A820A524B6CA0900EAC652 /* RVMViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8209724B6CA0800EAC652 /* RVMViewModel.m */; };
-		84A820A824B6CA0900EAC652 /* ConstomNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8209D24B6CA0800EAC652 /* ConstomNavView.m */; };
 		84A820B624B6CA8A00EAC652 /* EFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820B124B6CA8900EAC652 /* EFBaseViewController.m */; };
 		84A820B724B6CA8A00EAC652 /* EFBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820B224B6CA8900EAC652 /* EFBaseTableView.m */; };
 		84A820B824B6CA8A00EAC652 /* EFBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820B424B6CA8A00EAC652 /* EFBaseTableViewController.m */; };
@@ -47,10 +46,8 @@
 		84A8208824B6C62300EAC652 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84A8209124B6CA0700EAC652 /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
 		84A8209224B6CA0700EAC652 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
-		84A8209424B6CA0700EAC652 /* ConstomNavView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConstomNavView.h; sourceTree = "<group>"; };
 		84A8209724B6CA0800EAC652 /* RVMViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVMViewModel.m; sourceTree = "<group>"; };
 		84A8209A24B6CA0800EAC652 /* RVMViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVMViewModel.h; sourceTree = "<group>"; };
-		84A8209D24B6CA0800EAC652 /* ConstomNavView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConstomNavView.m; sourceTree = "<group>"; };
 		84A820AE24B6CA8900EAC652 /* EFBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFBaseTableViewController.h; sourceTree = "<group>"; };
 		84A820AF24B6CA8900EAC652 /* EFBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EFBaseViewController.h; sourceTree = "<group>"; };
 		84A820B124B6CA8900EAC652 /* EFBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EFBaseViewController.m; sourceTree = "<group>"; };
@@ -169,8 +166,6 @@
 			children = (
 				84A8209124B6CA0700EAC652 /* BaseTableViewCell.h */,
 				84A8209224B6CA0700EAC652 /* BaseTableViewCell.m */,
-				84A8209424B6CA0700EAC652 /* ConstomNavView.h */,
-				84A8209D24B6CA0800EAC652 /* ConstomNavView.m */,
 				84A820B324B6CA8900EAC652 /* EFBaseTableView.h */,
 				84A820B224B6CA8900EAC652 /* EFBaseTableView.m */,
 				84A820AE24B6CA8900EAC652 /* EFBaseTableViewController.h */,
@@ -423,7 +418,6 @@
 				84A820EA24B6F62900EAC652 /* EFClassifyViewController.m in Sources */,
 				84A820DD24B6CE6B00EAC652 /* UIView+Frame.m in Sources */,
 				84A820BE24B6CAC400EAC652 /* EFBaseVM.m in Sources */,
-				84A820A824B6CA0900EAC652 /* ConstomNavView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

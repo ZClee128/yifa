@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle:@"分类"];
+    self.gk_navTitle = @"分类";
 }
 
 /*

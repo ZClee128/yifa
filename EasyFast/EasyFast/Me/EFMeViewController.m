@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle:@"我的"];
+    self.gk_navTitle = @"我的";
 }
 
 /*
