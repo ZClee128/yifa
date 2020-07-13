@@ -11,6 +11,7 @@
 #import "EFClassifyViewController.h"
 #import "EFFollowViewController.h"
 #import "EFMeViewController.h"
+#import "EFPlusButton.h"
 @interface EFBaseTabBarViewController ()
 
 @end
@@ -40,7 +41,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    [EFPlusButton registerPlusButton];
 }
 
 
@@ -68,24 +69,24 @@
 - (NSArray *)tabBarItemsAttributesForTabBar {
     NSDictionary *firstTabBarItemsAttributes = @{
                                                  CYLTabBarItemTitle : @"首页",
-//                                                 CYLTabBarItemImage : [UIImage imageNamed:@"home_normal"],  /* NSString and UIImage are supported*/
-//                                                 CYLTabBarItemSelectedImage : [UIImage imageNamed:@"home_normal"],  /* NSString and UIImage are supported*/
+                                                 CYLTabBarItemImage : @"home_def",  /* NSString and UIImage are supported*/
+                                                 CYLTabBarItemSelectedImage : @"home_selet",  /* NSString and UIImage are supported*/
                                                  };
     NSDictionary *secondTabBarItemsAttributes = @{
                                                   CYLTabBarItemTitle : @"分类",
-//                                                  CYLTabBarItemImage : [UIImage imageNamed:@"fishpond_normal"],
-//                                                  CYLTabBarItemSelectedImage : [UIImage imageNamed:@"home_normal"],
+                                                  CYLTabBarItemImage : @"class_def",
+                                                  CYLTabBarItemSelectedImage : @"class_selet",
                                                   };
     
     NSDictionary *thirdTabBarItemsAttributes = @{
                                                  CYLTabBarItemTitle : @"关注",
-//                                                 CYLTabBarItemImage : [UIImage imageNamed:@"message_normal"],
-//                                                 CYLTabBarItemSelectedImage : [UIImage imageNamed:@"home_normal"],
+                                                 CYLTabBarItemImage : @"follow_def",
+                                                 CYLTabBarItemSelectedImage : @"follow_selet",
                                                  };
     NSDictionary *fourthTabBarItemsAttributes = @{
                                                   CYLTabBarItemTitle : @"我的",
-//                                                  CYLTabBarItemImage :[UIImage imageNamed:@"account_normal"],
-//                                                  CYLTabBarItemSelectedImage : [UIImage imageNamed:@"home_normal"],
+                                                  CYLTabBarItemImage :@"me_def",
+                                                  CYLTabBarItemSelectedImage : @"me_selet",
                                                   };
     NSArray *tabBarItemsAttributes = @[
                                        firstTabBarItemsAttributes,
@@ -102,10 +103,11 @@
 - (void)customizeTabBarAppearanceWithTitlePositionAdjustment:(UIOffset)titlePositionAdjustment {
     // Customize UITabBar height
     // 自定义 TabBar 高度
-    // tabBarController.tabBarHeight = CYL_IS_IPHONE_X ? 65 : 40;
-    
-    [self rootWindow].backgroundColor = [UIColor cyl_systemBackgroundColor];
-    
+//     self.tabBarHeight = TAB_BAR_HEIGHT;
+//    [self hideTabBarShadowImageView];
+    [self rootWindow].backgroundColor = UIColor.whiteColor;
+//    self.tabBar.backgroundColor = UIColor.whiteColor;
+    self.tabBar.shadowImage = [[UIImage alloc] init];
     // set the text color for unselected state
     // 普通状态下的文字属性
     NSMutableDictionary *normalAttrs = [NSMutableDictionary dictionary];
@@ -118,7 +120,6 @@
     selectedAttrs[NSForegroundColorAttributeName] = [UIColor cyl_labelColor];
     //selectedAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:10];
 
-    
     // NO.1，using Image note:recommended.推荐方式
     // set the bar shadow image
     // without shadow : use -[[CYLTabBarController hideTabBarShadowImageView] in CYLMainRootViewController.m
@@ -134,10 +135,11 @@
 
         UITabBarAppearance *standardAppearance = [[UITabBarAppearance alloc] init];
         standardAppearance.stackedLayoutAppearance = inlineLayoutAppearance;
-        standardAppearance.backgroundColor = [UIColor cyl_systemBackgroundColor];
+        standardAppearance.backgroundColor = UIColor.whiteColor;
 //        //shadowColor和shadowImage均可以自定义颜色, shadowColor默认高度为1, shadowImage可以自定义高度.
-//        standardAppearance.shadowColor = [UIColor cyl_systemGreenColor];
-//        // standardAppearance.shadowImage = [[self class] imageWithColor:[UIColor cyl_systemGreenColor] size:CGSizeMake([UIScreen mainScreen].bounds.size.width, 1)];
+//        standardAppearance.shadowColor = RGB16(0xf5f5f5);
+//         standardAppearance.shadowImage = [[self class] imageWithColor:RGB16(0xf5f5f5) size:CGSizeMake([UIScreen mainScreen].bounds.size.width, 1)];
+//        [standardAppearance setBackgroundImage:[UIImage imageNamed:@"tab"]];
         self.tabBar.standardAppearance = standardAppearance;
     } else {
         // Override point for customization after application launch.
@@ -146,12 +148,26 @@
         UITabBarItem *tabBar = [UITabBarItem appearance];
         [tabBar setTitleTextAttributes:normalAttrs forState:UIControlStateNormal];
         [tabBar setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
-        
+        [self.tabBar setBackgroundImage:[UIImage imageNamed:@"tab"]];
         // This shadow image attribute is ignored if the tab bar does not also have a custom background image.So at least set somthing.
-        [[UITabBar appearance] setBackgroundImage:[[UIImage alloc] init]];
-//        [[UITabBar appearance] setShadowImage:[[self class] imageWithColor:[UIColor cyl_systemGreenColor] size:CGSizeMake([UIScreen mainScreen].bounds.size.width, 1)]];
+//         [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tab"]];
+//        [[UITabBar appearance] setShadowImage:[[self class] imageWithColor:RGB16(0xf5f5f5) size:CGSizeMake([UIScreen mainScreen].bounds.size.width, 3)]];
     }
+    [self.tabBar setTabBarShadowWithCenter:self.tabBar.center radius:57/2];
 }
+
++ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size {
+    if (!color || size.width <= 0 || size.height <= 0) return nil;
+    CGRect rect = CGRectMake(0.0f, 0.0f, size.width + 1, size.height);
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGContextFillRect(context, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 
 
 @end

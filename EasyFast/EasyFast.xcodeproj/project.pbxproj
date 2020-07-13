@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5331675373D39F1F29162855 /* Pods_EasyFast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 348080AF478B991137DDCFA5 /* Pods_EasyFast.framework */; };
+		03BD2ED8996DE17BD7ECF09A /* Pods_EasyFast_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4FEC608CB9BC91EADCD0AB /* Pods_EasyFast_Test.framework */; };
+		5331675373D39F1F29162855 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		84A8207824B6C61800EAC652 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8207724B6C61800EAC652 /* AppDelegate.m */; };
 		84A8208324B6C62300EAC652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A8208224B6C62300EAC652 /* Assets.xcassets */; };
 		84A8208624B6C62300EAC652 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A8208424B6C62300EAC652 /* LaunchScreen.storyboard */; };
@@ -37,7 +38,6 @@
 		84A820FC24BC4F5400EAC652 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8209224B6CA0700EAC652 /* BaseTableViewCell.m */; };
 		84A820FD24BC4F5400EAC652 /* UIView+Radius.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820D924B6CE6B00EAC652 /* UIView+Radius.m */; };
 		84A820FE24BC4F5400EAC652 /* FMHttpResonse.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820CB24B6CCC600EAC652 /* FMHttpResonse.m */; };
-		84A820FF24BC4F5400EAC652 /* EFBaseTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820E124B6EADF00EAC652 /* EFBaseTabBarViewController.m */; };
 		84A8210024BC4F5400EAC652 /* EFMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820F124B6F66400EAC652 /* EFMeViewController.m */; };
 		84A8210124BC4F5400EAC652 /* EFBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820B424B6CA8A00EAC652 /* EFBaseTableViewController.m */; };
 		84A8210224BC4F5400EAC652 /* UIFont+RuntimeFit.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820D424B6CDA600EAC652 /* UIFont+RuntimeFit.m */; };
@@ -54,7 +54,6 @@
 		84A8210D24BC4F5400EAC652 /* EFClassifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820E924B6F62900EAC652 /* EFClassifyViewController.m */; };
 		84A8210E24BC4F5400EAC652 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820D824B6CE6B00EAC652 /* UIView+Frame.m */; };
 		84A8210F24BC4F5400EAC652 /* EFBaseVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820BC24B6CAC400EAC652 /* EFBaseVM.m */; };
-		84A8211124BC4F5400EAC652 /* Pods_EasyFast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 348080AF478B991137DDCFA5 /* Pods_EasyFast.framework */; };
 		84A8211324BC4F5400EAC652 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A8208424B6C62300EAC652 /* LaunchScreen.storyboard */; };
 		84A8211424BC4F5400EAC652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A8208224B6C62300EAC652 /* Assets.xcassets */; };
 		84A8211E24BC513500EAC652 /* EFFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820ED24B6F65100EAC652 /* EFFollowViewController.m */; };
@@ -79,17 +78,24 @@
 		84A8213124BC513500EAC652 /* EFClassifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820E924B6F62900EAC652 /* EFClassifyViewController.m */; };
 		84A8213224BC513500EAC652 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820D824B6CE6B00EAC652 /* UIView+Frame.m */; };
 		84A8213324BC513500EAC652 /* EFBaseVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820BC24B6CAC400EAC652 /* EFBaseVM.m */; };
-		84A8213524BC513500EAC652 /* Pods_EasyFast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 348080AF478B991137DDCFA5 /* Pods_EasyFast.framework */; };
 		84A8213724BC513500EAC652 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A8208424B6C62300EAC652 /* LaunchScreen.storyboard */; };
 		84A8213824BC513500EAC652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A8208224B6C62300EAC652 /* Assets.xcassets */; };
 		84A8214224BC55CB00EAC652 /* HttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8214124BC55CB00EAC652 /* HttpManager.m */; };
 		84A8214324BC55CB00EAC652 /* HttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8214124BC55CB00EAC652 /* HttpManager.m */; };
 		84A8214424BC55CB00EAC652 /* HttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8214124BC55CB00EAC652 /* HttpManager.m */; };
+		84A8214724BC5F0900EAC652 /* EFPlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8214624BC5F0900EAC652 /* EFPlusButton.m */; };
+		84A8214824BC5F0900EAC652 /* EFPlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8214624BC5F0900EAC652 /* EFPlusButton.m */; };
+		84A8214924BC5F0900EAC652 /* EFPlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8214624BC5F0900EAC652 /* EFPlusButton.m */; };
+		ED2E8655CA4E2FBCA71F69DC /* Pods_EasyFast_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3157AF9D413E272E30EBDDE8 /* Pods_EasyFast_Dev.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		114B5F2459F8FFC945E98BD8 /* Pods-EasyFast_Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast_Dev.debug.xcconfig"; path = "Target Support Files/Pods-EasyFast_Dev/Pods-EasyFast_Dev.debug.xcconfig"; sourceTree = "<group>"; };
+		1304519AEDDDA76585AAC941 /* Pods-EasyFast_Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast_Test.release.xcconfig"; path = "Target Support Files/Pods-EasyFast_Test/Pods-EasyFast_Test.release.xcconfig"; sourceTree = "<group>"; };
 		182D3CC0502F099CA834B4CB /* Pods-EasyFast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast.debug.xcconfig"; path = "Target Support Files/Pods-EasyFast/Pods-EasyFast.debug.xcconfig"; sourceTree = "<group>"; };
-		348080AF478B991137DDCFA5 /* Pods_EasyFast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyFast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B4FEC608CB9BC91EADCD0AB /* Pods_EasyFast_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyFast_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3157AF9D413E272E30EBDDE8 /* Pods_EasyFast_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyFast_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7454F79293B3C25FC11219D6 /* Pods-EasyFast_Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast_Dev.release.xcconfig"; path = "Target Support Files/Pods-EasyFast_Dev/Pods-EasyFast_Dev.release.xcconfig"; sourceTree = "<group>"; };
 		84A8207324B6C61800EAC652 /* EasyFast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyFast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A8207624B6C61800EAC652 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84A8207724B6C61800EAC652 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -147,7 +153,10 @@
 		84A8213E24BC513500EAC652 /* EasyFast_Test.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = EasyFast_Test.plist; path = /Users/lizhicong/EasyFast/EasyFast/EasyFast_Test.plist; sourceTree = "<absolute>"; };
 		84A8214024BC55CB00EAC652 /* HttpManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpManager.h; sourceTree = "<group>"; };
 		84A8214124BC55CB00EAC652 /* HttpManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpManager.m; sourceTree = "<group>"; };
+		84A8214524BC5F0900EAC652 /* EFPlusButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFPlusButton.h; sourceTree = "<group>"; };
+		84A8214624BC5F0900EAC652 /* EFPlusButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFPlusButton.m; sourceTree = "<group>"; };
 		BA53EB76E1528E46E8ADF203 /* Pods-EasyFast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast.release.xcconfig"; path = "Target Support Files/Pods-EasyFast/Pods-EasyFast.release.xcconfig"; sourceTree = "<group>"; };
+		FF8E5FE1C44408BDAF6A9C97 /* Pods-EasyFast_Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast_Test.debug.xcconfig"; path = "Target Support Files/Pods-EasyFast_Test/Pods-EasyFast_Test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,7 +164,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5331675373D39F1F29162855 /* Pods_EasyFast.framework in Frameworks */,
+				5331675373D39F1F29162855 /* (null) in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,7 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84A8211124BC4F5400EAC652 /* Pods_EasyFast.framework in Frameworks */,
+				ED2E8655CA4E2FBCA71F69DC /* Pods_EasyFast_Dev.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,7 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84A8213524BC513500EAC652 /* Pods_EasyFast.framework in Frameworks */,
+				03BD2ED8996DE17BD7ECF09A /* Pods_EasyFast_Test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +192,10 @@
 			children = (
 				182D3CC0502F099CA834B4CB /* Pods-EasyFast.debug.xcconfig */,
 				BA53EB76E1528E46E8ADF203 /* Pods-EasyFast.release.xcconfig */,
+				114B5F2459F8FFC945E98BD8 /* Pods-EasyFast_Dev.debug.xcconfig */,
+				7454F79293B3C25FC11219D6 /* Pods-EasyFast_Dev.release.xcconfig */,
+				FF8E5FE1C44408BDAF6A9C97 /* Pods-EasyFast_Test.debug.xcconfig */,
+				1304519AEDDDA76585AAC941 /* Pods-EasyFast_Test.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -190,7 +203,8 @@
 		450A170569CB954BCEB29555 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				348080AF478B991137DDCFA5 /* Pods_EasyFast.framework */,
+				3157AF9D413E272E30EBDDE8 /* Pods_EasyFast_Dev.framework */,
+				2B4FEC608CB9BC91EADCD0AB /* Pods_EasyFast_Test.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -255,6 +269,8 @@
 				84A820E024B6EADF00EAC652 /* EFBaseTabBarViewController.h */,
 				84A820E124B6EADF00EAC652 /* EFBaseTabBarViewController.m */,
 				84A8209624B6CA0800EAC652 /* VM */,
+				84A8214524BC5F0900EAC652 /* EFPlusButton.h */,
+				84A8214624BC5F0900EAC652 /* EFPlusButton.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -534,7 +550,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EasyFast-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-EasyFast_Dev-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -547,15 +563,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EasyFast/Pods-EasyFast-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-EasyFast_Dev/Pods-EasyFast_Dev-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EasyFast/Pods-EasyFast-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-EasyFast_Dev/Pods-EasyFast_Dev-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyFast/Pods-EasyFast-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyFast_Dev/Pods-EasyFast_Dev-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		84A8211C24BC513500EAC652 /* [CP] Check Pods Manifest.lock */ = {
@@ -573,7 +589,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EasyFast-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-EasyFast_Test-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -586,15 +602,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EasyFast/Pods-EasyFast-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-EasyFast_Test/Pods-EasyFast_Test-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EasyFast/Pods-EasyFast-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-EasyFast_Test/Pods-EasyFast_Test-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyFast/Pods-EasyFast-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyFast_Test/Pods-EasyFast_Test-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E47C4412191A68B436938FEC /* [CP] Embed Pods Frameworks */ = {
@@ -633,6 +649,7 @@
 				84A820BD24B6CAC400EAC652 /* EFBaseRefreshVM.m in Sources */,
 				84A820A524B6CA0900EAC652 /* RVMViewModel.m in Sources */,
 				84A820CE24B6CCC600EAC652 /* FMHttpRequest.m in Sources */,
+				84A8214724BC5F0900EAC652 /* EFPlusButton.m in Sources */,
 				84A820B624B6CA8A00EAC652 /* EFBaseViewController.m in Sources */,
 				84A8207824B6C61800EAC652 /* AppDelegate.m in Sources */,
 				84A820CC24B6CCC600EAC652 /* FMARCNetwork.m in Sources */,
@@ -656,13 +673,13 @@
 				84A820FC24BC4F5400EAC652 /* BaseTableViewCell.m in Sources */,
 				84A820FD24BC4F5400EAC652 /* UIView+Radius.m in Sources */,
 				84A820FE24BC4F5400EAC652 /* FMHttpResonse.m in Sources */,
-				84A820FF24BC4F5400EAC652 /* EFBaseTabBarViewController.m in Sources */,
 				84A8210024BC4F5400EAC652 /* EFMeViewController.m in Sources */,
 				84A8210124BC4F5400EAC652 /* EFBaseTableViewController.m in Sources */,
 				84A8210224BC4F5400EAC652 /* UIFont+RuntimeFit.m in Sources */,
 				84A8210324BC4F5400EAC652 /* EFBaseRefreshVM.m in Sources */,
 				84A8210424BC4F5400EAC652 /* RVMViewModel.m in Sources */,
 				84A8210524BC4F5400EAC652 /* FMHttpRequest.m in Sources */,
+				84A8214824BC5F0900EAC652 /* EFPlusButton.m in Sources */,
 				84A8210624BC4F5400EAC652 /* EFBaseViewController.m in Sources */,
 				84A8210724BC4F5400EAC652 /* AppDelegate.m in Sources */,
 				84A8210824BC4F5400EAC652 /* FMARCNetwork.m in Sources */,
@@ -693,6 +710,7 @@
 				84A8212724BC513500EAC652 /* EFBaseRefreshVM.m in Sources */,
 				84A8212824BC513500EAC652 /* RVMViewModel.m in Sources */,
 				84A8212924BC513500EAC652 /* FMHttpRequest.m in Sources */,
+				84A8214924BC5F0900EAC652 /* EFPlusButton.m in Sources */,
 				84A8212A24BC513500EAC652 /* EFBaseViewController.m in Sources */,
 				84A8212B24BC513500EAC652 /* AppDelegate.m in Sources */,
 				84A8212C24BC513500EAC652 /* FMARCNetwork.m in Sources */,
@@ -887,7 +905,7 @@
 		};
 		84A8211724BC4F5400EAC652 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 182D3CC0502F099CA834B4CB /* Pods-EasyFast.debug.xcconfig */;
+			baseConfigurationReference = 114B5F2459F8FFC945E98BD8 /* Pods-EasyFast_Dev.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Dev;
 				CLANG_ENABLE_MODULES = NO;
@@ -914,7 +932,7 @@
 		};
 		84A8211824BC4F5400EAC652 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA53EB76E1528E46E8ADF203 /* Pods-EasyFast.release.xcconfig */;
+			baseConfigurationReference = 7454F79293B3C25FC11219D6 /* Pods-EasyFast_Dev.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Dev;
 				CLANG_ENABLE_MODULES = NO;
@@ -941,7 +959,7 @@
 		};
 		84A8213B24BC513500EAC652 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 182D3CC0502F099CA834B4CB /* Pods-EasyFast.debug.xcconfig */;
+			baseConfigurationReference = FF8E5FE1C44408BDAF6A9C97 /* Pods-EasyFast_Test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Test;
 				CLANG_ENABLE_MODULES = NO;
@@ -968,7 +986,7 @@
 		};
 		84A8213C24BC513500EAC652 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA53EB76E1528E46E8ADF203 /* Pods-EasyFast.release.xcconfig */;
+			baseConfigurationReference = 1304519AEDDDA76585AAC941 /* Pods-EasyFast_Test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Test;
 				CLANG_ENABLE_MODULES = NO;

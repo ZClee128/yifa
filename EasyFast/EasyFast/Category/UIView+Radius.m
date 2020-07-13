@@ -55,4 +55,39 @@
     [self.layer addSublayer:layer];
 }
 
+
+/**
+ 给tabbar添加阴影，中间有一个圆形的凸起
+ @param center 圆弧中心
+ @param radius 圆弧半径
+ */
+-(void)setTabBarShadowWithCenter:(CGPoint)center radius:(CGFloat)radius {
+    CAShapeLayer *layer = [CAShapeLayer new];
+    //背景填充色
+    layer.fillColor = [UIColor whiteColor].CGColor;
+    layer.shadowColor = RGB16(0xf5f5f5).CGColor;
+    layer.shadowOffset = CGSizeMake(0, -4);
+    layer.shadowOpacity = 0.5;
+    
+    CGFloat a = center.y;
+    CGFloat angle = asin(a/radius);
+    //初始化一个路径
+    UIBezierPath* path = [UIBezierPath bezierPath];
+    //线条拐角
+    path.lineCapStyle = kCGLineCapRound;
+    //起点
+    [path moveToPoint:CGPointMake(0, 0)];
+    //绘制一条圆弧
+    [path addArcWithCenter:center radius:radius startAngle:angle + M_PI endAngle:2*M_PI - angle clockwise:YES];
+    [path addLineToPoint:CGPointMake(kScreenWidth, 0)];
+    [path addLineToPoint:CGPointMake(kScreenWidth, TAB_SAFE_HEIGHT)];
+    [path addLineToPoint:CGPointMake(0, TAB_SAFE_HEIGHT)];
+    // 根据坐标点连线
+    //    [path stroke];
+    layer.path = [path CGPath];
+    [path closePath];
+    layer.shadowPath = [path CGPath];
+    
+    [self.layer insertSublayer:layer atIndex:0];
+}
 @end
