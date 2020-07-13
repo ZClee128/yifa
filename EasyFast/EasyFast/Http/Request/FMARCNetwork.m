@@ -36,6 +36,9 @@ NSString * const HTTPServiceErrorDescriptionKey = @"HTTPServiceErrorDescriptionK
 NSString * const HTTPServiceErrorMessagesKey = @"HTTPServiceErrorMessagesKey";
 
 @interface FMARCNetwork()
+{
+    NSURL *efBaseURL;
+}
 //网络管理工具
 @property (nonatomic,strong) AFHTTPSessionManager * manager;
 
@@ -129,6 +132,31 @@ static FMARCNetwork * _instance = nil;
     return [self requestNetworkData:req];
 }
 
+/**
+ 检测URL格式
+ @param     url NSString、NSURL
+ @return    正确的NSURL或者nil
+ */
++ (NSURL *)testURL:(id)url
+{
+    NSURL *normalURL = nil;
+    
+    if (url) {
+        if ([url isKindOfClass:[NSURL class]]) {
+            normalURL = url;
+        } else if ([url isKindOfClass:[NSString class]]) {
+            normalURL = [NSURL URLWithString:(NSString *)url];
+        }
+    }
+    
+    return normalURL;
+}
+
+- (void)setupBaseURL:(NSURL *)url
+{
+    efBaseURL = url;
+    efBaseURL = [efBaseURL URLByAppendingPathComponent:@""];
+}
 
 - (RACSignal *)requestNetworkData:(FMHttpRequest *)req{
      /// request 必须的有值
@@ -155,7 +183,7 @@ static FMARCNetwork * _instance = nil;
         
         NSError *serializationError = nil;
         
-        NSMutableURLRequest *request = [self.manager.requestSerializer requestWithMethod:req.method URLString:[[NSURL URLWithString:req.path relativeToURL:[NSURL URLWithString:BaseUrl] ] absoluteString] parameters:req.parameters error:&serializationError];
+        NSMutableURLRequest *request = [self.manager.requestSerializer requestWithMethod:req.method URLString:[[NSURL URLWithString:req.path relativeToURL:self->efBaseURL ] absoluteString] parameters:req.parameters error:&serializationError];
         
         if (serializationError) {
 #pragma clang diagnostic push

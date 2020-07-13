@@ -32,6 +32,59 @@
 		84A820EA24B6F62900EAC652 /* EFClassifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820E924B6F62900EAC652 /* EFClassifyViewController.m */; };
 		84A820EE24B6F65100EAC652 /* EFFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820ED24B6F65100EAC652 /* EFFollowViewController.m */; };
 		84A820F224B6F66400EAC652 /* EFMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820F124B6F66400EAC652 /* EFMeViewController.m */; };
+		84A820FA24BC4F5400EAC652 /* EFFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820ED24B6F65100EAC652 /* EFFollowViewController.m */; };
+		84A820FB24BC4F5400EAC652 /* EFBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820B224B6CA8900EAC652 /* EFBaseTableView.m */; };
+		84A820FC24BC4F5400EAC652 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8209224B6CA0700EAC652 /* BaseTableViewCell.m */; };
+		84A820FD24BC4F5400EAC652 /* UIView+Radius.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820D924B6CE6B00EAC652 /* UIView+Radius.m */; };
+		84A820FE24BC4F5400EAC652 /* FMHttpResonse.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820CB24B6CCC600EAC652 /* FMHttpResonse.m */; };
+		84A820FF24BC4F5400EAC652 /* EFBaseTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820E124B6EADF00EAC652 /* EFBaseTabBarViewController.m */; };
+		84A8210024BC4F5400EAC652 /* EFMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820F124B6F66400EAC652 /* EFMeViewController.m */; };
+		84A8210124BC4F5400EAC652 /* EFBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820B424B6CA8A00EAC652 /* EFBaseTableViewController.m */; };
+		84A8210224BC4F5400EAC652 /* UIFont+RuntimeFit.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820D424B6CDA600EAC652 /* UIFont+RuntimeFit.m */; };
+		84A8210324BC4F5400EAC652 /* EFBaseRefreshVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820BB24B6CAC400EAC652 /* EFBaseRefreshVM.m */; };
+		84A8210424BC4F5400EAC652 /* RVMViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8209724B6CA0800EAC652 /* RVMViewModel.m */; };
+		84A8210524BC4F5400EAC652 /* FMHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820C824B6CCC600EAC652 /* FMHttpRequest.m */; };
+		84A8210624BC4F5400EAC652 /* EFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820B124B6CA8900EAC652 /* EFBaseViewController.m */; };
+		84A8210724BC4F5400EAC652 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8207724B6C61800EAC652 /* AppDelegate.m */; };
+		84A8210824BC4F5400EAC652 /* FMARCNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820C424B6CCC600EAC652 /* FMARCNetwork.m */; };
+		84A8210924BC4F5400EAC652 /* UIViewController+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820DA24B6CE6B00EAC652 /* UIViewController+Runtime.m */; };
+		84A8210A24BC4F5400EAC652 /* EFHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820E524B6F5E800EAC652 /* EFHomeViewController.m */; };
+		84A8210B24BC4F5400EAC652 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8208824B6C62300EAC652 /* main.m */; };
+		84A8210C24BC4F5400EAC652 /* FMARCNetwork+interface.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820C724B6CCC600EAC652 /* FMARCNetwork+interface.m */; };
+		84A8210D24BC4F5400EAC652 /* EFClassifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820E924B6F62900EAC652 /* EFClassifyViewController.m */; };
+		84A8210E24BC4F5400EAC652 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820D824B6CE6B00EAC652 /* UIView+Frame.m */; };
+		84A8210F24BC4F5400EAC652 /* EFBaseVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820BC24B6CAC400EAC652 /* EFBaseVM.m */; };
+		84A8211124BC4F5400EAC652 /* Pods_EasyFast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 348080AF478B991137DDCFA5 /* Pods_EasyFast.framework */; };
+		84A8211324BC4F5400EAC652 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A8208424B6C62300EAC652 /* LaunchScreen.storyboard */; };
+		84A8211424BC4F5400EAC652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A8208224B6C62300EAC652 /* Assets.xcassets */; };
+		84A8211E24BC513500EAC652 /* EFFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820ED24B6F65100EAC652 /* EFFollowViewController.m */; };
+		84A8211F24BC513500EAC652 /* EFBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820B224B6CA8900EAC652 /* EFBaseTableView.m */; };
+		84A8212024BC513500EAC652 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8209224B6CA0700EAC652 /* BaseTableViewCell.m */; };
+		84A8212124BC513500EAC652 /* UIView+Radius.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820D924B6CE6B00EAC652 /* UIView+Radius.m */; };
+		84A8212224BC513500EAC652 /* FMHttpResonse.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820CB24B6CCC600EAC652 /* FMHttpResonse.m */; };
+		84A8212324BC513500EAC652 /* EFBaseTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820E124B6EADF00EAC652 /* EFBaseTabBarViewController.m */; };
+		84A8212424BC513500EAC652 /* EFMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820F124B6F66400EAC652 /* EFMeViewController.m */; };
+		84A8212524BC513500EAC652 /* EFBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820B424B6CA8A00EAC652 /* EFBaseTableViewController.m */; };
+		84A8212624BC513500EAC652 /* UIFont+RuntimeFit.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820D424B6CDA600EAC652 /* UIFont+RuntimeFit.m */; };
+		84A8212724BC513500EAC652 /* EFBaseRefreshVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820BB24B6CAC400EAC652 /* EFBaseRefreshVM.m */; };
+		84A8212824BC513500EAC652 /* RVMViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8209724B6CA0800EAC652 /* RVMViewModel.m */; };
+		84A8212924BC513500EAC652 /* FMHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820C824B6CCC600EAC652 /* FMHttpRequest.m */; };
+		84A8212A24BC513500EAC652 /* EFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820B124B6CA8900EAC652 /* EFBaseViewController.m */; };
+		84A8212B24BC513500EAC652 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8207724B6C61800EAC652 /* AppDelegate.m */; };
+		84A8212C24BC513500EAC652 /* FMARCNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820C424B6CCC600EAC652 /* FMARCNetwork.m */; };
+		84A8212D24BC513500EAC652 /* UIViewController+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820DA24B6CE6B00EAC652 /* UIViewController+Runtime.m */; };
+		84A8212E24BC513500EAC652 /* EFHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820E524B6F5E800EAC652 /* EFHomeViewController.m */; };
+		84A8212F24BC513500EAC652 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8208824B6C62300EAC652 /* main.m */; };
+		84A8213024BC513500EAC652 /* FMARCNetwork+interface.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820C724B6CCC600EAC652 /* FMARCNetwork+interface.m */; };
+		84A8213124BC513500EAC652 /* EFClassifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820E924B6F62900EAC652 /* EFClassifyViewController.m */; };
+		84A8213224BC513500EAC652 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820D824B6CE6B00EAC652 /* UIView+Frame.m */; };
+		84A8213324BC513500EAC652 /* EFBaseVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820BC24B6CAC400EAC652 /* EFBaseVM.m */; };
+		84A8213524BC513500EAC652 /* Pods_EasyFast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 348080AF478B991137DDCFA5 /* Pods_EasyFast.framework */; };
+		84A8213724BC513500EAC652 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A8208424B6C62300EAC652 /* LaunchScreen.storyboard */; };
+		84A8213824BC513500EAC652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A8208224B6C62300EAC652 /* Assets.xcassets */; };
+		84A8214224BC55CB00EAC652 /* HttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8214124BC55CB00EAC652 /* HttpManager.m */; };
+		84A8214324BC55CB00EAC652 /* HttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8214124BC55CB00EAC652 /* HttpManager.m */; };
+		84A8214424BC55CB00EAC652 /* HttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8214124BC55CB00EAC652 /* HttpManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +141,12 @@
 		84A820ED24B6F65100EAC652 /* EFFollowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFFollowViewController.m; sourceTree = "<group>"; };
 		84A820F024B6F66400EAC652 /* EFMeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFMeViewController.h; sourceTree = "<group>"; };
 		84A820F124B6F66400EAC652 /* EFMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFMeViewController.m; sourceTree = "<group>"; };
+		84A8211924BC4F5400EAC652 /* EasyFast_Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyFast_Dev.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84A8211A24BC4F5500EAC652 /* EasyFast_Dev.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = EasyFast_Dev.plist; path = /Users/lizhicong/EasyFast/EasyFast/EasyFast_Dev.plist; sourceTree = "<absolute>"; };
+		84A8213D24BC513500EAC652 /* EasyFast_Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyFast_Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84A8213E24BC513500EAC652 /* EasyFast_Test.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = EasyFast_Test.plist; path = /Users/lizhicong/EasyFast/EasyFast/EasyFast_Test.plist; sourceTree = "<absolute>"; };
+		84A8214024BC55CB00EAC652 /* HttpManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpManager.h; sourceTree = "<group>"; };
+		84A8214124BC55CB00EAC652 /* HttpManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpManager.m; sourceTree = "<group>"; };
 		BA53EB76E1528E46E8ADF203 /* Pods-EasyFast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast.release.xcconfig"; path = "Target Support Files/Pods-EasyFast/Pods-EasyFast.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,6 +156,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				5331675373D39F1F29162855 /* Pods_EasyFast.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A8211024BC4F5400EAC652 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A8211124BC4F5400EAC652 /* Pods_EasyFast.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A8213424BC513500EAC652 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A8213524BC513500EAC652 /* Pods_EasyFast.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +202,8 @@
 				84A8207424B6C61800EAC652 /* Products */,
 				27EE066D901F23C4C9063CDC /* Pods */,
 				450A170569CB954BCEB29555 /* Frameworks */,
+				84A8211A24BC4F5500EAC652 /* EasyFast_Dev.plist */,
+				84A8213E24BC513500EAC652 /* EasyFast_Test.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				84A8207324B6C61800EAC652 /* EasyFast.app */,
+				84A8211924BC4F5400EAC652 /* EasyFast_Dev.app */,
+				84A8213D24BC513500EAC652 /* EasyFast_Test.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,6 +220,7 @@
 		84A8207524B6C61800EAC652 /* EasyFast */ = {
 			isa = PBXGroup;
 			children = (
+				84A8213F24BC558C00EAC652 /* Manager */,
 				84A820EF24B6F65600EAC652 /* Me */,
 				84A820EB24B6F63E00EAC652 /* Follow */,
 				84A820E724B6F5EE00EAC652 /* Classify */,
@@ -283,6 +363,15 @@
 			path = Me;
 			sourceTree = "<group>";
 		};
+		84A8213F24BC558C00EAC652 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				84A8214024BC55CB00EAC652 /* HttpManager.h */,
+				84A8214124BC55CB00EAC652 /* HttpManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -303,6 +392,44 @@
 			name = EasyFast;
 			productName = EasyFast;
 			productReference = 84A8207324B6C61800EAC652 /* EasyFast.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84A820F724BC4F5400EAC652 /* EasyFast_Dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84A8211624BC4F5400EAC652 /* Build configuration list for PBXNativeTarget "EasyFast_Dev" */;
+			buildPhases = (
+				84A820F824BC4F5400EAC652 /* [CP] Check Pods Manifest.lock */,
+				84A820F924BC4F5400EAC652 /* Sources */,
+				84A8211024BC4F5400EAC652 /* Frameworks */,
+				84A8211224BC4F5400EAC652 /* Resources */,
+				84A8211524BC4F5400EAC652 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EasyFast_Dev;
+			productName = EasyFast;
+			productReference = 84A8211924BC4F5400EAC652 /* EasyFast_Dev.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84A8211B24BC513500EAC652 /* EasyFast_Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84A8213A24BC513500EAC652 /* Build configuration list for PBXNativeTarget "EasyFast_Test" */;
+			buildPhases = (
+				84A8211C24BC513500EAC652 /* [CP] Check Pods Manifest.lock */,
+				84A8211D24BC513500EAC652 /* Sources */,
+				84A8213424BC513500EAC652 /* Frameworks */,
+				84A8213624BC513500EAC652 /* Resources */,
+				84A8213924BC513500EAC652 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EasyFast_Test;
+			productName = EasyFast;
+			productReference = 84A8213D24BC513500EAC652 /* EasyFast_Test.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -333,6 +460,8 @@
 			projectRoot = "";
 			targets = (
 				84A8207224B6C61800EAC652 /* EasyFast */,
+				84A820F724BC4F5400EAC652 /* EasyFast_Dev */,
+				84A8211B24BC513500EAC652 /* EasyFast_Test */,
 			);
 		};
 /* End PBXProject section */
@@ -344,6 +473,24 @@
 			files = (
 				84A8208624B6C62300EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8208324B6C62300EAC652 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A8211224BC4F5400EAC652 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A8211324BC4F5400EAC652 /* LaunchScreen.storyboard in Resources */,
+				84A8211424BC4F5400EAC652 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A8213624BC513500EAC652 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A8213724BC513500EAC652 /* LaunchScreen.storyboard in Resources */,
+				84A8213824BC513500EAC652 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +517,84 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84A820F824BC4F5400EAC652 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EasyFast-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84A8211524BC4F5400EAC652 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EasyFast/Pods-EasyFast-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EasyFast/Pods-EasyFast-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyFast/Pods-EasyFast-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84A8211C24BC513500EAC652 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EasyFast-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84A8213924BC513500EAC652 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EasyFast/Pods-EasyFast-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EasyFast/Pods-EasyFast-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyFast/Pods-EasyFast-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E47C4412191A68B436938FEC /* [CP] Embed Pods Frameworks */ = {
@@ -412,12 +637,73 @@
 				84A8207824B6C61800EAC652 /* AppDelegate.m in Sources */,
 				84A820CC24B6CCC600EAC652 /* FMARCNetwork.m in Sources */,
 				84A820DF24B6CE6B00EAC652 /* UIViewController+Runtime.m in Sources */,
+				84A8214224BC55CB00EAC652 /* HttpManager.m in Sources */,
 				84A820E624B6F5E800EAC652 /* EFHomeViewController.m in Sources */,
 				84A8208924B6C62300EAC652 /* main.m in Sources */,
 				84A820CD24B6CCC600EAC652 /* FMARCNetwork+interface.m in Sources */,
 				84A820EA24B6F62900EAC652 /* EFClassifyViewController.m in Sources */,
 				84A820DD24B6CE6B00EAC652 /* UIView+Frame.m in Sources */,
 				84A820BE24B6CAC400EAC652 /* EFBaseVM.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A820F924BC4F5400EAC652 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A820FA24BC4F5400EAC652 /* EFFollowViewController.m in Sources */,
+				84A820FB24BC4F5400EAC652 /* EFBaseTableView.m in Sources */,
+				84A820FC24BC4F5400EAC652 /* BaseTableViewCell.m in Sources */,
+				84A820FD24BC4F5400EAC652 /* UIView+Radius.m in Sources */,
+				84A820FE24BC4F5400EAC652 /* FMHttpResonse.m in Sources */,
+				84A820FF24BC4F5400EAC652 /* EFBaseTabBarViewController.m in Sources */,
+				84A8210024BC4F5400EAC652 /* EFMeViewController.m in Sources */,
+				84A8210124BC4F5400EAC652 /* EFBaseTableViewController.m in Sources */,
+				84A8210224BC4F5400EAC652 /* UIFont+RuntimeFit.m in Sources */,
+				84A8210324BC4F5400EAC652 /* EFBaseRefreshVM.m in Sources */,
+				84A8210424BC4F5400EAC652 /* RVMViewModel.m in Sources */,
+				84A8210524BC4F5400EAC652 /* FMHttpRequest.m in Sources */,
+				84A8210624BC4F5400EAC652 /* EFBaseViewController.m in Sources */,
+				84A8210724BC4F5400EAC652 /* AppDelegate.m in Sources */,
+				84A8210824BC4F5400EAC652 /* FMARCNetwork.m in Sources */,
+				84A8210924BC4F5400EAC652 /* UIViewController+Runtime.m in Sources */,
+				84A8214324BC55CB00EAC652 /* HttpManager.m in Sources */,
+				84A8210A24BC4F5400EAC652 /* EFHomeViewController.m in Sources */,
+				84A8210B24BC4F5400EAC652 /* main.m in Sources */,
+				84A8210C24BC4F5400EAC652 /* FMARCNetwork+interface.m in Sources */,
+				84A8210D24BC4F5400EAC652 /* EFClassifyViewController.m in Sources */,
+				84A8210E24BC4F5400EAC652 /* UIView+Frame.m in Sources */,
+				84A8210F24BC4F5400EAC652 /* EFBaseVM.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A8211D24BC513500EAC652 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A8211E24BC513500EAC652 /* EFFollowViewController.m in Sources */,
+				84A8211F24BC513500EAC652 /* EFBaseTableView.m in Sources */,
+				84A8212024BC513500EAC652 /* BaseTableViewCell.m in Sources */,
+				84A8212124BC513500EAC652 /* UIView+Radius.m in Sources */,
+				84A8212224BC513500EAC652 /* FMHttpResonse.m in Sources */,
+				84A8212324BC513500EAC652 /* EFBaseTabBarViewController.m in Sources */,
+				84A8212424BC513500EAC652 /* EFMeViewController.m in Sources */,
+				84A8212524BC513500EAC652 /* EFBaseTableViewController.m in Sources */,
+				84A8212624BC513500EAC652 /* UIFont+RuntimeFit.m in Sources */,
+				84A8212724BC513500EAC652 /* EFBaseRefreshVM.m in Sources */,
+				84A8212824BC513500EAC652 /* RVMViewModel.m in Sources */,
+				84A8212924BC513500EAC652 /* FMHttpRequest.m in Sources */,
+				84A8212A24BC513500EAC652 /* EFBaseViewController.m in Sources */,
+				84A8212B24BC513500EAC652 /* AppDelegate.m in Sources */,
+				84A8212C24BC513500EAC652 /* FMARCNetwork.m in Sources */,
+				84A8212D24BC513500EAC652 /* UIViewController+Runtime.m in Sources */,
+				84A8214424BC55CB00EAC652 /* HttpManager.m in Sources */,
+				84A8212E24BC513500EAC652 /* EFHomeViewController.m in Sources */,
+				84A8212F24BC513500EAC652 /* main.m in Sources */,
+				84A8213024BC513500EAC652 /* FMARCNetwork+interface.m in Sources */,
+				84A8213124BC513500EAC652 /* EFClassifyViewController.m in Sources */,
+				84A8213224BC513500EAC652 /* UIView+Frame.m in Sources */,
+				84A8213324BC513500EAC652 /* EFBaseVM.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,6 +839,13 @@
 				CLANG_ENABLE_MODULES = NO;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EasyFast/PrefixHeader.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"EFDEV=0",
+					"EF=1",
+					"EFTEST=0",
+				);
 				INFOPLIST_FILE = EasyFast/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -573,7 +866,122 @@
 				CLANG_ENABLE_MODULES = NO;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EasyFast/PrefixHeader.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"EF=1",
+					"EFDEV=0",
+					"EFTEST=0",
+				);
 				INFOPLIST_FILE = EasyFast/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.easy.EasyFast;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		84A8211724BC4F5400EAC652 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 182D3CC0502F099CA834B4CB /* Pods-EasyFast.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Dev;
+				CLANG_ENABLE_MODULES = NO;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/EasyFast/PrefixHeader.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"EF=0",
+					"EFDEV=1",
+					"EFTEST=0",
+				);
+				INFOPLIST_FILE = EasyFast_Dev.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.easy.EasyFast;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84A8211824BC4F5400EAC652 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA53EB76E1528E46E8ADF203 /* Pods-EasyFast.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Dev;
+				CLANG_ENABLE_MODULES = NO;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/EasyFast/PrefixHeader.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"EF=0",
+					"EFDEV=1",
+					"EFTEST=0",
+				);
+				INFOPLIST_FILE = EasyFast_Dev.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.easy.EasyFast;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		84A8213B24BC513500EAC652 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 182D3CC0502F099CA834B4CB /* Pods-EasyFast.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Test;
+				CLANG_ENABLE_MODULES = NO;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/EasyFast/PrefixHeader.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"EF=0",
+					"EFDEV=0",
+					"EFTEST=1",
+				);
+				INFOPLIST_FILE = EasyFast_Test.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.easy.EasyFast;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84A8213C24BC513500EAC652 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA53EB76E1528E46E8ADF203 /* Pods-EasyFast.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Test;
+				CLANG_ENABLE_MODULES = NO;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/EasyFast/PrefixHeader.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"EF=0",
+					"EFDEV=0",
+					"EFTEST=1",
+				);
+				INFOPLIST_FILE = EasyFast_Test.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -602,6 +1010,24 @@
 			buildConfigurations = (
 				84A8208D24B6C62300EAC652 /* Debug */,
 				84A8208E24B6C62300EAC652 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84A8211624BC4F5400EAC652 /* Build configuration list for PBXNativeTarget "EasyFast_Dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84A8211724BC4F5400EAC652 /* Debug */,
+				84A8211824BC4F5400EAC652 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84A8213A24BC513500EAC652 /* Build configuration list for PBXNativeTarget "EasyFast_Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84A8213B24BC513500EAC652 /* Debug */,
+				84A8213C24BC513500EAC652 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

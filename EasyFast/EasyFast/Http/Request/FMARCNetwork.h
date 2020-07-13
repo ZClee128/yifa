@@ -46,4 +46,6 @@
 - (RACSignal *)uploadNetworkPath:(NSString *)path params:(NSDictionary *)params fileDatas:(NSArray<NSData *> *)fileDatas name:(NSString *)name mimeType:(NSString *)mimeType;
 
 
+- (void)setupBaseURL:(NSURL *)url;
++ (NSURL *)testURL:(id)url;
 @end

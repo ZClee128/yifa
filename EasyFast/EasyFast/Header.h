@@ -28,4 +28,6 @@
 #import "UIViewController+Runtime.h"
 #import <QMUIKit/QMUIKit.h>
 #import <GKNavigationBar/GKNavigationBar.h>
+#import "HttpManager.h"
+#import "FMHttpConstant.h"
 #endif /* Header_h */

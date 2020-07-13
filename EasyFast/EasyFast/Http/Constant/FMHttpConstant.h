@@ -13,8 +13,12 @@
 #ifndef FMHttpConstant_h
 #define FMHttpConstant_h
 
+
 /*******URL******/
 #define BaseUrl @"http://47.111.173.179/"
+#define DevUrl @"http://47.111.173.179/"
+#define TestUrl @"http://47.111.173.179/"
+
 
 /********ImgBaseURL*****/
 #define ImgBaseURL @""
