@@ -1,0 +1,6 @@
+framework module YZTagList {
+  umbrella header "YZTagList-umbrella.h"
+
+  export *
+  module * { export * }
+}

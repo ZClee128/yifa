@@ -34,7 +34,7 @@
     EFBaseTableView *tableView = [[EFBaseTableView alloc] initWithFrame:CGRectMake(0.0, NAVIGATION_BAR_HEIGHT, kPHONE_WIDTH, (kPHONE_HEIGHT - NAVIGATION_BAR_HEIGHT)) style:style];
     tableView.delegate = delegate;
     tableView.dataSource = dataSource;
-    tableView.backgroundColor = UIColor.whiteColor;
+    tableView.backgroundColor = colorfafafa;
     return tableView;
 }
 

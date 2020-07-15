@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03BD2ED8996DE17BD7ECF09A /* Pods_EasyFast_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4FEC608CB9BC91EADCD0AB /* Pods_EasyFast_Test.framework */; };
+		4B6DC9457C08CB25296CBA4B /* Pods_EasyFast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D02E2ADBB586BA4E284F3269 /* Pods_EasyFast.framework */; };
 		5331675373D39F1F29162855 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		84A8207824B6C61800EAC652 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8207724B6C61800EAC652 /* AppDelegate.m */; };
 		84A8208324B6C62300EAC652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A8208224B6C62300EAC652 /* Assets.xcassets */; };
@@ -86,6 +87,49 @@
 		84A8214724BC5F0900EAC652 /* EFPlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8214624BC5F0900EAC652 /* EFPlusButton.m */; };
 		84A8214824BC5F0900EAC652 /* EFPlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8214624BC5F0900EAC652 /* EFPlusButton.m */; };
 		84A8214924BC5F0900EAC652 /* EFPlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8214624BC5F0900EAC652 /* EFPlusButton.m */; };
+		84A8214D24BD432B00EAC652 /* TabbarBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8214C24BD432A00EAC652 /* TabbarBackView.m */; };
+		84A8214E24BD43F000EAC652 /* TabbarBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8214C24BD432A00EAC652 /* TabbarBackView.m */; };
+		84A8214F24BD43F100EAC652 /* TabbarBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8214C24BD432A00EAC652 /* TabbarBackView.m */; };
+		84A8215024BD841900EAC652 /* EFBaseTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A820E124B6EADF00EAC652 /* EFBaseTabBarViewController.m */; };
+		84A8215424BDA0F200EAC652 /* EFHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8215324BDA0F200EAC652 /* EFHotViewController.m */; };
+		84A8215524BDA0F200EAC652 /* EFHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8215324BDA0F200EAC652 /* EFHotViewController.m */; };
+		84A8215624BDA0F200EAC652 /* EFHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8215324BDA0F200EAC652 /* EFHotViewController.m */; };
+		84A8215924BDB45E00EAC652 /* UIImage+Darw.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8215824BDB45E00EAC652 /* UIImage+Darw.m */; };
+		84A8215A24BDB45E00EAC652 /* UIImage+Darw.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8215824BDB45E00EAC652 /* UIImage+Darw.m */; };
+		84A8215B24BDB45E00EAC652 /* UIImage+Darw.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8215824BDB45E00EAC652 /* UIImage+Darw.m */; };
+		84A8215F24BDB90C00EAC652 /* HotTabCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8215E24BDB90C00EAC652 /* HotTabCollectionViewCell.m */; };
+		84A8216024BDB90C00EAC652 /* HotTabCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8215E24BDB90C00EAC652 /* HotTabCollectionViewCell.m */; };
+		84A8216124BDB90C00EAC652 /* HotTabCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8215E24BDB90C00EAC652 /* HotTabCollectionViewCell.m */; };
+		84A8216624BE92B900EAC652 /* HotTabTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8216524BE92B900EAC652 /* HotTabTableViewCell.m */; };
+		84A8216724BE92B900EAC652 /* HotTabTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8216524BE92B900EAC652 /* HotTabTableViewCell.m */; };
+		84A8216824BE92B900EAC652 /* HotTabTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8216524BE92B900EAC652 /* HotTabTableViewCell.m */; };
+		84A8216B24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8216A24BEA2FD00EAC652 /* EFNoticeTableViewCell.m */; };
+		84A8216C24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8216A24BEA2FD00EAC652 /* EFNoticeTableViewCell.m */; };
+		84A8216D24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8216A24BEA2FD00EAC652 /* EFNoticeTableViewCell.m */; };
+		84A8217024BEA92300EAC652 /* EFNoticTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8216F24BEA92300EAC652 /* EFNoticTitleCell.m */; };
+		84A8217124BEA92400EAC652 /* EFNoticTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8216F24BEA92300EAC652 /* EFNoticTitleCell.m */; };
+		84A8217224BEA92400EAC652 /* EFNoticTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8216F24BEA92300EAC652 /* EFNoticTitleCell.m */; };
+		84A8217524BEAE3000EAC652 /* EFHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8217424BEAE3000EAC652 /* EFHeaderView.m */; };
+		84A8217624BEAE3000EAC652 /* EFHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8217424BEAE3000EAC652 /* EFHeaderView.m */; };
+		84A8217724BEAE3000EAC652 /* EFHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8217424BEAE3000EAC652 /* EFHeaderView.m */; };
+		84A8217A24BEB35E00EAC652 /* EFFastCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8217924BEB35E00EAC652 /* EFFastCollectionViewCell.m */; };
+		84A8217B24BEB35E00EAC652 /* EFFastCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8217924BEB35E00EAC652 /* EFFastCollectionViewCell.m */; };
+		84A8217C24BEB35E00EAC652 /* EFFastCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8217924BEB35E00EAC652 /* EFFastCollectionViewCell.m */; };
+		84A8218424BED7E400EAC652 /* EFFastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8218324BED7E400EAC652 /* EFFastTableViewCell.m */; };
+		84A8218524BED7E400EAC652 /* EFFastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8218324BED7E400EAC652 /* EFFastTableViewCell.m */; };
+		84A8218624BED7E400EAC652 /* EFFastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8218324BED7E400EAC652 /* EFFastTableViewCell.m */; };
+		84A8218924BEDDCB00EAC652 /* GBGradientProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8218824BEDDCA00EAC652 /* GBGradientProgressView.m */; };
+		84A8218A24BEDDCB00EAC652 /* GBGradientProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8218824BEDDCA00EAC652 /* GBGradientProgressView.m */; };
+		84A8218B24BEDDCB00EAC652 /* GBGradientProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8218824BEDDCA00EAC652 /* GBGradientProgressView.m */; };
+		84A8218E24BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8218D24BEE61700EAC652 /* EFGoodsTableViewCell.m */; };
+		84A8218F24BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8218D24BEE61700EAC652 /* EFGoodsTableViewCell.m */; };
+		84A8219024BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8218D24BEE61700EAC652 /* EFGoodsTableViewCell.m */; };
+		84A8219424BEF2DB00EAC652 /* UIView+GradientColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8219224BEF2D700EAC652 /* UIView+GradientColor.m */; };
+		84A8219524BEF2DB00EAC652 /* UIView+GradientColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8219224BEF2D700EAC652 /* UIView+GradientColor.m */; };
+		84A8219624BEF2DB00EAC652 /* UIView+GradientColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8219224BEF2D700EAC652 /* UIView+GradientColor.m */; };
+		84A8219B24BF011700EAC652 /* TKTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8219924BF011700EAC652 /* TKTagView.m */; };
+		84A8219C24BF011700EAC652 /* TKTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8219924BF011700EAC652 /* TKTagView.m */; };
+		84A8219D24BF011700EAC652 /* TKTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8219924BF011700EAC652 /* TKTagView.m */; };
 		ED2E8655CA4E2FBCA71F69DC /* Pods_EasyFast_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3157AF9D413E272E30EBDDE8 /* Pods_EasyFast_Dev.framework */; };
 /* End PBXBuildFile section */
 
@@ -155,7 +199,36 @@
 		84A8214124BC55CB00EAC652 /* HttpManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpManager.m; sourceTree = "<group>"; };
 		84A8214524BC5F0900EAC652 /* EFPlusButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFPlusButton.h; sourceTree = "<group>"; };
 		84A8214624BC5F0900EAC652 /* EFPlusButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFPlusButton.m; sourceTree = "<group>"; };
+		84A8214B24BD432A00EAC652 /* TabbarBackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabbarBackView.h; sourceTree = "<group>"; };
+		84A8214C24BD432A00EAC652 /* TabbarBackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabbarBackView.m; sourceTree = "<group>"; };
+		84A8215224BDA0F200EAC652 /* EFHotViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFHotViewController.h; sourceTree = "<group>"; };
+		84A8215324BDA0F200EAC652 /* EFHotViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFHotViewController.m; sourceTree = "<group>"; };
+		84A8215724BDB45E00EAC652 /* UIImage+Darw.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Darw.h"; sourceTree = "<group>"; };
+		84A8215824BDB45E00EAC652 /* UIImage+Darw.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Darw.m"; sourceTree = "<group>"; };
+		84A8215D24BDB90C00EAC652 /* HotTabCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotTabCollectionViewCell.h; sourceTree = "<group>"; };
+		84A8215E24BDB90C00EAC652 /* HotTabCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotTabCollectionViewCell.m; sourceTree = "<group>"; };
+		84A8216424BE92B900EAC652 /* HotTabTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotTabTableViewCell.h; sourceTree = "<group>"; };
+		84A8216524BE92B900EAC652 /* HotTabTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotTabTableViewCell.m; sourceTree = "<group>"; };
+		84A8216924BEA2FD00EAC652 /* EFNoticeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFNoticeTableViewCell.h; sourceTree = "<group>"; };
+		84A8216A24BEA2FD00EAC652 /* EFNoticeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFNoticeTableViewCell.m; sourceTree = "<group>"; };
+		84A8216E24BEA92300EAC652 /* EFNoticTitleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFNoticTitleCell.h; sourceTree = "<group>"; };
+		84A8216F24BEA92300EAC652 /* EFNoticTitleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFNoticTitleCell.m; sourceTree = "<group>"; };
+		84A8217324BEAE3000EAC652 /* EFHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFHeaderView.h; sourceTree = "<group>"; };
+		84A8217424BEAE3000EAC652 /* EFHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFHeaderView.m; sourceTree = "<group>"; };
+		84A8217824BEB35E00EAC652 /* EFFastCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFFastCollectionViewCell.h; sourceTree = "<group>"; };
+		84A8217924BEB35E00EAC652 /* EFFastCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFFastCollectionViewCell.m; sourceTree = "<group>"; };
+		84A8218224BED7E400EAC652 /* EFFastTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFFastTableViewCell.h; sourceTree = "<group>"; };
+		84A8218324BED7E400EAC652 /* EFFastTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFFastTableViewCell.m; sourceTree = "<group>"; };
+		84A8218724BEDDC900EAC652 /* GBGradientProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBGradientProgressView.h; sourceTree = "<group>"; };
+		84A8218824BEDDCA00EAC652 /* GBGradientProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBGradientProgressView.m; sourceTree = "<group>"; };
+		84A8218C24BEE61700EAC652 /* EFGoodsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFGoodsTableViewCell.h; sourceTree = "<group>"; };
+		84A8218D24BEE61700EAC652 /* EFGoodsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFGoodsTableViewCell.m; sourceTree = "<group>"; };
+		84A8219224BEF2D700EAC652 /* UIView+GradientColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GradientColor.m"; sourceTree = "<group>"; };
+		84A8219324BEF2DA00EAC652 /* UIView+GradientColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GradientColor.h"; sourceTree = "<group>"; };
+		84A8219924BF011700EAC652 /* TKTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTagView.m; sourceTree = "<group>"; };
+		84A8219A24BF011700EAC652 /* TKTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTagView.h; sourceTree = "<group>"; };
 		BA53EB76E1528E46E8ADF203 /* Pods-EasyFast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast.release.xcconfig"; path = "Target Support Files/Pods-EasyFast/Pods-EasyFast.release.xcconfig"; sourceTree = "<group>"; };
+		D02E2ADBB586BA4E284F3269 /* Pods_EasyFast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyFast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF8E5FE1C44408BDAF6A9C97 /* Pods-EasyFast_Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast_Test.debug.xcconfig"; path = "Target Support Files/Pods-EasyFast_Test/Pods-EasyFast_Test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5331675373D39F1F29162855 /* (null) in Frameworks */,
+				4B6DC9457C08CB25296CBA4B /* Pods_EasyFast.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +279,7 @@
 			children = (
 				3157AF9D413E272E30EBDDE8 /* Pods_EasyFast_Dev.framework */,
 				2B4FEC608CB9BC91EADCD0AB /* Pods_EasyFast_Test.framework */,
+				D02E2ADBB586BA4E284F3269 /* Pods_EasyFast.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -234,6 +309,7 @@
 		84A8207524B6C61800EAC652 /* EasyFast */ = {
 			isa = PBXGroup;
 			children = (
+				84A8219724BF010800EAC652 /* Tools */,
 				84A8213F24BC558C00EAC652 /* Manager */,
 				84A820EF24B6F65600EAC652 /* Me */,
 				84A820EB24B6F63E00EAC652 /* Follow */,
@@ -258,6 +334,7 @@
 		84A8209024B6C9DE00EAC652 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				84A8214A24BD432000EAC652 /* View */,
 				84A8209124B6CA0700EAC652 /* BaseTableViewCell.h */,
 				84A8209224B6CA0700EAC652 /* BaseTableViewCell.m */,
 				84A820B324B6CA8900EAC652 /* EFBaseTableView.h */,
@@ -339,6 +416,10 @@
 				84A820DA24B6CE6B00EAC652 /* UIViewController+Runtime.m */,
 				84A820D524B6CDA600EAC652 /* UIFont+RuntimeFit.h */,
 				84A820D424B6CDA600EAC652 /* UIFont+RuntimeFit.m */,
+				84A8215724BDB45E00EAC652 /* UIImage+Darw.h */,
+				84A8215824BDB45E00EAC652 /* UIImage+Darw.m */,
+				84A8219324BEF2DA00EAC652 /* UIView+GradientColor.h */,
+				84A8219224BEF2D700EAC652 /* UIView+GradientColor.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -348,6 +429,7 @@
 			children = (
 				84A820E424B6F5E800EAC652 /* EFHomeViewController.h */,
 				84A820E524B6F5E800EAC652 /* EFHomeViewController.m */,
+				84A8215124BDA08600EAC652 /* Hot */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -386,6 +468,67 @@
 				84A8214124BC55CB00EAC652 /* HttpManager.m */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		84A8214A24BD432000EAC652 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84A8214B24BD432A00EAC652 /* TabbarBackView.h */,
+				84A8214C24BD432A00EAC652 /* TabbarBackView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84A8215124BDA08600EAC652 /* Hot */ = {
+			isa = PBXGroup;
+			children = (
+				84A8215C24BDB8DD00EAC652 /* View */,
+				84A8215224BDA0F200EAC652 /* EFHotViewController.h */,
+				84A8215324BDA0F200EAC652 /* EFHotViewController.m */,
+			);
+			path = Hot;
+			sourceTree = "<group>";
+		};
+		84A8215C24BDB8DD00EAC652 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84A8215D24BDB90C00EAC652 /* HotTabCollectionViewCell.h */,
+				84A8215E24BDB90C00EAC652 /* HotTabCollectionViewCell.m */,
+				84A8216424BE92B900EAC652 /* HotTabTableViewCell.h */,
+				84A8216524BE92B900EAC652 /* HotTabTableViewCell.m */,
+				84A8216924BEA2FD00EAC652 /* EFNoticeTableViewCell.h */,
+				84A8216A24BEA2FD00EAC652 /* EFNoticeTableViewCell.m */,
+				84A8216E24BEA92300EAC652 /* EFNoticTitleCell.h */,
+				84A8216F24BEA92300EAC652 /* EFNoticTitleCell.m */,
+				84A8217324BEAE3000EAC652 /* EFHeaderView.h */,
+				84A8217424BEAE3000EAC652 /* EFHeaderView.m */,
+				84A8217824BEB35E00EAC652 /* EFFastCollectionViewCell.h */,
+				84A8217924BEB35E00EAC652 /* EFFastCollectionViewCell.m */,
+				84A8218224BED7E400EAC652 /* EFFastTableViewCell.h */,
+				84A8218324BED7E400EAC652 /* EFFastTableViewCell.m */,
+				84A8218724BEDDC900EAC652 /* GBGradientProgressView.h */,
+				84A8218824BEDDCA00EAC652 /* GBGradientProgressView.m */,
+				84A8218C24BEE61700EAC652 /* EFGoodsTableViewCell.h */,
+				84A8218D24BEE61700EAC652 /* EFGoodsTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84A8219724BF010800EAC652 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				84A8219824BF011700EAC652 /* TKTagView */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		84A8219824BF011700EAC652 /* TKTagView */ = {
+			isa = PBXGroup;
+			children = (
+				84A8219924BF011700EAC652 /* TKTagView.m */,
+				84A8219A24BF011700EAC652 /* TKTagView.h */,
+			);
+			path = TKTagView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -638,28 +781,42 @@
 			buildActionMask = 2147483647;
 			files = (
 				84A820EE24B6F65100EAC652 /* EFFollowViewController.m in Sources */,
+				84A8215424BDA0F200EAC652 /* EFHotViewController.m in Sources */,
 				84A820B724B6CA8A00EAC652 /* EFBaseTableView.m in Sources */,
 				84A820A424B6CA0900EAC652 /* BaseTableViewCell.m in Sources */,
 				84A820DE24B6CE6B00EAC652 /* UIView+Radius.m in Sources */,
 				84A820CF24B6CCC600EAC652 /* FMHttpResonse.m in Sources */,
+				84A8216B24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
+				84A8218E24BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */,
 				84A820E224B6EADF00EAC652 /* EFBaseTabBarViewController.m in Sources */,
 				84A820F224B6F66400EAC652 /* EFMeViewController.m in Sources */,
+				84A8215924BDB45E00EAC652 /* UIImage+Darw.m in Sources */,
 				84A820B824B6CA8A00EAC652 /* EFBaseTableViewController.m in Sources */,
 				84A820D624B6CDA600EAC652 /* UIFont+RuntimeFit.m in Sources */,
 				84A820BD24B6CAC400EAC652 /* EFBaseRefreshVM.m in Sources */,
 				84A820A524B6CA0900EAC652 /* RVMViewModel.m in Sources */,
 				84A820CE24B6CCC600EAC652 /* FMHttpRequest.m in Sources */,
+				84A8215F24BDB90C00EAC652 /* HotTabCollectionViewCell.m in Sources */,
 				84A8214724BC5F0900EAC652 /* EFPlusButton.m in Sources */,
 				84A820B624B6CA8A00EAC652 /* EFBaseViewController.m in Sources */,
+				84A8219424BEF2DB00EAC652 /* UIView+GradientColor.m in Sources */,
 				84A8207824B6C61800EAC652 /* AppDelegate.m in Sources */,
 				84A820CC24B6CCC600EAC652 /* FMARCNetwork.m in Sources */,
 				84A820DF24B6CE6B00EAC652 /* UIViewController+Runtime.m in Sources */,
+				84A8214D24BD432B00EAC652 /* TabbarBackView.m in Sources */,
 				84A8214224BC55CB00EAC652 /* HttpManager.m in Sources */,
+				84A8218424BED7E400EAC652 /* EFFastTableViewCell.m in Sources */,
+				84A8216624BE92B900EAC652 /* HotTabTableViewCell.m in Sources */,
+				84A8218924BEDDCB00EAC652 /* GBGradientProgressView.m in Sources */,
+				84A8217524BEAE3000EAC652 /* EFHeaderView.m in Sources */,
+				84A8217A24BEB35E00EAC652 /* EFFastCollectionViewCell.m in Sources */,
 				84A820E624B6F5E800EAC652 /* EFHomeViewController.m in Sources */,
+				84A8217024BEA92300EAC652 /* EFNoticTitleCell.m in Sources */,
 				84A8208924B6C62300EAC652 /* main.m in Sources */,
 				84A820CD24B6CCC600EAC652 /* FMARCNetwork+interface.m in Sources */,
 				84A820EA24B6F62900EAC652 /* EFClassifyViewController.m in Sources */,
 				84A820DD24B6CE6B00EAC652 /* UIView+Frame.m in Sources */,
+				84A8219B24BF011700EAC652 /* TKTagView.m in Sources */,
 				84A820BE24B6CAC400EAC652 /* EFBaseVM.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -669,28 +826,43 @@
 			buildActionMask = 2147483647;
 			files = (
 				84A820FA24BC4F5400EAC652 /* EFFollowViewController.m in Sources */,
+				84A8215524BDA0F200EAC652 /* EFHotViewController.m in Sources */,
 				84A820FB24BC4F5400EAC652 /* EFBaseTableView.m in Sources */,
 				84A820FC24BC4F5400EAC652 /* BaseTableViewCell.m in Sources */,
 				84A820FD24BC4F5400EAC652 /* UIView+Radius.m in Sources */,
 				84A820FE24BC4F5400EAC652 /* FMHttpResonse.m in Sources */,
+				84A8216C24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
+				84A8218F24BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */,
 				84A8210024BC4F5400EAC652 /* EFMeViewController.m in Sources */,
 				84A8210124BC4F5400EAC652 /* EFBaseTableViewController.m in Sources */,
+				84A8215A24BDB45E00EAC652 /* UIImage+Darw.m in Sources */,
 				84A8210224BC4F5400EAC652 /* UIFont+RuntimeFit.m in Sources */,
 				84A8210324BC4F5400EAC652 /* EFBaseRefreshVM.m in Sources */,
 				84A8210424BC4F5400EAC652 /* RVMViewModel.m in Sources */,
 				84A8210524BC4F5400EAC652 /* FMHttpRequest.m in Sources */,
+				84A8214E24BD43F000EAC652 /* TabbarBackView.m in Sources */,
+				84A8216024BDB90C00EAC652 /* HotTabCollectionViewCell.m in Sources */,
 				84A8214824BC5F0900EAC652 /* EFPlusButton.m in Sources */,
 				84A8210624BC4F5400EAC652 /* EFBaseViewController.m in Sources */,
+				84A8219524BEF2DB00EAC652 /* UIView+GradientColor.m in Sources */,
 				84A8210724BC4F5400EAC652 /* AppDelegate.m in Sources */,
 				84A8210824BC4F5400EAC652 /* FMARCNetwork.m in Sources */,
 				84A8210924BC4F5400EAC652 /* UIViewController+Runtime.m in Sources */,
 				84A8214324BC55CB00EAC652 /* HttpManager.m in Sources */,
 				84A8210A24BC4F5400EAC652 /* EFHomeViewController.m in Sources */,
+				84A8218524BED7E400EAC652 /* EFFastTableViewCell.m in Sources */,
+				84A8216724BE92B900EAC652 /* HotTabTableViewCell.m in Sources */,
+				84A8218A24BEDDCB00EAC652 /* GBGradientProgressView.m in Sources */,
+				84A8217624BEAE3000EAC652 /* EFHeaderView.m in Sources */,
+				84A8217B24BEB35E00EAC652 /* EFFastCollectionViewCell.m in Sources */,
 				84A8210B24BC4F5400EAC652 /* main.m in Sources */,
+				84A8217124BEA92400EAC652 /* EFNoticTitleCell.m in Sources */,
 				84A8210C24BC4F5400EAC652 /* FMARCNetwork+interface.m in Sources */,
 				84A8210D24BC4F5400EAC652 /* EFClassifyViewController.m in Sources */,
 				84A8210E24BC4F5400EAC652 /* UIView+Frame.m in Sources */,
 				84A8210F24BC4F5400EAC652 /* EFBaseVM.m in Sources */,
+				84A8219C24BF011700EAC652 /* TKTagView.m in Sources */,
+				84A8215024BD841900EAC652 /* EFBaseTabBarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -699,28 +871,42 @@
 			buildActionMask = 2147483647;
 			files = (
 				84A8211E24BC513500EAC652 /* EFFollowViewController.m in Sources */,
+				84A8215624BDA0F200EAC652 /* EFHotViewController.m in Sources */,
 				84A8211F24BC513500EAC652 /* EFBaseTableView.m in Sources */,
 				84A8212024BC513500EAC652 /* BaseTableViewCell.m in Sources */,
 				84A8212124BC513500EAC652 /* UIView+Radius.m in Sources */,
 				84A8212224BC513500EAC652 /* FMHttpResonse.m in Sources */,
+				84A8216D24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
+				84A8219024BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */,
 				84A8212324BC513500EAC652 /* EFBaseTabBarViewController.m in Sources */,
 				84A8212424BC513500EAC652 /* EFMeViewController.m in Sources */,
+				84A8215B24BDB45E00EAC652 /* UIImage+Darw.m in Sources */,
 				84A8212524BC513500EAC652 /* EFBaseTableViewController.m in Sources */,
 				84A8212624BC513500EAC652 /* UIFont+RuntimeFit.m in Sources */,
 				84A8212724BC513500EAC652 /* EFBaseRefreshVM.m in Sources */,
 				84A8212824BC513500EAC652 /* RVMViewModel.m in Sources */,
 				84A8212924BC513500EAC652 /* FMHttpRequest.m in Sources */,
+				84A8216124BDB90C00EAC652 /* HotTabCollectionViewCell.m in Sources */,
 				84A8214924BC5F0900EAC652 /* EFPlusButton.m in Sources */,
 				84A8212A24BC513500EAC652 /* EFBaseViewController.m in Sources */,
+				84A8219624BEF2DB00EAC652 /* UIView+GradientColor.m in Sources */,
 				84A8212B24BC513500EAC652 /* AppDelegate.m in Sources */,
 				84A8212C24BC513500EAC652 /* FMARCNetwork.m in Sources */,
 				84A8212D24BC513500EAC652 /* UIViewController+Runtime.m in Sources */,
+				84A8214F24BD43F100EAC652 /* TabbarBackView.m in Sources */,
 				84A8214424BC55CB00EAC652 /* HttpManager.m in Sources */,
+				84A8218624BED7E400EAC652 /* EFFastTableViewCell.m in Sources */,
+				84A8216824BE92B900EAC652 /* HotTabTableViewCell.m in Sources */,
+				84A8218B24BEDDCB00EAC652 /* GBGradientProgressView.m in Sources */,
+				84A8217724BEAE3000EAC652 /* EFHeaderView.m in Sources */,
+				84A8217C24BEB35E00EAC652 /* EFFastCollectionViewCell.m in Sources */,
 				84A8212E24BC513500EAC652 /* EFHomeViewController.m in Sources */,
+				84A8217224BEA92400EAC652 /* EFNoticTitleCell.m in Sources */,
 				84A8212F24BC513500EAC652 /* main.m in Sources */,
 				84A8213024BC513500EAC652 /* FMARCNetwork+interface.m in Sources */,
 				84A8213124BC513500EAC652 /* EFClassifyViewController.m in Sources */,
 				84A8213224BC513500EAC652 /* UIView+Frame.m in Sources */,
+				84A8219D24BF011700EAC652 /* TKTagView.m in Sources */,
 				84A8213324BC513500EAC652 /* EFBaseVM.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -83,12 +83,13 @@ fprintf(stderr,"[--%s--]\n[--%s:%d--]\n[--%s--]\n===========================\n",
 #define udInstance [NSUserDefaults standardUserDefaults]
 
 // color
-#define color333 RGB16(0x333333)
-#define colorccc RGB16(0xCCCCCC)
-#define colorEF2 RGB16(0xEEEFF2)
-#define colorFF4858 RGB16(0x56A1ED)
-#define colorFF8B52 RGB16(0xF6AB6F)
-#define colorFFC601 RGB16(0xF9D985)
+#define tabbarRedColor RGB16(0xFF3B37)
+#define tabbarBlackColor RGB16(0x4D4D4D)
+#define colorAEAEAE RGB16(0xAEAEAE)
+#define colorEFEFEF RGB16(0xEFEFEF)
+#define colorF14745 RGB16(0xF14745)
+#define colorfafafa RGB16(0xfafafa)
+
 #define color9FD94D RGB16(0xB5E47D)
 #define color2CB0E5 RGB16(0x56A1ED)
 #define colorB56FDD RGB16(0xC17FED)
@@ -104,11 +105,18 @@ fprintf(stderr,"[--%s--]\n[--%s:%d--]\n[--%s--]\n===========================\n",
 #define SemiboldFont16 [UIFont runtimeFitFont:16 weight:(UIFontWeightSemibold)]
 #define SemiboldFont14 [UIFont runtimeFitFont:14 weight:(UIFontWeightSemibold)]
 
-#define RegularFont12 [UIFont runtimeFitFont:12 weight:(UIFontWeightRegular)]
+#define RegularFont11 [UIFont runtimeFitFont:11 weight:(UIFontWeightRegular)]
+#define RegularFont13 [UIFont runtimeFitFont:13 weight:(UIFontWeightRegular)]
 #define RegularFont14 [UIFont runtimeFitFont:14 weight:(UIFontWeightRegular)]
-#define RegularFont16 [UIFont runtimeFitFont:16 weight:(UIFontWeightRegular)]
+#define RegularFont15 [UIFont runtimeFitFont:15 weight:(UIFontWeightRegular)]
+#define RegularFont17 [UIFont runtimeFitFont:17 weight:(UIFontWeightRegular)]
 
 
+#define MedFont17 [UIFont runtimeFitFont:17 weight:(UIFontWeightMedium)]
+#define MedFont16 [UIFont runtimeFitFont:16 weight:(UIFontWeightMedium)]
+#define MedFont15 [UIFont runtimeFitFont:15 weight:(UIFontWeightMedium)]
+#define MedFont12 [UIFont runtimeFitFont:12 weight:(UIFontWeightMedium)]
+#define MedFont13 [UIFont runtimeFitFont:13 weight:(UIFontWeightMedium)]
 
 // 持久化key
 // 用户信息

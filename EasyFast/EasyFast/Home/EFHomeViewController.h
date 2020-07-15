@@ -6,11 +6,11 @@
 //  Copyright © 2020 EasyFast. All rights reserved.
 //
 
-#import "EFBaseTableViewController.h"
+#import "EFBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EFHomeViewController : EFBaseTableViewController
+@interface EFHomeViewController : EFBaseViewController
 
 @end
 

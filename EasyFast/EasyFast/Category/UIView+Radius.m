@@ -66,8 +66,8 @@
     //背景填充色
     layer.fillColor = [UIColor whiteColor].CGColor;
     layer.shadowColor = RGB16(0xf5f5f5).CGColor;
-    layer.shadowOffset = CGSizeMake(0, -4);
-    layer.shadowOpacity = 0.5;
+    layer.shadowOffset = CGSizeMake(7, 3);
+    layer.shadowOpacity = 1;
     
     CGFloat a = center.y;
     CGFloat angle = asin(a/radius);

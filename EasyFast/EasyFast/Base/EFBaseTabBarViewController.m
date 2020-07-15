@@ -12,8 +12,11 @@
 #import "EFFollowViewController.h"
 #import "EFMeViewController.h"
 #import "EFPlusButton.h"
+#import "TabbarBackView.h"
 @interface EFBaseTabBarViewController ()
-
+{
+    CGFloat _tabbarheight;
+}
 @end
 
 @implementation EFBaseTabBarViewController
@@ -42,6 +45,48 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [EFPlusButton registerPlusButton];
+    _tabbarheight = TAB_BAR_HEIGHT + 22;
+    [self clearTabBarTopLine];
+    TabbarBackView *tabBarView = [[TabbarBackView alloc] initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, _tabbarheight)];
+    tabBarView.backgroundColor = [UIColor whiteColor];
+    [self.tabBar addSubview:tabBarView];
+}
+
+-(void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+
+    CGRect frame = self.tabBar.frame;
+    frame.size.height = _tabbarheight;
+    frame.origin.y = self.view.frame.size.height - frame.size.height;
+    self.tabBar.frame = frame;
+
+    self.tabBar.barStyle = UIBarStyleDefault;
+    for (int i=0; i<self.tabBar.items.count; i++) {
+        UITabBarItem *item = self.tabBar.items[i];
+        if (i!=2) {
+            item.imageInsets = UIEdgeInsetsMake(_tabbarheight - TAB_BAR_HEIGHT - 15, 0, -(_tabbarheight - TAB_BAR_HEIGHT - 15), 0);
+//            item.titlePositionAdjustment = UIOffsetMake(0, -3);
+
+        }else{
+//            item.imageInsets = UIEdgeInsetsMake(-5, 0, 5, 0);
+//            item.titlePositionAdjustment = UIOffsetMake(0, -3);
+
+        }
+    }
+}
+
+#pragma mark - 清除底部菜单栏上面自带的线，以便自定义
+-(void)clearTabBarTopLine{
+    CGRect rect = CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, UIScreen.mainScreen.bounds.size.height);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGColorRef  clearColor =[[UIColor clearColor] CGColor];
+    CGContextSetFillColor(context, CGColorGetComponents(clearColor));
+    CGContextFillRect(context, rect);
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    self.tabBar.backgroundImage = img;
+    self.tabBar.shadowImage = img;
 }
 
 
@@ -107,18 +152,20 @@
 //    [self hideTabBarShadowImageView];
     [self rootWindow].backgroundColor = UIColor.whiteColor;
 //    self.tabBar.backgroundColor = UIColor.whiteColor;
-    self.tabBar.shadowImage = [[UIImage alloc] init];
+//    self.tabBar.shadowImage = [[UIImage alloc] init];
+    
+    
     // set the text color for unselected state
     // 普通状态下的文字属性
     NSMutableDictionary *normalAttrs = [NSMutableDictionary dictionary];
-    normalAttrs[NSForegroundColorAttributeName] = [UIColor cyl_systemGrayColor];
-    //normalAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:10];
+    normalAttrs[NSForegroundColorAttributeName] = tabbarBlackColor;
+    normalAttrs[NSFontAttributeName] = RegularFont11;
     
     // set the text color for selected state
     // 选中状态下的文字属性
     NSMutableDictionary *selectedAttrs = [NSMutableDictionary dictionary];
-    selectedAttrs[NSForegroundColorAttributeName] = [UIColor cyl_labelColor];
-    //selectedAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:10];
+    selectedAttrs[NSForegroundColorAttributeName] = tabbarRedColor;
+    selectedAttrs[NSFontAttributeName] = RegularFont11;
 
     // NO.1，using Image note:recommended.推荐方式
     // set the bar shadow image
@@ -148,12 +195,11 @@
         UITabBarItem *tabBar = [UITabBarItem appearance];
         [tabBar setTitleTextAttributes:normalAttrs forState:UIControlStateNormal];
         [tabBar setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
-        [self.tabBar setBackgroundImage:[UIImage imageNamed:@"tab"]];
+//        [self.tabBar setBackgroundImage:[UIImage imageNamed:@"tab"]];
         // This shadow image attribute is ignored if the tab bar does not also have a custom background image.So at least set somthing.
 //         [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tab"]];
 //        [[UITabBar appearance] setShadowImage:[[self class] imageWithColor:RGB16(0xf5f5f5) size:CGSizeMake([UIScreen mainScreen].bounds.size.width, 3)]];
     }
-    [self.tabBar setTabBarShadowWithCenter:self.tabBar.center radius:57/2];
 }
 
 + (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size {

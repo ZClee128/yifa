@@ -19,6 +19,10 @@
     return self;
 }
 
+- (void)setModel:(id)model {
+    
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code

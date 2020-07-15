@@ -44,8 +44,8 @@
     CGFloat const verticalMargin  = (self.bounds.size.height - labelLineHeight - imageViewEdgeHeight) * 0.8;
 
     // imageView 和 titleLabel 中心的 Y 值
-    CGFloat const centerOfImageView  = verticalMargin + imageViewEdgeHeight * 0.5;
-    CGFloat const centerOfTitleLabel = imageViewEdgeHeight  + verticalMargin * 2 + labelLineHeight * 0.5 + 8;
+    CGFloat const centerOfImageView  = verticalMargin + imageViewEdgeHeight * 0.5 + 20;
+    CGFloat const centerOfTitleLabel = imageViewEdgeHeight  + verticalMargin * 2 + labelLineHeight * 0.5 +24;
 
     //imageView position 位置
     self.imageView.bounds = CGRectMake(0, 0, imageViewEdgeWidth, imageViewEdgeHeight);
@@ -74,14 +74,16 @@
     [button setImage:[hlightButtonImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateSelected];
     [button setTitle:@"团购批发" forState:(UIControlStateNormal)];
     [button setTitle:@"团购批发" forState:(UIControlStateHighlighted)];
-    [button setTitleColor:RGB16(0x4D4D4D) forState:(UIControlStateNormal)];
+    [button setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
+    [button setTitleColor:tabbarRedColor forState:(UIControlStateSelected)];
 //    button.imageEdgeInsets = UIEdgeInsetsMake(5, 0, -5, 0);
-    button.titleLabel.font = [UIFont systemFontOfSize:11];
+    button.titleLabel.font = RegularFont11;
     [button sizeToFit]; // or set frame in this way `button.frame = CGRectMake(0.0, 0.0, 250, 100);`
     button.frame = CGRectMake(0.0, 0.0, normalButtonImage.size.width, normalButtonImage.size.height);
 
     // if you use `+plusChildViewController` , do not addTarget to plusButton.
     [button addTarget:button action:@selector(clickPublish) forControlEvents:UIControlEventTouchUpInside];
+    [button setTabBarShadowWithCenter:button.center radius:57/2];
     return button;
 }
 

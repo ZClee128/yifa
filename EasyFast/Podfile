@@ -21,6 +21,10 @@ targets.each do |t|
     pod 'QMUIKit/QMUIComponents/QMUIButton'
     pod 'QMUIKit/QMUIComponents/QMUITableView'
     pod 'GKNavigationBar'
+    pod 'JXCategoryView'
+    pod 'SDCycleScrollView','>= 1.80'
+    pod 'RollingNotice'
+    pod 'YZTagList'
     # Pods for EasyFast
   end
 

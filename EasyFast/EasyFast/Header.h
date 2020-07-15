@@ -30,4 +30,10 @@
 #import <GKNavigationBar/GKNavigationBar.h>
 #import "HttpManager.h"
 #import "FMHttpConstant.h"
+#import <JXCategoryView/JXCategoryView.h>
+#import <SDCycleScrollView/SDCycleScrollView.h>
+#import "UIImage+Darw.h"
+#import <RollingNotice-umbrella.h>
+#import <YZTagList/YZTagList.h>
+#import "UIView+GradientColor.h"
 #endif /* Header_h */
