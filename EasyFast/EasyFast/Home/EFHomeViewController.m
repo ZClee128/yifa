@@ -33,7 +33,7 @@
     
     
     self.listContainerView = [[JXCategoryListContainerView alloc] initWithType:JXCategoryListContainerType_ScrollView delegate:self];
-    self.listContainerView.frame = CGRectMake(0, NAVIGATION_BAR_HEIGHT+30, kPHONE_WIDTH, kPHONE_HEIGHT-NAVIGATION_BAR_HEIGHT-30-TAB_BAR_HEIGHT-22);
+    self.listContainerView.frame = CGRectMake(0, NAVIGATION_BAR_HEIGHT+30, kPHONE_WIDTH, kPHONE_HEIGHT-NAVIGATION_BAR_HEIGHT-30-TAB_BAR_HEIGHT);
     [self.view addSubview:self.listContainerView];
     //关联到categoryView
     self.jxTitleView.listContainer = self.listContainerView;
@@ -62,7 +62,6 @@
 //根据下标index返回对应遵从`JXCategoryListContentViewDelegate`协议的列表实例
 - (id<JXCategoryListContentViewDelegate>)listContainerView:(JXCategoryListContainerView *)listContainerView initListForIndex:(NSInteger)index {
     EFHotViewController *hot =  [[EFHotViewController alloc] init];
-    hot.view.frame = self.listContainerView.frame;
     return hot;
 }
 @end

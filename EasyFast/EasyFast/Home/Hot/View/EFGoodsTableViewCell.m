@@ -110,55 +110,55 @@
 - (void)setUI {
     [self.contentView addSubview:self.goods];
     [self.goods mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(@(15));
-        make.left.equalTo(@(15));
-        make.size.mas_equalTo(CGSizeMake(140, 140));
+        make.bottom.equalTo(@(-0));
+        make.left.equalTo(@(WidthOfScale(15)));
+        make.size.mas_equalTo(CGSizeMake(WidthOfScale(140), WidthOfScale(140)));
     }];
     
     [self.contentView addSubview:self.goodsNameLab];
     [self.goodsNameLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.goods.mas_right).equalTo(@(15));
-        make.top.equalTo(@(21));
-        make.right.equalTo(@(-15));
+        make.left.equalTo(self.goods.mas_right).equalTo(@(WidthOfScale(15)));
+        make.top.equalTo(self.goods.mas_top).equalTo(@(WidthOfScale(6)));
+        make.right.equalTo(@(WidthOfScale(-15)));
     }];
     
     [self.contentView addSubview:self.listView];
     [self.listView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.goods.mas_right).equalTo(@(15));
-        make.top.equalTo(self.goodsNameLab.mas_bottom).equalTo(@(9));
+        make.left.equalTo(self.goods.mas_right).equalTo(@(WidthOfScale(15)));
+        make.top.equalTo(self.goodsNameLab.mas_bottom).equalTo(@(WidthOfScale(9)));
         make.width.equalTo(@(WidthOfScale(190)));
-        make.height.equalTo(@(16));
+        make.height.equalTo(@(WidthOfScale(16)));
     }];
     [self.listView layoutIfNeeded];
     
     [self.contentView addSubview:self.numLab];
     [self.numLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.goods.mas_right).equalTo(@(15));
-        make.top.equalTo(self.listView.mas_bottom).equalTo(@(18));
-        make.right.equalTo(@(-15));
+        make.left.equalTo(self.goods.mas_right).equalTo(@(WidthOfScale(15)));
+        make.top.equalTo(self.listView.mas_bottom).equalTo(@(WidthOfScale(18)));
+        make.right.equalTo(@(WidthOfScale(-15)));
     }];
     
     [self.contentView addSubview:self.sellLab];
     [self.sellLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.goods.mas_right).equalTo(@(15));
-        make.top.equalTo(self.numLab.mas_bottom).equalTo(@(8));
-        make.right.equalTo(@(-15));
+        make.left.equalTo(self.goods.mas_right).equalTo(@(WidthOfScale(15)));
+        make.top.equalTo(self.numLab.mas_bottom).equalTo(@(WidthOfScale(8)));
+        make.right.equalTo(@(WidthOfScale(-15)));
     }];
     
     [self.contentView addSubview:self.priceLab];
     [self.priceLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.goods.mas_right).equalTo(@(15));
-        make.bottom.equalTo(@(-7));
+        make.left.equalTo(self.goods.mas_right).equalTo(@(WidthOfScale(15)));
+        make.bottom.equalTo(@(-0));
     }];
     
     [self.contentView addSubview:self.buyBtn];
     [self.buyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(@(-15));
         make.bottom.equalTo(self.contentView);
-        make.size.mas_equalTo(CGSizeMake(90, 27));
+        make.size.mas_equalTo(CGSizeMake(WidthOfScale(90), WidthOfScale(27)));
     }];
     [self.buyBtn layoutIfNeeded];
-    [self.buyBtn ViewRadius:27/2];
+    [self.buyBtn ViewRadius:WidthOfScale(27)/2];
     
     [self.contentView layoutIfNeeded];
 }

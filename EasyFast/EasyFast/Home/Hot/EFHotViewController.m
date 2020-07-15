@@ -143,7 +143,7 @@
             return 140+14.5+16+8+15+20;
         }
         default:
-            return 155;
+            return WidthOfScale(140)+15;
     }
 }
 

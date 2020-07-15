@@ -45,7 +45,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [EFPlusButton registerPlusButton];
-    _tabbarheight = TAB_BAR_HEIGHT + 22;
+    _tabbarheight = 75 + TAB_SAFE_HEIGHT;
     [self clearTabBarTopLine];
     TabbarBackView *tabBarView = [[TabbarBackView alloc] initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, _tabbarheight)];
     tabBarView.backgroundColor = [UIColor whiteColor];
