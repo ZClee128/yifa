@@ -130,6 +130,15 @@
 		84A8219B24BF011700EAC652 /* TKTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8219924BF011700EAC652 /* TKTagView.m */; };
 		84A8219C24BF011700EAC652 /* TKTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8219924BF011700EAC652 /* TKTagView.m */; };
 		84A8219D24BF011700EAC652 /* TKTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8219924BF011700EAC652 /* TKTagView.m */; };
+		84A821A024BF146200EAC652 /* EFFollowSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8219F24BF146200EAC652 /* EFFollowSubViewController.m */; };
+		84A821A124BF146200EAC652 /* EFFollowSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8219F24BF146200EAC652 /* EFFollowSubViewController.m */; };
+		84A821A224BF146200EAC652 /* EFFollowSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8219F24BF146200EAC652 /* EFFollowSubViewController.m */; };
+		84A821A624BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A821A524BF15E700EAC652 /* EFFollowTableViewCell.m */; };
+		84A821A724BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A821A524BF15E700EAC652 /* EFFollowTableViewCell.m */; };
+		84A821A824BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A821A524BF15E700EAC652 /* EFFollowTableViewCell.m */; };
+		84A821AB24BF15FF00EAC652 /* EFFollowCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A821AA24BF15FF00EAC652 /* EFFollowCollectionViewCell.m */; };
+		84A821AC24BF15FF00EAC652 /* EFFollowCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A821AA24BF15FF00EAC652 /* EFFollowCollectionViewCell.m */; };
+		84A821AD24BF15FF00EAC652 /* EFFollowCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A821AA24BF15FF00EAC652 /* EFFollowCollectionViewCell.m */; };
 		ED2E8655CA4E2FBCA71F69DC /* Pods_EasyFast_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3157AF9D413E272E30EBDDE8 /* Pods_EasyFast_Dev.framework */; };
 /* End PBXBuildFile section */
 
@@ -227,6 +236,12 @@
 		84A8219324BEF2DA00EAC652 /* UIView+GradientColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GradientColor.h"; sourceTree = "<group>"; };
 		84A8219924BF011700EAC652 /* TKTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTagView.m; sourceTree = "<group>"; };
 		84A8219A24BF011700EAC652 /* TKTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTagView.h; sourceTree = "<group>"; };
+		84A8219E24BF146100EAC652 /* EFFollowSubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFFollowSubViewController.h; sourceTree = "<group>"; };
+		84A8219F24BF146200EAC652 /* EFFollowSubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFFollowSubViewController.m; sourceTree = "<group>"; };
+		84A821A424BF15E700EAC652 /* EFFollowTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFFollowTableViewCell.h; sourceTree = "<group>"; };
+		84A821A524BF15E700EAC652 /* EFFollowTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFFollowTableViewCell.m; sourceTree = "<group>"; };
+		84A821A924BF15FF00EAC652 /* EFFollowCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFFollowCollectionViewCell.h; sourceTree = "<group>"; };
+		84A821AA24BF15FF00EAC652 /* EFFollowCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFFollowCollectionViewCell.m; sourceTree = "<group>"; };
 		BA53EB76E1528E46E8ADF203 /* Pods-EasyFast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast.release.xcconfig"; path = "Target Support Files/Pods-EasyFast/Pods-EasyFast.release.xcconfig"; sourceTree = "<group>"; };
 		D02E2ADBB586BA4E284F3269 /* Pods_EasyFast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyFast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF8E5FE1C44408BDAF6A9C97 /* Pods-EasyFast_Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast_Test.debug.xcconfig"; path = "Target Support Files/Pods-EasyFast_Test/Pods-EasyFast_Test.debug.xcconfig"; sourceTree = "<group>"; };
@@ -446,8 +461,11 @@
 		84A820EB24B6F63E00EAC652 /* Follow */ = {
 			isa = PBXGroup;
 			children = (
+				84A821A324BF15CC00EAC652 /* View */,
 				84A820EC24B6F65100EAC652 /* EFFollowViewController.h */,
 				84A820ED24B6F65100EAC652 /* EFFollowViewController.m */,
+				84A8219E24BF146100EAC652 /* EFFollowSubViewController.h */,
+				84A8219F24BF146200EAC652 /* EFFollowSubViewController.m */,
 			);
 			path = Follow;
 			sourceTree = "<group>";
@@ -529,6 +547,17 @@
 				84A8219A24BF011700EAC652 /* TKTagView.h */,
 			);
 			path = TKTagView;
+			sourceTree = "<group>";
+		};
+		84A821A324BF15CC00EAC652 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84A821A424BF15E700EAC652 /* EFFollowTableViewCell.h */,
+				84A821A524BF15E700EAC652 /* EFFollowTableViewCell.m */,
+				84A821A924BF15FF00EAC652 /* EFFollowCollectionViewCell.h */,
+				84A821AA24BF15FF00EAC652 /* EFFollowCollectionViewCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -791,6 +820,7 @@
 				84A820E224B6EADF00EAC652 /* EFBaseTabBarViewController.m in Sources */,
 				84A820F224B6F66400EAC652 /* EFMeViewController.m in Sources */,
 				84A8215924BDB45E00EAC652 /* UIImage+Darw.m in Sources */,
+				84A821A024BF146200EAC652 /* EFFollowSubViewController.m in Sources */,
 				84A820B824B6CA8A00EAC652 /* EFBaseTableViewController.m in Sources */,
 				84A820D624B6CDA600EAC652 /* UIFont+RuntimeFit.m in Sources */,
 				84A820BD24B6CAC400EAC652 /* EFBaseRefreshVM.m in Sources */,
@@ -813,7 +843,9 @@
 				84A820E624B6F5E800EAC652 /* EFHomeViewController.m in Sources */,
 				84A8217024BEA92300EAC652 /* EFNoticTitleCell.m in Sources */,
 				84A8208924B6C62300EAC652 /* main.m in Sources */,
+				84A821AB24BF15FF00EAC652 /* EFFollowCollectionViewCell.m in Sources */,
 				84A820CD24B6CCC600EAC652 /* FMARCNetwork+interface.m in Sources */,
+				84A821A624BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */,
 				84A820EA24B6F62900EAC652 /* EFClassifyViewController.m in Sources */,
 				84A820DD24B6CE6B00EAC652 /* UIView+Frame.m in Sources */,
 				84A8219B24BF011700EAC652 /* TKTagView.m in Sources */,
@@ -836,6 +868,7 @@
 				84A8210024BC4F5400EAC652 /* EFMeViewController.m in Sources */,
 				84A8210124BC4F5400EAC652 /* EFBaseTableViewController.m in Sources */,
 				84A8215A24BDB45E00EAC652 /* UIImage+Darw.m in Sources */,
+				84A821A124BF146200EAC652 /* EFFollowSubViewController.m in Sources */,
 				84A8210224BC4F5400EAC652 /* UIFont+RuntimeFit.m in Sources */,
 				84A8210324BC4F5400EAC652 /* EFBaseRefreshVM.m in Sources */,
 				84A8210424BC4F5400EAC652 /* RVMViewModel.m in Sources */,
@@ -858,7 +891,9 @@
 				84A8210B24BC4F5400EAC652 /* main.m in Sources */,
 				84A8217124BEA92400EAC652 /* EFNoticTitleCell.m in Sources */,
 				84A8210C24BC4F5400EAC652 /* FMARCNetwork+interface.m in Sources */,
+				84A821AC24BF15FF00EAC652 /* EFFollowCollectionViewCell.m in Sources */,
 				84A8210D24BC4F5400EAC652 /* EFClassifyViewController.m in Sources */,
+				84A821A724BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */,
 				84A8210E24BC4F5400EAC652 /* UIView+Frame.m in Sources */,
 				84A8210F24BC4F5400EAC652 /* EFBaseVM.m in Sources */,
 				84A8219C24BF011700EAC652 /* TKTagView.m in Sources */,
@@ -881,6 +916,7 @@
 				84A8212324BC513500EAC652 /* EFBaseTabBarViewController.m in Sources */,
 				84A8212424BC513500EAC652 /* EFMeViewController.m in Sources */,
 				84A8215B24BDB45E00EAC652 /* UIImage+Darw.m in Sources */,
+				84A821A224BF146200EAC652 /* EFFollowSubViewController.m in Sources */,
 				84A8212524BC513500EAC652 /* EFBaseTableViewController.m in Sources */,
 				84A8212624BC513500EAC652 /* UIFont+RuntimeFit.m in Sources */,
 				84A8212724BC513500EAC652 /* EFBaseRefreshVM.m in Sources */,
@@ -903,7 +939,9 @@
 				84A8212E24BC513500EAC652 /* EFHomeViewController.m in Sources */,
 				84A8217224BEA92400EAC652 /* EFNoticTitleCell.m in Sources */,
 				84A8212F24BC513500EAC652 /* main.m in Sources */,
+				84A821AD24BF15FF00EAC652 /* EFFollowCollectionViewCell.m in Sources */,
 				84A8213024BC513500EAC652 /* FMARCNetwork+interface.m in Sources */,
+				84A821A824BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */,
 				84A8213124BC513500EAC652 /* EFClassifyViewController.m in Sources */,
 				84A8213224BC513500EAC652 /* UIView+Frame.m in Sources */,
 				84A8219D24BF011700EAC652 /* TKTagView.m in Sources */,

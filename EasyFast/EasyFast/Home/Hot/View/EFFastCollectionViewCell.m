@@ -40,7 +40,7 @@
 
 - (GBGradientProgressView *)progressView {
     if (_progressView == nil) {
-        _progressView = [[GBGradientProgressView alloc] initWithFrame:CGRectMake(0, 0, WidthOfScale(100), HeightOfScale(15))];
+        _progressView = [[GBGradientProgressView alloc] initWithFrame:CGRectMake(0, 0, WidthOfScale(100), WidthOfScale(15))];
         _progressView.colorArr = @[(id)[RGB16(0xFFBD20) CGColor], (id)[RGB16(0xFF3838) CGColor]];
         _progressView.backgroundProgressColor = colorEFEFEF;
     }
@@ -70,15 +70,15 @@
     
     [self.contentView addSubview:self.priceLab];
     [self.priceLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.goods.mas_bottom).equalTo(@(HeightOfScale(14.5)));
+        make.top.equalTo(self.goods.mas_bottom).equalTo(@(WidthOfScale(14.5)));
         make.centerX.equalTo(self.contentView.mas_centerX);
     }];
     
     [self.contentView addSubview:self.progressView];
     [self.progressView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.priceLab.mas_bottom).equalTo(@(HeightOfScale(8)));
+        make.top.equalTo(self.priceLab.mas_bottom).equalTo(@(WidthOfScale(8)));
         make.centerX.equalTo(self.contentView.mas_centerX);
-        make.size.mas_equalTo(CGSizeMake(WidthOfScale(100), HeightOfScale(15)));
+        make.size.mas_equalTo(CGSizeMake(WidthOfScale(100), WidthOfScale(15)));
     }];
     [self.progressView layoutIfNeeded];
     [self.contentView layoutIfNeeded];

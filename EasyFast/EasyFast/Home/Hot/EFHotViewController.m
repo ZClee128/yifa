@@ -57,7 +57,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.EFTableView.frame = CGRectMake(0, 0, kPHONE_WIDTH, kPHONE_HEIGHT-NAVIGATION_BAR_HEIGHT-30-TAB_BAR_HEIGHT);;
+    self.gk_navigationBar.hidden = YES;
+    self.EFTableView.frame = CGRectMake(0, 0, kPHONE_WIDTH, kPHONE_HEIGHT-NAVIGATION_BAR_HEIGHT-30-TAB_BAR_HEIGHT);
     self.EFTableView.tableHeaderView = [self headerView];
     [self.EFTableView registerClass:[HotTabTableViewCell class] forCellReuseIdentifier:NSStringFromClass([HotTabTableViewCell class])];
     [self.EFTableView registerClass:[EFNoticeTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFNoticeTableViewCell class])];
@@ -66,14 +67,14 @@
 }
 
 - (UIView *)headerView {
-    UIView *bg = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, HeightOfScale(130))];
+    UIView *bg = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, WidthOfScale(130))];
     bg.backgroundColor = colorfafafa;
     [bg addSubview:self.cycleScrollView];
     [self.cycleScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@(WidthOfScale(15)));
         make.width.equalTo(@(WidthOfScale(345)));
-        make.height.equalTo(@(HeightOfScale(120)));
-        make.top.equalTo(@(HeightOfScale(10)));
+        make.height.equalTo(@(WidthOfScale(120)));
+        make.top.equalTo(@(WidthOfScale(10)));
     }];
     [self.cycleScrollView layoutIfNeeded];
     [self.cycleScrollView ViewRadius:5];

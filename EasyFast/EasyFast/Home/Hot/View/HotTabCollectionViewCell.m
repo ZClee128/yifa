@@ -34,7 +34,7 @@
         make.edges.mas_equalTo(self.contentView);
     }];
     self.tabBtn.imagePosition = QMUIButtonImagePositionTop;
-    self.tabBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, HeightOfScale(11.5), 0);
+    self.tabBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, WidthOfScale(11.5), 0);
     self.tabBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
     self.tabBtn.titleLabel.font = RegularFont14;
     self.tabBtn.titleLabel.textAlignment = NSTextAlignmentCenter;

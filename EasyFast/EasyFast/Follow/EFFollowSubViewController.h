@@ -1,8 +1,8 @@
 //
-//  FollowViewController.h
+//  EFFollowSubViewController.h
 //  EasyFast
 //
-//  Created by zclee on 2020/7/9.
+//  Created by zclee on 2020/7/15.
 //  Copyright © 2020 EasyFast. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EFFollowViewController : EFBaseViewController
+@interface EFFollowSubViewController : EFBaseTableViewController<JXCategoryListContentViewDelegate>
 
 @end
 

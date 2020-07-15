@@ -21,6 +21,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = colorfafafa;
     self.navigationController.navigationBarHidden = YES;
+    self.gk_navTitleFont = SemiboldFont17;
 
 }
 

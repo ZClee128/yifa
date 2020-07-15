@@ -27,6 +27,8 @@ PODS:
   - MJRefresh (3.4.3)
   - QMUIKit/QMUIComponents/QMUIButton (4.1.3):
     - QMUIKit/QMUICore
+  - QMUIKit/QMUIComponents/QMUILabel (4.1.3):
+    - QMUIKit/QMUICore
   - QMUIKit/QMUIComponents/QMUITableView (4.1.3):
     - QMUIKit/QMUIComponents/QMUITableViewProtocols
     - QMUIKit/QMUICore
@@ -61,6 +63,7 @@ DEPENDENCIES:
   - MBProgressHUD
   - MJRefresh
   - QMUIKit/QMUIComponents/QMUIButton
+  - QMUIKit/QMUIComponents/QMUILabel
   - QMUIKit/QMUIComponents/QMUITableView
   - ReactiveObjC
   - RollingNotice
@@ -108,6 +111,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   YZTagList: 43dc1909e38d88124e3256ffc51c62cc904d8240
 
-PODFILE CHECKSUM: cc360069eca9904a449dd99e22698ea1da757dbc
+PODFILE CHECKSUM: c383b3ab9109206432983487e129315d7a01d711
 
 COCOAPODS: 1.8.4

@@ -104,12 +104,14 @@ fprintf(stderr,"[--%s--]\n[--%s:%d--]\n[--%s--]\n===========================\n",
 #define SemiboldFont18 [UIFont runtimeFitFont:18 weight:(UIFontWeightSemibold)]
 #define SemiboldFont16 [UIFont runtimeFitFont:16 weight:(UIFontWeightSemibold)]
 #define SemiboldFont14 [UIFont runtimeFitFont:14 weight:(UIFontWeightSemibold)]
+#define SemiboldFont17 [UIFont runtimeFitFont:17 weight:(UIFontWeightSemibold)]
 
 #define RegularFont11 [UIFont runtimeFitFont:11 weight:(UIFontWeightRegular)]
 #define RegularFont13 [UIFont runtimeFitFont:13 weight:(UIFontWeightRegular)]
 #define RegularFont14 [UIFont runtimeFitFont:14 weight:(UIFontWeightRegular)]
 #define RegularFont15 [UIFont runtimeFitFont:15 weight:(UIFontWeightRegular)]
 #define RegularFont17 [UIFont runtimeFitFont:17 weight:(UIFontWeightRegular)]
+#define RegularFont16 [UIFont runtimeFitFont:16 weight:(UIFontWeightRegular)]
 
 
 #define MedFont17 [UIFont runtimeFitFont:17 weight:(UIFontWeightMedium)]

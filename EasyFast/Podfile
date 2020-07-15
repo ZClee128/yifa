@@ -20,6 +20,7 @@ targets.each do |t|
     pod 'CYLTabBarController'
     pod 'QMUIKit/QMUIComponents/QMUIButton'
     pod 'QMUIKit/QMUIComponents/QMUITableView'
+    pod 'QMUIKit/QMUIComponents/QMUILabel'
     pod 'GKNavigationBar'
     pod 'JXCategoryView'
     pod 'SDCycleScrollView','>= 1.80'

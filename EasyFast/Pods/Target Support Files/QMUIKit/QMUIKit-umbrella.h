@@ -11,6 +11,7 @@
 #endif
 
 #import "QMUIButton.h"
+#import "QMUILabel.h"
 #import "QMUITableView.h"
 #import "QMUITableViewProtocols.h"
 #import "QMUIKit.h"
