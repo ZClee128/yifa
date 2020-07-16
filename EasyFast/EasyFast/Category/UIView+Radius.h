@@ -32,6 +32,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param radius 角度
 - (void)AddImageRadiusBorderWithColor:(UIColor *)color lineWidth:(CGFloat )lineWidth radius:(CGFloat )radius;
 
+
+- (void)AddImageRadius:(CGFloat )radius withUIRectCorner:(UIRectCorner)corners;
+
 -(void)setTabBarShadowWithCenter:(CGPoint)center radius:(CGFloat)radius;
 @end
 

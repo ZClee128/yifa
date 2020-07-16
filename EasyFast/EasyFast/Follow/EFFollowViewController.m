@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.gk_navTitle = @"关注列表";
+    self.gk_navLineHidden = YES;
     self.jxTitleView = [[JXCategoryTitleView alloc] initWithFrame:CGRectMake(0, NAVIGATION_BAR_HEIGHT, kPHONE_WIDTH, 45)];
     self.jxTitleView.delegate = self;
     [self.view addSubview:self.jxTitleView];
@@ -29,6 +30,7 @@
     self.jxTitleView.titleSelectedColor = colorF14745;
     self.jxTitleView.titleFont = RegularFont16;
     self.jxTitleView.titleSelectedFont = RegularFont17;
+    self.jxTitleView.backgroundColor = UIColor.whiteColor;
     
     
     self.listContainerView = [[JXCategoryListContainerView alloc] initWithType:JXCategoryListContainerType_ScrollView delegate:self];
@@ -54,7 +56,7 @@
 }
 //根据下标index返回对应遵从`JXCategoryListContentViewDelegate`协议的列表实例
 - (id<JXCategoryListContentViewDelegate>)listContainerView:(JXCategoryListContainerView *)listContainerView initListForIndex:(NSInteger)index {
-    EFFollowSubViewController *follow =  [[EFFollowSubViewController alloc] init];
+    EFFollowSubViewController *follow =  [[EFFollowSubViewController alloc] initWithType:@""];
     return follow;
 }
 /*

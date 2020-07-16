@@ -32,6 +32,8 @@
 
 @property (nonatomic,assign) CGFloat tagCornerRadius;
 
+@property (nonatomic,assign) CGFloat padding;
+
 - (void)createTags;
 
 - (void)CreateTagswithFixRow:(NSInteger) row;

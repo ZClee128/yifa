@@ -29,6 +29,7 @@
 
 - (void)setUI {
     self.tabBtn = [QMUIButton buttonWithType:(UIButtonTypeCustom)];
+    self.tabBtn.userInteractionEnabled = NO;
     [self.contentView addSubview:self.tabBtn];
     [self.tabBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.contentView);

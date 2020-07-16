@@ -7,16 +7,29 @@
 //
 
 #import "EFMeViewController.h"
+#import "MeHeaderView.h"
 
 @interface EFMeViewController ()
+
+@property (nonatomic,strong)MeHeaderView *headerView;
 
 @end
 
 @implementation EFMeViewController
 
+-(MeHeaderView *)headerView
+{
+    if (_headerView == nil) {
+        _headerView = [[MeHeaderView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, WidthOfScale(236.5))];
+    }
+    return _headerView;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_navTitle = @"我的";
+    self.EFTableView.frame = CGRectMake(0, 0, kPHONE_WIDTH, kPHONE_HEIGHT - TAB_BAR_HEIGHT);
+    self.gk_navigationBar.hidden = YES;
+    self.EFTableView.tableHeaderView = self.headerView;
 }
 
 /*

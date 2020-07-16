@@ -12,8 +12,12 @@
 
 #import "QMUIButton.h"
 #import "QMUILabel.h"
+#import "NSObject+QMUIMultipleDelegates.h"
+#import "QMUIMultipleDelegates.h"
 #import "QMUITableView.h"
+#import "QMUITableViewCell.h"
 #import "QMUITableViewProtocols.h"
+#import "QMUITextField.h"
 #import "QMUIKit.h"
 #import "QMUICommonDefines.h"
 #import "QMUIConfiguration.h"

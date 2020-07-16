@@ -42,7 +42,6 @@
 }
 
 - (void)AddImageRadiusBorderWithColor:(UIColor *)color lineWidth:(CGFloat )lineWidth radius:(CGFloat )radius{
-   
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(radius, radius)];
     CAShapeLayer *layer = [[CAShapeLayer alloc]init] ;
     layer.path = maskPath.CGPath;
@@ -53,6 +52,19 @@
     layer.strokeColor = color.CGColor;
 
     [self.layer addSublayer:layer];
+}
+
+- (void)AddImageRadius:(CGFloat )radius withUIRectCorner:(UIRectCorner)corners{
+    
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:corners cornerRadii:CGSizeMake(radius, radius)];
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+
+    maskLayer.frame = self.bounds;
+
+    maskLayer.path = maskPath.CGPath;
+
+    self.layer.mask = maskLayer;
+
 }
 
 

@@ -11,7 +11,7 @@
 @interface EFFollowCollectionViewCell()
 
 @property (nonatomic,strong)UIImageView *goods;
-@property (nonatomic,strong)QMUILabel *priceLab;
+@property (nonatomic,strong)QMUIButton *priceLab;
 
 @end
 
@@ -26,14 +26,14 @@
     return _goods;
 }
 
--(QMUILabel *)priceLab
+-(QMUIButton *)priceLab
 {
     if (_priceLab == nil) {
-        _priceLab = [[QMUILabel alloc] init];
+        _priceLab = [QMUIButton buttonWithType:(UIButtonTypeCustom)];
         _priceLab.contentEdgeInsets = UIEdgeInsetsMake(WidthOfScale(6), WidthOfScale(9), WidthOfScale(6), WidthOfScale(9));
-        _priceLab.font = RegularFont11;
-        _priceLab.textColor = UIColor.whiteColor;
-        _priceLab.textAlignment = NSTextAlignmentCenter;
+        _priceLab.titleLabel.font = RegularFont11;
+        [_priceLab setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
+        _priceLab.backgroundColor = UIColorFromRGBA(0x000000, 0.5);
     }
     return _priceLab;
 }
@@ -57,6 +57,7 @@
     [self.priceLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(@(WidthOfScale(-4)));
         make.centerX.equalTo(self.contentView.mas_centerX);
+        make.width.equalTo(@(55));
         make.height.equalTo(@(WidthOfScale(20)));
     }];
     [self.priceLab layoutIfNeeded];
@@ -64,6 +65,9 @@
 }
 
 - (void)setModel:(id)model {
-    self.priceLab.text = @"¥999.8";
+    [self.priceLab setTitle:@"¥999.8" forState:(UIControlStateNormal)];
+    [self.priceLab mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(@(55));
+    }];
 }
 @end

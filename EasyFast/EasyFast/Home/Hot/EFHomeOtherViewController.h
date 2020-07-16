@@ -1,0 +1,18 @@
+//
+//  EFHomeOtherViewController.h
+//  EasyFast
+//
+//  Created by zclee on 2020/7/16.
+//  Copyright © 2020 EasyFast. All rights reserved.
+//
+
+#import "EFBaseTableViewController.h"
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface EFHomeOtherViewController : EFBaseTableViewController<JXCategoryListContentViewDelegate>
+
+- (instancetype)initWithType:(id)type;
+@end
+
+NS_ASSUME_NONNULL_END

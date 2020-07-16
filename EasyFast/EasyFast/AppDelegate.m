@@ -26,13 +26,13 @@
         // 导航栏背景色
         configure.backgroundColor = [UIColor whiteColor];
         // 导航栏标题颜色
-        configure.titleColor = [UIColor blackColor];
+        configure.titleColor = RGB16(0x010101);
         // 导航栏标题字体
-        configure.titleFont = [UIFont systemFontOfSize:18.0f];
+        configure.titleFont = SemiboldFont17;
         // 导航栏返回按钮样式
         configure.backStyle = GKNavigationBarBackStyleBlack;
         // 导航栏左右item间距
-        configure.gk_navItemLeftSpace = 12.0f;
+        configure.gk_navItemLeftSpace = WidthOfScale(16);
         configure.gk_navItemRightSpace = 12.0f;
     }];
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];

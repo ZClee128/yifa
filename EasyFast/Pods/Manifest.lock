@@ -29,10 +29,18 @@ PODS:
     - QMUIKit/QMUICore
   - QMUIKit/QMUIComponents/QMUILabel (4.1.3):
     - QMUIKit/QMUICore
+  - QMUIKit/QMUIComponents/QMUIMultipleDelegates (4.1.3):
+    - QMUIKit/QMUICore
   - QMUIKit/QMUIComponents/QMUITableView (4.1.3):
     - QMUIKit/QMUIComponents/QMUITableViewProtocols
     - QMUIKit/QMUICore
+  - QMUIKit/QMUIComponents/QMUITableViewCell (4.1.3):
+    - QMUIKit/QMUIComponents/QMUIButton
+    - QMUIKit/QMUICore
   - QMUIKit/QMUIComponents/QMUITableViewProtocols (4.1.3):
+    - QMUIKit/QMUICore
+  - QMUIKit/QMUIComponents/QMUITextField (4.1.3):
+    - QMUIKit/QMUIComponents/QMUIMultipleDelegates
     - QMUIKit/QMUICore
   - QMUIKit/QMUICore (4.1.3):
     - QMUIKit/QMUILog
@@ -65,6 +73,8 @@ DEPENDENCIES:
   - QMUIKit/QMUIComponents/QMUIButton
   - QMUIKit/QMUIComponents/QMUILabel
   - QMUIKit/QMUIComponents/QMUITableView
+  - QMUIKit/QMUIComponents/QMUITableViewCell
+  - QMUIKit/QMUIComponents/QMUITextField
   - ReactiveObjC
   - RollingNotice
   - SDCycleScrollView (>= 1.80)
@@ -111,6 +121,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   YZTagList: 43dc1909e38d88124e3256ffc51c62cc904d8240
 
-PODFILE CHECKSUM: c383b3ab9109206432983487e129315d7a01d711
+PODFILE CHECKSUM: eb80be7a04fa64a07d45f8f10630c5d66ba94c1c
 
 COCOAPODS: 1.8.4

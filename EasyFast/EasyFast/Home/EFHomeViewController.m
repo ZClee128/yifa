@@ -8,6 +8,8 @@
 
 #import "EFHomeViewController.h"
 #import "EFHotViewController.h"
+#import "EFSearchViewController.h"
+#import "EFHomeOtherViewController.h"
 
 @interface EFHomeViewController ()<JXCategoryViewDelegate, JXCategoryListContainerViewDelegate>
 
@@ -51,6 +53,14 @@
     self.searchBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 7);
     self.gk_navTitleView = self.searchBtn;
     self.gk_navLineHidden = YES;
+    self.gk_navBackgroundColor = colorfafafa;
+    @weakify(self);
+    [[self.searchBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        @strongify(self);
+        EFSearchViewController *searchVC = [[EFSearchViewController alloc] init];
+        searchVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:searchVC animated:YES];
+    }];
 }
 
 
@@ -61,7 +71,18 @@
 }
 //根据下标index返回对应遵从`JXCategoryListContentViewDelegate`协议的列表实例
 - (id<JXCategoryListContentViewDelegate>)listContainerView:(JXCategoryListContainerView *)listContainerView initListForIndex:(NSInteger)index {
-    EFHotViewController *hot =  [[EFHotViewController alloc] init];
-    return hot;
+    switch (index) {
+        case 0:
+        {
+            EFHotViewController *hot =  [[EFHotViewController alloc] init];
+            return hot;
+        }
+        default:
+        {
+            EFHomeOtherViewController *other = [[EFHomeOtherViewController alloc] initWithType:@""];
+            return other;
+        }
+    }
+    
 }
 @end

@@ -53,6 +53,8 @@
     //suggest _tagFontSize:_cornerRadius nearly equals 1:1
     _tagCornerRadius = 10;
     
+    _padding = 4;
+    
 }
 
 - (void)createTags
@@ -67,7 +69,7 @@
         [view removeFromSuperview];
     }
     
-    NSDictionary *fontAttributesDict = @{NSFontAttributeName:[UIFont systemFontOfSize:_tagFontSize + 4]};
+    NSDictionary *fontAttributesDict = @{NSFontAttributeName:[UIFont systemFontOfSize:_tagFontSize + _padding]};
     
     CGFloat lastMaxX = 0.0f;
     CGFloat lastMaxY = 0.0f;

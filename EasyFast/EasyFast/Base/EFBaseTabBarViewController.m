@@ -65,11 +65,11 @@
         UITabBarItem *item = self.tabBar.items[i];
         if (i!=2) {
             item.imageInsets = UIEdgeInsetsMake(_tabbarheight - TAB_BAR_HEIGHT - 15, 0, -(_tabbarheight - TAB_BAR_HEIGHT - 15), 0);
-//            item.titlePositionAdjustment = UIOffsetMake(0, -3);
+            item.titlePositionAdjustment = UIOffsetMake(0, -3);
 
         }else{
-//            item.imageInsets = UIEdgeInsetsMake(-5, 0, 5, 0);
-//            item.titlePositionAdjustment = UIOffsetMake(0, -3);
+            item.imageInsets = UIEdgeInsetsMake(-5, 0, 5, 0);
+            item.titlePositionAdjustment = UIOffsetMake(0, -3);
 
         }
     }

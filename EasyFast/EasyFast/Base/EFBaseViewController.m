@@ -21,7 +21,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = colorfafafa;
     self.navigationController.navigationBarHidden = YES;
-    self.gk_navTitleFont = SemiboldFont17;
+    [self.gk_navLeftBarButtonItem setImage:[UIImage imageNamed:@"btn_back_black"]];
 
 }
 
