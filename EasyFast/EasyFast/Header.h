@@ -36,4 +36,9 @@
 #import <RollingNotice-umbrella.h>
 #import <YZTagList/YZTagList.h>
 #import "UIView+GradientColor.h"
+#import "NSString+NSMutableAttributedString.h"
+#import "NSMutableAttributedString+Size.h"
+#import <WebKit/WebKit.h>
+#import "EFWKWebConfig.h"
+#import <WebViewJavascriptBridge/WebViewJavascriptBridge.h>
 #endif /* Header_h */

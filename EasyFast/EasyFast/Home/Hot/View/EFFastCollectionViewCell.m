@@ -86,7 +86,7 @@
 
 
 - (void)setModel:(id)model {
-    self.priceLab.text = @"7899.00";
+    self.priceLab.attributedText = [@"¥7899.00" getAttributeWithChangeString:@"¥" ChangeFont:RegularFont12 textColor:self.priceLab.textColor];
     self.progressView.progress = 0.6;
 }
 @end

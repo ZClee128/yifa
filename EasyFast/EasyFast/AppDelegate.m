@@ -32,7 +32,7 @@
         // 导航栏返回按钮样式
         configure.backStyle = GKNavigationBarBackStyleBlack;
         // 导航栏左右item间距
-        configure.gk_navItemLeftSpace = WidthOfScale(16);
+        configure.gk_navItemLeftSpace = WidthOfScale(8.5);
         configure.gk_navItemRightSpace = 12.0f;
     }];
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];

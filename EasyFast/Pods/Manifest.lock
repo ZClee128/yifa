@@ -14,11 +14,17 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
+  - BGFMDB (2.0.13):
+    - BGFMDB/BG (= 2.0.13)
+    - BGFMDB/FMDB (= 2.0.13)
+  - BGFMDB/BG (2.0.13):
+    - BGFMDB/FMDB
+  - BGFMDB/FMDB (2.0.13)
   - CYLTabBarController (1.29.0):
     - CYLTabBarController/Core (= 1.29.0)
   - CYLTabBarController/Core (1.29.0)
   - DateTools (2.0.0)
-  - GKNavigationBar (1.0.8)
+  - GKNavigationBar (1.0.9)
   - IQKeyboardManager (6.5.5)
   - JXCategoryView (1.5.5)
   - LYEmptyView (1.3.1)
@@ -51,9 +57,11 @@ PODS:
   - RollingNotice (1.1.1)
   - SDCycleScrollView (1.80):
     - SDWebImage (>= 5.0.0)
-  - SDWebImage (5.8.3):
-    - SDWebImage/Core (= 5.8.3)
-  - SDWebImage/Core (5.8.3)
+  - SDWebImage (5.8.4):
+    - SDWebImage/Core (= 5.8.4)
+  - SDWebImage/Core (5.8.4)
+  - SSZipArchive (2.2.3)
+  - WebViewJavascriptBridge (6.0.3)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
@@ -61,6 +69,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - BGFMDB (~> 2.0.9)
   - CYLTabBarController
   - DateTools
   - GKNavigationBar
@@ -79,12 +88,15 @@ DEPENDENCIES:
   - RollingNotice
   - SDCycleScrollView (>= 1.80)
   - SDWebImage
+  - SSZipArchive
+  - WebViewJavascriptBridge (~> 6.0)
   - YYKit
   - YZTagList
 
 SPEC REPOS:
   trunk:
     - AFNetworking
+    - BGFMDB
     - CYLTabBarController
     - DateTools
     - GKNavigationBar
@@ -99,14 +111,17 @@ SPEC REPOS:
     - RollingNotice
     - SDCycleScrollView
     - SDWebImage
+    - SSZipArchive
+    - WebViewJavascriptBridge
     - YYKit
     - YZTagList
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  BGFMDB: 48e6823027232402a678acc7f71484b1fc9171d0
   CYLTabBarController: f5460b8446f82d016945d4d53895a1ef185b79e3
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
-  GKNavigationBar: b88553e9a973b38724b57ac6d177e210199a3e3e
+  GKNavigationBar: f9392f5ec38644e7d7c09852134462e719bb91d0
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
   JXCategoryView: 0293fcb356f10a5c2e679dac0a1a5f1899ee0c87
   LYEmptyView: b6d418cfa38b78df0cf243f9a9c25ccbdc399922
@@ -117,10 +132,12 @@ SPEC CHECKSUMS:
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   RollingNotice: 1f14ea9d0157a7178bbfcae27bb7a4876f41b935
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
-  SDWebImage: 112503ec94a5a2a41869503844a15e8d8f1ead5c
+  SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
+  SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
+  WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   YZTagList: 43dc1909e38d88124e3256ffc51c62cc904d8240
 
-PODFILE CHECKSUM: eb80be7a04fa64a07d45f8f10630c5d66ba94c1c
+PODFILE CHECKSUM: bb1a3c209933e5a66b4ff98db4770e546a325b77
 
 COCOAPODS: 1.8.4

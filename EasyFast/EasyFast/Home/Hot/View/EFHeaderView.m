@@ -50,15 +50,15 @@
     [self addSubview:self.leftLab];
     [self.leftLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@(WidthOfScale(15)));
-        make.centerY.equalTo(self.mas_centerY);
-        make.height.equalTo(@(self.height));
+        make.top.equalTo(@(WidthOfScale(23)));
+        make.height.equalTo(@(WidthOfScale(16.5)));
     }];
     self.leftLab.text = left;
     
     [self addSubview:self.rightBtn];
     [self.rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(@(-WidthOfScale(15)));
-        make.centerY.equalTo(self.mas_centerY);
+        make.centerY.equalTo(self.leftLab);
         make.height.equalTo(@(17));
     }];
     if ([right isEqualToString:@""]) {

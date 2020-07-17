@@ -1,5 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-EasyFast_Dev/Pods-EasyFast_Dev-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework
+${BUILT_PRODUCTS_DIR}/BGFMDB/BGFMDB.framework
 ${BUILT_PRODUCTS_DIR}/CYLTabBarController/CYLTabBarController.framework
 ${BUILT_PRODUCTS_DIR}/DateTools/DateTools.framework
 ${BUILT_PRODUCTS_DIR}/GKNavigationBar/GKNavigationBar.framework
@@ -14,5 +15,7 @@ ${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework
 ${BUILT_PRODUCTS_DIR}/RollingNotice/RollingNotice.framework
 ${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework
+${BUILT_PRODUCTS_DIR}/WebViewJavascriptBridge/WebViewJavascriptBridge.framework
 ${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework
 ${BUILT_PRODUCTS_DIR}/YZTagList/YZTagList.framework

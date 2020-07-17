@@ -149,7 +149,7 @@
     // Customize UITabBar height
     // 自定义 TabBar 高度
 //     self.tabBarHeight = TAB_BAR_HEIGHT;
-//    [self hideTabBarShadowImageView];
+    [self hideTabBarShadowImageView];
     [self rootWindow].backgroundColor = UIColor.whiteColor;
 //    self.tabBar.backgroundColor = UIColor.whiteColor;
 //    self.tabBar.shadowImage = [[UIImage alloc] init];
@@ -182,7 +182,7 @@
 
         UITabBarAppearance *standardAppearance = [[UITabBarAppearance alloc] init];
         standardAppearance.stackedLayoutAppearance = inlineLayoutAppearance;
-        standardAppearance.backgroundColor = UIColor.whiteColor;
+//        standardAppearance.backgroundColor = UIColor.whiteColor;
 //        //shadowColor和shadowImage均可以自定义颜色, shadowColor默认高度为1, shadowImage可以自定义高度.
 //        standardAppearance.shadowColor = RGB16(0xf5f5f5);
 //         standardAppearance.shadowImage = [[self class] imageWithColor:RGB16(0xf5f5f5) size:CGSizeMake([UIScreen mainScreen].bounds.size.width, 1)];

@@ -102,7 +102,7 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self setUI];
+        
     }
     return self;
 }
@@ -170,7 +170,7 @@
     [self.listView createTags];
     self.numLab.text = @"最低采购量：100";
     self.sellLab.text = @"成交量：9999+";
-    self.priceLab.text = @"7899.8";
+    self.priceLab.attributedText = [@"¥7899.00" getAttributeWithChangeString:@"¥" ChangeFont:RegularFont12 textColor:self.priceLab.textColor];
 }
 
 - (void)awakeFromNib {

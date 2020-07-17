@@ -8,10 +8,11 @@
 
 #import "HotTabTableViewCell.h"
 #import "HotTabCollectionViewCell.h"
+#import "SLScrollViewHorizontalItem.h"
 
-@interface HotTabTableViewCell ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface HotTabTableViewCell ()<SLScrollViewHorizontalItemDelegate>
 
-@property (nonatomic,strong)UICollectionView *collect;
+@property (strong, nonatomic) SLScrollViewHorizontalItem *scrollViewHorizontalItem;
 @property (nonatomic,strong)NSMutableArray *data;
 @end
 
@@ -25,40 +26,29 @@
     return _data;
 }
 
--(UICollectionView *)collect
+-(SLScrollViewHorizontalItem *)scrollViewHorizontalItem
 {
-    if (_collect == nil) {
-        UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
-        [flow setScrollDirection:UICollectionViewScrollDirectionHorizontal];//横向滑动
-        flow.minimumLineSpacing = WidthOfScale(10);
-        //    flow.minimumInteritemSpacing = 0;
-        flow.itemSize = CGSizeCeil(CGSizeMake(WidthOfScale((375 - 10*3 - 27*2)/4), 70));
-        _collect = [[UICollectionView alloc] initWithFrame:CGRectMake(WidthOfScale(27), 10, WidthOfScale(375 - 27*2), 70) collectionViewLayout:flow];
-        _collect.backgroundColor = [UIColor clearColor];
-        _collect.delegate = self;
-        _collect.dataSource = self;
-        _collect.showsHorizontalScrollIndicator = NO;
-        _collect.showsVerticalScrollIndicator = NO;
-        [_collect registerClass:[HotTabCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([HotTabCollectionViewCell class])];
+    if (_scrollViewHorizontalItem == nil) {
+        _scrollViewHorizontalItem = [[SLScrollViewHorizontalItem alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, WidthOfScale(107.5)) delegate:self];
     }
-    return _collect;
+    return _scrollViewHorizontalItem;
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self setUI];
+        
     }
     return self;
 }
 
 - (void)setUI {
     self.contentView.backgroundColor = colorfafafa;
-    [self.contentView addSubview:self.collect];
+    [self.contentView addSubview:self.scrollViewHorizontalItem];
 }
 
 - (void)setCollectData:(NSMutableArray *)data {
     self.data = data;
-    [self.collect reloadData];
+    [self.scrollViewHorizontalItem updateView];
 }
 
 - (void)awakeFromNib {
@@ -72,20 +62,71 @@
     // Configure the view for the selected state
 }
 
-#pragma mark - collection
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
-}
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+- (NSInteger)numberOfItemsInView:(UIView *)view {
     return self.data.count;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    HotTabCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([HotTabCollectionViewCell class]) forIndexPath:indexPath];
-    [cell setModel:@""];
-    return cell;
+- (NSInteger)lineNumberOfItemsInView:(UIView *)view {
+    if (self.data.count <= 4) {
+        return 1;
+    }else {
+        return 2;
+    }
 }
+
+- (NSInteger)columnNumberOfItemsInView:(UIView *)view {
+    return 4;
+}
+
+- (CGFloat)lineSpaceOfItemsInView:(UIView *)view {
+    return 10;
+}
+
+- (CGFloat)columnSpaceOfItemsInView:(UIView *)view {
+    return 10;
+}
+
+
+- (UIEdgeInsets)edgeInsetsOfItemsInView:(UIView *)view {
+    return UIEdgeInsetsMake(10, 10, 10, 10);
+}
+
+- (UIView *)itemForView:(UIView *)view index:(NSInteger)index {
+    
+    QMUIButton *btn = [QMUIButton buttonWithType:(UIButtonTypeCustom)];
+    btn.imagePosition = QMUIButtonImagePositionTop;
+    btn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, WidthOfScale(11.5), 0);
+    btn.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
+    btn.titleLabel.font = RegularFont14;
+    btn.titleLabel.textAlignment = NSTextAlignmentCenter;
+    [btn.titleLabel sizeToFit];
+    [btn sizeToFit];
+    [btn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
+    [btn setTitle:@"签到奖励" forState:(UIControlStateNormal)];
+    [btn setImage:[UIImage imageNamed:@"1"] forState:(UIControlStateNormal)];
+    return btn;
+    
+}
+
+- (void)item:(UIView *)item didSelectItemAtIndex:(NSInteger)index {
+    NSLog(@"%ld", index);
+}
+
+//#pragma mark - collection
+//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+//    return 1;
+//}
+//
+//- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+//    return self.data.count;
+//}
+//
+//- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+//    HotTabCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([HotTabCollectionViewCell class]) forIndexPath:indexPath];
+//    [cell setModel:@""];
+//    return cell;
+//}
 
 
 

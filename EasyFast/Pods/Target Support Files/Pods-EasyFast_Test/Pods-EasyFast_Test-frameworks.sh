@@ -162,6 +162,7 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/BGFMDB/BGFMDB.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CYLTabBarController/CYLTabBarController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DateTools/DateTools.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GKNavigationBar/GKNavigationBar.framework"
@@ -176,11 +177,14 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/RollingNotice/RollingNotice.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/WebViewJavascriptBridge/WebViewJavascriptBridge.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YZTagList/YZTagList.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/BGFMDB/BGFMDB.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CYLTabBarController/CYLTabBarController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DateTools/DateTools.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GKNavigationBar/GKNavigationBar.framework"
@@ -195,6 +199,8 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/RollingNotice/RollingNotice.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/WebViewJavascriptBridge/WebViewJavascriptBridge.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YZTagList/YZTagList.framework"
 fi

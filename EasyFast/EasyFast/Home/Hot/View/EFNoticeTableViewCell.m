@@ -34,7 +34,7 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self setUI];
+        
     }
     return self;
 }
@@ -45,10 +45,10 @@
     bg.backgroundColor = RGB16(0xFFF5DD);
     [self.contentView addSubview:bg];
     [bg mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(@(10));
+        make.top.equalTo(@(WidthOfScale(0)));
         make.left.equalTo(@(WidthOfScale(15)));
         make.width.equalTo(@(WidthOfScale(375 - 30)));
-        make.height.equalTo(@(30));
+        make.height.equalTo(@(WidthOfScale(30)));
     }];
     [bg layoutIfNeeded];
     [bg ViewRadius:4];

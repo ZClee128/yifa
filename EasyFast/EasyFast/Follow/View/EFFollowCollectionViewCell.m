@@ -11,7 +11,7 @@
 @interface EFFollowCollectionViewCell()
 
 @property (nonatomic,strong)UIImageView *goods;
-@property (nonatomic,strong)QMUIButton *priceLab;
+@property (nonatomic,strong)QMUILabel *priceLab;
 
 @end
 
@@ -26,14 +26,14 @@
     return _goods;
 }
 
--(QMUIButton *)priceLab
+-(QMUILabel *)priceLab
 {
     if (_priceLab == nil) {
-        _priceLab = [QMUIButton buttonWithType:(UIButtonTypeCustom)];
-        _priceLab.contentEdgeInsets = UIEdgeInsetsMake(WidthOfScale(6), WidthOfScale(9), WidthOfScale(6), WidthOfScale(9));
-        _priceLab.titleLabel.font = RegularFont11;
-        [_priceLab setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
+        _priceLab = [[QMUILabel alloc] init];
+        _priceLab.font = RegularFont11;
+        _priceLab.textColor = [UIColor whiteColor];
         _priceLab.backgroundColor = UIColorFromRGBA(0x000000, 0.5);
+        _priceLab.textAlignment = NSTextAlignmentCenter;
     }
     return _priceLab;
 }
@@ -61,13 +61,16 @@
         make.height.equalTo(@(WidthOfScale(20)));
     }];
     [self.priceLab layoutIfNeeded];
-    [self.priceLab ViewRadius:WidthOfScale(20)/2];
+
 }
 
 - (void)setModel:(id)model {
-    [self.priceLab setTitle:@"¥999.8" forState:(UIControlStateNormal)];
+    self.priceLab.attributedText = [@"¥99999.8" getAttributeWithChangeString:@"¥" ChangeFont:RegularFont10 textColor:[UIColor whiteColor]];
     [self.priceLab mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@(55));
+        make.width.equalTo(@([self.priceLab.attributedText AttributedStringFont:RegularFont11 maxHeight:WidthOfScale(20)] + 18));
     }];
+    [self.priceLab layoutIfNeeded];
+    [self.contentView layoutIfNeeded];
+    [self.priceLab ViewRadius:WidthOfScale(20)/2];
 }
 @end

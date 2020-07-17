@@ -134,10 +134,10 @@
     switch (indexPath.section) {
         case 0:
             
-            return 80;
+            return WidthOfScale(107.5);
             case 1:
         {
-            return 40;
+            return WidthOfScale(30);
         }
             case 2:
         {
@@ -166,10 +166,10 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     switch (section) {
         case 2:
-            return 53;
+            return WidthOfScale(52);
         case 3:
         {
-            return 53;
+            return WidthOfScale(52);
         }
         default:
             return 0.001;

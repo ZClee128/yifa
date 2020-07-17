@@ -15,10 +15,14 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         self.contentView.backgroundColor = UIColor.whiteColor;
+        [self setUI];
     }
     return self;
 }
 
+- (void)setUI {
+    
+}
 - (void)setModel:(id)model {
     
 }

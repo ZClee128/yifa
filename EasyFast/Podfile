@@ -28,7 +28,9 @@ targets.each do |t|
     pod 'SDCycleScrollView','>= 1.80'
     pod 'RollingNotice'
     pod 'YZTagList'
-
+    pod 'WebViewJavascriptBridge', '~> 6.0'
+    pod 'BGFMDB', '~> 2.0.9'
+    pod 'SSZipArchive'
     # Pods for EasyFast
   end
 

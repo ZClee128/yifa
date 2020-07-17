@@ -62,7 +62,9 @@
              classCell.selectItem = ^(id  _Nonnull model) {
                  EFClassDetailViewController *VC = [[EFClassDetailViewController alloc] init];
                  VC.hidesBottomBarWhenPushed = YES;
-                 [self.navigationController pushViewController:VC animated:YES];
+                 [self.navigationController qmui_pushViewController:VC animated:YES completion:^{
+                     
+                 }];
              };
              return classCell;
           }
