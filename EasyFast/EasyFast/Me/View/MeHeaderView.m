@@ -18,6 +18,13 @@
 @property (nonatomic,strong)QMUIButton *becomeBtn;
 @property (nonatomic,strong)QMUIButton *vipBtn;
 
+@property (nonatomic,copy)void(^header)(void);
+@property (nonatomic,copy)void(^setup)(void);
+@property (nonatomic,copy)void(^become)(void);
+@property (nonatomic,copy)void(^follow)(void);
+@property (nonatomic,copy)void(^see)(void);
+@property (nonatomic,copy)void(^message)(NSInteger index);
+@property (nonatomic,copy)void(^vip)(void);
 
 @end
 
@@ -38,6 +45,15 @@
     if (_headerImageView == nil) {
         _headerImageView = [[UIImageView alloc] init];
         _headerImageView.image = UIImageMake(@"header");
+        @weakify(self);
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithActionBlock:^(id  _Nonnull sender) {
+            @strongify(self);
+            if (self.header) {
+                self.header();
+            }
+        }];
+        _headerImageView.userInteractionEnabled = YES;
+        [_headerImageView addGestureRecognizer:tap];
     }
     return _headerImageView;
 }
@@ -58,6 +74,13 @@
     if (_setupBtn == nil) {
         _setupBtn = [QMUIButton buttonWithType:(UIButtonTypeCustom)];
         [_setupBtn setImage:UIImageMake(@"setup") forState:(UIControlStateNormal)];
+        @weakify(self);
+        [[_setupBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self);
+            if (self.setup) {
+                self.setup();
+            }
+        }];
     }
     return _setupBtn;
 }
@@ -70,6 +93,13 @@
         [_becomeBtn setTitleColor:color39342F forState:(UIControlStateNormal)];
         _becomeBtn.titleLabel.font = RegularFont14;
         _becomeBtn.backgroundColor = colorFFF9EB;
+        @weakify(self);
+        [[_becomeBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self);
+            if (self.become) {
+                self.become();
+            }
+        }];
     }
     return _becomeBtn;
 }
@@ -81,15 +111,29 @@
         [_vipBtn setTitle:@"成为VIP" forState:(UIControlStateNormal)];
         [_vipBtn setTitleColor:colorF14745 forState:(UIControlStateNormal)];
         _vipBtn.titleLabel.font = MedFont14;
+        @weakify(self);
+        [[_vipBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self);
+            if (self.vip) {
+                self.vip();
+            }
+        }];
     }
     return _vipBtn;
 }
 
 
-- (instancetype)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame headerBlcok:(nonnull void (^)(void))header setUpBlock:(nonnull void (^)(void))setup becomeBlock:(nonnull void (^)(void))become followBlcok:(nonnull void (^)(void))follow seeBlock:(nonnull void (^)(void))see messageBlock:(nonnull void (^)(NSInteger))message vipBlock:(nonnull void (^)(void))vip
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.header = header;
+        self.setup = setup;
+        self.become = become;
+        self.follow = follow;
+        self.see = see;
+        self.message = message;
+        self.vip = vip;
         [self setUI];
     }
     return self;
@@ -161,6 +205,15 @@
         [bottomBg addSubview:btn];
         btn.tag = i+100;
         [btn setTopTilte:@"0" bottomTitle:titles[i]];
+        @weakify(self);
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithActionBlock:^(VerticalLabelBotton *sender) {
+            @strongify(self);
+            if (self.message) {
+                self.message(sender.tag - 100);
+            }
+        }];
+        btn.userInteractionEnabled = YES;
+        [btn addGestureRecognizer:tap];
     }
 }
 

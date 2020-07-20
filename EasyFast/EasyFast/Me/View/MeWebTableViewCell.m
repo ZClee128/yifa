@@ -32,6 +32,13 @@
         // 给webview建立JS与OjbC的沟通桥梁
         self.bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView];
         [self.bridge setWebViewDelegate:self];
+        NSString *hFivePath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
+            NSURL *url = [NSURL fileURLWithPath:hFivePath];
+            
+            // 加载方式一
+            NSString *htmlString = [NSString stringWithContentsOfFile:hFivePath encoding:NSUTF8StringEncoding error:nil];
+            [_webView loadHTMLString:htmlString baseURL:url];
+
     }
     return _webView;
 }
@@ -56,7 +63,10 @@
 
 
 - (void)setUI {
-    
+    [self.contentView addSubview:self.webView];
+    [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(self.contentView);
+    }];
 }
 
 - (void)awakeFromNib {

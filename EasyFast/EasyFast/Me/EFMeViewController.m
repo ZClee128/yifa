@@ -10,7 +10,9 @@
 #import "MeHeaderView.h"
 #import "MeTabTableViewCell.h"
 #import "MeListTableViewCell.h"
-
+#import "MeWebTableViewCell.h"
+#import "EFAddressViewController.h"
+#import "EFSetUpViewController.h"
 
 
 @interface EFMeViewController ()
@@ -26,7 +28,27 @@
 -(MeHeaderView *)headerView
 {
     if (_headerView == nil) {
-        _headerView = [[MeHeaderView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, WidthOfScale(236.5))];
+        @weakify(self);
+        _headerView = [[MeHeaderView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, WidthOfScale(236.5)) headerBlcok:^{
+            
+        } setUpBlock:^{
+            @strongify(self);
+            EFSetUpViewController *vc = [[EFSetUpViewController alloc] init];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+                
+            }];
+        } becomeBlock:^{
+            
+        } followBlcok:^{
+            
+        } seeBlock:^{
+            
+        } messageBlock:^(NSInteger index) {
+            
+        } vipBlock:^{
+                
+        }];
     }
     return _headerView;
 }
@@ -40,6 +62,7 @@
     self.EFTableView.tableHeaderView = self.headerView;
     [self.EFTableView registerClass:[MeTabTableViewCell class] forCellReuseIdentifier:NSStringFromClass([MeTabTableViewCell class])];
     [self.EFTableView registerClass:[MeListTableViewCell class] forCellReuseIdentifier:NSStringFromClass([MeListTableViewCell class])];
+    [self.EFTableView registerClass:[MeWebTableViewCell class] forCellReuseIdentifier:NSStringFromClass([MeWebTableViewCell class])];
     self.list = @[@{@"title":@"我的支付",@"icon":@"pay"},@{@"title":@"收货地址管理",@"icon":@"address"},
     @{@"title":@"账号安全",@"icon":@"safe"},@{@"title":@"帮助中心",@"icon":@"help"}];
 
@@ -98,7 +121,10 @@
             return listCell;
         }
         default:
-            return [[UITableViewCell alloc] init];
+        {
+            MeWebTableViewCell *webCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MeWebTableViewCell class])];
+            return webCell;
+        }
     }
 }
 
@@ -107,7 +133,7 @@
         case 2:
             return 50;
         case 3:
-            return 0;
+            return 400;
         default:
             return WidthOfScale(134);
     }
@@ -117,7 +143,24 @@
     return 10;
 }
 
-
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 2) {
+        switch (indexPath.row) {
+            case 0:
+                
+                break;
+               case 1:
+            {
+                EFAddressViewController *VC = [[EFAddressViewController alloc] init];
+                VC.hidesBottomBarWhenPushed = YES;
+                [self.navigationController qmui_pushViewController:VC animated:YES completion:^{
+                    
+                }];
+            }
+            default:
+                break;
+        }
+    }
+}
 
 @end

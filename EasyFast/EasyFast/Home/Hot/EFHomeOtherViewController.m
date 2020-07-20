@@ -10,7 +10,7 @@
 #import "EFClassTabTableViewCell.h"
 #import "EFGoodsTableViewCell.h"
 #import "EFClassDetailViewController.h"
-
+#import "TuanListViewController.h"
 
 @interface EFHomeOtherViewController ()
 @property (nonatomic,assign)id type;
@@ -60,7 +60,9 @@
              EFClassTabTableViewCell *classCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFClassTabTableViewCell class])];
              [classCell setCollectData:[@[@1,@1,@1,@1,@1,@1,@1,@1] mutableCopy]];
              classCell.selectItem = ^(id  _Nonnull model) {
-                 EFClassDetailViewController *VC = [[EFClassDetailViewController alloc] init];
+//                 EFClassDetailViewController *VC = [[EFClassDetailViewController alloc] init];
+//                 VC.hidesBottomBarWhenPushed = YES;
+                 TuanListViewController *VC = [[TuanListViewController alloc] init];
                  VC.hidesBottomBarWhenPushed = YES;
                  [self.navigationController qmui_pushViewController:VC animated:YES completion:^{
                      

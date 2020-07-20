@@ -37,18 +37,6 @@
 		84760F9624C1806D002B34E4 /* NSMutableAttributedString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 84760F9524C1806D002B34E4 /* NSMutableAttributedString+Size.m */; };
 		84760F9724C1806D002B34E4 /* NSMutableAttributedString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 84760F9524C1806D002B34E4 /* NSMutableAttributedString+Size.m */; };
 		84760F9824C1806D002B34E4 /* NSMutableAttributedString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 84760F9524C1806D002B34E4 /* NSMutableAttributedString+Size.m */; };
-		84760F9F24C19735002B34E4 /* vuex.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760F9B24C19733002B34E4 /* vuex.min.js */; };
-		84760FA024C19735002B34E4 /* vuex.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760F9B24C19733002B34E4 /* vuex.min.js */; };
-		84760FA124C19735002B34E4 /* vuex.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760F9B24C19733002B34E4 /* vuex.min.js */; };
-		84760FA224C19735002B34E4 /* vue-router.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760F9C24C19734002B34E4 /* vue-router.min.js */; };
-		84760FA324C19735002B34E4 /* vue-router.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760F9C24C19734002B34E4 /* vue-router.min.js */; };
-		84760FA424C19735002B34E4 /* vue-router.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760F9C24C19734002B34E4 /* vue-router.min.js */; };
-		84760FA524C19735002B34E4 /* vue.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760F9D24C19734002B34E4 /* vue.min.js */; };
-		84760FA624C19735002B34E4 /* vue.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760F9D24C19734002B34E4 /* vue.min.js */; };
-		84760FA724C19735002B34E4 /* vue.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760F9D24C19734002B34E4 /* vue.min.js */; };
-		84760FA824C19735002B34E4 /* axios.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760F9E24C19734002B34E4 /* axios.min.js */; };
-		84760FA924C19735002B34E4 /* axios.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760F9E24C19734002B34E4 /* axios.min.js */; };
-		84760FAA24C19735002B34E4 /* axios.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760F9E24C19734002B34E4 /* axios.min.js */; };
 		84760FAD24C19779002B34E4 /* MeWebTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84760FAC24C19779002B34E4 /* MeWebTableViewCell.m */; };
 		84760FAE24C19779002B34E4 /* MeWebTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84760FAC24C19779002B34E4 /* MeWebTableViewCell.m */; };
 		84760FAF24C19779002B34E4 /* MeWebTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84760FAC24C19779002B34E4 /* MeWebTableViewCell.m */; };
@@ -139,6 +127,63 @@
 		8476102824C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476102724C1A467002B34E4 /* SLScrollViewHorizontalItem.m */; };
 		8476102924C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476102724C1A467002B34E4 /* SLScrollViewHorizontalItem.m */; };
 		8476102A24C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476102724C1A467002B34E4 /* SLScrollViewHorizontalItem.m */; };
+		8476102D24C52BDC002B34E4 /* H5Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476102C24C52BDC002B34E4 /* H5Manager.m */; };
+		8476102E24C52BDC002B34E4 /* H5Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476102C24C52BDC002B34E4 /* H5Manager.m */; };
+		8476102F24C52BDC002B34E4 /* H5Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476102C24C52BDC002B34E4 /* H5Manager.m */; };
+		8476103324C54189002B34E4 /* TuanListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476103224C54189002B34E4 /* TuanListViewController.m */; };
+		8476103424C54189002B34E4 /* TuanListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476103224C54189002B34E4 /* TuanListViewController.m */; };
+		8476103524C54189002B34E4 /* TuanListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476103224C54189002B34E4 /* TuanListViewController.m */; };
+		8476103924C54200002B34E4 /* TuanGoodsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476103824C54200002B34E4 /* TuanGoodsView.m */; };
+		8476103A24C54200002B34E4 /* TuanGoodsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476103824C54200002B34E4 /* TuanGoodsView.m */; };
+		8476103B24C54200002B34E4 /* TuanGoodsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476103824C54200002B34E4 /* TuanGoodsView.m */; };
+		8476103E24C54854002B34E4 /* TuanListSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476103D24C54854002B34E4 /* TuanListSelectView.m */; };
+		8476103F24C54854002B34E4 /* TuanListSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476103D24C54854002B34E4 /* TuanListSelectView.m */; };
+		8476104024C54854002B34E4 /* TuanListSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476103D24C54854002B34E4 /* TuanListSelectView.m */; };
+		8476104324C54B72002B34E4 /* TuanPeopleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476104224C54B72002B34E4 /* TuanPeopleView.m */; };
+		8476104424C54B72002B34E4 /* TuanPeopleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476104224C54B72002B34E4 /* TuanPeopleView.m */; };
+		8476104524C54B72002B34E4 /* TuanPeopleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476104224C54B72002B34E4 /* TuanPeopleView.m */; };
+		8476104824C54E21002B34E4 /* TuanListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476104724C54E21002B34E4 /* TuanListTableViewCell.m */; };
+		8476104924C54E21002B34E4 /* TuanListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476104724C54E21002B34E4 /* TuanListTableViewCell.m */; };
+		8476104A24C54E21002B34E4 /* TuanListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476104724C54E21002B34E4 /* TuanListTableViewCell.m */; };
+		8476104D24C573B1002B34E4 /* TuanListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476104C24C573B1002B34E4 /* TuanListDetailViewController.m */; };
+		8476104E24C573B1002B34E4 /* TuanListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476104C24C573B1002B34E4 /* TuanListDetailViewController.m */; };
+		8476104F24C573B1002B34E4 /* TuanListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476104C24C573B1002B34E4 /* TuanListDetailViewController.m */; };
+		8476105224C574E5002B34E4 /* TuanListDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476105124C574E5002B34E4 /* TuanListDetailTableViewCell.m */; };
+		8476105324C574E5002B34E4 /* TuanListDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476105124C574E5002B34E4 /* TuanListDetailTableViewCell.m */; };
+		8476105424C574E5002B34E4 /* TuanListDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476105124C574E5002B34E4 /* TuanListDetailTableViewCell.m */; };
+		8476105724C57636002B34E4 /* TuanListDetailSecsionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476105624C57636002B34E4 /* TuanListDetailSecsionView.m */; };
+		8476105824C57636002B34E4 /* TuanListDetailSecsionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476105624C57636002B34E4 /* TuanListDetailSecsionView.m */; };
+		8476105924C57636002B34E4 /* TuanListDetailSecsionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476105624C57636002B34E4 /* TuanListDetailSecsionView.m */; };
+		8476105C24C57E81002B34E4 /* TuanOtherGoodsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476105B24C57E81002B34E4 /* TuanOtherGoodsView.m */; };
+		8476105D24C57E81002B34E4 /* TuanOtherGoodsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476105B24C57E81002B34E4 /* TuanOtherGoodsView.m */; };
+		8476105E24C57E81002B34E4 /* TuanOtherGoodsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476105B24C57E81002B34E4 /* TuanOtherGoodsView.m */; };
+		8476106124C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476106024C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m */; };
+		8476106224C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476106024C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m */; };
+		8476106324C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476106024C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m */; };
+		8476106724C58861002B34E4 /* EFAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476106624C58861002B34E4 /* EFAddressViewController.m */; };
+		8476106824C58861002B34E4 /* EFAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476106624C58861002B34E4 /* EFAddressViewController.m */; };
+		8476106924C58861002B34E4 /* EFAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476106624C58861002B34E4 /* EFAddressViewController.m */; };
+		8476107224C58C7C002B34E4 /* EFAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476107124C58C7C002B34E4 /* EFAddressTableViewCell.m */; };
+		8476107324C58C7C002B34E4 /* EFAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476107124C58C7C002B34E4 /* EFAddressTableViewCell.m */; };
+		8476107424C58C7C002B34E4 /* EFAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476107124C58C7C002B34E4 /* EFAddressTableViewCell.m */; };
+		8476107824C59780002B34E4 /* UILabel+LabelHeightAndWidth.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476107624C59780002B34E4 /* UILabel+LabelHeightAndWidth.m */; };
+		8476107924C59780002B34E4 /* UILabel+LabelHeightAndWidth.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476107624C59780002B34E4 /* UILabel+LabelHeightAndWidth.m */; };
+		8476107A24C59780002B34E4 /* UILabel+LabelHeightAndWidth.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476107624C59780002B34E4 /* UILabel+LabelHeightAndWidth.m */; };
+		8476107D24C5A06F002B34E4 /* EFSetUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476107C24C5A06F002B34E4 /* EFSetUpViewController.m */; };
+		8476107E24C5A06F002B34E4 /* EFSetUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476107C24C5A06F002B34E4 /* EFSetUpViewController.m */; };
+		8476107F24C5A06F002B34E4 /* EFSetUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476107C24C5A06F002B34E4 /* EFSetUpViewController.m */; };
+		8476108324C5A09E002B34E4 /* EFSetUpVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476108224C5A09E002B34E4 /* EFSetUpVM.m */; };
+		8476108424C5A09E002B34E4 /* EFSetUpVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476108224C5A09E002B34E4 /* EFSetUpVM.m */; };
+		8476108524C5A09E002B34E4 /* EFSetUpVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476108224C5A09E002B34E4 /* EFSetUpVM.m */; };
+		8476108824C5A29D002B34E4 /* EFSetUpTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476108724C5A29D002B34E4 /* EFSetUpTableViewCell.m */; };
+		8476108924C5A29D002B34E4 /* EFSetUpTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476108724C5A29D002B34E4 /* EFSetUpTableViewCell.m */; };
+		8476108A24C5A29D002B34E4 /* EFSetUpTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476108724C5A29D002B34E4 /* EFSetUpTableViewCell.m */; };
+		8476108D24C5ABE6002B34E4 /* EFAccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476108C24C5ABE6002B34E4 /* EFAccountTableViewCell.m */; };
+		8476108E24C5ABE6002B34E4 /* EFAccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476108C24C5ABE6002B34E4 /* EFAccountTableViewCell.m */; };
+		8476108F24C5ABE6002B34E4 /* EFAccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476108C24C5ABE6002B34E4 /* EFAccountTableViewCell.m */; };
+		8476109224C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476109124C5AD69002B34E4 /* EFChangeAccountViewController.m */; };
+		8476109324C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476109124C5AD69002B34E4 /* EFChangeAccountViewController.m */; };
+		8476109424C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476109124C5AD69002B34E4 /* EFChangeAccountViewController.m */; };
 		84A8207824B6C61800EAC652 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8207724B6C61800EAC652 /* AppDelegate.m */; };
 		84A8208324B6C62300EAC652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A8208224B6C62300EAC652 /* Assets.xcassets */; };
 		84A8208624B6C62300EAC652 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A8208424B6C62300EAC652 /* LaunchScreen.storyboard */; };
@@ -317,10 +362,6 @@
 		84760F9024C17AC1002B34E4 /* NSString+NSMutableAttributedString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSMutableAttributedString.m"; sourceTree = "<group>"; };
 		84760F9424C1806D002B34E4 /* NSMutableAttributedString+Size.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+Size.h"; sourceTree = "<group>"; };
 		84760F9524C1806D002B34E4 /* NSMutableAttributedString+Size.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+Size.m"; sourceTree = "<group>"; };
-		84760F9B24C19733002B34E4 /* vuex.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = vuex.min.js; sourceTree = "<group>"; };
-		84760F9C24C19734002B34E4 /* vue-router.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "vue-router.min.js"; sourceTree = "<group>"; };
-		84760F9D24C19734002B34E4 /* vue.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = vue.min.js; sourceTree = "<group>"; };
-		84760F9E24C19734002B34E4 /* axios.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = axios.min.js; sourceTree = "<group>"; };
 		84760FAB24C19779002B34E4 /* MeWebTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeWebTableViewCell.h; sourceTree = "<group>"; };
 		84760FAC24C19779002B34E4 /* MeWebTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeWebTableViewCell.m; sourceTree = "<group>"; };
 		84760FB124C19B5B002B34E4 /* favicon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = favicon.ico; sourceTree = "<group>"; };
@@ -353,6 +394,44 @@
 		84760FD124C19B5C002B34E4 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		8476102624C1A467002B34E4 /* SLScrollViewHorizontalItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLScrollViewHorizontalItem.h; sourceTree = "<group>"; };
 		8476102724C1A467002B34E4 /* SLScrollViewHorizontalItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLScrollViewHorizontalItem.m; sourceTree = "<group>"; };
+		8476102B24C52BDC002B34E4 /* H5Manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = H5Manager.h; sourceTree = "<group>"; };
+		8476102C24C52BDC002B34E4 /* H5Manager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = H5Manager.m; sourceTree = "<group>"; };
+		8476103124C54189002B34E4 /* TuanListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuanListViewController.h; sourceTree = "<group>"; };
+		8476103224C54189002B34E4 /* TuanListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuanListViewController.m; sourceTree = "<group>"; };
+		8476103724C54200002B34E4 /* TuanGoodsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuanGoodsView.h; sourceTree = "<group>"; };
+		8476103824C54200002B34E4 /* TuanGoodsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuanGoodsView.m; sourceTree = "<group>"; };
+		8476103C24C54854002B34E4 /* TuanListSelectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuanListSelectView.h; sourceTree = "<group>"; };
+		8476103D24C54854002B34E4 /* TuanListSelectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuanListSelectView.m; sourceTree = "<group>"; };
+		8476104124C54B72002B34E4 /* TuanPeopleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuanPeopleView.h; sourceTree = "<group>"; };
+		8476104224C54B72002B34E4 /* TuanPeopleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuanPeopleView.m; sourceTree = "<group>"; };
+		8476104624C54E21002B34E4 /* TuanListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuanListTableViewCell.h; sourceTree = "<group>"; };
+		8476104724C54E21002B34E4 /* TuanListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuanListTableViewCell.m; sourceTree = "<group>"; };
+		8476104B24C573B1002B34E4 /* TuanListDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuanListDetailViewController.h; sourceTree = "<group>"; };
+		8476104C24C573B1002B34E4 /* TuanListDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuanListDetailViewController.m; sourceTree = "<group>"; };
+		8476105024C574E5002B34E4 /* TuanListDetailTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuanListDetailTableViewCell.h; sourceTree = "<group>"; };
+		8476105124C574E5002B34E4 /* TuanListDetailTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuanListDetailTableViewCell.m; sourceTree = "<group>"; };
+		8476105524C57636002B34E4 /* TuanListDetailSecsionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuanListDetailSecsionView.h; sourceTree = "<group>"; };
+		8476105624C57636002B34E4 /* TuanListDetailSecsionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuanListDetailSecsionView.m; sourceTree = "<group>"; };
+		8476105A24C57E81002B34E4 /* TuanOtherGoodsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuanOtherGoodsView.h; sourceTree = "<group>"; };
+		8476105B24C57E81002B34E4 /* TuanOtherGoodsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuanOtherGoodsView.m; sourceTree = "<group>"; };
+		8476105F24C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuanOtherGoodsTableViewCell.h; sourceTree = "<group>"; };
+		8476106024C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TuanOtherGoodsTableViewCell.m; sourceTree = "<group>"; };
+		8476106524C58861002B34E4 /* EFAddressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFAddressViewController.h; sourceTree = "<group>"; };
+		8476106624C58861002B34E4 /* EFAddressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFAddressViewController.m; sourceTree = "<group>"; };
+		8476107024C58C7C002B34E4 /* EFAddressTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFAddressTableViewCell.h; sourceTree = "<group>"; };
+		8476107124C58C7C002B34E4 /* EFAddressTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFAddressTableViewCell.m; sourceTree = "<group>"; };
+		8476107624C59780002B34E4 /* UILabel+LabelHeightAndWidth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+LabelHeightAndWidth.m"; sourceTree = "<group>"; };
+		8476107724C59780002B34E4 /* UILabel+LabelHeightAndWidth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+LabelHeightAndWidth.h"; sourceTree = "<group>"; };
+		8476107B24C5A06F002B34E4 /* EFSetUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFSetUpViewController.h; sourceTree = "<group>"; };
+		8476107C24C5A06F002B34E4 /* EFSetUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFSetUpViewController.m; sourceTree = "<group>"; };
+		8476108124C5A09E002B34E4 /* EFSetUpVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFSetUpVM.h; sourceTree = "<group>"; };
+		8476108224C5A09E002B34E4 /* EFSetUpVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFSetUpVM.m; sourceTree = "<group>"; };
+		8476108624C5A29D002B34E4 /* EFSetUpTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFSetUpTableViewCell.h; sourceTree = "<group>"; };
+		8476108724C5A29D002B34E4 /* EFSetUpTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFSetUpTableViewCell.m; sourceTree = "<group>"; };
+		8476108B24C5ABE6002B34E4 /* EFAccountTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFAccountTableViewCell.h; sourceTree = "<group>"; };
+		8476108C24C5ABE6002B34E4 /* EFAccountTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFAccountTableViewCell.m; sourceTree = "<group>"; };
+		8476109024C5AD69002B34E4 /* EFChangeAccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFChangeAccountViewController.h; sourceTree = "<group>"; };
+		8476109124C5AD69002B34E4 /* EFChangeAccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFChangeAccountViewController.m; sourceTree = "<group>"; };
 		84A8207324B6C61800EAC652 /* EasyFast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyFast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A8207624B6C61800EAC652 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84A8207724B6C61800EAC652 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -528,6 +607,10 @@
 				84760F7924C14AD9002B34E4 /* MeListTableViewCell.m */,
 				84760FAB24C19779002B34E4 /* MeWebTableViewCell.h */,
 				84760FAC24C19779002B34E4 /* MeWebTableViewCell.m */,
+				8476108624C5A29D002B34E4 /* EFSetUpTableViewCell.h */,
+				8476108724C5A29D002B34E4 /* EFSetUpTableViewCell.m */,
+				8476108B24C5ABE6002B34E4 /* EFAccountTableViewCell.h */,
+				8476108C24C5ABE6002B34E4 /* EFAccountTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -554,20 +637,10 @@
 			isa = PBXGroup;
 			children = (
 				84760FB024C19B5B002B34E4 /* dist */,
-				84760F9A24C19707002B34E4 /* JS */,
+				8476102B24C52BDC002B34E4 /* H5Manager.h */,
+				8476102C24C52BDC002B34E4 /* H5Manager.m */,
 			);
 			path = Web;
-			sourceTree = "<group>";
-		};
-		84760F9A24C19707002B34E4 /* JS */ = {
-			isa = PBXGroup;
-			children = (
-				84760F9E24C19734002B34E4 /* axios.min.js */,
-				84760F9C24C19734002B34E4 /* vue-router.min.js */,
-				84760F9D24C19734002B34E4 /* vue.min.js */,
-				84760F9B24C19733002B34E4 /* vuex.min.js */,
-			);
-			path = JS;
 			sourceTree = "<group>";
 		};
 		84760FB024C19B5B002B34E4 /* dist */ = {
@@ -645,6 +718,69 @@
 			path = detail;
 			sourceTree = "<group>";
 		};
+		8476103024C54167002B34E4 /* Tuan */ = {
+			isa = PBXGroup;
+			children = (
+				8476103624C541E7002B34E4 /* View */,
+				8476103124C54189002B34E4 /* TuanListViewController.h */,
+				8476103224C54189002B34E4 /* TuanListViewController.m */,
+				8476104B24C573B1002B34E4 /* TuanListDetailViewController.h */,
+				8476104C24C573B1002B34E4 /* TuanListDetailViewController.m */,
+			);
+			path = Tuan;
+			sourceTree = "<group>";
+		};
+		8476103624C541E7002B34E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8476103724C54200002B34E4 /* TuanGoodsView.h */,
+				8476103824C54200002B34E4 /* TuanGoodsView.m */,
+				8476103C24C54854002B34E4 /* TuanListSelectView.h */,
+				8476103D24C54854002B34E4 /* TuanListSelectView.m */,
+				8476104124C54B72002B34E4 /* TuanPeopleView.h */,
+				8476104224C54B72002B34E4 /* TuanPeopleView.m */,
+				8476104624C54E21002B34E4 /* TuanListTableViewCell.h */,
+				8476104724C54E21002B34E4 /* TuanListTableViewCell.m */,
+				8476105024C574E5002B34E4 /* TuanListDetailTableViewCell.h */,
+				8476105124C574E5002B34E4 /* TuanListDetailTableViewCell.m */,
+				8476105524C57636002B34E4 /* TuanListDetailSecsionView.h */,
+				8476105624C57636002B34E4 /* TuanListDetailSecsionView.m */,
+				8476105A24C57E81002B34E4 /* TuanOtherGoodsView.h */,
+				8476105B24C57E81002B34E4 /* TuanOtherGoodsView.m */,
+				8476105F24C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.h */,
+				8476106024C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8476106424C58848002B34E4 /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				8476106F24C58B31002B34E4 /* View */,
+				8476106524C58861002B34E4 /* EFAddressViewController.h */,
+				8476106624C58861002B34E4 /* EFAddressViewController.m */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
+		8476106F24C58B31002B34E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8476107024C58C7C002B34E4 /* EFAddressTableViewCell.h */,
+				8476107124C58C7C002B34E4 /* EFAddressTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8476108024C5A082002B34E4 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				8476108124C5A09E002B34E4 /* EFSetUpVM.h */,
+				8476108224C5A09E002B34E4 /* EFSetUpVM.m */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
 		84A8206A24B6C61800EAC652 = {
 			isa = PBXGroup;
 			children = (
@@ -670,6 +806,8 @@
 		84A8207524B6C61800EAC652 /* EasyFast */ = {
 			isa = PBXGroup;
 			children = (
+				8476106424C58848002B34E4 /* Address */,
+				8476103024C54167002B34E4 /* Tuan */,
 				84760F9924C196FF002B34E4 /* Web */,
 				84A821B024BFF98B00EAC652 /* Search */,
 				84A8219724BF010800EAC652 /* Tools */,
@@ -774,6 +912,8 @@
 		84A820D324B6CD9E00EAC652 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				8476107724C59780002B34E4 /* UILabel+LabelHeightAndWidth.h */,
+				8476107624C59780002B34E4 /* UILabel+LabelHeightAndWidth.m */,
 				84A820DC24B6CE6B00EAC652 /* UIView+Frame.h */,
 				84A820D824B6CE6B00EAC652 /* UIView+Frame.m */,
 				84A820D724B6CE6A00EAC652 /* UIView+Radius.h */,
@@ -830,9 +970,14 @@
 		84A820EF24B6F65600EAC652 /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				8476108024C5A082002B34E4 /* VM */,
 				84187CA124C05CEA00ED3F96 /* View */,
 				84A820F024B6F66400EAC652 /* EFMeViewController.h */,
 				84A820F124B6F66400EAC652 /* EFMeViewController.m */,
+				8476107B24C5A06F002B34E4 /* EFSetUpViewController.h */,
+				8476107C24C5A06F002B34E4 /* EFSetUpViewController.m */,
+				8476109024C5AD69002B34E4 /* EFChangeAccountViewController.h */,
+				8476109124C5AD69002B34E4 /* EFChangeAccountViewController.m */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -1059,7 +1204,6 @@
 				8476101A24C19B5C002B34E4 /* chunk-1a8f6123.5b27e4f5.js in Resources */,
 				84760FFC24C19B5C002B34E4 /* chunk-2d0e1d52.a916e0e5.js in Resources */,
 				8476100524C19B5C002B34E4 /* chunk-65c081d5.668bdac5.js in Resources */,
-				84760FA224C19735002B34E4 /* vue-router.min.js in Resources */,
 				84760FE424C19B5C002B34E4 /* app.e748ca6c.css in Resources */,
 				8476102024C19B5C002B34E4 /* index.html in Resources */,
 				84760FDE24C19B5C002B34E4 /* chunk-vendors.52f1c8a5.css.gz in Resources */,
@@ -1071,15 +1215,12 @@
 				84760FED24C19B5C002B34E4 /* chunk-vendors.52f1c8a5.css in Resources */,
 				84A8208624B6C62300EAC652 /* LaunchScreen.storyboard in Resources */,
 				84760FF324C19B5C002B34E4 /* chunk-vendors.54c2afee.js.gz in Resources */,
-				84760FA524C19735002B34E4 /* vue.min.js in Resources */,
-				84760FA824C19735002B34E4 /* axios.min.js in Resources */,
 				84A8208324B6C62300EAC652 /* Assets.xcassets in Resources */,
 				8476100224C19B5C002B34E4 /* chunk-vendors.54c2afee.js in Resources */,
 				84760FF924C19B5C002B34E4 /* app.f868108e.js.gz in Resources */,
 				84760FDB24C19B5C002B34E4 /* chunk-52e329f7.d81660b7.css in Resources */,
 				84760FD524C19B5C002B34E4 /* index.html in Resources */,
 				84760FE124C19B5C002B34E4 /* chunk-65c081d5.df1602dc.css in Resources */,
-				84760F9F24C19735002B34E4 /* vuex.min.js in Resources */,
 				84760FD824C19B5C002B34E4 /* chunk-1a8f6123.79917033.css in Resources */,
 				84760FD224C19B5C002B34E4 /* favicon.ico in Resources */,
 				8476102324C19B5C002B34E4 /* index.html in Resources */,
@@ -1100,7 +1241,6 @@
 				8476101B24C19B5C002B34E4 /* chunk-1a8f6123.5b27e4f5.js in Resources */,
 				84760FFD24C19B5C002B34E4 /* chunk-2d0e1d52.a916e0e5.js in Resources */,
 				8476100624C19B5C002B34E4 /* chunk-65c081d5.668bdac5.js in Resources */,
-				84760FA324C19735002B34E4 /* vue-router.min.js in Resources */,
 				84760FE524C19B5C002B34E4 /* app.e748ca6c.css in Resources */,
 				8476102124C19B5C002B34E4 /* index.html in Resources */,
 				84760FDF24C19B5C002B34E4 /* chunk-vendors.52f1c8a5.css.gz in Resources */,
@@ -1112,15 +1252,12 @@
 				84760FEE24C19B5C002B34E4 /* chunk-vendors.52f1c8a5.css in Resources */,
 				84A8211324BC4F5400EAC652 /* LaunchScreen.storyboard in Resources */,
 				84760FF424C19B5C002B34E4 /* chunk-vendors.54c2afee.js.gz in Resources */,
-				84760FA624C19735002B34E4 /* vue.min.js in Resources */,
-				84760FA924C19735002B34E4 /* axios.min.js in Resources */,
 				84A8211424BC4F5400EAC652 /* Assets.xcassets in Resources */,
 				8476100324C19B5C002B34E4 /* chunk-vendors.54c2afee.js in Resources */,
 				84760FFA24C19B5C002B34E4 /* app.f868108e.js.gz in Resources */,
 				84760FDC24C19B5C002B34E4 /* chunk-52e329f7.d81660b7.css in Resources */,
 				84760FD624C19B5C002B34E4 /* index.html in Resources */,
 				84760FE224C19B5C002B34E4 /* chunk-65c081d5.df1602dc.css in Resources */,
-				84760FA024C19735002B34E4 /* vuex.min.js in Resources */,
 				84760FD924C19B5C002B34E4 /* chunk-1a8f6123.79917033.css in Resources */,
 				84760FD324C19B5C002B34E4 /* favicon.ico in Resources */,
 				8476102424C19B5C002B34E4 /* index.html in Resources */,
@@ -1141,7 +1278,6 @@
 				8476101C24C19B5C002B34E4 /* chunk-1a8f6123.5b27e4f5.js in Resources */,
 				84760FFE24C19B5C002B34E4 /* chunk-2d0e1d52.a916e0e5.js in Resources */,
 				8476100724C19B5C002B34E4 /* chunk-65c081d5.668bdac5.js in Resources */,
-				84760FA424C19735002B34E4 /* vue-router.min.js in Resources */,
 				84760FE624C19B5C002B34E4 /* app.e748ca6c.css in Resources */,
 				8476102224C19B5C002B34E4 /* index.html in Resources */,
 				84760FE024C19B5C002B34E4 /* chunk-vendors.52f1c8a5.css.gz in Resources */,
@@ -1153,15 +1289,12 @@
 				84760FEF24C19B5C002B34E4 /* chunk-vendors.52f1c8a5.css in Resources */,
 				84A8213724BC513500EAC652 /* LaunchScreen.storyboard in Resources */,
 				84760FF524C19B5C002B34E4 /* chunk-vendors.54c2afee.js.gz in Resources */,
-				84760FA724C19735002B34E4 /* vue.min.js in Resources */,
-				84760FAA24C19735002B34E4 /* axios.min.js in Resources */,
 				84A8213824BC513500EAC652 /* Assets.xcassets in Resources */,
 				8476100424C19B5C002B34E4 /* chunk-vendors.54c2afee.js in Resources */,
 				84760FFB24C19B5C002B34E4 /* app.f868108e.js.gz in Resources */,
 				84760FDD24C19B5C002B34E4 /* chunk-52e329f7.d81660b7.css in Resources */,
 				84760FD724C19B5C002B34E4 /* index.html in Resources */,
 				84760FE324C19B5C002B34E4 /* chunk-65c081d5.df1602dc.css in Resources */,
-				84760FA124C19735002B34E4 /* vuex.min.js in Resources */,
 				84760FDA24C19B5C002B34E4 /* chunk-1a8f6123.79917033.css in Resources */,
 				84760FD424C19B5C002B34E4 /* favicon.ico in Resources */,
 				8476102524C19B5C002B34E4 /* index.html in Resources */,
@@ -1298,16 +1431,24 @@
 				84A820EE24B6F65100EAC652 /* EFFollowViewController.m in Sources */,
 				84A821B324BFFAE700EAC652 /* EFSearchViewController.m in Sources */,
 				84187CA424C05D0200ED3F96 /* MeHeaderView.m in Sources */,
+				8476104D24C573B1002B34E4 /* TuanListDetailViewController.m in Sources */,
+				8476105C24C57E81002B34E4 /* TuanOtherGoodsView.m in Sources */,
+				8476104324C54B72002B34E4 /* TuanPeopleView.m in Sources */,
 				84A8215424BDA0F200EAC652 /* EFHotViewController.m in Sources */,
 				84A820B724B6CA8A00EAC652 /* EFBaseTableView.m in Sources */,
 				84A820A424B6CA0900EAC652 /* BaseTableViewCell.m in Sources */,
+				8476105724C57636002B34E4 /* TuanListDetailSecsionView.m in Sources */,
 				84A820DE24B6CE6B00EAC652 /* UIView+Radius.m in Sources */,
 				84A820CF24B6CCC600EAC652 /* FMHttpResonse.m in Sources */,
+				8476108824C5A29D002B34E4 /* EFSetUpTableViewCell.m in Sources */,
 				84A8216B24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
+				8476106124C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m in Sources */,
 				84A8218E24BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */,
 				84187CA924C05E8200ED3F96 /* VerticalLabelBotton.m in Sources */,
 				84A820E224B6EADF00EAC652 /* EFBaseTabBarViewController.m in Sources */,
 				84A820F224B6F66400EAC652 /* EFMeViewController.m in Sources */,
+				8476108D24C5ABE6002B34E4 /* EFAccountTableViewCell.m in Sources */,
+				8476104824C54E21002B34E4 /* TuanListTableViewCell.m in Sources */,
 				84A8215924BDB45E00EAC652 /* UIImage+Darw.m in Sources */,
 				84A821A024BF146200EAC652 /* EFFollowSubViewController.m in Sources */,
 				84760F8624C1596E002B34E4 /* EFBaseModel.m in Sources */,
@@ -1320,12 +1461,18 @@
 				84A8214724BC5F0900EAC652 /* EFPlusButton.m in Sources */,
 				84A820B624B6CA8A00EAC652 /* EFBaseViewController.m in Sources */,
 				84A821CD24C0497200EAC652 /* EFHomeOtherViewController.m in Sources */,
+				8476107224C58C7C002B34E4 /* EFAddressTableViewCell.m in Sources */,
 				84A8219424BEF2DB00EAC652 /* UIView+GradientColor.m in Sources */,
+				8476108324C5A09E002B34E4 /* EFSetUpVM.m in Sources */,
 				8476102824C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */,
 				84A821C324C03BB800EAC652 /* SeachOneCollectionViewCell.m in Sources */,
 				84A8207824B6C61800EAC652 /* AppDelegate.m in Sources */,
+				8476109224C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */,
+				8476103924C54200002B34E4 /* TuanGoodsView.m in Sources */,
+				8476107D24C5A06F002B34E4 /* EFSetUpViewController.m in Sources */,
 				84760F9124C17AC1002B34E4 /* NSString+NSMutableAttributedString.m in Sources */,
 				84A820CC24B6CCC600EAC652 /* FMARCNetwork.m in Sources */,
+				8476103E24C54854002B34E4 /* TuanListSelectView.m in Sources */,
 				84A820DF24B6CE6B00EAC652 /* UIViewController+Runtime.m in Sources */,
 				84A821D224C04EAA00EAC652 /* EFClassDetailViewController.m in Sources */,
 				84760FAD24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
@@ -1333,17 +1480,22 @@
 				84A8214224BC55CB00EAC652 /* HttpManager.m in Sources */,
 				84760F7524C1432F002B34E4 /* MeTabTableViewCell.m in Sources */,
 				84A8218424BED7E400EAC652 /* EFFastTableViewCell.m in Sources */,
+				8476102D24C52BDC002B34E4 /* H5Manager.m in Sources */,
 				84760F8024C1551B002B34E4 /* EFWKWebConfig.m in Sources */,
 				84A821C824C047C000EAC652 /* EFClassTabTableViewCell.m in Sources */,
 				84760F8C24C15AD5002B34E4 /* EFSearchModel.m in Sources */,
+				8476106724C58861002B34E4 /* EFAddressViewController.m in Sources */,
 				84760F9624C1806D002B34E4 /* NSMutableAttributedString+Size.m in Sources */,
 				84A8216624BE92B900EAC652 /* HotTabTableViewCell.m in Sources */,
 				84A8218924BEDDCB00EAC652 /* GBGradientProgressView.m in Sources */,
 				84A8217524BEAE3000EAC652 /* EFHeaderView.m in Sources */,
+				8476103324C54189002B34E4 /* TuanListViewController.m in Sources */,
 				84A8217A24BEB35E00EAC652 /* EFFastCollectionViewCell.m in Sources */,
+				8476107824C59780002B34E4 /* UILabel+LabelHeightAndWidth.m in Sources */,
 				84A820E624B6F5E800EAC652 /* EFHomeViewController.m in Sources */,
 				84A8217024BEA92300EAC652 /* EFNoticTitleCell.m in Sources */,
 				84A821B824C026FF00EAC652 /* EFSearchResultViewController.m in Sources */,
+				8476105224C574E5002B34E4 /* TuanListDetailTableViewCell.m in Sources */,
 				84A8208924B6C62300EAC652 /* main.m in Sources */,
 				84A821AB24BF15FF00EAC652 /* EFFollowCollectionViewCell.m in Sources */,
 				84A820CD24B6CCC600EAC652 /* FMARCNetwork+interface.m in Sources */,
@@ -1364,16 +1516,24 @@
 				84A820FA24BC4F5400EAC652 /* EFFollowViewController.m in Sources */,
 				84A821B424BFFAE700EAC652 /* EFSearchViewController.m in Sources */,
 				84187CA524C05D0200ED3F96 /* MeHeaderView.m in Sources */,
+				8476104E24C573B1002B34E4 /* TuanListDetailViewController.m in Sources */,
+				8476105D24C57E81002B34E4 /* TuanOtherGoodsView.m in Sources */,
+				8476104424C54B72002B34E4 /* TuanPeopleView.m in Sources */,
 				84A8215524BDA0F200EAC652 /* EFHotViewController.m in Sources */,
 				84A820FB24BC4F5400EAC652 /* EFBaseTableView.m in Sources */,
 				84A820FC24BC4F5400EAC652 /* BaseTableViewCell.m in Sources */,
+				8476105824C57636002B34E4 /* TuanListDetailSecsionView.m in Sources */,
 				84A820FD24BC4F5400EAC652 /* UIView+Radius.m in Sources */,
 				84A820FE24BC4F5400EAC652 /* FMHttpResonse.m in Sources */,
+				8476108924C5A29D002B34E4 /* EFSetUpTableViewCell.m in Sources */,
 				84A8216C24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
+				8476106224C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m in Sources */,
 				84A8218F24BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */,
 				84187CAA24C05E8200ED3F96 /* VerticalLabelBotton.m in Sources */,
 				84A8210024BC4F5400EAC652 /* EFMeViewController.m in Sources */,
 				84A8210124BC4F5400EAC652 /* EFBaseTableViewController.m in Sources */,
+				8476108E24C5ABE6002B34E4 /* EFAccountTableViewCell.m in Sources */,
+				8476104924C54E21002B34E4 /* TuanListTableViewCell.m in Sources */,
 				84A8215A24BDB45E00EAC652 /* UIImage+Darw.m in Sources */,
 				84A821A124BF146200EAC652 /* EFFollowSubViewController.m in Sources */,
 				84760F8724C1596E002B34E4 /* EFBaseModel.m in Sources */,
@@ -1386,12 +1546,18 @@
 				84A8214824BC5F0900EAC652 /* EFPlusButton.m in Sources */,
 				84A8210624BC4F5400EAC652 /* EFBaseViewController.m in Sources */,
 				84A821CE24C0497200EAC652 /* EFHomeOtherViewController.m in Sources */,
+				8476107324C58C7C002B34E4 /* EFAddressTableViewCell.m in Sources */,
 				84A8219524BEF2DB00EAC652 /* UIView+GradientColor.m in Sources */,
+				8476108424C5A09E002B34E4 /* EFSetUpVM.m in Sources */,
 				8476102924C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */,
 				84A821C424C03BB800EAC652 /* SeachOneCollectionViewCell.m in Sources */,
 				84A8210724BC4F5400EAC652 /* AppDelegate.m in Sources */,
+				8476109324C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */,
+				8476103A24C54200002B34E4 /* TuanGoodsView.m in Sources */,
+				8476107E24C5A06F002B34E4 /* EFSetUpViewController.m in Sources */,
 				84760F9224C17AC1002B34E4 /* NSString+NSMutableAttributedString.m in Sources */,
 				84A8210824BC4F5400EAC652 /* FMARCNetwork.m in Sources */,
+				8476103F24C54854002B34E4 /* TuanListSelectView.m in Sources */,
 				84A8210924BC4F5400EAC652 /* UIViewController+Runtime.m in Sources */,
 				84A821D324C04EAA00EAC652 /* EFClassDetailViewController.m in Sources */,
 				84760FAE24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
@@ -1399,17 +1565,22 @@
 				84A8210A24BC4F5400EAC652 /* EFHomeViewController.m in Sources */,
 				84760F7624C1432F002B34E4 /* MeTabTableViewCell.m in Sources */,
 				84A8218524BED7E400EAC652 /* EFFastTableViewCell.m in Sources */,
+				8476102E24C52BDC002B34E4 /* H5Manager.m in Sources */,
 				84760F8124C1551B002B34E4 /* EFWKWebConfig.m in Sources */,
 				84A821C924C047C000EAC652 /* EFClassTabTableViewCell.m in Sources */,
 				84760F8D24C15AD5002B34E4 /* EFSearchModel.m in Sources */,
+				8476106824C58861002B34E4 /* EFAddressViewController.m in Sources */,
 				84760F9724C1806D002B34E4 /* NSMutableAttributedString+Size.m in Sources */,
 				84A8216724BE92B900EAC652 /* HotTabTableViewCell.m in Sources */,
 				84A8218A24BEDDCB00EAC652 /* GBGradientProgressView.m in Sources */,
 				84A8217624BEAE3000EAC652 /* EFHeaderView.m in Sources */,
+				8476103424C54189002B34E4 /* TuanListViewController.m in Sources */,
 				84A8217B24BEB35E00EAC652 /* EFFastCollectionViewCell.m in Sources */,
+				8476107924C59780002B34E4 /* UILabel+LabelHeightAndWidth.m in Sources */,
 				84A8210B24BC4F5400EAC652 /* main.m in Sources */,
 				84A8217124BEA92400EAC652 /* EFNoticTitleCell.m in Sources */,
 				84A821B924C026FF00EAC652 /* EFSearchResultViewController.m in Sources */,
+				8476105324C574E5002B34E4 /* TuanListDetailTableViewCell.m in Sources */,
 				84A8210C24BC4F5400EAC652 /* FMARCNetwork+interface.m in Sources */,
 				84A821AC24BF15FF00EAC652 /* EFFollowCollectionViewCell.m in Sources */,
 				84A8210D24BC4F5400EAC652 /* EFClassifyViewController.m in Sources */,
@@ -1430,16 +1601,24 @@
 				84A8211E24BC513500EAC652 /* EFFollowViewController.m in Sources */,
 				84A821B524BFFAE700EAC652 /* EFSearchViewController.m in Sources */,
 				84187CA624C05D0200ED3F96 /* MeHeaderView.m in Sources */,
+				8476104F24C573B1002B34E4 /* TuanListDetailViewController.m in Sources */,
+				8476105E24C57E81002B34E4 /* TuanOtherGoodsView.m in Sources */,
+				8476104524C54B72002B34E4 /* TuanPeopleView.m in Sources */,
 				84A8215624BDA0F200EAC652 /* EFHotViewController.m in Sources */,
 				84A8211F24BC513500EAC652 /* EFBaseTableView.m in Sources */,
 				84A8212024BC513500EAC652 /* BaseTableViewCell.m in Sources */,
+				8476105924C57636002B34E4 /* TuanListDetailSecsionView.m in Sources */,
 				84A8212124BC513500EAC652 /* UIView+Radius.m in Sources */,
 				84A8212224BC513500EAC652 /* FMHttpResonse.m in Sources */,
+				8476108A24C5A29D002B34E4 /* EFSetUpTableViewCell.m in Sources */,
 				84A8216D24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
+				8476106324C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m in Sources */,
 				84A8219024BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */,
 				84187CAB24C05E8200ED3F96 /* VerticalLabelBotton.m in Sources */,
 				84A8212324BC513500EAC652 /* EFBaseTabBarViewController.m in Sources */,
 				84A8212424BC513500EAC652 /* EFMeViewController.m in Sources */,
+				8476108F24C5ABE6002B34E4 /* EFAccountTableViewCell.m in Sources */,
+				8476104A24C54E21002B34E4 /* TuanListTableViewCell.m in Sources */,
 				84A8215B24BDB45E00EAC652 /* UIImage+Darw.m in Sources */,
 				84A821A224BF146200EAC652 /* EFFollowSubViewController.m in Sources */,
 				84760F8824C1596E002B34E4 /* EFBaseModel.m in Sources */,
@@ -1452,12 +1631,18 @@
 				84A8214924BC5F0900EAC652 /* EFPlusButton.m in Sources */,
 				84A8212A24BC513500EAC652 /* EFBaseViewController.m in Sources */,
 				84A821CF24C0497200EAC652 /* EFHomeOtherViewController.m in Sources */,
+				8476107424C58C7C002B34E4 /* EFAddressTableViewCell.m in Sources */,
 				84A8219624BEF2DB00EAC652 /* UIView+GradientColor.m in Sources */,
+				8476108524C5A09E002B34E4 /* EFSetUpVM.m in Sources */,
 				8476102A24C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */,
 				84A821C524C03BB800EAC652 /* SeachOneCollectionViewCell.m in Sources */,
 				84A8212B24BC513500EAC652 /* AppDelegate.m in Sources */,
+				8476109424C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */,
+				8476103B24C54200002B34E4 /* TuanGoodsView.m in Sources */,
+				8476107F24C5A06F002B34E4 /* EFSetUpViewController.m in Sources */,
 				84760F9324C17AC1002B34E4 /* NSString+NSMutableAttributedString.m in Sources */,
 				84A8212C24BC513500EAC652 /* FMARCNetwork.m in Sources */,
+				8476104024C54854002B34E4 /* TuanListSelectView.m in Sources */,
 				84A8212D24BC513500EAC652 /* UIViewController+Runtime.m in Sources */,
 				84A821D424C04EAA00EAC652 /* EFClassDetailViewController.m in Sources */,
 				84760FAF24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
@@ -1465,17 +1650,22 @@
 				84A8214424BC55CB00EAC652 /* HttpManager.m in Sources */,
 				84760F7724C1432F002B34E4 /* MeTabTableViewCell.m in Sources */,
 				84A8218624BED7E400EAC652 /* EFFastTableViewCell.m in Sources */,
+				8476102F24C52BDC002B34E4 /* H5Manager.m in Sources */,
 				84760F8224C1551B002B34E4 /* EFWKWebConfig.m in Sources */,
 				84A821CA24C047C100EAC652 /* EFClassTabTableViewCell.m in Sources */,
 				84760F8E24C15AD5002B34E4 /* EFSearchModel.m in Sources */,
+				8476106924C58861002B34E4 /* EFAddressViewController.m in Sources */,
 				84760F9824C1806D002B34E4 /* NSMutableAttributedString+Size.m in Sources */,
 				84A8216824BE92B900EAC652 /* HotTabTableViewCell.m in Sources */,
 				84A8218B24BEDDCB00EAC652 /* GBGradientProgressView.m in Sources */,
 				84A8217724BEAE3000EAC652 /* EFHeaderView.m in Sources */,
+				8476103524C54189002B34E4 /* TuanListViewController.m in Sources */,
 				84A8217C24BEB35E00EAC652 /* EFFastCollectionViewCell.m in Sources */,
+				8476107A24C59780002B34E4 /* UILabel+LabelHeightAndWidth.m in Sources */,
 				84A8212E24BC513500EAC652 /* EFHomeViewController.m in Sources */,
 				84A8217224BEA92400EAC652 /* EFNoticTitleCell.m in Sources */,
 				84A821BA24C0270000EAC652 /* EFSearchResultViewController.m in Sources */,
+				8476105424C574E5002B34E4 /* TuanListDetailTableViewCell.m in Sources */,
 				84A8212F24BC513500EAC652 /* main.m in Sources */,
 				84A821AD24BF15FF00EAC652 /* EFFollowCollectionViewCell.m in Sources */,
 				84A8213024BC513500EAC652 /* FMARCNetwork+interface.m in Sources */,

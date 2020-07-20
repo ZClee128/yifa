@@ -41,4 +41,5 @@
 #import <WebKit/WebKit.h>
 #import "EFWKWebConfig.h"
 #import <WebViewJavascriptBridge/WebViewJavascriptBridge.h>
+#import "UILabel+LabelHeightAndWidth.h"
 #endif /* Header_h */
