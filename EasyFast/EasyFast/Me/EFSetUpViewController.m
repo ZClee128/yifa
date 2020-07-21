@@ -10,6 +10,8 @@
 #import "EFSetUpVM.h"
 #import "EFSetUpTableViewCell.h"
 #import "EFChangeAccountViewController.h"
+#import "EFPrivacyViewController.h"
+#import "EFNotiViewController.h"
 
 @interface EFSetUpViewController ()
 
@@ -27,8 +29,17 @@
         [_loginOutBtn setTitleColor:colorF14745 forState:(UIControlStateNormal)];
         _loginOutBtn.titleLabel.font = MedFont15;
         _loginOutBtn.backgroundColor = UIColor.whiteColor;
+        @weakify(self);
+        [[_loginOutBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self);
+            [self bottomClick];
+        }];
     }
     return _loginOutBtn;
+}
+
+- (void)bottomClick {
+    
 }
 
 - (void)viewDidLoad {
@@ -44,6 +55,11 @@
         make.height.equalTo(@(WidthOfScale(50)+TAB_SAFE_HEIGHT));
         make.width.equalTo(@(kPHONE_WIDTH));
     }];
+}
+
+- (void)setBottomTile:(NSString *)title color:(UIColor *)color {
+    [self.loginOutBtn setTitle:title forState:(UIControlStateNormal)];
+    [self.loginOutBtn setTitleColor:color forState:(UIControlStateNormal)];
 }
 
 
@@ -103,15 +119,35 @@
                     }];
                 }
                     break;
-                    
+                case 1:
+                    break;
                 default:
+                {
+                    EFPrivacyViewController *vc = [[EFPrivacyViewController alloc] init];
+                    [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+                        
+                    }];
+                }
                     break;
             }
             
             break;
         }
         default:
-            break;
+        {
+            switch (indexPath.row) {
+                case 0:
+                {
+                    EFNotiViewController *vc = [[EFNotiViewController alloc] init];
+                    [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+                        
+                    }];
+                    break;
+                }
+                default:
+                    break;
+            }
+        }
     }
 }
 @end

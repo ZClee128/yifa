@@ -202,18 +202,19 @@
     NSArray *titles = @[@"关注店铺",@"浏览足迹",@"我的消息"];
     for (int i = 0; i<titles.count; i++) {
         VerticalLabelBotton *btn = [[VerticalLabelBotton alloc] initWithFrame:CGRectMake(i*bottomBg.width/3, WidthOfScale(22), bottomBg.width/3, WidthOfScale(37))];
-        [bottomBg addSubview:btn];
         btn.tag = i+100;
+        [bottomBg addSubview:btn];
         [btn setTopTilte:@"0" bottomTitle:titles[i]];
-        @weakify(self);
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithActionBlock:^(VerticalLabelBotton *sender) {
-            @strongify(self);
-            if (self.message) {
-                self.message(sender.tag - 100);
-            }
-        }];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(click:)];
         btn.userInteractionEnabled = YES;
         [btn addGestureRecognizer:tap];
+        
+    }
+}
+
+- (void)click:(UITapGestureRecognizer *)sender {
+    if (self.message) {
+        self.message(sender.view.tag - 100);
     }
 }
 

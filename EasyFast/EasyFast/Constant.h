@@ -92,6 +92,7 @@ fprintf(stderr,"[--%s--]\n[--%s:%d--]\n[--%s--]\n===========================\n",
 #define colorFE851E RGB16(0xFE851E)
 #define color39342F RGB16(0x39342F)
 #define colorFFF9EB RGB16(0xFFF9EB)
+#define color499AFF RGB16(0x499AFF)
 
 
 

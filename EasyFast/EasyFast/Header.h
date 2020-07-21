@@ -42,4 +42,6 @@
 #import "EFWKWebConfig.h"
 #import <WebViewJavascriptBridge/WebViewJavascriptBridge.h>
 #import "UILabel+LabelHeightAndWidth.h"
+#import "EFBaseWebViewController.h"
+#import "UIView+XQCAlertPop.h"
 #endif /* Header_h */

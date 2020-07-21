@@ -16,6 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)hiddenMore ;
 
 - (void)showMore;
+
+- (void)hiddenHeader ;
+
+- (void)showHeader;
 @end
 
 NS_ASSUME_NONNULL_END

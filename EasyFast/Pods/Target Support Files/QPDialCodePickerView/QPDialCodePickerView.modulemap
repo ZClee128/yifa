@@ -1,0 +1,6 @@
+framework module QPDialCodePickerView {
+  umbrella header "QPDialCodePickerView-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -13,10 +13,21 @@
 @property (nonatomic,strong)QMUILabel *subTitleLab;
 @property (nonatomic,strong)UIImageView *moreView;
 @property (nonatomic,strong)QMUILabel *titleLab;
+@property (nonatomic,strong)UIImageView *headerImageView;
 
 @end
 
 @implementation EFSetUpTableViewCell
+
+-(UIImageView *)headerImageView
+{
+    if (_headerImageView == nil) {
+        _headerImageView = [[UIImageView alloc] init];
+        _headerImageView.hidden = YES;
+        _headerImageView.backgroundColor = colorEFEFEF;
+    }
+    return _headerImageView;
+}
 
 -(UIImageView *)moreView
 {
@@ -61,6 +72,15 @@
         make.centerY.equalTo(self.contentView);
     }];
     
+    [self.contentView addSubview:self.headerImageView];
+    [self.headerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(@(-WidthOfScale(44.5)));
+        make.centerY.equalTo(self.contentView);
+        make.size.mas_equalTo(CGSizeMake(WidthOfScale(39), WidthOfScale(39)));
+    }];
+    [self.headerImageView layoutIfNeeded];
+    [self.headerImageView ViewRadius];
+    
     [self.contentView addSubview:self.moreView];
     [self.moreView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(@(-WidthOfScale(15)));
@@ -87,6 +107,14 @@
         make.right.equalTo(@(-WidthOfScale(43.5)));
     }];
     self.moreView.hidden = NO;
+}
+
+- (void)hiddenHeader {
+    self.headerImageView.hidden = YES;
+}
+
+- (void)showHeader {
+    self.headerImageView.hidden = NO;
 }
 
 - (void)awakeFromNib {

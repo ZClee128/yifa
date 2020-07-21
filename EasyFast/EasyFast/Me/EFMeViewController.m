@@ -13,7 +13,9 @@
 #import "MeWebTableViewCell.h"
 #import "EFAddressViewController.h"
 #import "EFSetUpViewController.h"
-
+#import "EFBindPhoneViewController.h"
+#import "EFEditPasswordViewController.h"
+#import "EFMeDataViewController.h"
 
 @interface EFMeViewController ()
 
@@ -30,7 +32,12 @@
     if (_headerView == nil) {
         @weakify(self);
         _headerView = [[MeHeaderView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, WidthOfScale(236.5)) headerBlcok:^{
-            
+            @strongify(self);
+            EFMeDataViewController *vc = [[EFMeDataViewController alloc] init];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+                
+            }];
         } setUpBlock:^{
             @strongify(self);
             EFSetUpViewController *vc = [[EFSetUpViewController alloc] init];
@@ -39,13 +46,23 @@
                 
             }];
         } becomeBlock:^{
-            
+            @strongify(self);
+            EFBindPhoneViewController *vc = [[EFBindPhoneViewController alloc] init];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+                
+            }];
         } followBlcok:^{
             
         } seeBlock:^{
             
         } messageBlock:^(NSInteger index) {
-            
+            @strongify(self);
+            EFEditPasswordViewController *vc = [[EFEditPasswordViewController alloc] init];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+                
+            }];
         } vipBlock:^{
                 
         }];

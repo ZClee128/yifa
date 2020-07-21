@@ -22,7 +22,18 @@
     self.view.backgroundColor = colorfafafa;
     self.navigationController.navigationBarHidden = YES;
     self.gk_backImage = [UIImage imageNamed:@"btn_back_black"];
-
+    
+//    QMUIButton *leftItem = [QMUIButton buttonWithType:UIButtonTypeSystem];
+//    [leftItem setImage:[UIImage imageNamed:@"btn_back_black"] forState:UIControlStateNormal];
+//    UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
+//    [rightView addSubview:leftItem];
+//    UIBarButtonItem *leftBarItem = [[UIBarButtonItem alloc] initWithCustomView:rightView];
+//    self.gk_navigationItem.leftBarButtonItem = leftBarItem;
+    
+    self.gk_navTitleFont = MedFont17;
+    self.gk_navTitleColor = tabbarBlackColor;
+    self.gk_navItemLeftSpace = WidthOfScale(0);
+    self.gk_navLineHidden = YES;
 }
 
 - (BOOL)prefersStatusBarHidden {

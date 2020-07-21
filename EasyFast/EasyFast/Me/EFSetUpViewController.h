@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EFSetUpViewController : EFBaseTableViewController
 
+- (void)setBottomTile:(NSString *)title color:(UIColor *)color;
+- (void)bottomClick;
 @end
 
 NS_ASSUME_NONNULL_END

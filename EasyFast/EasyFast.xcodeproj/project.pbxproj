@@ -40,90 +40,6 @@
 		84760FAD24C19779002B34E4 /* MeWebTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84760FAC24C19779002B34E4 /* MeWebTableViewCell.m */; };
 		84760FAE24C19779002B34E4 /* MeWebTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84760FAC24C19779002B34E4 /* MeWebTableViewCell.m */; };
 		84760FAF24C19779002B34E4 /* MeWebTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84760FAC24C19779002B34E4 /* MeWebTableViewCell.m */; };
-		84760FD224C19B5C002B34E4 /* favicon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 84760FB124C19B5B002B34E4 /* favicon.ico */; };
-		84760FD324C19B5C002B34E4 /* favicon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 84760FB124C19B5B002B34E4 /* favicon.ico */; };
-		84760FD424C19B5C002B34E4 /* favicon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 84760FB124C19B5B002B34E4 /* favicon.ico */; };
-		84760FD524C19B5C002B34E4 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 84760FB224C19B5B002B34E4 /* index.html */; };
-		84760FD624C19B5C002B34E4 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 84760FB224C19B5B002B34E4 /* index.html */; };
-		84760FD724C19B5C002B34E4 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 84760FB224C19B5B002B34E4 /* index.html */; };
-		84760FD824C19B5C002B34E4 /* chunk-1a8f6123.79917033.css in Resources */ = {isa = PBXBuildFile; fileRef = 84760FB424C19B5B002B34E4 /* chunk-1a8f6123.79917033.css */; };
-		84760FD924C19B5C002B34E4 /* chunk-1a8f6123.79917033.css in Resources */ = {isa = PBXBuildFile; fileRef = 84760FB424C19B5B002B34E4 /* chunk-1a8f6123.79917033.css */; };
-		84760FDA24C19B5C002B34E4 /* chunk-1a8f6123.79917033.css in Resources */ = {isa = PBXBuildFile; fileRef = 84760FB424C19B5B002B34E4 /* chunk-1a8f6123.79917033.css */; };
-		84760FDB24C19B5C002B34E4 /* chunk-52e329f7.d81660b7.css in Resources */ = {isa = PBXBuildFile; fileRef = 84760FB524C19B5B002B34E4 /* chunk-52e329f7.d81660b7.css */; };
-		84760FDC24C19B5C002B34E4 /* chunk-52e329f7.d81660b7.css in Resources */ = {isa = PBXBuildFile; fileRef = 84760FB524C19B5B002B34E4 /* chunk-52e329f7.d81660b7.css */; };
-		84760FDD24C19B5C002B34E4 /* chunk-52e329f7.d81660b7.css in Resources */ = {isa = PBXBuildFile; fileRef = 84760FB524C19B5B002B34E4 /* chunk-52e329f7.d81660b7.css */; };
-		84760FDE24C19B5C002B34E4 /* chunk-vendors.52f1c8a5.css.gz in Resources */ = {isa = PBXBuildFile; fileRef = 84760FB624C19B5B002B34E4 /* chunk-vendors.52f1c8a5.css.gz */; };
-		84760FDF24C19B5C002B34E4 /* chunk-vendors.52f1c8a5.css.gz in Resources */ = {isa = PBXBuildFile; fileRef = 84760FB624C19B5B002B34E4 /* chunk-vendors.52f1c8a5.css.gz */; };
-		84760FE024C19B5C002B34E4 /* chunk-vendors.52f1c8a5.css.gz in Resources */ = {isa = PBXBuildFile; fileRef = 84760FB624C19B5B002B34E4 /* chunk-vendors.52f1c8a5.css.gz */; };
-		84760FE124C19B5C002B34E4 /* chunk-65c081d5.df1602dc.css in Resources */ = {isa = PBXBuildFile; fileRef = 84760FB724C19B5B002B34E4 /* chunk-65c081d5.df1602dc.css */; };
-		84760FE224C19B5C002B34E4 /* chunk-65c081d5.df1602dc.css in Resources */ = {isa = PBXBuildFile; fileRef = 84760FB724C19B5B002B34E4 /* chunk-65c081d5.df1602dc.css */; };
-		84760FE324C19B5C002B34E4 /* chunk-65c081d5.df1602dc.css in Resources */ = {isa = PBXBuildFile; fileRef = 84760FB724C19B5B002B34E4 /* chunk-65c081d5.df1602dc.css */; };
-		84760FE424C19B5C002B34E4 /* app.e748ca6c.css in Resources */ = {isa = PBXBuildFile; fileRef = 84760FB824C19B5B002B34E4 /* app.e748ca6c.css */; };
-		84760FE524C19B5C002B34E4 /* app.e748ca6c.css in Resources */ = {isa = PBXBuildFile; fileRef = 84760FB824C19B5B002B34E4 /* app.e748ca6c.css */; };
-		84760FE624C19B5C002B34E4 /* app.e748ca6c.css in Resources */ = {isa = PBXBuildFile; fileRef = 84760FB824C19B5B002B34E4 /* app.e748ca6c.css */; };
-		84760FE724C19B5C002B34E4 /* chunk-030db65f.cae548b8.css in Resources */ = {isa = PBXBuildFile; fileRef = 84760FB924C19B5C002B34E4 /* chunk-030db65f.cae548b8.css */; };
-		84760FE824C19B5C002B34E4 /* chunk-030db65f.cae548b8.css in Resources */ = {isa = PBXBuildFile; fileRef = 84760FB924C19B5C002B34E4 /* chunk-030db65f.cae548b8.css */; };
-		84760FE924C19B5C002B34E4 /* chunk-030db65f.cae548b8.css in Resources */ = {isa = PBXBuildFile; fileRef = 84760FB924C19B5C002B34E4 /* chunk-030db65f.cae548b8.css */; };
-		84760FEA24C19B5C002B34E4 /* chunk-b4e77c20.b9ee7607.css in Resources */ = {isa = PBXBuildFile; fileRef = 84760FBA24C19B5C002B34E4 /* chunk-b4e77c20.b9ee7607.css */; };
-		84760FEB24C19B5C002B34E4 /* chunk-b4e77c20.b9ee7607.css in Resources */ = {isa = PBXBuildFile; fileRef = 84760FBA24C19B5C002B34E4 /* chunk-b4e77c20.b9ee7607.css */; };
-		84760FEC24C19B5C002B34E4 /* chunk-b4e77c20.b9ee7607.css in Resources */ = {isa = PBXBuildFile; fileRef = 84760FBA24C19B5C002B34E4 /* chunk-b4e77c20.b9ee7607.css */; };
-		84760FED24C19B5C002B34E4 /* chunk-vendors.52f1c8a5.css in Resources */ = {isa = PBXBuildFile; fileRef = 84760FBB24C19B5C002B34E4 /* chunk-vendors.52f1c8a5.css */; };
-		84760FEE24C19B5C002B34E4 /* chunk-vendors.52f1c8a5.css in Resources */ = {isa = PBXBuildFile; fileRef = 84760FBB24C19B5C002B34E4 /* chunk-vendors.52f1c8a5.css */; };
-		84760FEF24C19B5C002B34E4 /* chunk-vendors.52f1c8a5.css in Resources */ = {isa = PBXBuildFile; fileRef = 84760FBB24C19B5C002B34E4 /* chunk-vendors.52f1c8a5.css */; };
-		84760FF024C19B5C002B34E4 /* chunk-b08f4ef6.7d5957c2.css in Resources */ = {isa = PBXBuildFile; fileRef = 84760FBC24C19B5C002B34E4 /* chunk-b08f4ef6.7d5957c2.css */; };
-		84760FF124C19B5C002B34E4 /* chunk-b08f4ef6.7d5957c2.css in Resources */ = {isa = PBXBuildFile; fileRef = 84760FBC24C19B5C002B34E4 /* chunk-b08f4ef6.7d5957c2.css */; };
-		84760FF224C19B5C002B34E4 /* chunk-b08f4ef6.7d5957c2.css in Resources */ = {isa = PBXBuildFile; fileRef = 84760FBC24C19B5C002B34E4 /* chunk-b08f4ef6.7d5957c2.css */; };
-		84760FF324C19B5C002B34E4 /* chunk-vendors.54c2afee.js.gz in Resources */ = {isa = PBXBuildFile; fileRef = 84760FBE24C19B5C002B34E4 /* chunk-vendors.54c2afee.js.gz */; };
-		84760FF424C19B5C002B34E4 /* chunk-vendors.54c2afee.js.gz in Resources */ = {isa = PBXBuildFile; fileRef = 84760FBE24C19B5C002B34E4 /* chunk-vendors.54c2afee.js.gz */; };
-		84760FF524C19B5C002B34E4 /* chunk-vendors.54c2afee.js.gz in Resources */ = {isa = PBXBuildFile; fileRef = 84760FBE24C19B5C002B34E4 /* chunk-vendors.54c2afee.js.gz */; };
-		84760FF624C19B5C002B34E4 /* chunk-b4e77c20.5c41d492.js.gz in Resources */ = {isa = PBXBuildFile; fileRef = 84760FBF24C19B5C002B34E4 /* chunk-b4e77c20.5c41d492.js.gz */; };
-		84760FF724C19B5C002B34E4 /* chunk-b4e77c20.5c41d492.js.gz in Resources */ = {isa = PBXBuildFile; fileRef = 84760FBF24C19B5C002B34E4 /* chunk-b4e77c20.5c41d492.js.gz */; };
-		84760FF824C19B5C002B34E4 /* chunk-b4e77c20.5c41d492.js.gz in Resources */ = {isa = PBXBuildFile; fileRef = 84760FBF24C19B5C002B34E4 /* chunk-b4e77c20.5c41d492.js.gz */; };
-		84760FF924C19B5C002B34E4 /* app.f868108e.js.gz in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC024C19B5C002B34E4 /* app.f868108e.js.gz */; };
-		84760FFA24C19B5C002B34E4 /* app.f868108e.js.gz in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC024C19B5C002B34E4 /* app.f868108e.js.gz */; };
-		84760FFB24C19B5C002B34E4 /* app.f868108e.js.gz in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC024C19B5C002B34E4 /* app.f868108e.js.gz */; };
-		84760FFC24C19B5C002B34E4 /* chunk-2d0e1d52.a916e0e5.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC124C19B5C002B34E4 /* chunk-2d0e1d52.a916e0e5.js */; };
-		84760FFD24C19B5C002B34E4 /* chunk-2d0e1d52.a916e0e5.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC124C19B5C002B34E4 /* chunk-2d0e1d52.a916e0e5.js */; };
-		84760FFE24C19B5C002B34E4 /* chunk-2d0e1d52.a916e0e5.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC124C19B5C002B34E4 /* chunk-2d0e1d52.a916e0e5.js */; };
-		84760FFF24C19B5C002B34E4 /* chunk-52e329f7.ec8277f2.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC224C19B5C002B34E4 /* chunk-52e329f7.ec8277f2.js */; };
-		8476100024C19B5C002B34E4 /* chunk-52e329f7.ec8277f2.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC224C19B5C002B34E4 /* chunk-52e329f7.ec8277f2.js */; };
-		8476100124C19B5C002B34E4 /* chunk-52e329f7.ec8277f2.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC224C19B5C002B34E4 /* chunk-52e329f7.ec8277f2.js */; };
-		8476100224C19B5C002B34E4 /* chunk-vendors.54c2afee.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC324C19B5C002B34E4 /* chunk-vendors.54c2afee.js */; };
-		8476100324C19B5C002B34E4 /* chunk-vendors.54c2afee.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC324C19B5C002B34E4 /* chunk-vendors.54c2afee.js */; };
-		8476100424C19B5C002B34E4 /* chunk-vendors.54c2afee.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC324C19B5C002B34E4 /* chunk-vendors.54c2afee.js */; };
-		8476100524C19B5C002B34E4 /* chunk-65c081d5.668bdac5.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC424C19B5C002B34E4 /* chunk-65c081d5.668bdac5.js */; };
-		8476100624C19B5C002B34E4 /* chunk-65c081d5.668bdac5.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC424C19B5C002B34E4 /* chunk-65c081d5.668bdac5.js */; };
-		8476100724C19B5C002B34E4 /* chunk-65c081d5.668bdac5.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC424C19B5C002B34E4 /* chunk-65c081d5.668bdac5.js */; };
-		8476100824C19B5C002B34E4 /* app.f868108e.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC524C19B5C002B34E4 /* app.f868108e.js */; };
-		8476100924C19B5C002B34E4 /* app.f868108e.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC524C19B5C002B34E4 /* app.f868108e.js */; };
-		8476100A24C19B5C002B34E4 /* app.f868108e.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC524C19B5C002B34E4 /* app.f868108e.js */; };
-		8476100B24C19B5C002B34E4 /* chunk-vendors.54c2afee.js.LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC624C19B5C002B34E4 /* chunk-vendors.54c2afee.js.LICENSE.txt */; };
-		8476100C24C19B5C002B34E4 /* chunk-vendors.54c2afee.js.LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC624C19B5C002B34E4 /* chunk-vendors.54c2afee.js.LICENSE.txt */; };
-		8476100D24C19B5C002B34E4 /* chunk-vendors.54c2afee.js.LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC624C19B5C002B34E4 /* chunk-vendors.54c2afee.js.LICENSE.txt */; };
-		8476100E24C19B5C002B34E4 /* chunk-030db65f.f2cea986.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC724C19B5C002B34E4 /* chunk-030db65f.f2cea986.js */; };
-		8476100F24C19B5C002B34E4 /* chunk-030db65f.f2cea986.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC724C19B5C002B34E4 /* chunk-030db65f.f2cea986.js */; };
-		8476101024C19B5C002B34E4 /* chunk-030db65f.f2cea986.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC724C19B5C002B34E4 /* chunk-030db65f.f2cea986.js */; };
-		8476101124C19B5C002B34E4 /* chunk-b4e77c20.5c41d492.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC824C19B5C002B34E4 /* chunk-b4e77c20.5c41d492.js */; };
-		8476101224C19B5C002B34E4 /* chunk-b4e77c20.5c41d492.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC824C19B5C002B34E4 /* chunk-b4e77c20.5c41d492.js */; };
-		8476101324C19B5C002B34E4 /* chunk-b4e77c20.5c41d492.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC824C19B5C002B34E4 /* chunk-b4e77c20.5c41d492.js */; };
-		8476101424C19B5C002B34E4 /* chunk-2d0b30b7.e18553b8.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC924C19B5C002B34E4 /* chunk-2d0b30b7.e18553b8.js */; };
-		8476101524C19B5C002B34E4 /* chunk-2d0b30b7.e18553b8.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC924C19B5C002B34E4 /* chunk-2d0b30b7.e18553b8.js */; };
-		8476101624C19B5C002B34E4 /* chunk-2d0b30b7.e18553b8.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FC924C19B5C002B34E4 /* chunk-2d0b30b7.e18553b8.js */; };
-		8476101724C19B5C002B34E4 /* chunk-b08f4ef6.741d5076.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FCA24C19B5C002B34E4 /* chunk-b08f4ef6.741d5076.js */; };
-		8476101824C19B5C002B34E4 /* chunk-b08f4ef6.741d5076.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FCA24C19B5C002B34E4 /* chunk-b08f4ef6.741d5076.js */; };
-		8476101924C19B5C002B34E4 /* chunk-b08f4ef6.741d5076.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FCA24C19B5C002B34E4 /* chunk-b08f4ef6.741d5076.js */; };
-		8476101A24C19B5C002B34E4 /* chunk-1a8f6123.5b27e4f5.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FCB24C19B5C002B34E4 /* chunk-1a8f6123.5b27e4f5.js */; };
-		8476101B24C19B5C002B34E4 /* chunk-1a8f6123.5b27e4f5.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FCB24C19B5C002B34E4 /* chunk-1a8f6123.5b27e4f5.js */; };
-		8476101C24C19B5C002B34E4 /* chunk-1a8f6123.5b27e4f5.js in Resources */ = {isa = PBXBuildFile; fileRef = 84760FCB24C19B5C002B34E4 /* chunk-1a8f6123.5b27e4f5.js */; };
-		8476101D24C19B5C002B34E4 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 84760FCD24C19B5C002B34E4 /* index.html */; };
-		8476101E24C19B5C002B34E4 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 84760FCD24C19B5C002B34E4 /* index.html */; };
-		8476101F24C19B5C002B34E4 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 84760FCD24C19B5C002B34E4 /* index.html */; };
-		8476102024C19B5C002B34E4 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 84760FCF24C19B5C002B34E4 /* index.html */; };
-		8476102124C19B5C002B34E4 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 84760FCF24C19B5C002B34E4 /* index.html */; };
-		8476102224C19B5C002B34E4 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 84760FCF24C19B5C002B34E4 /* index.html */; };
-		8476102324C19B5C002B34E4 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 84760FD124C19B5C002B34E4 /* index.html */; };
-		8476102424C19B5C002B34E4 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 84760FD124C19B5C002B34E4 /* index.html */; };
-		8476102524C19B5C002B34E4 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 84760FD124C19B5C002B34E4 /* index.html */; };
 		8476102824C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476102724C1A467002B34E4 /* SLScrollViewHorizontalItem.m */; };
 		8476102924C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476102724C1A467002B34E4 /* SLScrollViewHorizontalItem.m */; };
 		8476102A24C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476102724C1A467002B34E4 /* SLScrollViewHorizontalItem.m */; };
@@ -184,6 +100,54 @@
 		8476109224C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476109124C5AD69002B34E4 /* EFChangeAccountViewController.m */; };
 		8476109324C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476109124C5AD69002B34E4 /* EFChangeAccountViewController.m */; };
 		8476109424C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476109124C5AD69002B34E4 /* EFChangeAccountViewController.m */; };
+		8476109924C67D19002B34E4 /* EFBindPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476109824C67D19002B34E4 /* EFBindPhoneViewController.m */; };
+		8476109A24C67D19002B34E4 /* EFBindPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476109824C67D19002B34E4 /* EFBindPhoneViewController.m */; };
+		8476109B24C67D19002B34E4 /* EFBindPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476109824C67D19002B34E4 /* EFBindPhoneViewController.m */; };
+		8476109F24C684EA002B34E4 /* EFQPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476109E24C684EA002B34E4 /* EFQPTableViewCell.m */; };
+		847610A024C684EA002B34E4 /* EFQPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476109E24C684EA002B34E4 /* EFQPTableViewCell.m */; };
+		847610A124C684EA002B34E4 /* EFQPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476109E24C684EA002B34E4 /* EFQPTableViewCell.m */; };
+		847610A424C68962002B34E4 /* EFPhoneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610A324C68962002B34E4 /* EFPhoneTableViewCell.m */; };
+		847610A524C68962002B34E4 /* EFPhoneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610A324C68962002B34E4 /* EFPhoneTableViewCell.m */; };
+		847610A624C68962002B34E4 /* EFPhoneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610A324C68962002B34E4 /* EFPhoneTableViewCell.m */; };
+		847610A924C69AD0002B34E4 /* EFCodeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610A824C69AD0002B34E4 /* EFCodeTableViewCell.m */; };
+		847610AA24C69AD0002B34E4 /* EFCodeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610A824C69AD0002B34E4 /* EFCodeTableViewCell.m */; };
+		847610AB24C69AD0002B34E4 /* EFCodeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610A824C69AD0002B34E4 /* EFCodeTableViewCell.m */; };
+		847610AF24C6A011002B34E4 /* LoginVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610AE24C6A011002B34E4 /* LoginVM.m */; };
+		847610B024C6A012002B34E4 /* LoginVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610AE24C6A011002B34E4 /* LoginVM.m */; };
+		847610B124C6A012002B34E4 /* LoginVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610AE24C6A011002B34E4 /* LoginVM.m */; };
+		847610B424C6C209002B34E4 /* EFEditPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610B324C6C209002B34E4 /* EFEditPasswordViewController.m */; };
+		847610B524C6C209002B34E4 /* EFEditPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610B324C6C209002B34E4 /* EFEditPasswordViewController.m */; };
+		847610B624C6C209002B34E4 /* EFEditPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610B324C6C209002B34E4 /* EFEditPasswordViewController.m */; };
+		847610BA24C6C291002B34E4 /* EFPasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610B924C6C291002B34E4 /* EFPasswordTextField.m */; };
+		847610BB24C6C291002B34E4 /* EFPasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610B924C6C291002B34E4 /* EFPasswordTextField.m */; };
+		847610BC24C6C291002B34E4 /* EFPasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610B924C6C291002B34E4 /* EFPasswordTextField.m */; };
+		847610BF24C6D1D0002B34E4 /* EFPrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610BE24C6D1D0002B34E4 /* EFPrivacyViewController.m */; };
+		847610C024C6D1D1002B34E4 /* EFPrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610BE24C6D1D0002B34E4 /* EFPrivacyViewController.m */; };
+		847610C124C6D1D1002B34E4 /* EFPrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610BE24C6D1D0002B34E4 /* EFPrivacyViewController.m */; };
+		847610C424C6D44C002B34E4 /* EFBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610C324C6D44B002B34E4 /* EFBaseWebViewController.m */; };
+		847610C524C6D44C002B34E4 /* EFBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610C324C6D44B002B34E4 /* EFBaseWebViewController.m */; };
+		847610C624C6D44C002B34E4 /* EFBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610C324C6D44B002B34E4 /* EFBaseWebViewController.m */; };
+		847610C924C6D7FA002B34E4 /* EFPowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610C824C6D7FA002B34E4 /* EFPowerViewController.m */; };
+		847610CA24C6D7FA002B34E4 /* EFPowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610C824C6D7FA002B34E4 /* EFPowerViewController.m */; };
+		847610CB24C6D7FA002B34E4 /* EFPowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610C824C6D7FA002B34E4 /* EFPowerViewController.m */; };
+		847610CE24C6D898002B34E4 /* PowerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610CD24C6D898002B34E4 /* PowerTableViewCell.m */; };
+		847610CF24C6D898002B34E4 /* PowerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610CD24C6D898002B34E4 /* PowerTableViewCell.m */; };
+		847610D024C6D898002B34E4 /* PowerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847610CD24C6D898002B34E4 /* PowerTableViewCell.m */; };
+		8476117124C6E21C002B34E4 /* EFNotiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476117024C6E21C002B34E4 /* EFNotiViewController.m */; };
+		8476117224C6E21C002B34E4 /* EFNotiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476117024C6E21C002B34E4 /* EFNotiViewController.m */; };
+		8476117324C6E21C002B34E4 /* EFNotiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476117024C6E21C002B34E4 /* EFNotiViewController.m */; };
+		8476117624C6E2ED002B34E4 /* NotiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476117524C6E2ED002B34E4 /* NotiTableViewCell.m */; };
+		8476117724C6E2ED002B34E4 /* NotiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476117524C6E2ED002B34E4 /* NotiTableViewCell.m */; };
+		8476117824C6E2ED002B34E4 /* NotiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476117524C6E2ED002B34E4 /* NotiTableViewCell.m */; };
+		8476117F24C6F3A9002B34E4 /* UIView+XQCAlertPop.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476117D24C6F3A8002B34E4 /* UIView+XQCAlertPop.m */; };
+		8476118024C6F3A9002B34E4 /* UIView+XQCAlertPop.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476117D24C6F3A8002B34E4 /* UIView+XQCAlertPop.m */; };
+		8476118124C6F3A9002B34E4 /* UIView+XQCAlertPop.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476117D24C6F3A8002B34E4 /* UIView+XQCAlertPop.m */; };
+		8476118324C6FAE5002B34E4 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 8476118224C6FAE5002B34E4 /* dist */; };
+		8476118424C6FAE5002B34E4 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 8476118224C6FAE5002B34E4 /* dist */; };
+		8476118524C6FAE5002B34E4 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 8476118224C6FAE5002B34E4 /* dist */; };
+		8476118824C6FCF8002B34E4 /* EFMeDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476118724C6FCF8002B34E4 /* EFMeDataViewController.m */; };
+		8476118924C6FCF8002B34E4 /* EFMeDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476118724C6FCF8002B34E4 /* EFMeDataViewController.m */; };
+		8476118A24C6FCF8002B34E4 /* EFMeDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476118724C6FCF8002B34E4 /* EFMeDataViewController.m */; };
 		84A8207824B6C61800EAC652 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8207724B6C61800EAC652 /* AppDelegate.m */; };
 		84A8208324B6C62300EAC652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A8208224B6C62300EAC652 /* Assets.xcassets */; };
 		84A8208624B6C62300EAC652 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A8208424B6C62300EAC652 /* LaunchScreen.storyboard */; };
@@ -364,34 +328,6 @@
 		84760F9524C1806D002B34E4 /* NSMutableAttributedString+Size.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+Size.m"; sourceTree = "<group>"; };
 		84760FAB24C19779002B34E4 /* MeWebTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeWebTableViewCell.h; sourceTree = "<group>"; };
 		84760FAC24C19779002B34E4 /* MeWebTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeWebTableViewCell.m; sourceTree = "<group>"; };
-		84760FB124C19B5B002B34E4 /* favicon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = favicon.ico; sourceTree = "<group>"; };
-		84760FB224C19B5B002B34E4 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		84760FB424C19B5B002B34E4 /* chunk-1a8f6123.79917033.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "chunk-1a8f6123.79917033.css"; sourceTree = "<group>"; };
-		84760FB524C19B5B002B34E4 /* chunk-52e329f7.d81660b7.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "chunk-52e329f7.d81660b7.css"; sourceTree = "<group>"; };
-		84760FB624C19B5B002B34E4 /* chunk-vendors.52f1c8a5.css.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = "chunk-vendors.52f1c8a5.css.gz"; sourceTree = "<group>"; };
-		84760FB724C19B5B002B34E4 /* chunk-65c081d5.df1602dc.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "chunk-65c081d5.df1602dc.css"; sourceTree = "<group>"; };
-		84760FB824C19B5B002B34E4 /* app.e748ca6c.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = app.e748ca6c.css; sourceTree = "<group>"; };
-		84760FB924C19B5C002B34E4 /* chunk-030db65f.cae548b8.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "chunk-030db65f.cae548b8.css"; sourceTree = "<group>"; };
-		84760FBA24C19B5C002B34E4 /* chunk-b4e77c20.b9ee7607.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "chunk-b4e77c20.b9ee7607.css"; sourceTree = "<group>"; };
-		84760FBB24C19B5C002B34E4 /* chunk-vendors.52f1c8a5.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "chunk-vendors.52f1c8a5.css"; sourceTree = "<group>"; };
-		84760FBC24C19B5C002B34E4 /* chunk-b08f4ef6.7d5957c2.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "chunk-b08f4ef6.7d5957c2.css"; sourceTree = "<group>"; };
-		84760FBE24C19B5C002B34E4 /* chunk-vendors.54c2afee.js.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = "chunk-vendors.54c2afee.js.gz"; sourceTree = "<group>"; };
-		84760FBF24C19B5C002B34E4 /* chunk-b4e77c20.5c41d492.js.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = "chunk-b4e77c20.5c41d492.js.gz"; sourceTree = "<group>"; };
-		84760FC024C19B5C002B34E4 /* app.f868108e.js.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = app.f868108e.js.gz; sourceTree = "<group>"; };
-		84760FC124C19B5C002B34E4 /* chunk-2d0e1d52.a916e0e5.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "chunk-2d0e1d52.a916e0e5.js"; sourceTree = "<group>"; };
-		84760FC224C19B5C002B34E4 /* chunk-52e329f7.ec8277f2.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "chunk-52e329f7.ec8277f2.js"; sourceTree = "<group>"; };
-		84760FC324C19B5C002B34E4 /* chunk-vendors.54c2afee.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "chunk-vendors.54c2afee.js"; sourceTree = "<group>"; };
-		84760FC424C19B5C002B34E4 /* chunk-65c081d5.668bdac5.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "chunk-65c081d5.668bdac5.js"; sourceTree = "<group>"; };
-		84760FC524C19B5C002B34E4 /* app.f868108e.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = app.f868108e.js; sourceTree = "<group>"; };
-		84760FC624C19B5C002B34E4 /* chunk-vendors.54c2afee.js.LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "chunk-vendors.54c2afee.js.LICENSE.txt"; sourceTree = "<group>"; };
-		84760FC724C19B5C002B34E4 /* chunk-030db65f.f2cea986.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "chunk-030db65f.f2cea986.js"; sourceTree = "<group>"; };
-		84760FC824C19B5C002B34E4 /* chunk-b4e77c20.5c41d492.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "chunk-b4e77c20.5c41d492.js"; sourceTree = "<group>"; };
-		84760FC924C19B5C002B34E4 /* chunk-2d0b30b7.e18553b8.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "chunk-2d0b30b7.e18553b8.js"; sourceTree = "<group>"; };
-		84760FCA24C19B5C002B34E4 /* chunk-b08f4ef6.741d5076.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "chunk-b08f4ef6.741d5076.js"; sourceTree = "<group>"; };
-		84760FCB24C19B5C002B34E4 /* chunk-1a8f6123.5b27e4f5.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "chunk-1a8f6123.5b27e4f5.js"; sourceTree = "<group>"; };
-		84760FCD24C19B5C002B34E4 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		84760FCF24C19B5C002B34E4 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		84760FD124C19B5C002B34E4 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		8476102624C1A467002B34E4 /* SLScrollViewHorizontalItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLScrollViewHorizontalItem.h; sourceTree = "<group>"; };
 		8476102724C1A467002B34E4 /* SLScrollViewHorizontalItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLScrollViewHorizontalItem.m; sourceTree = "<group>"; };
 		8476102B24C52BDC002B34E4 /* H5Manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = H5Manager.h; sourceTree = "<group>"; };
@@ -432,6 +368,37 @@
 		8476108C24C5ABE6002B34E4 /* EFAccountTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFAccountTableViewCell.m; sourceTree = "<group>"; };
 		8476109024C5AD69002B34E4 /* EFChangeAccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFChangeAccountViewController.h; sourceTree = "<group>"; };
 		8476109124C5AD69002B34E4 /* EFChangeAccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFChangeAccountViewController.m; sourceTree = "<group>"; };
+		8476109724C67D19002B34E4 /* EFBindPhoneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFBindPhoneViewController.h; sourceTree = "<group>"; };
+		8476109824C67D19002B34E4 /* EFBindPhoneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFBindPhoneViewController.m; sourceTree = "<group>"; };
+		8476109D24C684EA002B34E4 /* EFQPTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFQPTableViewCell.h; sourceTree = "<group>"; };
+		8476109E24C684EA002B34E4 /* EFQPTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFQPTableViewCell.m; sourceTree = "<group>"; };
+		847610A224C68962002B34E4 /* EFPhoneTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFPhoneTableViewCell.h; sourceTree = "<group>"; };
+		847610A324C68962002B34E4 /* EFPhoneTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFPhoneTableViewCell.m; sourceTree = "<group>"; };
+		847610A724C69ACF002B34E4 /* EFCodeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFCodeTableViewCell.h; sourceTree = "<group>"; };
+		847610A824C69AD0002B34E4 /* EFCodeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFCodeTableViewCell.m; sourceTree = "<group>"; };
+		847610AD24C6A011002B34E4 /* LoginVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginVM.h; sourceTree = "<group>"; };
+		847610AE24C6A011002B34E4 /* LoginVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVM.m; sourceTree = "<group>"; };
+		847610B224C6C209002B34E4 /* EFEditPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFEditPasswordViewController.h; sourceTree = "<group>"; };
+		847610B324C6C209002B34E4 /* EFEditPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFEditPasswordViewController.m; sourceTree = "<group>"; };
+		847610B824C6C291002B34E4 /* EFPasswordTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFPasswordTextField.h; sourceTree = "<group>"; };
+		847610B924C6C291002B34E4 /* EFPasswordTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFPasswordTextField.m; sourceTree = "<group>"; };
+		847610BD24C6D1D0002B34E4 /* EFPrivacyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFPrivacyViewController.h; sourceTree = "<group>"; };
+		847610BE24C6D1D0002B34E4 /* EFPrivacyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFPrivacyViewController.m; sourceTree = "<group>"; };
+		847610C224C6D44B002B34E4 /* EFBaseWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFBaseWebViewController.h; sourceTree = "<group>"; };
+		847610C324C6D44B002B34E4 /* EFBaseWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFBaseWebViewController.m; sourceTree = "<group>"; };
+		847610C724C6D7FA002B34E4 /* EFPowerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFPowerViewController.h; sourceTree = "<group>"; };
+		847610C824C6D7FA002B34E4 /* EFPowerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFPowerViewController.m; sourceTree = "<group>"; };
+		847610CC24C6D898002B34E4 /* PowerTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PowerTableViewCell.h; sourceTree = "<group>"; };
+		847610CD24C6D898002B34E4 /* PowerTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PowerTableViewCell.m; sourceTree = "<group>"; };
+		8476116F24C6E21B002B34E4 /* EFNotiViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFNotiViewController.h; sourceTree = "<group>"; };
+		8476117024C6E21C002B34E4 /* EFNotiViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFNotiViewController.m; sourceTree = "<group>"; };
+		8476117424C6E2ED002B34E4 /* NotiTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotiTableViewCell.h; sourceTree = "<group>"; };
+		8476117524C6E2ED002B34E4 /* NotiTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotiTableViewCell.m; sourceTree = "<group>"; };
+		8476117D24C6F3A8002B34E4 /* UIView+XQCAlertPop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XQCAlertPop.m"; sourceTree = "<group>"; };
+		8476117E24C6F3A8002B34E4 /* UIView+XQCAlertPop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XQCAlertPop.h"; sourceTree = "<group>"; };
+		8476118224C6FAE5002B34E4 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dist; sourceTree = "<group>"; };
+		8476118624C6FCF8002B34E4 /* EFMeDataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFMeDataViewController.h; sourceTree = "<group>"; };
+		8476118724C6FCF8002B34E4 /* EFMeDataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFMeDataViewController.m; sourceTree = "<group>"; };
 		84A8207324B6C61800EAC652 /* EasyFast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyFast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A8207624B6C61800EAC652 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84A8207724B6C61800EAC652 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -611,6 +578,10 @@
 				8476108724C5A29D002B34E4 /* EFSetUpTableViewCell.m */,
 				8476108B24C5ABE6002B34E4 /* EFAccountTableViewCell.h */,
 				8476108C24C5ABE6002B34E4 /* EFAccountTableViewCell.m */,
+				847610CC24C6D898002B34E4 /* PowerTableViewCell.h */,
+				847610CD24C6D898002B34E4 /* PowerTableViewCell.m */,
+				8476117424C6E2ED002B34E4 /* NotiTableViewCell.h */,
+				8476117524C6E2ED002B34E4 /* NotiTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -636,86 +607,11 @@
 		84760F9924C196FF002B34E4 /* Web */ = {
 			isa = PBXGroup;
 			children = (
-				84760FB024C19B5B002B34E4 /* dist */,
+				8476118224C6FAE5002B34E4 /* dist */,
 				8476102B24C52BDC002B34E4 /* H5Manager.h */,
 				8476102C24C52BDC002B34E4 /* H5Manager.m */,
 			);
 			path = Web;
-			sourceTree = "<group>";
-		};
-		84760FB024C19B5B002B34E4 /* dist */ = {
-			isa = PBXGroup;
-			children = (
-				84760FB124C19B5B002B34E4 /* favicon.ico */,
-				84760FB224C19B5B002B34E4 /* index.html */,
-				84760FB324C19B5B002B34E4 /* css */,
-				84760FBD24C19B5C002B34E4 /* js */,
-				84760FCC24C19B5C002B34E4 /* pay */,
-				84760FCE24C19B5C002B34E4 /* about */,
-				84760FD024C19B5C002B34E4 /* detail */,
-			);
-			path = dist;
-			sourceTree = "<group>";
-		};
-		84760FB324C19B5B002B34E4 /* css */ = {
-			isa = PBXGroup;
-			children = (
-				84760FB424C19B5B002B34E4 /* chunk-1a8f6123.79917033.css */,
-				84760FB524C19B5B002B34E4 /* chunk-52e329f7.d81660b7.css */,
-				84760FB624C19B5B002B34E4 /* chunk-vendors.52f1c8a5.css.gz */,
-				84760FB724C19B5B002B34E4 /* chunk-65c081d5.df1602dc.css */,
-				84760FB824C19B5B002B34E4 /* app.e748ca6c.css */,
-				84760FB924C19B5C002B34E4 /* chunk-030db65f.cae548b8.css */,
-				84760FBA24C19B5C002B34E4 /* chunk-b4e77c20.b9ee7607.css */,
-				84760FBB24C19B5C002B34E4 /* chunk-vendors.52f1c8a5.css */,
-				84760FBC24C19B5C002B34E4 /* chunk-b08f4ef6.7d5957c2.css */,
-			);
-			path = css;
-			sourceTree = "<group>";
-		};
-		84760FBD24C19B5C002B34E4 /* js */ = {
-			isa = PBXGroup;
-			children = (
-				84760FBE24C19B5C002B34E4 /* chunk-vendors.54c2afee.js.gz */,
-				84760FBF24C19B5C002B34E4 /* chunk-b4e77c20.5c41d492.js.gz */,
-				84760FC024C19B5C002B34E4 /* app.f868108e.js.gz */,
-				84760FC124C19B5C002B34E4 /* chunk-2d0e1d52.a916e0e5.js */,
-				84760FC224C19B5C002B34E4 /* chunk-52e329f7.ec8277f2.js */,
-				84760FC324C19B5C002B34E4 /* chunk-vendors.54c2afee.js */,
-				84760FC424C19B5C002B34E4 /* chunk-65c081d5.668bdac5.js */,
-				84760FC524C19B5C002B34E4 /* app.f868108e.js */,
-				84760FC624C19B5C002B34E4 /* chunk-vendors.54c2afee.js.LICENSE.txt */,
-				84760FC724C19B5C002B34E4 /* chunk-030db65f.f2cea986.js */,
-				84760FC824C19B5C002B34E4 /* chunk-b4e77c20.5c41d492.js */,
-				84760FC924C19B5C002B34E4 /* chunk-2d0b30b7.e18553b8.js */,
-				84760FCA24C19B5C002B34E4 /* chunk-b08f4ef6.741d5076.js */,
-				84760FCB24C19B5C002B34E4 /* chunk-1a8f6123.5b27e4f5.js */,
-			);
-			path = js;
-			sourceTree = "<group>";
-		};
-		84760FCC24C19B5C002B34E4 /* pay */ = {
-			isa = PBXGroup;
-			children = (
-				84760FCD24C19B5C002B34E4 /* index.html */,
-			);
-			path = pay;
-			sourceTree = "<group>";
-		};
-		84760FCE24C19B5C002B34E4 /* about */ = {
-			isa = PBXGroup;
-			children = (
-				84760FCF24C19B5C002B34E4 /* index.html */,
-			);
-			path = about;
-			sourceTree = "<group>";
-		};
-		84760FD024C19B5C002B34E4 /* detail */ = {
-			isa = PBXGroup;
-			children = (
-				84760FD124C19B5C002B34E4 /* index.html */,
-			);
-			path = detail;
 			sourceTree = "<group>";
 		};
 		8476103024C54167002B34E4 /* Tuan */ = {
@@ -781,6 +677,50 @@
 			path = VM;
 			sourceTree = "<group>";
 		};
+		8476109624C67CE8002B34E4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				847610AC24C69FF2002B34E4 /* VM */,
+				8476109C24C684BE002B34E4 /* View */,
+				8476109724C67D19002B34E4 /* EFBindPhoneViewController.h */,
+				8476109824C67D19002B34E4 /* EFBindPhoneViewController.m */,
+				847610B224C6C209002B34E4 /* EFEditPasswordViewController.h */,
+				847610B324C6C209002B34E4 /* EFEditPasswordViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		8476109C24C684BE002B34E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8476109D24C684EA002B34E4 /* EFQPTableViewCell.h */,
+				8476109E24C684EA002B34E4 /* EFQPTableViewCell.m */,
+				847610A224C68962002B34E4 /* EFPhoneTableViewCell.h */,
+				847610A324C68962002B34E4 /* EFPhoneTableViewCell.m */,
+				847610A724C69ACF002B34E4 /* EFCodeTableViewCell.h */,
+				847610A824C69AD0002B34E4 /* EFCodeTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		847610AC24C69FF2002B34E4 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				847610AD24C6A011002B34E4 /* LoginVM.h */,
+				847610AE24C6A011002B34E4 /* LoginVM.m */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		847610B724C6C267002B34E4 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				847610B824C6C291002B34E4 /* EFPasswordTextField.h */,
+				847610B924C6C291002B34E4 /* EFPasswordTextField.m */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
 		84A8206A24B6C61800EAC652 = {
 			isa = PBXGroup;
 			children = (
@@ -806,6 +746,7 @@
 		84A8207524B6C61800EAC652 /* EasyFast */ = {
 			isa = PBXGroup;
 			children = (
+				8476109624C67CE8002B34E4 /* Login */,
 				8476106424C58848002B34E4 /* Address */,
 				8476103024C54167002B34E4 /* Tuan */,
 				84760F9924C196FF002B34E4 /* Web */,
@@ -852,6 +793,8 @@
 				84A8214624BC5F0900EAC652 /* EFPlusButton.m */,
 				84760F7E24C1551B002B34E4 /* EFWKWebConfig.h */,
 				84760F7F24C1551B002B34E4 /* EFWKWebConfig.m */,
+				847610C224C6D44B002B34E4 /* EFBaseWebViewController.h */,
+				847610C324C6D44B002B34E4 /* EFBaseWebViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -912,6 +855,8 @@
 		84A820D324B6CD9E00EAC652 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				8476117E24C6F3A8002B34E4 /* UIView+XQCAlertPop.h */,
+				8476117D24C6F3A8002B34E4 /* UIView+XQCAlertPop.m */,
 				8476107724C59780002B34E4 /* UILabel+LabelHeightAndWidth.h */,
 				8476107624C59780002B34E4 /* UILabel+LabelHeightAndWidth.m */,
 				84A820DC24B6CE6B00EAC652 /* UIView+Frame.h */,
@@ -978,6 +923,14 @@
 				8476107C24C5A06F002B34E4 /* EFSetUpViewController.m */,
 				8476109024C5AD69002B34E4 /* EFChangeAccountViewController.h */,
 				8476109124C5AD69002B34E4 /* EFChangeAccountViewController.m */,
+				847610BD24C6D1D0002B34E4 /* EFPrivacyViewController.h */,
+				847610BE24C6D1D0002B34E4 /* EFPrivacyViewController.m */,
+				847610C724C6D7FA002B34E4 /* EFPowerViewController.h */,
+				847610C824C6D7FA002B34E4 /* EFPowerViewController.m */,
+				8476116F24C6E21B002B34E4 /* EFNotiViewController.h */,
+				8476117024C6E21C002B34E4 /* EFNotiViewController.m */,
+				8476118624C6FCF8002B34E4 /* EFMeDataViewController.h */,
+				8476118724C6FCF8002B34E4 /* EFMeDataViewController.m */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -1042,6 +995,7 @@
 		84A8219724BF010800EAC652 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				847610B724C6C267002B34E4 /* TextField */,
 				8476102624C1A467002B34E4 /* SLScrollViewHorizontalItem.h */,
 				8476102724C1A467002B34E4 /* SLScrollViewHorizontalItem.m */,
 				84A8219824BF011700EAC652 /* TKTagView */,
@@ -1194,36 +1148,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8476101724C19B5C002B34E4 /* chunk-b08f4ef6.741d5076.js in Resources */,
-				8476100824C19B5C002B34E4 /* app.f868108e.js in Resources */,
-				84760FFF24C19B5C002B34E4 /* chunk-52e329f7.ec8277f2.js in Resources */,
-				84760FF624C19B5C002B34E4 /* chunk-b4e77c20.5c41d492.js.gz in Resources */,
-				84760FE724C19B5C002B34E4 /* chunk-030db65f.cae548b8.css in Resources */,
-				8476101D24C19B5C002B34E4 /* index.html in Resources */,
-				8476101424C19B5C002B34E4 /* chunk-2d0b30b7.e18553b8.js in Resources */,
-				8476101A24C19B5C002B34E4 /* chunk-1a8f6123.5b27e4f5.js in Resources */,
-				84760FFC24C19B5C002B34E4 /* chunk-2d0e1d52.a916e0e5.js in Resources */,
-				8476100524C19B5C002B34E4 /* chunk-65c081d5.668bdac5.js in Resources */,
-				84760FE424C19B5C002B34E4 /* app.e748ca6c.css in Resources */,
-				8476102024C19B5C002B34E4 /* index.html in Resources */,
-				84760FDE24C19B5C002B34E4 /* chunk-vendors.52f1c8a5.css.gz in Resources */,
-				8476100E24C19B5C002B34E4 /* chunk-030db65f.f2cea986.js in Resources */,
-				84760FEA24C19B5C002B34E4 /* chunk-b4e77c20.b9ee7607.css in Resources */,
-				8476101124C19B5C002B34E4 /* chunk-b4e77c20.5c41d492.js in Resources */,
-				84760FF024C19B5C002B34E4 /* chunk-b08f4ef6.7d5957c2.css in Resources */,
-				8476100B24C19B5C002B34E4 /* chunk-vendors.54c2afee.js.LICENSE.txt in Resources */,
-				84760FED24C19B5C002B34E4 /* chunk-vendors.52f1c8a5.css in Resources */,
+				8476118324C6FAE5002B34E4 /* dist in Resources */,
 				84A8208624B6C62300EAC652 /* LaunchScreen.storyboard in Resources */,
-				84760FF324C19B5C002B34E4 /* chunk-vendors.54c2afee.js.gz in Resources */,
 				84A8208324B6C62300EAC652 /* Assets.xcassets in Resources */,
-				8476100224C19B5C002B34E4 /* chunk-vendors.54c2afee.js in Resources */,
-				84760FF924C19B5C002B34E4 /* app.f868108e.js.gz in Resources */,
-				84760FDB24C19B5C002B34E4 /* chunk-52e329f7.d81660b7.css in Resources */,
-				84760FD524C19B5C002B34E4 /* index.html in Resources */,
-				84760FE124C19B5C002B34E4 /* chunk-65c081d5.df1602dc.css in Resources */,
-				84760FD824C19B5C002B34E4 /* chunk-1a8f6123.79917033.css in Resources */,
-				84760FD224C19B5C002B34E4 /* favicon.ico in Resources */,
-				8476102324C19B5C002B34E4 /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1231,36 +1158,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8476101824C19B5C002B34E4 /* chunk-b08f4ef6.741d5076.js in Resources */,
-				8476100924C19B5C002B34E4 /* app.f868108e.js in Resources */,
-				8476100024C19B5C002B34E4 /* chunk-52e329f7.ec8277f2.js in Resources */,
-				84760FF724C19B5C002B34E4 /* chunk-b4e77c20.5c41d492.js.gz in Resources */,
-				84760FE824C19B5C002B34E4 /* chunk-030db65f.cae548b8.css in Resources */,
-				8476101E24C19B5C002B34E4 /* index.html in Resources */,
-				8476101524C19B5C002B34E4 /* chunk-2d0b30b7.e18553b8.js in Resources */,
-				8476101B24C19B5C002B34E4 /* chunk-1a8f6123.5b27e4f5.js in Resources */,
-				84760FFD24C19B5C002B34E4 /* chunk-2d0e1d52.a916e0e5.js in Resources */,
-				8476100624C19B5C002B34E4 /* chunk-65c081d5.668bdac5.js in Resources */,
-				84760FE524C19B5C002B34E4 /* app.e748ca6c.css in Resources */,
-				8476102124C19B5C002B34E4 /* index.html in Resources */,
-				84760FDF24C19B5C002B34E4 /* chunk-vendors.52f1c8a5.css.gz in Resources */,
-				8476100F24C19B5C002B34E4 /* chunk-030db65f.f2cea986.js in Resources */,
-				84760FEB24C19B5C002B34E4 /* chunk-b4e77c20.b9ee7607.css in Resources */,
-				8476101224C19B5C002B34E4 /* chunk-b4e77c20.5c41d492.js in Resources */,
-				84760FF124C19B5C002B34E4 /* chunk-b08f4ef6.7d5957c2.css in Resources */,
-				8476100C24C19B5C002B34E4 /* chunk-vendors.54c2afee.js.LICENSE.txt in Resources */,
-				84760FEE24C19B5C002B34E4 /* chunk-vendors.52f1c8a5.css in Resources */,
+				8476118424C6FAE5002B34E4 /* dist in Resources */,
 				84A8211324BC4F5400EAC652 /* LaunchScreen.storyboard in Resources */,
-				84760FF424C19B5C002B34E4 /* chunk-vendors.54c2afee.js.gz in Resources */,
 				84A8211424BC4F5400EAC652 /* Assets.xcassets in Resources */,
-				8476100324C19B5C002B34E4 /* chunk-vendors.54c2afee.js in Resources */,
-				84760FFA24C19B5C002B34E4 /* app.f868108e.js.gz in Resources */,
-				84760FDC24C19B5C002B34E4 /* chunk-52e329f7.d81660b7.css in Resources */,
-				84760FD624C19B5C002B34E4 /* index.html in Resources */,
-				84760FE224C19B5C002B34E4 /* chunk-65c081d5.df1602dc.css in Resources */,
-				84760FD924C19B5C002B34E4 /* chunk-1a8f6123.79917033.css in Resources */,
-				84760FD324C19B5C002B34E4 /* favicon.ico in Resources */,
-				8476102424C19B5C002B34E4 /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1268,36 +1168,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8476101924C19B5C002B34E4 /* chunk-b08f4ef6.741d5076.js in Resources */,
-				8476100A24C19B5C002B34E4 /* app.f868108e.js in Resources */,
-				8476100124C19B5C002B34E4 /* chunk-52e329f7.ec8277f2.js in Resources */,
-				84760FF824C19B5C002B34E4 /* chunk-b4e77c20.5c41d492.js.gz in Resources */,
-				84760FE924C19B5C002B34E4 /* chunk-030db65f.cae548b8.css in Resources */,
-				8476101F24C19B5C002B34E4 /* index.html in Resources */,
-				8476101624C19B5C002B34E4 /* chunk-2d0b30b7.e18553b8.js in Resources */,
-				8476101C24C19B5C002B34E4 /* chunk-1a8f6123.5b27e4f5.js in Resources */,
-				84760FFE24C19B5C002B34E4 /* chunk-2d0e1d52.a916e0e5.js in Resources */,
-				8476100724C19B5C002B34E4 /* chunk-65c081d5.668bdac5.js in Resources */,
-				84760FE624C19B5C002B34E4 /* app.e748ca6c.css in Resources */,
-				8476102224C19B5C002B34E4 /* index.html in Resources */,
-				84760FE024C19B5C002B34E4 /* chunk-vendors.52f1c8a5.css.gz in Resources */,
-				8476101024C19B5C002B34E4 /* chunk-030db65f.f2cea986.js in Resources */,
-				84760FEC24C19B5C002B34E4 /* chunk-b4e77c20.b9ee7607.css in Resources */,
-				8476101324C19B5C002B34E4 /* chunk-b4e77c20.5c41d492.js in Resources */,
-				84760FF224C19B5C002B34E4 /* chunk-b08f4ef6.7d5957c2.css in Resources */,
-				8476100D24C19B5C002B34E4 /* chunk-vendors.54c2afee.js.LICENSE.txt in Resources */,
-				84760FEF24C19B5C002B34E4 /* chunk-vendors.52f1c8a5.css in Resources */,
+				8476118524C6FAE5002B34E4 /* dist in Resources */,
 				84A8213724BC513500EAC652 /* LaunchScreen.storyboard in Resources */,
-				84760FF524C19B5C002B34E4 /* chunk-vendors.54c2afee.js.gz in Resources */,
 				84A8213824BC513500EAC652 /* Assets.xcassets in Resources */,
-				8476100424C19B5C002B34E4 /* chunk-vendors.54c2afee.js in Resources */,
-				84760FFB24C19B5C002B34E4 /* app.f868108e.js.gz in Resources */,
-				84760FDD24C19B5C002B34E4 /* chunk-52e329f7.d81660b7.css in Resources */,
-				84760FD724C19B5C002B34E4 /* index.html in Resources */,
-				84760FE324C19B5C002B34E4 /* chunk-65c081d5.df1602dc.css in Resources */,
-				84760FDA24C19B5C002B34E4 /* chunk-1a8f6123.79917033.css in Resources */,
-				84760FD424C19B5C002B34E4 /* favicon.ico in Resources */,
-				8476102524C19B5C002B34E4 /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1432,6 +1305,7 @@
 				84A821B324BFFAE700EAC652 /* EFSearchViewController.m in Sources */,
 				84187CA424C05D0200ED3F96 /* MeHeaderView.m in Sources */,
 				8476104D24C573B1002B34E4 /* TuanListDetailViewController.m in Sources */,
+				847610B424C6C209002B34E4 /* EFEditPasswordViewController.m in Sources */,
 				8476105C24C57E81002B34E4 /* TuanOtherGoodsView.m in Sources */,
 				8476104324C54B72002B34E4 /* TuanPeopleView.m in Sources */,
 				84A8215424BDA0F200EAC652 /* EFHotViewController.m in Sources */,
@@ -1442,16 +1316,22 @@
 				84A820CF24B6CCC600EAC652 /* FMHttpResonse.m in Sources */,
 				8476108824C5A29D002B34E4 /* EFSetUpTableViewCell.m in Sources */,
 				84A8216B24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
+				847610C424C6D44C002B34E4 /* EFBaseWebViewController.m in Sources */,
+				847610CE24C6D898002B34E4 /* PowerTableViewCell.m in Sources */,
 				8476106124C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m in Sources */,
+				847610AF24C6A011002B34E4 /* LoginVM.m in Sources */,
 				84A8218E24BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */,
 				84187CA924C05E8200ED3F96 /* VerticalLabelBotton.m in Sources */,
 				84A820E224B6EADF00EAC652 /* EFBaseTabBarViewController.m in Sources */,
+				8476117F24C6F3A9002B34E4 /* UIView+XQCAlertPop.m in Sources */,
 				84A820F224B6F66400EAC652 /* EFMeViewController.m in Sources */,
 				8476108D24C5ABE6002B34E4 /* EFAccountTableViewCell.m in Sources */,
 				8476104824C54E21002B34E4 /* TuanListTableViewCell.m in Sources */,
 				84A8215924BDB45E00EAC652 /* UIImage+Darw.m in Sources */,
+				847610C924C6D7FA002B34E4 /* EFPowerViewController.m in Sources */,
 				84A821A024BF146200EAC652 /* EFFollowSubViewController.m in Sources */,
 				84760F8624C1596E002B34E4 /* EFBaseModel.m in Sources */,
+				8476109924C67D19002B34E4 /* EFBindPhoneViewController.m in Sources */,
 				84A820B824B6CA8A00EAC652 /* EFBaseTableViewController.m in Sources */,
 				84A820D624B6CDA600EAC652 /* UIFont+RuntimeFit.m in Sources */,
 				84A820BD24B6CAC400EAC652 /* EFBaseRefreshVM.m in Sources */,
@@ -1467,8 +1347,11 @@
 				8476102824C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */,
 				84A821C324C03BB800EAC652 /* SeachOneCollectionViewCell.m in Sources */,
 				84A8207824B6C61800EAC652 /* AppDelegate.m in Sources */,
+				847610BF24C6D1D0002B34E4 /* EFPrivacyViewController.m in Sources */,
+				847610BA24C6C291002B34E4 /* EFPasswordTextField.m in Sources */,
 				8476109224C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */,
 				8476103924C54200002B34E4 /* TuanGoodsView.m in Sources */,
+				8476118824C6FCF8002B34E4 /* EFMeDataViewController.m in Sources */,
 				8476107D24C5A06F002B34E4 /* EFSetUpViewController.m in Sources */,
 				84760F9124C17AC1002B34E4 /* NSString+NSMutableAttributedString.m in Sources */,
 				84A820CC24B6CCC600EAC652 /* FMARCNetwork.m in Sources */,
@@ -1477,6 +1360,7 @@
 				84A821D224C04EAA00EAC652 /* EFClassDetailViewController.m in Sources */,
 				84760FAD24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
 				84A8214D24BD432B00EAC652 /* TabbarBackView.m in Sources */,
+				8476117624C6E2ED002B34E4 /* NotiTableViewCell.m in Sources */,
 				84A8214224BC55CB00EAC652 /* HttpManager.m in Sources */,
 				84760F7524C1432F002B34E4 /* MeTabTableViewCell.m in Sources */,
 				84A8218424BED7E400EAC652 /* EFFastTableViewCell.m in Sources */,
@@ -1495,15 +1379,19 @@
 				84A820E624B6F5E800EAC652 /* EFHomeViewController.m in Sources */,
 				84A8217024BEA92300EAC652 /* EFNoticTitleCell.m in Sources */,
 				84A821B824C026FF00EAC652 /* EFSearchResultViewController.m in Sources */,
+				8476117124C6E21C002B34E4 /* EFNotiViewController.m in Sources */,
 				8476105224C574E5002B34E4 /* TuanListDetailTableViewCell.m in Sources */,
 				84A8208924B6C62300EAC652 /* main.m in Sources */,
 				84A821AB24BF15FF00EAC652 /* EFFollowCollectionViewCell.m in Sources */,
+				847610A924C69AD0002B34E4 /* EFCodeTableViewCell.m in Sources */,
 				84A820CD24B6CCC600EAC652 /* FMARCNetwork+interface.m in Sources */,
 				84760F7A24C14AD9002B34E4 /* MeListTableViewCell.m in Sources */,
+				847610A424C68962002B34E4 /* EFPhoneTableViewCell.m in Sources */,
 				84A821A624BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */,
 				84A821BE24C033EC00EAC652 /* SearchTwoCollectionViewCell.m in Sources */,
 				84A820EA24B6F62900EAC652 /* EFClassifyViewController.m in Sources */,
 				84A820DD24B6CE6B00EAC652 /* UIView+Frame.m in Sources */,
+				8476109F24C684EA002B34E4 /* EFQPTableViewCell.m in Sources */,
 				84A8219B24BF011700EAC652 /* TKTagView.m in Sources */,
 				84A820BE24B6CAC400EAC652 /* EFBaseVM.m in Sources */,
 			);
@@ -1517,6 +1405,7 @@
 				84A821B424BFFAE700EAC652 /* EFSearchViewController.m in Sources */,
 				84187CA524C05D0200ED3F96 /* MeHeaderView.m in Sources */,
 				8476104E24C573B1002B34E4 /* TuanListDetailViewController.m in Sources */,
+				847610B524C6C209002B34E4 /* EFEditPasswordViewController.m in Sources */,
 				8476105D24C57E81002B34E4 /* TuanOtherGoodsView.m in Sources */,
 				8476104424C54B72002B34E4 /* TuanPeopleView.m in Sources */,
 				84A8215524BDA0F200EAC652 /* EFHotViewController.m in Sources */,
@@ -1527,16 +1416,22 @@
 				84A820FE24BC4F5400EAC652 /* FMHttpResonse.m in Sources */,
 				8476108924C5A29D002B34E4 /* EFSetUpTableViewCell.m in Sources */,
 				84A8216C24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
+				847610C524C6D44C002B34E4 /* EFBaseWebViewController.m in Sources */,
+				847610CF24C6D898002B34E4 /* PowerTableViewCell.m in Sources */,
 				8476106224C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m in Sources */,
+				847610B024C6A012002B34E4 /* LoginVM.m in Sources */,
 				84A8218F24BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */,
 				84187CAA24C05E8200ED3F96 /* VerticalLabelBotton.m in Sources */,
 				84A8210024BC4F5400EAC652 /* EFMeViewController.m in Sources */,
+				8476118024C6F3A9002B34E4 /* UIView+XQCAlertPop.m in Sources */,
 				84A8210124BC4F5400EAC652 /* EFBaseTableViewController.m in Sources */,
 				8476108E24C5ABE6002B34E4 /* EFAccountTableViewCell.m in Sources */,
 				8476104924C54E21002B34E4 /* TuanListTableViewCell.m in Sources */,
 				84A8215A24BDB45E00EAC652 /* UIImage+Darw.m in Sources */,
+				847610CA24C6D7FA002B34E4 /* EFPowerViewController.m in Sources */,
 				84A821A124BF146200EAC652 /* EFFollowSubViewController.m in Sources */,
 				84760F8724C1596E002B34E4 /* EFBaseModel.m in Sources */,
+				8476109A24C67D19002B34E4 /* EFBindPhoneViewController.m in Sources */,
 				84A8210224BC4F5400EAC652 /* UIFont+RuntimeFit.m in Sources */,
 				84A8210324BC4F5400EAC652 /* EFBaseRefreshVM.m in Sources */,
 				84A8210424BC4F5400EAC652 /* RVMViewModel.m in Sources */,
@@ -1552,8 +1447,11 @@
 				8476102924C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */,
 				84A821C424C03BB800EAC652 /* SeachOneCollectionViewCell.m in Sources */,
 				84A8210724BC4F5400EAC652 /* AppDelegate.m in Sources */,
+				847610C024C6D1D1002B34E4 /* EFPrivacyViewController.m in Sources */,
+				847610BB24C6C291002B34E4 /* EFPasswordTextField.m in Sources */,
 				8476109324C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */,
 				8476103A24C54200002B34E4 /* TuanGoodsView.m in Sources */,
+				8476118924C6FCF8002B34E4 /* EFMeDataViewController.m in Sources */,
 				8476107E24C5A06F002B34E4 /* EFSetUpViewController.m in Sources */,
 				84760F9224C17AC1002B34E4 /* NSString+NSMutableAttributedString.m in Sources */,
 				84A8210824BC4F5400EAC652 /* FMARCNetwork.m in Sources */,
@@ -1562,6 +1460,7 @@
 				84A821D324C04EAA00EAC652 /* EFClassDetailViewController.m in Sources */,
 				84760FAE24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
 				84A8214324BC55CB00EAC652 /* HttpManager.m in Sources */,
+				8476117724C6E2ED002B34E4 /* NotiTableViewCell.m in Sources */,
 				84A8210A24BC4F5400EAC652 /* EFHomeViewController.m in Sources */,
 				84760F7624C1432F002B34E4 /* MeTabTableViewCell.m in Sources */,
 				84A8218524BED7E400EAC652 /* EFFastTableViewCell.m in Sources */,
@@ -1580,15 +1479,19 @@
 				84A8210B24BC4F5400EAC652 /* main.m in Sources */,
 				84A8217124BEA92400EAC652 /* EFNoticTitleCell.m in Sources */,
 				84A821B924C026FF00EAC652 /* EFSearchResultViewController.m in Sources */,
+				8476117224C6E21C002B34E4 /* EFNotiViewController.m in Sources */,
 				8476105324C574E5002B34E4 /* TuanListDetailTableViewCell.m in Sources */,
 				84A8210C24BC4F5400EAC652 /* FMARCNetwork+interface.m in Sources */,
 				84A821AC24BF15FF00EAC652 /* EFFollowCollectionViewCell.m in Sources */,
+				847610AA24C69AD0002B34E4 /* EFCodeTableViewCell.m in Sources */,
 				84A8210D24BC4F5400EAC652 /* EFClassifyViewController.m in Sources */,
 				84760F7B24C14AD9002B34E4 /* MeListTableViewCell.m in Sources */,
+				847610A524C68962002B34E4 /* EFPhoneTableViewCell.m in Sources */,
 				84A821A724BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */,
 				84A821BF24C033EC00EAC652 /* SearchTwoCollectionViewCell.m in Sources */,
 				84A8210E24BC4F5400EAC652 /* UIView+Frame.m in Sources */,
 				84A8210F24BC4F5400EAC652 /* EFBaseVM.m in Sources */,
+				847610A024C684EA002B34E4 /* EFQPTableViewCell.m in Sources */,
 				84A8219C24BF011700EAC652 /* TKTagView.m in Sources */,
 				84A8215024BD841900EAC652 /* EFBaseTabBarViewController.m in Sources */,
 			);
@@ -1602,6 +1505,7 @@
 				84A821B524BFFAE700EAC652 /* EFSearchViewController.m in Sources */,
 				84187CA624C05D0200ED3F96 /* MeHeaderView.m in Sources */,
 				8476104F24C573B1002B34E4 /* TuanListDetailViewController.m in Sources */,
+				847610B624C6C209002B34E4 /* EFEditPasswordViewController.m in Sources */,
 				8476105E24C57E81002B34E4 /* TuanOtherGoodsView.m in Sources */,
 				8476104524C54B72002B34E4 /* TuanPeopleView.m in Sources */,
 				84A8215624BDA0F200EAC652 /* EFHotViewController.m in Sources */,
@@ -1612,16 +1516,22 @@
 				84A8212224BC513500EAC652 /* FMHttpResonse.m in Sources */,
 				8476108A24C5A29D002B34E4 /* EFSetUpTableViewCell.m in Sources */,
 				84A8216D24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
+				847610C624C6D44C002B34E4 /* EFBaseWebViewController.m in Sources */,
+				847610D024C6D898002B34E4 /* PowerTableViewCell.m in Sources */,
 				8476106324C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m in Sources */,
+				847610B124C6A012002B34E4 /* LoginVM.m in Sources */,
 				84A8219024BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */,
 				84187CAB24C05E8200ED3F96 /* VerticalLabelBotton.m in Sources */,
 				84A8212324BC513500EAC652 /* EFBaseTabBarViewController.m in Sources */,
+				8476118124C6F3A9002B34E4 /* UIView+XQCAlertPop.m in Sources */,
 				84A8212424BC513500EAC652 /* EFMeViewController.m in Sources */,
 				8476108F24C5ABE6002B34E4 /* EFAccountTableViewCell.m in Sources */,
 				8476104A24C54E21002B34E4 /* TuanListTableViewCell.m in Sources */,
 				84A8215B24BDB45E00EAC652 /* UIImage+Darw.m in Sources */,
+				847610CB24C6D7FA002B34E4 /* EFPowerViewController.m in Sources */,
 				84A821A224BF146200EAC652 /* EFFollowSubViewController.m in Sources */,
 				84760F8824C1596E002B34E4 /* EFBaseModel.m in Sources */,
+				8476109B24C67D19002B34E4 /* EFBindPhoneViewController.m in Sources */,
 				84A8212524BC513500EAC652 /* EFBaseTableViewController.m in Sources */,
 				84A8212624BC513500EAC652 /* UIFont+RuntimeFit.m in Sources */,
 				84A8212724BC513500EAC652 /* EFBaseRefreshVM.m in Sources */,
@@ -1637,8 +1547,11 @@
 				8476102A24C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */,
 				84A821C524C03BB800EAC652 /* SeachOneCollectionViewCell.m in Sources */,
 				84A8212B24BC513500EAC652 /* AppDelegate.m in Sources */,
+				847610C124C6D1D1002B34E4 /* EFPrivacyViewController.m in Sources */,
+				847610BC24C6C291002B34E4 /* EFPasswordTextField.m in Sources */,
 				8476109424C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */,
 				8476103B24C54200002B34E4 /* TuanGoodsView.m in Sources */,
+				8476118A24C6FCF8002B34E4 /* EFMeDataViewController.m in Sources */,
 				8476107F24C5A06F002B34E4 /* EFSetUpViewController.m in Sources */,
 				84760F9324C17AC1002B34E4 /* NSString+NSMutableAttributedString.m in Sources */,
 				84A8212C24BC513500EAC652 /* FMARCNetwork.m in Sources */,
@@ -1647,6 +1560,7 @@
 				84A821D424C04EAA00EAC652 /* EFClassDetailViewController.m in Sources */,
 				84760FAF24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
 				84A8214F24BD43F100EAC652 /* TabbarBackView.m in Sources */,
+				8476117824C6E2ED002B34E4 /* NotiTableViewCell.m in Sources */,
 				84A8214424BC55CB00EAC652 /* HttpManager.m in Sources */,
 				84760F7724C1432F002B34E4 /* MeTabTableViewCell.m in Sources */,
 				84A8218624BED7E400EAC652 /* EFFastTableViewCell.m in Sources */,
@@ -1665,15 +1579,19 @@
 				84A8212E24BC513500EAC652 /* EFHomeViewController.m in Sources */,
 				84A8217224BEA92400EAC652 /* EFNoticTitleCell.m in Sources */,
 				84A821BA24C0270000EAC652 /* EFSearchResultViewController.m in Sources */,
+				8476117324C6E21C002B34E4 /* EFNotiViewController.m in Sources */,
 				8476105424C574E5002B34E4 /* TuanListDetailTableViewCell.m in Sources */,
 				84A8212F24BC513500EAC652 /* main.m in Sources */,
 				84A821AD24BF15FF00EAC652 /* EFFollowCollectionViewCell.m in Sources */,
+				847610AB24C69AD0002B34E4 /* EFCodeTableViewCell.m in Sources */,
 				84A8213024BC513500EAC652 /* FMARCNetwork+interface.m in Sources */,
 				84760F7C24C14AD9002B34E4 /* MeListTableViewCell.m in Sources */,
+				847610A624C68962002B34E4 /* EFPhoneTableViewCell.m in Sources */,
 				84A821A824BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */,
 				84A821C024C033ED00EAC652 /* SearchTwoCollectionViewCell.m in Sources */,
 				84A8213124BC513500EAC652 /* EFClassifyViewController.m in Sources */,
 				84A8213224BC513500EAC652 /* UIView+Frame.m in Sources */,
+				847610A124C684EA002B34E4 /* EFQPTableViewCell.m in Sources */,
 				84A8219D24BF011700EAC652 /* TKTagView.m in Sources */,
 				84A8213324BC513500EAC652 /* EFBaseVM.m in Sources */,
 			);

@@ -31,6 +31,7 @@ targets.each do |t|
     pod 'WebViewJavascriptBridge', '~> 6.0'
     pod 'BGFMDB', '~> 2.0.9'
     pod 'SSZipArchive'
+    pod "QPDialCodePickerView"
     # Pods for EasyFast
   end
 

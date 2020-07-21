@@ -18,7 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[FMARCNetwork sharedInstance] setupBaseURL:[FMARCNetwork testURL:[[HttpManager defaultManager] envBaseHost]]];
     // 配置导航栏属性
-    [GKConfigure updateConfigure:^(GKNavigationBarConfigure * _Nonnull configure) {
+    [GKConfigure setupCustomConfigure:^(GKNavigationBarConfigure * _Nonnull configure) {
         configure.gk_translationX = 15;
         configure.gk_translationY = 20;
         configure.gk_scaleX = 0.90;
