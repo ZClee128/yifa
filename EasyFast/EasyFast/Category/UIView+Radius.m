@@ -76,7 +76,7 @@
 -(void)setTabBarShadowWithCenter:(CGPoint)center radius:(CGFloat)radius {
     CAShapeLayer *layer = [CAShapeLayer new];
     //背景填充色
-    layer.fillColor = [UIColor whiteColor].CGColor;
+    layer.fillColor = [UIColor redColor].CGColor;
     layer.shadowColor = RGB16(0xf5f5f5).CGColor;
     layer.shadowOffset = CGSizeMake(7, 3);
     layer.shadowOpacity = 1;

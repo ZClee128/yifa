@@ -41,6 +41,7 @@
     [self.window makeKeyAndVisible];
     
     [[IQKeyboardManager sharedManager] setEnable:YES];
+    
     return YES;
 }
 

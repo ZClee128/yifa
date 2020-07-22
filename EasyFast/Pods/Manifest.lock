@@ -26,6 +26,9 @@ PODS:
   - DateTools (2.0.0)
   - GKNavigationBar (1.0.9)
   - IQKeyboardManager (6.5.5)
+  - JCore (2.3.2)
+  - JVerification (2.6.4):
+    - JCore (< 6.0.0, >= 2.1.6)
   - JXCategoryView (1.5.5)
   - LYEmptyView (1.3.1)
   - Masonry (1.1.0)
@@ -75,6 +78,8 @@ DEPENDENCIES:
   - DateTools
   - GKNavigationBar
   - IQKeyboardManager
+  - JCore
+  - JVerification
   - JXCategoryView
   - LYEmptyView
   - Masonry
@@ -103,6 +108,8 @@ SPEC REPOS:
     - DateTools
     - GKNavigationBar
     - IQKeyboardManager
+    - JCore
+    - JVerification
     - JXCategoryView
     - LYEmptyView
     - Masonry
@@ -126,6 +133,8 @@ SPEC CHECKSUMS:
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
   GKNavigationBar: f9392f5ec38644e7d7c09852134462e719bb91d0
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
+  JCore: e4b7b5c812de08e5b46f698947ae9b585ee81e3f
+  JVerification: 85c0b1ae2a55f167b97f9d831bb8c2e03d3da22d
   JXCategoryView: 0293fcb356f10a5c2e679dac0a1a5f1899ee0c87
   LYEmptyView: b6d418cfa38b78df0cf243f9a9c25ccbdc399922
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -142,6 +151,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   YZTagList: 43dc1909e38d88124e3256ffc51c62cc904d8240
 
-PODFILE CHECKSUM: 0535c2e16806e6b814c8f80e8bebc03953633d73
+PODFILE CHECKSUM: f5be1a0738d3616061e786a298e1b718cf2beecc
 
 COCOAPODS: 1.8.4

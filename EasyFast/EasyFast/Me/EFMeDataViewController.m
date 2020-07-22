@@ -8,6 +8,7 @@
 
 #import "EFMeDataViewController.h"
 #import "EFSetUpTableViewCell.h"
+#import "EFOnePhoneViewController.h"
 
 @interface EFMeDataViewController ()
 @property (nonatomic,strong)UIView *otherView;
@@ -85,6 +86,23 @@
     return WidthOfScale(60);
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    switch (indexPath.row) {
+        case 0:
+            
+            break;
+            case 4:
+        {
+            EFOnePhoneViewController *one = [[EFOnePhoneViewController alloc] init];
+            [self.navigationController qmui_pushViewController:one animated:YES completion:^{
+                
+            }];
+            break;
+        }
+        default:
+            break;
+    }
+}
 
 
 @end

@@ -74,4 +74,42 @@
     return outputImage;
 }
 
++ (UIImage *)imageWithVerticalMixColors:(NSArray *)colors size:(CGSize)size
+{
+    CAGradientLayer *layer = [UIView gradientLocationLayer:colors frame:CGRectMake(0.0f, 0.0f, size.width, size.height) direction:XQCGradientColorDirectionVertical];
+    
+    UIGraphicsBeginImageContextWithOptions(layer.frame.size, NO, 0);
+    [layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *outputImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    return outputImage;
+}
+
+
++ (UIImage *)combineImageUpImage:(UIImage *)upImage  DownImage:(UIImage *)downImage{
+    
+    UIImage * image1 = upImage;
+    UIImage * image2 = downImage;
+    
+    if (image1 == nil) {
+        return image2;
+    }
+    CGFloat width = image1.size.width;
+    CGFloat height = image1.size.height  + image2.size.height;
+    CGSize offScreenSize = CGSizeMake(width, height);
+    // UIGraphicsBeginImageContext(offScreenSize);用这个重绘图片会模糊
+    UIGraphicsBeginImageContextWithOptions(offScreenSize, NO, [UIScreen mainScreen].scale);
+    
+    CGRect rectUp = CGRectMake(0, 0, image1.size.width, image1.size.height);
+    [image1 drawInRect:rectUp];
+    
+    CGRect rectDown = CGRectMake((width - image2.size.width)/2, rectUp.origin.y + rectUp.size.height, image2.size.width, image2.size.height);
+    [image2 drawInRect:rectDown];
+    
+    UIImage* imagez = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return imagez;
+}
+
 @end

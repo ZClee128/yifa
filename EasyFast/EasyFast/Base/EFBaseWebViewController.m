@@ -33,12 +33,12 @@
         // 给webview建立JS与OjbC的沟通桥梁
         self.bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView];
         [self.bridge setWebViewDelegate:self];
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:@"dist/pay"];
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"pay" ofType:@"html" inDirectory:@"dist"];
 
         NSURL *fileURL = [NSURL fileURLWithPath:path];
 
         [_webView loadFileURL:fileURL allowingReadAccessToURL:fileURL];
-//
+        
 
     }
     return _webView;

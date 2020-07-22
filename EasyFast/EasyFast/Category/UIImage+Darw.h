@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size cornerRadius:(CGFloat)cornerRadius;
 
 + (UIImage *)imageWithMixColors:(NSArray *)colors size:(CGSize)size;
++ (UIImage *)combineImageUpImage:(UIImage *)upImage  DownImage:(UIImage *)downImage;
++ (UIImage *)imageWithVerticalMixColors:(NSArray *)colors size:(CGSize)size;
 @end
 
 NS_ASSUME_NONNULL_END

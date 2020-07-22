@@ -50,6 +50,7 @@
     TabbarBackView *tabBarView = [[TabbarBackView alloc] initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, _tabbarheight)];
     tabBarView.backgroundColor = [UIColor whiteColor];
     [self.tabBar addSubview:tabBarView];
+    
 }
 
 -(void)viewDidLayoutSubviews {
@@ -186,7 +187,8 @@
 //        //shadowColor和shadowImage均可以自定义颜色, shadowColor默认高度为1, shadowImage可以自定义高度.
 //        standardAppearance.shadowColor = RGB16(0xf5f5f5);
 //         standardAppearance.shadowImage = [[self class] imageWithColor:RGB16(0xf5f5f5) size:CGSizeMake([UIScreen mainScreen].bounds.size.width, 1)];
-//        [standardAppearance setBackgroundImage:[UIImage imageNamed:@"tab"]];
+//        UIImage *bar =  [UIImage combineImageUpImage:[UIImage imageNamed:@"tab"] DownImage:[UIImage imageWithColor:UIColor.whiteColor size:CGSizeMake(kPHONE_WIDTH, 80*30) cornerRadius:0]];
+//        [[UITabBar appearance] setBackgroundImage:[UIImage imageWithColor:UIColor.whiteColor size:CGSizeMake(kPHONE_WIDTH, TAB_BAR_HEIGHT) cornerRadius:0]];
         self.tabBar.standardAppearance = standardAppearance;
     } else {
         // Override point for customization after application launch.
@@ -197,8 +199,14 @@
         [tabBar setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
 //        [self.tabBar setBackgroundImage:[UIImage imageNamed:@"tab"]];
         // This shadow image attribute is ignored if the tab bar does not also have a custom background image.So at least set somthing.
-//         [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tab"]];
-//        [[UITabBar appearance] setShadowImage:[[self class] imageWithColor:RGB16(0xf5f5f5) size:CGSizeMake([UIScreen mainScreen].bounds.size.width, 3)]];
+//        if (iPhoneX) {
+//            UIImage *bar =  [UIImage combineImageUpImage:[UIImage imageNamed:@"tab"] DownImage:[UIImage imageWithColor:UIColor.whiteColor size:CGSizeMake(kPHONE_WIDTH, TAB_BAR_HEIGHT) cornerRadius:0]];
+//            [[UITabBar appearance] setBackgroundImage:bar];
+//        }else{
+//            [[UITabBar appearance] setBackgroundImage:[UIImage imageWithColor:UIColor.whiteColor size:CGSizeMake(kPHONE_WIDTH, TAB_BAR_HEIGHT) cornerRadius:0]];
+////        }
+////        [[UITabBar appearance] setShadowImage:[[self class] imageWithColor:RGB16(0xf5f5f5) size:CGSizeMake([UIScreen mainScreen].bounds.size.width, 3)]];
+//        [self.tabBar setTabBarShadowWithCenter:self.tabBar.center radius:28];
     }
 }
 

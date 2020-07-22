@@ -32,6 +32,8 @@ targets.each do |t|
     pod 'BGFMDB', '~> 2.0.9'
     pod 'SSZipArchive'
     pod "QPDialCodePickerView"
+    pod 'JCore'
+    pod 'JVerification' 
     # Pods for EasyFast
   end
 

@@ -44,9 +44,13 @@
     CGFloat const verticalMargin  = (self.bounds.size.height - labelLineHeight - imageViewEdgeHeight) * 0.8;
 
     // imageView 和 titleLabel 中心的 Y 值
-    CGFloat const centerOfImageView  = verticalMargin + imageViewEdgeHeight * 0.5 + 20;
-    CGFloat const centerOfTitleLabel = imageViewEdgeHeight  + verticalMargin * 2 + labelLineHeight * 0.5 +24;
+    CGFloat  centerOfImageView  = verticalMargin + imageViewEdgeHeight * 0.5 + 20;
+    CGFloat  centerOfTitleLabel = imageViewEdgeHeight  + verticalMargin * 2 + labelLineHeight * 0.5 + 24;
 
+//    if (iPhoneX) {
+//        centerOfImageView = centerOfImageView ;
+//        centerOfTitleLabel = centerOfTitleLabel - 4;
+//    }
     //imageView position 位置
     self.imageView.bounds = CGRectMake(0, 0, imageViewEdgeWidth, imageViewEdgeHeight);
     self.imageView.center = CGPointMake(centerOfView, centerOfImageView);

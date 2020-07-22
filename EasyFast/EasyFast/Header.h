@@ -44,4 +44,5 @@
 #import "UILabel+LabelHeightAndWidth.h"
 #import "EFBaseWebViewController.h"
 #import "UIView+XQCAlertPop.h"
+#import "JVERIFICATIONService.h"
 #endif /* Header_h */
