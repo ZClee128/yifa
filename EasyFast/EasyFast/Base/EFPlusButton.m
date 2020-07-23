@@ -44,13 +44,23 @@
     CGFloat const verticalMargin  = (self.bounds.size.height - labelLineHeight - imageViewEdgeHeight) * 0.8;
 
     // imageView 和 titleLabel 中心的 Y 值
-    CGFloat  centerOfImageView  = verticalMargin + imageViewEdgeHeight * 0.5 + 20;
-    CGFloat  centerOfTitleLabel = imageViewEdgeHeight  + verticalMargin * 2 + labelLineHeight * 0.5 + 24;
+    CGFloat  centerOfImageView  = verticalMargin + imageViewEdgeHeight * 0.5 + 3;
+    CGFloat  centerOfTitleLabel = imageViewEdgeHeight  + verticalMargin * 2 + labelLineHeight * 0.5 ;
 
-//    if (iPhoneX) {
-//        centerOfImageView = centerOfImageView ;
-//        centerOfTitleLabel = centerOfTitleLabel - 4;
-//    }
+    if ((iPhoneX && !IOS13) || ([QMUIHelper is47InchScreen])) {
+        centerOfImageView = centerOfImageView - 4;
+        centerOfTitleLabel = centerOfTitleLabel - 10;
+    }
+    
+    if ([QMUIHelper is40InchScreen]) {
+        centerOfImageView = centerOfImageView - 10;
+        centerOfTitleLabel = centerOfTitleLabel -16;
+    }
+    
+    if ([QMUIHelper is55InchScreen]) {
+        centerOfImageView = centerOfImageView - 7 ;
+        centerOfTitleLabel = centerOfTitleLabel - 16;
+    }
     //imageView position 位置
     self.imageView.bounds = CGRectMake(0, 0, imageViewEdgeWidth, imageViewEdgeHeight);
     self.imageView.center = CGPointMake(centerOfView, centerOfImageView);
@@ -83,11 +93,15 @@
 //    button.imageEdgeInsets = UIEdgeInsetsMake(5, 0, -5, 0);
     button.titleLabel.font = RegularFont11;
     [button sizeToFit]; // or set frame in this way `button.frame = CGRectMake(0.0, 0.0, 250, 100);`
-    button.frame = CGRectMake(0.0, 0.0, normalButtonImage.size.width, normalButtonImage.size.height);
-
+    button.frame = CGRectMake(0.0, 0.0, WidthOfScale(60), normalButtonImage.size.height+20);
+    if ([QMUIHelper is55InchScreen]) {
+        button.frame = CGRectMake(0.0, 0.0, WidthOfScale(60), normalButtonImage.size.height+30);
+    }
+    button.backgroundColor = UIColor.whiteColor;
     // if you use `+plusChildViewController` , do not addTarget to plusButton.
     [button addTarget:button action:@selector(clickPublish) forControlEvents:UIControlEventTouchUpInside];
-    [button setTabBarShadowWithCenter:button.center radius:57/2];
+    [button AddImage2PiRadiusBorderWithColor:UIColor.whiteColor lineWidth:7 radius:(button.size.width)/2];
+    
     return button;
 }
 

@@ -45,4 +45,5 @@
 #import "EFBaseWebViewController.h"
 #import "UIView+XQCAlertPop.h"
 #import "JVERIFICATIONService.h"
+#import "FTPopOverMenu.h"
 #endif /* Header_h */

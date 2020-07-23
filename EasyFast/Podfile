@@ -33,7 +33,7 @@ targets.each do |t|
     pod 'SSZipArchive'
     pod "QPDialCodePickerView"
     pod 'JCore'
-    pod 'JVerification' 
+    pod 'JVerification'
     # Pods for EasyFast
   end
 

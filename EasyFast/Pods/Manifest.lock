@@ -24,7 +24,7 @@ PODS:
     - CYLTabBarController/Core (= 1.29.0)
   - CYLTabBarController/Core (1.29.0)
   - DateTools (2.0.0)
-  - GKNavigationBar (1.0.9)
+  - GKNavigationBar (1.1.0)
   - IQKeyboardManager (6.5.5)
   - JCore (2.3.2)
   - JVerification (2.6.4):
@@ -131,7 +131,7 @@ SPEC CHECKSUMS:
   BGFMDB: 48e6823027232402a678acc7f71484b1fc9171d0
   CYLTabBarController: f5460b8446f82d016945d4d53895a1ef185b79e3
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
-  GKNavigationBar: f9392f5ec38644e7d7c09852134462e719bb91d0
+  GKNavigationBar: 2b653a701deb414f4fb37d50b9a51db6aef15cf1
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
   JCore: e4b7b5c812de08e5b46f698947ae9b585ee81e3f
   JVerification: 85c0b1ae2a55f167b97f9d831bb8c2e03d3da22d
@@ -151,6 +151,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   YZTagList: 43dc1909e38d88124e3256ffc51c62cc904d8240
 
-PODFILE CHECKSUM: f5be1a0738d3616061e786a298e1b718cf2beecc
+PODFILE CHECKSUM: 321770e44746bba96cad949c9ccd59440641624c
 
 COCOAPODS: 1.8.4

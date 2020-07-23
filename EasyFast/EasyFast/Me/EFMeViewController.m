@@ -16,6 +16,7 @@
 #import "EFBindPhoneViewController.h"
 #import "EFEditPasswordViewController.h"
 #import "EFMeDataViewController.h"
+#import "EFOrderViewController.h"
 
 @interface EFMeViewController ()
 
@@ -108,8 +109,17 @@
             @{@"title":@"等待中",@"icon":@"waitting"},
             @{@"title":@"已失效",@"icon":@"yishixiao"},
                               @{@"title":@"待付款",@"icon":@"daifukuan"}] title:@"我的团购"];
+            @weakify(self);
             MeCell.seletBtn = ^(NSInteger index) {
                 XYLog(@"tuan->%ld",(long)index);
+                if (index == 3) {
+                    EFOrderViewController *order = [[EFOrderViewController alloc] initWithIndex:1];
+                    order.hidesBottomBarWhenPushed = YES;
+                    @strongify(self);
+                    [self.navigationController qmui_pushViewController:order animated:YES completion:^{
+                        
+                    }];
+                }
             };
             MeCell.moreBlock = ^{
                 
@@ -122,11 +132,23 @@
             @{@"title":@"待收货",@"icon":@"daishouhuo"},
             @{@"title":@"待评价",@"icon":@"daipingjia"},
                               @{@"title":@"退款/售后",@"icon":@"tuikuan"}] title:@"我的订单"];
+            @weakify(self);
             MeCell.seletBtn = ^(NSInteger index) {
                 XYLog(@"me->%ld",(long)index);
+                EFOrderViewController *order = [[EFOrderViewController alloc] initWithIndex:index+2];
+                order.hidesBottomBarWhenPushed = YES;
+                @strongify(self);
+                [self.navigationController qmui_pushViewController:order animated:YES completion:^{
+                    
+                }];
             };
             MeCell.moreBlock = ^{
-                
+                EFOrderViewController *order = [[EFOrderViewController alloc] initWithIndex:0];
+                order.hidesBottomBarWhenPushed = YES;
+                @strongify(self);
+                [self.navigationController qmui_pushViewController:order animated:YES completion:^{
+                    
+                }];
             };
             return MeCell;
         }

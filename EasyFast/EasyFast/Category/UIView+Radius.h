@@ -36,6 +36,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)AddImageRadius:(CGFloat )radius withUIRectCorner:(UIRectCorner)corners;
 
 -(void)setTabBarShadowWithCenter:(CGPoint)center radius:(CGFloat)radius;
+
+- (void)AddImage2PiRadiusBorderWithColor:(UIColor *)color lineWidth:(CGFloat )lineWidth radius:(CGFloat )radius;
 @end
 
 NS_ASSUME_NONNULL_END

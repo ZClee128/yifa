@@ -67,6 +67,22 @@
 
 }
 
+- (void)AddImage2PiRadiusBorderWithColor:(UIColor *)color lineWidth:(CGFloat )lineWidth radius:(CGFloat )radius{
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(radius, radius)];
+    CAShapeLayer *layer = [[CAShapeLayer alloc]init] ;
+    layer.path = maskPath.CGPath;
+
+    layer.lineWidth = lineWidth;
+//
+    layer.fillColor  = [UIColor clearColor].CGColor;
+    layer.strokeColor = color.CGColor;
+    
+    [self.layer addSublayer:layer];
+    CAShapeLayer *shapeLayer = [[CAShapeLayer alloc] init];
+    shapeLayer.frame = self.bounds;
+    shapeLayer.path = maskPath.CGPath;
+    self.layer.mask = shapeLayer;
+}
 
 /**
  给tabbar添加阴影，中间有一个圆形的凸起

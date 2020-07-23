@@ -16,6 +16,33 @@
 		84187CA924C05E8200ED3F96 /* VerticalLabelBotton.m in Sources */ = {isa = PBXBuildFile; fileRef = 84187CA824C05E8200ED3F96 /* VerticalLabelBotton.m */; };
 		84187CAA24C05E8200ED3F96 /* VerticalLabelBotton.m in Sources */ = {isa = PBXBuildFile; fileRef = 84187CA824C05E8200ED3F96 /* VerticalLabelBotton.m */; };
 		84187CAB24C05E8200ED3F96 /* VerticalLabelBotton.m in Sources */ = {isa = PBXBuildFile; fileRef = 84187CA824C05E8200ED3F96 /* VerticalLabelBotton.m */; };
+		841B94D324C935B20054D8D5 /* EFOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94D224C935B20054D8D5 /* EFOrderViewController.m */; };
+		841B94D424C935B20054D8D5 /* EFOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94D224C935B20054D8D5 /* EFOrderViewController.m */; };
+		841B94D524C935B20054D8D5 /* EFOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94D224C935B20054D8D5 /* EFOrderViewController.m */; };
+		841B94D824C936AF0054D8D5 /* EFOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94D724C936AF0054D8D5 /* EFOrderDetailViewController.m */; };
+		841B94D924C936AF0054D8D5 /* EFOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94D724C936AF0054D8D5 /* EFOrderDetailViewController.m */; };
+		841B94DA24C936AF0054D8D5 /* EFOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94D724C936AF0054D8D5 /* EFOrderDetailViewController.m */; };
+		841B94DE24C93C690054D8D5 /* EFOrderTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94DD24C93C690054D8D5 /* EFOrderTitleTableViewCell.m */; };
+		841B94DF24C93C690054D8D5 /* EFOrderTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94DD24C93C690054D8D5 /* EFOrderTitleTableViewCell.m */; };
+		841B94E024C93C690054D8D5 /* EFOrderTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94DD24C93C690054D8D5 /* EFOrderTitleTableViewCell.m */; };
+		841B94E324C93F980054D8D5 /* EFOrderGoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94E224C93F980054D8D5 /* EFOrderGoodsTableViewCell.m */; };
+		841B94E424C93F980054D8D5 /* EFOrderGoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94E224C93F980054D8D5 /* EFOrderGoodsTableViewCell.m */; };
+		841B94E524C93F980054D8D5 /* EFOrderGoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94E224C93F980054D8D5 /* EFOrderGoodsTableViewCell.m */; };
+		841B94E824C95F6C0054D8D5 /* EFOrderPriceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94E724C95F6C0054D8D5 /* EFOrderPriceTableViewCell.m */; };
+		841B94E924C95F6C0054D8D5 /* EFOrderPriceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94E724C95F6C0054D8D5 /* EFOrderPriceTableViewCell.m */; };
+		841B94EA24C95F6C0054D8D5 /* EFOrderPriceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94E724C95F6C0054D8D5 /* EFOrderPriceTableViewCell.m */; };
+		841B94ED24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94EC24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m */; };
+		841B94EE24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94EC24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m */; };
+		841B94EF24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94EC24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m */; };
+		841B94F324C979790054D8D5 /* FTPopOverMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94F224C979790054D8D5 /* FTPopOverMenu.m */; };
+		841B94F424C979790054D8D5 /* FTPopOverMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94F224C979790054D8D5 /* FTPopOverMenu.m */; };
+		841B94F524C979790054D8D5 /* FTPopOverMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94F224C979790054D8D5 /* FTPopOverMenu.m */; };
+		841B94F824C9809C0054D8D5 /* EFLogisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94F724C9809C0054D8D5 /* EFLogisticsViewController.m */; };
+		841B94F924C9809C0054D8D5 /* EFLogisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94F724C9809C0054D8D5 /* EFLogisticsViewController.m */; };
+		841B94FA24C9809C0054D8D5 /* EFLogisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94F724C9809C0054D8D5 /* EFLogisticsViewController.m */; };
+		841B94FD24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94FC24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.m */; };
+		841B94FE24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94FC24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.m */; };
+		841B94FF24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B94FC24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.m */; };
 		84760F7524C1432F002B34E4 /* MeTabTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84760F7424C1432F002B34E4 /* MeTabTableViewCell.m */; };
 		84760F7624C1432F002B34E4 /* MeTabTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84760F7424C1432F002B34E4 /* MeTabTableViewCell.m */; };
 		84760F7724C1432F002B34E4 /* MeTabTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84760F7424C1432F002B34E4 /* MeTabTableViewCell.m */; };
@@ -148,9 +175,6 @@
 		8476118D24C7DBD5002B34E4 /* EFOnePhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476118C24C7DBD4002B34E4 /* EFOnePhoneViewController.m */; };
 		8476118E24C7DBD5002B34E4 /* EFOnePhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476118C24C7DBD4002B34E4 /* EFOnePhoneViewController.m */; };
 		8476118F24C7DBD5002B34E4 /* EFOnePhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476118C24C7DBD4002B34E4 /* EFOnePhoneViewController.m */; };
-		8476119124C7F07B002B34E4 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 8476119024C7F07B002B34E4 /* dist */; };
-		8476119224C7F07B002B34E4 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 8476119024C7F07B002B34E4 /* dist */; };
-		8476119324C7F07B002B34E4 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 8476119024C7F07B002B34E4 /* dist */; };
 		8476119624C82515002B34E4 /* SysManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476119524C82515002B34E4 /* SysManager.m */; };
 		8476119724C82516002B34E4 /* SysManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476119524C82515002B34E4 /* SysManager.m */; };
 		8476119824C82516002B34E4 /* SysManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476119524C82515002B34E4 /* SysManager.m */; };
@@ -316,6 +340,9 @@
 		84B2437D24C8425700E9967C /* ThreeCollectionViewCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2437C24C8425700E9967C /* ThreeCollectionViewCellItem.m */; };
 		84B2437E24C8425700E9967C /* ThreeCollectionViewCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2437C24C8425700E9967C /* ThreeCollectionViewCellItem.m */; };
 		84B2437F24C8425700E9967C /* ThreeCollectionViewCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2437C24C8425700E9967C /* ThreeCollectionViewCellItem.m */; };
+		84B2438224C8523D00E9967C /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 84B2438124C8523C00E9967C /* dist */; };
+		84B2438324C8523D00E9967C /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 84B2438124C8523C00E9967C /* dist */; };
+		84B2438424C8523D00E9967C /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 84B2438124C8523C00E9967C /* dist */; };
 		ED2E8655CA4E2FBCA71F69DC /* Pods_EasyFast_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3157AF9D413E272E30EBDDE8 /* Pods_EasyFast_Dev.framework */; };
 /* End PBXBuildFile section */
 
@@ -330,6 +357,24 @@
 		84187CA324C05D0200ED3F96 /* MeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeHeaderView.m; sourceTree = "<group>"; };
 		84187CA724C05E8200ED3F96 /* VerticalLabelBotton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerticalLabelBotton.h; sourceTree = "<group>"; };
 		84187CA824C05E8200ED3F96 /* VerticalLabelBotton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerticalLabelBotton.m; sourceTree = "<group>"; };
+		841B94D124C935B20054D8D5 /* EFOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderViewController.h; sourceTree = "<group>"; };
+		841B94D224C935B20054D8D5 /* EFOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFOrderViewController.m; sourceTree = "<group>"; };
+		841B94D624C936AF0054D8D5 /* EFOrderDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderDetailViewController.h; sourceTree = "<group>"; };
+		841B94D724C936AF0054D8D5 /* EFOrderDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFOrderDetailViewController.m; sourceTree = "<group>"; };
+		841B94DC24C93C690054D8D5 /* EFOrderTitleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderTitleTableViewCell.h; sourceTree = "<group>"; };
+		841B94DD24C93C690054D8D5 /* EFOrderTitleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFOrderTitleTableViewCell.m; sourceTree = "<group>"; };
+		841B94E124C93F980054D8D5 /* EFOrderGoodsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderGoodsTableViewCell.h; sourceTree = "<group>"; };
+		841B94E224C93F980054D8D5 /* EFOrderGoodsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFOrderGoodsTableViewCell.m; sourceTree = "<group>"; };
+		841B94E624C95F6B0054D8D5 /* EFOrderPriceTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderPriceTableViewCell.h; sourceTree = "<group>"; };
+		841B94E724C95F6C0054D8D5 /* EFOrderPriceTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFOrderPriceTableViewCell.m; sourceTree = "<group>"; };
+		841B94EB24C9637E0054D8D5 /* EFOrderBtnTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderBtnTableViewCell.h; sourceTree = "<group>"; };
+		841B94EC24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFOrderBtnTableViewCell.m; sourceTree = "<group>"; };
+		841B94F124C979790054D8D5 /* FTPopOverMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPopOverMenu.h; sourceTree = "<group>"; };
+		841B94F224C979790054D8D5 /* FTPopOverMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTPopOverMenu.m; sourceTree = "<group>"; };
+		841B94F624C9809C0054D8D5 /* EFLogisticsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFLogisticsViewController.h; sourceTree = "<group>"; };
+		841B94F724C9809C0054D8D5 /* EFLogisticsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFLogisticsViewController.m; sourceTree = "<group>"; };
+		841B94FB24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogisticsHeaderTableViewCell.h; sourceTree = "<group>"; };
+		841B94FC24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogisticsHeaderTableViewCell.m; sourceTree = "<group>"; };
 		84760F7324C1432F002B34E4 /* MeTabTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeTabTableViewCell.h; sourceTree = "<group>"; };
 		84760F7424C1432F002B34E4 /* MeTabTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeTabTableViewCell.m; sourceTree = "<group>"; };
 		84760F7824C14AD9002B34E4 /* MeListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeListTableViewCell.h; sourceTree = "<group>"; };
@@ -418,7 +463,6 @@
 		8476118724C6FCF8002B34E4 /* EFMeDataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFMeDataViewController.m; sourceTree = "<group>"; };
 		8476118B24C7DBD4002B34E4 /* EFOnePhoneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOnePhoneViewController.h; sourceTree = "<group>"; };
 		8476118C24C7DBD4002B34E4 /* EFOnePhoneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFOnePhoneViewController.m; sourceTree = "<group>"; };
-		8476119024C7F07B002B34E4 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dist; sourceTree = "<group>"; };
 		8476119424C82515002B34E4 /* SysManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SysManager.h; sourceTree = "<group>"; };
 		8476119524C82515002B34E4 /* SysManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SysManager.m; sourceTree = "<group>"; };
 		8476119B24C838A6002B34E4 /* EFClassifyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFClassifyModel.h; sourceTree = "<group>"; };
@@ -536,6 +580,7 @@
 		84B2437724C8406C00E9967C /* RightThreeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RightThreeCollectionViewCell.m; sourceTree = "<group>"; };
 		84B2437B24C8425700E9967C /* ThreeCollectionViewCellItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreeCollectionViewCellItem.h; sourceTree = "<group>"; };
 		84B2437C24C8425700E9967C /* ThreeCollectionViewCellItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreeCollectionViewCellItem.m; sourceTree = "<group>"; };
+		84B2438124C8523C00E9967C /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dist; sourceTree = "<group>"; };
 		BA53EB76E1528E46E8ADF203 /* Pods-EasyFast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast.release.xcconfig"; path = "Target Support Files/Pods-EasyFast/Pods-EasyFast.release.xcconfig"; sourceTree = "<group>"; };
 		D02E2ADBB586BA4E284F3269 /* Pods_EasyFast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyFast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF8E5FE1C44408BDAF6A9C97 /* Pods-EasyFast_Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast_Test.debug.xcconfig"; path = "Target Support Files/Pods-EasyFast_Test/Pods-EasyFast_Test.debug.xcconfig"; sourceTree = "<group>"; };
@@ -616,6 +661,32 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		841B94DB24C93C540054D8D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				841B94DC24C93C690054D8D5 /* EFOrderTitleTableViewCell.h */,
+				841B94DD24C93C690054D8D5 /* EFOrderTitleTableViewCell.m */,
+				841B94E124C93F980054D8D5 /* EFOrderGoodsTableViewCell.h */,
+				841B94E224C93F980054D8D5 /* EFOrderGoodsTableViewCell.m */,
+				841B94E624C95F6B0054D8D5 /* EFOrderPriceTableViewCell.h */,
+				841B94E724C95F6C0054D8D5 /* EFOrderPriceTableViewCell.m */,
+				841B94EB24C9637E0054D8D5 /* EFOrderBtnTableViewCell.h */,
+				841B94EC24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m */,
+				841B94FB24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.h */,
+				841B94FC24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		841B94F024C979790054D8D5 /* SXPopMenu */ = {
+			isa = PBXGroup;
+			children = (
+				841B94F124C979790054D8D5 /* FTPopOverMenu.h */,
+				841B94F224C979790054D8D5 /* FTPopOverMenu.m */,
+			);
+			path = SXPopMenu;
+			sourceTree = "<group>";
+		};
 		84760F8324C15958002B34E4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -637,7 +708,7 @@
 		84760F9924C196FF002B34E4 /* Web */ = {
 			isa = PBXGroup;
 			children = (
-				8476119024C7F07B002B34E4 /* dist */,
+				84B2438124C8523C00E9967C /* dist */,
 				8476102B24C52BDC002B34E4 /* H5Manager.h */,
 				8476102C24C52BDC002B34E4 /* H5Manager.m */,
 			);
@@ -1054,6 +1125,7 @@
 		84A8219724BF010800EAC652 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				841B94F024C979790054D8D5 /* SXPopMenu */,
 				847610B724C6C267002B34E4 /* TextField */,
 				8476102624C1A467002B34E4 /* SLScrollViewHorizontalItem.h */,
 				8476102724C1A467002B34E4 /* SLScrollViewHorizontalItem.m */,
@@ -1111,6 +1183,13 @@
 		84B2438024C84D1C00E9967C /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				841B94DB24C93C540054D8D5 /* View */,
+				841B94D124C935B20054D8D5 /* EFOrderViewController.h */,
+				841B94D224C935B20054D8D5 /* EFOrderViewController.m */,
+				841B94D624C936AF0054D8D5 /* EFOrderDetailViewController.h */,
+				841B94D724C936AF0054D8D5 /* EFOrderDetailViewController.m */,
+				841B94F624C9809C0054D8D5 /* EFLogisticsViewController.h */,
+				841B94F724C9809C0054D8D5 /* EFLogisticsViewController.m */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -1214,7 +1293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8476119124C7F07B002B34E4 /* dist in Resources */,
+				84B2438224C8523D00E9967C /* dist in Resources */,
 				84A8208624B6C62300EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8208324B6C62300EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -1224,7 +1303,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8476119224C7F07B002B34E4 /* dist in Resources */,
+				84B2438324C8523D00E9967C /* dist in Resources */,
 				84A8211324BC4F5400EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8211424BC4F5400EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -1234,7 +1313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8476119324C7F07B002B34E4 /* dist in Resources */,
+				84B2438424C8523D00E9967C /* dist in Resources */,
 				84A8213724BC513500EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8213824BC513500EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -1378,6 +1457,7 @@
 				84A820B724B6CA8A00EAC652 /* EFBaseTableView.m in Sources */,
 				84A820A424B6CA0900EAC652 /* BaseTableViewCell.m in Sources */,
 				8476105724C57636002B34E4 /* TuanListDetailSecsionView.m in Sources */,
+				841B94E824C95F6C0054D8D5 /* EFOrderPriceTableViewCell.m in Sources */,
 				84A820DE24B6CE6B00EAC652 /* UIView+Radius.m in Sources */,
 				84A820CF24B6CCC600EAC652 /* FMHttpResonse.m in Sources */,
 				8476108824C5A29D002B34E4 /* EFSetUpTableViewCell.m in Sources */,
@@ -1386,11 +1466,13 @@
 				8476119624C82515002B34E4 /* SysManager.m in Sources */,
 				847610CE24C6D898002B34E4 /* PowerTableViewCell.m in Sources */,
 				8476106124C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m in Sources */,
+				841B94E324C93F980054D8D5 /* EFOrderGoodsTableViewCell.m in Sources */,
 				847610AF24C6A011002B34E4 /* LoginVM.m in Sources */,
 				84A8218E24BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */,
 				84187CA924C05E8200ED3F96 /* VerticalLabelBotton.m in Sources */,
 				84A820E224B6EADF00EAC652 /* EFBaseTabBarViewController.m in Sources */,
 				8476117F24C6F3A9002B34E4 /* UIView+XQCAlertPop.m in Sources */,
+				841B94FD24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.m in Sources */,
 				84A820F224B6F66400EAC652 /* EFMeViewController.m in Sources */,
 				8476108D24C5ABE6002B34E4 /* EFAccountTableViewCell.m in Sources */,
 				8476104824C54E21002B34E4 /* TuanListTableViewCell.m in Sources */,
@@ -1404,6 +1486,7 @@
 				84A820BD24B6CAC400EAC652 /* EFBaseRefreshVM.m in Sources */,
 				84A820A524B6CA0900EAC652 /* RVMViewModel.m in Sources */,
 				84A820CE24B6CCC600EAC652 /* FMHttpRequest.m in Sources */,
+				841B94F824C9809C0054D8D5 /* EFLogisticsViewController.m in Sources */,
 				84A8215F24BDB90C00EAC652 /* HotTabCollectionViewCell.m in Sources */,
 				84A8214724BC5F0900EAC652 /* EFPlusButton.m in Sources */,
 				84A820B624B6CA8A00EAC652 /* EFBaseViewController.m in Sources */,
@@ -1435,18 +1518,22 @@
 				8476102D24C52BDC002B34E4 /* H5Manager.m in Sources */,
 				84760F8024C1551B002B34E4 /* EFWKWebConfig.m in Sources */,
 				84B2437324C83AB000E9967C /* LeftTableViewCell.m in Sources */,
+				841B94ED24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,
 				84A821C824C047C000EAC652 /* EFClassTabTableViewCell.m in Sources */,
 				84760F8C24C15AD5002B34E4 /* EFSearchModel.m in Sources */,
 				8476106724C58861002B34E4 /* EFAddressViewController.m in Sources */,
 				84760F9624C1806D002B34E4 /* NSMutableAttributedString+Size.m in Sources */,
 				8476119D24C838A6002B34E4 /* EFClassifyModel.m in Sources */,
+				841B94F324C979790054D8D5 /* FTPopOverMenu.m in Sources */,
 				84A8216624BE92B900EAC652 /* HotTabTableViewCell.m in Sources */,
 				84A8218924BEDDCB00EAC652 /* GBGradientProgressView.m in Sources */,
 				84A8217524BEAE3000EAC652 /* EFHeaderView.m in Sources */,
 				8476103324C54189002B34E4 /* TuanListViewController.m in Sources */,
 				84B2437D24C8425700E9967C /* ThreeCollectionViewCellItem.m in Sources */,
+				841B94D824C936AF0054D8D5 /* EFOrderDetailViewController.m in Sources */,
 				84A8217A24BEB35E00EAC652 /* EFFastCollectionViewCell.m in Sources */,
 				8476107824C59780002B34E4 /* UILabel+LabelHeightAndWidth.m in Sources */,
+				841B94D324C935B20054D8D5 /* EFOrderViewController.m in Sources */,
 				84A820E624B6F5E800EAC652 /* EFHomeViewController.m in Sources */,
 				84A8217024BEA92300EAC652 /* EFNoticTitleCell.m in Sources */,
 				84A821B824C026FF00EAC652 /* EFSearchResultViewController.m in Sources */,
@@ -1459,6 +1546,7 @@
 				84760F7A24C14AD9002B34E4 /* MeListTableViewCell.m in Sources */,
 				847610A424C68962002B34E4 /* EFPhoneTableViewCell.m in Sources */,
 				84A821A624BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */,
+				841B94DE24C93C690054D8D5 /* EFOrderTitleTableViewCell.m in Sources */,
 				84A821BE24C033EC00EAC652 /* SearchTwoCollectionViewCell.m in Sources */,
 				84A820EA24B6F62900EAC652 /* EFClassifyViewController.m in Sources */,
 				84A820DD24B6CE6B00EAC652 /* UIView+Frame.m in Sources */,
@@ -1484,6 +1572,7 @@
 				84A820FB24BC4F5400EAC652 /* EFBaseTableView.m in Sources */,
 				84A820FC24BC4F5400EAC652 /* BaseTableViewCell.m in Sources */,
 				8476105824C57636002B34E4 /* TuanListDetailSecsionView.m in Sources */,
+				841B94E924C95F6C0054D8D5 /* EFOrderPriceTableViewCell.m in Sources */,
 				84A820FD24BC4F5400EAC652 /* UIView+Radius.m in Sources */,
 				84A820FE24BC4F5400EAC652 /* FMHttpResonse.m in Sources */,
 				8476108924C5A29D002B34E4 /* EFSetUpTableViewCell.m in Sources */,
@@ -1492,11 +1581,13 @@
 				8476119724C82516002B34E4 /* SysManager.m in Sources */,
 				847610CF24C6D898002B34E4 /* PowerTableViewCell.m in Sources */,
 				8476106224C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m in Sources */,
+				841B94E424C93F980054D8D5 /* EFOrderGoodsTableViewCell.m in Sources */,
 				847610B024C6A012002B34E4 /* LoginVM.m in Sources */,
 				84A8218F24BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */,
 				84187CAA24C05E8200ED3F96 /* VerticalLabelBotton.m in Sources */,
 				84A8210024BC4F5400EAC652 /* EFMeViewController.m in Sources */,
 				8476118024C6F3A9002B34E4 /* UIView+XQCAlertPop.m in Sources */,
+				841B94FE24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.m in Sources */,
 				84A8210124BC4F5400EAC652 /* EFBaseTableViewController.m in Sources */,
 				8476108E24C5ABE6002B34E4 /* EFAccountTableViewCell.m in Sources */,
 				8476104924C54E21002B34E4 /* TuanListTableViewCell.m in Sources */,
@@ -1510,6 +1601,7 @@
 				84A8210424BC4F5400EAC652 /* RVMViewModel.m in Sources */,
 				84A8210524BC4F5400EAC652 /* FMHttpRequest.m in Sources */,
 				84A8214E24BD43F000EAC652 /* TabbarBackView.m in Sources */,
+				841B94F924C9809C0054D8D5 /* EFLogisticsViewController.m in Sources */,
 				84A8216024BDB90C00EAC652 /* HotTabCollectionViewCell.m in Sources */,
 				84A8214824BC5F0900EAC652 /* EFPlusButton.m in Sources */,
 				84A8210624BC4F5400EAC652 /* EFBaseViewController.m in Sources */,
@@ -1541,18 +1633,22 @@
 				8476102E24C52BDC002B34E4 /* H5Manager.m in Sources */,
 				84760F8124C1551B002B34E4 /* EFWKWebConfig.m in Sources */,
 				84B2437424C83AB000E9967C /* LeftTableViewCell.m in Sources */,
+				841B94EE24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,
 				84A821C924C047C000EAC652 /* EFClassTabTableViewCell.m in Sources */,
 				84760F8D24C15AD5002B34E4 /* EFSearchModel.m in Sources */,
 				8476106824C58861002B34E4 /* EFAddressViewController.m in Sources */,
 				84760F9724C1806D002B34E4 /* NSMutableAttributedString+Size.m in Sources */,
 				8476119E24C838A7002B34E4 /* EFClassifyModel.m in Sources */,
+				841B94F424C979790054D8D5 /* FTPopOverMenu.m in Sources */,
 				84A8216724BE92B900EAC652 /* HotTabTableViewCell.m in Sources */,
 				84A8218A24BEDDCB00EAC652 /* GBGradientProgressView.m in Sources */,
 				84A8217624BEAE3000EAC652 /* EFHeaderView.m in Sources */,
 				8476103424C54189002B34E4 /* TuanListViewController.m in Sources */,
 				84B2437E24C8425700E9967C /* ThreeCollectionViewCellItem.m in Sources */,
+				841B94D924C936AF0054D8D5 /* EFOrderDetailViewController.m in Sources */,
 				84A8217B24BEB35E00EAC652 /* EFFastCollectionViewCell.m in Sources */,
 				8476107924C59780002B34E4 /* UILabel+LabelHeightAndWidth.m in Sources */,
+				841B94D424C935B20054D8D5 /* EFOrderViewController.m in Sources */,
 				84A8210B24BC4F5400EAC652 /* main.m in Sources */,
 				84A8217124BEA92400EAC652 /* EFNoticTitleCell.m in Sources */,
 				84A821B924C026FF00EAC652 /* EFSearchResultViewController.m in Sources */,
@@ -1565,6 +1661,7 @@
 				84760F7B24C14AD9002B34E4 /* MeListTableViewCell.m in Sources */,
 				847610A524C68962002B34E4 /* EFPhoneTableViewCell.m in Sources */,
 				84A821A724BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */,
+				841B94DF24C93C690054D8D5 /* EFOrderTitleTableViewCell.m in Sources */,
 				84A821BF24C033EC00EAC652 /* SearchTwoCollectionViewCell.m in Sources */,
 				84A8210E24BC4F5400EAC652 /* UIView+Frame.m in Sources */,
 				84A8210F24BC4F5400EAC652 /* EFBaseVM.m in Sources */,
@@ -1590,6 +1687,7 @@
 				84A8211F24BC513500EAC652 /* EFBaseTableView.m in Sources */,
 				84A8212024BC513500EAC652 /* BaseTableViewCell.m in Sources */,
 				8476105924C57636002B34E4 /* TuanListDetailSecsionView.m in Sources */,
+				841B94EA24C95F6C0054D8D5 /* EFOrderPriceTableViewCell.m in Sources */,
 				84A8212124BC513500EAC652 /* UIView+Radius.m in Sources */,
 				84A8212224BC513500EAC652 /* FMHttpResonse.m in Sources */,
 				8476108A24C5A29D002B34E4 /* EFSetUpTableViewCell.m in Sources */,
@@ -1598,11 +1696,13 @@
 				8476119824C82516002B34E4 /* SysManager.m in Sources */,
 				847610D024C6D898002B34E4 /* PowerTableViewCell.m in Sources */,
 				8476106324C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m in Sources */,
+				841B94E524C93F980054D8D5 /* EFOrderGoodsTableViewCell.m in Sources */,
 				847610B124C6A012002B34E4 /* LoginVM.m in Sources */,
 				84A8219024BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */,
 				84187CAB24C05E8200ED3F96 /* VerticalLabelBotton.m in Sources */,
 				84A8212324BC513500EAC652 /* EFBaseTabBarViewController.m in Sources */,
 				8476118124C6F3A9002B34E4 /* UIView+XQCAlertPop.m in Sources */,
+				841B94FF24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.m in Sources */,
 				84A8212424BC513500EAC652 /* EFMeViewController.m in Sources */,
 				8476108F24C5ABE6002B34E4 /* EFAccountTableViewCell.m in Sources */,
 				8476104A24C54E21002B34E4 /* TuanListTableViewCell.m in Sources */,
@@ -1616,6 +1716,7 @@
 				84A8212724BC513500EAC652 /* EFBaseRefreshVM.m in Sources */,
 				84A8212824BC513500EAC652 /* RVMViewModel.m in Sources */,
 				84A8212924BC513500EAC652 /* FMHttpRequest.m in Sources */,
+				841B94FA24C9809C0054D8D5 /* EFLogisticsViewController.m in Sources */,
 				84A8216124BDB90C00EAC652 /* HotTabCollectionViewCell.m in Sources */,
 				84A8214924BC5F0900EAC652 /* EFPlusButton.m in Sources */,
 				84A8212A24BC513500EAC652 /* EFBaseViewController.m in Sources */,
@@ -1647,18 +1748,22 @@
 				8476102F24C52BDC002B34E4 /* H5Manager.m in Sources */,
 				84760F8224C1551B002B34E4 /* EFWKWebConfig.m in Sources */,
 				84B2437524C83AB000E9967C /* LeftTableViewCell.m in Sources */,
+				841B94EF24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,
 				84A821CA24C047C100EAC652 /* EFClassTabTableViewCell.m in Sources */,
 				84760F8E24C15AD5002B34E4 /* EFSearchModel.m in Sources */,
 				8476106924C58861002B34E4 /* EFAddressViewController.m in Sources */,
 				84760F9824C1806D002B34E4 /* NSMutableAttributedString+Size.m in Sources */,
 				8476119F24C838A7002B34E4 /* EFClassifyModel.m in Sources */,
+				841B94F524C979790054D8D5 /* FTPopOverMenu.m in Sources */,
 				84A8216824BE92B900EAC652 /* HotTabTableViewCell.m in Sources */,
 				84A8218B24BEDDCB00EAC652 /* GBGradientProgressView.m in Sources */,
 				84A8217724BEAE3000EAC652 /* EFHeaderView.m in Sources */,
 				8476103524C54189002B34E4 /* TuanListViewController.m in Sources */,
 				84B2437F24C8425700E9967C /* ThreeCollectionViewCellItem.m in Sources */,
+				841B94DA24C936AF0054D8D5 /* EFOrderDetailViewController.m in Sources */,
 				84A8217C24BEB35E00EAC652 /* EFFastCollectionViewCell.m in Sources */,
 				8476107A24C59780002B34E4 /* UILabel+LabelHeightAndWidth.m in Sources */,
+				841B94D524C935B20054D8D5 /* EFOrderViewController.m in Sources */,
 				84A8212E24BC513500EAC652 /* EFHomeViewController.m in Sources */,
 				84A8217224BEA92400EAC652 /* EFNoticTitleCell.m in Sources */,
 				84A821BA24C0270000EAC652 /* EFSearchResultViewController.m in Sources */,
@@ -1671,6 +1776,7 @@
 				84760F7C24C14AD9002B34E4 /* MeListTableViewCell.m in Sources */,
 				847610A624C68962002B34E4 /* EFPhoneTableViewCell.m in Sources */,
 				84A821A824BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */,
+				841B94E024C93C690054D8D5 /* EFOrderTitleTableViewCell.m in Sources */,
 				84A821C024C033ED00EAC652 /* SearchTwoCollectionViewCell.m in Sources */,
 				84A8213124BC513500EAC652 /* EFClassifyViewController.m in Sources */,
 				84A8213224BC513500EAC652 /* UIView+Frame.m in Sources */,
