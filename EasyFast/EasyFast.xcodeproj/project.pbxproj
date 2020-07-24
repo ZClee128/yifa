@@ -8,6 +8,48 @@
 
 /* Begin PBXBuildFile section */
 		03BD2ED8996DE17BD7ECF09A /* Pods_EasyFast_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4FEC608CB9BC91EADCD0AB /* Pods_EasyFast_Test.framework */; };
+		0CCEC45324CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
+		0CCEC45424CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
+		0CCEC45524CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
+		0CCEC45824CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45724CA7D8900976D24 /* EFOrderMoreDetailViewController.m */; };
+		0CCEC45924CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45724CA7D8900976D24 /* EFOrderMoreDetailViewController.m */; };
+		0CCEC45A24CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45724CA7D8900976D24 /* EFOrderMoreDetailViewController.m */; };
+		0CCEC45D24CA80EE00976D24 /* EFOrderAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45C24CA80EE00976D24 /* EFOrderAddressTableViewCell.m */; };
+		0CCEC45E24CA80EE00976D24 /* EFOrderAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45C24CA80EE00976D24 /* EFOrderAddressTableViewCell.m */; };
+		0CCEC45F24CA80EE00976D24 /* EFOrderAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45C24CA80EE00976D24 /* EFOrderAddressTableViewCell.m */; };
+		0CCEC46224CA837400976D24 /* EFOrderShopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC46124CA837400976D24 /* EFOrderShopTableViewCell.m */; };
+		0CCEC46324CA837400976D24 /* EFOrderShopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC46124CA837400976D24 /* EFOrderShopTableViewCell.m */; };
+		0CCEC46424CA837400976D24 /* EFOrderShopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC46124CA837400976D24 /* EFOrderShopTableViewCell.m */; };
+		0CCEC46724CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC46624CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.m */; };
+		0CCEC46824CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC46624CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.m */; };
+		0CCEC46924CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC46624CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.m */; };
+		0CCEC46C24CA8C3100976D24 /* EFOrderPriceDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC46B24CA8C3100976D24 /* EFOrderPriceDetailTableViewCell.m */; };
+		0CCEC46D24CA8C3100976D24 /* EFOrderPriceDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC46B24CA8C3100976D24 /* EFOrderPriceDetailTableViewCell.m */; };
+		0CCEC46E24CA8C3100976D24 /* EFOrderPriceDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC46B24CA8C3100976D24 /* EFOrderPriceDetailTableViewCell.m */; };
+		0CCEC47124CA8F7500976D24 /* EFRealPriceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC47024CA8F7500976D24 /* EFRealPriceTableViewCell.m */; };
+		0CCEC47224CA8F7500976D24 /* EFRealPriceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC47024CA8F7500976D24 /* EFRealPriceTableViewCell.m */; };
+		0CCEC47324CA8F7500976D24 /* EFRealPriceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC47024CA8F7500976D24 /* EFRealPriceTableViewCell.m */; };
+		0CCEC47624CAB46200976D24 /* EFTimeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC47524CAB46200976D24 /* EFTimeTableViewCell.m */; };
+		0CCEC47724CAB46200976D24 /* EFTimeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC47524CAB46200976D24 /* EFTimeTableViewCell.m */; };
+		0CCEC47824CAB46200976D24 /* EFTimeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC47524CAB46200976D24 /* EFTimeTableViewCell.m */; };
+		0CCEC47C24CABBF300976D24 /* EFHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC47B24CABBF300976D24 /* EFHelpViewController.m */; };
+		0CCEC47D24CABBF300976D24 /* EFHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC47B24CABBF300976D24 /* EFHelpViewController.m */; };
+		0CCEC47E24CABBF300976D24 /* EFHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC47B24CABBF300976D24 /* EFHelpViewController.m */; };
+		0CCEC48224CABDC900976D24 /* EFHelpTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC48124CABDC900976D24 /* EFHelpTableViewCell.m */; };
+		0CCEC48324CABDC900976D24 /* EFHelpTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC48124CABDC900976D24 /* EFHelpTableViewCell.m */; };
+		0CCEC48424CABDC900976D24 /* EFHelpTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC48124CABDC900976D24 /* EFHelpTableViewCell.m */; };
+		0CCEC48724CAC27A00976D24 /* EFIMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC48624CAC27A00976D24 /* EFIMListViewController.m */; };
+		0CCEC48824CAC27A00976D24 /* EFIMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC48624CAC27A00976D24 /* EFIMListViewController.m */; };
+		0CCEC48924CAC27A00976D24 /* EFIMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC48624CAC27A00976D24 /* EFIMListViewController.m */; };
+		0CCEC48C24CAC2F000976D24 /* EFIMListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC48B24CAC2F000976D24 /* EFIMListTableViewCell.m */; };
+		0CCEC48D24CAC2F000976D24 /* EFIMListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC48B24CAC2F000976D24 /* EFIMListTableViewCell.m */; };
+		0CCEC48E24CAC2F000976D24 /* EFIMListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC48B24CAC2F000976D24 /* EFIMListTableViewCell.m */; };
+		0CCEC49224CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC49124CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.m */; };
+		0CCEC49324CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC49124CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.m */; };
+		0CCEC49424CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC49124CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.m */; };
+		0CCEC49724CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC49624CAD13900976D24 /* EFTimeAxisTableViewCell.m */; };
+		0CCEC49824CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC49624CAD13900976D24 /* EFTimeAxisTableViewCell.m */; };
+		0CCEC49924CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC49624CAD13900976D24 /* EFTimeAxisTableViewCell.m */; };
 		4B6DC9457C08CB25296CBA4B /* Pods_EasyFast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D02E2ADBB586BA4E284F3269 /* Pods_EasyFast.framework */; };
 		5331675373D39F1F29162855 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		84187CA424C05D0200ED3F96 /* MeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84187CA324C05D0200ED3F96 /* MeHeaderView.m */; };
@@ -347,6 +389,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0CCEC45124CA7A6000976D24 /* EFWuliuTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFWuliuTableViewCell.h; sourceTree = "<group>"; };
+		0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFWuliuTableViewCell.m; sourceTree = "<group>"; };
+		0CCEC45624CA7D8900976D24 /* EFOrderMoreDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderMoreDetailViewController.h; sourceTree = "<group>"; };
+		0CCEC45724CA7D8900976D24 /* EFOrderMoreDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFOrderMoreDetailViewController.m; sourceTree = "<group>"; };
+		0CCEC45B24CA80EE00976D24 /* EFOrderAddressTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderAddressTableViewCell.h; sourceTree = "<group>"; };
+		0CCEC45C24CA80EE00976D24 /* EFOrderAddressTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFOrderAddressTableViewCell.m; sourceTree = "<group>"; };
+		0CCEC46024CA837400976D24 /* EFOrderShopTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderShopTableViewCell.h; sourceTree = "<group>"; };
+		0CCEC46124CA837400976D24 /* EFOrderShopTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFOrderShopTableViewCell.m; sourceTree = "<group>"; };
+		0CCEC46524CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderDetailGoodsTableViewCell.h; sourceTree = "<group>"; };
+		0CCEC46624CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFOrderDetailGoodsTableViewCell.m; sourceTree = "<group>"; };
+		0CCEC46A24CA8C3100976D24 /* EFOrderPriceDetailTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderPriceDetailTableViewCell.h; sourceTree = "<group>"; };
+		0CCEC46B24CA8C3100976D24 /* EFOrderPriceDetailTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFOrderPriceDetailTableViewCell.m; sourceTree = "<group>"; };
+		0CCEC46F24CA8F7500976D24 /* EFRealPriceTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFRealPriceTableViewCell.h; sourceTree = "<group>"; };
+		0CCEC47024CA8F7500976D24 /* EFRealPriceTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFRealPriceTableViewCell.m; sourceTree = "<group>"; };
+		0CCEC47424CAB46200976D24 /* EFTimeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFTimeTableViewCell.h; sourceTree = "<group>"; };
+		0CCEC47524CAB46200976D24 /* EFTimeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFTimeTableViewCell.m; sourceTree = "<group>"; };
+		0CCEC47A24CABBF300976D24 /* EFHelpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFHelpViewController.h; sourceTree = "<group>"; };
+		0CCEC47B24CABBF300976D24 /* EFHelpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFHelpViewController.m; sourceTree = "<group>"; };
+		0CCEC48024CABDC900976D24 /* EFHelpTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFHelpTableViewCell.h; sourceTree = "<group>"; };
+		0CCEC48124CABDC900976D24 /* EFHelpTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFHelpTableViewCell.m; sourceTree = "<group>"; };
+		0CCEC48524CAC27A00976D24 /* EFIMListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFIMListViewController.h; sourceTree = "<group>"; };
+		0CCEC48624CAC27A00976D24 /* EFIMListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFIMListViewController.m; sourceTree = "<group>"; };
+		0CCEC48A24CAC2F000976D24 /* EFIMListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFIMListTableViewCell.h; sourceTree = "<group>"; };
+		0CCEC48B24CAC2F000976D24 /* EFIMListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFIMListTableViewCell.m; sourceTree = "<group>"; };
+		0CCEC49024CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFLogisticsTwoLabTableViewCell.h; sourceTree = "<group>"; };
+		0CCEC49124CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFLogisticsTwoLabTableViewCell.m; sourceTree = "<group>"; };
+		0CCEC49524CAD13900976D24 /* EFTimeAxisTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFTimeAxisTableViewCell.h; sourceTree = "<group>"; };
+		0CCEC49624CAD13900976D24 /* EFTimeAxisTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFTimeAxisTableViewCell.m; sourceTree = "<group>"; };
 		114B5F2459F8FFC945E98BD8 /* Pods-EasyFast_Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast_Dev.debug.xcconfig"; path = "Target Support Files/Pods-EasyFast_Dev/Pods-EasyFast_Dev.debug.xcconfig"; sourceTree = "<group>"; };
 		1304519AEDDDA76585AAC941 /* Pods-EasyFast_Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast_Test.release.xcconfig"; path = "Target Support Files/Pods-EasyFast_Test/Pods-EasyFast_Test.release.xcconfig"; sourceTree = "<group>"; };
 		182D3CC0502F099CA834B4CB /* Pods-EasyFast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast.debug.xcconfig"; path = "Target Support Files/Pods-EasyFast/Pods-EasyFast.debug.xcconfig"; sourceTree = "<group>"; };
@@ -615,6 +685,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CCEC47924CABB9700976D24 /* IM */ = {
+			isa = PBXGroup;
+			children = (
+				0CCEC47F24CABDBC00976D24 /* View */,
+				0CCEC47A24CABBF300976D24 /* EFHelpViewController.h */,
+				0CCEC47B24CABBF300976D24 /* EFHelpViewController.m */,
+				0CCEC48524CAC27A00976D24 /* EFIMListViewController.h */,
+				0CCEC48624CAC27A00976D24 /* EFIMListViewController.m */,
+			);
+			path = IM;
+			sourceTree = "<group>";
+		};
+		0CCEC47F24CABDBC00976D24 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0CCEC48024CABDC900976D24 /* EFHelpTableViewCell.h */,
+				0CCEC48124CABDC900976D24 /* EFHelpTableViewCell.m */,
+				0CCEC48A24CAC2F000976D24 /* EFIMListTableViewCell.h */,
+				0CCEC48B24CAC2F000976D24 /* EFIMListTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		27EE066D901F23C4C9063CDC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -674,6 +767,24 @@
 				841B94EC24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m */,
 				841B94FB24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.h */,
 				841B94FC24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.m */,
+				0CCEC45124CA7A6000976D24 /* EFWuliuTableViewCell.h */,
+				0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */,
+				0CCEC45B24CA80EE00976D24 /* EFOrderAddressTableViewCell.h */,
+				0CCEC45C24CA80EE00976D24 /* EFOrderAddressTableViewCell.m */,
+				0CCEC46024CA837400976D24 /* EFOrderShopTableViewCell.h */,
+				0CCEC46124CA837400976D24 /* EFOrderShopTableViewCell.m */,
+				0CCEC46524CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.h */,
+				0CCEC46624CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.m */,
+				0CCEC46A24CA8C3100976D24 /* EFOrderPriceDetailTableViewCell.h */,
+				0CCEC46B24CA8C3100976D24 /* EFOrderPriceDetailTableViewCell.m */,
+				0CCEC46F24CA8F7500976D24 /* EFRealPriceTableViewCell.h */,
+				0CCEC47024CA8F7500976D24 /* EFRealPriceTableViewCell.m */,
+				0CCEC47424CAB46200976D24 /* EFTimeTableViewCell.h */,
+				0CCEC47524CAB46200976D24 /* EFTimeTableViewCell.m */,
+				0CCEC49024CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.h */,
+				0CCEC49124CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.m */,
+				0CCEC49524CAD13900976D24 /* EFTimeAxisTableViewCell.h */,
+				0CCEC49624CAD13900976D24 /* EFTimeAxisTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -871,6 +982,7 @@
 		84A8207524B6C61800EAC652 /* EasyFast */ = {
 			isa = PBXGroup;
 			children = (
+				0CCEC47924CABB9700976D24 /* IM */,
 				84B2438024C84D1C00E9967C /* Order */,
 				8476109624C67CE8002B34E4 /* Login */,
 				8476106424C58848002B34E4 /* Address */,
@@ -1190,6 +1302,8 @@
 				841B94D724C936AF0054D8D5 /* EFOrderDetailViewController.m */,
 				841B94F624C9809C0054D8D5 /* EFLogisticsViewController.h */,
 				841B94F724C9809C0054D8D5 /* EFLogisticsViewController.m */,
+				0CCEC45624CA7D8900976D24 /* EFOrderMoreDetailViewController.h */,
+				0CCEC45724CA7D8900976D24 /* EFOrderMoreDetailViewController.m */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -1451,6 +1565,7 @@
 				84187CA424C05D0200ED3F96 /* MeHeaderView.m in Sources */,
 				8476104D24C573B1002B34E4 /* TuanListDetailViewController.m in Sources */,
 				847610B424C6C209002B34E4 /* EFEditPasswordViewController.m in Sources */,
+				0CCEC49224CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.m in Sources */,
 				8476105C24C57E81002B34E4 /* TuanOtherGoodsView.m in Sources */,
 				8476104324C54B72002B34E4 /* TuanPeopleView.m in Sources */,
 				84A8215424BDA0F200EAC652 /* EFHotViewController.m in Sources */,
@@ -1464,6 +1579,7 @@
 				84A8216B24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
 				847610C424C6D44C002B34E4 /* EFBaseWebViewController.m in Sources */,
 				8476119624C82515002B34E4 /* SysManager.m in Sources */,
+				0CCEC48C24CAC2F000976D24 /* EFIMListTableViewCell.m in Sources */,
 				847610CE24C6D898002B34E4 /* PowerTableViewCell.m in Sources */,
 				8476106124C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m in Sources */,
 				841B94E324C93F980054D8D5 /* EFOrderGoodsTableViewCell.m in Sources */,
@@ -1484,11 +1600,14 @@
 				84A820B824B6CA8A00EAC652 /* EFBaseTableViewController.m in Sources */,
 				84A820D624B6CDA600EAC652 /* UIFont+RuntimeFit.m in Sources */,
 				84A820BD24B6CAC400EAC652 /* EFBaseRefreshVM.m in Sources */,
+				0CCEC46C24CA8C3100976D24 /* EFOrderPriceDetailTableViewCell.m in Sources */,
 				84A820A524B6CA0900EAC652 /* RVMViewModel.m in Sources */,
 				84A820CE24B6CCC600EAC652 /* FMHttpRequest.m in Sources */,
+				0CCEC47624CAB46200976D24 /* EFTimeTableViewCell.m in Sources */,
 				841B94F824C9809C0054D8D5 /* EFLogisticsViewController.m in Sources */,
 				84A8215F24BDB90C00EAC652 /* HotTabCollectionViewCell.m in Sources */,
 				84A8214724BC5F0900EAC652 /* EFPlusButton.m in Sources */,
+				0CCEC48224CABDC900976D24 /* EFHelpTableViewCell.m in Sources */,
 				84A820B624B6CA8A00EAC652 /* EFBaseViewController.m in Sources */,
 				84A821CD24C0497200EAC652 /* EFHomeOtherViewController.m in Sources */,
 				8476107224C58C7C002B34E4 /* EFAddressTableViewCell.m in Sources */,
@@ -1499,6 +1618,7 @@
 				84A8207824B6C61800EAC652 /* AppDelegate.m in Sources */,
 				847610BF24C6D1D0002B34E4 /* EFPrivacyViewController.m in Sources */,
 				847610BA24C6C291002B34E4 /* EFPasswordTextField.m in Sources */,
+				0CCEC46724CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.m in Sources */,
 				8476109224C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */,
 				8476103924C54200002B34E4 /* TuanGoodsView.m in Sources */,
 				8476118824C6FCF8002B34E4 /* EFMeDataViewController.m in Sources */,
@@ -1508,15 +1628,18 @@
 				84A820CC24B6CCC600EAC652 /* FMARCNetwork.m in Sources */,
 				8476103E24C54854002B34E4 /* TuanListSelectView.m in Sources */,
 				84A820DF24B6CE6B00EAC652 /* UIViewController+Runtime.m in Sources */,
+				0CCEC49724CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */,
 				84A821D224C04EAA00EAC652 /* EFClassDetailViewController.m in Sources */,
 				84760FAD24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
 				84A8214D24BD432B00EAC652 /* TabbarBackView.m in Sources */,
 				8476117624C6E2ED002B34E4 /* NotiTableViewCell.m in Sources */,
 				84A8214224BC55CB00EAC652 /* HttpManager.m in Sources */,
 				84760F7524C1432F002B34E4 /* MeTabTableViewCell.m in Sources */,
+				0CCEC45324CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */,
 				84A8218424BED7E400EAC652 /* EFFastTableViewCell.m in Sources */,
 				8476102D24C52BDC002B34E4 /* H5Manager.m in Sources */,
 				84760F8024C1551B002B34E4 /* EFWKWebConfig.m in Sources */,
+				0CCEC45824CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */,
 				84B2437324C83AB000E9967C /* LeftTableViewCell.m in Sources */,
 				841B94ED24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,
 				84A821C824C047C000EAC652 /* EFClassTabTableViewCell.m in Sources */,
@@ -1533,6 +1656,8 @@
 				841B94D824C936AF0054D8D5 /* EFOrderDetailViewController.m in Sources */,
 				84A8217A24BEB35E00EAC652 /* EFFastCollectionViewCell.m in Sources */,
 				8476107824C59780002B34E4 /* UILabel+LabelHeightAndWidth.m in Sources */,
+				0CCEC46224CA837400976D24 /* EFOrderShopTableViewCell.m in Sources */,
+				0CCEC48724CAC27A00976D24 /* EFIMListViewController.m in Sources */,
 				841B94D324C935B20054D8D5 /* EFOrderViewController.m in Sources */,
 				84A820E624B6F5E800EAC652 /* EFHomeViewController.m in Sources */,
 				84A8217024BEA92300EAC652 /* EFNoticTitleCell.m in Sources */,
@@ -1542,10 +1667,13 @@
 				84A8208924B6C62300EAC652 /* main.m in Sources */,
 				84A821AB24BF15FF00EAC652 /* EFFollowCollectionViewCell.m in Sources */,
 				847610A924C69AD0002B34E4 /* EFCodeTableViewCell.m in Sources */,
+				0CCEC45D24CA80EE00976D24 /* EFOrderAddressTableViewCell.m in Sources */,
 				84A820CD24B6CCC600EAC652 /* FMARCNetwork+interface.m in Sources */,
+				0CCEC47124CA8F7500976D24 /* EFRealPriceTableViewCell.m in Sources */,
 				84760F7A24C14AD9002B34E4 /* MeListTableViewCell.m in Sources */,
 				847610A424C68962002B34E4 /* EFPhoneTableViewCell.m in Sources */,
 				84A821A624BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */,
+				0CCEC47C24CABBF300976D24 /* EFHelpViewController.m in Sources */,
 				841B94DE24C93C690054D8D5 /* EFOrderTitleTableViewCell.m in Sources */,
 				84A821BE24C033EC00EAC652 /* SearchTwoCollectionViewCell.m in Sources */,
 				84A820EA24B6F62900EAC652 /* EFClassifyViewController.m in Sources */,
@@ -1566,6 +1694,7 @@
 				84187CA524C05D0200ED3F96 /* MeHeaderView.m in Sources */,
 				8476104E24C573B1002B34E4 /* TuanListDetailViewController.m in Sources */,
 				847610B524C6C209002B34E4 /* EFEditPasswordViewController.m in Sources */,
+				0CCEC49324CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.m in Sources */,
 				8476105D24C57E81002B34E4 /* TuanOtherGoodsView.m in Sources */,
 				8476104424C54B72002B34E4 /* TuanPeopleView.m in Sources */,
 				84A8215524BDA0F200EAC652 /* EFHotViewController.m in Sources */,
@@ -1579,6 +1708,7 @@
 				84A8216C24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
 				847610C524C6D44C002B34E4 /* EFBaseWebViewController.m in Sources */,
 				8476119724C82516002B34E4 /* SysManager.m in Sources */,
+				0CCEC48D24CAC2F000976D24 /* EFIMListTableViewCell.m in Sources */,
 				847610CF24C6D898002B34E4 /* PowerTableViewCell.m in Sources */,
 				8476106224C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m in Sources */,
 				841B94E424C93F980054D8D5 /* EFOrderGoodsTableViewCell.m in Sources */,
@@ -1599,11 +1729,14 @@
 				84A8210224BC4F5400EAC652 /* UIFont+RuntimeFit.m in Sources */,
 				84A8210324BC4F5400EAC652 /* EFBaseRefreshVM.m in Sources */,
 				84A8210424BC4F5400EAC652 /* RVMViewModel.m in Sources */,
+				0CCEC46D24CA8C3100976D24 /* EFOrderPriceDetailTableViewCell.m in Sources */,
 				84A8210524BC4F5400EAC652 /* FMHttpRequest.m in Sources */,
 				84A8214E24BD43F000EAC652 /* TabbarBackView.m in Sources */,
+				0CCEC47724CAB46200976D24 /* EFTimeTableViewCell.m in Sources */,
 				841B94F924C9809C0054D8D5 /* EFLogisticsViewController.m in Sources */,
 				84A8216024BDB90C00EAC652 /* HotTabCollectionViewCell.m in Sources */,
 				84A8214824BC5F0900EAC652 /* EFPlusButton.m in Sources */,
+				0CCEC48324CABDC900976D24 /* EFHelpTableViewCell.m in Sources */,
 				84A8210624BC4F5400EAC652 /* EFBaseViewController.m in Sources */,
 				84A821CE24C0497200EAC652 /* EFHomeOtherViewController.m in Sources */,
 				8476107324C58C7C002B34E4 /* EFAddressTableViewCell.m in Sources */,
@@ -1614,6 +1747,7 @@
 				84A8210724BC4F5400EAC652 /* AppDelegate.m in Sources */,
 				847610C024C6D1D1002B34E4 /* EFPrivacyViewController.m in Sources */,
 				847610BB24C6C291002B34E4 /* EFPasswordTextField.m in Sources */,
+				0CCEC46824CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.m in Sources */,
 				8476109324C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */,
 				8476103A24C54200002B34E4 /* TuanGoodsView.m in Sources */,
 				8476118924C6FCF8002B34E4 /* EFMeDataViewController.m in Sources */,
@@ -1623,15 +1757,18 @@
 				84A8210824BC4F5400EAC652 /* FMARCNetwork.m in Sources */,
 				8476103F24C54854002B34E4 /* TuanListSelectView.m in Sources */,
 				84A8210924BC4F5400EAC652 /* UIViewController+Runtime.m in Sources */,
+				0CCEC49824CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */,
 				84A821D324C04EAA00EAC652 /* EFClassDetailViewController.m in Sources */,
 				84760FAE24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
 				84A8214324BC55CB00EAC652 /* HttpManager.m in Sources */,
 				8476117724C6E2ED002B34E4 /* NotiTableViewCell.m in Sources */,
 				84A8210A24BC4F5400EAC652 /* EFHomeViewController.m in Sources */,
 				84760F7624C1432F002B34E4 /* MeTabTableViewCell.m in Sources */,
+				0CCEC45424CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */,
 				84A8218524BED7E400EAC652 /* EFFastTableViewCell.m in Sources */,
 				8476102E24C52BDC002B34E4 /* H5Manager.m in Sources */,
 				84760F8124C1551B002B34E4 /* EFWKWebConfig.m in Sources */,
+				0CCEC45924CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */,
 				84B2437424C83AB000E9967C /* LeftTableViewCell.m in Sources */,
 				841B94EE24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,
 				84A821C924C047C000EAC652 /* EFClassTabTableViewCell.m in Sources */,
@@ -1648,6 +1785,8 @@
 				841B94D924C936AF0054D8D5 /* EFOrderDetailViewController.m in Sources */,
 				84A8217B24BEB35E00EAC652 /* EFFastCollectionViewCell.m in Sources */,
 				8476107924C59780002B34E4 /* UILabel+LabelHeightAndWidth.m in Sources */,
+				0CCEC46324CA837400976D24 /* EFOrderShopTableViewCell.m in Sources */,
+				0CCEC48824CAC27A00976D24 /* EFIMListViewController.m in Sources */,
 				841B94D424C935B20054D8D5 /* EFOrderViewController.m in Sources */,
 				84A8210B24BC4F5400EAC652 /* main.m in Sources */,
 				84A8217124BEA92400EAC652 /* EFNoticTitleCell.m in Sources */,
@@ -1657,10 +1796,13 @@
 				84A8210C24BC4F5400EAC652 /* FMARCNetwork+interface.m in Sources */,
 				84A821AC24BF15FF00EAC652 /* EFFollowCollectionViewCell.m in Sources */,
 				847610AA24C69AD0002B34E4 /* EFCodeTableViewCell.m in Sources */,
+				0CCEC45E24CA80EE00976D24 /* EFOrderAddressTableViewCell.m in Sources */,
 				84A8210D24BC4F5400EAC652 /* EFClassifyViewController.m in Sources */,
+				0CCEC47224CA8F7500976D24 /* EFRealPriceTableViewCell.m in Sources */,
 				84760F7B24C14AD9002B34E4 /* MeListTableViewCell.m in Sources */,
 				847610A524C68962002B34E4 /* EFPhoneTableViewCell.m in Sources */,
 				84A821A724BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */,
+				0CCEC47D24CABBF300976D24 /* EFHelpViewController.m in Sources */,
 				841B94DF24C93C690054D8D5 /* EFOrderTitleTableViewCell.m in Sources */,
 				84A821BF24C033EC00EAC652 /* SearchTwoCollectionViewCell.m in Sources */,
 				84A8210E24BC4F5400EAC652 /* UIView+Frame.m in Sources */,
@@ -1681,6 +1823,7 @@
 				84187CA624C05D0200ED3F96 /* MeHeaderView.m in Sources */,
 				8476104F24C573B1002B34E4 /* TuanListDetailViewController.m in Sources */,
 				847610B624C6C209002B34E4 /* EFEditPasswordViewController.m in Sources */,
+				0CCEC49424CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.m in Sources */,
 				8476105E24C57E81002B34E4 /* TuanOtherGoodsView.m in Sources */,
 				8476104524C54B72002B34E4 /* TuanPeopleView.m in Sources */,
 				84A8215624BDA0F200EAC652 /* EFHotViewController.m in Sources */,
@@ -1694,6 +1837,7 @@
 				84A8216D24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
 				847610C624C6D44C002B34E4 /* EFBaseWebViewController.m in Sources */,
 				8476119824C82516002B34E4 /* SysManager.m in Sources */,
+				0CCEC48E24CAC2F000976D24 /* EFIMListTableViewCell.m in Sources */,
 				847610D024C6D898002B34E4 /* PowerTableViewCell.m in Sources */,
 				8476106324C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m in Sources */,
 				841B94E524C93F980054D8D5 /* EFOrderGoodsTableViewCell.m in Sources */,
@@ -1714,11 +1858,14 @@
 				84A8212524BC513500EAC652 /* EFBaseTableViewController.m in Sources */,
 				84A8212624BC513500EAC652 /* UIFont+RuntimeFit.m in Sources */,
 				84A8212724BC513500EAC652 /* EFBaseRefreshVM.m in Sources */,
+				0CCEC46E24CA8C3100976D24 /* EFOrderPriceDetailTableViewCell.m in Sources */,
 				84A8212824BC513500EAC652 /* RVMViewModel.m in Sources */,
 				84A8212924BC513500EAC652 /* FMHttpRequest.m in Sources */,
+				0CCEC47824CAB46200976D24 /* EFTimeTableViewCell.m in Sources */,
 				841B94FA24C9809C0054D8D5 /* EFLogisticsViewController.m in Sources */,
 				84A8216124BDB90C00EAC652 /* HotTabCollectionViewCell.m in Sources */,
 				84A8214924BC5F0900EAC652 /* EFPlusButton.m in Sources */,
+				0CCEC48424CABDC900976D24 /* EFHelpTableViewCell.m in Sources */,
 				84A8212A24BC513500EAC652 /* EFBaseViewController.m in Sources */,
 				84A821CF24C0497200EAC652 /* EFHomeOtherViewController.m in Sources */,
 				8476107424C58C7C002B34E4 /* EFAddressTableViewCell.m in Sources */,
@@ -1729,6 +1876,7 @@
 				84A8212B24BC513500EAC652 /* AppDelegate.m in Sources */,
 				847610C124C6D1D1002B34E4 /* EFPrivacyViewController.m in Sources */,
 				847610BC24C6C291002B34E4 /* EFPasswordTextField.m in Sources */,
+				0CCEC46924CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.m in Sources */,
 				8476109424C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */,
 				8476103B24C54200002B34E4 /* TuanGoodsView.m in Sources */,
 				8476118A24C6FCF8002B34E4 /* EFMeDataViewController.m in Sources */,
@@ -1738,15 +1886,18 @@
 				84A8212C24BC513500EAC652 /* FMARCNetwork.m in Sources */,
 				8476104024C54854002B34E4 /* TuanListSelectView.m in Sources */,
 				84A8212D24BC513500EAC652 /* UIViewController+Runtime.m in Sources */,
+				0CCEC49924CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */,
 				84A821D424C04EAA00EAC652 /* EFClassDetailViewController.m in Sources */,
 				84760FAF24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
 				84A8214F24BD43F100EAC652 /* TabbarBackView.m in Sources */,
 				8476117824C6E2ED002B34E4 /* NotiTableViewCell.m in Sources */,
 				84A8214424BC55CB00EAC652 /* HttpManager.m in Sources */,
 				84760F7724C1432F002B34E4 /* MeTabTableViewCell.m in Sources */,
+				0CCEC45524CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */,
 				84A8218624BED7E400EAC652 /* EFFastTableViewCell.m in Sources */,
 				8476102F24C52BDC002B34E4 /* H5Manager.m in Sources */,
 				84760F8224C1551B002B34E4 /* EFWKWebConfig.m in Sources */,
+				0CCEC45A24CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */,
 				84B2437524C83AB000E9967C /* LeftTableViewCell.m in Sources */,
 				841B94EF24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,
 				84A821CA24C047C100EAC652 /* EFClassTabTableViewCell.m in Sources */,
@@ -1763,6 +1914,8 @@
 				841B94DA24C936AF0054D8D5 /* EFOrderDetailViewController.m in Sources */,
 				84A8217C24BEB35E00EAC652 /* EFFastCollectionViewCell.m in Sources */,
 				8476107A24C59780002B34E4 /* UILabel+LabelHeightAndWidth.m in Sources */,
+				0CCEC46424CA837400976D24 /* EFOrderShopTableViewCell.m in Sources */,
+				0CCEC48924CAC27A00976D24 /* EFIMListViewController.m in Sources */,
 				841B94D524C935B20054D8D5 /* EFOrderViewController.m in Sources */,
 				84A8212E24BC513500EAC652 /* EFHomeViewController.m in Sources */,
 				84A8217224BEA92400EAC652 /* EFNoticTitleCell.m in Sources */,
@@ -1772,10 +1925,13 @@
 				84A8212F24BC513500EAC652 /* main.m in Sources */,
 				84A821AD24BF15FF00EAC652 /* EFFollowCollectionViewCell.m in Sources */,
 				847610AB24C69AD0002B34E4 /* EFCodeTableViewCell.m in Sources */,
+				0CCEC45F24CA80EE00976D24 /* EFOrderAddressTableViewCell.m in Sources */,
 				84A8213024BC513500EAC652 /* FMARCNetwork+interface.m in Sources */,
+				0CCEC47324CA8F7500976D24 /* EFRealPriceTableViewCell.m in Sources */,
 				84760F7C24C14AD9002B34E4 /* MeListTableViewCell.m in Sources */,
 				847610A624C68962002B34E4 /* EFPhoneTableViewCell.m in Sources */,
 				84A821A824BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */,
+				0CCEC47E24CABBF300976D24 /* EFHelpViewController.m in Sources */,
 				841B94E024C93C690054D8D5 /* EFOrderTitleTableViewCell.m in Sources */,
 				84A821C024C033ED00EAC652 /* SearchTwoCollectionViewCell.m in Sources */,
 				84A8213124BC513500EAC652 /* EFClassifyViewController.m in Sources */,

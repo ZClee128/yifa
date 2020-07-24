@@ -12,6 +12,7 @@
 #import "EFOrderPriceTableViewCell.h"
 #import "EFOrderBtnTableViewCell.h"
 #import "EFLogisticsViewController.h"
+#import "EFOrderMoreDetailViewController.h"
 
 @interface EFOrderDetailViewController ()
 
@@ -105,6 +106,13 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 10;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    EFOrderMoreDetailViewController *vc = [[EFOrderMoreDetailViewController alloc] init];
+    [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+        
+    }];
 }
 
 @end

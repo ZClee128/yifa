@@ -10,8 +10,7 @@
 
 @interface VerticalLabelBotton ()
 
-@property (nonatomic,strong)QMUILabel *topLab;
-@property (nonatomic,strong)QMUILabel *bottomLab;
+
 
 @end
 

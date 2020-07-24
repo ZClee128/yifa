@@ -11,6 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface VerticalLabelBotton : UIView
+@property (nonatomic,strong)QMUILabel *topLab;
+@property (nonatomic,strong)QMUILabel *bottomLab;
 - (void)setTopTilte:(NSString *)top bottomTitle:(NSString *)bottom;
 @end
 

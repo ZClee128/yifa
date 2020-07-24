@@ -10,11 +10,7 @@
 
 @interface EFOrderGoodsTableViewCell ()
 
-@property(nonatomic,strong)UIImageView *goods;
-@property (nonatomic,strong)QMUILabel *goodsNameLab;
-@property (nonatomic,strong)QMUILabel *goodsSizeLab;
-@property (nonatomic,strong)QMUILabel *goodsPriceLab;
-@property (nonatomic,strong)QMUILabel *goodsNumLab;
+
 
 @end
 
@@ -102,7 +98,7 @@
     [self.contentView addSubview:self.goodsNumLab];
     [self.goodsNumLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(@(-WidthOfScale(15)));
-        make.bottom.equalTo(@(-WidthOfScale(22)));
+        make.bottom.equalTo(self.goods.mas_bottom).equalTo(@(-WidthOfScale(1.5)));
     }];
     
     [self.contentView addSubview:self.goodsPriceLab];

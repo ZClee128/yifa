@@ -12,6 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EFOrderGoodsTableViewCell : BaseTableViewCell
 
+@property(nonatomic,strong)UIImageView *goods;
+@property (nonatomic,strong)QMUILabel *goodsNameLab;
+@property (nonatomic,strong)QMUILabel *goodsSizeLab;
+@property (nonatomic,strong)QMUILabel *goodsPriceLab;
+@property (nonatomic,strong)QMUILabel *goodsNumLab;
+
 @end
 
 NS_ASSUME_NONNULL_END

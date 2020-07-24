@@ -17,6 +17,8 @@
 #import "EFEditPasswordViewController.h"
 #import "EFMeDataViewController.h"
 #import "EFOrderViewController.h"
+#import "EFHelpViewController.h"
+#import "EFIMListViewController.h"
 
 @interface EFMeViewController ()
 
@@ -59,11 +61,31 @@
             
         } messageBlock:^(NSInteger index) {
             @strongify(self);
-            EFEditPasswordViewController *vc = [[EFEditPasswordViewController alloc] init];
-            vc.hidesBottomBarWhenPushed = YES;
-            [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
-                
-            }];
+            switch (index) {
+                case 0:
+                {
+                    
+                }
+                    break;
+                    case 1:
+                {
+                    EFEditPasswordViewController *vc = [[EFEditPasswordViewController alloc] init];
+                    vc.hidesBottomBarWhenPushed = YES;
+                    [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+                        
+                    }];
+                    break;
+                }
+                default:
+                {
+                    EFIMListViewController *vc = [[EFIMListViewController alloc] init];
+                    vc.hidesBottomBarWhenPushed = YES;
+                    [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+                        
+                    }];
+                }
+                    break;
+            }
         } vipBlock:^{
                 
         }];
@@ -195,8 +217,20 @@
                 [self.navigationController qmui_pushViewController:VC animated:YES completion:^{
                     
                 }];
+                break;
+            }
+                case 2:
+            {
+                break;
             }
             default:
+            {
+                EFHelpViewController *VC = [[EFHelpViewController alloc] init];
+                VC.hidesBottomBarWhenPushed = YES;
+                [self.navigationController qmui_pushViewController:VC animated:YES completion:^{
+                    
+                }];
+            }
                 break;
         }
     }
