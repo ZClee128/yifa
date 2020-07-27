@@ -19,6 +19,7 @@
 @property (nonatomic,strong)QMUIButton *deletBtn;
 @property (nonatomic,strong)QMUIButton *editBtn;
 @property (nonatomic,strong)QMUIButton *chooseBtn;
+@property (nonatomic,strong)QMUILabel *addressDefLab;
 
 @property (nonatomic,strong)NSMutableAttributedString *text;
 @end
@@ -104,17 +105,31 @@
 {
     if (_chooseBtn == nil) {
         _chooseBtn = [QMUIButton buttonWithType:(UIButtonTypeCustom)];
-        [_chooseBtn setTitle:@"设为默认" forState:(UIControlStateNormal)];
-        [_chooseBtn setTitle:@"已设为默认" forState:(UIControlStateSelected)];
-        _chooseBtn.titleLabel.font = RegularFont13;
-        [_chooseBtn setTitleColor:[tabbarBlackColor colorWithAlphaComponent:0.7] forState:(UIControlStateNormal)];
-        [_chooseBtn setTitleColor:[tabbarBlackColor colorWithAlphaComponent:0.7] forState:(UIControlStateSelected)];
         [_chooseBtn setImage:UIImageMake(@"gou_def") forState:(UIControlStateNormal)];
         [_chooseBtn setImage:UIImageMake(@"gou_select") forState:(UIControlStateSelected)];
-        _chooseBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, WidthOfScale(10.5));
+        _chooseBtn.qmui_outsideEdge = UIEdgeInsetsMake(-10, -10, -10, -20);
+        @weakify(self);
+        [[_chooseBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(QMUIButton *x) {
+            x.selected = !x.selected;
+            @strongify(self);
+            x.selected ? (self.addressDefLab.text = @"已设为默认") : (self.addressDefLab.text = @"设为默认");
+        }];
     }
     return _chooseBtn;
 }
+
+-(QMUILabel *)addressDefLab
+{
+    if (_addressDefLab == nil) {
+        _addressDefLab = [[QMUILabel alloc] init];
+        _addressDefLab.font = RegularFont13;
+        _addressDefLab.textColor = [tabbarBlackColor colorWithAlphaComponent:0.7];
+        _addressDefLab.text = @"设为默认";
+        _addressDefLab.textAlignment = NSTextAlignmentLeft;
+    }
+    return _addressDefLab;
+}
+
 
 - (void)setUI {
     [self.contentView addSubview:self.nameLab];
@@ -167,6 +182,12 @@
     [self.chooseBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@(WidthOfScale(15.5)));
         make.bottom.equalTo(@(-WidthOfScale(11.5)));
+    }];
+    
+    [self.contentView addSubview:self.addressDefLab];
+    [self.addressDefLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.chooseBtn.mas_right).equalTo(@(WidthOfScale(10)));
+        make.centerY.equalTo(self.chooseBtn);
     }];
 }
 

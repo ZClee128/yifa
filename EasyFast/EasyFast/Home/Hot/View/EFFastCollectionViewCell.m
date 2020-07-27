@@ -7,13 +7,12 @@
 //
 
 #import "EFFastCollectionViewCell.h"
-#import "GBGradientProgressView.h"
 
 @interface EFFastCollectionViewCell ()
 
 @property (nonatomic,strong)UIImageView *goods;
 @property (nonatomic,strong)UILabel *priceLab;
-@property (nonatomic,strong)GBGradientProgressView *progressView;
+@property (nonatomic,strong)LRAnimationProgress *progressView;
 
 @end
 
@@ -38,11 +37,16 @@
     return _goods;
 }
 
-- (GBGradientProgressView *)progressView {
+- (LRAnimationProgress *)progressView {
     if (_progressView == nil) {
-        _progressView = [[GBGradientProgressView alloc] initWithFrame:CGRectMake(0, 0, WidthOfScale(100), WidthOfScale(15))];
-        _progressView.colorArr = @[(id)[RGB16(0xFFBD20) CGColor], (id)[RGB16(0xFF3838) CGColor]];
-        _progressView.backgroundProgressColor = colorEFEFEF;
+        _progressView = [[LRAnimationProgress alloc] initWithFrame:CGRectMake(0, 0, WidthOfScale(100), WidthOfScale(15))];
+        _progressView.backgroundColor = [UIColor clearColor];
+        _progressView.layer.cornerRadius = WidthOfScale(15)/2;
+        _progressView.progressTintColors = @[RGB16(0xFF3B37),RGB16(0xFFBD20)];
+        _progressView.stripesWidth = 5;
+        _progressView.stripesAnimated = YES;
+        _progressView.hideStripes = NO;
+        _progressView.hideAnnulus = NO;
     }
     return _progressView;
 }
@@ -88,5 +92,6 @@
 - (void)setModel:(id)model {
     self.priceLab.attributedText = [@"¥7899.00" getAttributeWithChangeString:@"¥" ChangeFont:RegularFont12 textColor:self.priceLab.textColor];
     self.progressView.progress = 0.6;
+    [self.progressView setTitle:@"剩余30%"];
 }
 @end

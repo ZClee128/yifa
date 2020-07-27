@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "gou_def.png",
+      "filename" : "未选.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "gou_def@2x.png",
+      "filename" : "未选@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "gou_def@3x.png",
+      "filename" : "未选@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

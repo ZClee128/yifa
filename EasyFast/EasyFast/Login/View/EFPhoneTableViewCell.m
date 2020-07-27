@@ -58,9 +58,9 @@
     
     [self.contentView addSubview:self.phoneTextField];
     [self.phoneTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(@(WidthOfScale(106)));
+        make.left.equalTo(@(WidthOfScale(105)));
         make.centerY.equalTo(self.contentView);
-        make.right.equalTo(@(0));
+        make.right.equalTo(@(-WidthOfScale(15)));
         make.height.equalTo(@(WidthOfScale(50)));
     }];
 }

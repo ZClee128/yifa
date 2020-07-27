@@ -1,6 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-EasyFast_Dev/Pods-EasyFast_Dev-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework
 ${BUILT_PRODUCTS_DIR}/BGFMDB/BGFMDB.framework
+${BUILT_PRODUCTS_DIR}/BRPickerView/BRPickerView.framework
 ${BUILT_PRODUCTS_DIR}/CYLTabBarController/CYLTabBarController.framework
 ${BUILT_PRODUCTS_DIR}/DateTools/DateTools.framework
 ${BUILT_PRODUCTS_DIR}/GKNavigationBar/GKNavigationBar.framework

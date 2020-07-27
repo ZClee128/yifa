@@ -8,6 +8,54 @@
 
 /* Begin PBXBuildFile section */
 		03BD2ED8996DE17BD7ECF09A /* Pods_EasyFast_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4FEC608CB9BC91EADCD0AB /* Pods_EasyFast_Test.framework */; };
+		0C6CB56A24CE688300471A8D /* LRAnimationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56924CE688300471A8D /* LRAnimationProgress.m */; };
+		0C6CB56B24CE688300471A8D /* LRAnimationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56924CE688300471A8D /* LRAnimationProgress.m */; };
+		0C6CB56C24CE688300471A8D /* LRAnimationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56924CE688300471A8D /* LRAnimationProgress.m */; };
+		0C6CB56F24CE7A1400471A8D /* EFOneLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56E24CE7A1400471A8D /* EFOneLoginViewController.m */; };
+		0C6CB57024CE7A1400471A8D /* EFOneLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56E24CE7A1400471A8D /* EFOneLoginViewController.m */; };
+		0C6CB57124CE7A1400471A8D /* EFOneLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56E24CE7A1400471A8D /* EFOneLoginViewController.m */; };
+		0C6CB57424CE7CB700471A8D /* EFOneLoginLogoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB57324CE7CB700471A8D /* EFOneLoginLogoTableViewCell.m */; };
+		0C6CB57524CE7CB700471A8D /* EFOneLoginLogoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB57324CE7CB700471A8D /* EFOneLoginLogoTableViewCell.m */; };
+		0C6CB57624CE7CB700471A8D /* EFOneLoginLogoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB57324CE7CB700471A8D /* EFOneLoginLogoTableViewCell.m */; };
+		0C6CB57924CE7E2D00471A8D /* EFOneLoginPhoneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB57824CE7E2D00471A8D /* EFOneLoginPhoneTableViewCell.m */; };
+		0C6CB57A24CE7E2D00471A8D /* EFOneLoginPhoneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB57824CE7E2D00471A8D /* EFOneLoginPhoneTableViewCell.m */; };
+		0C6CB57B24CE7E2D00471A8D /* EFOneLoginPhoneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB57824CE7E2D00471A8D /* EFOneLoginPhoneTableViewCell.m */; };
+		0C6CB57E24CE833D00471A8D /* EFRegAndPswTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB57D24CE833D00471A8D /* EFRegAndPswTableViewCell.m */; };
+		0C6CB57F24CE833D00471A8D /* EFRegAndPswTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB57D24CE833D00471A8D /* EFRegAndPswTableViewCell.m */; };
+		0C6CB58024CE833D00471A8D /* EFRegAndPswTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB57D24CE833D00471A8D /* EFRegAndPswTableViewCell.m */; };
+		0C6CB58324CE889B00471A8D /* EFThreeLoginTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB58224CE889B00471A8D /* EFThreeLoginTableViewCell.m */; };
+		0C6CB58424CE889B00471A8D /* EFThreeLoginTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB58224CE889B00471A8D /* EFThreeLoginTableViewCell.m */; };
+		0C6CB58524CE889B00471A8D /* EFThreeLoginTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB58224CE889B00471A8D /* EFThreeLoginTableViewCell.m */; };
+		0C6CB58824CE960700471A8D /* SignInApple.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB58624CE960700471A8D /* SignInApple.m */; };
+		0C6CB58924CE960700471A8D /* SignInApple.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB58624CE960700471A8D /* SignInApple.m */; };
+		0C6CB58A24CE960700471A8D /* SignInApple.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB58624CE960700471A8D /* SignInApple.m */; };
+		0C6CB58E24CEB19000471A8D /* UITextField+MyExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB58D24CEB19000471A8D /* UITextField+MyExtension.m */; };
+		0C6CB58F24CEB19000471A8D /* UITextField+MyExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB58D24CEB19000471A8D /* UITextField+MyExtension.m */; };
+		0C6CB59024CEB19000471A8D /* UITextField+MyExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB58D24CEB19000471A8D /* UITextField+MyExtension.m */; };
+		0C6CB59324CEB3C500471A8D /* EFChangeLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB59224CEB3C500471A8D /* EFChangeLoginViewController.m */; };
+		0C6CB59424CEB3C500471A8D /* EFChangeLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB59224CEB3C500471A8D /* EFChangeLoginViewController.m */; };
+		0C6CB59524CEB3C500471A8D /* EFChangeLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB59224CEB3C500471A8D /* EFChangeLoginViewController.m */; };
+		0C6CB59824CEB52C00471A8D /* EFChangeLoginHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB59724CEB52C00471A8D /* EFChangeLoginHeaderView.m */; };
+		0C6CB59924CEB52C00471A8D /* EFChangeLoginHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB59724CEB52C00471A8D /* EFChangeLoginHeaderView.m */; };
+		0C6CB59A24CEB52C00471A8D /* EFChangeLoginHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB59724CEB52C00471A8D /* EFChangeLoginHeaderView.m */; };
+		0C6CB59D24CEBD2800471A8D /* EFPhoneLoginTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB59C24CEBD2800471A8D /* EFPhoneLoginTableViewCell.m */; };
+		0C6CB59E24CEBD2800471A8D /* EFPhoneLoginTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB59C24CEBD2800471A8D /* EFPhoneLoginTableViewCell.m */; };
+		0C6CB59F24CEBD2800471A8D /* EFPhoneLoginTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB59C24CEBD2800471A8D /* EFPhoneLoginTableViewCell.m */; };
+		0C6CB5A224CEC1F000471A8D /* EFCodeLoginTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5A124CEC1F000471A8D /* EFCodeLoginTableViewCell.m */; };
+		0C6CB5A324CEC1F000471A8D /* EFCodeLoginTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5A124CEC1F000471A8D /* EFCodeLoginTableViewCell.m */; };
+		0C6CB5A424CEC1F000471A8D /* EFCodeLoginTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5A124CEC1F000471A8D /* EFCodeLoginTableViewCell.m */; };
+		0C6CB5A724CEC61100471A8D /* EFOneBtnLoginTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5A624CEC61100471A8D /* EFOneBtnLoginTableViewCell.m */; };
+		0C6CB5A824CEC61100471A8D /* EFOneBtnLoginTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5A624CEC61100471A8D /* EFOneBtnLoginTableViewCell.m */; };
+		0C6CB5A924CEC61100471A8D /* EFOneBtnLoginTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5A624CEC61100471A8D /* EFOneBtnLoginTableViewCell.m */; };
+		0C6CB5AC24CEC7BE00471A8D /* EFAccountPswTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5AB24CEC7BE00471A8D /* EFAccountPswTableViewCell.m */; };
+		0C6CB5AD24CEC7BE00471A8D /* EFAccountPswTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5AB24CEC7BE00471A8D /* EFAccountPswTableViewCell.m */; };
+		0C6CB5AE24CEC7BE00471A8D /* EFAccountPswTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5AB24CEC7BE00471A8D /* EFAccountPswTableViewCell.m */; };
+		0C6CB5B124CECBC200471A8D /* EFFastRegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5B024CECBC200471A8D /* EFFastRegViewController.m */; };
+		0C6CB5B224CECBC200471A8D /* EFFastRegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5B024CECBC200471A8D /* EFFastRegViewController.m */; };
+		0C6CB5B324CECBC200471A8D /* EFFastRegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5B024CECBC200471A8D /* EFFastRegViewController.m */; };
+		0C6CB5B624CEDCAD00471A8D /* EFAddAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5B524CEDCAD00471A8D /* EFAddAddressViewController.m */; };
+		0C6CB5B724CEDCAD00471A8D /* EFAddAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5B524CEDCAD00471A8D /* EFAddAddressViewController.m */; };
+		0C6CB5B824CEDCAD00471A8D /* EFAddAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5B524CEDCAD00471A8D /* EFAddAddressViewController.m */; };
 		0CCEC45324CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45424CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45524CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
@@ -331,9 +379,6 @@
 		84A8218424BED7E400EAC652 /* EFFastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8218324BED7E400EAC652 /* EFFastTableViewCell.m */; };
 		84A8218524BED7E400EAC652 /* EFFastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8218324BED7E400EAC652 /* EFFastTableViewCell.m */; };
 		84A8218624BED7E400EAC652 /* EFFastTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8218324BED7E400EAC652 /* EFFastTableViewCell.m */; };
-		84A8218924BEDDCB00EAC652 /* GBGradientProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8218824BEDDCA00EAC652 /* GBGradientProgressView.m */; };
-		84A8218A24BEDDCB00EAC652 /* GBGradientProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8218824BEDDCA00EAC652 /* GBGradientProgressView.m */; };
-		84A8218B24BEDDCB00EAC652 /* GBGradientProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8218824BEDDCA00EAC652 /* GBGradientProgressView.m */; };
 		84A8218E24BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8218D24BEE61700EAC652 /* EFGoodsTableViewCell.m */; };
 		84A8218F24BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8218D24BEE61700EAC652 /* EFGoodsTableViewCell.m */; };
 		84A8219024BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8218D24BEE61700EAC652 /* EFGoodsTableViewCell.m */; };
@@ -389,6 +434,38 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C6CB56824CE688300471A8D /* LRAnimationProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRAnimationProgress.h; sourceTree = "<group>"; };
+		0C6CB56924CE688300471A8D /* LRAnimationProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRAnimationProgress.m; sourceTree = "<group>"; };
+		0C6CB56D24CE7A1400471A8D /* EFOneLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOneLoginViewController.h; sourceTree = "<group>"; };
+		0C6CB56E24CE7A1400471A8D /* EFOneLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFOneLoginViewController.m; sourceTree = "<group>"; };
+		0C6CB57224CE7CB700471A8D /* EFOneLoginLogoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOneLoginLogoTableViewCell.h; sourceTree = "<group>"; };
+		0C6CB57324CE7CB700471A8D /* EFOneLoginLogoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFOneLoginLogoTableViewCell.m; sourceTree = "<group>"; };
+		0C6CB57724CE7E2D00471A8D /* EFOneLoginPhoneTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOneLoginPhoneTableViewCell.h; sourceTree = "<group>"; };
+		0C6CB57824CE7E2D00471A8D /* EFOneLoginPhoneTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFOneLoginPhoneTableViewCell.m; sourceTree = "<group>"; };
+		0C6CB57C24CE833D00471A8D /* EFRegAndPswTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFRegAndPswTableViewCell.h; sourceTree = "<group>"; };
+		0C6CB57D24CE833D00471A8D /* EFRegAndPswTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFRegAndPswTableViewCell.m; sourceTree = "<group>"; };
+		0C6CB58124CE889B00471A8D /* EFThreeLoginTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFThreeLoginTableViewCell.h; sourceTree = "<group>"; };
+		0C6CB58224CE889B00471A8D /* EFThreeLoginTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFThreeLoginTableViewCell.m; sourceTree = "<group>"; };
+		0C6CB58624CE960700471A8D /* SignInApple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInApple.m; sourceTree = "<group>"; };
+		0C6CB58724CE960700471A8D /* SignInApple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInApple.h; sourceTree = "<group>"; };
+		0C6CB58C24CEB19000471A8D /* UITextField+MyExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+MyExtension.h"; sourceTree = "<group>"; };
+		0C6CB58D24CEB19000471A8D /* UITextField+MyExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+MyExtension.m"; sourceTree = "<group>"; };
+		0C6CB59124CEB3C500471A8D /* EFChangeLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFChangeLoginViewController.h; sourceTree = "<group>"; };
+		0C6CB59224CEB3C500471A8D /* EFChangeLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFChangeLoginViewController.m; sourceTree = "<group>"; };
+		0C6CB59624CEB52C00471A8D /* EFChangeLoginHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFChangeLoginHeaderView.h; sourceTree = "<group>"; };
+		0C6CB59724CEB52C00471A8D /* EFChangeLoginHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFChangeLoginHeaderView.m; sourceTree = "<group>"; };
+		0C6CB59B24CEBD2800471A8D /* EFPhoneLoginTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFPhoneLoginTableViewCell.h; sourceTree = "<group>"; };
+		0C6CB59C24CEBD2800471A8D /* EFPhoneLoginTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFPhoneLoginTableViewCell.m; sourceTree = "<group>"; };
+		0C6CB5A024CEC1F000471A8D /* EFCodeLoginTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFCodeLoginTableViewCell.h; sourceTree = "<group>"; };
+		0C6CB5A124CEC1F000471A8D /* EFCodeLoginTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFCodeLoginTableViewCell.m; sourceTree = "<group>"; };
+		0C6CB5A524CEC61100471A8D /* EFOneBtnLoginTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOneBtnLoginTableViewCell.h; sourceTree = "<group>"; };
+		0C6CB5A624CEC61100471A8D /* EFOneBtnLoginTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFOneBtnLoginTableViewCell.m; sourceTree = "<group>"; };
+		0C6CB5AA24CEC7BE00471A8D /* EFAccountPswTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFAccountPswTableViewCell.h; sourceTree = "<group>"; };
+		0C6CB5AB24CEC7BE00471A8D /* EFAccountPswTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFAccountPswTableViewCell.m; sourceTree = "<group>"; };
+		0C6CB5AF24CECBC200471A8D /* EFFastRegViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFFastRegViewController.h; sourceTree = "<group>"; };
+		0C6CB5B024CECBC200471A8D /* EFFastRegViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFFastRegViewController.m; sourceTree = "<group>"; };
+		0C6CB5B424CEDCAD00471A8D /* EFAddAddressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFAddAddressViewController.h; sourceTree = "<group>"; };
+		0C6CB5B524CEDCAD00471A8D /* EFAddAddressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFAddAddressViewController.m; sourceTree = "<group>"; };
 		0CCEC45124CA7A6000976D24 /* EFWuliuTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFWuliuTableViewCell.h; sourceTree = "<group>"; };
 		0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFWuliuTableViewCell.m; sourceTree = "<group>"; };
 		0CCEC45624CA7D8900976D24 /* EFOrderMoreDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderMoreDetailViewController.h; sourceTree = "<group>"; };
@@ -616,8 +693,6 @@
 		84A8217924BEB35E00EAC652 /* EFFastCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFFastCollectionViewCell.m; sourceTree = "<group>"; };
 		84A8218224BED7E400EAC652 /* EFFastTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFFastTableViewCell.h; sourceTree = "<group>"; };
 		84A8218324BED7E400EAC652 /* EFFastTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFFastTableViewCell.m; sourceTree = "<group>"; };
-		84A8218724BEDDC900EAC652 /* GBGradientProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBGradientProgressView.h; sourceTree = "<group>"; };
-		84A8218824BEDDCA00EAC652 /* GBGradientProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBGradientProgressView.m; sourceTree = "<group>"; };
 		84A8218C24BEE61700EAC652 /* EFGoodsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFGoodsTableViewCell.h; sourceTree = "<group>"; };
 		84A8218D24BEE61700EAC652 /* EFGoodsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFGoodsTableViewCell.m; sourceTree = "<group>"; };
 		84A8219224BEF2D700EAC652 /* UIView+GradientColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GradientColor.m"; sourceTree = "<group>"; };
@@ -867,6 +942,8 @@
 				8476106F24C58B31002B34E4 /* View */,
 				8476106524C58861002B34E4 /* EFAddressViewController.h */,
 				8476106624C58861002B34E4 /* EFAddressViewController.m */,
+				0C6CB5B424CEDCAD00471A8D /* EFAddAddressViewController.h */,
+				0C6CB5B524CEDCAD00471A8D /* EFAddAddressViewController.m */,
 			);
 			path = Address;
 			sourceTree = "<group>";
@@ -900,6 +977,12 @@
 				847610B324C6C209002B34E4 /* EFEditPasswordViewController.m */,
 				8476118B24C7DBD4002B34E4 /* EFOnePhoneViewController.h */,
 				8476118C24C7DBD4002B34E4 /* EFOnePhoneViewController.m */,
+				0C6CB56D24CE7A1400471A8D /* EFOneLoginViewController.h */,
+				0C6CB56E24CE7A1400471A8D /* EFOneLoginViewController.m */,
+				0C6CB59124CEB3C500471A8D /* EFChangeLoginViewController.h */,
+				0C6CB59224CEB3C500471A8D /* EFChangeLoginViewController.m */,
+				0C6CB5AF24CECBC200471A8D /* EFFastRegViewController.h */,
+				0C6CB5B024CECBC200471A8D /* EFFastRegViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -913,6 +996,24 @@
 				847610A324C68962002B34E4 /* EFPhoneTableViewCell.m */,
 				847610A724C69ACF002B34E4 /* EFCodeTableViewCell.h */,
 				847610A824C69AD0002B34E4 /* EFCodeTableViewCell.m */,
+				0C6CB57224CE7CB700471A8D /* EFOneLoginLogoTableViewCell.h */,
+				0C6CB57324CE7CB700471A8D /* EFOneLoginLogoTableViewCell.m */,
+				0C6CB57724CE7E2D00471A8D /* EFOneLoginPhoneTableViewCell.h */,
+				0C6CB57824CE7E2D00471A8D /* EFOneLoginPhoneTableViewCell.m */,
+				0C6CB57C24CE833D00471A8D /* EFRegAndPswTableViewCell.h */,
+				0C6CB57D24CE833D00471A8D /* EFRegAndPswTableViewCell.m */,
+				0C6CB58124CE889B00471A8D /* EFThreeLoginTableViewCell.h */,
+				0C6CB58224CE889B00471A8D /* EFThreeLoginTableViewCell.m */,
+				0C6CB59624CEB52C00471A8D /* EFChangeLoginHeaderView.h */,
+				0C6CB59724CEB52C00471A8D /* EFChangeLoginHeaderView.m */,
+				0C6CB59B24CEBD2800471A8D /* EFPhoneLoginTableViewCell.h */,
+				0C6CB59C24CEBD2800471A8D /* EFPhoneLoginTableViewCell.m */,
+				0C6CB5A024CEC1F000471A8D /* EFCodeLoginTableViewCell.h */,
+				0C6CB5A124CEC1F000471A8D /* EFCodeLoginTableViewCell.m */,
+				0C6CB5A524CEC61100471A8D /* EFOneBtnLoginTableViewCell.h */,
+				0C6CB5A624CEC61100471A8D /* EFOneBtnLoginTableViewCell.m */,
+				0C6CB5AA24CEC7BE00471A8D /* EFAccountPswTableViewCell.h */,
+				0C6CB5AB24CEC7BE00471A8D /* EFAccountPswTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1093,6 +1194,8 @@
 		84A820D324B6CD9E00EAC652 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				0C6CB58C24CEB19000471A8D /* UITextField+MyExtension.h */,
+				0C6CB58D24CEB19000471A8D /* UITextField+MyExtension.m */,
 				8476117E24C6F3A8002B34E4 /* UIView+XQCAlertPop.h */,
 				8476117D24C6F3A8002B34E4 /* UIView+XQCAlertPop.m */,
 				8476107724C59780002B34E4 /* UILabel+LabelHeightAndWidth.h */,
@@ -1224,8 +1327,6 @@
 				84A8217924BEB35E00EAC652 /* EFFastCollectionViewCell.m */,
 				84A8218224BED7E400EAC652 /* EFFastTableViewCell.h */,
 				84A8218324BED7E400EAC652 /* EFFastTableViewCell.m */,
-				84A8218724BEDDC900EAC652 /* GBGradientProgressView.h */,
-				84A8218824BEDDCA00EAC652 /* GBGradientProgressView.m */,
 				84A8218C24BEE61700EAC652 /* EFGoodsTableViewCell.h */,
 				84A8218D24BEE61700EAC652 /* EFGoodsTableViewCell.m */,
 				84A821C624C047C000EAC652 /* EFClassTabTableViewCell.h */,
@@ -1237,6 +1338,10 @@
 		84A8219724BF010800EAC652 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0C6CB58724CE960700471A8D /* SignInApple.h */,
+				0C6CB58624CE960700471A8D /* SignInApple.m */,
+				0C6CB56824CE688300471A8D /* LRAnimationProgress.h */,
+				0C6CB56924CE688300471A8D /* LRAnimationProgress.m */,
 				841B94F024C979790054D8D5 /* SXPopMenu */,
 				847610B724C6C267002B34E4 /* TextField */,
 				8476102624C1A467002B34E4 /* SLScrollViewHorizontalItem.h */,
@@ -1561,6 +1666,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84A820EE24B6F65100EAC652 /* EFFollowViewController.m in Sources */,
+				0C6CB58E24CEB19000471A8D /* UITextField+MyExtension.m in Sources */,
 				84A821B324BFFAE700EAC652 /* EFSearchViewController.m in Sources */,
 				84187CA424C05D0200ED3F96 /* MeHeaderView.m in Sources */,
 				8476104D24C573B1002B34E4 /* TuanListDetailViewController.m in Sources */,
@@ -1579,15 +1685,18 @@
 				84A8216B24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
 				847610C424C6D44C002B34E4 /* EFBaseWebViewController.m in Sources */,
 				8476119624C82515002B34E4 /* SysManager.m in Sources */,
+				0C6CB56A24CE688300471A8D /* LRAnimationProgress.m in Sources */,
 				0CCEC48C24CAC2F000976D24 /* EFIMListTableViewCell.m in Sources */,
 				847610CE24C6D898002B34E4 /* PowerTableViewCell.m in Sources */,
 				8476106124C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m in Sources */,
+				0C6CB5B624CEDCAD00471A8D /* EFAddAddressViewController.m in Sources */,
 				841B94E324C93F980054D8D5 /* EFOrderGoodsTableViewCell.m in Sources */,
 				847610AF24C6A011002B34E4 /* LoginVM.m in Sources */,
 				84A8218E24BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */,
 				84187CA924C05E8200ED3F96 /* VerticalLabelBotton.m in Sources */,
 				84A820E224B6EADF00EAC652 /* EFBaseTabBarViewController.m in Sources */,
 				8476117F24C6F3A9002B34E4 /* UIView+XQCAlertPop.m in Sources */,
+				0C6CB5A724CEC61100471A8D /* EFOneBtnLoginTableViewCell.m in Sources */,
 				841B94FD24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.m in Sources */,
 				84A820F224B6F66400EAC652 /* EFMeViewController.m in Sources */,
 				8476108D24C5ABE6002B34E4 /* EFAccountTableViewCell.m in Sources */,
@@ -1613,15 +1722,20 @@
 				8476107224C58C7C002B34E4 /* EFAddressTableViewCell.m in Sources */,
 				84A8219424BEF2DB00EAC652 /* UIView+GradientColor.m in Sources */,
 				8476108324C5A09E002B34E4 /* EFSetUpVM.m in Sources */,
+				0C6CB5A224CEC1F000471A8D /* EFCodeLoginTableViewCell.m in Sources */,
 				8476102824C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */,
+				0C6CB5B124CECBC200471A8D /* EFFastRegViewController.m in Sources */,
 				84A821C324C03BB800EAC652 /* SeachOneCollectionViewCell.m in Sources */,
 				84A8207824B6C61800EAC652 /* AppDelegate.m in Sources */,
 				847610BF24C6D1D0002B34E4 /* EFPrivacyViewController.m in Sources */,
 				847610BA24C6C291002B34E4 /* EFPasswordTextField.m in Sources */,
 				0CCEC46724CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.m in Sources */,
+				0C6CB5AC24CEC7BE00471A8D /* EFAccountPswTableViewCell.m in Sources */,
+				0C6CB59824CEB52C00471A8D /* EFChangeLoginHeaderView.m in Sources */,
 				8476109224C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */,
 				8476103924C54200002B34E4 /* TuanGoodsView.m in Sources */,
 				8476118824C6FCF8002B34E4 /* EFMeDataViewController.m in Sources */,
+				0C6CB56F24CE7A1400471A8D /* EFOneLoginViewController.m in Sources */,
 				8476107D24C5A06F002B34E4 /* EFSetUpViewController.m in Sources */,
 				84760F9124C17AC1002B34E4 /* NSString+NSMutableAttributedString.m in Sources */,
 				84B2437824C8406C00E9967C /* RightThreeCollectionViewCell.m in Sources */,
@@ -1630,6 +1744,7 @@
 				84A820DF24B6CE6B00EAC652 /* UIViewController+Runtime.m in Sources */,
 				0CCEC49724CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */,
 				84A821D224C04EAA00EAC652 /* EFClassDetailViewController.m in Sources */,
+				0C6CB59324CEB3C500471A8D /* EFChangeLoginViewController.m in Sources */,
 				84760FAD24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
 				84A8214D24BD432B00EAC652 /* TabbarBackView.m in Sources */,
 				8476117624C6E2ED002B34E4 /* NotiTableViewCell.m in Sources */,
@@ -1642,6 +1757,7 @@
 				0CCEC45824CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */,
 				84B2437324C83AB000E9967C /* LeftTableViewCell.m in Sources */,
 				841B94ED24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,
+				0C6CB57E24CE833D00471A8D /* EFRegAndPswTableViewCell.m in Sources */,
 				84A821C824C047C000EAC652 /* EFClassTabTableViewCell.m in Sources */,
 				84760F8C24C15AD5002B34E4 /* EFSearchModel.m in Sources */,
 				8476106724C58861002B34E4 /* EFAddressViewController.m in Sources */,
@@ -1649,12 +1765,14 @@
 				8476119D24C838A6002B34E4 /* EFClassifyModel.m in Sources */,
 				841B94F324C979790054D8D5 /* FTPopOverMenu.m in Sources */,
 				84A8216624BE92B900EAC652 /* HotTabTableViewCell.m in Sources */,
-				84A8218924BEDDCB00EAC652 /* GBGradientProgressView.m in Sources */,
+				0C6CB57924CE7E2D00471A8D /* EFOneLoginPhoneTableViewCell.m in Sources */,
 				84A8217524BEAE3000EAC652 /* EFHeaderView.m in Sources */,
 				8476103324C54189002B34E4 /* TuanListViewController.m in Sources */,
 				84B2437D24C8425700E9967C /* ThreeCollectionViewCellItem.m in Sources */,
+				0C6CB59D24CEBD2800471A8D /* EFPhoneLoginTableViewCell.m in Sources */,
 				841B94D824C936AF0054D8D5 /* EFOrderDetailViewController.m in Sources */,
 				84A8217A24BEB35E00EAC652 /* EFFastCollectionViewCell.m in Sources */,
+				0C6CB58824CE960700471A8D /* SignInApple.m in Sources */,
 				8476107824C59780002B34E4 /* UILabel+LabelHeightAndWidth.m in Sources */,
 				0CCEC46224CA837400976D24 /* EFOrderShopTableViewCell.m in Sources */,
 				0CCEC48724CAC27A00976D24 /* EFIMListViewController.m in Sources */,
@@ -1664,6 +1782,7 @@
 				84A821B824C026FF00EAC652 /* EFSearchResultViewController.m in Sources */,
 				8476117124C6E21C002B34E4 /* EFNotiViewController.m in Sources */,
 				8476105224C574E5002B34E4 /* TuanListDetailTableViewCell.m in Sources */,
+				0C6CB57424CE7CB700471A8D /* EFOneLoginLogoTableViewCell.m in Sources */,
 				84A8208924B6C62300EAC652 /* main.m in Sources */,
 				84A821AB24BF15FF00EAC652 /* EFFollowCollectionViewCell.m in Sources */,
 				847610A924C69AD0002B34E4 /* EFCodeTableViewCell.m in Sources */,
@@ -1671,6 +1790,7 @@
 				84A820CD24B6CCC600EAC652 /* FMARCNetwork+interface.m in Sources */,
 				0CCEC47124CA8F7500976D24 /* EFRealPriceTableViewCell.m in Sources */,
 				84760F7A24C14AD9002B34E4 /* MeListTableViewCell.m in Sources */,
+				0C6CB58324CE889B00471A8D /* EFThreeLoginTableViewCell.m in Sources */,
 				847610A424C68962002B34E4 /* EFPhoneTableViewCell.m in Sources */,
 				84A821A624BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */,
 				0CCEC47C24CABBF300976D24 /* EFHelpViewController.m in Sources */,
@@ -1690,6 +1810,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84A820FA24BC4F5400EAC652 /* EFFollowViewController.m in Sources */,
+				0C6CB58F24CEB19000471A8D /* UITextField+MyExtension.m in Sources */,
 				84A821B424BFFAE700EAC652 /* EFSearchViewController.m in Sources */,
 				84187CA524C05D0200ED3F96 /* MeHeaderView.m in Sources */,
 				8476104E24C573B1002B34E4 /* TuanListDetailViewController.m in Sources */,
@@ -1708,15 +1829,18 @@
 				84A8216C24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
 				847610C524C6D44C002B34E4 /* EFBaseWebViewController.m in Sources */,
 				8476119724C82516002B34E4 /* SysManager.m in Sources */,
+				0C6CB56B24CE688300471A8D /* LRAnimationProgress.m in Sources */,
 				0CCEC48D24CAC2F000976D24 /* EFIMListTableViewCell.m in Sources */,
 				847610CF24C6D898002B34E4 /* PowerTableViewCell.m in Sources */,
 				8476106224C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m in Sources */,
+				0C6CB5B724CEDCAD00471A8D /* EFAddAddressViewController.m in Sources */,
 				841B94E424C93F980054D8D5 /* EFOrderGoodsTableViewCell.m in Sources */,
 				847610B024C6A012002B34E4 /* LoginVM.m in Sources */,
 				84A8218F24BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */,
 				84187CAA24C05E8200ED3F96 /* VerticalLabelBotton.m in Sources */,
 				84A8210024BC4F5400EAC652 /* EFMeViewController.m in Sources */,
 				8476118024C6F3A9002B34E4 /* UIView+XQCAlertPop.m in Sources */,
+				0C6CB5A824CEC61100471A8D /* EFOneBtnLoginTableViewCell.m in Sources */,
 				841B94FE24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.m in Sources */,
 				84A8210124BC4F5400EAC652 /* EFBaseTableViewController.m in Sources */,
 				8476108E24C5ABE6002B34E4 /* EFAccountTableViewCell.m in Sources */,
@@ -1742,15 +1866,20 @@
 				8476107324C58C7C002B34E4 /* EFAddressTableViewCell.m in Sources */,
 				84A8219524BEF2DB00EAC652 /* UIView+GradientColor.m in Sources */,
 				8476108424C5A09E002B34E4 /* EFSetUpVM.m in Sources */,
+				0C6CB5A324CEC1F000471A8D /* EFCodeLoginTableViewCell.m in Sources */,
 				8476102924C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */,
+				0C6CB5B224CECBC200471A8D /* EFFastRegViewController.m in Sources */,
 				84A821C424C03BB800EAC652 /* SeachOneCollectionViewCell.m in Sources */,
 				84A8210724BC4F5400EAC652 /* AppDelegate.m in Sources */,
 				847610C024C6D1D1002B34E4 /* EFPrivacyViewController.m in Sources */,
 				847610BB24C6C291002B34E4 /* EFPasswordTextField.m in Sources */,
 				0CCEC46824CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.m in Sources */,
+				0C6CB5AD24CEC7BE00471A8D /* EFAccountPswTableViewCell.m in Sources */,
+				0C6CB59924CEB52C00471A8D /* EFChangeLoginHeaderView.m in Sources */,
 				8476109324C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */,
 				8476103A24C54200002B34E4 /* TuanGoodsView.m in Sources */,
 				8476118924C6FCF8002B34E4 /* EFMeDataViewController.m in Sources */,
+				0C6CB57024CE7A1400471A8D /* EFOneLoginViewController.m in Sources */,
 				8476107E24C5A06F002B34E4 /* EFSetUpViewController.m in Sources */,
 				84760F9224C17AC1002B34E4 /* NSString+NSMutableAttributedString.m in Sources */,
 				84B2437924C8406C00E9967C /* RightThreeCollectionViewCell.m in Sources */,
@@ -1759,6 +1888,7 @@
 				84A8210924BC4F5400EAC652 /* UIViewController+Runtime.m in Sources */,
 				0CCEC49824CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */,
 				84A821D324C04EAA00EAC652 /* EFClassDetailViewController.m in Sources */,
+				0C6CB59424CEB3C500471A8D /* EFChangeLoginViewController.m in Sources */,
 				84760FAE24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
 				84A8214324BC55CB00EAC652 /* HttpManager.m in Sources */,
 				8476117724C6E2ED002B34E4 /* NotiTableViewCell.m in Sources */,
@@ -1771,6 +1901,7 @@
 				0CCEC45924CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */,
 				84B2437424C83AB000E9967C /* LeftTableViewCell.m in Sources */,
 				841B94EE24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,
+				0C6CB57F24CE833D00471A8D /* EFRegAndPswTableViewCell.m in Sources */,
 				84A821C924C047C000EAC652 /* EFClassTabTableViewCell.m in Sources */,
 				84760F8D24C15AD5002B34E4 /* EFSearchModel.m in Sources */,
 				8476106824C58861002B34E4 /* EFAddressViewController.m in Sources */,
@@ -1778,12 +1909,14 @@
 				8476119E24C838A7002B34E4 /* EFClassifyModel.m in Sources */,
 				841B94F424C979790054D8D5 /* FTPopOverMenu.m in Sources */,
 				84A8216724BE92B900EAC652 /* HotTabTableViewCell.m in Sources */,
-				84A8218A24BEDDCB00EAC652 /* GBGradientProgressView.m in Sources */,
+				0C6CB57A24CE7E2D00471A8D /* EFOneLoginPhoneTableViewCell.m in Sources */,
 				84A8217624BEAE3000EAC652 /* EFHeaderView.m in Sources */,
 				8476103424C54189002B34E4 /* TuanListViewController.m in Sources */,
 				84B2437E24C8425700E9967C /* ThreeCollectionViewCellItem.m in Sources */,
+				0C6CB59E24CEBD2800471A8D /* EFPhoneLoginTableViewCell.m in Sources */,
 				841B94D924C936AF0054D8D5 /* EFOrderDetailViewController.m in Sources */,
 				84A8217B24BEB35E00EAC652 /* EFFastCollectionViewCell.m in Sources */,
+				0C6CB58924CE960700471A8D /* SignInApple.m in Sources */,
 				8476107924C59780002B34E4 /* UILabel+LabelHeightAndWidth.m in Sources */,
 				0CCEC46324CA837400976D24 /* EFOrderShopTableViewCell.m in Sources */,
 				0CCEC48824CAC27A00976D24 /* EFIMListViewController.m in Sources */,
@@ -1793,6 +1926,7 @@
 				84A821B924C026FF00EAC652 /* EFSearchResultViewController.m in Sources */,
 				8476117224C6E21C002B34E4 /* EFNotiViewController.m in Sources */,
 				8476105324C574E5002B34E4 /* TuanListDetailTableViewCell.m in Sources */,
+				0C6CB57524CE7CB700471A8D /* EFOneLoginLogoTableViewCell.m in Sources */,
 				84A8210C24BC4F5400EAC652 /* FMARCNetwork+interface.m in Sources */,
 				84A821AC24BF15FF00EAC652 /* EFFollowCollectionViewCell.m in Sources */,
 				847610AA24C69AD0002B34E4 /* EFCodeTableViewCell.m in Sources */,
@@ -1800,6 +1934,7 @@
 				84A8210D24BC4F5400EAC652 /* EFClassifyViewController.m in Sources */,
 				0CCEC47224CA8F7500976D24 /* EFRealPriceTableViewCell.m in Sources */,
 				84760F7B24C14AD9002B34E4 /* MeListTableViewCell.m in Sources */,
+				0C6CB58424CE889B00471A8D /* EFThreeLoginTableViewCell.m in Sources */,
 				847610A524C68962002B34E4 /* EFPhoneTableViewCell.m in Sources */,
 				84A821A724BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */,
 				0CCEC47D24CABBF300976D24 /* EFHelpViewController.m in Sources */,
@@ -1819,6 +1954,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84A8211E24BC513500EAC652 /* EFFollowViewController.m in Sources */,
+				0C6CB59024CEB19000471A8D /* UITextField+MyExtension.m in Sources */,
 				84A821B524BFFAE700EAC652 /* EFSearchViewController.m in Sources */,
 				84187CA624C05D0200ED3F96 /* MeHeaderView.m in Sources */,
 				8476104F24C573B1002B34E4 /* TuanListDetailViewController.m in Sources */,
@@ -1837,15 +1973,18 @@
 				84A8216D24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
 				847610C624C6D44C002B34E4 /* EFBaseWebViewController.m in Sources */,
 				8476119824C82516002B34E4 /* SysManager.m in Sources */,
+				0C6CB56C24CE688300471A8D /* LRAnimationProgress.m in Sources */,
 				0CCEC48E24CAC2F000976D24 /* EFIMListTableViewCell.m in Sources */,
 				847610D024C6D898002B34E4 /* PowerTableViewCell.m in Sources */,
 				8476106324C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m in Sources */,
+				0C6CB5B824CEDCAD00471A8D /* EFAddAddressViewController.m in Sources */,
 				841B94E524C93F980054D8D5 /* EFOrderGoodsTableViewCell.m in Sources */,
 				847610B124C6A012002B34E4 /* LoginVM.m in Sources */,
 				84A8219024BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */,
 				84187CAB24C05E8200ED3F96 /* VerticalLabelBotton.m in Sources */,
 				84A8212324BC513500EAC652 /* EFBaseTabBarViewController.m in Sources */,
 				8476118124C6F3A9002B34E4 /* UIView+XQCAlertPop.m in Sources */,
+				0C6CB5A924CEC61100471A8D /* EFOneBtnLoginTableViewCell.m in Sources */,
 				841B94FF24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.m in Sources */,
 				84A8212424BC513500EAC652 /* EFMeViewController.m in Sources */,
 				8476108F24C5ABE6002B34E4 /* EFAccountTableViewCell.m in Sources */,
@@ -1871,15 +2010,20 @@
 				8476107424C58C7C002B34E4 /* EFAddressTableViewCell.m in Sources */,
 				84A8219624BEF2DB00EAC652 /* UIView+GradientColor.m in Sources */,
 				8476108524C5A09E002B34E4 /* EFSetUpVM.m in Sources */,
+				0C6CB5A424CEC1F000471A8D /* EFCodeLoginTableViewCell.m in Sources */,
 				8476102A24C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */,
+				0C6CB5B324CECBC200471A8D /* EFFastRegViewController.m in Sources */,
 				84A821C524C03BB800EAC652 /* SeachOneCollectionViewCell.m in Sources */,
 				84A8212B24BC513500EAC652 /* AppDelegate.m in Sources */,
 				847610C124C6D1D1002B34E4 /* EFPrivacyViewController.m in Sources */,
 				847610BC24C6C291002B34E4 /* EFPasswordTextField.m in Sources */,
 				0CCEC46924CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.m in Sources */,
+				0C6CB5AE24CEC7BE00471A8D /* EFAccountPswTableViewCell.m in Sources */,
+				0C6CB59A24CEB52C00471A8D /* EFChangeLoginHeaderView.m in Sources */,
 				8476109424C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */,
 				8476103B24C54200002B34E4 /* TuanGoodsView.m in Sources */,
 				8476118A24C6FCF8002B34E4 /* EFMeDataViewController.m in Sources */,
+				0C6CB57124CE7A1400471A8D /* EFOneLoginViewController.m in Sources */,
 				8476107F24C5A06F002B34E4 /* EFSetUpViewController.m in Sources */,
 				84760F9324C17AC1002B34E4 /* NSString+NSMutableAttributedString.m in Sources */,
 				84B2437A24C8406C00E9967C /* RightThreeCollectionViewCell.m in Sources */,
@@ -1888,6 +2032,7 @@
 				84A8212D24BC513500EAC652 /* UIViewController+Runtime.m in Sources */,
 				0CCEC49924CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */,
 				84A821D424C04EAA00EAC652 /* EFClassDetailViewController.m in Sources */,
+				0C6CB59524CEB3C500471A8D /* EFChangeLoginViewController.m in Sources */,
 				84760FAF24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
 				84A8214F24BD43F100EAC652 /* TabbarBackView.m in Sources */,
 				8476117824C6E2ED002B34E4 /* NotiTableViewCell.m in Sources */,
@@ -1900,6 +2045,7 @@
 				0CCEC45A24CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */,
 				84B2437524C83AB000E9967C /* LeftTableViewCell.m in Sources */,
 				841B94EF24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,
+				0C6CB58024CE833D00471A8D /* EFRegAndPswTableViewCell.m in Sources */,
 				84A821CA24C047C100EAC652 /* EFClassTabTableViewCell.m in Sources */,
 				84760F8E24C15AD5002B34E4 /* EFSearchModel.m in Sources */,
 				8476106924C58861002B34E4 /* EFAddressViewController.m in Sources */,
@@ -1907,12 +2053,14 @@
 				8476119F24C838A7002B34E4 /* EFClassifyModel.m in Sources */,
 				841B94F524C979790054D8D5 /* FTPopOverMenu.m in Sources */,
 				84A8216824BE92B900EAC652 /* HotTabTableViewCell.m in Sources */,
-				84A8218B24BEDDCB00EAC652 /* GBGradientProgressView.m in Sources */,
+				0C6CB57B24CE7E2D00471A8D /* EFOneLoginPhoneTableViewCell.m in Sources */,
 				84A8217724BEAE3000EAC652 /* EFHeaderView.m in Sources */,
 				8476103524C54189002B34E4 /* TuanListViewController.m in Sources */,
 				84B2437F24C8425700E9967C /* ThreeCollectionViewCellItem.m in Sources */,
+				0C6CB59F24CEBD2800471A8D /* EFPhoneLoginTableViewCell.m in Sources */,
 				841B94DA24C936AF0054D8D5 /* EFOrderDetailViewController.m in Sources */,
 				84A8217C24BEB35E00EAC652 /* EFFastCollectionViewCell.m in Sources */,
+				0C6CB58A24CE960700471A8D /* SignInApple.m in Sources */,
 				8476107A24C59780002B34E4 /* UILabel+LabelHeightAndWidth.m in Sources */,
 				0CCEC46424CA837400976D24 /* EFOrderShopTableViewCell.m in Sources */,
 				0CCEC48924CAC27A00976D24 /* EFIMListViewController.m in Sources */,
@@ -1922,6 +2070,7 @@
 				84A821BA24C0270000EAC652 /* EFSearchResultViewController.m in Sources */,
 				8476117324C6E21C002B34E4 /* EFNotiViewController.m in Sources */,
 				8476105424C574E5002B34E4 /* TuanListDetailTableViewCell.m in Sources */,
+				0C6CB57624CE7CB700471A8D /* EFOneLoginLogoTableViewCell.m in Sources */,
 				84A8212F24BC513500EAC652 /* main.m in Sources */,
 				84A821AD24BF15FF00EAC652 /* EFFollowCollectionViewCell.m in Sources */,
 				847610AB24C69AD0002B34E4 /* EFCodeTableViewCell.m in Sources */,
@@ -1929,6 +2078,7 @@
 				84A8213024BC513500EAC652 /* FMARCNetwork+interface.m in Sources */,
 				0CCEC47324CA8F7500976D24 /* EFRealPriceTableViewCell.m in Sources */,
 				84760F7C24C14AD9002B34E4 /* MeListTableViewCell.m in Sources */,
+				0C6CB58524CE889B00471A8D /* EFThreeLoginTableViewCell.m in Sources */,
 				847610A624C68962002B34E4 /* EFPhoneTableViewCell.m in Sources */,
 				84A821A824BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */,
 				0CCEC47E24CABBF300976D24 /* EFHelpViewController.m in Sources */,
@@ -2128,6 +2278,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Dev;
 				CLANG_ENABLE_MODULES = NO;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VB37Y62JDE;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EasyFast/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -2142,7 +2293,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.easy.EasyFast;
+				PRODUCT_BUNDLE_IDENTIFIER = com.easy.eee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2155,6 +2306,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Dev;
 				CLANG_ENABLE_MODULES = NO;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VB37Y62JDE;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EasyFast/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -2169,7 +2321,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.easy.EasyFast;
+				PRODUCT_BUNDLE_IDENTIFIER = com.easy.eee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

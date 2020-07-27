@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "EFBaseTabBarViewController.h"
+#import "EFOneLoginViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -38,6 +39,7 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = [[EFBaseTabBarViewController alloc] initWithContext:@""];
+//    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[EFOneLoginViewController alloc] init]];
     [self.window makeKeyAndVisible];
     
     [[IQKeyboardManager sharedManager] setEnable:YES];

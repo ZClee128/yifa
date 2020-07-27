@@ -8,11 +8,11 @@
 
 #import "TuanListTableViewCell.h"
 #import "TuanPeopleView.h"
-#import "GBGradientProgressView.h"
+
 
 @interface TuanListTableViewCell ()
 
-@property (nonatomic,strong)GBGradientProgressView *progressView;
+@property (nonatomic,strong)LRAnimationProgress *progressView;
 @property (nonatomic,strong)QMUILabel *numLab;
 @property (nonatomic,strong)QMUILabel *timeLab;
 @property (nonatomic,strong)QMUIButton *buyBtn;
@@ -21,11 +21,16 @@
 
 @implementation TuanListTableViewCell
 
-- (GBGradientProgressView *)progressView {
+- (LRAnimationProgress *)progressView {
     if (_progressView == nil) {
-        _progressView = [[GBGradientProgressView alloc] initWithFrame:CGRectMake(0, 0, WidthOfScale(110), WidthOfScale(17))];
-        _progressView.colorArr = @[(id)[RGB16(0xFFBD20) CGColor], (id)[RGB16(0xFF3838) CGColor]];
-        _progressView.backgroundProgressColor = colorEFEFEF;
+        _progressView = [[LRAnimationProgress alloc] initWithFrame:CGRectMake(0, 0, WidthOfScale(110), WidthOfScale(17))];
+        _progressView.backgroundColor = [UIColor clearColor];
+        _progressView.layer.cornerRadius = WidthOfScale(17)/2;
+        _progressView.progressTintColors = @[RGB16(0xFF3B37),RGB16(0xFFBD20)];
+        _progressView.stripesWidth = 5;
+        _progressView.stripesAnimated = YES;
+        _progressView.hideStripes = NO;
+        _progressView.hideAnnulus = NO;
     }
     return _progressView;
 }
@@ -70,11 +75,11 @@
         make.size.mas_equalTo(CGSizeMake(WidthOfScale(110), WidthOfScale(17)));
     }];
     
-    [self.contentView addSubview:self.numLab];
-    [self.numLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.progressView.mas_right).equalTo(@(WidthOfScale(10)));
-        make.centerY.equalTo(self.progressView);
-    }];
+//    [self.contentView addSubview:self.numLab];
+//    [self.numLab mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(self.progressView.mas_right).equalTo(@(WidthOfScale(10)));
+//        make.centerY.equalTo(self.progressView);
+//    }];
     
     [self.contentView addSubview:self.buyBtn];
     [self.buyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -87,8 +92,8 @@
     
     [self.contentView addSubview:self.timeLab];
     [self.timeLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.buyBtn.mas_left).equalTo(@(-WidthOfScale(21.5)));
-        make.centerY.equalTo(self.buyBtn);
+        make.left.equalTo(self.progressView.mas_right).equalTo(@(WidthOfScale(31)));
+        make.centerY.equalTo(self.progressView);
     }];
     UIView *line = [[UIView alloc ] init];
     line.backgroundColor = colorfafafa;
@@ -102,7 +107,8 @@
 
 - (void)setModel:(id)model {
     self.progressView.progress = 0.6;
-    self.numLab.text = @"30%";
+    [self.progressView setTitle:@"剩余30%"];
+//    self.numLab.text = @"30%";
     self.timeLab.text = @"05:59:59";
     for (int i = 0; i < 3; i++) {
         if ([self.contentView viewWithTag:300+i]) {

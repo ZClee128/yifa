@@ -8,7 +8,7 @@
 
 #import "EFAddressViewController.h"
 #import "EFAddressTableViewCell.h"
-
+#import "EFAddAddressViewController.h"
 
 @interface EFAddressViewController ()
 
@@ -26,6 +26,14 @@
         [_addBtn setTitleColor:UIColor.whiteColor forState:(UIControlStateNormal)];
         _addBtn.titleLabel.font = MedFont16;
         _addBtn.backgroundColor = colorF14745;
+        @weakify(self);
+        [[_addBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self);
+            EFAddAddressViewController *vc = [[EFAddAddressViewController alloc] init];
+            [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+                
+            }];
+        }];
     }
     return _addBtn;
 }

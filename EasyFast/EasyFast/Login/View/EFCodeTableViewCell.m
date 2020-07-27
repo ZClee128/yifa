@@ -80,7 +80,7 @@
     
     [self.contentView addSubview:self.codeTextField];
     [self.codeTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(@(WidthOfScale(104.5)));
+        make.left.equalTo(@(WidthOfScale(105)));
         make.centerY.equalTo(self.contentView);
         make.right.equalTo(@(-WidthOfScale(125)));
         make.height.equalTo(@(WidthOfScale(50)));

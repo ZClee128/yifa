@@ -46,4 +46,6 @@
 #import "UIView+XQCAlertPop.h"
 #import "JVERIFICATIONService.h"
 #import "FTPopOverMenu.h"
+#import "LRAnimationProgress.h"
+#import "UITextField+MyExtension.h"
 #endif /* Header_h */

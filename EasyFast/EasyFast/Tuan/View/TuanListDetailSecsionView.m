@@ -7,23 +7,28 @@
 //
 
 #import "TuanListDetailSecsionView.h"
-#import "GBGradientProgressView.h"
+
 
 @interface TuanListDetailSecsionView ()
 
 @property (nonatomic,strong)QMUILabel *numLab;
 @property (nonatomic,strong)QMUILabel *timeLab;
-@property (nonatomic,strong)GBGradientProgressView *progressView;
+@property (nonatomic,strong)LRAnimationProgress *progressView;
 
 @end
 
 @implementation TuanListDetailSecsionView
 
-- (GBGradientProgressView *)progressView {
+- (LRAnimationProgress *)progressView {
     if (_progressView == nil) {
-        _progressView = [[GBGradientProgressView alloc] initWithFrame:CGRectMake(0, 0, WidthOfScale(110), WidthOfScale(17))];
-        _progressView.colorArr = @[(id)[RGB16(0xFFBD20) CGColor], (id)[RGB16(0xFF3838) CGColor]];
-        _progressView.backgroundProgressColor = colorEFEFEF;
+        _progressView = [[LRAnimationProgress alloc] initWithFrame:CGRectMake(0, 0, WidthOfScale(110), WidthOfScale(17))];
+        _progressView.backgroundColor = [UIColor clearColor];
+        _progressView.layer.cornerRadius = WidthOfScale(17)/2;
+        _progressView.progressTintColors = @[RGB16(0xFF3B37),RGB16(0xFFBD20)];
+        _progressView.stripesWidth = 5;
+        _progressView.stripesAnimated = YES;
+        _progressView.hideStripes = NO;
+        _progressView.hideAnnulus = NO;
     }
     return _progressView;
 }
@@ -83,7 +88,7 @@
 
 - (void)setModel:(id)model {
     self.progressView.progress = 0.6;
-    self.numLab.text = @"30%";
-    self.timeLab.text = @"05:59:59";
+    self.timeLab.text = @"仅剩05:59:59";
+    [self.progressView setTitle:@"剩余30%"];
 }
 @end

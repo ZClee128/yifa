@@ -34,6 +34,7 @@ targets.each do |t|
     pod "QPDialCodePickerView"
     pod 'JCore'
     pod 'JVerification'
+    pod 'BRPickerView'
     # Pods for EasyFast
   end
 

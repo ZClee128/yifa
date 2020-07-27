@@ -20,6 +20,18 @@ PODS:
   - BGFMDB/BG (2.0.13):
     - BGFMDB/FMDB
   - BGFMDB/FMDB (2.0.13)
+  - BRPickerView (2.6.5):
+    - BRPickerView/AddressPickerView (= 2.6.5)
+    - BRPickerView/Base (= 2.6.5)
+    - BRPickerView/DatePickerView (= 2.6.5)
+    - BRPickerView/StringPickerView (= 2.6.5)
+  - BRPickerView/AddressPickerView (2.6.5):
+    - BRPickerView/Base
+  - BRPickerView/Base (2.6.5)
+  - BRPickerView/DatePickerView (2.6.5):
+    - BRPickerView/Base
+  - BRPickerView/StringPickerView (2.6.5):
+    - BRPickerView/Base
   - CYLTabBarController (1.29.0):
     - CYLTabBarController/Core (= 1.29.0)
   - CYLTabBarController/Core (1.29.0)
@@ -74,6 +86,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - BGFMDB (~> 2.0.9)
+  - BRPickerView
   - CYLTabBarController
   - DateTools
   - GKNavigationBar
@@ -104,6 +117,7 @@ SPEC REPOS:
   trunk:
     - AFNetworking
     - BGFMDB
+    - BRPickerView
     - CYLTabBarController
     - DateTools
     - GKNavigationBar
@@ -129,6 +143,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   BGFMDB: 48e6823027232402a678acc7f71484b1fc9171d0
+  BRPickerView: 70e2e38b6441d4b43e9d14727aea662756476367
   CYLTabBarController: f5460b8446f82d016945d4d53895a1ef185b79e3
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
   GKNavigationBar: 7bb5b5ce1c2a2b9989e539bf14d06e0d660363f2
@@ -151,6 +166,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   YZTagList: 43dc1909e38d88124e3256ffc51c62cc904d8240
 
-PODFILE CHECKSUM: 321770e44746bba96cad949c9ccd59440641624c
+PODFILE CHECKSUM: 9bd7c60fedfde806e6905372ceec5dc192e262bd
 
 COCOAPODS: 1.9.3
