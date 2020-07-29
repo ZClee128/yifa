@@ -1,4 +1,4 @@
-framework module JXCategoryView {
+module JXCategoryView {
   umbrella header "JXCategoryView-umbrella.h"
 
   export *

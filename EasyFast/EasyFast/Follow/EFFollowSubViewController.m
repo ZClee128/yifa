@@ -8,15 +8,16 @@
 
 #import "EFFollowSubViewController.h"
 #import "EFFollowTableViewCell.h"
+#import "EFFollowTuanTableViewCell.h"
 @interface EFFollowSubViewController ()
 
-@property (nonatomic,assign)id type;
+@property (nonatomic,assign)Follow type;
 
 @end
 
 @implementation EFFollowSubViewController
 
-- (instancetype)initWithType:(id)type
+- (instancetype)initWithType:(Follow)type
 {
     self = [super init];
     if (self) {
@@ -32,6 +33,7 @@
     self.gk_navLineHidden = YES;
     
     [self.EFTableView registerClass:[EFFollowTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFFollowTableViewCell class])];
+    [self.EFTableView registerClass:[EFFollowTuanTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFFollowTuanTableViewCell class])];
 }
 
 - (UIView *)listView {
@@ -49,12 +51,34 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EFFollowTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFFollowTableViewCell class])];
-    [cell setModel:@""];
-    return cell;
+    switch (self.type) {
+        case FollowGZ:
+        {
+            [cell setModel:@""];
+            return cell;
+        }
+            case FollowGM:
+        {
+            [cell setModel:@""];
+            return cell;
+        }
+        default:
+        {
+            EFFollowTuanTableViewCell *tuanCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFFollowTuanTableViewCell class])];
+            [tuanCell setModel:@""];
+            return tuanCell;
+        }
+    }
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return WidthOfScale(243);
+    switch (self.type) {
+        case FollowTuan:
+            return WidthOfScale(327);
+        default:
+            return WidthOfScale(243);
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {

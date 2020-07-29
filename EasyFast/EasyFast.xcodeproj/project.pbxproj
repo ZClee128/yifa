@@ -7,7 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03BD2ED8996DE17BD7ECF09A /* Pods_EasyFast_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4FEC608CB9BC91EADCD0AB /* Pods_EasyFast_Test.framework */; };
+		0C4BAF9324D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
+		0C4BAF9424D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
+		0C4BAF9524D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
+		0C4BAF9924D021440037CDCF /* EFBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9824D021440037CDCF /* EFBridge.m */; };
+		0C4BAF9A24D021440037CDCF /* EFBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9824D021440037CDCF /* EFBridge.m */; };
+		0C4BAF9B24D021440037CDCF /* EFBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9824D021440037CDCF /* EFBridge.m */; };
+		0C4BAF9E24D1013D0037CDCF /* EFFollowTuanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9D24D1013D0037CDCF /* EFFollowTuanTableViewCell.m */; };
+		0C4BAF9F24D1013D0037CDCF /* EFFollowTuanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9D24D1013D0037CDCF /* EFFollowTuanTableViewCell.m */; };
+		0C4BAFA024D1013D0037CDCF /* EFFollowTuanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9D24D1013D0037CDCF /* EFFollowTuanTableViewCell.m */; };
+		0C4BAFA324D10A2D0037CDCF /* EFCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAFA224D10A2D0037CDCF /* EFCollectionViewController.m */; };
+		0C4BAFA424D10A2D0037CDCF /* EFCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAFA224D10A2D0037CDCF /* EFCollectionViewController.m */; };
+		0C4BAFA524D10A2D0037CDCF /* EFCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAFA224D10A2D0037CDCF /* EFCollectionViewController.m */; };
+		0C4BAFA824D117550037CDCF /* EFConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAFA724D117550037CDCF /* EFConversationViewController.m */; };
+		0C4BAFA924D117550037CDCF /* EFConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAFA724D117550037CDCF /* EFConversationViewController.m */; };
+		0C4BAFAA24D117550037CDCF /* EFConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAFA724D117550037CDCF /* EFConversationViewController.m */; };
 		0C6CB56A24CE688300471A8D /* LRAnimationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56924CE688300471A8D /* LRAnimationProgress.m */; };
 		0C6CB56B24CE688300471A8D /* LRAnimationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56924CE688300471A8D /* LRAnimationProgress.m */; };
 		0C6CB56C24CE688300471A8D /* LRAnimationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56924CE688300471A8D /* LRAnimationProgress.m */; };
@@ -56,6 +70,12 @@
 		0C6CB5B624CEDCAD00471A8D /* EFAddAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5B524CEDCAD00471A8D /* EFAddAddressViewController.m */; };
 		0C6CB5B724CEDCAD00471A8D /* EFAddAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5B524CEDCAD00471A8D /* EFAddAddressViewController.m */; };
 		0C6CB5B824CEDCAD00471A8D /* EFAddAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5B524CEDCAD00471A8D /* EFAddAddressViewController.m */; };
+		0C6CB5BC24CFBE3800471A8D /* EFCustomWebViewPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5BB24CFBE3800471A8D /* EFCustomWebViewPool.m */; };
+		0C6CB5BD24CFBE3800471A8D /* EFCustomWebViewPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5BB24CFBE3800471A8D /* EFCustomWebViewPool.m */; };
+		0C6CB5BE24CFBE3800471A8D /* EFCustomWebViewPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5BB24CFBE3800471A8D /* EFCustomWebViewPool.m */; };
+		0C6CB5C124CFD6B200471A8D /* EFRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5C024CFD6B200471A8D /* EFRefreshHeader.m */; };
+		0C6CB5C224CFD6B200471A8D /* EFRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5C024CFD6B200471A8D /* EFRefreshHeader.m */; };
+		0C6CB5C324CFD6B200471A8D /* EFRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5C024CFD6B200471A8D /* EFRefreshHeader.m */; };
 		0CCEC45324CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45424CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45524CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
@@ -98,8 +118,7 @@
 		0CCEC49724CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC49624CAD13900976D24 /* EFTimeAxisTableViewCell.m */; };
 		0CCEC49824CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC49624CAD13900976D24 /* EFTimeAxisTableViewCell.m */; };
 		0CCEC49924CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC49624CAD13900976D24 /* EFTimeAxisTableViewCell.m */; };
-		4B6DC9457C08CB25296CBA4B /* Pods_EasyFast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D02E2ADBB586BA4E284F3269 /* Pods_EasyFast.framework */; };
-		5331675373D39F1F29162855 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		3DD6FC3B30071BBFC7670DF0 /* libPods-EasyFast_Test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0E9DAC2B83A38562800432 /* libPods-EasyFast_Test.a */; };
 		84187CA424C05D0200ED3F96 /* MeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84187CA324C05D0200ED3F96 /* MeHeaderView.m */; };
 		84187CA524C05D0200ED3F96 /* MeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84187CA324C05D0200ED3F96 /* MeHeaderView.m */; };
 		84187CA624C05D0200ED3F96 /* MeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84187CA324C05D0200ED3F96 /* MeHeaderView.m */; };
@@ -430,10 +449,22 @@
 		84B2438224C8523D00E9967C /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 84B2438124C8523C00E9967C /* dist */; };
 		84B2438324C8523D00E9967C /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 84B2438124C8523C00E9967C /* dist */; };
 		84B2438424C8523D00E9967C /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 84B2438124C8523C00E9967C /* dist */; };
-		ED2E8655CA4E2FBCA71F69DC /* Pods_EasyFast_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3157AF9D413E272E30EBDDE8 /* Pods_EasyFast_Dev.framework */; };
+		A2EF968E01C934D5AA19965D /* libPods-EasyFast_Dev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D88C6799F2691F0B67B541 /* libPods-EasyFast_Dev.a */; };
+		A5F43C7BD361B73903F6C113 /* libPods-EasyFast.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E09AFAC86DE93F633083A99 /* libPods-EasyFast.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00D88C6799F2691F0B67B541 /* libPods-EasyFast_Dev.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EasyFast_Dev.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C4BAF9124D0085F0037CDCF /* EFMeRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFMeRefreshHeader.h; sourceTree = "<group>"; };
+		0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFMeRefreshHeader.m; sourceTree = "<group>"; };
+		0C4BAF9724D021440037CDCF /* EFBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFBridge.h; sourceTree = "<group>"; };
+		0C4BAF9824D021440037CDCF /* EFBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFBridge.m; sourceTree = "<group>"; };
+		0C4BAF9C24D1013D0037CDCF /* EFFollowTuanTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFFollowTuanTableViewCell.h; sourceTree = "<group>"; };
+		0C4BAF9D24D1013D0037CDCF /* EFFollowTuanTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFFollowTuanTableViewCell.m; sourceTree = "<group>"; };
+		0C4BAFA124D10A2D0037CDCF /* EFCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFCollectionViewController.h; sourceTree = "<group>"; };
+		0C4BAFA224D10A2D0037CDCF /* EFCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFCollectionViewController.m; sourceTree = "<group>"; };
+		0C4BAFA624D117550037CDCF /* EFConversationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFConversationViewController.h; sourceTree = "<group>"; };
+		0C4BAFA724D117550037CDCF /* EFConversationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFConversationViewController.m; sourceTree = "<group>"; };
 		0C6CB56824CE688300471A8D /* LRAnimationProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRAnimationProgress.h; sourceTree = "<group>"; };
 		0C6CB56924CE688300471A8D /* LRAnimationProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRAnimationProgress.m; sourceTree = "<group>"; };
 		0C6CB56D24CE7A1400471A8D /* EFOneLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOneLoginViewController.h; sourceTree = "<group>"; };
@@ -466,6 +497,10 @@
 		0C6CB5B024CECBC200471A8D /* EFFastRegViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFFastRegViewController.m; sourceTree = "<group>"; };
 		0C6CB5B424CEDCAD00471A8D /* EFAddAddressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFAddAddressViewController.h; sourceTree = "<group>"; };
 		0C6CB5B524CEDCAD00471A8D /* EFAddAddressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFAddAddressViewController.m; sourceTree = "<group>"; };
+		0C6CB5BA24CFBE3800471A8D /* EFCustomWebViewPool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFCustomWebViewPool.h; sourceTree = "<group>"; };
+		0C6CB5BB24CFBE3800471A8D /* EFCustomWebViewPool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFCustomWebViewPool.m; sourceTree = "<group>"; };
+		0C6CB5BF24CFD6B200471A8D /* EFRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFRefreshHeader.h; sourceTree = "<group>"; };
+		0C6CB5C024CFD6B200471A8D /* EFRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFRefreshHeader.m; sourceTree = "<group>"; };
 		0CCEC45124CA7A6000976D24 /* EFWuliuTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFWuliuTableViewCell.h; sourceTree = "<group>"; };
 		0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFWuliuTableViewCell.m; sourceTree = "<group>"; };
 		0CCEC45624CA7D8900976D24 /* EFOrderMoreDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderMoreDetailViewController.h; sourceTree = "<group>"; };
@@ -497,8 +532,7 @@
 		114B5F2459F8FFC945E98BD8 /* Pods-EasyFast_Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast_Dev.debug.xcconfig"; path = "Target Support Files/Pods-EasyFast_Dev/Pods-EasyFast_Dev.debug.xcconfig"; sourceTree = "<group>"; };
 		1304519AEDDDA76585AAC941 /* Pods-EasyFast_Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast_Test.release.xcconfig"; path = "Target Support Files/Pods-EasyFast_Test/Pods-EasyFast_Test.release.xcconfig"; sourceTree = "<group>"; };
 		182D3CC0502F099CA834B4CB /* Pods-EasyFast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast.debug.xcconfig"; path = "Target Support Files/Pods-EasyFast/Pods-EasyFast.debug.xcconfig"; sourceTree = "<group>"; };
-		2B4FEC608CB9BC91EADCD0AB /* Pods_EasyFast_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyFast_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3157AF9D413E272E30EBDDE8 /* Pods_EasyFast_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyFast_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E09AFAC86DE93F633083A99 /* libPods-EasyFast.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EasyFast.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7454F79293B3C25FC11219D6 /* Pods-EasyFast_Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast_Dev.release.xcconfig"; path = "Target Support Files/Pods-EasyFast_Dev/Pods-EasyFast_Dev.release.xcconfig"; sourceTree = "<group>"; };
 		84187CA224C05D0200ED3F96 /* MeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeHeaderView.h; sourceTree = "<group>"; };
 		84187CA324C05D0200ED3F96 /* MeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeHeaderView.m; sourceTree = "<group>"; };
@@ -726,8 +760,8 @@
 		84B2437B24C8425700E9967C /* ThreeCollectionViewCellItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreeCollectionViewCellItem.h; sourceTree = "<group>"; };
 		84B2437C24C8425700E9967C /* ThreeCollectionViewCellItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreeCollectionViewCellItem.m; sourceTree = "<group>"; };
 		84B2438124C8523C00E9967C /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dist; sourceTree = "<group>"; };
+		9B0E9DAC2B83A38562800432 /* libPods-EasyFast_Test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EasyFast_Test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA53EB76E1528E46E8ADF203 /* Pods-EasyFast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast.release.xcconfig"; path = "Target Support Files/Pods-EasyFast/Pods-EasyFast.release.xcconfig"; sourceTree = "<group>"; };
-		D02E2ADBB586BA4E284F3269 /* Pods_EasyFast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasyFast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF8E5FE1C44408BDAF6A9C97 /* Pods-EasyFast_Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast_Test.debug.xcconfig"; path = "Target Support Files/Pods-EasyFast_Test/Pods-EasyFast_Test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -736,8 +770,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5331675373D39F1F29162855 /* (null) in Frameworks */,
-				4B6DC9457C08CB25296CBA4B /* Pods_EasyFast.framework in Frameworks */,
+				A5F43C7BD361B73903F6C113 /* libPods-EasyFast.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -745,7 +778,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED2E8655CA4E2FBCA71F69DC /* Pods_EasyFast_Dev.framework in Frameworks */,
+				A2EF968E01C934D5AA19965D /* libPods-EasyFast_Dev.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -753,13 +786,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03BD2ED8996DE17BD7ECF09A /* Pods_EasyFast_Test.framework in Frameworks */,
+				3DD6FC3B30071BBFC7670DF0 /* libPods-EasyFast_Test.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C4BAF9624D0212E0037CDCF /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				0C4BAF9724D021440037CDCF /* EFBridge.h */,
+				0C4BAF9824D021440037CDCF /* EFBridge.m */,
+			);
+			path = Bridge;
+			sourceTree = "<group>";
+		};
+		0C6CB5B924CFBE1C00471A8D /* WebViewPool */ = {
+			isa = PBXGroup;
+			children = (
+				0C6CB5BA24CFBE3800471A8D /* EFCustomWebViewPool.h */,
+				0C6CB5BB24CFBE3800471A8D /* EFCustomWebViewPool.m */,
+			);
+			path = WebViewPool;
+			sourceTree = "<group>";
+		};
 		0CCEC47924CABB9700976D24 /* IM */ = {
 			isa = PBXGroup;
 			children = (
@@ -768,6 +819,8 @@
 				0CCEC47B24CABBF300976D24 /* EFHelpViewController.m */,
 				0CCEC48524CAC27A00976D24 /* EFIMListViewController.h */,
 				0CCEC48624CAC27A00976D24 /* EFIMListViewController.m */,
+				0C4BAFA624D117550037CDCF /* EFConversationViewController.h */,
+				0C4BAFA724D117550037CDCF /* EFConversationViewController.m */,
 			);
 			path = IM;
 			sourceTree = "<group>";
@@ -799,9 +852,9 @@
 		450A170569CB954BCEB29555 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3157AF9D413E272E30EBDDE8 /* Pods_EasyFast_Dev.framework */,
-				2B4FEC608CB9BC91EADCD0AB /* Pods_EasyFast_Test.framework */,
-				D02E2ADBB586BA4E284F3269 /* Pods_EasyFast.framework */,
+				6E09AFAC86DE93F633083A99 /* libPods-EasyFast.a */,
+				00D88C6799F2691F0B67B541 /* libPods-EasyFast_Dev.a */,
+				9B0E9DAC2B83A38562800432 /* libPods-EasyFast_Test.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -894,6 +947,8 @@
 		84760F9924C196FF002B34E4 /* Web */ = {
 			isa = PBXGroup;
 			children = (
+				0C4BAF9624D0212E0037CDCF /* Bridge */,
+				0C6CB5B924CFBE1C00471A8D /* WebViewPool */,
 				84B2438124C8523C00E9967C /* dist */,
 				8476102B24C52BDC002B34E4 /* H5Manager.h */,
 				8476102C24C52BDC002B34E4 /* H5Manager.m */,
@@ -1251,6 +1306,8 @@
 				84A820ED24B6F65100EAC652 /* EFFollowViewController.m */,
 				84A8219E24BF146100EAC652 /* EFFollowSubViewController.h */,
 				84A8219F24BF146200EAC652 /* EFFollowSubViewController.m */,
+				0C4BAFA124D10A2D0037CDCF /* EFCollectionViewController.h */,
+				0C4BAFA224D10A2D0037CDCF /* EFCollectionViewController.m */,
 			);
 			path = Follow;
 			sourceTree = "<group>";
@@ -1294,6 +1351,10 @@
 			children = (
 				84A8214B24BD432A00EAC652 /* TabbarBackView.h */,
 				84A8214C24BD432A00EAC652 /* TabbarBackView.m */,
+				0C6CB5BF24CFD6B200471A8D /* EFRefreshHeader.h */,
+				0C6CB5C024CFD6B200471A8D /* EFRefreshHeader.m */,
+				0C4BAF9124D0085F0037CDCF /* EFMeRefreshHeader.h */,
+				0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1367,6 +1428,8 @@
 			children = (
 				84A821A424BF15E700EAC652 /* EFFollowTableViewCell.h */,
 				84A821A524BF15E700EAC652 /* EFFollowTableViewCell.m */,
+				0C4BAF9C24D1013D0037CDCF /* EFFollowTuanTableViewCell.h */,
+				0C4BAF9D24D1013D0037CDCF /* EFFollowTuanTableViewCell.m */,
 				84A821A924BF15FF00EAC652 /* EFFollowCollectionViewCell.h */,
 				84A821AA24BF15FF00EAC652 /* EFFollowCollectionViewCell.m */,
 			);
@@ -1425,6 +1488,7 @@
 				84A8207024B6C61800EAC652 /* Frameworks */,
 				84A8207124B6C61800EAC652 /* Resources */,
 				E47C4412191A68B436938FEC /* [CP] Embed Pods Frameworks */,
+				44EC5FE9700CDAA16C0EC08B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1444,6 +1508,7 @@
 				84A8211024BC4F5400EAC652 /* Frameworks */,
 				84A8211224BC4F5400EAC652 /* Resources */,
 				84A8211524BC4F5400EAC652 /* [CP] Embed Pods Frameworks */,
+				CB43388889AD5F6019334353 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1463,6 +1528,7 @@
 				84A8213424BC513500EAC652 /* Frameworks */,
 				84A8213624BC513500EAC652 /* Resources */,
 				84A8213924BC513500EAC652 /* [CP] Embed Pods Frameworks */,
+				4A503F91033BA8EF42C6F5D4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1541,6 +1607,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		44EC5FE9700CDAA16C0EC08B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EasyFast/Pods-EasyFast-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EasyFast/Pods-EasyFast-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyFast/Pods-EasyFast-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A503F91033BA8EF42C6F5D4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EasyFast_Test/Pods-EasyFast_Test-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EasyFast_Test/Pods-EasyFast_Test-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyFast_Test/Pods-EasyFast_Test-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7488DD4D6DE9F9B24BAD27D4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1641,6 +1741,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyFast_Test/Pods-EasyFast_Test-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CB43388889AD5F6019334353 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EasyFast_Dev/Pods-EasyFast_Dev-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EasyFast_Dev/Pods-EasyFast_Dev-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyFast_Dev/Pods-EasyFast_Dev-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E47C4412191A68B436938FEC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1666,6 +1783,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84A820EE24B6F65100EAC652 /* EFFollowViewController.m in Sources */,
+				0C6CB5C124CFD6B200471A8D /* EFRefreshHeader.m in Sources */,
 				0C6CB58E24CEB19000471A8D /* UITextField+MyExtension.m in Sources */,
 				84A821B324BFFAE700EAC652 /* EFSearchViewController.m in Sources */,
 				84187CA424C05D0200ED3F96 /* MeHeaderView.m in Sources */,
@@ -1674,6 +1792,7 @@
 				0CCEC49224CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.m in Sources */,
 				8476105C24C57E81002B34E4 /* TuanOtherGoodsView.m in Sources */,
 				8476104324C54B72002B34E4 /* TuanPeopleView.m in Sources */,
+				0C4BAF9924D021440037CDCF /* EFBridge.m in Sources */,
 				84A8215424BDA0F200EAC652 /* EFHotViewController.m in Sources */,
 				84A820B724B6CA8A00EAC652 /* EFBaseTableView.m in Sources */,
 				84A820A424B6CA0900EAC652 /* BaseTableViewCell.m in Sources */,
@@ -1709,12 +1828,14 @@
 				84A820B824B6CA8A00EAC652 /* EFBaseTableViewController.m in Sources */,
 				84A820D624B6CDA600EAC652 /* UIFont+RuntimeFit.m in Sources */,
 				84A820BD24B6CAC400EAC652 /* EFBaseRefreshVM.m in Sources */,
+				0C4BAFA824D117550037CDCF /* EFConversationViewController.m in Sources */,
 				0CCEC46C24CA8C3100976D24 /* EFOrderPriceDetailTableViewCell.m in Sources */,
 				84A820A524B6CA0900EAC652 /* RVMViewModel.m in Sources */,
 				84A820CE24B6CCC600EAC652 /* FMHttpRequest.m in Sources */,
 				0CCEC47624CAB46200976D24 /* EFTimeTableViewCell.m in Sources */,
 				841B94F824C9809C0054D8D5 /* EFLogisticsViewController.m in Sources */,
 				84A8215F24BDB90C00EAC652 /* HotTabCollectionViewCell.m in Sources */,
+				0C4BAF9324D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */,
 				84A8214724BC5F0900EAC652 /* EFPlusButton.m in Sources */,
 				0CCEC48224CABDC900976D24 /* EFHelpTableViewCell.m in Sources */,
 				84A820B624B6CA8A00EAC652 /* EFBaseViewController.m in Sources */,
@@ -1730,6 +1851,7 @@
 				847610BF24C6D1D0002B34E4 /* EFPrivacyViewController.m in Sources */,
 				847610BA24C6C291002B34E4 /* EFPasswordTextField.m in Sources */,
 				0CCEC46724CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.m in Sources */,
+				0C6CB5BC24CFBE3800471A8D /* EFCustomWebViewPool.m in Sources */,
 				0C6CB5AC24CEC7BE00471A8D /* EFAccountPswTableViewCell.m in Sources */,
 				0C6CB59824CEB52C00471A8D /* EFChangeLoginHeaderView.m in Sources */,
 				8476109224C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */,
@@ -1764,6 +1886,7 @@
 				84760F9624C1806D002B34E4 /* NSMutableAttributedString+Size.m in Sources */,
 				8476119D24C838A6002B34E4 /* EFClassifyModel.m in Sources */,
 				841B94F324C979790054D8D5 /* FTPopOverMenu.m in Sources */,
+				0C4BAF9E24D1013D0037CDCF /* EFFollowTuanTableViewCell.m in Sources */,
 				84A8216624BE92B900EAC652 /* HotTabTableViewCell.m in Sources */,
 				0C6CB57924CE7E2D00471A8D /* EFOneLoginPhoneTableViewCell.m in Sources */,
 				84A8217524BEAE3000EAC652 /* EFHeaderView.m in Sources */,
@@ -1788,6 +1911,7 @@
 				847610A924C69AD0002B34E4 /* EFCodeTableViewCell.m in Sources */,
 				0CCEC45D24CA80EE00976D24 /* EFOrderAddressTableViewCell.m in Sources */,
 				84A820CD24B6CCC600EAC652 /* FMARCNetwork+interface.m in Sources */,
+				0C4BAFA324D10A2D0037CDCF /* EFCollectionViewController.m in Sources */,
 				0CCEC47124CA8F7500976D24 /* EFRealPriceTableViewCell.m in Sources */,
 				84760F7A24C14AD9002B34E4 /* MeListTableViewCell.m in Sources */,
 				0C6CB58324CE889B00471A8D /* EFThreeLoginTableViewCell.m in Sources */,
@@ -1810,6 +1934,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84A820FA24BC4F5400EAC652 /* EFFollowViewController.m in Sources */,
+				0C6CB5C224CFD6B200471A8D /* EFRefreshHeader.m in Sources */,
 				0C6CB58F24CEB19000471A8D /* UITextField+MyExtension.m in Sources */,
 				84A821B424BFFAE700EAC652 /* EFSearchViewController.m in Sources */,
 				84187CA524C05D0200ED3F96 /* MeHeaderView.m in Sources */,
@@ -1818,6 +1943,7 @@
 				0CCEC49324CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.m in Sources */,
 				8476105D24C57E81002B34E4 /* TuanOtherGoodsView.m in Sources */,
 				8476104424C54B72002B34E4 /* TuanPeopleView.m in Sources */,
+				0C4BAF9A24D021440037CDCF /* EFBridge.m in Sources */,
 				84A8215524BDA0F200EAC652 /* EFHotViewController.m in Sources */,
 				84A820FB24BC4F5400EAC652 /* EFBaseTableView.m in Sources */,
 				84A820FC24BC4F5400EAC652 /* BaseTableViewCell.m in Sources */,
@@ -1853,12 +1979,14 @@
 				84A8210224BC4F5400EAC652 /* UIFont+RuntimeFit.m in Sources */,
 				84A8210324BC4F5400EAC652 /* EFBaseRefreshVM.m in Sources */,
 				84A8210424BC4F5400EAC652 /* RVMViewModel.m in Sources */,
+				0C4BAFA924D117550037CDCF /* EFConversationViewController.m in Sources */,
 				0CCEC46D24CA8C3100976D24 /* EFOrderPriceDetailTableViewCell.m in Sources */,
 				84A8210524BC4F5400EAC652 /* FMHttpRequest.m in Sources */,
 				84A8214E24BD43F000EAC652 /* TabbarBackView.m in Sources */,
 				0CCEC47724CAB46200976D24 /* EFTimeTableViewCell.m in Sources */,
 				841B94F924C9809C0054D8D5 /* EFLogisticsViewController.m in Sources */,
 				84A8216024BDB90C00EAC652 /* HotTabCollectionViewCell.m in Sources */,
+				0C4BAF9424D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */,
 				84A8214824BC5F0900EAC652 /* EFPlusButton.m in Sources */,
 				0CCEC48324CABDC900976D24 /* EFHelpTableViewCell.m in Sources */,
 				84A8210624BC4F5400EAC652 /* EFBaseViewController.m in Sources */,
@@ -1874,6 +2002,7 @@
 				847610C024C6D1D1002B34E4 /* EFPrivacyViewController.m in Sources */,
 				847610BB24C6C291002B34E4 /* EFPasswordTextField.m in Sources */,
 				0CCEC46824CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.m in Sources */,
+				0C6CB5BD24CFBE3800471A8D /* EFCustomWebViewPool.m in Sources */,
 				0C6CB5AD24CEC7BE00471A8D /* EFAccountPswTableViewCell.m in Sources */,
 				0C6CB59924CEB52C00471A8D /* EFChangeLoginHeaderView.m in Sources */,
 				8476109324C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */,
@@ -1908,6 +2037,7 @@
 				84760F9724C1806D002B34E4 /* NSMutableAttributedString+Size.m in Sources */,
 				8476119E24C838A7002B34E4 /* EFClassifyModel.m in Sources */,
 				841B94F424C979790054D8D5 /* FTPopOverMenu.m in Sources */,
+				0C4BAF9F24D1013D0037CDCF /* EFFollowTuanTableViewCell.m in Sources */,
 				84A8216724BE92B900EAC652 /* HotTabTableViewCell.m in Sources */,
 				0C6CB57A24CE7E2D00471A8D /* EFOneLoginPhoneTableViewCell.m in Sources */,
 				84A8217624BEAE3000EAC652 /* EFHeaderView.m in Sources */,
@@ -1932,6 +2062,7 @@
 				847610AA24C69AD0002B34E4 /* EFCodeTableViewCell.m in Sources */,
 				0CCEC45E24CA80EE00976D24 /* EFOrderAddressTableViewCell.m in Sources */,
 				84A8210D24BC4F5400EAC652 /* EFClassifyViewController.m in Sources */,
+				0C4BAFA424D10A2D0037CDCF /* EFCollectionViewController.m in Sources */,
 				0CCEC47224CA8F7500976D24 /* EFRealPriceTableViewCell.m in Sources */,
 				84760F7B24C14AD9002B34E4 /* MeListTableViewCell.m in Sources */,
 				0C6CB58424CE889B00471A8D /* EFThreeLoginTableViewCell.m in Sources */,
@@ -1954,6 +2085,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84A8211E24BC513500EAC652 /* EFFollowViewController.m in Sources */,
+				0C6CB5C324CFD6B200471A8D /* EFRefreshHeader.m in Sources */,
 				0C6CB59024CEB19000471A8D /* UITextField+MyExtension.m in Sources */,
 				84A821B524BFFAE700EAC652 /* EFSearchViewController.m in Sources */,
 				84187CA624C05D0200ED3F96 /* MeHeaderView.m in Sources */,
@@ -1962,6 +2094,7 @@
 				0CCEC49424CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.m in Sources */,
 				8476105E24C57E81002B34E4 /* TuanOtherGoodsView.m in Sources */,
 				8476104524C54B72002B34E4 /* TuanPeopleView.m in Sources */,
+				0C4BAF9B24D021440037CDCF /* EFBridge.m in Sources */,
 				84A8215624BDA0F200EAC652 /* EFHotViewController.m in Sources */,
 				84A8211F24BC513500EAC652 /* EFBaseTableView.m in Sources */,
 				84A8212024BC513500EAC652 /* BaseTableViewCell.m in Sources */,
@@ -1997,12 +2130,14 @@
 				84A8212524BC513500EAC652 /* EFBaseTableViewController.m in Sources */,
 				84A8212624BC513500EAC652 /* UIFont+RuntimeFit.m in Sources */,
 				84A8212724BC513500EAC652 /* EFBaseRefreshVM.m in Sources */,
+				0C4BAFAA24D117550037CDCF /* EFConversationViewController.m in Sources */,
 				0CCEC46E24CA8C3100976D24 /* EFOrderPriceDetailTableViewCell.m in Sources */,
 				84A8212824BC513500EAC652 /* RVMViewModel.m in Sources */,
 				84A8212924BC513500EAC652 /* FMHttpRequest.m in Sources */,
 				0CCEC47824CAB46200976D24 /* EFTimeTableViewCell.m in Sources */,
 				841B94FA24C9809C0054D8D5 /* EFLogisticsViewController.m in Sources */,
 				84A8216124BDB90C00EAC652 /* HotTabCollectionViewCell.m in Sources */,
+				0C4BAF9524D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */,
 				84A8214924BC5F0900EAC652 /* EFPlusButton.m in Sources */,
 				0CCEC48424CABDC900976D24 /* EFHelpTableViewCell.m in Sources */,
 				84A8212A24BC513500EAC652 /* EFBaseViewController.m in Sources */,
@@ -2018,6 +2153,7 @@
 				847610C124C6D1D1002B34E4 /* EFPrivacyViewController.m in Sources */,
 				847610BC24C6C291002B34E4 /* EFPasswordTextField.m in Sources */,
 				0CCEC46924CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.m in Sources */,
+				0C6CB5BE24CFBE3800471A8D /* EFCustomWebViewPool.m in Sources */,
 				0C6CB5AE24CEC7BE00471A8D /* EFAccountPswTableViewCell.m in Sources */,
 				0C6CB59A24CEB52C00471A8D /* EFChangeLoginHeaderView.m in Sources */,
 				8476109424C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */,
@@ -2052,6 +2188,7 @@
 				84760F9824C1806D002B34E4 /* NSMutableAttributedString+Size.m in Sources */,
 				8476119F24C838A7002B34E4 /* EFClassifyModel.m in Sources */,
 				841B94F524C979790054D8D5 /* FTPopOverMenu.m in Sources */,
+				0C4BAFA024D1013D0037CDCF /* EFFollowTuanTableViewCell.m in Sources */,
 				84A8216824BE92B900EAC652 /* HotTabTableViewCell.m in Sources */,
 				0C6CB57B24CE7E2D00471A8D /* EFOneLoginPhoneTableViewCell.m in Sources */,
 				84A8217724BEAE3000EAC652 /* EFHeaderView.m in Sources */,
@@ -2076,6 +2213,7 @@
 				847610AB24C69AD0002B34E4 /* EFCodeTableViewCell.m in Sources */,
 				0CCEC45F24CA80EE00976D24 /* EFOrderAddressTableViewCell.m in Sources */,
 				84A8213024BC513500EAC652 /* FMARCNetwork+interface.m in Sources */,
+				0C4BAFA524D10A2D0037CDCF /* EFCollectionViewController.m in Sources */,
 				0CCEC47324CA8F7500976D24 /* EFRealPriceTableViewCell.m in Sources */,
 				84760F7C24C14AD9002B34E4 /* MeListTableViewCell.m in Sources */,
 				0C6CB58524CE889B00471A8D /* EFThreeLoginTableViewCell.m in Sources */,
@@ -2222,7 +2360,7 @@
 			baseConfigurationReference = 182D3CC0502F099CA834B4CB /* Pods-EasyFast.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EasyFast/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2240,6 +2378,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.easy.EasyFast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2249,7 +2388,7 @@
 			baseConfigurationReference = BA53EB76E1528E46E8ADF203 /* Pods-EasyFast.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EasyFast/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2267,6 +2406,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.easy.EasyFast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -2276,7 +2416,7 @@
 			baseConfigurationReference = 114B5F2459F8FFC945E98BD8 /* Pods-EasyFast_Dev.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Dev;
-				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VB37Y62JDE;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EasyFast/PrefixHeader.pch";
@@ -2295,6 +2435,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.easy.eee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2304,7 +2445,7 @@
 			baseConfigurationReference = 7454F79293B3C25FC11219D6 /* Pods-EasyFast_Dev.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Dev;
-				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VB37Y62JDE;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EasyFast/PrefixHeader.pch";
@@ -2323,6 +2464,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.easy.eee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -2332,7 +2474,7 @@
 			baseConfigurationReference = FF8E5FE1C44408BDAF6A9C97 /* Pods-EasyFast_Test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Test;
-				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EasyFast/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2350,6 +2492,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.easy.EasyFast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2359,7 +2502,7 @@
 			baseConfigurationReference = 1304519AEDDDA76585AAC941 /* Pods-EasyFast_Test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Test;
-				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EasyFast/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -2377,6 +2520,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.easy.EasyFast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

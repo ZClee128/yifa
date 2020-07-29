@@ -24,7 +24,7 @@
 
 @property (nonatomic,strong)MeHeaderView *headerView;
 @property (nonatomic,strong)NSArray *list;
-
+@property (nonatomic,assign)CGFloat cellHeight;
 
 @end
 
@@ -55,16 +55,13 @@
             [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
                 
             }];
-        } followBlcok:^{
-            
-        } seeBlock:^{
-            
         } messageBlock:^(NSInteger index) {
             @strongify(self);
             switch (index) {
                 case 0:
                 {
-                    
+                    self.navigationController.tabBarController.selectedIndex = 3;
+                    [[NSNotificationCenter defaultCenter] postNotificationName:kTabFollow object:nil];
                 }
                     break;
                     case 1:
@@ -98,14 +95,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.EFTableView.frame = CGRectMake(0, 0, kPHONE_WIDTH, kPHONE_HEIGHT - TAB_BAR_HEIGHT);
-    self.gk_navigationBar.hidden = YES;
+    self.gk_navTitle = @"xxxxxxx";
+    self.gk_navigationBar.alpha = 0;
     self.EFTableView.tableHeaderView = self.headerView;
     [self.EFTableView registerClass:[MeTabTableViewCell class] forCellReuseIdentifier:NSStringFromClass([MeTabTableViewCell class])];
     [self.EFTableView registerClass:[MeListTableViewCell class] forCellReuseIdentifier:NSStringFromClass([MeListTableViewCell class])];
     [self.EFTableView registerClass:[MeWebTableViewCell class] forCellReuseIdentifier:NSStringFromClass([MeWebTableViewCell class])];
     self.list = @[@{@"title":@"我的支付",@"icon":@"pay"},@{@"title":@"收货地址管理",@"icon":@"address"},
     @{@"title":@"账号安全",@"icon":@"safe"},@{@"title":@"帮助中心",@"icon":@"help"}];
-
+    [self addWhiteRefshDown];
+    
+    UIImageView *bgImageView = [[UIImageView alloc] initWithImage:UIImageMake(@"bg")];
+    [self.view insertSubview:bgImageView belowSubview:self.EFTableView];
+    [bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view);
+        make.centerX.equalTo(self.view);
+        make.width.equalTo(@(kPHONE_WIDTH));
+        make.height.equalTo(@(kPHONE_HEIGHT/2));
+    }];
+    self.EFTableView.backgroundColor = [UIColor clearColor];
+  
 }
 
 
@@ -184,6 +193,12 @@
         default:
         {
             MeWebTableViewCell *webCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MeWebTableViewCell class])];
+            @weakify(self);
+            [[webCell getCellHeight] subscribeNext:^(NSNumber *x) {
+                @strongify(self);
+                self.cellHeight = [x floatValue];
+                [self.EFTableView reloadSection:3 withRowAnimation:(UITableViewRowAnimationNone)];
+            }];
             return webCell;
         }
     }
@@ -194,7 +209,7 @@
         case 2:
             return 50;
         case 3:
-            return 400;
+            return self.cellHeight;
         default:
             return WidthOfScale(134);
     }
@@ -202,6 +217,12 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 10;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, 10)];
+    line.backgroundColor = colorfafafa;
+    return line;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -236,4 +257,8 @@
     }
 }
 
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    self.gk_navigationBar.alpha = self.EFTableView.contentOffset.y / NAVIGATION_BAR_HEIGHT;
+}
 @end

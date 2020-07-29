@@ -72,23 +72,26 @@
     self.titleLab.text = title;
     @weakify(self);
     for (int i = 0 ; i < btns.count; i++) {
-        QMUIButton *btn = [QMUIButton buttonWithType:(UIButtonTypeCustom)];
-        btn.frame = CGRectMake(i*kPHONE_WIDTH/btns.count, WidthOfScale(51), kPHONE_WIDTH/btns.count, WidthOfScale(62.5));
-        [btn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
-        [btn setTitle:btns[i][@"title"] forState:(UIControlStateNormal)];
-        btn.titleLabel.textAlignment = NSTextAlignmentCenter;
-        btn.titleLabel.font = RegularFont14;
-        [btn setImage:UIImageMake(btns[i][@"icon"]) forState:(UIControlStateNormal)];
-        btn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, WidthOfScale(7.5), 0);
-        btn.imagePosition = QMUIButtonImagePositionTop;
-        btn.tag = i;
-        [self.contentView addSubview:btn];
-        [[btn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(QMUIButton *x) {
-            @strongify(self);
-            if (self.seletBtn) {
-                self.seletBtn(x.tag);
-            }
-        }];
+        QMUIButton *btn = [self.contentView viewWithTag:i+300];
+        if (btn == nil) {
+            QMUIButton *btn = [QMUIButton buttonWithType:(UIButtonTypeCustom)];
+            btn.frame = CGRectMake(i*kPHONE_WIDTH/btns.count, WidthOfScale(51), kPHONE_WIDTH/btns.count, WidthOfScale(62.5));
+            [btn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
+            [btn setTitle:btns[i][@"title"] forState:(UIControlStateNormal)];
+            btn.titleLabel.textAlignment = NSTextAlignmentCenter;
+            btn.titleLabel.font = RegularFont14;
+            [btn setImage:UIImageMake(btns[i][@"icon"]) forState:(UIControlStateNormal)];
+            btn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, WidthOfScale(7.5), 0);
+            btn.imagePosition = QMUIButtonImagePositionTop;
+            btn.tag = i+300;
+            [self.contentView addSubview:btn];
+            [[btn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(QMUIButton *x) {
+                @strongify(self);
+                if (self.seletBtn) {
+                    self.seletBtn(x.tag-300);
+                }
+            }];
+        }
     }
 }
 

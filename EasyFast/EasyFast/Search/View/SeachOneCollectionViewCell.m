@@ -96,6 +96,9 @@
         [_buyBtn setTitleColor:UIColor.whiteColor forState:(UIControlStateNormal)];
         _buyBtn.titleLabel.font = MedFont13;
         [_buyBtn setBackgroundImage:[UIImage imageWithMixColors:@[RGB16(0xFFBD20),RGB16(0xFF3B37)] size:CGSizeMake(90, 27)] forState:(UIControlStateNormal)];
+        [[_buyBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(QMUIButton *x) {
+            x.selected = !x.selected;
+        }];
     }
     return _buyBtn;
 }
@@ -172,5 +175,20 @@
     self.numLab.text = @"最低采购量：100";
     self.sellLab.text = @"成交量：9999+";
     self.priceLab.text = @"7899.8";
+}
+
+- (void)setBtnStyle {
+    [self.buyBtn setTitle:@"已收藏" forState:(UIControlStateNormal)];
+    [self.buyBtn setTitle:@"收藏" forState:(UIControlStateSelected)];
+    [self.buyBtn setTitleColor:colorF14745 forState:(UIControlStateNormal)];
+    [self.buyBtn setTitleColor:UIColor.whiteColor forState:(UIControlStateSelected)];
+    [self.buyBtn setBackgroundImage:[UIImage imageWithColor:colorF14745 size:self.buyBtn.size] forState:(UIControlStateSelected)];
+    [self.buyBtn setBackgroundImage:[UIImage imageWithColor:UIColor.whiteColor size:self.buyBtn.size] forState:(UIControlStateNormal)];
+    [self.buyBtn layoutIfNeeded];
+    [self.buyBtn ViewRadius:0];
+    self.buyBtn.layer.borderWidth = 1;
+    self.buyBtn.layer.borderColor = colorF14745.CGColor;
+    self.buyBtn.layer.cornerRadius = 5;
+    self.buyBtn.layer.masksToBounds = YES;
 }
 @end

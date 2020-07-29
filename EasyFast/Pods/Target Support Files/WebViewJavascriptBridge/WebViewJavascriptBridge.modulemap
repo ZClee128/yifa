@@ -1,4 +1,4 @@
-framework module WebViewJavascriptBridge {
+module WebViewJavascriptBridge {
   umbrella header "WebViewJavascriptBridge-umbrella.h"
 
   export *

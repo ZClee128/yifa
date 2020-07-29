@@ -9,13 +9,17 @@
 
 #import <SDWebImage/SDWebImageCompat.h>
 
-//! Project version number for SDWebImage.
-FOUNDATION_EXPORT double SDWebImageVersionNumber;
+#if SD_UIKIT
+#import <UIKit/UIKit.h>
+#endif
 
-//! Project version string for SDWebImage.
-FOUNDATION_EXPORT const unsigned char SDWebImageVersionString[];
+//! Project version number for WebImage.
+FOUNDATION_EXPORT double WebImageVersionNumber;
 
-// In this header, you should import all the public headers of your framework using statements like #import <SDWebImage/PublicHeader.h>
+//! Project version string for WebImage.
+FOUNDATION_EXPORT const unsigned char WebImageVersionString[];
+
+// In this header, you should import all the public headers of your framework using statements like #import <WebImage/PublicHeader.h>
 
 #import <SDWebImage/SDWebImageManager.h>
 #import <SDWebImage/SDWebImageCacheKeyFilter.h>

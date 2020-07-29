@@ -1,4 +1,4 @@
-framework module QMUIKit {
+module QMUIKit {
   umbrella header "QMUIKit-umbrella.h"
 
   export *

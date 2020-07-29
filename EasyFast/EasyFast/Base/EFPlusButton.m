@@ -31,45 +31,45 @@
 }
 
 //上下结构的 button
-- (void)layoutSubviews {
-    [super layoutSubviews];
-
-    // 控件大小,间距大小
-    // 注意：一定要根据项目中的图片去调整下面的0.7和0.9，Demo之所以这么设置，因为demo中的 plusButton 的 icon 不是正方形。
-    CGFloat const imageViewEdgeWidth   = self.bounds.size.width ;
-    CGFloat const imageViewEdgeHeight  = imageViewEdgeWidth ;
-
-    CGFloat const centerOfView    = self.bounds.size.width * 0.5;
-    CGFloat const labelLineHeight = self.titleLabel.font.lineHeight;
-    CGFloat const verticalMargin  = (self.bounds.size.height - labelLineHeight - imageViewEdgeHeight) * 0.8;
-
-    // imageView 和 titleLabel 中心的 Y 值
-    CGFloat  centerOfImageView  = verticalMargin + imageViewEdgeHeight * 0.5 + 3;
-    CGFloat  centerOfTitleLabel = imageViewEdgeHeight  + verticalMargin * 2 + labelLineHeight * 0.5 ;
-
-    if ((iPhoneX && !IOS13) || ([QMUIHelper is47InchScreen])) {
-        centerOfImageView = centerOfImageView - 4;
-        centerOfTitleLabel = centerOfTitleLabel - 10;
-    }
-    
-    if ([QMUIHelper is40InchScreen]) {
-        centerOfImageView = centerOfImageView - 10;
-        centerOfTitleLabel = centerOfTitleLabel -16;
-    }
-    
-    if ([QMUIHelper is55InchScreen]) {
-        centerOfImageView = centerOfImageView - 7 ;
-        centerOfTitleLabel = centerOfTitleLabel - 16;
-    }
-    //imageView position 位置
-    self.imageView.bounds = CGRectMake(0, 0, imageViewEdgeWidth, imageViewEdgeHeight);
-    self.imageView.center = CGPointMake(centerOfView, centerOfImageView);
-    
-
-    //title position 位置
-    self.titleLabel.bounds = CGRectMake(0, 0, self.bounds.size.width, labelLineHeight);
-    self.titleLabel.center = CGPointMake(centerOfView, centerOfTitleLabel);
-}
+//- (void)layoutSubviews {
+//    [super layoutSubviews];
+//
+//    // 控件大小,间距大小
+//    // 注意：一定要根据项目中的图片去调整下面的0.7和0.9，Demo之所以这么设置，因为demo中的 plusButton 的 icon 不是正方形。
+//    CGFloat const imageViewEdgeWidth   = self.bounds.size.width ;
+//    CGFloat const imageViewEdgeHeight  = imageViewEdgeWidth ;
+//
+//    CGFloat const centerOfView    = self.bounds.size.width * 0.5;
+//    CGFloat const labelLineHeight = self.titleLabel.font.lineHeight;
+//    CGFloat const verticalMargin  = (self.bounds.size.height - labelLineHeight - imageViewEdgeHeight) * 0.8;
+//
+//    // imageView 和 titleLabel 中心的 Y 值
+//    CGFloat  centerOfImageView  = verticalMargin + imageViewEdgeHeight * 0.5 + 3;
+//    CGFloat  centerOfTitleLabel = imageViewEdgeHeight  + verticalMargin * 2 + labelLineHeight * 0.5 - 1;
+//
+//    if ((iPhoneX && !IOS13) || ([QMUIHelper is47InchScreen])) {
+//        centerOfImageView = centerOfImageView - 4;
+//        centerOfTitleLabel = centerOfTitleLabel - 10 + 1;
+//    }
+//    
+//    if ([QMUIHelper is40InchScreen]) {
+//        centerOfImageView = centerOfImageView - 10;
+//        centerOfTitleLabel = centerOfTitleLabel -16 + 1;
+//    }
+//    
+//    if ([QMUIHelper is55InchScreen]) {
+//        centerOfImageView = centerOfImageView - 7 ;
+//        centerOfTitleLabel = centerOfTitleLabel - 16 + 1;
+//    }
+//    //imageView position 位置
+//    self.imageView.bounds = CGRectMake(0, 0, imageViewEdgeWidth, imageViewEdgeHeight);
+//    self.imageView.center = CGPointMake(centerOfView, centerOfImageView);
+//    
+//
+//    //title position 位置
+//    self.titleLabel.bounds = CGRectMake(0, 0, self.bounds.size.width, labelLineHeight);
+//    self.titleLabel.center = CGPointMake(centerOfView, centerOfTitleLabel);
+//}
 
 #pragma mark -
 #pragma mark - CYLPlusButtonSubclassing Methods
@@ -80,7 +80,7 @@
  *
  */
 + (id)plusButton {
-    EFPlusButton *button = [[EFPlusButton alloc] init];
+    QMUIButton *button = [[QMUIButton alloc] init];
     UIImage *normalButtonImage = [UIImage imageNamed:@"tuan"];
     UIImage *hlightButtonImage = [UIImage imageNamed:@"tuan"];
     [button setImage:normalButtonImage forState:UIControlStateNormal];
@@ -90,19 +90,28 @@
     [button setTitle:@"团购批发" forState:(UIControlStateHighlighted)];
     [button setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
     [button setTitleColor:tabbarRedColor forState:(UIControlStateSelected)];
-//    button.imageEdgeInsets = UIEdgeInsetsMake(5, 0, -5, 0);
+//    button.imageEdgeInsets = UIEdgeInsetsMake(WidthOfScale(3.5), WidthOfScale(2), WidthOfScale(-3.5), WidthOfScale(2));
+    button.imagePosition = QMUIButtonImagePositionTop;
     button.titleLabel.font = RegularFont11;
     [button sizeToFit]; // or set frame in this way `button.frame = CGRectMake(0.0, 0.0, 250, 100);`
-    button.frame = CGRectMake(0.0, 0.0, WidthOfScale(60), normalButtonImage.size.height+20);
-    if ([QMUIHelper is55InchScreen]) {
-        button.frame = CGRectMake(0.0, 0.0, WidthOfScale(60), normalButtonImage.size.height+30);
-    }
+//    button.frame = CGRectMake(0.0, 0.0, WidthOfScale(60), normalButtonImage.size.height+20);
+//    if ([QMUIHelper is55InchScreen]) {
+//        button.frame = CGRectMake(0.0, 0.0, WidthOfScale(60), normalButtonImage.size.height+30);
+//    }
     button.backgroundColor = UIColor.whiteColor;
     // if you use `+plusChildViewController` , do not addTarget to plusButton.
     [button addTarget:button action:@selector(clickPublish) forControlEvents:UIControlEventTouchUpInside];
-    [button AddImage2PiRadiusBorderWithColor:UIColor.whiteColor lineWidth:7 radius:(button.size.width)/2];
     
-    return button;
+    EFPlusButton *bg = [[EFPlusButton alloc] initWithFrame:CGRectMake(0.0, 0.0, kPHONE_WIDTH/5, WidthOfScale(69.5))];
+    [bg addSubview:button];
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(bg);
+        make.top.equalTo(@(0));
+        make.size.mas_equalTo(CGSizeMake(WidthOfScale(51),WidthOfScale(69.5)));
+    }];
+    [button layoutIfNeeded];
+    [button AddImage2PiRadiusBorderWithColor:UIColor.whiteColor lineWidth:5 radius:20];
+    return bg;
 }
 
 /*
@@ -163,7 +172,7 @@
 }
 
 + (CGFloat)multiplierOfTabBarHeight:(CGFloat)tabBarHeight {
-    return  0.3;
+    return  0.2;
 }
 
 + (CGFloat)constantOfPlusButtonCenterYOffsetForTabBarHeight:(CGFloat)tabBarHeight {

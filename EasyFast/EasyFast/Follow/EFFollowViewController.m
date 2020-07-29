@@ -8,6 +8,7 @@
 
 #import "EFFollowViewController.h"
 #import "EFFollowSubViewController.h"
+#import "EFCollectionViewController.h"
 
 @interface EFFollowViewController ()<JXCategoryViewDelegate, JXCategoryListContainerViewDelegate>
 
@@ -20,16 +21,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.gk_navTitle = @"关注列表";
-    self.gk_navLineHidden = YES;
+    self.gk_navLineHidden = NO;
+    self.gk_navShadowColor = RGB16(0xF2F2F2);
     self.jxTitleView = [[JXCategoryTitleView alloc] initWithFrame:CGRectMake(0, NAVIGATION_BAR_HEIGHT, kPHONE_WIDTH, 45)];
     self.jxTitleView.delegate = self;
     [self.view addSubview:self.jxTitleView];
-    self.jxTitleView.titles = @[@"热门", @"男装", @"鞋包",@"手机",@"电器",@"家纺",@"家纺",@"家纺",@"家纺",@"家纺"];
+    self.jxTitleView.titles = @[@"关注的", @"交易过的", @"即将成团",@"商品收藏"];
     self.jxTitleView.titleColorGradientEnabled = NO;
     self.jxTitleView.titleColor = tabbarBlackColor;
     self.jxTitleView.titleSelectedColor = colorF14745;
     self.jxTitleView.titleFont = RegularFont16;
-    self.jxTitleView.titleSelectedFont = RegularFont17;
+    self.jxTitleView.titleSelectedFont = RegularFont16;
     self.jxTitleView.backgroundColor = UIColor.whiteColor;
     
     
@@ -47,17 +49,44 @@
     lineView.indicatorWidth = WidthOfScale(20);
     self.jxTitleView.indicators = @[lineView];
 
+    @weakify(self);
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kTabFollow object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        @strongify(self);
+        self.jxTitleView.defaultSelectedIndex = 0;
+//        self.listContainerView.defaultSelectedIndex = 0;
+        [self.jxTitleView reloadData];
+    }];
 }
 
 
 //返回列表的数量
 - (NSInteger)numberOfListsInlistContainerView:(JXCategoryListContainerView *)listContainerView {
-    return 3;
+    return self.jxTitleView.titles.count;
 }
 //根据下标index返回对应遵从`JXCategoryListContentViewDelegate`协议的列表实例
 - (id<JXCategoryListContentViewDelegate>)listContainerView:(JXCategoryListContainerView *)listContainerView initListForIndex:(NSInteger)index {
-    EFFollowSubViewController *follow =  [[EFFollowSubViewController alloc] initWithType:@""];
-    return follow;
+    switch (index) {
+        case 0:
+        {
+            EFFollowSubViewController *follow =  [[EFFollowSubViewController alloc] initWithType:FollowGZ];
+            return follow;
+        }
+        case 1:
+        {
+            EFFollowSubViewController *follow =  [[EFFollowSubViewController alloc] initWithType:FollowGM];
+            return follow;
+        }
+        case 2:
+        {
+            EFFollowSubViewController *follow =  [[EFFollowSubViewController alloc] initWithType:FollowTuan];
+            return follow;
+        }
+        default:
+        {
+            EFCollectionViewController *follow =  [[EFCollectionViewController alloc] init];
+            return follow;
+        }
+    }
 }
 /*
 #pragma mark - Navigation

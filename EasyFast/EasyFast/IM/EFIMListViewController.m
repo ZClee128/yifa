@@ -8,6 +8,7 @@
 
 #import "EFIMListViewController.h"
 #import "EFIMListTableViewCell.h"
+#import "EFConversationViewController.h"
 
 @interface EFIMListViewController ()
 
@@ -50,6 +51,18 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     return nil;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    TUIKitConfig *config = [TUIKitConfig defaultConfig];
+//    config.avatarType = TAvatarTypeRounded;
+//    TIMConversation *conv = [[TIMManager sharedInstance] getConversation:TIM_C2C receiver:@"abc"];
+//    TUIChatController *vc = [[TUIChatController alloc] initWithConversation:conv];
+    
+    EFConversationViewController *vc = [[EFConversationViewController alloc] init];
+    [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+    
+    }];
 }
 
 @end

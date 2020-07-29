@@ -10,9 +10,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+typedef enum : NSUInteger {
+    FollowGZ, /// 关注
+    FollowGM, /// 已购买
+    FollowTuan, /// 团购
+} Follow;
+
 @interface EFFollowSubViewController : EFBaseTableViewController<JXCategoryListContentViewDelegate>
 
-- (instancetype)initWithType:(id)type;
+- (instancetype)initWithType:(Follow)type;
 @end
 
 NS_ASSUME_NONNULL_END

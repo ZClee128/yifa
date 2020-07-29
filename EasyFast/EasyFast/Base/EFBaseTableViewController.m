@@ -7,6 +7,8 @@
 //
 
 #import "EFBaseTableViewController.h"
+#import "EFRefreshHeader.h"
+#import "EFMeRefreshHeader.h"
 
 @interface EFBaseTableViewController ()
 
@@ -45,11 +47,21 @@
 
 - (void)addRefshDown {
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
-    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    EFRefreshHeader *header = [EFRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     header.lastUpdatedTimeLabel.hidden = YES;
     // 设置header
     self.EFTableView.mj_header = header;
-    [self.EFTableView.mj_header beginRefreshing];
+//    [self.EFTableView.mj_header beginRefreshing];
+    
+}
+
+- (void)addWhiteRefshDown {
+    // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
+    EFMeRefreshHeader *header = [EFMeRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    // 设置header
+    self.EFTableView.mj_header = header;
+//    [self.EFTableView.mj_header beginRefreshing];
     
 }
 

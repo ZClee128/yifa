@@ -44,51 +44,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [EFPlusButton registerPlusButton];
-//    _tabbarheight = 75 + TAB_SAFE_HEIGHT;
-//    [self clearTabBarTopLine];
-//    TabbarBackView *tabBarView = [[TabbarBackView alloc] initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, _tabbarheight)];
-//    tabBarView.backgroundColor = [UIColor whiteColor];
-//    [self.tabBar addSubview:tabBarView];
+//    [EFPlusButton registerPlusButton];
     
 }
-
-//-(void)viewDidLayoutSubviews {
-//    [super viewDidLayoutSubviews];
-//
-//    CGRect frame = self.tabBar.frame;
-//    frame.size.height = _tabbarheight;
-//    frame.origin.y = self.view.frame.size.height - frame.size.height;
-//    self.tabBar.frame = frame;
-//
-//    self.tabBar.barStyle = UIBarStyleDefault;
-//    for (int i=0; i<self.tabBar.items.count; i++) {
-//        UITabBarItem *item = self.tabBar.items[i];
-//        if (i!=2) {
-//            item.imageInsets = UIEdgeInsetsMake(0, 0, WidthOfScale(3), 0);
-//            item.titlePositionAdjustment = UIOffsetMake(0, -3);
-//
-//        }else{
-////            item.imageInsets = UIEdgeInsetsMake(-5, 0, 5, 0);
-////            item.titlePositionAdjustment = UIOffsetMake(0, -3);
-//
-//        }
-//    }
-//}
-
-#pragma mark - 清除底部菜单栏上面自带的线，以便自定义
-//-(void)clearTabBarTopLine{
-//    CGRect rect = CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, UIScreen.mainScreen.bounds.size.height);
-//    UIGraphicsBeginImageContext(rect.size);
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    CGColorRef  clearColor =[[UIColor clearColor] CGColor];
-//    CGContextSetFillColor(context, CGColorGetComponents(clearColor));
-//    CGContextFillRect(context, rect);
-//    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-//    self.tabBar.backgroundImage = img;
-//    self.tabBar.shadowImage = img;
-//}
 
 
 - (NSArray *)viewControllersForTabBar {
@@ -201,7 +159,12 @@
         [UITabBar appearance].backgroundColor = UIColor.whiteColor;
         UIImage *bg =  [UIImage imageWithColor:UIColor.whiteColor size:CGSizeMake(kPHONE_WIDTH, TAB_BAR_HEIGHT) cornerRadius:0];
         [[UITabBar appearance] setBackgroundImage:bg];
+//        [[UITabBar appearance] setShadowImage:[UIImage imageWithColor:RGB16(0xf5f5f5) size:CGSizeMake(kPHONE_WIDTH, 1) cornerRadius:0]];
     }
+    self.tabBar.layer.shadowColor = [UIColor colorWithRed:229/255.0 green:229/255.0 blue:229/255.0 alpha:0.3].CGColor;
+    self.tabBar.layer.shadowOffset = CGSizeMake(0,-3);
+    self.tabBar.layer.shadowOpacity = 1;
+    self.tabBar.layer.shadowRadius = 7;
 }
 
 + (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size {

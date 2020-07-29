@@ -43,9 +43,15 @@
     [self.window makeKeyAndVisible];
     
     [[IQKeyboardManager sharedManager] setEnable:YES];
-    
+//    im
+    [[TUIKit sharedInstance] setupWithAppId:1400405951];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        EFCustomWebViewPool *webViewPool = [EFCustomWebViewPool sharedInstance];
+        [webViewPool prepareWithCount:10];
+    });
     return YES;
 }
+
 
 
 

@@ -123,15 +123,13 @@
 }
 
 
-- (instancetype)initWithFrame:(CGRect)frame headerBlcok:(nonnull void (^)(void))header setUpBlock:(nonnull void (^)(void))setup becomeBlock:(nonnull void (^)(void))become followBlcok:(nonnull void (^)(void))follow seeBlock:(nonnull void (^)(void))see messageBlock:(nonnull void (^)(NSInteger))message vipBlock:(nonnull void (^)(void))vip
+- (instancetype)initWithFrame:(CGRect)frame headerBlcok:(nonnull void (^)(void))header setUpBlock:(nonnull void (^)(void))setup becomeBlock:(nonnull void (^)(void))become messageBlock:(nonnull void (^)(NSInteger))message vipBlock:(nonnull void (^)(void))vip
 {
     self = [super initWithFrame:frame];
     if (self) {
         self.header = header;
         self.setup = setup;
         self.become = become;
-        self.follow = follow;
-        self.see = see;
         self.message = message;
         self.vip = vip;
         [self setUI];
@@ -213,9 +211,11 @@
 }
 
 - (void)click:(UITapGestureRecognizer *)sender {
+    
     if (self.message) {
         self.message(sender.view.tag - 100);
     }
+    
 }
 
 @end

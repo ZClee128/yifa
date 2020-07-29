@@ -1,4 +1,4 @@
-framework module YYKit {
+module YYKit {
   umbrella header "YYKit-umbrella.h"
 
   export *

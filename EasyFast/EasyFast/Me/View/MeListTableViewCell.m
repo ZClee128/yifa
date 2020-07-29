@@ -72,6 +72,16 @@
         make.right.equalTo(@(-WidthOfScale(16)));
         make.centerY.equalTo(self.contentView);
     }];
+    
+    UIView *line = [[UIView alloc] init];
+    [self.contentView addSubview:line];
+    line.backgroundColor = RGB16(0xf2f2f2);
+    [line mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(@(0));
+        make.right.equalTo(@(-WidthOfScale(15)));
+        make.left.equalTo(self.titleLab.mas_left).equalTo(@(0));
+        make.height.equalTo(@(1));
+    }];
 }
 
 - (void)setModel:(id)model {

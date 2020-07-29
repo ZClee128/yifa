@@ -64,6 +64,7 @@
     [self.EFTableView registerClass:[EFNoticeTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFNoticeTableViewCell class])];
     [self.EFTableView registerClass:[EFFastTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFFastTableViewCell class])];
     [self.EFTableView registerClass:[EFGoodsTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFGoodsTableViewCell class])];
+    [self addRefshDown];
 }
 
 - (UIView *)headerView {
@@ -107,7 +108,7 @@
         case 0:
         {
             HotTabTableViewCell *hotCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HotTabTableViewCell class])];
-            [hotCell setCollectData:[@[@1,@2,@3,@4] mutableCopy]];
+            [hotCell setCollectData:[@[@1,@2,@3,@4,@1,@2,@3,@4] mutableCopy]];
             return hotCell;
         }
         case 1:
@@ -134,7 +135,7 @@
     switch (indexPath.section) {
         case 0:
             
-            return WidthOfScale(107.5);
+            return WidthOfScale(208);//WidthOfScale(107.5);
             case 1:
         {
             return WidthOfScale(30);

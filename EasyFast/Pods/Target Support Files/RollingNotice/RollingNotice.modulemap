@@ -1,4 +1,4 @@
-framework module RollingNotice {
+module RollingNotice {
   umbrella header "RollingNotice-umbrella.h"
 
   export *

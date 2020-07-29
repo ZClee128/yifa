@@ -63,11 +63,11 @@ static char kAssociatedObjectKey_openGestureHandle;
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        gk_swizzled_instanceMethod(self, @"viewDidLoad", self);
+        gk_swizzled_instanceMethod(@"gkNav", self, @"viewDidLoad", self);
     });
 }
 
-- (void)gk_viewDidLoad {
+- (void)gkNav_viewDidLoad {
     if (self.gk_openGestureHandle) {
         // 处理特殊控制器
         if ([self isKindOfClass:[UIImagePickerController class]]) return;
@@ -82,7 +82,7 @@ static char kAssociatedObjectKey_openGestureHandle;
         // 注册控制器属性改变通知
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(propertyChangeNotification:) name:GKViewControllerPropertyChangedNotification object:nil];
     }
-    [self gk_viewDidLoad];
+    [self gkNav_viewDidLoad];
 }
 
 - (void)dealloc {
@@ -109,9 +109,16 @@ static char kAssociatedObjectKey_openGestureHandle;
     
     __block BOOL exist = NO;
     [GKConfigure.shiledGuestureVCs enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([vc isKindOfClass:[obj class]]) {
-            exist = YES;
-            *stop = YES;
+        if ([obj isKindOfClass:[UIViewController class]]) {
+            if ([self isKindOfClass:[obj class]]) {
+                exist = YES;
+                *stop = YES;
+            }
+        }else if ([obj isKindOfClass:[NSString class]]) {
+            if ([NSStringFromClass(self.class) isEqualToString:obj]) {
+                exist = YES;
+                *stop = YES;
+            }
         }
     }];
     if (exist) return;

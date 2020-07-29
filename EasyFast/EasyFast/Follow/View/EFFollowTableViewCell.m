@@ -12,15 +12,7 @@
 
 @interface EFFollowTableViewCell ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
-@property (nonatomic,strong)UICollectionView *collect;
-@property (nonatomic,strong)NSMutableArray *data;
 
-@property (nonatomic,strong)UIImageView *headerImageView;
-@property (nonatomic,strong)QMUILabel *shopNameLab;
-@property (nonatomic,strong)QMUILabel *shopClassLab;
-@property (nonatomic,strong)QMUILabel *followLab;
-@property (nonatomic,strong)QMUILabel *adressLab;
-@property (nonatomic,strong)QMUIButton *followBtn;
 
 @end
 

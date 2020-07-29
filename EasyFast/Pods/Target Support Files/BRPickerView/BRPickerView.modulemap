@@ -1,4 +1,4 @@
-framework module BRPickerView {
+module BRPickerView {
   umbrella header "BRPickerView-umbrella.h"
 
   export *

@@ -1,4 +1,4 @@
-framework module BGFMDB {
+module BGFMDB {
   umbrella header "BGFMDB-umbrella.h"
 
   export *

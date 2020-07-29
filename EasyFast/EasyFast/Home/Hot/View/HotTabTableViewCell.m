@@ -80,16 +80,16 @@
 }
 
 - (CGFloat)lineSpaceOfItemsInView:(UIView *)view {
-    return 10;
+    return WidthOfScale(2);
 }
 
 - (CGFloat)columnSpaceOfItemsInView:(UIView *)view {
-    return 10;
+    return WidthOfScale(7.5);
 }
 
 
 - (UIEdgeInsets)edgeInsetsOfItemsInView:(UIView *)view {
-    return UIEdgeInsetsMake(10, 10, 10, 10);
+    return UIEdgeInsetsMake(WidthOfScale(20), WidthOfScale(27), WidthOfScale(20), WidthOfScale(27));
 }
 
 - (UIView *)itemForView:(UIView *)view index:(NSInteger)index {

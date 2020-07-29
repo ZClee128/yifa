@@ -1,6 +1,8 @@
 # Uncomment the next line to define a global platform for your project
+
 platform :ios, '9.0'
-use_frameworks!
+#use_frameworks!
+use_modular_headers!
 inhibit_all_warnings!
 targets = ['EasyFast', 'EasyFast_Dev', 'EasyFast_Test']
 
@@ -35,6 +37,9 @@ targets.each do |t|
     pod 'JCore'
     pod 'JVerification'
     pod 'BRPickerView'
+#    pod 'ISVImageScrollView', '~> 0.2.0'
+    pod 'TXIMSDK_TUIKit_iOS'
+    pod 'BaiduMapKit'
     # Pods for EasyFast
   end
 

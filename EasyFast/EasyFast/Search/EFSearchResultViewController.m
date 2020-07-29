@@ -148,24 +148,21 @@
     [bg addSubview:rightBtn];
     
     [leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(@(0));
-        make.centerY.equalTo(bg);
-        make.width.equalTo(@(kPHONE_WIDTH /3));
-        make.height.equalTo(bg);
+        make.left.equalTo(@(WidthOfScale(14.5)));
+        make.bottom.equalTo(@(-WidthOfScale(10.5)));
+        //        make.height.equalTo(@(WidthOfScale(36.5)));
     }];
     
     [MiddleBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(bg);
-        make.centerY.equalTo(bg);
-        make.width.equalTo(@(kPHONE_WIDTH /3));
-        make.height.equalTo(bg);
+        make.left.equalTo(@(WidthOfScale(178.5)));
+        make.bottom.equalTo(@(-WidthOfScale(10.5)));
+        //        make.height.equalTo(@(WidthOfScale(36.5)));
     }];
     
     [rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(@(0));
-        make.centerY.equalTo(bg);
-        make.width.equalTo(@(kPHONE_WIDTH /3));
-        make.height.equalTo(bg);
+        make.right.equalTo(@(-WidthOfScale(15.5)));
+        make.bottom.equalTo(@(-WidthOfScale(10.5)));
+        //        make.height.equalTo(@(WidthOfScale(36.5)));
     }];
     
     return bg;

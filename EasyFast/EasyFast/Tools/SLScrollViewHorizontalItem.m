@@ -58,9 +58,9 @@
     _itemCounts = 10;
     _lineNumber = 2;
     _columnNumber = 4;
-    _edgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
-    _lineSpace = 10;
-    _columnSpace = 10;
+    _edgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
+    _lineSpace = WidthOfScale(34);
+    _columnSpace = WidthOfScale(7.5);
     _distributionDirection = SLDistributionDirectionHorizontal;
     
     
@@ -111,7 +111,9 @@
     
     NSInteger pageCount = ceilf((CGFloat)self.itemCounts / (self.lineNumber * self.columnNumber));
     
+    self.scrollView.height = height*self.lineNumber;
     self.scrollView.contentSize = CGSizeMake(self.frame.size.width * pageCount, self.frame.size.height);
+    
     
     NSInteger countNumber = 0;
     

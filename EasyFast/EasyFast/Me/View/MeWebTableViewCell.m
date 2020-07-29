@@ -7,40 +7,33 @@
 //
 
 #import "MeWebTableViewCell.h"
+#import "EFBridge.h"
 
 @interface MeWebTableViewCell ()
 
 @property (nonatomic,strong)WKWebView *webView;
 @property (nonatomic,strong)WebViewJavascriptBridge *bridge;
+@property (nonatomic,strong)EFBridge *efbridge;
 
 @end
 
 @implementation MeWebTableViewCell
 
--(WKWebView *)webView
-{
-    if (_webView == nil) {
-        _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) configuration:[[EFWKWebConfig alloc] init]];
-        // UI代理
-        _webView.UIDelegate = self;
-        // 导航代理
-        _webView.navigationDelegate = self;
-        // 是否允许手势左滑返回上一级, 类似导航控制的左滑返回
-        _webView.allowsBackForwardNavigationGestures = YES;
-        // 开启日志
-        [WebViewJavascriptBridge enableLogging];
-        // 给webview建立JS与OjbC的沟通桥梁
-        self.bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView];
-        [self.bridge setWebViewDelegate:self];
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:@"dist"];
-
-        NSURL *fileURL = [NSURL fileURLWithPath:path];
-
-        [_webView loadFileURL:fileURL allowingReadAccessToURL:fileURL];
-
-    }
-    return _webView;
-}
+//-(WKWebView *)webView
+//{
+//    if (_webView == nil) {
+//        _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) configuration:[[EFWKWebConfig alloc] init]];
+//        // UI代理
+//        _webView.UIDelegate = self;
+//        // 导航代理
+//        _webView.navigationDelegate = self;
+//        // 是否允许手势左滑返回上一级, 类似导航控制的左滑返回
+//        _webView.allowsBackForwardNavigationGestures = YES;
+//
+//
+//    }
+//    return _webView;
+//}
 
 
 #pragma wkwebview
@@ -62,10 +55,30 @@
 
 
 - (void)setUI {
+    self.webView = [[EFCustomWebViewPool sharedInstance] getWKWebViewFromPool];
+    self.webView.scrollView.scrollEnabled = NO;
     [self.contentView addSubview:self.webView];
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.contentView);
     }];
+    // 开启日志
+    [WebViewJavascriptBridge enableLogging];
+    // 给webview建立JS与OjbC的沟通桥梁
+    self.bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView];
+    self.efbridge = [[EFBridge alloc] initWithBridge:self.bridge];
+    [self.bridge setWebViewDelegate:self];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.3.23:8080/recom.html"]]]];
+    
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"pay" ofType:@"html" inDirectory:@"dist"];
+//
+//    NSURL *fileURL = [NSURL fileURLWithPath:path];
+//
+//    [_webView loadFileURL:fileURL allowingReadAccessToURL:fileURL];
+}
+
+- (RACSignal *)getCellHeight {
+    
+    return [self.efbridge getMeListHeight];
 }
 
 - (void)awakeFromNib {

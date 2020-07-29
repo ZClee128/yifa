@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign)UITableViewStyle tableViewStyle;
 @property (nonatomic,assign) BOOL  lineHidden;
 - (void)addRefshDown;
+- (void)addWhiteRefshDown;
 - (void)loadNewData;
 - (void)addRefshUp;
 - (void)loadMoreData;
