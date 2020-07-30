@@ -75,9 +75,15 @@
 {
     if (_followBtn == nil) {
         _followBtn = [QMUIButton buttonWithType:(UIButtonTypeCustom)];
-        [_followBtn setTitleColor:colorF14745 forState:(UIControlStateNormal)];
+        [_followBtn setTitleColor:UIColor.whiteColor forState:(UIControlStateNormal)];
+        [_followBtn setTitleColor:colorF14745 forState:(UIControlStateSelected)];
         [_followBtn setTitle:@"关注" forState:(UIControlStateNormal)];
+        [_followBtn setTitle:@"已关注" forState:(UIControlStateSelected)];
         _followBtn.titleLabel.font = MedFont13;
+        [[_followBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(QMUIButton *x) {
+            x.selected = !x.selected;
+        }];
+        
     }
     return _followBtn;
 }
@@ -161,8 +167,12 @@
         make.size.mas_equalTo(CGSizeMake(WidthOfScale(90), WidthOfScale(27)));
     }];
     [self.followBtn layoutIfNeeded];
-    [self.followBtn AddImageRadiusBorderWithColor:colorF14745 lineWidth:1 radius:4];
-    
+    [self.followBtn setBackgroundImage:[UIImage imageWithColor:colorF14745 size:self.followBtn.size] forState:(UIControlStateNormal)];
+    [self.followBtn setBackgroundImage:[UIImage imageWithColor:UIColor.whiteColor size:self.followBtn.size] forState:(UIControlStateSelected)];
+    self.followBtn.layer.borderColor = colorF14745.CGColor;
+    self.followBtn.layer.borderWidth = 1;
+    self.followBtn.layer.cornerRadius = 5;
+    self.followBtn.layer.masksToBounds = YES;
     
     [self.contentView addSubview:self.adressLab];
     [self.adressLab mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -108,7 +108,7 @@
         case 0:
         {
             HotTabTableViewCell *hotCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HotTabTableViewCell class])];
-            [hotCell setCollectData:[@[@1,@2,@3,@4,@1,@2,@3,@4] mutableCopy]];
+            [hotCell setCollectData:[@[@1,@2,@3,@4,@1,@2,@3,@4,@1,@2,@3,@4] mutableCopy]];
             return hotCell;
         }
         case 1:

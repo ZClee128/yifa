@@ -33,6 +33,12 @@
 /** 排布方向 */
 @property (assign, nonatomic) SLDistributionDirection distributionDirection;
 
+
+/** 指示器背景 */
+@property (strong, nonatomic) UIView *indicatorBackView;
+/** 指示器 */
+@property (strong, nonatomic) UIView *indicatorView;
+
 @end
 
 @implementation SLScrollViewHorizontalItem
@@ -106,12 +112,16 @@
     
     [self addSubview:self.scrollView];
     
+    [self addSubview:self.indicatorBackView];
+    self.indicatorBackView.center = CGPointMake(self.center.x, CGRectGetMaxY(self.scrollView.frame) - WidthOfScale(20));
+    
+    [self.indicatorBackView addSubview:self.indicatorView];
+    
     CGFloat width = (self.frame.size.width - (self.edgeInsets.left + self.edgeInsets.right + self.lineSpace * (self.columnNumber - 1))) / self.columnNumber;
     CGFloat height = (self.frame.size.height - (self.edgeInsets.top + self.edgeInsets.bottom + self.lineSpace * (self.lineNumber - 1))) / self.lineNumber;
     
     NSInteger pageCount = ceilf((CGFloat)self.itemCounts / (self.lineNumber * self.columnNumber));
     
-    self.scrollView.height = height*self.lineNumber;
     self.scrollView.contentSize = CGSizeMake(self.frame.size.width * pageCount, self.frame.size.height);
     
     
@@ -230,10 +240,32 @@
 
 #pragma mark -- UIScrollViewDelegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    NSInteger n = scrollView.contentOffset.x / scrollView.bounds.size.width;
-    self.pageControl.currentPage = n;
+//    NSInteger n = scrollView.contentOffset.x / scrollView.bounds.size.width;
+//    self.pageControl.currentPage = n;
+    CGRect frame = self.indicatorView.frame;
+    frame.origin.x = scrollView.contentOffset.x * ( WidthOfScale(50) -  self.indicatorBackView.width/2) / (scrollView.contentSize.width - self.frame.size.width);
+    self.indicatorView.frame = frame;
 }
 
+- (UIView *)indicatorBackView {
+    if (!_indicatorBackView) {
+        _indicatorBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WidthOfScale(50), WidthOfScale(4))];
+        _indicatorBackView.backgroundColor = colorEFEFEF;
+        _indicatorBackView.layer.cornerRadius = WidthOfScale(4) / 2;
+        _indicatorBackView.layer.masksToBounds = YES;
+    }
+    return _indicatorBackView;
+}
+
+- (UIView *)indicatorView {
+    if (!_indicatorView) {
+        _indicatorView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.indicatorBackView.width/2, WidthOfScale(4))];
+        _indicatorView.backgroundColor = colorF14745;
+        _indicatorView.layer.cornerRadius = WidthOfScale(4) / 2;
+        _indicatorView.layer.masksToBounds = YES;
+    }
+    return _indicatorView;
+}
 
 
 @end

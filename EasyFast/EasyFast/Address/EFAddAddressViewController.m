@@ -9,6 +9,7 @@
 #import "EFAddAddressViewController.h"
 #import <BRPickerView/BRPickerView.h>
 #import "EFPhoneTableViewCell.h"
+#import "EFMapViewController.h"
 
 @interface EFAddAddressViewController ()
 
@@ -67,6 +68,7 @@
     EFPhoneTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFPhoneTableViewCell class])];
     [cell setModel:self.EFData[indexPath.row]];
     cell.phoneTextField.rightViewMode = UITextFieldViewModeAlways;
+    cell.phoneTextField.maximumTextLength = NSUIntegerMax;
     switch (indexPath.row) {
         case 0:
         {
@@ -83,6 +85,7 @@
         {
             cell.phoneTextField.placeholder = @"请输入手机号";
             cell.phoneTextField.keyboardType = UIKeyboardTypeNumberPad;
+            cell.phoneTextField.maximumTextLength = 11;
             cell.phoneTextField.rightView = nil;
             cell.phoneTextField.enabled = YES;
             cell.TextValue = ^(NSString * _Nonnull text) {
@@ -104,8 +107,16 @@
             cell.phoneTextField.rightView = [[UIImageView alloc] initWithImage:UIImageMake(@"dizhi")];
             cell.phoneTextField.enabled = YES;
             cell.phoneTextField.keyboardType = UIKeyboardTypeDefault;
+            @weakify(self);
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithActionBlock:^(id  _Nonnull sender) {
-                XYLog(@"111");
+                @strongify(self);
+                EFMapViewController *map = [[EFMapViewController alloc] init];
+                [self.navigationController qmui_pushViewController:map animated:YES completion:^{
+                    
+                }];
+                map.seletCity = ^(cityModel * _Nonnull model) {
+                    cell.phoneTextField.text = [NSString stringWithFormat:@"%@%@",model.address,model.name];
+                };
             }];
             cell.phoneTextField.rightView.userInteractionEnabled = YES;
             [cell.phoneTextField.rightView addGestureRecognizer:tap];

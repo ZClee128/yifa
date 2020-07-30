@@ -15,6 +15,8 @@
 @property (nonatomic,strong)WebViewJavascriptBridge *bridge;
 @property (nonatomic,strong)NSString *url;
 @property (nonatomic,strong)NSString *Webtitle;
+
+@property (nonatomic,strong)EFBridge *efbridge;
 @end
 
 @implementation EFBaseWebViewController
@@ -66,19 +68,20 @@
     // 给webview建立JS与OjbC的沟通桥梁
     self.bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView];
     [self.bridge setWebViewDelegate:self];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.3.23:8080/pay.html"]]]];
-//    NSString *path = [[NSBundle mainBundle] pathForResource:self.url ofType:@"html" inDirectory:@"dist"];
-//
-//    NSURL *fileURL = [NSURL fileURLWithPath:path];
+//    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.3.23:8080"]]];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:@"dist"];
+    NSURL *fileURL = [NSURL fileURLWithPath:path];
 
-//    [_webView loadFileURL:fileURL allowingReadAccessToURL:fileURL];
+    [_webView loadFileURL:fileURL allowingReadAccessToURL:fileURL];
     
     [self getFun];
 }
 
 - (void)getFun {
-    EFBridge *bridge = [[EFBridge alloc] initWithBridge:self.bridge];
-    [bridge GetNavHeight];
+    self.efbridge = [[EFBridge alloc] initWithBridge:self.bridge];
+    [self.efbridge GetNavHeight];
+    [self.efbridge goTo];
+   
 }
 
 
@@ -96,7 +99,7 @@
 }
     // 页面加载完成之后调用
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
-    
+     
 }
 
 @end

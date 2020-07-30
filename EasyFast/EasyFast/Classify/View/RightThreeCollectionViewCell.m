@@ -137,7 +137,7 @@
     {
         if (self.returnSelectItemBlock)
         {
-//            self.returnSelectItemBlock(model.idField);
+            self.returnSelectItemBlock(@"");
         }
     }
 }

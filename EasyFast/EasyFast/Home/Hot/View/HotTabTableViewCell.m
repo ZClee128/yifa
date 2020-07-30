@@ -26,13 +26,13 @@
     return _data;
 }
 
--(SLScrollViewHorizontalItem *)scrollViewHorizontalItem
-{
-    if (_scrollViewHorizontalItem == nil) {
-        _scrollViewHorizontalItem = [[SLScrollViewHorizontalItem alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, WidthOfScale(107.5)) delegate:self];
-    }
-    return _scrollViewHorizontalItem;
-}
+//-(SLScrollViewHorizontalItem *)scrollViewHorizontalItem
+//{
+//    if (_scrollViewHorizontalItem == nil) {
+//
+//    }
+//    return _scrollViewHorizontalItem;
+//}
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
@@ -43,11 +43,15 @@
 
 - (void)setUI {
     self.contentView.backgroundColor = colorfafafa;
-    [self.contentView addSubview:self.scrollViewHorizontalItem];
+    
 }
 
 - (void)setCollectData:(NSMutableArray *)data {
     self.data = data;
+    if (self.scrollViewHorizontalItem == nil) {
+        self.scrollViewHorizontalItem = [[SLScrollViewHorizontalItem alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, self.data.count > 4 ? (self.scrollViewHorizontalItem.height = WidthOfScale(208)) : (self.scrollViewHorizontalItem.height = WidthOfScale(107.5))) delegate:self];
+        [self.contentView addSubview:self.scrollViewHorizontalItem];
+    }
     [self.scrollViewHorizontalItem updateView];
 }
 
@@ -80,7 +84,7 @@
 }
 
 - (CGFloat)lineSpaceOfItemsInView:(UIView *)view {
-    return WidthOfScale(2);
+    return WidthOfScale(34);
 }
 
 - (CGFloat)columnSpaceOfItemsInView:(UIView *)view {
@@ -89,7 +93,7 @@
 
 
 - (UIEdgeInsets)edgeInsetsOfItemsInView:(UIView *)view {
-    return UIEdgeInsetsMake(WidthOfScale(20), WidthOfScale(27), WidthOfScale(20), WidthOfScale(27));
+    return UIEdgeInsetsMake(WidthOfScale(20), WidthOfScale(27), WidthOfScale(34.5), WidthOfScale(27));
 }
 
 - (UIView *)itemForView:(UIView *)view index:(NSInteger)index {

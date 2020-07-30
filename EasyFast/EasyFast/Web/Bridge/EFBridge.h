@@ -18,6 +18,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)GetNavHeight;
 // 获取我的页面底部列表高度
 - (RACSignal *)getMeListHeight;
+//返回
+- (void)goback;
+//分享
+- (void)share;
+
+- (void)goTo;
 @end
 
 NS_ASSUME_NONNULL_END

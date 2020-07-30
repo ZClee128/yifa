@@ -95,13 +95,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.EFTableView.frame = CGRectMake(0, 0, kPHONE_WIDTH, kPHONE_HEIGHT - TAB_BAR_HEIGHT);
-    self.gk_navTitle = @"xxxxxxx";
+    self.gk_navTitle = @"昵称";
     self.gk_navigationBar.alpha = 0;
     self.EFTableView.tableHeaderView = self.headerView;
     [self.EFTableView registerClass:[MeTabTableViewCell class] forCellReuseIdentifier:NSStringFromClass([MeTabTableViewCell class])];
     [self.EFTableView registerClass:[MeListTableViewCell class] forCellReuseIdentifier:NSStringFromClass([MeListTableViewCell class])];
     [self.EFTableView registerClass:[MeWebTableViewCell class] forCellReuseIdentifier:NSStringFromClass([MeWebTableViewCell class])];
-    self.list = @[@{@"title":@"我的支付",@"icon":@"pay"},@{@"title":@"收货地址管理",@"icon":@"address"},
+    self.list = @[/*@{@"title":@"我的支付",@"icon":@"pay"},*/@{@"title":@"收货地址管理",@"icon":@"address"},
     @{@"title":@"账号安全",@"icon":@"safe"},@{@"title":@"帮助中心",@"icon":@"help"}];
     [self addWhiteRefshDown];
     
@@ -229,21 +229,23 @@
     if (indexPath.section == 2) {
         switch (indexPath.row) {
             case 0:
-                
-                break;
-               case 1:
             {
                 EFAddressViewController *VC = [[EFAddressViewController alloc] init];
                 VC.hidesBottomBarWhenPushed = YES;
                 [self.navigationController qmui_pushViewController:VC animated:YES completion:^{
                     
                 }];
-                break;
             }
-                case 2:
+                break;
+               case 1:
             {
+                
                 break;
             }
+//                case 2:
+//            {
+//                break;
+//            }
             default:
             {
                 EFHelpViewController *VC = [[EFHelpViewController alloc] init];

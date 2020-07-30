@@ -58,5 +58,9 @@
     <string>需要在加载位置信息的时候访问位置</string>
     <key>NSLocationUsageDescription</key>
     <string>在获取附近店铺的时候需要访问您的位置</string>
+    <key>CFBundleDisplayName</key>
+    <string>EasyFast</string>
+    <key>UIUserInterfaceStyle</key>
+    <string>Light</string>
 </dict>
 </plist>

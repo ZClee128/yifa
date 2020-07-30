@@ -1,5 +1,6 @@
 # Uncomment the next line to define a global platform for your project
-
+#source 'https://github.com/CocoaPods/Specs.git'
+source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 platform :ios, '9.0'
 #use_frameworks!
 use_modular_headers!
@@ -39,7 +40,8 @@ targets.each do |t|
     pod 'BRPickerView'
 #    pod 'ISVImageScrollView', '~> 0.2.0'
     pod 'TXIMSDK_TUIKit_iOS'
-    pod 'BaiduMapKit'
+    pod 'BaiduMapKit','~>2.10.2'
+#    pod 'BMKLocationKit'
     # Pods for EasyFast
   end
 

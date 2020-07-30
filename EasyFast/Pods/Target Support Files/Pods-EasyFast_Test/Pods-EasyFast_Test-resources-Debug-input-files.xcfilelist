@@ -1,6 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-EasyFast_Test/Pods-EasyFast_Test-resources.sh
 ${PODS_ROOT}/BRPickerView/BRPickerView/Base/BRPickerView.bundle
-${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/mapapi.bundle
+${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle
 ${PODS_ROOT}/DateTools/DateTools/DateTools/DateTools.bundle
 ${PODS_ROOT}/GKNavigationBar/GKNavigationBar/GKNavigationBar.bundle
 ${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle

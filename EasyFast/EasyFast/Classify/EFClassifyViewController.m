@@ -10,6 +10,7 @@
 #import "EFClassifyModel.h"
 #import "LeftTableViewCell.h"
 #import "RightThreeCollectionViewCell.h"
+#import "EFClassDetailViewController.h"
 
 @interface EFClassifyViewController ()<UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -109,9 +110,16 @@
     [cell getCollectionHeight:(NSMutableArray *)[self.rightDataArray objectAtIndex:indexPath.section]];
     [cell reloadData];
     
+    @weakify(self);
     [cell selectBlock:^(NSString *selectItemId) {
         NSLog(@"pid : %@", self.currentSelectModel.idField);
         NSLog(@"选中id : %@", selectItemId);
+        @strongify(self);
+        EFClassDetailViewController *vc = [[EFClassDetailViewController alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+            
+        }];
     }];
     return cell;
 }

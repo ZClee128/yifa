@@ -9,12 +9,16 @@
 #import "AppDelegate.h"
 #import "EFBaseTabBarViewController.h"
 #import "EFOneLoginViewController.h"
+#import <BaiduMapAPI_Map/BMKMapView.h>
 @interface AppDelegate ()
 
+@property (nonatomic,strong)BMKMapManager *mapManager;
 @end
 
 @implementation AppDelegate
 
+//21227 开发im证书id
+//21226 正式im证书id
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[FMARCNetwork sharedInstance] setupBaseURL:[FMARCNetwork testURL:[[HttpManager defaultManager] envBaseHost]]];
@@ -45,6 +49,16 @@
     [[IQKeyboardManager sharedManager] setEnable:YES];
 //    im
     [[TUIKit sharedInstance] setupWithAppId:1400405951];
+    
+    // 要使用百度地图，请先启动BaiduMapManager
+    _mapManager = [[BMKMapManager alloc]init];
+    // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
+    
+    BOOL ret = [_mapManager start:@"brtAQXQtPD73s1j0mycvfeVosv2eRRlX"  generalDelegate:nil];
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         EFCustomWebViewPool *webViewPool = [EFCustomWebViewPool sharedInstance];
         [webViewPool prepareWithCount:10];

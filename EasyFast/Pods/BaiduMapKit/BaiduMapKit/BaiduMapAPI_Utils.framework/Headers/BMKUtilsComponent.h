@@ -15,4 +15,3 @@
 #import "BMKOpenRouteOption.h"
 #import "BMKFavPoiManager.h"
 #import "BMKUtilsVersion.h"
-#import "BMKOpenPanorama.h"

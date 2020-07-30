@@ -22,6 +22,12 @@
 		0C4BAFA824D117550037CDCF /* EFConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAFA724D117550037CDCF /* EFConversationViewController.m */; };
 		0C4BAFA924D117550037CDCF /* EFConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAFA724D117550037CDCF /* EFConversationViewController.m */; };
 		0C4BAFAA24D117550037CDCF /* EFConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAFA724D117550037CDCF /* EFConversationViewController.m */; };
+		0C4BAFD924D26A640037CDCF /* EFMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAFD824D26A640037CDCF /* EFMapViewController.m */; };
+		0C4BAFDA24D26A640037CDCF /* EFMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAFD824D26A640037CDCF /* EFMapViewController.m */; };
+		0C4BAFDB24D26A640037CDCF /* EFMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAFD824D26A640037CDCF /* EFMapViewController.m */; };
+		0C4BAFDF24D26B2D0037CDCF /* cityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAFDE24D26B2D0037CDCF /* cityModel.m */; };
+		0C4BAFE024D26B2D0037CDCF /* cityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAFDE24D26B2D0037CDCF /* cityModel.m */; };
+		0C4BAFE124D26B2D0037CDCF /* cityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAFDE24D26B2D0037CDCF /* cityModel.m */; };
 		0C6CB56A24CE688300471A8D /* LRAnimationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56924CE688300471A8D /* LRAnimationProgress.m */; };
 		0C6CB56B24CE688300471A8D /* LRAnimationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56924CE688300471A8D /* LRAnimationProgress.m */; };
 		0C6CB56C24CE688300471A8D /* LRAnimationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56924CE688300471A8D /* LRAnimationProgress.m */; };
@@ -118,6 +124,9 @@
 		0CCEC49724CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC49624CAD13900976D24 /* EFTimeAxisTableViewCell.m */; };
 		0CCEC49824CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC49624CAD13900976D24 /* EFTimeAxisTableViewCell.m */; };
 		0CCEC49924CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC49624CAD13900976D24 /* EFTimeAxisTableViewCell.m */; };
+		0CE285CA24D2B80700AAC334 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0CE285C924D2B80700AAC334 /* dist */; };
+		0CE285CB24D2B80700AAC334 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0CE285C924D2B80700AAC334 /* dist */; };
+		0CE285CC24D2B80700AAC334 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0CE285C924D2B80700AAC334 /* dist */; };
 		3DD6FC3B30071BBFC7670DF0 /* libPods-EasyFast_Test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0E9DAC2B83A38562800432 /* libPods-EasyFast_Test.a */; };
 		84187CA424C05D0200ED3F96 /* MeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84187CA324C05D0200ED3F96 /* MeHeaderView.m */; };
 		84187CA524C05D0200ED3F96 /* MeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84187CA324C05D0200ED3F96 /* MeHeaderView.m */; };
@@ -446,9 +455,6 @@
 		84B2437D24C8425700E9967C /* ThreeCollectionViewCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2437C24C8425700E9967C /* ThreeCollectionViewCellItem.m */; };
 		84B2437E24C8425700E9967C /* ThreeCollectionViewCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2437C24C8425700E9967C /* ThreeCollectionViewCellItem.m */; };
 		84B2437F24C8425700E9967C /* ThreeCollectionViewCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2437C24C8425700E9967C /* ThreeCollectionViewCellItem.m */; };
-		84B2438224C8523D00E9967C /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 84B2438124C8523C00E9967C /* dist */; };
-		84B2438324C8523D00E9967C /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 84B2438124C8523C00E9967C /* dist */; };
-		84B2438424C8523D00E9967C /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 84B2438124C8523C00E9967C /* dist */; };
 		A2EF968E01C934D5AA19965D /* libPods-EasyFast_Dev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D88C6799F2691F0B67B541 /* libPods-EasyFast_Dev.a */; };
 		A5F43C7BD361B73903F6C113 /* libPods-EasyFast.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E09AFAC86DE93F633083A99 /* libPods-EasyFast.a */; };
 /* End PBXBuildFile section */
@@ -465,6 +471,11 @@
 		0C4BAFA224D10A2D0037CDCF /* EFCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFCollectionViewController.m; sourceTree = "<group>"; };
 		0C4BAFA624D117550037CDCF /* EFConversationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFConversationViewController.h; sourceTree = "<group>"; };
 		0C4BAFA724D117550037CDCF /* EFConversationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFConversationViewController.m; sourceTree = "<group>"; };
+		0C4BAFD724D26A640037CDCF /* EFMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFMapViewController.h; sourceTree = "<group>"; };
+		0C4BAFD824D26A640037CDCF /* EFMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFMapViewController.m; sourceTree = "<group>"; };
+		0C4BAFDD24D26B2D0037CDCF /* cityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cityModel.h; sourceTree = "<group>"; };
+		0C4BAFDE24D26B2D0037CDCF /* cityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cityModel.m; sourceTree = "<group>"; };
+		0C4BB04A24D2A9E60037CDCF /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		0C6CB56824CE688300471A8D /* LRAnimationProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRAnimationProgress.h; sourceTree = "<group>"; };
 		0C6CB56924CE688300471A8D /* LRAnimationProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRAnimationProgress.m; sourceTree = "<group>"; };
 		0C6CB56D24CE7A1400471A8D /* EFOneLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOneLoginViewController.h; sourceTree = "<group>"; };
@@ -529,6 +540,7 @@
 		0CCEC49124CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFLogisticsTwoLabTableViewCell.m; sourceTree = "<group>"; };
 		0CCEC49524CAD13900976D24 /* EFTimeAxisTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFTimeAxisTableViewCell.h; sourceTree = "<group>"; };
 		0CCEC49624CAD13900976D24 /* EFTimeAxisTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFTimeAxisTableViewCell.m; sourceTree = "<group>"; };
+		0CE285C924D2B80700AAC334 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dist; sourceTree = "<group>"; };
 		114B5F2459F8FFC945E98BD8 /* Pods-EasyFast_Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast_Dev.debug.xcconfig"; path = "Target Support Files/Pods-EasyFast_Dev/Pods-EasyFast_Dev.debug.xcconfig"; sourceTree = "<group>"; };
 		1304519AEDDDA76585AAC941 /* Pods-EasyFast_Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast_Test.release.xcconfig"; path = "Target Support Files/Pods-EasyFast_Test/Pods-EasyFast_Test.release.xcconfig"; sourceTree = "<group>"; };
 		182D3CC0502F099CA834B4CB /* Pods-EasyFast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast.debug.xcconfig"; path = "Target Support Files/Pods-EasyFast/Pods-EasyFast.debug.xcconfig"; sourceTree = "<group>"; };
@@ -759,7 +771,6 @@
 		84B2437724C8406C00E9967C /* RightThreeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RightThreeCollectionViewCell.m; sourceTree = "<group>"; };
 		84B2437B24C8425700E9967C /* ThreeCollectionViewCellItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreeCollectionViewCellItem.h; sourceTree = "<group>"; };
 		84B2437C24C8425700E9967C /* ThreeCollectionViewCellItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreeCollectionViewCellItem.m; sourceTree = "<group>"; };
-		84B2438124C8523C00E9967C /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dist; sourceTree = "<group>"; };
 		9B0E9DAC2B83A38562800432 /* libPods-EasyFast_Test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EasyFast_Test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA53EB76E1528E46E8ADF203 /* Pods-EasyFast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast.release.xcconfig"; path = "Target Support Files/Pods-EasyFast/Pods-EasyFast.release.xcconfig"; sourceTree = "<group>"; };
 		FF8E5FE1C44408BDAF6A9C97 /* Pods-EasyFast_Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast_Test.debug.xcconfig"; path = "Target Support Files/Pods-EasyFast_Test/Pods-EasyFast_Test.debug.xcconfig"; sourceTree = "<group>"; };
@@ -800,6 +811,15 @@
 				0C4BAF9824D021440037CDCF /* EFBridge.m */,
 			);
 			path = Bridge;
+			sourceTree = "<group>";
+		};
+		0C4BAFDC24D26B1D0037CDCF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0C4BAFDD24D26B2D0037CDCF /* cityModel.h */,
+				0C4BAFDE24D26B2D0037CDCF /* cityModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		0C6CB5B924CFBE1C00471A8D /* WebViewPool */ = {
@@ -852,6 +872,7 @@
 		450A170569CB954BCEB29555 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0C4BB04A24D2A9E60037CDCF /* libc++.tbd */,
 				6E09AFAC86DE93F633083A99 /* libPods-EasyFast.a */,
 				00D88C6799F2691F0B67B541 /* libPods-EasyFast_Dev.a */,
 				9B0E9DAC2B83A38562800432 /* libPods-EasyFast_Test.a */,
@@ -947,9 +968,9 @@
 		84760F9924C196FF002B34E4 /* Web */ = {
 			isa = PBXGroup;
 			children = (
+				0CE285C924D2B80700AAC334 /* dist */,
 				0C4BAF9624D0212E0037CDCF /* Bridge */,
 				0C6CB5B924CFBE1C00471A8D /* WebViewPool */,
-				84B2438124C8523C00E9967C /* dist */,
 				8476102B24C52BDC002B34E4 /* H5Manager.h */,
 				8476102C24C52BDC002B34E4 /* H5Manager.m */,
 			);
@@ -994,11 +1015,14 @@
 		8476106424C58848002B34E4 /* Address */ = {
 			isa = PBXGroup;
 			children = (
+				0C4BAFDC24D26B1D0037CDCF /* Model */,
 				8476106F24C58B31002B34E4 /* View */,
 				8476106524C58861002B34E4 /* EFAddressViewController.h */,
 				8476106624C58861002B34E4 /* EFAddressViewController.m */,
 				0C6CB5B424CEDCAD00471A8D /* EFAddAddressViewController.h */,
 				0C6CB5B524CEDCAD00471A8D /* EFAddAddressViewController.m */,
+				0C4BAFD724D26A640037CDCF /* EFMapViewController.h */,
+				0C4BAFD824D26A640037CDCF /* EFMapViewController.m */,
 			);
 			path = Address;
 			sourceTree = "<group>";
@@ -1578,7 +1602,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84B2438224C8523D00E9967C /* dist in Resources */,
+				0CE285CA24D2B80700AAC334 /* dist in Resources */,
 				84A8208624B6C62300EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8208324B6C62300EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -1588,7 +1612,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84B2438324C8523D00E9967C /* dist in Resources */,
+				0CE285CB24D2B80700AAC334 /* dist in Resources */,
 				84A8211324BC4F5400EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8211424BC4F5400EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -1598,7 +1622,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84B2438424C8523D00E9967C /* dist in Resources */,
+				0CE285CC24D2B80700AAC334 /* dist in Resources */,
 				84A8213724BC513500EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8213824BC513500EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -1790,6 +1814,7 @@
 				8476104D24C573B1002B34E4 /* TuanListDetailViewController.m in Sources */,
 				847610B424C6C209002B34E4 /* EFEditPasswordViewController.m in Sources */,
 				0CCEC49224CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.m in Sources */,
+				0C4BAFDF24D26B2D0037CDCF /* cityModel.m in Sources */,
 				8476105C24C57E81002B34E4 /* TuanOtherGoodsView.m in Sources */,
 				8476104324C54B72002B34E4 /* TuanPeopleView.m in Sources */,
 				0C4BAF9924D021440037CDCF /* EFBridge.m in Sources */,
@@ -1857,6 +1882,7 @@
 				8476109224C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */,
 				8476103924C54200002B34E4 /* TuanGoodsView.m in Sources */,
 				8476118824C6FCF8002B34E4 /* EFMeDataViewController.m in Sources */,
+				0C4BAFD924D26A640037CDCF /* EFMapViewController.m in Sources */,
 				0C6CB56F24CE7A1400471A8D /* EFOneLoginViewController.m in Sources */,
 				8476107D24C5A06F002B34E4 /* EFSetUpViewController.m in Sources */,
 				84760F9124C17AC1002B34E4 /* NSString+NSMutableAttributedString.m in Sources */,
@@ -1941,6 +1967,7 @@
 				8476104E24C573B1002B34E4 /* TuanListDetailViewController.m in Sources */,
 				847610B524C6C209002B34E4 /* EFEditPasswordViewController.m in Sources */,
 				0CCEC49324CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.m in Sources */,
+				0C4BAFE024D26B2D0037CDCF /* cityModel.m in Sources */,
 				8476105D24C57E81002B34E4 /* TuanOtherGoodsView.m in Sources */,
 				8476104424C54B72002B34E4 /* TuanPeopleView.m in Sources */,
 				0C4BAF9A24D021440037CDCF /* EFBridge.m in Sources */,
@@ -2008,6 +2035,7 @@
 				8476109324C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */,
 				8476103A24C54200002B34E4 /* TuanGoodsView.m in Sources */,
 				8476118924C6FCF8002B34E4 /* EFMeDataViewController.m in Sources */,
+				0C4BAFDA24D26A640037CDCF /* EFMapViewController.m in Sources */,
 				0C6CB57024CE7A1400471A8D /* EFOneLoginViewController.m in Sources */,
 				8476107E24C5A06F002B34E4 /* EFSetUpViewController.m in Sources */,
 				84760F9224C17AC1002B34E4 /* NSString+NSMutableAttributedString.m in Sources */,
@@ -2092,6 +2120,7 @@
 				8476104F24C573B1002B34E4 /* TuanListDetailViewController.m in Sources */,
 				847610B624C6C209002B34E4 /* EFEditPasswordViewController.m in Sources */,
 				0CCEC49424CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.m in Sources */,
+				0C4BAFE124D26B2D0037CDCF /* cityModel.m in Sources */,
 				8476105E24C57E81002B34E4 /* TuanOtherGoodsView.m in Sources */,
 				8476104524C54B72002B34E4 /* TuanPeopleView.m in Sources */,
 				0C4BAF9B24D021440037CDCF /* EFBridge.m in Sources */,
@@ -2159,6 +2188,7 @@
 				8476109424C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */,
 				8476103B24C54200002B34E4 /* TuanGoodsView.m in Sources */,
 				8476118A24C6FCF8002B34E4 /* EFMeDataViewController.m in Sources */,
+				0C4BAFDB24D26A640037CDCF /* EFMapViewController.m in Sources */,
 				0C6CB57124CE7A1400471A8D /* EFOneLoginViewController.m in Sources */,
 				8476107F24C5A06F002B34E4 /* EFSetUpViewController.m in Sources */,
 				84760F9324C17AC1002B34E4 /* NSString+NSMutableAttributedString.m in Sources */,
@@ -2362,6 +2392,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B2593LDC7H;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EasyFast/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -2380,6 +2412,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "-Wno-ambiguous-macro ";
 			};
 			name = Debug;
 		};
@@ -2390,6 +2423,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B2593LDC7H;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EasyFast/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -2408,6 +2443,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "-Wno-ambiguous-macro ";
 			};
 			name = Release;
 		};
@@ -2419,6 +2455,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VB37Y62JDE;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EasyFast/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -2437,6 +2474,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "-Wno-ambiguous-macro ";
 			};
 			name = Debug;
 		};
@@ -2448,6 +2486,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VB37Y62JDE;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EasyFast/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -2466,6 +2505,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "-Wno-ambiguous-macro ";
 			};
 			name = Release;
 		};
@@ -2476,6 +2516,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Test;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EasyFast/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -2494,6 +2535,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "-Wno-ambiguous-macro ";
 			};
 			name = Debug;
 		};
@@ -2504,6 +2546,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_Test;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/EasyFast/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -2522,6 +2565,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "-Wno-ambiguous-macro ";
 			};
 			name = Release;
 		};

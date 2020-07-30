@@ -67,7 +67,7 @@
 
 //返回列表的数量
 - (NSInteger)numberOfListsInlistContainerView:(JXCategoryListContainerView *)listContainerView {
-    return 3;
+    return self.jxTitleView.titles.count;
 }
 //根据下标index返回对应遵从`JXCategoryListContentViewDelegate`协议的列表实例
 - (id<JXCategoryListContentViewDelegate>)listContainerView:(JXCategoryListContainerView *)listContainerView initListForIndex:(NSInteger)index {

@@ -44,7 +44,27 @@
     }];
 }
 
+- (void)goback {
+    [self.bridge registerHandler:@"goback" handler:^(id data, WVJBResponseCallback responseCallback) {
+        [[UIViewController getCurrentVC].navigationController qmui_popViewControllerAnimated:YES completion:^{
+            
+        }];
+    }];
+}
 
+- (void)share {
+    [self.bridge registerHandler:@"share" handler:^(id data, WVJBResponseCallback responseCallback) {
+        [[UIViewController getCurrentVC].navigationController qmui_popViewControllerAnimated:YES completion:^{
+            
+        }];
+    }];
+}
+
+- (void)goTo {
+    [self.bridge callHandler:@"goTo" data:@"detail" responseCallback:^(id responseData) {
+        XYLog(@">>>>>>%@",responseData);
+    }];
+}
 - (NSDictionary *)identifyData:(id)data{
     NSDictionary * dict = [[NSDictionary alloc] init];
     if ([data isKindOfClass:[NSString class]]) {
