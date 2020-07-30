@@ -21,6 +21,7 @@
     if (_goods == nil) {
         _goods = [[UIImageView alloc] init];
         _goods.backgroundColor = colorAEAEAE;
+        _goods.image = UIImageMake(@"gg");
     }
     return _goods;
 }

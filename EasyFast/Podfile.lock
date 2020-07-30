@@ -94,6 +94,8 @@ PODS:
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
   - YZTagList (1.0)
+  - ZLPhotoBrowser (3.2.0):
+    - SDWebImage
 
 DEPENDENCIES:
   - AFNetworking
@@ -126,10 +128,12 @@ DEPENDENCIES:
   - WebViewJavascriptBridge (~> 6.0)
   - YYKit
   - YZTagList
+  - ZLPhotoBrowser
 
 SPEC REPOS:
   https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
     - BaiduMapKit
+    - ZLPhotoBrowser
   trunk:
     - AFNetworking
     - BGFMDB
@@ -192,7 +196,8 @@ SPEC CHECKSUMS:
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   YZTagList: 43dc1909e38d88124e3256ffc51c62cc904d8240
+  ZLPhotoBrowser: 3748fdbeb2b28961c2495d15131dbf413082e1b9
 
-PODFILE CHECKSUM: f85d526ba98e3d60e803cf10c512ef71905f3ed0
+PODFILE CHECKSUM: 17c025d2dc980d3471320547f65cc080d0defa2a
 
 COCOAPODS: 1.9.3

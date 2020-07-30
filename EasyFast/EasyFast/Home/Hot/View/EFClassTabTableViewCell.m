@@ -30,9 +30,9 @@
     if (_collect == nil) {
         UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
         [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
-        flow.minimumLineSpacing = WidthOfScale(10);
-        flow.minimumInteritemSpacing = WidthOfScale(15);
-        flow.itemSize = CGSizeCeil(CGSizeMake(WidthOfScale((375 - 71)/5), WidthOfScale(165.5/2)));
+        flow.minimumLineSpacing = WidthOfScale(15);
+        flow.minimumInteritemSpacing = WidthOfScale(2);
+        flow.itemSize = CGSizeFloor(CGSizeMake(WidthOfScale((375 - 71)/5), WidthOfScale(165.5/2)));
         _collect = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, WidthOfScale(211.5)) collectionViewLayout:flow];
         _collect.backgroundColor = [UIColor clearColor];
         _collect.delegate = self;
@@ -74,7 +74,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     HotTabCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([HotTabCollectionViewCell class]) forIndexPath:indexPath];
-    [cell setModel:@""];
+    [cell setModel:self.data[indexPath.item]];
     return cell;
 }
 

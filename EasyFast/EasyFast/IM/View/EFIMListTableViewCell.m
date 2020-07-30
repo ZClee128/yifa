@@ -25,6 +25,7 @@
     if (_headerImageView == nil) {
         _headerImageView = [[UIImageView alloc] init];
         _headerImageView.backgroundColor = colorEFEFEF;
+        
     }
     return _headerImageView;
 }

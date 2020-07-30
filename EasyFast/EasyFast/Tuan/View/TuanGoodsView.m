@@ -28,6 +28,7 @@
         _goods.size = CGSizeMake(WidthOfScale(140), WidthOfScale(140));
         [_goods ViewRadius:5];
         _goods.backgroundColor = colorEFEFEF;
+        _goods.image = UIImageMake(@"gg");
     }
     return _goods;
 }

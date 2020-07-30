@@ -12,6 +12,7 @@
 #import "EFChangeAccountViewController.h"
 #import "EFPrivacyViewController.h"
 #import "EFNotiViewController.h"
+#import "EFSafeAccountViewController.h"
 
 @interface EFSetUpViewController ()
 
@@ -48,6 +49,10 @@
     self.gk_navTitle = @"设置";
     self.EFTableView.height = kPHONE_HEIGHT - NAVIGATION_BAR_HEIGHT - WidthOfScale(50) - TAB_SAFE_HEIGHT;
     [self.EFTableView registerClass:[EFSetUpTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFSetUpTableViewCell class])];
+    [self setLoginOUtBtn];
+}
+
+- (void)setLoginOUtBtn {
     [self.view addSubview:self.loginOutBtn];
     [self.loginOutBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.view);
@@ -120,6 +125,13 @@
                 }
                     break;
                 case 1:
+                {
+                    EFSafeAccountViewController *vc = [[EFSafeAccountViewController alloc] init];
+                    vc.hidesBottomBarWhenPushed = YES;
+                    [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+                        
+                    }];
+                }
                     break;
                 default:
                 {

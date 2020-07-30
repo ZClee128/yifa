@@ -41,6 +41,7 @@ targets.each do |t|
 #    pod 'ISVImageScrollView', '~> 0.2.0'
     pod 'TXIMSDK_TUIKit_iOS'
     pod 'BaiduMapKit','~>2.10.2'
+    pod 'ZLPhotoBrowser'
 #    pod 'BMKLocationKit'
     # Pods for EasyFast
   end

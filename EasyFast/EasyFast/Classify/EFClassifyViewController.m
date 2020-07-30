@@ -112,8 +112,8 @@
     
     @weakify(self);
     [cell selectBlock:^(NSString *selectItemId) {
-        NSLog(@"pid : %@", self.currentSelectModel.idField);
-        NSLog(@"选中id : %@", selectItemId);
+//        NSLog(@"pid : %@", self.currentSelectModel.idField);
+//        NSLog(@"选中id : %@", selectItemId);
         @strongify(self);
         EFClassDetailViewController *vc = [[EFClassDetailViewController alloc] init];
         vc.hidesBottomBarWhenPushed = YES;

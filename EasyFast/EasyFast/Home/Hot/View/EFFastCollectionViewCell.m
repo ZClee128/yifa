@@ -33,6 +33,7 @@
     if (_goods == nil) {
         _goods = [[UIImageView alloc] init];
         _goods.backgroundColor = colorEFEFEF;
+        _goods.image = UIImageMake(@"gg");
     }
     return _goods;
 }

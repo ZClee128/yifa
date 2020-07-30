@@ -19,6 +19,7 @@
 #import "EFOrderViewController.h"
 #import "EFHelpViewController.h"
 #import "EFIMListViewController.h"
+#import "EFSafeAccountViewController.h"
 
 @interface EFMeViewController ()
 
@@ -60,17 +61,12 @@
             switch (index) {
                 case 0:
                 {
-                    self.navigationController.tabBarController.selectedIndex = 3;
+                    self.navigationController.tabBarController.selectedIndex = 2;
                     [[NSNotificationCenter defaultCenter] postNotificationName:kTabFollow object:nil];
                 }
                     break;
                     case 1:
                 {
-                    EFEditPasswordViewController *vc = [[EFEditPasswordViewController alloc] init];
-                    vc.hidesBottomBarWhenPushed = YES;
-                    [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
-                        
-                    }];
                     break;
                 }
                 default:
@@ -239,7 +235,11 @@
                 break;
                case 1:
             {
-                
+                EFSafeAccountViewController *vc = [[EFSafeAccountViewController alloc] init];
+                vc.hidesBottomBarWhenPushed = YES;
+                [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+                    
+                }];
                 break;
             }
 //                case 2:

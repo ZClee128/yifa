@@ -45,7 +45,7 @@
 }
 
 - (void)setModel:(id)model {
-    [self.tabBtn setTitle:@"签到奖励" forState:(UIControlStateNormal)];
-    [self.tabBtn setImage:[UIImage imageNamed:@"1"] forState:(UIControlStateNormal)];
+    [self.tabBtn setTitle:model[@"title"] forState:(UIControlStateNormal)];
+    [self.tabBtn setImage:[UIImage imageNamed:model[@"icon"]] forState:(UIControlStateNormal)];
 }
 @end

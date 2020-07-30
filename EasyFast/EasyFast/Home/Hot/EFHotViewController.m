@@ -48,7 +48,7 @@
 {
     if (_cycleScrollView == nil) {
         _cycleScrollView = [[SDCycleScrollView alloc] init];
-        _cycleScrollView.imageURLStringsGroup = @[@"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2534506313,1688529724&fm=26&gp=0.jpg",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1594728792946&di=fabd7794eceddbb636e467cf18d0cff5&imgtype=0&src=http%3A%2F%2Fa0.att.hudong.com%2F56%2F12%2F01300000164151121576126282411.jpg",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1594728792946&di=1ef1413038217b1bd81cda61678112d8&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F05%2F00%2F01300000194285122188000535877.jpg"];
+        _cycleScrollView.imageURLStringsGroup = @[@"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=349017606,698810927&fm=26&gp=0.jpg",@"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3364826732,178479767&fm=26&gp=0.jpg",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596111509403&di=3c2d5f36ad341f339395a874a08074a1&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Fback_pic%2F03%2F77%2F68%2F7357c0421e95241.jpg"];
         _cycleScrollView.currentPageDotImage = [UIImage imageWithColor:UIColor.whiteColor size:CGSizeMake(20, 4) cornerRadius:2];
         _cycleScrollView.pageDotImage = [UIImage imageWithColor:UIColorFromRGBA(0xf5f5f5, 0.5) size:CGSizeMake(20, 4) cornerRadius:2];
     }
@@ -65,6 +65,11 @@
     [self.EFTableView registerClass:[EFFastTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFFastTableViewCell class])];
     [self.EFTableView registerClass:[EFGoodsTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFGoodsTableViewCell class])];
     [self addRefshDown];
+}
+
+
+- (void)loadNewData {
+    [self.EFTableView.mj_header endRefreshing];
 }
 
 - (UIView *)headerView {
@@ -108,7 +113,7 @@
         case 0:
         {
             HotTabTableViewCell *hotCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HotTabTableViewCell class])];
-            [hotCell setCollectData:[@[@1,@2,@3,@4,@1,@2,@3,@4,@1,@2,@3,@4] mutableCopy]];
+            [hotCell setCollectData:[@[@{@"title":@"签到奖励",@"icon":@"1"},@{@"title":@"平台活动",@"icon":@"2"},@{@"title":@"清仓减价",@"icon":@"3"},@{@"title":@"反向拍卖",@"icon":@"4"}] mutableCopy]];
             return hotCell;
         }
         case 1:
@@ -135,7 +140,7 @@
     switch (indexPath.section) {
         case 0:
             
-            return WidthOfScale(208);//WidthOfScale(107.5);
+            return WidthOfScale(123.5); //WidthOfScale(208);
             case 1:
         {
             return WidthOfScale(30);

@@ -127,6 +127,9 @@
 		0CE285CA24D2B80700AAC334 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0CE285C924D2B80700AAC334 /* dist */; };
 		0CE285CB24D2B80700AAC334 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0CE285C924D2B80700AAC334 /* dist */; };
 		0CE285CC24D2B80700AAC334 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0CE285C924D2B80700AAC334 /* dist */; };
+		0CE285CF24D2D3D800AAC334 /* EFSafeAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285CE24D2D3D800AAC334 /* EFSafeAccountViewController.m */; };
+		0CE285D024D2D3D800AAC334 /* EFSafeAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285CE24D2D3D800AAC334 /* EFSafeAccountViewController.m */; };
+		0CE285D124D2D3D800AAC334 /* EFSafeAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285CE24D2D3D800AAC334 /* EFSafeAccountViewController.m */; };
 		3DD6FC3B30071BBFC7670DF0 /* libPods-EasyFast_Test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0E9DAC2B83A38562800432 /* libPods-EasyFast_Test.a */; };
 		84187CA424C05D0200ED3F96 /* MeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84187CA324C05D0200ED3F96 /* MeHeaderView.m */; };
 		84187CA524C05D0200ED3F96 /* MeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84187CA324C05D0200ED3F96 /* MeHeaderView.m */; };
@@ -541,6 +544,8 @@
 		0CCEC49524CAD13900976D24 /* EFTimeAxisTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFTimeAxisTableViewCell.h; sourceTree = "<group>"; };
 		0CCEC49624CAD13900976D24 /* EFTimeAxisTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFTimeAxisTableViewCell.m; sourceTree = "<group>"; };
 		0CE285C924D2B80700AAC334 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dist; sourceTree = "<group>"; };
+		0CE285CD24D2D3D800AAC334 /* EFSafeAccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFSafeAccountViewController.h; sourceTree = "<group>"; };
+		0CE285CE24D2D3D800AAC334 /* EFSafeAccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFSafeAccountViewController.m; sourceTree = "<group>"; };
 		114B5F2459F8FFC945E98BD8 /* Pods-EasyFast_Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast_Dev.debug.xcconfig"; path = "Target Support Files/Pods-EasyFast_Dev/Pods-EasyFast_Dev.debug.xcconfig"; sourceTree = "<group>"; };
 		1304519AEDDDA76585AAC941 /* Pods-EasyFast_Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast_Test.release.xcconfig"; path = "Target Support Files/Pods-EasyFast_Test/Pods-EasyFast_Test.release.xcconfig"; sourceTree = "<group>"; };
 		182D3CC0502F099CA834B4CB /* Pods-EasyFast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast.debug.xcconfig"; path = "Target Support Files/Pods-EasyFast/Pods-EasyFast.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1355,6 +1360,8 @@
 				8476117024C6E21C002B34E4 /* EFNotiViewController.m */,
 				8476118624C6FCF8002B34E4 /* EFMeDataViewController.h */,
 				8476118724C6FCF8002B34E4 /* EFMeDataViewController.m */,
+				0CE285CD24D2D3D800AAC334 /* EFSafeAccountViewController.h */,
+				0CE285CE24D2D3D800AAC334 /* EFSafeAccountViewController.m */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -1850,6 +1857,7 @@
 				84A821A024BF146200EAC652 /* EFFollowSubViewController.m in Sources */,
 				84760F8624C1596E002B34E4 /* EFBaseModel.m in Sources */,
 				8476109924C67D19002B34E4 /* EFBindPhoneViewController.m in Sources */,
+				0CE285CF24D2D3D800AAC334 /* EFSafeAccountViewController.m in Sources */,
 				84A820B824B6CA8A00EAC652 /* EFBaseTableViewController.m in Sources */,
 				84A820D624B6CDA600EAC652 /* UIFont+RuntimeFit.m in Sources */,
 				84A820BD24B6CAC400EAC652 /* EFBaseRefreshVM.m in Sources */,
@@ -2003,6 +2011,7 @@
 				84A821A124BF146200EAC652 /* EFFollowSubViewController.m in Sources */,
 				84760F8724C1596E002B34E4 /* EFBaseModel.m in Sources */,
 				8476109A24C67D19002B34E4 /* EFBindPhoneViewController.m in Sources */,
+				0CE285D024D2D3D800AAC334 /* EFSafeAccountViewController.m in Sources */,
 				84A8210224BC4F5400EAC652 /* UIFont+RuntimeFit.m in Sources */,
 				84A8210324BC4F5400EAC652 /* EFBaseRefreshVM.m in Sources */,
 				84A8210424BC4F5400EAC652 /* RVMViewModel.m in Sources */,
@@ -2156,6 +2165,7 @@
 				84A821A224BF146200EAC652 /* EFFollowSubViewController.m in Sources */,
 				84760F8824C1596E002B34E4 /* EFBaseModel.m in Sources */,
 				8476109B24C67D19002B34E4 /* EFBindPhoneViewController.m in Sources */,
+				0CE285D124D2D3D800AAC334 /* EFSafeAccountViewController.m in Sources */,
 				84A8212524BC513500EAC652 /* EFBaseTableViewController.m in Sources */,
 				84A8212624BC513500EAC652 /* UIFont+RuntimeFit.m in Sources */,
 				84A8212724BC513500EAC652 /* EFBaseRefreshVM.m in Sources */,

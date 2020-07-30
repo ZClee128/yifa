@@ -49,7 +49,7 @@
 - (void)setCollectData:(NSMutableArray *)data {
     self.data = data;
     if (self.scrollViewHorizontalItem == nil) {
-        self.scrollViewHorizontalItem = [[SLScrollViewHorizontalItem alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, self.data.count > 4 ? (self.scrollViewHorizontalItem.height = WidthOfScale(208)) : (self.scrollViewHorizontalItem.height = WidthOfScale(107.5))) delegate:self];
+        self.scrollViewHorizontalItem = [[SLScrollViewHorizontalItem alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, self.data.count > 4 ? (self.scrollViewHorizontalItem.height = WidthOfScale(208)) : (self.scrollViewHorizontalItem.height = WidthOfScale(123.5))) delegate:self];
         [self.contentView addSubview:self.scrollViewHorizontalItem];
     }
     [self.scrollViewHorizontalItem updateView];
@@ -84,7 +84,7 @@
 }
 
 - (CGFloat)lineSpaceOfItemsInView:(UIView *)view {
-    return WidthOfScale(34);
+    return WidthOfScale(10);
 }
 
 - (CGFloat)columnSpaceOfItemsInView:(UIView *)view {
@@ -101,14 +101,15 @@
     QMUIButton *btn = [QMUIButton buttonWithType:(UIButtonTypeCustom)];
     btn.imagePosition = QMUIButtonImagePositionTop;
     btn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, WidthOfScale(11.5), 0);
-    btn.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
+//    btn.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
     btn.titleLabel.font = RegularFont14;
     btn.titleLabel.textAlignment = NSTextAlignmentCenter;
     [btn.titleLabel sizeToFit];
     [btn sizeToFit];
     [btn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
-    [btn setTitle:@"签到奖励" forState:(UIControlStateNormal)];
-    [btn setImage:[UIImage imageNamed:@"1"] forState:(UIControlStateNormal)];
+    NSDictionary *dict = self.data[index];
+    [btn setTitle:dict[@"title"] forState:(UIControlStateNormal)];
+    [btn setImage:[UIImage imageNamed:dict[@"icon"]] forState:(UIControlStateNormal)];
     return btn;
     
 }

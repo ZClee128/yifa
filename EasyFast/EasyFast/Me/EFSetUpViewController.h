@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setBottomTile:(NSString *)title color:(UIColor *)color;
 - (void)bottomClick;
+- (void)setLoginOUtBtn;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -112,10 +112,13 @@
     
     [self addSubview:self.scrollView];
     
-    [self addSubview:self.indicatorBackView];
-    self.indicatorBackView.center = CGPointMake(self.center.x, CGRectGetMaxY(self.scrollView.frame) - WidthOfScale(20));
-    
-    [self.indicatorBackView addSubview:self.indicatorView];
+    if (self.lineNumber == 2) {
+        [self addSubview:self.indicatorBackView];
+        self.indicatorBackView.center = CGPointMake(self.center.x, CGRectGetMaxY(self.scrollView.frame) - WidthOfScale(20));
+        
+        [self.indicatorBackView addSubview:self.indicatorView];
+    }
+   
     
     CGFloat width = (self.frame.size.width - (self.edgeInsets.left + self.edgeInsets.right + self.lineSpace * (self.columnNumber - 1))) / self.columnNumber;
     CGFloat height = (self.frame.size.height - (self.edgeInsets.top + self.edgeInsets.bottom + self.lineSpace * (self.lineNumber - 1))) / self.lineNumber;

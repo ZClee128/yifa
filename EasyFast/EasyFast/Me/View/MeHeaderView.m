@@ -202,7 +202,7 @@
         VerticalLabelBotton *btn = [[VerticalLabelBotton alloc] initWithFrame:CGRectMake(i*bottomBg.width/3, WidthOfScale(22), bottomBg.width/3, WidthOfScale(37))];
         btn.tag = i+100;
         [bottomBg addSubview:btn];
-        [btn setTopTilte:@"0" bottomTitle:titles[i]];
+        [btn setTopTilte:@"99+" bottomTitle:titles[i]];
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(click:)];
         btn.userInteractionEnabled = YES;
         [btn addGestureRecognizer:tap];

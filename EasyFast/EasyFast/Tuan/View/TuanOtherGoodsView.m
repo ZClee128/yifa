@@ -26,6 +26,7 @@
         _goods = [[UIImageView alloc] init];
         _goods.size = CGSizeMake(WidthOfScale(167), WidthOfScale(165));
         _goods.backgroundColor = colorEFEFEF;
+        _goods.image = UIImageMake(@"gg");
     }
     return _goods;
 }
