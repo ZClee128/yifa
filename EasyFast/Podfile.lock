@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
+  - BaiduMapKit (5.4.0)
   - BGFMDB (2.0.13):
     - BGFMDB/BG (= 2.0.13)
     - BGFMDB/FMDB (= 2.0.13)
@@ -96,6 +97,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - BaiduMapKit
   - BGFMDB (~> 2.0.9)
   - BRPickerView
   - CYLTabBarController
@@ -128,6 +130,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - AFNetworking
+    - BaiduMapKit
     - BGFMDB
     - BRPickerView
     - CYLTabBarController
@@ -159,6 +162,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  BaiduMapKit: 81380395e5cc7e66f13e97de3a670b6f9ea31eb7
   BGFMDB: 48e6823027232402a678acc7f71484b1fc9171d0
   BRPickerView: 70e2e38b6441d4b43e9d14727aea662756476367
   CYLTabBarController: f5460b8446f82d016945d4d53895a1ef185b79e3
@@ -188,6 +192,6 @@ SPEC CHECKSUMS:
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   YZTagList: 43dc1909e38d88124e3256ffc51c62cc904d8240
 
-PODFILE CHECKSUM: c5735680f40be3ba49a1eda44a29fce9273a0ca0
+PODFILE CHECKSUM: 60d26fa5d93ede8381d47ff13731c0f21d1460db
 
 COCOAPODS: 1.9.3
