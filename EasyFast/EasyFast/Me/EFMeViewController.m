@@ -86,7 +86,7 @@
                     break;
             }
         } vipBlock:^{
-            [kShareManager showShareView];
+            
         }];
     }
     return _headerView;

@@ -94,6 +94,15 @@
 		0C8A276724D6AD3500E40ED8 /* ShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A276624D6AD3500E40ED8 /* ShareManager.m */; };
 		0C8A276824D6AD3500E40ED8 /* ShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A276624D6AD3500E40ED8 /* ShareManager.m */; };
 		0C8A276924D6AD3500E40ED8 /* ShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A276624D6AD3500E40ED8 /* ShareManager.m */; };
+		0C8A277124D6C44F00E40ED8 /* SKTagButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A276C24D6C44E00E40ED8 /* SKTagButton.m */; };
+		0C8A277224D6C44F00E40ED8 /* SKTagButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A276C24D6C44E00E40ED8 /* SKTagButton.m */; };
+		0C8A277324D6C44F00E40ED8 /* SKTagButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A276C24D6C44E00E40ED8 /* SKTagButton.m */; };
+		0C8A277424D6C44F00E40ED8 /* SKTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A276E24D6C44F00E40ED8 /* SKTag.m */; };
+		0C8A277524D6C44F00E40ED8 /* SKTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A276E24D6C44F00E40ED8 /* SKTag.m */; };
+		0C8A277624D6C44F00E40ED8 /* SKTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A276E24D6C44F00E40ED8 /* SKTag.m */; };
+		0C8A277724D6C44F00E40ED8 /* SKTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A277024D6C44F00E40ED8 /* SKTagView.m */; };
+		0C8A277824D6C44F00E40ED8 /* SKTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A277024D6C44F00E40ED8 /* SKTagView.m */; };
+		0C8A277924D6C44F00E40ED8 /* SKTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A277024D6C44F00E40ED8 /* SKTagView.m */; };
 		0CCEC45324CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45424CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45524CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
@@ -571,6 +580,12 @@
 		0C8A276024D68D1600E40ED8 /* CalendarModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarModel.m; sourceTree = "<group>"; };
 		0C8A276524D6AD3500E40ED8 /* ShareManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareManager.h; sourceTree = "<group>"; };
 		0C8A276624D6AD3500E40ED8 /* ShareManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareManager.m; sourceTree = "<group>"; };
+		0C8A276B24D6C44E00E40ED8 /* SKTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTag.h; sourceTree = "<group>"; };
+		0C8A276C24D6C44E00E40ED8 /* SKTagButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTagButton.m; sourceTree = "<group>"; };
+		0C8A276D24D6C44F00E40ED8 /* SKTagButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTagButton.h; sourceTree = "<group>"; };
+		0C8A276E24D6C44F00E40ED8 /* SKTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTag.m; sourceTree = "<group>"; };
+		0C8A276F24D6C44F00E40ED8 /* SKTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTagView.h; sourceTree = "<group>"; };
+		0C8A277024D6C44F00E40ED8 /* SKTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTagView.m; sourceTree = "<group>"; };
 		0CCEC45124CA7A6000976D24 /* EFWuliuTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFWuliuTableViewCell.h; sourceTree = "<group>"; };
 		0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFWuliuTableViewCell.m; sourceTree = "<group>"; };
 		0CCEC45624CA7D8900976D24 /* EFOrderMoreDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderMoreDetailViewController.h; sourceTree = "<group>"; };
@@ -945,6 +960,19 @@
 				0C8A276624D6AD3500E40ED8 /* ShareManager.m */,
 			);
 			path = Share;
+			sourceTree = "<group>";
+		};
+		0C8A276A24D6C44400E40ED8 /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				0C8A276B24D6C44E00E40ED8 /* SKTag.h */,
+				0C8A276E24D6C44F00E40ED8 /* SKTag.m */,
+				0C8A276D24D6C44F00E40ED8 /* SKTagButton.h */,
+				0C8A276C24D6C44E00E40ED8 /* SKTagButton.m */,
+				0C8A276F24D6C44F00E40ED8 /* SKTagView.h */,
+				0C8A277024D6C44F00E40ED8 /* SKTagView.m */,
+			);
+			path = Tags;
 			sourceTree = "<group>";
 		};
 		0CCEC47924CABB9700976D24 /* IM */ = {
@@ -1581,6 +1609,7 @@
 		84A8219724BF010800EAC652 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0C8A276A24D6C44400E40ED8 /* Tags */,
 				0C8A276424D6AD0000E40ED8 /* Share */,
 				0C8A274924D670BC00E40ED8 /* MyCalendar */,
 				0CE285E324D3EC4E00AAC334 /* LTSCalendar */,
@@ -1967,6 +1996,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C8A277424D6C44F00E40ED8 /* SKTag.m in Sources */,
 				84A820EE24B6F65100EAC652 /* EFFollowViewController.m in Sources */,
 				0C6CB5C124CFD6B200471A8D /* EFRefreshHeader.m in Sources */,
 				0C6CB58E24CEB19000471A8D /* UITextField+MyExtension.m in Sources */,
@@ -2075,6 +2105,7 @@
 				0CCEC45824CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */,
 				0CE2860B24D3EC4F00AAC334 /* LTSCalendarScrollView.m in Sources */,
 				84B2437324C83AB000E9967C /* LeftTableViewCell.m in Sources */,
+				0C8A277724D6C44F00E40ED8 /* SKTagView.m in Sources */,
 				841B94ED24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,
 				0C6CB57E24CE833D00471A8D /* EFRegAndPswTableViewCell.m in Sources */,
 				84A821C824C047C000EAC652 /* EFClassTabTableViewCell.m in Sources */,
@@ -2101,6 +2132,7 @@
 				84A820E624B6F5E800EAC652 /* EFHomeViewController.m in Sources */,
 				84A8217024BEA92300EAC652 /* EFNoticTitleCell.m in Sources */,
 				84A821B824C026FF00EAC652 /* EFSearchResultViewController.m in Sources */,
+				0C8A277124D6C44F00E40ED8 /* SKTagButton.m in Sources */,
 				8476117124C6E21C002B34E4 /* EFNotiViewController.m in Sources */,
 				8476105224C574E5002B34E4 /* TuanListDetailTableViewCell.m in Sources */,
 				0CE2861124D3EC4F00AAC334 /* LTSCalendarWeekDayView.m in Sources */,
@@ -2137,6 +2169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C8A277524D6C44F00E40ED8 /* SKTag.m in Sources */,
 				84A820FA24BC4F5400EAC652 /* EFFollowViewController.m in Sources */,
 				0C6CB5C224CFD6B200471A8D /* EFRefreshHeader.m in Sources */,
 				0C6CB58F24CEB19000471A8D /* UITextField+MyExtension.m in Sources */,
@@ -2245,6 +2278,7 @@
 				0CCEC45924CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */,
 				0CE2860C24D3EC4F00AAC334 /* LTSCalendarScrollView.m in Sources */,
 				84B2437424C83AB000E9967C /* LeftTableViewCell.m in Sources */,
+				0C8A277824D6C44F00E40ED8 /* SKTagView.m in Sources */,
 				841B94EE24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,
 				0C6CB57F24CE833D00471A8D /* EFRegAndPswTableViewCell.m in Sources */,
 				84A821C924C047C000EAC652 /* EFClassTabTableViewCell.m in Sources */,
@@ -2271,6 +2305,7 @@
 				84A8210B24BC4F5400EAC652 /* main.m in Sources */,
 				84A8217124BEA92400EAC652 /* EFNoticTitleCell.m in Sources */,
 				84A821B924C026FF00EAC652 /* EFSearchResultViewController.m in Sources */,
+				0C8A277224D6C44F00E40ED8 /* SKTagButton.m in Sources */,
 				8476117224C6E21C002B34E4 /* EFNotiViewController.m in Sources */,
 				8476105324C574E5002B34E4 /* TuanListDetailTableViewCell.m in Sources */,
 				0CE2861224D3EC4F00AAC334 /* LTSCalendarWeekDayView.m in Sources */,
@@ -2307,6 +2342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C8A277624D6C44F00E40ED8 /* SKTag.m in Sources */,
 				84A8211E24BC513500EAC652 /* EFFollowViewController.m in Sources */,
 				0C6CB5C324CFD6B200471A8D /* EFRefreshHeader.m in Sources */,
 				0C6CB59024CEB19000471A8D /* UITextField+MyExtension.m in Sources */,
@@ -2415,6 +2451,7 @@
 				0CCEC45A24CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */,
 				0CE2860D24D3EC4F00AAC334 /* LTSCalendarScrollView.m in Sources */,
 				84B2437524C83AB000E9967C /* LeftTableViewCell.m in Sources */,
+				0C8A277924D6C44F00E40ED8 /* SKTagView.m in Sources */,
 				841B94EF24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,
 				0C6CB58024CE833D00471A8D /* EFRegAndPswTableViewCell.m in Sources */,
 				84A821CA24C047C100EAC652 /* EFClassTabTableViewCell.m in Sources */,
@@ -2441,6 +2478,7 @@
 				84A8212E24BC513500EAC652 /* EFHomeViewController.m in Sources */,
 				84A8217224BEA92400EAC652 /* EFNoticTitleCell.m in Sources */,
 				84A821BA24C0270000EAC652 /* EFSearchResultViewController.m in Sources */,
+				0C8A277324D6C44F00E40ED8 /* SKTagButton.m in Sources */,
 				8476117324C6E21C002B34E4 /* EFNotiViewController.m in Sources */,
 				8476105424C574E5002B34E4 /* TuanListDetailTableViewCell.m in Sources */,
 				0CE2861324D3EC4F00AAC334 /* LTSCalendarWeekDayView.m in Sources */,

@@ -88,6 +88,22 @@
     return WidthOfScale(165+72+10);
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    QMUILabel *titleLab = [self.EFTableView viewWithTag:section+100];
+    if (titleLab == nil) {
+        titleLab = [[QMUILabel alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, WidthOfScale(42.5))];
+        titleLab.contentEdgeInsets = UIEdgeInsetsMake(WidthOfScale(15), WidthOfScale(15), WidthOfScale(15), 0);
+        titleLab.font = RegularFont14;
+        titleLab.textColor = tabbarBlackColor;
+        titleLab.tag = section+100;
+    }
+    titleLab.text = @"7月29日";
+    return titleLab;
+}
+
+- (CGFloat )tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return WidthOfScale(42.5);
+}
 
 - (NSMutableArray *)getDay {
     NSMutableArray *days = [[NSMutableArray alloc] init];

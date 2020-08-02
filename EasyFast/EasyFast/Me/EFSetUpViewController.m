@@ -159,6 +159,7 @@
                 case 4:
                 {
                     [kH5Manager gotoUrl:@"feedback" hasNav:YES navTitle:@"意见与反馈"];
+                    break;
                 }
                     case 5:
                 {

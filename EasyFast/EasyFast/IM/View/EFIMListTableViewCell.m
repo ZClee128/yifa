@@ -123,7 +123,7 @@
     if (self.numLab.text.length != 1) {
         if (size.width) {
             [self.numLab mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.width.equalTo(@(size.width+WidthOfScale(15)));
+                make.width.equalTo(@(flat(size.width+ WidthOfScale(15))));
             }];
         }
     }
