@@ -86,7 +86,7 @@
                     break;
             }
         } vipBlock:^{
-                
+            [kShareManager showShareView];
         }];
     }
     return _headerView;
@@ -152,6 +152,8 @@
                     [self.navigationController qmui_pushViewController:order animated:YES completion:^{
                         
                     }];
+                }else {
+                    [kH5Manager gotoUrl:@"myGroup" hasNav:YES navTitle:@"我的团购"];
                 }
             };
             MeCell.moreBlock = ^{

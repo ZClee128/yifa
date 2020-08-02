@@ -91,6 +91,9 @@
 		0C8A276124D68D1600E40ED8 /* CalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A276024D68D1600E40ED8 /* CalendarModel.m */; };
 		0C8A276224D68D1600E40ED8 /* CalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A276024D68D1600E40ED8 /* CalendarModel.m */; };
 		0C8A276324D68D1600E40ED8 /* CalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A276024D68D1600E40ED8 /* CalendarModel.m */; };
+		0C8A276724D6AD3500E40ED8 /* ShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A276624D6AD3500E40ED8 /* ShareManager.m */; };
+		0C8A276824D6AD3500E40ED8 /* ShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A276624D6AD3500E40ED8 /* ShareManager.m */; };
+		0C8A276924D6AD3500E40ED8 /* ShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A276624D6AD3500E40ED8 /* ShareManager.m */; };
 		0CCEC45324CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45424CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45524CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
@@ -566,6 +569,8 @@
 		0C8A275024D672A200E40ED8 /* EFCalendarCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFCalendarCollectionViewCell.m; sourceTree = "<group>"; };
 		0C8A275F24D68D1600E40ED8 /* CalendarModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarModel.h; sourceTree = "<group>"; };
 		0C8A276024D68D1600E40ED8 /* CalendarModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarModel.m; sourceTree = "<group>"; };
+		0C8A276524D6AD3500E40ED8 /* ShareManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareManager.h; sourceTree = "<group>"; };
+		0C8A276624D6AD3500E40ED8 /* ShareManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareManager.m; sourceTree = "<group>"; };
 		0CCEC45124CA7A6000976D24 /* EFWuliuTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFWuliuTableViewCell.h; sourceTree = "<group>"; };
 		0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFWuliuTableViewCell.m; sourceTree = "<group>"; };
 		0CCEC45624CA7D8900976D24 /* EFOrderMoreDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderMoreDetailViewController.h; sourceTree = "<group>"; };
@@ -931,6 +936,15 @@
 				0C8A276024D68D1600E40ED8 /* CalendarModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0C8A276424D6AD0000E40ED8 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				0C8A276524D6AD3500E40ED8 /* ShareManager.h */,
+				0C8A276624D6AD3500E40ED8 /* ShareManager.m */,
+			);
+			path = Share;
 			sourceTree = "<group>";
 		};
 		0CCEC47924CABB9700976D24 /* IM */ = {
@@ -1567,6 +1581,7 @@
 		84A8219724BF010800EAC652 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0C8A276424D6AD0000E40ED8 /* Share */,
 				0C8A274924D670BC00E40ED8 /* MyCalendar */,
 				0CE285E324D3EC4E00AAC334 /* LTSCalendar */,
 				0C6CB58724CE960700471A8D /* SignInApple.h */,
@@ -2099,6 +2114,7 @@
 				0CCEC47124CA8F7500976D24 /* EFRealPriceTableViewCell.m in Sources */,
 				84760F7A24C14AD9002B34E4 /* MeListTableViewCell.m in Sources */,
 				0CE285F924D3EC4E00AAC334 /* LTSCalendarAppearance.m in Sources */,
+				0C8A276724D6AD3500E40ED8 /* ShareManager.m in Sources */,
 				0C6CB58324CE889B00471A8D /* EFThreeLoginTableViewCell.m in Sources */,
 				847610A424C68962002B34E4 /* EFPhoneTableViewCell.m in Sources */,
 				84A821A624BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */,
@@ -2268,6 +2284,7 @@
 				0CCEC47224CA8F7500976D24 /* EFRealPriceTableViewCell.m in Sources */,
 				84760F7B24C14AD9002B34E4 /* MeListTableViewCell.m in Sources */,
 				0CE285FA24D3EC4E00AAC334 /* LTSCalendarAppearance.m in Sources */,
+				0C8A276824D6AD3500E40ED8 /* ShareManager.m in Sources */,
 				0C6CB58424CE889B00471A8D /* EFThreeLoginTableViewCell.m in Sources */,
 				847610A524C68962002B34E4 /* EFPhoneTableViewCell.m in Sources */,
 				84A821A724BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */,
@@ -2437,6 +2454,7 @@
 				0CCEC47324CA8F7500976D24 /* EFRealPriceTableViewCell.m in Sources */,
 				84760F7C24C14AD9002B34E4 /* MeListTableViewCell.m in Sources */,
 				0CE285FB24D3EC4F00AAC334 /* LTSCalendarAppearance.m in Sources */,
+				0C8A276924D6AD3500E40ED8 /* ShareManager.m in Sources */,
 				0C6CB58524CE889B00471A8D /* EFThreeLoginTableViewCell.m in Sources */,
 				847610A624C68962002B34E4 /* EFPhoneTableViewCell.m in Sources */,
 				84A821A824BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */,

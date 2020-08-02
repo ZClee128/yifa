@@ -78,6 +78,7 @@
 //    [_webView loadFileURL:fileURL allowingReadAccessToURL:fileURL];
     
     [self getFun];
+    self.gk_fullScreenPopDisabled = YES;
 }
 
 - (void)getFun {

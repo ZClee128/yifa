@@ -43,6 +43,14 @@ targets.each do |t|
     pod 'BaiduMapKit','~>2.10.2'
     pod 'ZLPhotoBrowser'
 #    pod 'BMKLocationKit'
+
+
+#  友盟
+    pod 'UMCCommon'
+    pod 'UMCShare/Social/WeChat'
+    pod 'UMCShare/Social/ReducedQQ'
+    pod 'UMCShare/Social/ReducedSina'
+    pod 'UMCShare/UI'
     # Pods for EasyFast
   end
 
