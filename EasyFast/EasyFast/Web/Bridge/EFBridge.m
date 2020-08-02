@@ -56,21 +56,20 @@
 
 - (void)share {
     [self.bridge registerHandler:@"share" handler:^(id data, WVJBResponseCallback responseCallback) {
-        [[UIViewController getCurrentVC].navigationController qmui_popViewControllerAnimated:YES completion:^{
-            
-        }];
+        [kShareManager showShareView];
     }];
 }
 
-- (void)goTo:(NSString *)page {
-    [self.bridge callHandler:@"goTo" data:page responseCallback:^(id responseData) {
+- (void)goTo:(NSString *)page query:(id )query {
+    [self.bridge callHandler:@"goTo" data:@{@"page":page,@"query":query,} responseCallback:^(id responseData) {
         XYLog(@">>>>>>%@",responseData);
     }];
 }
 
 - (void)recomListClick {
     [self.bridge registerHandler:@"recomListClick" handler:^(id data, WVJBResponseCallback responseCallback) {
-        
+        NSDictionary *dict = [self identifyData:data];
+        [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:dict[@"params"]];
     }];
 }
 

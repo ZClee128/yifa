@@ -126,7 +126,7 @@
             EFFastTableViewCell *fastCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFFastTableViewCell class])];
             [fastCell setCollectData:[@[@1,@2,@3,@4] mutableCopy]];
             fastCell.selectIndex = ^(NSInteger index) {
-                [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@""];
+                [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO)}];
             };
             return fastCell;
         }
@@ -134,6 +134,9 @@
         {
             EFGoodsTableViewCell *goodsCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFGoodsTableViewCell class])];
             [goodsCell setModel:@""];
+            goodsCell.btnSelect = ^{
+                [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(YES)}];
+            };
             return goodsCell;
         }
     }
@@ -141,7 +144,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 3) {
-        [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@""];
+        [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO)}];
     }
 }
 

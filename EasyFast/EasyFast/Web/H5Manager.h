@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)defaultManager;
 
-- (void)gotoUrl:(NSString *)url hasNav:(BOOL)show navTitle:(NSString *)title;
+- (void)gotoUrl:(NSString *)url hasNav:(BOOL)show navTitle:(NSString *)title query:(id)query;
 @end
 
 NS_ASSUME_NONNULL_END

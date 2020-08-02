@@ -62,7 +62,7 @@
         }
         default:
         {
-            [kH5Manager gotoUrl:@"policy" hasNav:YES navTitle:@"隐私政策"];
+            [kH5Manager gotoUrl:@"policy" hasNav:YES navTitle:@"隐私政策" query:@{}];
         }
             break;
     }

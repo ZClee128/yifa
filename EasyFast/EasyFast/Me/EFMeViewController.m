@@ -120,6 +120,10 @@
 }
 
 
+- (void)loadNewData {
+    [self.EFTableView.mj_header endRefreshing];
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 4;
 }
@@ -153,7 +157,7 @@
                         
                     }];
                 }else {
-                    [kH5Manager gotoUrl:@"myGroup" hasNav:YES navTitle:@"我的团购"];
+                    [kH5Manager gotoUrl:@"myGroup" hasNav:YES navTitle:@"我的团购" query:@{}];
                 }
             };
             MeCell.moreBlock = ^{

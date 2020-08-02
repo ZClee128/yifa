@@ -97,6 +97,13 @@
         [_buyBtn setTitleColor:UIColor.whiteColor forState:(UIControlStateNormal)];
         _buyBtn.titleLabel.font = MedFont13;
         [_buyBtn setBackgroundImage:[UIImage imageWithMixColors:@[RGB16(0xFFBD20),RGB16(0xFF3B37)] size:CGSizeMake(90, 27)] forState:(UIControlStateNormal)];
+        @weakify(self);
+        [[_buyBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self);
+            if (self.btnSelect) {
+                self.btnSelect();
+            }
+        }];
     }
     return _buyBtn;
 }

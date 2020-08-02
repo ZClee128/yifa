@@ -71,8 +71,8 @@
     return webPath;
 }
 
-- (void)gotoUrl:(NSString *)url hasNav:(BOOL)show navTitle:(NSString *)title {
-    EFBaseWebViewController *web = [[EFBaseWebViewController alloc] initWithUrl:url navTitle:title hasNav:show];
+- (void)gotoUrl:(NSString *)url hasNav:(BOOL)show navTitle:(NSString *)title query:(id)query{
+    EFBaseWebViewController *web = [[EFBaseWebViewController alloc] initWithUrl:url navTitle:title hasNav:show query:query];
     web.hidesBottomBarWhenPushed = YES;
     [[UIViewController getCurrentVC].navigationController qmui_pushViewController:web animated:YES completion:^{
         

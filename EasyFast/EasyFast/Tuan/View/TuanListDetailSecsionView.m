@@ -25,7 +25,7 @@
         _progressView.backgroundColor = [UIColor clearColor];
         _progressView.layer.cornerRadius = WidthOfScale(17)/2;
         _progressView.progressTintColors = @[RGB16(0xFF3B37),RGB16(0xFFBD20)];
-        _progressView.stripesWidth = 5;
+//        _progressView.stripesWidth = 5;
         _progressView.stripesAnimated = YES;
         _progressView.hideStripes = NO;
         _progressView.hideAnnulus = NO;

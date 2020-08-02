@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EFGoodsTableViewCell : BaseTableViewCell
 
+@property (nonatomic,copy)void(^btnSelect)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

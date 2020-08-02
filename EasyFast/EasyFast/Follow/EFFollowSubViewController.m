@@ -52,10 +52,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EFFollowTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFFollowTableViewCell class])];
     cell.selectIndex = ^(NSInteger index) {
-        [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@""];
+        [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO)}];
     };
     cell.headerSelect = ^{
-        [kH5Manager gotoUrl:@"shop" hasNav:NO navTitle:@""];
+        [kH5Manager gotoUrl:@"shop" hasNav:NO navTitle:@"" query:@{}];
     };
     switch (self.type) {
         case FollowGZ:
@@ -73,10 +73,10 @@
             EFFollowTuanTableViewCell *tuanCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFFollowTuanTableViewCell class])];
             [tuanCell setModel:@""];
             tuanCell.headerSelect = ^{
-                [kH5Manager gotoUrl:@"shop" hasNav:NO navTitle:@""];
+                [kH5Manager gotoUrl:@"shop" hasNav:NO navTitle:@"" query:@{}];
             };
             tuanCell.pintuanBlock = ^{
-                [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@""];
+                [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO)}];
             };
             return tuanCell;
         }

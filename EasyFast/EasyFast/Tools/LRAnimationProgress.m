@@ -69,7 +69,7 @@ const NSTimeInterval LRProgressAnimationTime    = 0.5f;
     _stripesOrientation = LRStripesOrientationRight;
     _stripesWidth = 10.0f;
     _stripesColor = [LRColorWithRGB(0xffffff) colorWithAlphaComponent:0.2f];
-    _stripesDelta = 10.0f;
+    _stripesDelta = 15.0f;
     _hideStripes = NO;
     _stripesOffset = 0;
     // 轨迹

@@ -103,6 +103,9 @@
 		0C8A277724D6C44F00E40ED8 /* SKTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A277024D6C44F00E40ED8 /* SKTagView.m */; };
 		0C8A277824D6C44F00E40ED8 /* SKTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A277024D6C44F00E40ED8 /* SKTagView.m */; };
 		0C8A277924D6C44F00E40ED8 /* SKTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A277024D6C44F00E40ED8 /* SKTagView.m */; };
+		0C8A278324D6E3D400E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A278224D6E3D400E40ED8 /* dist */; };
+		0C8A278424D6E3D400E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A278224D6E3D400E40ED8 /* dist */; };
+		0C8A278524D6E3D400E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A278224D6E3D400E40ED8 /* dist */; };
 		0CCEC45324CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45424CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45524CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
@@ -145,9 +148,6 @@
 		0CCEC49724CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC49624CAD13900976D24 /* EFTimeAxisTableViewCell.m */; };
 		0CCEC49824CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC49624CAD13900976D24 /* EFTimeAxisTableViewCell.m */; };
 		0CCEC49924CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC49624CAD13900976D24 /* EFTimeAxisTableViewCell.m */; };
-		0CE285CA24D2B80700AAC334 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0CE285C924D2B80700AAC334 /* dist */; };
-		0CE285CB24D2B80700AAC334 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0CE285C924D2B80700AAC334 /* dist */; };
-		0CE285CC24D2B80700AAC334 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0CE285C924D2B80700AAC334 /* dist */; };
 		0CE285CF24D2D3D800AAC334 /* EFSafeAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285CE24D2D3D800AAC334 /* EFSafeAccountViewController.m */; };
 		0CE285D024D2D3D800AAC334 /* EFSafeAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285CE24D2D3D800AAC334 /* EFSafeAccountViewController.m */; };
 		0CE285D124D2D3D800AAC334 /* EFSafeAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285CE24D2D3D800AAC334 /* EFSafeAccountViewController.m */; };
@@ -586,6 +586,7 @@
 		0C8A276E24D6C44F00E40ED8 /* SKTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTag.m; sourceTree = "<group>"; };
 		0C8A276F24D6C44F00E40ED8 /* SKTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTagView.h; sourceTree = "<group>"; };
 		0C8A277024D6C44F00E40ED8 /* SKTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTagView.m; sourceTree = "<group>"; };
+		0C8A278224D6E3D400E40ED8 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dist; sourceTree = "<group>"; };
 		0CCEC45124CA7A6000976D24 /* EFWuliuTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFWuliuTableViewCell.h; sourceTree = "<group>"; };
 		0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFWuliuTableViewCell.m; sourceTree = "<group>"; };
 		0CCEC45624CA7D8900976D24 /* EFOrderMoreDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderMoreDetailViewController.h; sourceTree = "<group>"; };
@@ -614,7 +615,6 @@
 		0CCEC49124CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFLogisticsTwoLabTableViewCell.m; sourceTree = "<group>"; };
 		0CCEC49524CAD13900976D24 /* EFTimeAxisTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFTimeAxisTableViewCell.h; sourceTree = "<group>"; };
 		0CCEC49624CAD13900976D24 /* EFTimeAxisTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFTimeAxisTableViewCell.m; sourceTree = "<group>"; };
-		0CE285C924D2B80700AAC334 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dist; sourceTree = "<group>"; };
 		0CE285CD24D2D3D800AAC334 /* EFSafeAccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFSafeAccountViewController.h; sourceTree = "<group>"; };
 		0CE285CE24D2D3D800AAC334 /* EFSafeAccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFSafeAccountViewController.m; sourceTree = "<group>"; };
 		0CE285DE24D3AD5F00AAC334 /* ZLPhotoActionSheet+RACSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZLPhotoActionSheet+RACSignal.h"; sourceTree = "<group>"; };
@@ -1149,7 +1149,7 @@
 		84760F9924C196FF002B34E4 /* Web */ = {
 			isa = PBXGroup;
 			children = (
-				0CE285C924D2B80700AAC334 /* dist */,
+				0C8A278224D6E3D400E40ED8 /* dist */,
 				0C4BAF9624D0212E0037CDCF /* Bridge */,
 				0C6CB5B924CFBE1C00471A8D /* WebViewPool */,
 				8476102B24C52BDC002B34E4 /* H5Manager.h */,
@@ -1792,7 +1792,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CE285CA24D2B80700AAC334 /* dist in Resources */,
+				0C8A278324D6E3D400E40ED8 /* dist in Resources */,
 				84A8208624B6C62300EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8208324B6C62300EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -1802,7 +1802,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CE285CB24D2B80700AAC334 /* dist in Resources */,
+				0C8A278424D6E3D400E40ED8 /* dist in Resources */,
 				84A8211324BC4F5400EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8211424BC4F5400EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -1812,7 +1812,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CE285CC24D2B80700AAC334 /* dist in Resources */,
+				0C8A278524D6E3D400E40ED8 /* dist in Resources */,
 				84A8213724BC513500EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8213824BC513500EAC652 /* Assets.xcassets in Resources */,
 			);

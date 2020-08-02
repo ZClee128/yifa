@@ -23,11 +23,18 @@ NS_ASSUME_NONNULL_BEGIN
 //分享
 - (void)share;
 
-- (void)goTo:(NSString *)page;
+- (void)goTo:(NSString *)page query:(id )query;
 
 // 跳转拼团列表
 - (void)goTuanList;
 
+// 客服
+- (void)IM;
+
+//点击跳转
+- (void)recomListClick;
+
+- (NSDictionary *)identifyData:(id)data;
 @end
 
 NS_ASSUME_NONNULL_END

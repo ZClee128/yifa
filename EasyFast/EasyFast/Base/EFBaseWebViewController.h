@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface EFBaseWebViewController : EFBaseViewController
 
 @property (nonatomic,strong)WKWebView *webView;
-- (instancetype)initWithUrl:(NSString *)url navTitle:(NSString *)title hasNav:(BOOL)show;
+- (instancetype)initWithUrl:(NSString *)url navTitle:(NSString *)title hasNav:(BOOL)show query:(id)query;
 - (void)getFun;
 @end
 
