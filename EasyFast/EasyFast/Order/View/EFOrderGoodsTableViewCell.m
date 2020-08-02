@@ -60,6 +60,18 @@
     return _goodsPriceLab;
 }
 
+-(QMUILabel *)goodsStatusLab
+{
+    if (_goodsStatusLab == nil) {
+        _goodsStatusLab = [[QMUILabel alloc] init];
+        _goodsStatusLab.font = MedFont14;
+        _goodsStatusLab.textColor = colorFE851E;
+        _goodsStatusLab.textAlignment = NSTextAlignmentLeft;
+    }
+    return _goodsStatusLab;
+}
+
+
 -(QMUILabel *)goodsNumLab
 {
     if (_goodsNumLab == nil) {
@@ -106,7 +118,12 @@
     [self.goodsPriceLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.goodsSizeLab.mas_bottom).equalTo(@(WidthOfScale(28)));
         make.left.equalTo(self.goods.mas_right).equalTo(@(WidthOfScale(13)));
-        make.right.equalTo(self.goodsNumLab.mas_left).equalTo(@(-WidthOfScale(10)));
+    }];
+    
+    [self.contentView addSubview:self.goodsStatusLab];
+    [self.goodsStatusLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.goodsPriceLab.mas_right).equalTo(@(WidthOfScale(11)));
+        make.centerY.equalTo(self.goodsPriceLab);
     }];
     
     
@@ -116,6 +133,7 @@
     self.goodsNameLab.text = @"商品名称复古宫廷风台灯具灯罩，可以换行，最多两行";
     self.goodsSizeLab.text = @"属性:蓝色（不包含灯泡） 中码";
     self.goodsPriceLab.text = @"￥799/件";
+    self.goodsStatusLab.text = @"已退款";
     self.goodsNumLab.text = @"X 300";
 }
 

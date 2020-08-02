@@ -156,6 +156,14 @@
                     }];
                     break;
                 }
+                case 4:
+                {
+                    [kH5Manager gotoUrl:@"feedback" hasNav:YES navTitle:@"意见与反馈"];
+                }
+                    case 5:
+                {
+                    [kH5Manager gotoUrl:@"about" hasNav:YES navTitle:@"关于我们"];
+                }
                 default:
                     break;
             }

@@ -23,6 +23,15 @@
     if (_headerImageView == nil) {
         _headerImageView = [[UIImageView alloc] init];
         _headerImageView.backgroundColor = colorEFEFEF;
+        _headerImageView.userInteractionEnabled = YES;
+        @weakify(self);
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithActionBlock:^(id  _Nonnull sender) {
+            @strongify(self);
+            if (self.headerSelect) {
+                self.headerSelect();
+            }
+        }];
+        [_headerImageView addGestureRecognizer:tap];
     }
     return _headerImageView;
 }

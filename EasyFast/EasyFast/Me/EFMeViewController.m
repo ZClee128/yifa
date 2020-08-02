@@ -168,12 +168,14 @@
             @weakify(self);
             MeCell.seletBtn = ^(NSInteger index) {
                 XYLog(@"me->%ld",(long)index);
-                EFOrderViewController *order = [[EFOrderViewController alloc] initWithIndex:index+2];
-                order.hidesBottomBarWhenPushed = YES;
-                @strongify(self);
-                [self.navigationController qmui_pushViewController:order animated:YES completion:^{
-                    
-                }];
+                if (index != 3) {
+                    EFOrderViewController *order = [[EFOrderViewController alloc] initWithIndex:index+2];
+                    order.hidesBottomBarWhenPushed = YES;
+                    @strongify(self);
+                    [self.navigationController qmui_pushViewController:order animated:YES completion:^{
+                        
+                    }];
+                }
             };
             MeCell.moreBlock = ^{
                 EFOrderViewController *order = [[EFOrderViewController alloc] initWithIndex:0];

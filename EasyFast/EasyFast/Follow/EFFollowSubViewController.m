@@ -54,6 +54,9 @@
     cell.selectIndex = ^(NSInteger index) {
         [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@""];
     };
+    cell.headerSelect = ^{
+        [kH5Manager gotoUrl:@"shop" hasNav:NO navTitle:@""];
+    };
     switch (self.type) {
         case FollowGZ:
         {
@@ -69,6 +72,12 @@
         {
             EFFollowTuanTableViewCell *tuanCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFFollowTuanTableViewCell class])];
             [tuanCell setModel:@""];
+            tuanCell.headerSelect = ^{
+                [kH5Manager gotoUrl:@"shop" hasNav:NO navTitle:@""];
+            };
+            tuanCell.pintuanBlock = ^{
+                [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@""];
+            };
             return tuanCell;
         }
     }

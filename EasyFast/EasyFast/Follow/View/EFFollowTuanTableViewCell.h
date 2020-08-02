@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EFFollowTuanTableViewCell : EFFollowTableViewCell
-
+@property (nonatomic,copy)void(^pintuanBlock)(void);
 @end
 
 NS_ASSUME_NONNULL_END

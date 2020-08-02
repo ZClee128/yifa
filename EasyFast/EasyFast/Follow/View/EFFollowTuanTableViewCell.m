@@ -152,6 +152,15 @@
     if (_tuanView == nil) {
         _tuanView = [[EFTuanTimeView alloc] init];
         _tuanView.backgroundColor = colorfafafa;
+        _tuanView.userInteractionEnabled = YES;
+        @weakify(self);
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithActionBlock:^(id  _Nonnull sender) {
+            @strongify(self);
+            if (self.pintuanBlock) {
+                self.pintuanBlock();
+            }
+        }];
+        [_tuanView addGestureRecognizer:tap];
     }
     return _tuanView;
 }

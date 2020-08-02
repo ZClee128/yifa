@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)QMUILabel *goodsSizeLab;
 @property (nonatomic,strong)QMUILabel *goodsPriceLab;
 @property (nonatomic,strong)QMUILabel *goodsNumLab;
+@property (nonatomic,strong)QMUILabel *goodsStatusLab;
 
 @end
 

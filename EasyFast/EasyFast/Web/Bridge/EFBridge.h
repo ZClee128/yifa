@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 跳转拼团列表
 - (void)goTuanList;
+
 @end
 
 NS_ASSUME_NONNULL_END

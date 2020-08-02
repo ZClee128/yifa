@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)QMUIButton *followBtn;
 
 @property (nonatomic,copy)void(^selectIndex)(NSInteger index);
+@property (nonatomic,copy)void(^headerSelect)(void);
 
 @end
 
