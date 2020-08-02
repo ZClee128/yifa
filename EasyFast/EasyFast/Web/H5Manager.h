@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface H5Manager : NSObject
 
 + (instancetype)defaultManager;
+
+- (void)gotoUrl:(NSString *)url hasNav:(BOOL)show navTitle:(NSString *)title;
 @end
 
 NS_ASSUME_NONNULL_END

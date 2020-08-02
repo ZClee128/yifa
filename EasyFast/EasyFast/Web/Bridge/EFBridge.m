@@ -7,6 +7,8 @@
 //
 
 #import "EFBridge.h"
+#import "TuanListViewController.h"
+#import "EFConversationViewController.h"
 
 @interface EFBridge ()
 @property (nonatomic,strong)WebViewJavascriptBridge *bridge;
@@ -26,7 +28,7 @@
 - (void)GetNavHeight {
     [self.bridge registerHandler:@"NavHeight" handler:^(id data, WVJBResponseCallback responseCallback) {
         XYLog(@"called with: %@", data);
-        responseCallback(@{@"success":@(YES),@"data":@{@"height":@(NAVIGATION_BAR_HEIGHT)}});
+        responseCallback(@{@"success":@(YES),@"data":@{@"height":@(STATUS_BAR_HEIGHT)}});
     }];
     
 }
@@ -60,11 +62,42 @@
     }];
 }
 
-- (void)goTo {
-    [self.bridge callHandler:@"goTo" data:@"detail" responseCallback:^(id responseData) {
+- (void)goTo:(NSString *)page {
+    [self.bridge callHandler:@"goTo" data:page responseCallback:^(id responseData) {
         XYLog(@">>>>>>%@",responseData);
     }];
 }
+
+- (void)recomListClick {
+    [self.bridge registerHandler:@"recomListClick" handler:^(id data, WVJBResponseCallback responseCallback) {
+        
+    }];
+}
+
+- (void)goTuanList {
+    @weakify(self);
+    [self.bridge registerHandler:@"goTuanList" handler:^(id data, WVJBResponseCallback responseCallback) {
+        @strongify(self);
+        TuanListViewController *vc = [[TuanListViewController alloc] init];
+        [self push:vc];
+    }];
+}
+
+- (void)IM {
+    @weakify(self);
+    [self.bridge registerHandler:@"IM" handler:^(id data, WVJBResponseCallback responseCallback) {
+        @strongify(self);
+        EFConversationViewController *vc = [[EFConversationViewController alloc] init];
+        [self push:vc];
+    }];
+}
+
+- (void)push:(UIViewController *)vc {
+    [[UIViewController getCurrentVC].navigationController qmui_pushViewController:vc animated:YES completion:^{
+        
+    }];
+}
+
 - (NSDictionary *)identifyData:(id)data{
     NSDictionary * dict = [[NSDictionary alloc] init];
     if ([data isKindOfClass:[NSString class]]) {

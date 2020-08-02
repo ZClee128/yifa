@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)hiddenHeader ;
 
 - (void)showHeader;
+
+- (void)setHeaderImage:(UIImage *)header;
 @end
 
 NS_ASSUME_NONNULL_END

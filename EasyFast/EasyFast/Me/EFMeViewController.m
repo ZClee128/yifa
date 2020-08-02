@@ -20,6 +20,7 @@
 #import "EFHelpViewController.h"
 #import "EFIMListViewController.h"
 #import "EFSafeAccountViewController.h"
+#import "EFFootprintViewController.h"
 
 @interface EFMeViewController ()
 
@@ -67,6 +68,11 @@
                     break;
                     case 1:
                 {
+                    EFFootprintViewController *foot = [[EFFootprintViewController alloc] init];
+                    foot.hidesBottomBarWhenPushed = YES;
+                    [self.navigationController qmui_pushViewController:foot animated:YES completion:^{
+                    
+                    }];
                     break;
                 }
                 default:

@@ -23,7 +23,10 @@ NS_ASSUME_NONNULL_BEGIN
 //分享
 - (void)share;
 
-- (void)goTo;
+- (void)goTo:(NSString *)page;
+
+// 跳转拼团列表
+- (void)goTuanList;
 @end
 
 NS_ASSUME_NONNULL_END

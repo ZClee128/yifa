@@ -68,7 +68,7 @@
             @weakify(self);
             btnCell.moreClick = ^(QMUIButton * _Nonnull x) {
                 [FTPopOverMenu showFromSenderFrame:[x convertRect:x.bounds toView:nil] withMenu:@[@"退货退款"] imageNameArray:@[@""] doneBlock:^(NSInteger selectedIndex) {
-                    
+                    [kH5Manager gotoUrl:@"eval" hasNav:YES navTitle:@"评价"];
                 } dismissBlock:^{
                     
                 }];

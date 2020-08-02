@@ -82,6 +82,15 @@
 		0C6CB5C124CFD6B200471A8D /* EFRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5C024CFD6B200471A8D /* EFRefreshHeader.m */; };
 		0C6CB5C224CFD6B200471A8D /* EFRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5C024CFD6B200471A8D /* EFRefreshHeader.m */; };
 		0C6CB5C324CFD6B200471A8D /* EFRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5C024CFD6B200471A8D /* EFRefreshHeader.m */; };
+		0C8A274C24D6711F00E40ED8 /* EFCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A274B24D6711F00E40ED8 /* EFCalendarView.m */; };
+		0C8A274D24D6711F00E40ED8 /* EFCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A274B24D6711F00E40ED8 /* EFCalendarView.m */; };
+		0C8A274E24D6711F00E40ED8 /* EFCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A274B24D6711F00E40ED8 /* EFCalendarView.m */; };
+		0C8A275124D672A200E40ED8 /* EFCalendarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A275024D672A200E40ED8 /* EFCalendarCollectionViewCell.m */; };
+		0C8A275224D672A200E40ED8 /* EFCalendarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A275024D672A200E40ED8 /* EFCalendarCollectionViewCell.m */; };
+		0C8A275324D672A200E40ED8 /* EFCalendarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A275024D672A200E40ED8 /* EFCalendarCollectionViewCell.m */; };
+		0C8A276124D68D1600E40ED8 /* CalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A276024D68D1600E40ED8 /* CalendarModel.m */; };
+		0C8A276224D68D1600E40ED8 /* CalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A276024D68D1600E40ED8 /* CalendarModel.m */; };
+		0C8A276324D68D1600E40ED8 /* CalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A276024D68D1600E40ED8 /* CalendarModel.m */; };
 		0CCEC45324CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45424CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45524CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
@@ -130,6 +139,42 @@
 		0CE285CF24D2D3D800AAC334 /* EFSafeAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285CE24D2D3D800AAC334 /* EFSafeAccountViewController.m */; };
 		0CE285D024D2D3D800AAC334 /* EFSafeAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285CE24D2D3D800AAC334 /* EFSafeAccountViewController.m */; };
 		0CE285D124D2D3D800AAC334 /* EFSafeAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285CE24D2D3D800AAC334 /* EFSafeAccountViewController.m */; };
+		0CE285E024D3AD5F00AAC334 /* ZLPhotoActionSheet+RACSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285DF24D3AD5F00AAC334 /* ZLPhotoActionSheet+RACSignal.m */; };
+		0CE285E124D3AD5F00AAC334 /* ZLPhotoActionSheet+RACSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285DF24D3AD5F00AAC334 /* ZLPhotoActionSheet+RACSignal.m */; };
+		0CE285E224D3AD5F00AAC334 /* ZLPhotoActionSheet+RACSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285DF24D3AD5F00AAC334 /* ZLPhotoActionSheet+RACSignal.m */; };
+		0CE285F924D3EC4E00AAC334 /* LTSCalendarAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285E524D3EC4E00AAC334 /* LTSCalendarAppearance.m */; };
+		0CE285FA24D3EC4E00AAC334 /* LTSCalendarAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285E524D3EC4E00AAC334 /* LTSCalendarAppearance.m */; };
+		0CE285FB24D3EC4F00AAC334 /* LTSCalendarAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285E524D3EC4E00AAC334 /* LTSCalendarAppearance.m */; };
+		0CE285FC24D3EC4F00AAC334 /* LTSCalendarCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285E724D3EC4E00AAC334 /* LTSCalendarCollectionCell.m */; };
+		0CE285FD24D3EC4F00AAC334 /* LTSCalendarCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285E724D3EC4E00AAC334 /* LTSCalendarCollectionCell.m */; };
+		0CE285FE24D3EC4F00AAC334 /* LTSCalendarCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285E724D3EC4E00AAC334 /* LTSCalendarCollectionCell.m */; };
+		0CE285FF24D3EC4F00AAC334 /* LTSCalendarCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285E924D3EC4E00AAC334 /* LTSCalendarCollectionViewFlowLayout.m */; };
+		0CE2860024D3EC4F00AAC334 /* LTSCalendarCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285E924D3EC4E00AAC334 /* LTSCalendarCollectionViewFlowLayout.m */; };
+		0CE2860124D3EC4F00AAC334 /* LTSCalendarCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285E924D3EC4E00AAC334 /* LTSCalendarCollectionViewFlowLayout.m */; };
+		0CE2860224D3EC4F00AAC334 /* LTSCalendarContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285EB24D3EC4E00AAC334 /* LTSCalendarContentView.m */; };
+		0CE2860324D3EC4F00AAC334 /* LTSCalendarContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285EB24D3EC4E00AAC334 /* LTSCalendarContentView.m */; };
+		0CE2860424D3EC4F00AAC334 /* LTSCalendarContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285EB24D3EC4E00AAC334 /* LTSCalendarContentView.m */; };
+		0CE2860524D3EC4F00AAC334 /* LTSCalendarDayItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285ED24D3EC4E00AAC334 /* LTSCalendarDayItem.m */; };
+		0CE2860624D3EC4F00AAC334 /* LTSCalendarDayItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285ED24D3EC4E00AAC334 /* LTSCalendarDayItem.m */; };
+		0CE2860724D3EC4F00AAC334 /* LTSCalendarDayItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285ED24D3EC4E00AAC334 /* LTSCalendarDayItem.m */; };
+		0CE2860824D3EC4F00AAC334 /* LTSCalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285F024D3EC4E00AAC334 /* LTSCalendarManager.m */; };
+		0CE2860924D3EC4F00AAC334 /* LTSCalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285F024D3EC4E00AAC334 /* LTSCalendarManager.m */; };
+		0CE2860A24D3EC4F00AAC334 /* LTSCalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285F024D3EC4E00AAC334 /* LTSCalendarManager.m */; };
+		0CE2860B24D3EC4F00AAC334 /* LTSCalendarScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285F224D3EC4E00AAC334 /* LTSCalendarScrollView.m */; };
+		0CE2860C24D3EC4F00AAC334 /* LTSCalendarScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285F224D3EC4E00AAC334 /* LTSCalendarScrollView.m */; };
+		0CE2860D24D3EC4F00AAC334 /* LTSCalendarScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285F224D3EC4E00AAC334 /* LTSCalendarScrollView.m */; };
+		0CE2860E24D3EC4F00AAC334 /* LTSCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285F424D3EC4E00AAC334 /* LTSCalendarViewController.m */; };
+		0CE2860F24D3EC4F00AAC334 /* LTSCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285F424D3EC4E00AAC334 /* LTSCalendarViewController.m */; };
+		0CE2861024D3EC4F00AAC334 /* LTSCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285F424D3EC4E00AAC334 /* LTSCalendarViewController.m */; };
+		0CE2861124D3EC4F00AAC334 /* LTSCalendarWeekDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285F624D3EC4E00AAC334 /* LTSCalendarWeekDayView.m */; };
+		0CE2861224D3EC4F00AAC334 /* LTSCalendarWeekDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285F624D3EC4E00AAC334 /* LTSCalendarWeekDayView.m */; };
+		0CE2861324D3EC4F00AAC334 /* LTSCalendarWeekDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285F624D3EC4E00AAC334 /* LTSCalendarWeekDayView.m */; };
+		0CE2861424D3EC4F00AAC334 /* LTSCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285F824D3EC4E00AAC334 /* LTSCircleView.m */; };
+		0CE2861524D3EC4F00AAC334 /* LTSCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285F824D3EC4E00AAC334 /* LTSCircleView.m */; };
+		0CE2861624D3EC4F00AAC334 /* LTSCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE285F824D3EC4E00AAC334 /* LTSCircleView.m */; };
+		0CE2861924D3ECA400AAC334 /* EFFootprintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE2861824D3ECA400AAC334 /* EFFootprintViewController.m */; };
+		0CE2861A24D3ECA400AAC334 /* EFFootprintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE2861824D3ECA400AAC334 /* EFFootprintViewController.m */; };
+		0CE2861B24D3ECA400AAC334 /* EFFootprintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE2861824D3ECA400AAC334 /* EFFootprintViewController.m */; };
 		3DD6FC3B30071BBFC7670DF0 /* libPods-EasyFast_Test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0E9DAC2B83A38562800432 /* libPods-EasyFast_Test.a */; };
 		84187CA424C05D0200ED3F96 /* MeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84187CA324C05D0200ED3F96 /* MeHeaderView.m */; };
 		84187CA524C05D0200ED3F96 /* MeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84187CA324C05D0200ED3F96 /* MeHeaderView.m */; };
@@ -515,6 +560,12 @@
 		0C6CB5BB24CFBE3800471A8D /* EFCustomWebViewPool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFCustomWebViewPool.m; sourceTree = "<group>"; };
 		0C6CB5BF24CFD6B200471A8D /* EFRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFRefreshHeader.h; sourceTree = "<group>"; };
 		0C6CB5C024CFD6B200471A8D /* EFRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFRefreshHeader.m; sourceTree = "<group>"; };
+		0C8A274A24D6711F00E40ED8 /* EFCalendarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFCalendarView.h; sourceTree = "<group>"; };
+		0C8A274B24D6711F00E40ED8 /* EFCalendarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFCalendarView.m; sourceTree = "<group>"; };
+		0C8A274F24D672A200E40ED8 /* EFCalendarCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFCalendarCollectionViewCell.h; sourceTree = "<group>"; };
+		0C8A275024D672A200E40ED8 /* EFCalendarCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFCalendarCollectionViewCell.m; sourceTree = "<group>"; };
+		0C8A275F24D68D1600E40ED8 /* CalendarModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarModel.h; sourceTree = "<group>"; };
+		0C8A276024D68D1600E40ED8 /* CalendarModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarModel.m; sourceTree = "<group>"; };
 		0CCEC45124CA7A6000976D24 /* EFWuliuTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFWuliuTableViewCell.h; sourceTree = "<group>"; };
 		0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFWuliuTableViewCell.m; sourceTree = "<group>"; };
 		0CCEC45624CA7D8900976D24 /* EFOrderMoreDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderMoreDetailViewController.h; sourceTree = "<group>"; };
@@ -546,6 +597,31 @@
 		0CE285C924D2B80700AAC334 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dist; sourceTree = "<group>"; };
 		0CE285CD24D2D3D800AAC334 /* EFSafeAccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFSafeAccountViewController.h; sourceTree = "<group>"; };
 		0CE285CE24D2D3D800AAC334 /* EFSafeAccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFSafeAccountViewController.m; sourceTree = "<group>"; };
+		0CE285DE24D3AD5F00AAC334 /* ZLPhotoActionSheet+RACSignal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZLPhotoActionSheet+RACSignal.h"; sourceTree = "<group>"; };
+		0CE285DF24D3AD5F00AAC334 /* ZLPhotoActionSheet+RACSignal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZLPhotoActionSheet+RACSignal.m"; sourceTree = "<group>"; };
+		0CE285E424D3EC4E00AAC334 /* LTSCalendarAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarAppearance.h; sourceTree = "<group>"; };
+		0CE285E524D3EC4E00AAC334 /* LTSCalendarAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarAppearance.m; sourceTree = "<group>"; };
+		0CE285E624D3EC4E00AAC334 /* LTSCalendarCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarCollectionCell.h; sourceTree = "<group>"; };
+		0CE285E724D3EC4E00AAC334 /* LTSCalendarCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarCollectionCell.m; sourceTree = "<group>"; };
+		0CE285E824D3EC4E00AAC334 /* LTSCalendarCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		0CE285E924D3EC4E00AAC334 /* LTSCalendarCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		0CE285EA24D3EC4E00AAC334 /* LTSCalendarContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarContentView.h; sourceTree = "<group>"; };
+		0CE285EB24D3EC4E00AAC334 /* LTSCalendarContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarContentView.m; sourceTree = "<group>"; };
+		0CE285EC24D3EC4E00AAC334 /* LTSCalendarDayItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarDayItem.h; sourceTree = "<group>"; };
+		0CE285ED24D3EC4E00AAC334 /* LTSCalendarDayItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarDayItem.m; sourceTree = "<group>"; };
+		0CE285EE24D3EC4E00AAC334 /* LTSCalendarEventSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarEventSource.h; sourceTree = "<group>"; };
+		0CE285EF24D3EC4E00AAC334 /* LTSCalendarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarManager.h; sourceTree = "<group>"; };
+		0CE285F024D3EC4E00AAC334 /* LTSCalendarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarManager.m; sourceTree = "<group>"; };
+		0CE285F124D3EC4E00AAC334 /* LTSCalendarScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarScrollView.h; sourceTree = "<group>"; };
+		0CE285F224D3EC4E00AAC334 /* LTSCalendarScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarScrollView.m; sourceTree = "<group>"; };
+		0CE285F324D3EC4E00AAC334 /* LTSCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarViewController.h; sourceTree = "<group>"; };
+		0CE285F424D3EC4E00AAC334 /* LTSCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarViewController.m; sourceTree = "<group>"; };
+		0CE285F524D3EC4E00AAC334 /* LTSCalendarWeekDayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarWeekDayView.h; sourceTree = "<group>"; };
+		0CE285F624D3EC4E00AAC334 /* LTSCalendarWeekDayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarWeekDayView.m; sourceTree = "<group>"; };
+		0CE285F724D3EC4E00AAC334 /* LTSCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCircleView.h; sourceTree = "<group>"; };
+		0CE285F824D3EC4E00AAC334 /* LTSCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCircleView.m; sourceTree = "<group>"; };
+		0CE2861724D3ECA400AAC334 /* EFFootprintViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFFootprintViewController.h; sourceTree = "<group>"; };
+		0CE2861824D3ECA400AAC334 /* EFFootprintViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFFootprintViewController.m; sourceTree = "<group>"; };
 		114B5F2459F8FFC945E98BD8 /* Pods-EasyFast_Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast_Dev.debug.xcconfig"; path = "Target Support Files/Pods-EasyFast_Dev/Pods-EasyFast_Dev.debug.xcconfig"; sourceTree = "<group>"; };
 		1304519AEDDDA76585AAC941 /* Pods-EasyFast_Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast_Test.release.xcconfig"; path = "Target Support Files/Pods-EasyFast_Test/Pods-EasyFast_Test.release.xcconfig"; sourceTree = "<group>"; };
 		182D3CC0502F099CA834B4CB /* Pods-EasyFast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast.debug.xcconfig"; path = "Target Support Files/Pods-EasyFast/Pods-EasyFast.debug.xcconfig"; sourceTree = "<group>"; };
@@ -836,6 +912,27 @@
 			path = WebViewPool;
 			sourceTree = "<group>";
 		};
+		0C8A274924D670BC00E40ED8 /* MyCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				0C8A275E24D68CFA00E40ED8 /* Model */,
+				0C8A274A24D6711F00E40ED8 /* EFCalendarView.h */,
+				0C8A274B24D6711F00E40ED8 /* EFCalendarView.m */,
+				0C8A274F24D672A200E40ED8 /* EFCalendarCollectionViewCell.h */,
+				0C8A275024D672A200E40ED8 /* EFCalendarCollectionViewCell.m */,
+			);
+			path = MyCalendar;
+			sourceTree = "<group>";
+		};
+		0C8A275E24D68CFA00E40ED8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0C8A275F24D68D1600E40ED8 /* CalendarModel.h */,
+				0C8A276024D68D1600E40ED8 /* CalendarModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		0CCEC47924CABB9700976D24 /* IM */ = {
 			isa = PBXGroup;
 			children = (
@@ -859,6 +956,43 @@
 				0CCEC48B24CAC2F000976D24 /* EFIMListTableViewCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0CE285DD24D3AD5F00AAC334 /* ZLPhotoActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				0CE285DE24D3AD5F00AAC334 /* ZLPhotoActionSheet+RACSignal.h */,
+				0CE285DF24D3AD5F00AAC334 /* ZLPhotoActionSheet+RACSignal.m */,
+			);
+			path = ZLPhotoActionSheet;
+			sourceTree = "<group>";
+		};
+		0CE285E324D3EC4E00AAC334 /* LTSCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				0CE285E424D3EC4E00AAC334 /* LTSCalendarAppearance.h */,
+				0CE285E524D3EC4E00AAC334 /* LTSCalendarAppearance.m */,
+				0CE285E624D3EC4E00AAC334 /* LTSCalendarCollectionCell.h */,
+				0CE285E724D3EC4E00AAC334 /* LTSCalendarCollectionCell.m */,
+				0CE285E824D3EC4E00AAC334 /* LTSCalendarCollectionViewFlowLayout.h */,
+				0CE285E924D3EC4E00AAC334 /* LTSCalendarCollectionViewFlowLayout.m */,
+				0CE285EA24D3EC4E00AAC334 /* LTSCalendarContentView.h */,
+				0CE285EB24D3EC4E00AAC334 /* LTSCalendarContentView.m */,
+				0CE285EC24D3EC4E00AAC334 /* LTSCalendarDayItem.h */,
+				0CE285ED24D3EC4E00AAC334 /* LTSCalendarDayItem.m */,
+				0CE285EE24D3EC4E00AAC334 /* LTSCalendarEventSource.h */,
+				0CE285EF24D3EC4E00AAC334 /* LTSCalendarManager.h */,
+				0CE285F024D3EC4E00AAC334 /* LTSCalendarManager.m */,
+				0CE285F124D3EC4E00AAC334 /* LTSCalendarScrollView.h */,
+				0CE285F224D3EC4E00AAC334 /* LTSCalendarScrollView.m */,
+				0CE285F324D3EC4E00AAC334 /* LTSCalendarViewController.h */,
+				0CE285F424D3EC4E00AAC334 /* LTSCalendarViewController.m */,
+				0CE285F524D3EC4E00AAC334 /* LTSCalendarWeekDayView.h */,
+				0CE285F624D3EC4E00AAC334 /* LTSCalendarWeekDayView.m */,
+				0CE285F724D3EC4E00AAC334 /* LTSCircleView.h */,
+				0CE285F824D3EC4E00AAC334 /* LTSCircleView.m */,
+			);
+			path = LTSCalendar;
 			sourceTree = "<group>";
 		};
 		27EE066D901F23C4C9063CDC /* Pods */ = {
@@ -1278,6 +1412,7 @@
 		84A820D324B6CD9E00EAC652 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				0CE285DD24D3AD5F00AAC334 /* ZLPhotoActionSheet */,
 				0C6CB58C24CEB19000471A8D /* UITextField+MyExtension.h */,
 				0C6CB58D24CEB19000471A8D /* UITextField+MyExtension.m */,
 				8476117E24C6F3A8002B34E4 /* UIView+XQCAlertPop.h */,
@@ -1362,6 +1497,8 @@
 				8476118724C6FCF8002B34E4 /* EFMeDataViewController.m */,
 				0CE285CD24D2D3D800AAC334 /* EFSafeAccountViewController.h */,
 				0CE285CE24D2D3D800AAC334 /* EFSafeAccountViewController.m */,
+				0CE2861724D3ECA400AAC334 /* EFFootprintViewController.h */,
+				0CE2861824D3ECA400AAC334 /* EFFootprintViewController.m */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -1430,6 +1567,8 @@
 		84A8219724BF010800EAC652 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0C8A274924D670BC00E40ED8 /* MyCalendar */,
+				0CE285E324D3EC4E00AAC334 /* LTSCalendar */,
 				0C6CB58724CE960700471A8D /* SignInApple.h */,
 				0C6CB58624CE960700471A8D /* SignInApple.m */,
 				0C6CB56824CE688300471A8D /* LRAnimationProgress.h */,
@@ -1824,10 +1963,13 @@
 				0C4BAFDF24D26B2D0037CDCF /* cityModel.m in Sources */,
 				8476105C24C57E81002B34E4 /* TuanOtherGoodsView.m in Sources */,
 				8476104324C54B72002B34E4 /* TuanPeopleView.m in Sources */,
+				0C8A274C24D6711F00E40ED8 /* EFCalendarView.m in Sources */,
 				0C4BAF9924D021440037CDCF /* EFBridge.m in Sources */,
 				84A8215424BDA0F200EAC652 /* EFHotViewController.m in Sources */,
 				84A820B724B6CA8A00EAC652 /* EFBaseTableView.m in Sources */,
 				84A820A424B6CA0900EAC652 /* BaseTableViewCell.m in Sources */,
+				0C8A275124D672A200E40ED8 /* EFCalendarCollectionViewCell.m in Sources */,
+				0CE285FC24D3EC4F00AAC334 /* LTSCalendarCollectionCell.m in Sources */,
 				8476105724C57636002B34E4 /* TuanListDetailSecsionView.m in Sources */,
 				841B94E824C95F6C0054D8D5 /* EFOrderPriceTableViewCell.m in Sources */,
 				84A820DE24B6CE6B00EAC652 /* UIView+Radius.m in Sources */,
@@ -1850,6 +1992,7 @@
 				0C6CB5A724CEC61100471A8D /* EFOneBtnLoginTableViewCell.m in Sources */,
 				841B94FD24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.m in Sources */,
 				84A820F224B6F66400EAC652 /* EFMeViewController.m in Sources */,
+				0CE2860E24D3EC4F00AAC334 /* LTSCalendarViewController.m in Sources */,
 				8476108D24C5ABE6002B34E4 /* EFAccountTableViewCell.m in Sources */,
 				8476104824C54E21002B34E4 /* TuanListTableViewCell.m in Sources */,
 				84A8215924BDB45E00EAC652 /* UIImage+Darw.m in Sources */,
@@ -1860,6 +2003,7 @@
 				0CE285CF24D2D3D800AAC334 /* EFSafeAccountViewController.m in Sources */,
 				84A820B824B6CA8A00EAC652 /* EFBaseTableViewController.m in Sources */,
 				84A820D624B6CDA600EAC652 /* UIFont+RuntimeFit.m in Sources */,
+				0CE2860524D3EC4F00AAC334 /* LTSCalendarDayItem.m in Sources */,
 				84A820BD24B6CAC400EAC652 /* EFBaseRefreshVM.m in Sources */,
 				0C4BAFA824D117550037CDCF /* EFConversationViewController.m in Sources */,
 				0CCEC46C24CA8C3100976D24 /* EFOrderPriceDetailTableViewCell.m in Sources */,
@@ -1871,6 +2015,7 @@
 				0C4BAF9324D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */,
 				84A8214724BC5F0900EAC652 /* EFPlusButton.m in Sources */,
 				0CCEC48224CABDC900976D24 /* EFHelpTableViewCell.m in Sources */,
+				0CE2861924D3ECA400AAC334 /* EFFootprintViewController.m in Sources */,
 				84A820B624B6CA8A00EAC652 /* EFBaseViewController.m in Sources */,
 				84A821CD24C0497200EAC652 /* EFHomeOtherViewController.m in Sources */,
 				8476107224C58C7C002B34E4 /* EFAddressTableViewCell.m in Sources */,
@@ -1894,12 +2039,14 @@
 				0C6CB56F24CE7A1400471A8D /* EFOneLoginViewController.m in Sources */,
 				8476107D24C5A06F002B34E4 /* EFSetUpViewController.m in Sources */,
 				84760F9124C17AC1002B34E4 /* NSString+NSMutableAttributedString.m in Sources */,
+				0CE2860824D3EC4F00AAC334 /* LTSCalendarManager.m in Sources */,
 				84B2437824C8406C00E9967C /* RightThreeCollectionViewCell.m in Sources */,
 				84A820CC24B6CCC600EAC652 /* FMARCNetwork.m in Sources */,
 				8476103E24C54854002B34E4 /* TuanListSelectView.m in Sources */,
 				84A820DF24B6CE6B00EAC652 /* UIViewController+Runtime.m in Sources */,
 				0CCEC49724CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */,
 				84A821D224C04EAA00EAC652 /* EFClassDetailViewController.m in Sources */,
+				0CE285E024D3AD5F00AAC334 /* ZLPhotoActionSheet+RACSignal.m in Sources */,
 				0C6CB59324CEB3C500471A8D /* EFChangeLoginViewController.m in Sources */,
 				84760FAD24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
 				84A8214D24BD432B00EAC652 /* TabbarBackView.m in Sources */,
@@ -1911,6 +2058,7 @@
 				8476102D24C52BDC002B34E4 /* H5Manager.m in Sources */,
 				84760F8024C1551B002B34E4 /* EFWKWebConfig.m in Sources */,
 				0CCEC45824CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */,
+				0CE2860B24D3EC4F00AAC334 /* LTSCalendarScrollView.m in Sources */,
 				84B2437324C83AB000E9967C /* LeftTableViewCell.m in Sources */,
 				841B94ED24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,
 				0C6CB57E24CE833D00471A8D /* EFRegAndPswTableViewCell.m in Sources */,
@@ -1930,6 +2078,7 @@
 				841B94D824C936AF0054D8D5 /* EFOrderDetailViewController.m in Sources */,
 				84A8217A24BEB35E00EAC652 /* EFFastCollectionViewCell.m in Sources */,
 				0C6CB58824CE960700471A8D /* SignInApple.m in Sources */,
+				0CE285FF24D3EC4F00AAC334 /* LTSCalendarCollectionViewFlowLayout.m in Sources */,
 				8476107824C59780002B34E4 /* UILabel+LabelHeightAndWidth.m in Sources */,
 				0CCEC46224CA837400976D24 /* EFOrderShopTableViewCell.m in Sources */,
 				0CCEC48724CAC27A00976D24 /* EFIMListViewController.m in Sources */,
@@ -1939,6 +2088,7 @@
 				84A821B824C026FF00EAC652 /* EFSearchResultViewController.m in Sources */,
 				8476117124C6E21C002B34E4 /* EFNotiViewController.m in Sources */,
 				8476105224C574E5002B34E4 /* TuanListDetailTableViewCell.m in Sources */,
+				0CE2861124D3EC4F00AAC334 /* LTSCalendarWeekDayView.m in Sources */,
 				0C6CB57424CE7CB700471A8D /* EFOneLoginLogoTableViewCell.m in Sources */,
 				84A8208924B6C62300EAC652 /* main.m in Sources */,
 				84A821AB24BF15FF00EAC652 /* EFFollowCollectionViewCell.m in Sources */,
@@ -1948,17 +2098,21 @@
 				0C4BAFA324D10A2D0037CDCF /* EFCollectionViewController.m in Sources */,
 				0CCEC47124CA8F7500976D24 /* EFRealPriceTableViewCell.m in Sources */,
 				84760F7A24C14AD9002B34E4 /* MeListTableViewCell.m in Sources */,
+				0CE285F924D3EC4E00AAC334 /* LTSCalendarAppearance.m in Sources */,
 				0C6CB58324CE889B00471A8D /* EFThreeLoginTableViewCell.m in Sources */,
 				847610A424C68962002B34E4 /* EFPhoneTableViewCell.m in Sources */,
 				84A821A624BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */,
 				0CCEC47C24CABBF300976D24 /* EFHelpViewController.m in Sources */,
 				841B94DE24C93C690054D8D5 /* EFOrderTitleTableViewCell.m in Sources */,
 				84A821BE24C033EC00EAC652 /* SearchTwoCollectionViewCell.m in Sources */,
+				0C8A276124D68D1600E40ED8 /* CalendarModel.m in Sources */,
 				84A820EA24B6F62900EAC652 /* EFClassifyViewController.m in Sources */,
 				84A820DD24B6CE6B00EAC652 /* UIView+Frame.m in Sources */,
 				8476109F24C684EA002B34E4 /* EFQPTableViewCell.m in Sources */,
 				84A8219B24BF011700EAC652 /* TKTagView.m in Sources */,
+				0CE2861424D3EC4F00AAC334 /* LTSCircleView.m in Sources */,
 				84A820BE24B6CAC400EAC652 /* EFBaseVM.m in Sources */,
+				0CE2860224D3EC4F00AAC334 /* LTSCalendarContentView.m in Sources */,
 				8476118D24C7DBD5002B34E4 /* EFOnePhoneViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1978,10 +2132,13 @@
 				0C4BAFE024D26B2D0037CDCF /* cityModel.m in Sources */,
 				8476105D24C57E81002B34E4 /* TuanOtherGoodsView.m in Sources */,
 				8476104424C54B72002B34E4 /* TuanPeopleView.m in Sources */,
+				0C8A274D24D6711F00E40ED8 /* EFCalendarView.m in Sources */,
 				0C4BAF9A24D021440037CDCF /* EFBridge.m in Sources */,
 				84A8215524BDA0F200EAC652 /* EFHotViewController.m in Sources */,
 				84A820FB24BC4F5400EAC652 /* EFBaseTableView.m in Sources */,
 				84A820FC24BC4F5400EAC652 /* BaseTableViewCell.m in Sources */,
+				0C8A275224D672A200E40ED8 /* EFCalendarCollectionViewCell.m in Sources */,
+				0CE285FD24D3EC4F00AAC334 /* LTSCalendarCollectionCell.m in Sources */,
 				8476105824C57636002B34E4 /* TuanListDetailSecsionView.m in Sources */,
 				841B94E924C95F6C0054D8D5 /* EFOrderPriceTableViewCell.m in Sources */,
 				84A820FD24BC4F5400EAC652 /* UIView+Radius.m in Sources */,
@@ -2004,6 +2161,7 @@
 				0C6CB5A824CEC61100471A8D /* EFOneBtnLoginTableViewCell.m in Sources */,
 				841B94FE24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.m in Sources */,
 				84A8210124BC4F5400EAC652 /* EFBaseTableViewController.m in Sources */,
+				0CE2860F24D3EC4F00AAC334 /* LTSCalendarViewController.m in Sources */,
 				8476108E24C5ABE6002B34E4 /* EFAccountTableViewCell.m in Sources */,
 				8476104924C54E21002B34E4 /* TuanListTableViewCell.m in Sources */,
 				84A8215A24BDB45E00EAC652 /* UIImage+Darw.m in Sources */,
@@ -2014,6 +2172,7 @@
 				0CE285D024D2D3D800AAC334 /* EFSafeAccountViewController.m in Sources */,
 				84A8210224BC4F5400EAC652 /* UIFont+RuntimeFit.m in Sources */,
 				84A8210324BC4F5400EAC652 /* EFBaseRefreshVM.m in Sources */,
+				0CE2860624D3EC4F00AAC334 /* LTSCalendarDayItem.m in Sources */,
 				84A8210424BC4F5400EAC652 /* RVMViewModel.m in Sources */,
 				0C4BAFA924D117550037CDCF /* EFConversationViewController.m in Sources */,
 				0CCEC46D24CA8C3100976D24 /* EFOrderPriceDetailTableViewCell.m in Sources */,
@@ -2025,6 +2184,7 @@
 				0C4BAF9424D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */,
 				84A8214824BC5F0900EAC652 /* EFPlusButton.m in Sources */,
 				0CCEC48324CABDC900976D24 /* EFHelpTableViewCell.m in Sources */,
+				0CE2861A24D3ECA400AAC334 /* EFFootprintViewController.m in Sources */,
 				84A8210624BC4F5400EAC652 /* EFBaseViewController.m in Sources */,
 				84A821CE24C0497200EAC652 /* EFHomeOtherViewController.m in Sources */,
 				8476107324C58C7C002B34E4 /* EFAddressTableViewCell.m in Sources */,
@@ -2048,12 +2208,14 @@
 				0C6CB57024CE7A1400471A8D /* EFOneLoginViewController.m in Sources */,
 				8476107E24C5A06F002B34E4 /* EFSetUpViewController.m in Sources */,
 				84760F9224C17AC1002B34E4 /* NSString+NSMutableAttributedString.m in Sources */,
+				0CE2860924D3EC4F00AAC334 /* LTSCalendarManager.m in Sources */,
 				84B2437924C8406C00E9967C /* RightThreeCollectionViewCell.m in Sources */,
 				84A8210824BC4F5400EAC652 /* FMARCNetwork.m in Sources */,
 				8476103F24C54854002B34E4 /* TuanListSelectView.m in Sources */,
 				84A8210924BC4F5400EAC652 /* UIViewController+Runtime.m in Sources */,
 				0CCEC49824CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */,
 				84A821D324C04EAA00EAC652 /* EFClassDetailViewController.m in Sources */,
+				0CE285E124D3AD5F00AAC334 /* ZLPhotoActionSheet+RACSignal.m in Sources */,
 				0C6CB59424CEB3C500471A8D /* EFChangeLoginViewController.m in Sources */,
 				84760FAE24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
 				84A8214324BC55CB00EAC652 /* HttpManager.m in Sources */,
@@ -2065,6 +2227,7 @@
 				8476102E24C52BDC002B34E4 /* H5Manager.m in Sources */,
 				84760F8124C1551B002B34E4 /* EFWKWebConfig.m in Sources */,
 				0CCEC45924CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */,
+				0CE2860C24D3EC4F00AAC334 /* LTSCalendarScrollView.m in Sources */,
 				84B2437424C83AB000E9967C /* LeftTableViewCell.m in Sources */,
 				841B94EE24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,
 				0C6CB57F24CE833D00471A8D /* EFRegAndPswTableViewCell.m in Sources */,
@@ -2084,6 +2247,7 @@
 				841B94D924C936AF0054D8D5 /* EFOrderDetailViewController.m in Sources */,
 				84A8217B24BEB35E00EAC652 /* EFFastCollectionViewCell.m in Sources */,
 				0C6CB58924CE960700471A8D /* SignInApple.m in Sources */,
+				0CE2860024D3EC4F00AAC334 /* LTSCalendarCollectionViewFlowLayout.m in Sources */,
 				8476107924C59780002B34E4 /* UILabel+LabelHeightAndWidth.m in Sources */,
 				0CCEC46324CA837400976D24 /* EFOrderShopTableViewCell.m in Sources */,
 				0CCEC48824CAC27A00976D24 /* EFIMListViewController.m in Sources */,
@@ -2093,6 +2257,7 @@
 				84A821B924C026FF00EAC652 /* EFSearchResultViewController.m in Sources */,
 				8476117224C6E21C002B34E4 /* EFNotiViewController.m in Sources */,
 				8476105324C574E5002B34E4 /* TuanListDetailTableViewCell.m in Sources */,
+				0CE2861224D3EC4F00AAC334 /* LTSCalendarWeekDayView.m in Sources */,
 				0C6CB57524CE7CB700471A8D /* EFOneLoginLogoTableViewCell.m in Sources */,
 				84A8210C24BC4F5400EAC652 /* FMARCNetwork+interface.m in Sources */,
 				84A821AC24BF15FF00EAC652 /* EFFollowCollectionViewCell.m in Sources */,
@@ -2102,17 +2267,21 @@
 				0C4BAFA424D10A2D0037CDCF /* EFCollectionViewController.m in Sources */,
 				0CCEC47224CA8F7500976D24 /* EFRealPriceTableViewCell.m in Sources */,
 				84760F7B24C14AD9002B34E4 /* MeListTableViewCell.m in Sources */,
+				0CE285FA24D3EC4E00AAC334 /* LTSCalendarAppearance.m in Sources */,
 				0C6CB58424CE889B00471A8D /* EFThreeLoginTableViewCell.m in Sources */,
 				847610A524C68962002B34E4 /* EFPhoneTableViewCell.m in Sources */,
 				84A821A724BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */,
 				0CCEC47D24CABBF300976D24 /* EFHelpViewController.m in Sources */,
 				841B94DF24C93C690054D8D5 /* EFOrderTitleTableViewCell.m in Sources */,
 				84A821BF24C033EC00EAC652 /* SearchTwoCollectionViewCell.m in Sources */,
+				0C8A276224D68D1600E40ED8 /* CalendarModel.m in Sources */,
 				84A8210E24BC4F5400EAC652 /* UIView+Frame.m in Sources */,
 				84A8210F24BC4F5400EAC652 /* EFBaseVM.m in Sources */,
 				847610A024C684EA002B34E4 /* EFQPTableViewCell.m in Sources */,
 				84A8219C24BF011700EAC652 /* TKTagView.m in Sources */,
+				0CE2861524D3EC4F00AAC334 /* LTSCircleView.m in Sources */,
 				84A8215024BD841900EAC652 /* EFBaseTabBarViewController.m in Sources */,
+				0CE2860324D3EC4F00AAC334 /* LTSCalendarContentView.m in Sources */,
 				8476118E24C7DBD5002B34E4 /* EFOnePhoneViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2132,10 +2301,13 @@
 				0C4BAFE124D26B2D0037CDCF /* cityModel.m in Sources */,
 				8476105E24C57E81002B34E4 /* TuanOtherGoodsView.m in Sources */,
 				8476104524C54B72002B34E4 /* TuanPeopleView.m in Sources */,
+				0C8A274E24D6711F00E40ED8 /* EFCalendarView.m in Sources */,
 				0C4BAF9B24D021440037CDCF /* EFBridge.m in Sources */,
 				84A8215624BDA0F200EAC652 /* EFHotViewController.m in Sources */,
 				84A8211F24BC513500EAC652 /* EFBaseTableView.m in Sources */,
 				84A8212024BC513500EAC652 /* BaseTableViewCell.m in Sources */,
+				0C8A275324D672A200E40ED8 /* EFCalendarCollectionViewCell.m in Sources */,
+				0CE285FE24D3EC4F00AAC334 /* LTSCalendarCollectionCell.m in Sources */,
 				8476105924C57636002B34E4 /* TuanListDetailSecsionView.m in Sources */,
 				841B94EA24C95F6C0054D8D5 /* EFOrderPriceTableViewCell.m in Sources */,
 				84A8212124BC513500EAC652 /* UIView+Radius.m in Sources */,
@@ -2158,6 +2330,7 @@
 				0C6CB5A924CEC61100471A8D /* EFOneBtnLoginTableViewCell.m in Sources */,
 				841B94FF24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.m in Sources */,
 				84A8212424BC513500EAC652 /* EFMeViewController.m in Sources */,
+				0CE2861024D3EC4F00AAC334 /* LTSCalendarViewController.m in Sources */,
 				8476108F24C5ABE6002B34E4 /* EFAccountTableViewCell.m in Sources */,
 				8476104A24C54E21002B34E4 /* TuanListTableViewCell.m in Sources */,
 				84A8215B24BDB45E00EAC652 /* UIImage+Darw.m in Sources */,
@@ -2168,6 +2341,7 @@
 				0CE285D124D2D3D800AAC334 /* EFSafeAccountViewController.m in Sources */,
 				84A8212524BC513500EAC652 /* EFBaseTableViewController.m in Sources */,
 				84A8212624BC513500EAC652 /* UIFont+RuntimeFit.m in Sources */,
+				0CE2860724D3EC4F00AAC334 /* LTSCalendarDayItem.m in Sources */,
 				84A8212724BC513500EAC652 /* EFBaseRefreshVM.m in Sources */,
 				0C4BAFAA24D117550037CDCF /* EFConversationViewController.m in Sources */,
 				0CCEC46E24CA8C3100976D24 /* EFOrderPriceDetailTableViewCell.m in Sources */,
@@ -2179,6 +2353,7 @@
 				0C4BAF9524D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */,
 				84A8214924BC5F0900EAC652 /* EFPlusButton.m in Sources */,
 				0CCEC48424CABDC900976D24 /* EFHelpTableViewCell.m in Sources */,
+				0CE2861B24D3ECA400AAC334 /* EFFootprintViewController.m in Sources */,
 				84A8212A24BC513500EAC652 /* EFBaseViewController.m in Sources */,
 				84A821CF24C0497200EAC652 /* EFHomeOtherViewController.m in Sources */,
 				8476107424C58C7C002B34E4 /* EFAddressTableViewCell.m in Sources */,
@@ -2202,12 +2377,14 @@
 				0C6CB57124CE7A1400471A8D /* EFOneLoginViewController.m in Sources */,
 				8476107F24C5A06F002B34E4 /* EFSetUpViewController.m in Sources */,
 				84760F9324C17AC1002B34E4 /* NSString+NSMutableAttributedString.m in Sources */,
+				0CE2860A24D3EC4F00AAC334 /* LTSCalendarManager.m in Sources */,
 				84B2437A24C8406C00E9967C /* RightThreeCollectionViewCell.m in Sources */,
 				84A8212C24BC513500EAC652 /* FMARCNetwork.m in Sources */,
 				8476104024C54854002B34E4 /* TuanListSelectView.m in Sources */,
 				84A8212D24BC513500EAC652 /* UIViewController+Runtime.m in Sources */,
 				0CCEC49924CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */,
 				84A821D424C04EAA00EAC652 /* EFClassDetailViewController.m in Sources */,
+				0CE285E224D3AD5F00AAC334 /* ZLPhotoActionSheet+RACSignal.m in Sources */,
 				0C6CB59524CEB3C500471A8D /* EFChangeLoginViewController.m in Sources */,
 				84760FAF24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
 				84A8214F24BD43F100EAC652 /* TabbarBackView.m in Sources */,
@@ -2219,6 +2396,7 @@
 				8476102F24C52BDC002B34E4 /* H5Manager.m in Sources */,
 				84760F8224C1551B002B34E4 /* EFWKWebConfig.m in Sources */,
 				0CCEC45A24CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */,
+				0CE2860D24D3EC4F00AAC334 /* LTSCalendarScrollView.m in Sources */,
 				84B2437524C83AB000E9967C /* LeftTableViewCell.m in Sources */,
 				841B94EF24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,
 				0C6CB58024CE833D00471A8D /* EFRegAndPswTableViewCell.m in Sources */,
@@ -2238,6 +2416,7 @@
 				841B94DA24C936AF0054D8D5 /* EFOrderDetailViewController.m in Sources */,
 				84A8217C24BEB35E00EAC652 /* EFFastCollectionViewCell.m in Sources */,
 				0C6CB58A24CE960700471A8D /* SignInApple.m in Sources */,
+				0CE2860124D3EC4F00AAC334 /* LTSCalendarCollectionViewFlowLayout.m in Sources */,
 				8476107A24C59780002B34E4 /* UILabel+LabelHeightAndWidth.m in Sources */,
 				0CCEC46424CA837400976D24 /* EFOrderShopTableViewCell.m in Sources */,
 				0CCEC48924CAC27A00976D24 /* EFIMListViewController.m in Sources */,
@@ -2247,6 +2426,7 @@
 				84A821BA24C0270000EAC652 /* EFSearchResultViewController.m in Sources */,
 				8476117324C6E21C002B34E4 /* EFNotiViewController.m in Sources */,
 				8476105424C574E5002B34E4 /* TuanListDetailTableViewCell.m in Sources */,
+				0CE2861324D3EC4F00AAC334 /* LTSCalendarWeekDayView.m in Sources */,
 				0C6CB57624CE7CB700471A8D /* EFOneLoginLogoTableViewCell.m in Sources */,
 				84A8212F24BC513500EAC652 /* main.m in Sources */,
 				84A821AD24BF15FF00EAC652 /* EFFollowCollectionViewCell.m in Sources */,
@@ -2256,17 +2436,21 @@
 				0C4BAFA524D10A2D0037CDCF /* EFCollectionViewController.m in Sources */,
 				0CCEC47324CA8F7500976D24 /* EFRealPriceTableViewCell.m in Sources */,
 				84760F7C24C14AD9002B34E4 /* MeListTableViewCell.m in Sources */,
+				0CE285FB24D3EC4F00AAC334 /* LTSCalendarAppearance.m in Sources */,
 				0C6CB58524CE889B00471A8D /* EFThreeLoginTableViewCell.m in Sources */,
 				847610A624C68962002B34E4 /* EFPhoneTableViewCell.m in Sources */,
 				84A821A824BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */,
 				0CCEC47E24CABBF300976D24 /* EFHelpViewController.m in Sources */,
 				841B94E024C93C690054D8D5 /* EFOrderTitleTableViewCell.m in Sources */,
 				84A821C024C033ED00EAC652 /* SearchTwoCollectionViewCell.m in Sources */,
+				0C8A276324D68D1600E40ED8 /* CalendarModel.m in Sources */,
 				84A8213124BC513500EAC652 /* EFClassifyViewController.m in Sources */,
 				84A8213224BC513500EAC652 /* UIView+Frame.m in Sources */,
 				847610A124C684EA002B34E4 /* EFQPTableViewCell.m in Sources */,
 				84A8219D24BF011700EAC652 /* TKTagView.m in Sources */,
+				0CE2861624D3EC4F00AAC334 /* LTSCircleView.m in Sources */,
 				84A8213324BC513500EAC652 /* EFBaseVM.m in Sources */,
+				0CE2860424D3EC4F00AAC334 /* LTSCalendarContentView.m in Sources */,
 				8476118F24C7DBD5002B34E4 /* EFOnePhoneViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -113,7 +113,7 @@
         case 0:
         {
             HotTabTableViewCell *hotCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HotTabTableViewCell class])];
-            [hotCell setCollectData:[@[@{@"title":@"签到奖励",@"icon":@"1"},@{@"title":@"平台活动",@"icon":@"2"},@{@"title":@"清仓减价",@"icon":@"3"},@{@"title":@"反向拍卖",@"icon":@"4"}] mutableCopy]];
+            [hotCell setCollectData:[@[@{@"title":@"签到奖励",@"icon":@"1"},@{@"title":@"平台活动",@"icon":@"2"},@{@"title":@"清仓减价",@"icon":@"3"},@{@"title":@"反向拍卖",@"icon":@"4"},@{@"title":@"签到奖励",@"icon":@"1"},@{@"title":@"平台活动",@"icon":@"2"},@{@"title":@"清仓减价",@"icon":@"3"},@{@"title":@"反向拍卖",@"icon":@"4"},@{@"title":@"反向拍卖",@"icon":@"4"}] mutableCopy]];
             return hotCell;
         }
         case 1:
@@ -125,6 +125,9 @@
         {
             EFFastTableViewCell *fastCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFFastTableViewCell class])];
             [fastCell setCollectData:[@[@1,@2,@3,@4] mutableCopy]];
+            fastCell.selectIndex = ^(NSInteger index) {
+                [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@""];
+            };
             return fastCell;
         }
         default:
@@ -136,11 +139,17 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 3) {
+        [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@""];
+    }
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.section) {
         case 0:
             
-            return WidthOfScale(123.5); //WidthOfScale(208);
+            return WidthOfScale(208); //WidthOfScale(123.5);
             case 1:
         {
             return WidthOfScale(30);

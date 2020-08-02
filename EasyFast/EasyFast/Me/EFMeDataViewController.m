@@ -9,9 +9,11 @@
 #import "EFMeDataViewController.h"
 #import "EFSetUpTableViewCell.h"
 #import "EFOnePhoneViewController.h"
+#import "BRAddressPickerView.h"
 
 @interface EFMeDataViewController ()
 @property (nonatomic,strong)UIView *otherView;
+@property (nonatomic,strong)UIImage *headerImage;
 @end
 
 @implementation EFMeDataViewController
@@ -55,9 +57,9 @@
     self.gk_navTitle = @"个人资料";
     [self.EFTableView registerClass:[EFSetUpTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFSetUpTableViewCell class])];
     self.EFData = [@[@{@"title":@"头像",@"subTitle":@"",@"header":@""},
-                     @{@"title":@"昵称",@"subTitle":@"昵称最多四个字",@"header":@""},
+                     [@{@"title":@"昵称",@"subTitle":@"昵称最多四个字",@"header":@""} mutableCopy],
                      @{@"title":@"性别",@"subTitle":@"男",@"header":@""},
-                     @{@"title":@"地区",@"subTitle":@"广东  深圳",@"header":@""},
+                     [@{@"title":@"地区",@"subTitle":@"广东  深圳",@"header":@""} mutableCopy],
                      @{@"title":@"绑定手机",@"subTitle":@"13999999999",@"header":@""},
                      @{@"title":@"绑定微信号",@"subTitle":@"easyfast-shenzhen",@"header":@""},
                      @{@"title":@"实名认证",@"subTitle":@"未认证",@"header":@""},
@@ -79,6 +81,9 @@
     NSDictionary *dict = self.EFData[indexPath.row];
     [cell setModel:dict];
     indexPath.row == 0 ? [cell showHeader] : [cell hiddenHeader];
+    if (indexPath.row == 0) {
+        [cell setHeaderImage:self.headerImage];
+    }
     return cell;
 }
 
@@ -89,8 +94,58 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.row) {
         case 0:
-            
+        {
+            @weakify(self);
+            [[ZLPhotoActionSheet zlPhotoWithCamera:self] subscribeNext:^(RACTuple * _Nullable x) {
+                @strongify(self);
+                if (x.first) {
+                    self.headerImage = x.first;
+                    [self.EFTableView reloadData];
+                }
+            }];
+        }
             break;
+        case 1:
+        {
+            @weakify(self);
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"请输入昵称" preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                @strongify(self);
+                UITextField *userNameTextField = alertController.textFields.firstObject;
+                self.EFData[1][@"subTitle"] = userNameTextField.text;
+                [self.EFTableView reloadData];
+            }]];
+            [alertController addTextFieldWithConfigurationHandler:^(UITextField *_Nonnull textField) {
+                textField.placeholder=@"请输入昵称";
+            }];
+            [self presentViewController:alertController animated:YES completion:nil];
+            break;
+        }
+            case 2:
+        {
+            break;
+        }
+            case 3:
+        {
+            /// 地址选择器
+            @weakify(self);
+            BRAddressPickerView *addressPickerView = [[BRAddressPickerView alloc]init];
+            addressPickerView.pickerMode = BRAddressPickerModeCity;
+            addressPickerView.title = @"请选择地区";
+            //addressPickerView.selectValues = @[@"浙江省", @"杭州市", @"西湖区"];
+            addressPickerView.isAutoSelect = YES;
+            addressPickerView.resultBlock = ^(BRProvinceModel *province, BRCityModel *city, BRAreaModel *area) {
+                @strongify(self);
+                self.EFData[3][@"subTitle"] = [NSString stringWithFormat:@"%@ %@", province.name, city.name];
+                [[RACScheduler mainThreadScheduler] schedule:^{
+                    [self.EFTableView reloadData];
+                }];
+            };
+            
+            [addressPickerView show];
+            break;
+        }
             case 4:
         {
             EFOnePhoneViewController *one = [[EFOnePhoneViewController alloc] init];

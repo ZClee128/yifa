@@ -9,7 +9,7 @@
 #import "H5Manager.h"
 #import <ZipArchive.h>
 #import <CommonCrypto/CommonCrypto.h>
-
+#import "EFBaseWebViewController.h"
 
 #define fileName        @"EasyFast"
 #define pathes   NSSearchPathForDirectoriesInDomains(NSCachesDirectory,NSUserDomainMask,YES)
@@ -69,6 +69,14 @@
     NSString *zipName    = [[fileName lastPathComponent] stringByDeletingPathExtension];//获取下载链接里的文件名 即123sst文件夹
     NSString * webPath = [NSString stringWithFormat:@"%@/%@/index.html",finishPath,zipName];
     return webPath;
+}
+
+- (void)gotoUrl:(NSString *)url hasNav:(BOOL)show navTitle:(NSString *)title {
+    EFBaseWebViewController *web = [[EFBaseWebViewController alloc] initWithUrl:url navTitle:title hasNav:show];
+    web.hidesBottomBarWhenPushed = YES;
+    [[UIViewController getCurrentVC].navigationController qmui_pushViewController:web animated:YES completion:^{
+        
+    }];
 }
 
 - (NSString *)md5:(NSString *)str

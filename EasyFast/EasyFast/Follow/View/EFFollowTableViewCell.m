@@ -212,6 +212,11 @@
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.selectIndex) {
+        self.selectIndex(indexPath.item);
+    }
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];

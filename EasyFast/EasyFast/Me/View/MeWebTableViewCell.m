@@ -67,8 +67,10 @@
     self.bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView];
     self.efbridge = [[EFBridge alloc] initWithBridge:self.bridge];
     [self.bridge setWebViewDelegate:self];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.3.23:8080/recom.html"]]]];
-    
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.3.23:8080"]]]];
+    [self.bridge callHandler:@"goTo" data:@"recom" responseCallback:^(id responseData) {
+
+    }];
 //    NSString *path = [[NSBundle mainBundle] pathForResource:@"pay" ofType:@"html" inDirectory:@"dist"];
 //
 //    NSURL *fileURL = [NSURL fileURLWithPath:path];

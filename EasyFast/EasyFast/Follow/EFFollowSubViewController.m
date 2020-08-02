@@ -51,6 +51,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EFFollowTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFFollowTableViewCell class])];
+    cell.selectIndex = ^(NSInteger index) {
+        [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@""];
+    };
     switch (self.type) {
         case FollowGZ:
         {

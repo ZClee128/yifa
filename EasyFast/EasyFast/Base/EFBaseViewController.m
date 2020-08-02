@@ -34,6 +34,7 @@
     self.gk_navTitleColor = tabbarBlackColor;
     self.gk_navItemLeftSpace = WidthOfScale(0);
     self.gk_navLineHidden = YES;
+    self.gk_navShadowColor = RGB16(0xf2f2f2);
 }
 
 - (BOOL)prefersStatusBarHidden {

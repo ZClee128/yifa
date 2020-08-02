@@ -117,6 +117,9 @@
     self.headerImageView.hidden = NO;
 }
 
+- (void)setHeaderImage:(UIImage *)header {
+    self.headerImageView.image = header;
+}
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code

@@ -62,10 +62,7 @@
         }
         default:
         {
-            EFBaseWebViewController *web = [[EFBaseWebViewController alloc] initWithUrl:@"https://www.baidu.com/" navTitle:@"隐私政策"];
-            [self.navigationController qmui_pushViewController:web animated:YES completion:^{
-                
-            }];
+            [kH5Manager gotoUrl:@"policy" hasNav:YES navTitle:@"隐私政策"];
         }
             break;
     }

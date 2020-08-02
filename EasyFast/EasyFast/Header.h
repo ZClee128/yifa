@@ -51,4 +51,7 @@
 #import "EFCustomWebViewPool.h"
 #import "TUIKit.h"
 #import <ImSDK/ImSDK.h>
+#import <ZLPhotoBrowser/ZLPhotoBrowser.h>
+#import "ZLPhotoActionSheet+RACSignal.h"
+#import "H5Manager.h"
 #endif /* Header_h */
