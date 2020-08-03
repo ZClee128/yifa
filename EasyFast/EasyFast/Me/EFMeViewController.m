@@ -22,7 +22,7 @@
 #import "EFSafeAccountViewController.h"
 #import "EFFootprintViewController.h"
 #import "EFPayStatusViewController.h"
-
+#import "LoginVM.h"
 @interface EFMeViewController ()
 
 @property (nonatomic,strong)MeHeaderView *headerView;
@@ -82,9 +82,7 @@
                     break;
             }
         } vipBlock:^{
-            EFPayStatusViewController *vc = [[EFPayStatusViewController alloc] init];
-            vc.hidesBottomBarWhenPushed = YES;
-            [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+            [[LoginVM userLogin] subscribeNext:^(id  _Nullable x) {
                 
             }];
         }];

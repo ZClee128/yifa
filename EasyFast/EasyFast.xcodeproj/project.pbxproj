@@ -109,9 +109,6 @@
 		0C8A278D24D7A1ED00E40ED8 /* EFFastTuanListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A278C24D7A1ED00E40ED8 /* EFFastTuanListCollectionViewCell.m */; };
 		0C8A278E24D7A1ED00E40ED8 /* EFFastTuanListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A278C24D7A1ED00E40ED8 /* EFFastTuanListCollectionViewCell.m */; };
 		0C8A278F24D7A1ED00E40ED8 /* EFFastTuanListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A278C24D7A1ED00E40ED8 /* EFFastTuanListCollectionViewCell.m */; };
-		0C8A279124D7B14800E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A279024D7B14800E40ED8 /* dist */; };
-		0C8A279224D7B14800E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A279024D7B14800E40ED8 /* dist */; };
-		0C8A279324D7B14800E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A279024D7B14800E40ED8 /* dist */; };
 		0C8A279624D7B34100E40ED8 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8A279524D7B34100E40ED8 /* AuthenticationServices.framework */; };
 		0C8A279A24D7C1F800E40ED8 /* EFOnePhoneLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A279924D7C1F800E40ED8 /* EFOnePhoneLoginManager.m */; };
 		0C8A279B24D7C1F800E40ED8 /* EFOnePhoneLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A279924D7C1F800E40ED8 /* EFOnePhoneLoginManager.m */; };
@@ -125,6 +122,12 @@
 		0C8A27AA24D8224B00E40ED8 /* EFPayTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27A924D8224B00E40ED8 /* EFPayTypeTableViewCell.m */; };
 		0C8A27AB24D8224B00E40ED8 /* EFPayTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27A924D8224B00E40ED8 /* EFPayTypeTableViewCell.m */; };
 		0C8A27AC24D8224B00E40ED8 /* EFPayTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27A924D8224B00E40ED8 /* EFPayTypeTableViewCell.m */; };
+		0C8A27B124D8315200E40ED8 /* FMARCNetwork+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27B024D8315200E40ED8 /* FMARCNetwork+Login.m */; };
+		0C8A27B224D8315200E40ED8 /* FMARCNetwork+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27B024D8315200E40ED8 /* FMARCNetwork+Login.m */; };
+		0C8A27B324D8315200E40ED8 /* FMARCNetwork+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27B024D8315200E40ED8 /* FMARCNetwork+Login.m */; };
+		0C8A27C524D84ADD00E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A27C424D84ADD00E40ED8 /* dist */; };
+		0C8A27C624D84ADD00E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A27C424D84ADD00E40ED8 /* dist */; };
+		0C8A27C724D84ADD00E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A27C424D84ADD00E40ED8 /* dist */; };
 		0CCEC45324CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45424CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45524CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
@@ -609,7 +612,6 @@
 		0C8A278724D79BCE00E40ED8 /* EFFastTuanListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFFastTuanListViewController.m; sourceTree = "<group>"; };
 		0C8A278B24D7A1ED00E40ED8 /* EFFastTuanListCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFFastTuanListCollectionViewCell.h; sourceTree = "<group>"; };
 		0C8A278C24D7A1ED00E40ED8 /* EFFastTuanListCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFFastTuanListCollectionViewCell.m; sourceTree = "<group>"; };
-		0C8A279024D7B14800E40ED8 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dist; sourceTree = "<group>"; };
 		0C8A279424D7B31C00E40ED8 /* EasyFast.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EasyFast.entitlements; sourceTree = "<group>"; };
 		0C8A279524D7B34100E40ED8 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		0C8A279824D7C1F800E40ED8 /* EFOnePhoneLoginManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOnePhoneLoginManager.h; sourceTree = "<group>"; };
@@ -620,6 +622,10 @@
 		0C8A27A424D81E7400E40ED8 /* EFToPayDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFToPayDetailViewController.m; sourceTree = "<group>"; };
 		0C8A27A824D8224B00E40ED8 /* EFPayTypeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFPayTypeTableViewCell.h; sourceTree = "<group>"; };
 		0C8A27A924D8224B00E40ED8 /* EFPayTypeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFPayTypeTableViewCell.m; sourceTree = "<group>"; };
+		0C8A27AD24D8309700E40ED8 /* Api.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Api.h; sourceTree = "<group>"; };
+		0C8A27AF24D8315200E40ED8 /* FMARCNetwork+Login.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FMARCNetwork+Login.h"; sourceTree = "<group>"; };
+		0C8A27B024D8315200E40ED8 /* FMARCNetwork+Login.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FMARCNetwork+Login.m"; sourceTree = "<group>"; };
+		0C8A27C424D84ADD00E40ED8 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dist; sourceTree = "<group>"; };
 		0CCEC45124CA7A6000976D24 /* EFWuliuTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFWuliuTableViewCell.h; sourceTree = "<group>"; };
 		0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFWuliuTableViewCell.m; sourceTree = "<group>"; };
 		0CCEC45624CA7D8900976D24 /* EFOrderMoreDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderMoreDetailViewController.h; sourceTree = "<group>"; };
@@ -1018,6 +1024,15 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		0C8A27AE24D830CC00E40ED8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0C8A27AF24D8315200E40ED8 /* FMARCNetwork+Login.h */,
+				0C8A27B024D8315200E40ED8 /* FMARCNetwork+Login.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		0CCEC47924CABB9700976D24 /* IM */ = {
 			isa = PBXGroup;
 			children = (
@@ -1195,7 +1210,7 @@
 		84760F9924C196FF002B34E4 /* Web */ = {
 			isa = PBXGroup;
 			children = (
-				0C8A279024D7B14800E40ED8 /* dist */,
+				0C8A27C424D84ADD00E40ED8 /* dist */,
 				0C4BAF9624D0212E0037CDCF /* Bridge */,
 				0C6CB5B924CFBE1C00471A8D /* WebViewPool */,
 				8476102B24C52BDC002B34E4 /* H5Manager.h */,
@@ -1415,6 +1430,7 @@
 				84A8208824B6C62300EAC652 /* main.m */,
 				84A820BF24B6CAF500EAC652 /* Header.h */,
 				84A820D024B6CD3300EAC652 /* Constant.h */,
+				0C8A27AD24D8309700E40ED8 /* Api.h */,
 				84A820C024B6CB1000EAC652 /* PrefixHeader.pch */,
 			);
 			path = EasyFast;
@@ -1472,6 +1488,7 @@
 		84A820C224B6CCC600EAC652 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				0C8A27AE24D830CC00E40ED8 /* Login */,
 				84A820C324B6CCC600EAC652 /* FMARCNetwork+interface.h */,
 				84A820C424B6CCC600EAC652 /* FMARCNetwork.m */,
 				84A820C524B6CCC600EAC652 /* FMHttpRequest.h */,
@@ -1848,7 +1865,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C8A279124D7B14800E40ED8 /* dist in Resources */,
+				0C8A27C524D84ADD00E40ED8 /* dist in Resources */,
 				84A8208624B6C62300EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8208324B6C62300EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -1858,7 +1875,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C8A279224D7B14800E40ED8 /* dist in Resources */,
+				0C8A27C624D84ADD00E40ED8 /* dist in Resources */,
 				84A8211324BC4F5400EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8211424BC4F5400EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -1868,7 +1885,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C8A279324D7B14800E40ED8 /* dist in Resources */,
+				0C8A27C724D84ADD00E40ED8 /* dist in Resources */,
 				84A8213724BC513500EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8213824BC513500EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -2191,6 +2208,7 @@
 				0CCEC46224CA837400976D24 /* EFOrderShopTableViewCell.m in Sources */,
 				0CCEC48724CAC27A00976D24 /* EFIMListViewController.m in Sources */,
 				841B94D324C935B20054D8D5 /* EFOrderViewController.m in Sources */,
+				0C8A27B124D8315200E40ED8 /* FMARCNetwork+Login.m in Sources */,
 				84A820E624B6F5E800EAC652 /* EFHomeViewController.m in Sources */,
 				84A8217024BEA92300EAC652 /* EFNoticTitleCell.m in Sources */,
 				84A821B824C026FF00EAC652 /* EFSearchResultViewController.m in Sources */,
@@ -2370,6 +2388,7 @@
 				0CCEC46324CA837400976D24 /* EFOrderShopTableViewCell.m in Sources */,
 				0CCEC48824CAC27A00976D24 /* EFIMListViewController.m in Sources */,
 				841B94D424C935B20054D8D5 /* EFOrderViewController.m in Sources */,
+				0C8A27B224D8315200E40ED8 /* FMARCNetwork+Login.m in Sources */,
 				84A8210B24BC4F5400EAC652 /* main.m in Sources */,
 				84A8217124BEA92400EAC652 /* EFNoticTitleCell.m in Sources */,
 				84A821B924C026FF00EAC652 /* EFSearchResultViewController.m in Sources */,
@@ -2549,6 +2568,7 @@
 				0CCEC46424CA837400976D24 /* EFOrderShopTableViewCell.m in Sources */,
 				0CCEC48924CAC27A00976D24 /* EFIMListViewController.m in Sources */,
 				841B94D524C935B20054D8D5 /* EFOrderViewController.m in Sources */,
+				0C8A27B324D8315200E40ED8 /* FMARCNetwork+Login.m in Sources */,
 				84A8212E24BC513500EAC652 /* EFHomeViewController.m in Sources */,
 				84A8217224BEA92400EAC652 /* EFNoticTitleCell.m in Sources */,
 				84A821BA24C0270000EAC652 /* EFSearchResultViewController.m in Sources */,

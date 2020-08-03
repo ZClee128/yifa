@@ -15,7 +15,7 @@
 
 
 /*******URL******/
-#define BaseUrl @"http://47.111.173.179/"
+#define BaseUrl @"http://192.168.3.16:9010/"
 #define DevUrl @"http://47.111.173.179/"
 #define TestUrl @"http://47.111.173.179/"
 
@@ -38,8 +38,8 @@
 /// 状态码key
 #define HTTPServiceResponseCodeKey @"code"
 /// 消息key
-#define HTTPServiceResponseMsgKey @"message"
+#define HTTPServiceResponseMsgKey @"msg"
 /// 数据data
-#define HTTPServiceResponseDataKey  @"result"
+#define HTTPServiceResponseDataKey  @"data"
 
 #endif /* FMHttpConstant_h */

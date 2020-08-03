@@ -73,11 +73,11 @@
     // 给webview建立JS与OjbC的沟通桥梁
     self.bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView];
     [self.bridge setWebViewDelegate:self];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.3.23:8080"]]];
-//    NSString *path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:@"dist"];
-//    NSURL *fileURL = [NSURL fileURLWithPath:path];
-//
-//    [_webView loadFileURL:fileURL allowingReadAccessToURL:fileURL];
+//    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.3.23:8080"]]];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:@"dist"];
+    NSURL *fileURL = [NSURL fileURLWithPath:path];
+
+    [_webView loadFileURL:fileURL allowingReadAccessToURL:fileURL];
     
     [self getFun];
     self.gk_fullScreenPopDisabled = YES;

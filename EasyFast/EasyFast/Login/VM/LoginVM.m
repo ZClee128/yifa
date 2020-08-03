@@ -26,4 +26,13 @@
     }];
 }
 
++ (RACSignal *)userLogin {
+    return [self requsetNetwork:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] userLogin];
+    } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
+        XYLog(@"%@",result);
+        return result;
+    }];
+}
+
 @end

@@ -17,7 +17,7 @@
 
 /// 请求数据返回的状态码、根据自己的服务端数据来
 typedef NS_ENUM(NSUInteger, HTTPResponseCode) {
-    HTTPResponseCodeSuccess = 200,           /// 请求成功
+    HTTPResponseCodeSuccess = 0,           /// 请求成功
     HTTPResponseCodeNotLogin = 1009,       /// 用户尚未登录，一般在网络请求前判断处理，也可以在网络层处理
 };
 
@@ -168,8 +168,7 @@ static FMARCNetwork * _instance = nil;
 //        
 //        if (![req.path isEqualToString:kCheakPhone] || ![req.path isEqualToString:kLogin]) {
 //            
-//            [self.manager.requestSerializer setValue:[NSString stringWithFormat:@"%@",accessToken] forHTTPHeaderField:@"c-token"];
-//            [self.manager.requestSerializer setValue:[NSString stringWithFormat:@"%@",userid] forHTTPHeaderField:@"c-user-id"];
+//            [self.manager.requestSerializer setValue:[NSString stringWithFormat:@"%@",accessToken] forHTTPHeaderField:@"token"];
 //        }
 //    }else {
 //        [self.manager.requestSerializer clearAuthorizationHeader];

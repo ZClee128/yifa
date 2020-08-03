@@ -60,4 +60,5 @@
 #import <UShareUI/UShareUI.h>
 #import "ShareManager.h"
 #import "EFOnePhoneLoginManager.h"
+#import "FMARCNetwork+Login.h"
 #endif /* Header_h */

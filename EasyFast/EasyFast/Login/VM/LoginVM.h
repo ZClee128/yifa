@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)getCodeWithBtn:(QMUIButton *)codeBtn;
 
++ (RACSignal *)userLogin;
 @end
 
 NS_ASSUME_NONNULL_END
