@@ -79,12 +79,12 @@
     self.jxTitleView = [[JXCategoryTitleView alloc] initWithFrame:CGRectMake(0, NAVIGATION_BAR_HEIGHT, kPHONE_WIDTH, 45)];
     self.jxTitleView.delegate = self;
     [self.view addSubview:self.jxTitleView];
-    self.jxTitleView.titles = @[@"全部", @"待付款", @"待发货",@"待收货",@"待评价"];
+    self.jxTitleView.titles = @[@"全部",@"待付款", @"待发货",@"待收货",@"待评价"];
     self.jxTitleView.titleColorGradientEnabled = NO;
     self.jxTitleView.titleColor = tabbarBlackColor;
     self.jxTitleView.titleSelectedColor = colorF14745;
-    self.jxTitleView.titleFont = RegularFont16;
-    self.jxTitleView.titleSelectedFont = RegularFont17;
+    self.jxTitleView.titleFont = RegularFont15;
+    self.jxTitleView.titleSelectedFont = RegularFont15;
     self.jxTitleView.backgroundColor = UIColor.whiteColor;
     self.jxTitleView.defaultSelectedIndex = self.selectIndex;
     

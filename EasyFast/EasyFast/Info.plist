@@ -50,6 +50,16 @@
 				<string>QQ423398ef</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>wb</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wb1452254064</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>

@@ -12,6 +12,7 @@
 #import "EFHeaderView.h"
 #import "EFFastTableViewCell.h"
 #import "EFGoodsTableViewCell.h"
+#import "EFFastTuanListViewController.h"
 
 @interface EFHotViewController ()
 
@@ -40,6 +41,15 @@
 {
     if (_fastHeader == nil) {
         _fastHeader = [[EFHeaderView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, 53) WithLeftTitle:@"急速拼团" WithRightTitle:@"查看全部"];
+        @weakify(self);
+        _fastHeader.moreBlock = ^{
+            @strongify(self);
+            EFFastTuanListViewController *vc = [[EFFastTuanListViewController alloc] init];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+                
+            }];
+        };
     }
     return _fastHeader;
 }

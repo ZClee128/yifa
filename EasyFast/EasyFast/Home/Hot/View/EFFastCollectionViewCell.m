@@ -10,9 +10,7 @@
 
 @interface EFFastCollectionViewCell ()
 
-@property (nonatomic,strong)UIImageView *goods;
-@property (nonatomic,strong)UILabel *priceLab;
-@property (nonatomic,strong)LRAnimationProgress *progressView;
+
 
 @end
 

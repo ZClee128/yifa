@@ -103,9 +103,28 @@
 		0C8A277724D6C44F00E40ED8 /* SKTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A277024D6C44F00E40ED8 /* SKTagView.m */; };
 		0C8A277824D6C44F00E40ED8 /* SKTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A277024D6C44F00E40ED8 /* SKTagView.m */; };
 		0C8A277924D6C44F00E40ED8 /* SKTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A277024D6C44F00E40ED8 /* SKTagView.m */; };
-		0C8A278324D6E3D400E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A278224D6E3D400E40ED8 /* dist */; };
-		0C8A278424D6E3D400E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A278224D6E3D400E40ED8 /* dist */; };
-		0C8A278524D6E3D400E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A278224D6E3D400E40ED8 /* dist */; };
+		0C8A278824D79BCE00E40ED8 /* EFFastTuanListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A278724D79BCE00E40ED8 /* EFFastTuanListViewController.m */; };
+		0C8A278924D79BCE00E40ED8 /* EFFastTuanListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A278724D79BCE00E40ED8 /* EFFastTuanListViewController.m */; };
+		0C8A278A24D79BCE00E40ED8 /* EFFastTuanListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A278724D79BCE00E40ED8 /* EFFastTuanListViewController.m */; };
+		0C8A278D24D7A1ED00E40ED8 /* EFFastTuanListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A278C24D7A1ED00E40ED8 /* EFFastTuanListCollectionViewCell.m */; };
+		0C8A278E24D7A1ED00E40ED8 /* EFFastTuanListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A278C24D7A1ED00E40ED8 /* EFFastTuanListCollectionViewCell.m */; };
+		0C8A278F24D7A1ED00E40ED8 /* EFFastTuanListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A278C24D7A1ED00E40ED8 /* EFFastTuanListCollectionViewCell.m */; };
+		0C8A279124D7B14800E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A279024D7B14800E40ED8 /* dist */; };
+		0C8A279224D7B14800E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A279024D7B14800E40ED8 /* dist */; };
+		0C8A279324D7B14800E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A279024D7B14800E40ED8 /* dist */; };
+		0C8A279624D7B34100E40ED8 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C8A279524D7B34100E40ED8 /* AuthenticationServices.framework */; };
+		0C8A279A24D7C1F800E40ED8 /* EFOnePhoneLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A279924D7C1F800E40ED8 /* EFOnePhoneLoginManager.m */; };
+		0C8A279B24D7C1F800E40ED8 /* EFOnePhoneLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A279924D7C1F800E40ED8 /* EFOnePhoneLoginManager.m */; };
+		0C8A279C24D7C1F800E40ED8 /* EFOnePhoneLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A279924D7C1F800E40ED8 /* EFOnePhoneLoginManager.m */; };
+		0C8A27A024D812C600E40ED8 /* EFPayStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A279F24D812C600E40ED8 /* EFPayStatusViewController.m */; };
+		0C8A27A124D812C600E40ED8 /* EFPayStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A279F24D812C600E40ED8 /* EFPayStatusViewController.m */; };
+		0C8A27A224D812C600E40ED8 /* EFPayStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A279F24D812C600E40ED8 /* EFPayStatusViewController.m */; };
+		0C8A27A524D81E7400E40ED8 /* EFToPayDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27A424D81E7400E40ED8 /* EFToPayDetailViewController.m */; };
+		0C8A27A624D81E7400E40ED8 /* EFToPayDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27A424D81E7400E40ED8 /* EFToPayDetailViewController.m */; };
+		0C8A27A724D81E7400E40ED8 /* EFToPayDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27A424D81E7400E40ED8 /* EFToPayDetailViewController.m */; };
+		0C8A27AA24D8224B00E40ED8 /* EFPayTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27A924D8224B00E40ED8 /* EFPayTypeTableViewCell.m */; };
+		0C8A27AB24D8224B00E40ED8 /* EFPayTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27A924D8224B00E40ED8 /* EFPayTypeTableViewCell.m */; };
+		0C8A27AC24D8224B00E40ED8 /* EFPayTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27A924D8224B00E40ED8 /* EFPayTypeTableViewCell.m */; };
 		0CCEC45324CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45424CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45524CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
@@ -586,7 +605,21 @@
 		0C8A276E24D6C44F00E40ED8 /* SKTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTag.m; sourceTree = "<group>"; };
 		0C8A276F24D6C44F00E40ED8 /* SKTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTagView.h; sourceTree = "<group>"; };
 		0C8A277024D6C44F00E40ED8 /* SKTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTagView.m; sourceTree = "<group>"; };
-		0C8A278224D6E3D400E40ED8 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dist; sourceTree = "<group>"; };
+		0C8A278624D79BCE00E40ED8 /* EFFastTuanListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFFastTuanListViewController.h; sourceTree = "<group>"; };
+		0C8A278724D79BCE00E40ED8 /* EFFastTuanListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFFastTuanListViewController.m; sourceTree = "<group>"; };
+		0C8A278B24D7A1ED00E40ED8 /* EFFastTuanListCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFFastTuanListCollectionViewCell.h; sourceTree = "<group>"; };
+		0C8A278C24D7A1ED00E40ED8 /* EFFastTuanListCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFFastTuanListCollectionViewCell.m; sourceTree = "<group>"; };
+		0C8A279024D7B14800E40ED8 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dist; sourceTree = "<group>"; };
+		0C8A279424D7B31C00E40ED8 /* EasyFast.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EasyFast.entitlements; sourceTree = "<group>"; };
+		0C8A279524D7B34100E40ED8 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		0C8A279824D7C1F800E40ED8 /* EFOnePhoneLoginManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOnePhoneLoginManager.h; sourceTree = "<group>"; };
+		0C8A279924D7C1F800E40ED8 /* EFOnePhoneLoginManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFOnePhoneLoginManager.m; sourceTree = "<group>"; };
+		0C8A279E24D812C600E40ED8 /* EFPayStatusViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFPayStatusViewController.h; sourceTree = "<group>"; };
+		0C8A279F24D812C600E40ED8 /* EFPayStatusViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFPayStatusViewController.m; sourceTree = "<group>"; };
+		0C8A27A324D81E7400E40ED8 /* EFToPayDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFToPayDetailViewController.h; sourceTree = "<group>"; };
+		0C8A27A424D81E7400E40ED8 /* EFToPayDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFToPayDetailViewController.m; sourceTree = "<group>"; };
+		0C8A27A824D8224B00E40ED8 /* EFPayTypeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFPayTypeTableViewCell.h; sourceTree = "<group>"; };
+		0C8A27A924D8224B00E40ED8 /* EFPayTypeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFPayTypeTableViewCell.m; sourceTree = "<group>"; };
 		0CCEC45124CA7A6000976D24 /* EFWuliuTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFWuliuTableViewCell.h; sourceTree = "<group>"; };
 		0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFWuliuTableViewCell.m; sourceTree = "<group>"; };
 		0CCEC45624CA7D8900976D24 /* EFOrderMoreDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderMoreDetailViewController.h; sourceTree = "<group>"; };
@@ -882,6 +915,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C8A279624D7B34100E40ED8 /* AuthenticationServices.framework in Frameworks */,
 				A5F43C7BD361B73903F6C113 /* libPods-EasyFast.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -975,6 +1009,15 @@
 			path = Tags;
 			sourceTree = "<group>";
 		};
+		0C8A279724D7C1C300E40ED8 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				0C8A279824D7C1F800E40ED8 /* EFOnePhoneLoginManager.h */,
+				0C8A279924D7C1F800E40ED8 /* EFOnePhoneLoginManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		0CCEC47924CABB9700976D24 /* IM */ = {
 			isa = PBXGroup;
 			children = (
@@ -1053,6 +1096,7 @@
 		450A170569CB954BCEB29555 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0C8A279524D7B34100E40ED8 /* AuthenticationServices.framework */,
 				0C4BB04A24D2A9E60037CDCF /* libc++.tbd */,
 				6E09AFAC86DE93F633083A99 /* libPods-EasyFast.a */,
 				00D88C6799F2691F0B67B541 /* libPods-EasyFast_Dev.a */,
@@ -1115,6 +1159,8 @@
 				0CCEC49124CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.m */,
 				0CCEC49524CAD13900976D24 /* EFTimeAxisTableViewCell.h */,
 				0CCEC49624CAD13900976D24 /* EFTimeAxisTableViewCell.m */,
+				0C8A27A824D8224B00E40ED8 /* EFPayTypeTableViewCell.h */,
+				0C8A27A924D8224B00E40ED8 /* EFPayTypeTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1149,7 +1195,7 @@
 		84760F9924C196FF002B34E4 /* Web */ = {
 			isa = PBXGroup;
 			children = (
-				0C8A278224D6E3D400E40ED8 /* dist */,
+				0C8A279024D7B14800E40ED8 /* dist */,
 				0C4BAF9624D0212E0037CDCF /* Bridge */,
 				0C6CB5B924CFBE1C00471A8D /* WebViewPool */,
 				8476102B24C52BDC002B34E4 /* H5Manager.h */,
@@ -1229,6 +1275,7 @@
 		8476109624C67CE8002B34E4 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				0C8A279724D7C1C300E40ED8 /* Manager */,
 				847610AC24C69FF2002B34E4 /* VM */,
 				8476109C24C684BE002B34E4 /* View */,
 				8476109724C67D19002B34E4 /* EFBindPhoneViewController.h */,
@@ -1343,6 +1390,7 @@
 		84A8207524B6C61800EAC652 /* EasyFast */ = {
 			isa = PBXGroup;
 			children = (
+				0C8A279424D7B31C00E40ED8 /* EasyFast.entitlements */,
 				0CCEC47924CABB9700976D24 /* IM */,
 				84B2438024C84D1C00E9967C /* Order */,
 				8476109624C67CE8002B34E4 /* Login */,
@@ -1577,6 +1625,8 @@
 				84A8215324BDA0F200EAC652 /* EFHotViewController.m */,
 				84A821CB24C0497200EAC652 /* EFHomeOtherViewController.h */,
 				84A821CC24C0497200EAC652 /* EFHomeOtherViewController.m */,
+				0C8A278624D79BCE00E40ED8 /* EFFastTuanListViewController.h */,
+				0C8A278724D79BCE00E40ED8 /* EFFastTuanListViewController.m */,
 			);
 			path = Hot;
 			sourceTree = "<group>";
@@ -1596,6 +1646,8 @@
 				84A8217424BEAE3000EAC652 /* EFHeaderView.m */,
 				84A8217824BEB35E00EAC652 /* EFFastCollectionViewCell.h */,
 				84A8217924BEB35E00EAC652 /* EFFastCollectionViewCell.m */,
+				0C8A278B24D7A1ED00E40ED8 /* EFFastTuanListCollectionViewCell.h */,
+				0C8A278C24D7A1ED00E40ED8 /* EFFastTuanListCollectionViewCell.m */,
 				84A8218224BED7E400EAC652 /* EFFastTableViewCell.h */,
 				84A8218324BED7E400EAC652 /* EFFastTableViewCell.m */,
 				84A8218C24BEE61700EAC652 /* EFGoodsTableViewCell.h */,
@@ -1686,6 +1738,10 @@
 				841B94F724C9809C0054D8D5 /* EFLogisticsViewController.m */,
 				0CCEC45624CA7D8900976D24 /* EFOrderMoreDetailViewController.h */,
 				0CCEC45724CA7D8900976D24 /* EFOrderMoreDetailViewController.m */,
+				0C8A27A324D81E7400E40ED8 /* EFToPayDetailViewController.h */,
+				0C8A27A424D81E7400E40ED8 /* EFToPayDetailViewController.m */,
+				0C8A279E24D812C600E40ED8 /* EFPayStatusViewController.h */,
+				0C8A279F24D812C600E40ED8 /* EFPayStatusViewController.m */,
 			);
 			path = Order;
 			sourceTree = "<group>";
@@ -1792,7 +1848,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C8A278324D6E3D400E40ED8 /* dist in Resources */,
+				0C8A279124D7B14800E40ED8 /* dist in Resources */,
 				84A8208624B6C62300EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8208324B6C62300EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -1802,7 +1858,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C8A278424D6E3D400E40ED8 /* dist in Resources */,
+				0C8A279224D7B14800E40ED8 /* dist in Resources */,
 				84A8211324BC4F5400EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8211424BC4F5400EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -1812,7 +1868,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C8A278524D6E3D400E40ED8 /* dist in Resources */,
+				0C8A279324D7B14800E40ED8 /* dist in Resources */,
 				84A8213724BC513500EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8213824BC513500EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -1997,12 +2053,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C8A277424D6C44F00E40ED8 /* SKTag.m in Sources */,
+				0C8A278824D79BCE00E40ED8 /* EFFastTuanListViewController.m in Sources */,
 				84A820EE24B6F65100EAC652 /* EFFollowViewController.m in Sources */,
 				0C6CB5C124CFD6B200471A8D /* EFRefreshHeader.m in Sources */,
 				0C6CB58E24CEB19000471A8D /* UITextField+MyExtension.m in Sources */,
 				84A821B324BFFAE700EAC652 /* EFSearchViewController.m in Sources */,
 				84187CA424C05D0200ED3F96 /* MeHeaderView.m in Sources */,
 				8476104D24C573B1002B34E4 /* TuanListDetailViewController.m in Sources */,
+				0C8A27A024D812C600E40ED8 /* EFPayStatusViewController.m in Sources */,
 				847610B424C6C209002B34E4 /* EFEditPasswordViewController.m in Sources */,
 				0CCEC49224CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.m in Sources */,
 				0C4BAFDF24D26B2D0037CDCF /* cityModel.m in Sources */,
@@ -2046,10 +2104,12 @@
 				84760F8624C1596E002B34E4 /* EFBaseModel.m in Sources */,
 				8476109924C67D19002B34E4 /* EFBindPhoneViewController.m in Sources */,
 				0CE285CF24D2D3D800AAC334 /* EFSafeAccountViewController.m in Sources */,
+				0C8A27A524D81E7400E40ED8 /* EFToPayDetailViewController.m in Sources */,
 				84A820B824B6CA8A00EAC652 /* EFBaseTableViewController.m in Sources */,
 				84A820D624B6CDA600EAC652 /* UIFont+RuntimeFit.m in Sources */,
 				0CE2860524D3EC4F00AAC334 /* LTSCalendarDayItem.m in Sources */,
 				84A820BD24B6CAC400EAC652 /* EFBaseRefreshVM.m in Sources */,
+				0C8A27AA24D8224B00E40ED8 /* EFPayTypeTableViewCell.m in Sources */,
 				0C4BAFA824D117550037CDCF /* EFConversationViewController.m in Sources */,
 				0CCEC46C24CA8C3100976D24 /* EFOrderPriceDetailTableViewCell.m in Sources */,
 				84A820A524B6CA0900EAC652 /* RVMViewModel.m in Sources */,
@@ -2072,6 +2132,7 @@
 				84A821C324C03BB800EAC652 /* SeachOneCollectionViewCell.m in Sources */,
 				84A8207824B6C61800EAC652 /* AppDelegate.m in Sources */,
 				847610BF24C6D1D0002B34E4 /* EFPrivacyViewController.m in Sources */,
+				0C8A278D24D7A1ED00E40ED8 /* EFFastTuanListCollectionViewCell.m in Sources */,
 				847610BA24C6C291002B34E4 /* EFPasswordTextField.m in Sources */,
 				0CCEC46724CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.m in Sources */,
 				0C6CB5BC24CFBE3800471A8D /* EFCustomWebViewPool.m in Sources */,
@@ -2109,6 +2170,7 @@
 				841B94ED24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,
 				0C6CB57E24CE833D00471A8D /* EFRegAndPswTableViewCell.m in Sources */,
 				84A821C824C047C000EAC652 /* EFClassTabTableViewCell.m in Sources */,
+				0C8A279A24D7C1F800E40ED8 /* EFOnePhoneLoginManager.m in Sources */,
 				84760F8C24C15AD5002B34E4 /* EFSearchModel.m in Sources */,
 				8476106724C58861002B34E4 /* EFAddressViewController.m in Sources */,
 				84760F9624C1806D002B34E4 /* NSMutableAttributedString+Size.m in Sources */,
@@ -2170,12 +2232,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C8A277524D6C44F00E40ED8 /* SKTag.m in Sources */,
+				0C8A278924D79BCE00E40ED8 /* EFFastTuanListViewController.m in Sources */,
 				84A820FA24BC4F5400EAC652 /* EFFollowViewController.m in Sources */,
 				0C6CB5C224CFD6B200471A8D /* EFRefreshHeader.m in Sources */,
 				0C6CB58F24CEB19000471A8D /* UITextField+MyExtension.m in Sources */,
 				84A821B424BFFAE700EAC652 /* EFSearchViewController.m in Sources */,
 				84187CA524C05D0200ED3F96 /* MeHeaderView.m in Sources */,
 				8476104E24C573B1002B34E4 /* TuanListDetailViewController.m in Sources */,
+				0C8A27A124D812C600E40ED8 /* EFPayStatusViewController.m in Sources */,
 				847610B524C6C209002B34E4 /* EFEditPasswordViewController.m in Sources */,
 				0CCEC49324CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.m in Sources */,
 				0C4BAFE024D26B2D0037CDCF /* cityModel.m in Sources */,
@@ -2219,10 +2283,12 @@
 				84760F8724C1596E002B34E4 /* EFBaseModel.m in Sources */,
 				8476109A24C67D19002B34E4 /* EFBindPhoneViewController.m in Sources */,
 				0CE285D024D2D3D800AAC334 /* EFSafeAccountViewController.m in Sources */,
+				0C8A27A624D81E7400E40ED8 /* EFToPayDetailViewController.m in Sources */,
 				84A8210224BC4F5400EAC652 /* UIFont+RuntimeFit.m in Sources */,
 				84A8210324BC4F5400EAC652 /* EFBaseRefreshVM.m in Sources */,
 				0CE2860624D3EC4F00AAC334 /* LTSCalendarDayItem.m in Sources */,
 				84A8210424BC4F5400EAC652 /* RVMViewModel.m in Sources */,
+				0C8A27AB24D8224B00E40ED8 /* EFPayTypeTableViewCell.m in Sources */,
 				0C4BAFA924D117550037CDCF /* EFConversationViewController.m in Sources */,
 				0CCEC46D24CA8C3100976D24 /* EFOrderPriceDetailTableViewCell.m in Sources */,
 				84A8210524BC4F5400EAC652 /* FMHttpRequest.m in Sources */,
@@ -2245,6 +2311,7 @@
 				84A821C424C03BB800EAC652 /* SeachOneCollectionViewCell.m in Sources */,
 				84A8210724BC4F5400EAC652 /* AppDelegate.m in Sources */,
 				847610C024C6D1D1002B34E4 /* EFPrivacyViewController.m in Sources */,
+				0C8A278E24D7A1ED00E40ED8 /* EFFastTuanListCollectionViewCell.m in Sources */,
 				847610BB24C6C291002B34E4 /* EFPasswordTextField.m in Sources */,
 				0CCEC46824CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.m in Sources */,
 				0C6CB5BD24CFBE3800471A8D /* EFCustomWebViewPool.m in Sources */,
@@ -2282,6 +2349,7 @@
 				841B94EE24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,
 				0C6CB57F24CE833D00471A8D /* EFRegAndPswTableViewCell.m in Sources */,
 				84A821C924C047C000EAC652 /* EFClassTabTableViewCell.m in Sources */,
+				0C8A279B24D7C1F800E40ED8 /* EFOnePhoneLoginManager.m in Sources */,
 				84760F8D24C15AD5002B34E4 /* EFSearchModel.m in Sources */,
 				8476106824C58861002B34E4 /* EFAddressViewController.m in Sources */,
 				84760F9724C1806D002B34E4 /* NSMutableAttributedString+Size.m in Sources */,
@@ -2343,12 +2411,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C8A277624D6C44F00E40ED8 /* SKTag.m in Sources */,
+				0C8A278A24D79BCE00E40ED8 /* EFFastTuanListViewController.m in Sources */,
 				84A8211E24BC513500EAC652 /* EFFollowViewController.m in Sources */,
 				0C6CB5C324CFD6B200471A8D /* EFRefreshHeader.m in Sources */,
 				0C6CB59024CEB19000471A8D /* UITextField+MyExtension.m in Sources */,
 				84A821B524BFFAE700EAC652 /* EFSearchViewController.m in Sources */,
 				84187CA624C05D0200ED3F96 /* MeHeaderView.m in Sources */,
 				8476104F24C573B1002B34E4 /* TuanListDetailViewController.m in Sources */,
+				0C8A27A224D812C600E40ED8 /* EFPayStatusViewController.m in Sources */,
 				847610B624C6C209002B34E4 /* EFEditPasswordViewController.m in Sources */,
 				0CCEC49424CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.m in Sources */,
 				0C4BAFE124D26B2D0037CDCF /* cityModel.m in Sources */,
@@ -2392,10 +2462,12 @@
 				84760F8824C1596E002B34E4 /* EFBaseModel.m in Sources */,
 				8476109B24C67D19002B34E4 /* EFBindPhoneViewController.m in Sources */,
 				0CE285D124D2D3D800AAC334 /* EFSafeAccountViewController.m in Sources */,
+				0C8A27A724D81E7400E40ED8 /* EFToPayDetailViewController.m in Sources */,
 				84A8212524BC513500EAC652 /* EFBaseTableViewController.m in Sources */,
 				84A8212624BC513500EAC652 /* UIFont+RuntimeFit.m in Sources */,
 				0CE2860724D3EC4F00AAC334 /* LTSCalendarDayItem.m in Sources */,
 				84A8212724BC513500EAC652 /* EFBaseRefreshVM.m in Sources */,
+				0C8A27AC24D8224B00E40ED8 /* EFPayTypeTableViewCell.m in Sources */,
 				0C4BAFAA24D117550037CDCF /* EFConversationViewController.m in Sources */,
 				0CCEC46E24CA8C3100976D24 /* EFOrderPriceDetailTableViewCell.m in Sources */,
 				84A8212824BC513500EAC652 /* RVMViewModel.m in Sources */,
@@ -2418,6 +2490,7 @@
 				84A821C524C03BB800EAC652 /* SeachOneCollectionViewCell.m in Sources */,
 				84A8212B24BC513500EAC652 /* AppDelegate.m in Sources */,
 				847610C124C6D1D1002B34E4 /* EFPrivacyViewController.m in Sources */,
+				0C8A278F24D7A1ED00E40ED8 /* EFFastTuanListCollectionViewCell.m in Sources */,
 				847610BC24C6C291002B34E4 /* EFPasswordTextField.m in Sources */,
 				0CCEC46924CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.m in Sources */,
 				0C6CB5BE24CFBE3800471A8D /* EFCustomWebViewPool.m in Sources */,
@@ -2455,6 +2528,7 @@
 				841B94EF24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,
 				0C6CB58024CE833D00471A8D /* EFRegAndPswTableViewCell.m in Sources */,
 				84A821CA24C047C100EAC652 /* EFClassTabTableViewCell.m in Sources */,
+				0C8A279C24D7C1F800E40ED8 /* EFOnePhoneLoginManager.m in Sources */,
 				84760F8E24C15AD5002B34E4 /* EFSearchModel.m in Sources */,
 				8476106924C58861002B34E4 /* EFAddressViewController.m in Sources */,
 				84760F9824C1806D002B34E4 /* NSMutableAttributedString+Size.m in Sources */,
@@ -2641,6 +2715,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = EasyFast/EasyFast.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B2593LDC7H;
 				ENABLE_BITCODE = NO;
@@ -2672,6 +2747,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = EasyFast/EasyFast.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B2593LDC7H;
 				ENABLE_BITCODE = NO;

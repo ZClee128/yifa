@@ -35,6 +35,13 @@
         _rightBtn.imagePosition = QMUIButtonImagePositionRight;
         _rightBtn.titleLabel.font = RegularFont14;
         [_rightBtn setTitleColor:RGB16(0xAEAEAE) forState:(UIControlStateNormal)];
+        @weakify(self);
+        [[_rightBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self);
+            if (self.moreBlock) {
+                self.moreBlock();
+            }
+        }];
     }
     return _rightBtn;
 }

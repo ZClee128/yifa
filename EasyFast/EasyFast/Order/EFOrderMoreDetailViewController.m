@@ -7,25 +7,12 @@
 //
 
 #import "EFOrderMoreDetailViewController.h"
-#import "EFWuliuTableViewCell.h"
-#import "EFOrderAddressTableViewCell.h"
-#import "EFOrderShopTableViewCell.h"
-#import "EFOrderDetailGoodsTableViewCell.h"
-#import "EFOrderPriceDetailTableViewCell.h"
-#import "EFRealPriceTableViewCell.h"
-#import "EFTimeTableViewCell.h"
-#import "TuanOtherGoodsTableViewCell.h"
+
 
 
 @interface EFOrderMoreDetailViewController ()
 
-@property (nonatomic,assign)CGFloat wuliHeight;
-@property (nonatomic,assign)CGFloat addressHeight;
-@property (nonatomic,strong)UIView *lineView;
-@property (nonatomic,strong)UIView *headerView;
-@property (nonatomic,strong)NSMutableArray *priceArr;
-@property (nonatomic,strong)NSMutableArray *orderArr;
-@property (nonatomic,assign)BOOL ismore;
+
 @property (nonatomic,strong)UIView *otherView;
 
 @end

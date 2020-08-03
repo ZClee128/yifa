@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "daifukuan.png",
+      "filename" : "待付款.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "daifukuan@2x.png",
+      "filename" : "待付款@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "daifukuan@3x.png",
+      "filename" : "待付款@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

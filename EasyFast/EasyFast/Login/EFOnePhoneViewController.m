@@ -24,17 +24,7 @@
     self.gk_navTitle = @"绑定手机";
     self.view.backgroundColor = UIColor.whiteColor;
     [self setUI];
-    JVAuthConfig *config = [[JVAuthConfig alloc] init];
-    config.appKey = @"dd10c0e76e97072558cf1d77";
-    [JVERIFICATIONService setupWithConfig:config];
-    if(![JVERIFICATIONService checkVerifyEnable]) {
-        NSLog(@"当前网络环境不支持认证！");
-        return;
-    }
-    [JVERIFICATIONService getToken:5000 completion:^(NSDictionary *result) {
-        NSLog(@"getToken result:%@", result);
-        //TODO:获取token后相关操作
-    }];
+    
 }
 
 - (void)setTitleLabTitle:(NSString *)title {

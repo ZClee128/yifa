@@ -59,4 +59,5 @@
 // U-Share分享面板SDK，未添加分享面板SDK可将此行去掉
 #import <UShareUI/UShareUI.h>
 #import "ShareManager.h"
+#import "EFOnePhoneLoginManager.h"
 #endif /* Header_h */

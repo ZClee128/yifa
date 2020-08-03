@@ -8,7 +8,7 @@
 
 #import "EFRegAndPswTableViewCell.h"
 #import "EFFastRegViewController.h"
-
+#import "EFFastRegViewController.h"
 @interface EFRegAndPswTableViewCell ()
 
 @property (nonatomic,strong)QMUIButton *regBtn;
@@ -42,12 +42,11 @@
         [_findBtn setTitle:@"找回密码" forState:(UIControlStateNormal)];
         [_findBtn setTitleColor:RGB16(0xbdbdbd) forState:(UIControlStateNormal)];
         _findBtn.titleLabel.font = RegularFont14;
-        @weakify(self);
         [[_findBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-            @strongify(self);
-            if (self.findBlock) {
-                self.findBlock();
-            }
+            EFFindPasswrodViewController *vc = [[EFFindPasswrodViewController alloc] init];
+            [[UIViewController getCurrentVC].navigationController qmui_pushViewController:vc animated:YES completion:^{
+                
+            }];
         }];
     }
     return _findBtn;

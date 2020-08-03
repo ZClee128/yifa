@@ -11,6 +11,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EFFastRegViewController : EFBaseTableViewController
+@property (nonatomic,strong)QMUIButton *nextBtn;
+@property (nonatomic,strong)NSString *phoneText;
+@property (nonatomic,strong)NSString *codeStr;
+@end
+
+
+@interface EFFindPasswrodViewController : EFFastRegViewController
 
 @end
 

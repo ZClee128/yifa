@@ -148,10 +148,11 @@
         }
             case 4:
         {
-            EFOnePhoneViewController *one = [[EFOnePhoneViewController alloc] init];
-            [self.navigationController qmui_pushViewController:one animated:YES completion:^{
-                
-            }];
+//            EFOnePhoneViewController *one = [[EFOnePhoneViewController alloc] init];
+//            [self.navigationController qmui_pushViewController:one animated:YES completion:^{
+//
+//            }];
+            [EFOnePhoneLoginManager showBindPhone];
             break;
         }
         default:

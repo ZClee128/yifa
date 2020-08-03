@@ -63,6 +63,12 @@
 //    [self confitUShareSettings];
     [self configUSharePlatforms];
     
+//    极光认证
+    JVAuthConfig *config = [[JVAuthConfig alloc] init];
+    config.appKey = @"dd10c0e76e97072558cf1d77";
+    [JVERIFICATIONService setupWithConfig:config];
+    [JVERIFICATIONService setDebug:YES];
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         EFCustomWebViewPool *webViewPool = [EFCustomWebViewPool sharedInstance];
         [webViewPool prepareWithCount:10];
@@ -99,7 +105,7 @@
 - (void)configUSharePlatforms
 {
     /* 设置微信的appKey和appSecret */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxdc1e388c3822c80b" appSecret:@"3baf1193c85774b3fd9d18447d76cab0" redirectURL:@"http://mobile.umeng.com/social"];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxdc1e388c3822c80b" appSecret:@"bb7ee5e143ad9e83e8d78c868c4e1892" redirectURL:@"http://mobile.umeng.com/social"];
     /*设置小程序回调app的回调*/
 //    [[UMSocialManager defaultManager] setLauchFromPlatform:(UMSocialPlatformType_WechatSession) completion:^(id userInfoResponse, NSError *error) {
 //        NSLog(@"setLauchFromPlatform:userInfoResponse:%@",userInfoResponse);
@@ -113,7 +119,7 @@
      */
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1110677743"/*设置QQ平台的appID*/  appSecret:nil redirectURL:@"http://mobile.umeng.com/social"];
     /* 设置新浪的appKey和appSecret */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"3921700954"  appSecret:@"04b48b094faeb16683c32669824ebdad" redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"1452254064"  appSecret:@"c70f9d5fbfb686cc8611d49dbaea2b21" redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
     
 }
 

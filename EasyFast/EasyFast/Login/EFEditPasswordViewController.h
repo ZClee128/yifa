@@ -12,6 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EFEditPasswordViewController : EFBaseViewController
 
+- (void)setUI;
+@end
+
+
+@interface EFSetNewPasswordViewController : EFEditPasswordViewController
+
 @end
 
 NS_ASSUME_NONNULL_END

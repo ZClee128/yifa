@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EFHeaderView : UIView
 
+@property (nonatomic,copy)void(^moreBlock)(void);
 - (instancetype)initWithFrame:(CGRect)frame WithLeftTitle:(NSString *)left  WithRightTitle:(NSString *)right;
 - (UILabel *)getLeftLab;
 @end

@@ -187,3 +187,98 @@
 
 
 @end
+
+
+@implementation EFSetNewPasswordViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+}
+
+
+- (void)setUI {
+    
+    UIView *bg = [[UIView alloc] init];
+    bg.backgroundColor = UIColor.whiteColor;
+    [self.view addSubview:bg];
+    [bg mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(@(0));
+        make.top.equalTo(@(NAVIGATION_BAR_HEIGHT));
+        make.height.equalTo(@(WidthOfScale(100)));
+        make.width.equalTo(@(kPHONE_WIDTH));
+    }];
+    
+    QMUILabel *newLab = [[QMUILabel alloc]init];
+    newLab.font = MedFont15;
+    newLab.textColor = tabbarBlackColor;
+    newLab.text = @"新密码";
+    [self.view addSubview:newLab];
+    [newLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(@(WidthOfScale(16.5)));
+        make.top.equalTo(@(WidthOfScale(18)+NAVIGATION_BAR_HEIGHT));
+    }];
+    
+    [self.view addSubview:self.newsTextField];
+    [self.newsTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(@(WidthOfScale(104.5)));
+        make.centerY.equalTo(newLab);
+        make.height.equalTo(@(WidthOfScale(50)));
+        make.right.equalTo(@(0));
+    }];
+    
+    QMUILabel *comLab = [[QMUILabel alloc] init];
+    comLab.font = MedFont15;
+    comLab.textColor = tabbarBlackColor;
+    comLab.text = @"确认新密码";
+    [self.view addSubview:comLab];
+    [comLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(@(WidthOfScale(16.5)));
+        make.top.equalTo(@(WidthOfScale(68)+NAVIGATION_BAR_HEIGHT));
+    }];
+    
+    [self.view addSubview:self.comfirTextField];
+    [self.comfirTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(@(WidthOfScale(104.5)));
+        make.centerY.equalTo(comLab);
+        make.height.equalTo(@(WidthOfScale(50)));
+        make.right.equalTo(@(0));
+    }];
+    
+    QMUILabel *rool = [[QMUILabel alloc] init];
+    rool.font = RegularFont13;
+    rool.textColor = [tabbarBlackColor colorWithAlphaComponent:0.7];
+    rool.numberOfLines = 0;
+    rool.text = @"必须是6-20个英文字母，数字或符号（除空格），且字母，数字和标点至少包含两种";
+    [self.view addSubview:rool];
+    [rool mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(bg.mas_bottom).equalTo(@(WidthOfScale(15)));
+        make.centerX.equalTo(self.view);
+        make.width.equalTo(@(WidthOfScale(337.5)));
+    }];
+    
+    [self.view addSubview:self.nextBtn];
+    [self.nextBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(rool.mas_bottom).equalTo(@(WidthOfScale(30)));
+        make.centerX.equalTo(self.view);
+        make.width.equalTo(@(WidthOfScale(345)));
+        make.height.equalTo(@(WidthOfScale(50)));
+    }];
+    [self.nextBtn layoutIfNeeded];
+    [self.nextBtn ViewRadius:5];
+    
+    RACSignal *newSignal = [RACSignal merge:@[self.newsTextField.rac_textSignal, RACObserve(self.newsTextField, text)]];
+    RACSignal *comSignal = [RACSignal merge:@[self.comfirTextField.rac_textSignal, RACObserve(self.comfirTextField, text)]];
+    @weakify(self);
+    RAC(self.nextBtn,userInteractionEnabled) =  [RACSignal combineLatest:@[newSignal,comSignal] reduce:^id _Nonnull(NSString *news,NSString *com){
+        @strongify(self);
+        BOOL enabled = news.length && com.length > 0;
+        
+        if (!enabled) {
+            btnGradation(self.nextBtn,[colorF14745 colorWithAlphaComponent:0.6]);
+        }else {
+            btnGradation(self.nextBtn,colorF14745);
+        }
+        return @(enabled);
+    }];
+}
+@end

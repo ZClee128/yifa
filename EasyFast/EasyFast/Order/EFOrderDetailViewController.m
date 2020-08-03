@@ -13,6 +13,7 @@
 #import "EFOrderBtnTableViewCell.h"
 #import "EFLogisticsViewController.h"
 #import "EFOrderMoreDetailViewController.h"
+#import "EFToPayDetailViewController.h"
 
 @interface EFOrderDetailViewController ()
 

@@ -12,7 +12,7 @@
 #import "EFRegAndPswTableViewCell.h"
 #import "EFThreeLoginTableViewCell.h"
 #import "EFChangeLoginViewController.h"
-
+#import "EFOnePhoneLoginManager.h"
 
 @interface EFOneLoginViewController ()
 
@@ -29,7 +29,10 @@
     [self.EFTableView registerClass:[EFOneLoginPhoneTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFOneLoginPhoneTableViewCell class])];
     [self.EFTableView registerClass:[EFRegAndPswTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFRegAndPswTableViewCell class])];
     [self.EFTableView registerClass:[EFThreeLoginTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFThreeLoginTableViewCell class])];
+    [EFOnePhoneLoginManager show];
 }
+
+
 
 
 

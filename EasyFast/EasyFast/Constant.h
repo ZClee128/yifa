@@ -128,7 +128,7 @@ fprintf(stderr,"[--%s--]\n[--%s:%d--]\n[--%s--]\n===========================\n",
 #define MedFont13 [UIFont runtimeFitFont:13 weight:(UIFontWeightMedium)]
 #define MedFont14 [UIFont runtimeFitFont:14 weight:(UIFontWeightMedium)]
 #define MedFont30 [UIFont runtimeFitFont:30 weight:(UIFontWeightMedium)]
-
+#define MedFont20 [UIFont runtimeFitFont:20 weight:(UIFontWeightMedium)]
 
 // 持久化key
 // 用户信息

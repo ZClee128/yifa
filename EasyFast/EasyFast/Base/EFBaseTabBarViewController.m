@@ -179,6 +179,19 @@
     return image;
 }
 
+- (BOOL)tabBarController:(UITabBarController*)tabBarController shouldSelectViewController:(UIViewController*)viewController
+{
+    NSLog(@"viewcontoller===%@",viewController.childViewControllers);
+//    if ([viewController.childViewControllers[0] isKindOfClass:[EFMeViewController class]]) {
+//        [EFOnePhoneLoginManager show];
+//        return NO;
+//    }
+    
+    
+    
+    return YES;
+    
+}
 
 
 @end

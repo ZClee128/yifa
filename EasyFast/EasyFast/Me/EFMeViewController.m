@@ -21,6 +21,7 @@
 #import "EFIMListViewController.h"
 #import "EFSafeAccountViewController.h"
 #import "EFFootprintViewController.h"
+#import "EFPayStatusViewController.h"
 
 @interface EFMeViewController ()
 
@@ -51,12 +52,7 @@
                 
             }];
         } becomeBlock:^{
-            @strongify(self);
-            EFBindPhoneViewController *vc = [[EFBindPhoneViewController alloc] init];
-            vc.hidesBottomBarWhenPushed = YES;
-            [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
-                
-            }];
+            [kH5Manager gotoUrl:@"sellers" hasNav:NO navTitle:@"" query:@{}];
         } messageBlock:^(NSInteger index) {
             @strongify(self);
             switch (index) {
@@ -86,7 +82,11 @@
                     break;
             }
         } vipBlock:^{
-            
+            EFPayStatusViewController *vc = [[EFPayStatusViewController alloc] init];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+                
+            }];
         }];
     }
     return _headerView;
@@ -145,42 +145,34 @@
             [MeCell setData:@[@{@"title":@"已完成",@"icon":@"yiwancheng"},
             @{@"title":@"等待中",@"icon":@"waitting"},
             @{@"title":@"已失效",@"icon":@"yishixiao"},
-                              @{@"title":@"待付款",@"icon":@"daifukuan"}] title:@"我的团购"];
-            @weakify(self);
+                              @{@"title":@"待拼团",@"icon":@"daifukuan"}] title:@"我的团购"];
             MeCell.seletBtn = ^(NSInteger index) {
                 XYLog(@"tuan->%ld",(long)index);
-                if (index == 3) {
-                    EFOrderViewController *order = [[EFOrderViewController alloc] initWithIndex:1];
-                    order.hidesBottomBarWhenPushed = YES;
-                    @strongify(self);
-                    [self.navigationController qmui_pushViewController:order animated:YES completion:^{
-                        
-                    }];
-                }else {
-                    [kH5Manager gotoUrl:@"myGroup" hasNav:YES navTitle:@"我的团购" query:@{}];
-                }
+                [kH5Manager gotoUrl:@"myGroup" hasNav:YES navTitle:@"我的团购" query:@{@"index" : index == 0 ? @(3) :(index == 1 ? @(2) : (index == 2 ? @(4) : @(1)))}];
             };
             MeCell.moreBlock = ^{
-                
+                [kH5Manager gotoUrl:@"myGroup" hasNav:YES navTitle:@"我的团购" query:@{@"index" : @(0)}];
             };
             return MeCell;
         }
             case 1:
         {
-            [MeCell setData:@[@{@"title":@"待发货",@"icon":@"daifahuo"},
+            [MeCell setData:@[@{@"title":@"待付款",@"icon":@"wallet"},@{@"title":@"待发货",@"icon":@"daifahuo"},
             @{@"title":@"待收货",@"icon":@"daishouhuo"},
             @{@"title":@"待评价",@"icon":@"daipingjia"},
                               @{@"title":@"退款/售后",@"icon":@"tuikuan"}] title:@"我的订单"];
             @weakify(self);
             MeCell.seletBtn = ^(NSInteger index) {
                 XYLog(@"me->%ld",(long)index);
-                if (index != 3) {
-                    EFOrderViewController *order = [[EFOrderViewController alloc] initWithIndex:index+2];
+                if (index != 4) {
+                    EFOrderViewController *order = [[EFOrderViewController alloc] initWithIndex:index+1];
                     order.hidesBottomBarWhenPushed = YES;
                     @strongify(self);
                     [self.navigationController qmui_pushViewController:order animated:YES completion:^{
                         
                     }];
+                }else {
+                    [kH5Manager gotoUrl:@"return" hasNav:YES navTitle:@"售后退款" query:@{}];
                 }
             };
             MeCell.moreBlock = ^{

@@ -10,12 +10,11 @@
 #import "EFPhoneTableViewCell.h"
 #import "EFCodeTableViewCell.h"
 #import "LoginVM.h"
+#import "EFEditPasswordViewController.h"
 
 @interface EFFastRegViewController ()
 
-@property (nonatomic,strong)NSString *phoneText;
-@property (nonatomic,strong)NSString *codeStr;
-@property (nonatomic,strong)QMUIButton *nextBtn;
+
 @property (nonatomic,strong)QMUIButton *clickBrn;
 @property (nonatomic,strong)YYLabel *contentLab;
 @property (nonatomic,strong)UIView *footerView;
@@ -176,4 +175,61 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return WidthOfScale(50);
 }
+@end
+
+
+
+#pragma EFFindPasswrodViewController
+
+@interface EFFindPasswrodViewController ()
+
+@end
+
+@implementation EFFindPasswrodViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.phoneText = @"";
+    self.codeStr = @"";
+    self.gk_navTitle = @"找回密码";
+    
+}
+
+- (UIView *)footerView {
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, kPHONE_HEIGHT - WidthOfScale(80))];
+    
+    [footerView addSubview:self.nextBtn];
+    [self.nextBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(@(WidthOfScale(30)));
+        make.centerX.equalTo(footerView);
+        make.size.mas_equalTo(CGSizeMake(WidthOfScale(345), WidthOfScale(50)));
+    }];
+    
+    [self.nextBtn layoutIfNeeded];
+    [self.nextBtn ViewRadius:5];
+    
+    
+    [self.nextBtn setTitle:@"下一步" forState:(UIControlStateNormal)];
+    @weakify(self);
+    RAC(self.nextBtn,userInteractionEnabled) =  [RACSignal combineLatest:@[RACObserve(self,self.phoneText),RACObserve(self,self.codeStr)] reduce:^id _Nonnull(NSString *phone,NSString *code){
+        @strongify(self);
+        BOOL enabled = phone.length == 11 && code.length == 6;
+        if (!enabled) {
+            btnGradation(self.nextBtn,[colorF14745 colorWithAlphaComponent:0.6]);
+        }else {
+            btnGradation(self.nextBtn,colorF14745);
+        }
+        return @(enabled);
+    }];
+    
+    [[self.nextBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        @strongify(self);
+        EFSetNewPasswordViewController *vc = [[EFSetNewPasswordViewController alloc] init];
+        [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+            
+        }];
+    }];
+    return footerView;
+}
+
 @end
