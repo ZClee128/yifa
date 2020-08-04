@@ -44,8 +44,16 @@
     [[LoginVM loginOut] subscribeNext:^(id  _Nullable x) {
         
     }];
-    NSString* where = [NSString stringWithFormat:@"set %@=%@ ,%@=%@ where %@=%@",bg_sqlKey(@"token"),bg_sqlValue(@""),bg_sqlKey(@"isLogin"),bg_sqlValue(@NO),bg_sqlKey(@"username"),bg_sqlValue(kUserManager.userModel.username)];
-    [EFUserModel bg_update:nil where:where];
+    
+    for (EFUserModel *model in [EFUserModel bg_findAll:nil]) {
+        if ([model.username isEqualToString:kUserManager.userModel.username]) {
+            model.isLogin = NO;
+            model.token = @"";
+            [model bg_updateWhere:[NSString stringWithFormat:@"where username=%@",kUserManager.userModel.username]];
+        }
+    }
+    
+    XYLog(@">>>>%@",[EFUserModel bg_findAll:nil]);
     [self.navigationController qmui_popToRootViewControllerAnimated:NO completion:^{
         
     }];

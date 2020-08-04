@@ -140,9 +140,9 @@
 		0C8A27E024D934E200E40ED8 /* CALayer+Anim.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27DF24D934E200E40ED8 /* CALayer+Anim.m */; };
 		0C8A27E124D934E200E40ED8 /* CALayer+Anim.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27DF24D934E200E40ED8 /* CALayer+Anim.m */; };
 		0C8A27E224D934E200E40ED8 /* CALayer+Anim.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27DF24D934E200E40ED8 /* CALayer+Anim.m */; };
-		0C8A29A824D93F8E00E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A29A724D93F8E00E40ED8 /* dist */; };
-		0C8A29A924D93F8E00E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A29A724D93F8E00E40ED8 /* dist */; };
-		0C8A29AA24D93F8E00E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A29A724D93F8E00E40ED8 /* dist */; };
+		0C8A29B824D99D5200E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A29B724D99D5200E40ED8 /* dist */; };
+		0C8A29B924D99D5200E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A29B724D99D5200E40ED8 /* dist */; };
+		0C8A29BA24D99D5200E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A29B724D99D5200E40ED8 /* dist */; };
 		0CCEC45324CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45424CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45524CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
@@ -650,7 +650,7 @@
 		0C8A27D924D9348C00E40ED8 /* UILabel+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
 		0C8A27DE24D934E200E40ED8 /* CALayer+Anim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Anim.h"; sourceTree = "<group>"; };
 		0C8A27DF24D934E200E40ED8 /* CALayer+Anim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Anim.m"; sourceTree = "<group>"; };
-		0C8A29A724D93F8E00E40ED8 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dist; sourceTree = "<group>"; };
+		0C8A29B724D99D5200E40ED8 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dist; sourceTree = "<group>"; };
 		0CCEC45124CA7A6000976D24 /* EFWuliuTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFWuliuTableViewCell.h; sourceTree = "<group>"; };
 		0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFWuliuTableViewCell.m; sourceTree = "<group>"; };
 		0CCEC45624CA7D8900976D24 /* EFOrderMoreDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderMoreDetailViewController.h; sourceTree = "<group>"; };
@@ -1253,7 +1253,7 @@
 		84760F9924C196FF002B34E4 /* Web */ = {
 			isa = PBXGroup;
 			children = (
-				0C8A29A724D93F8E00E40ED8 /* dist */,
+				0C8A29B724D99D5200E40ED8 /* dist */,
 				0C4BAF9624D0212E0037CDCF /* Bridge */,
 				0C6CB5B924CFBE1C00471A8D /* WebViewPool */,
 				8476102B24C52BDC002B34E4 /* H5Manager.h */,
@@ -1916,7 +1916,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C8A29A824D93F8E00E40ED8 /* dist in Resources */,
+				0C8A29B824D99D5200E40ED8 /* dist in Resources */,
 				84A8208624B6C62300EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8208324B6C62300EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -1926,7 +1926,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C8A29A924D93F8E00E40ED8 /* dist in Resources */,
+				0C8A29B924D99D5200E40ED8 /* dist in Resources */,
 				84A8211324BC4F5400EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8211424BC4F5400EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -1936,7 +1936,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C8A29AA24D93F8E00E40ED8 /* dist in Resources */,
+				0C8A29BA24D99D5200E40ED8 /* dist in Resources */,
 				84A8213724BC513500EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8213824BC513500EAC652 /* Assets.xcassets in Resources */,
 			);

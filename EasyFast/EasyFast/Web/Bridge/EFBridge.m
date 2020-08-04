@@ -11,6 +11,7 @@
 #import "EFConversationViewController.h"
 #import "EFPayStatusViewController.h"
 #import "EFAddressViewController.h"
+#import "EFOrderMoreDetailViewController.h"
 @interface EFBridge ()
 @property (nonatomic,strong)WebViewJavascriptBridge *bridge;
 @end
@@ -110,6 +111,22 @@
         vc.chooseAddress = ^(NSString * _Nonnull str) {
             responseCallback(str);
         };
+        [self push:vc];
+    }];
+}
+
+- (void)Camera{
+    [self.bridge registerHandler:@"Camera" handler:^(id data, WVJBResponseCallback responseCallback) {
+        NSDictionary *dict = [self identifyData:data];
+        [[ZLPhotoActionSheet zlPhotos:[UIViewController getCurrentVC] maxCount:[dict[@"size"] intValue]] subscribeNext:^(RACTuple * _Nullable x) {
+            responseCallback(@{@"image":x.first});
+        }];
+    }];
+}
+
+- (void)goOrderDetail {
+    [self.bridge registerHandler:@"goOrderDetail" handler:^(id data, WVJBResponseCallback responseCallback) {
+        EFOrderMoreDetailViewController *vc = [[EFOrderMoreDetailViewController alloc] init];
         [self push:vc];
     }];
 }

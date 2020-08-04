@@ -14,6 +14,6 @@
 #define kRegister @"api-client/user/index/register" //注册
 #define ksendCode @"api-client/sms/sendUserMessage" //发送验证码
 #define kverifyMessage @"api-client/sms/verifyMessage" //验证短信
-#define kLoginOut @"api-client/user/index/loginOut" //退出接口
+#define kLoginOut @"api-client/user/footprint/goodsFootprintList" //退出接口
 
 #endif /* Api_h */

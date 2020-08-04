@@ -39,6 +39,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 选择地址
 - (void)ChooseAddress;
+
+// 相机
+- (void)Camera;
 - (NSDictionary *)identifyData:(id)data;
 
 

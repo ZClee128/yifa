@@ -69,7 +69,7 @@
             @weakify(self);
             btnCell.moreClick = ^(QMUIButton * _Nonnull x) {
                 [FTPopOverMenu showFromSenderFrame:[x convertRect:x.bounds toView:nil] withMenu:@[@"退货退款"] imageNameArray:@[@""] doneBlock:^(NSInteger selectedIndex) {
-                    [kH5Manager gotoUrl:@"eval" hasNav:YES navTitle:@"评价" query:@{}];
+                    
                 } dismissBlock:^{
                     
                 }];
@@ -77,6 +77,13 @@
             btnCell.oneClick = ^{
                 @strongify(self);
                 EFLogisticsViewController *vc = [[EFLogisticsViewController alloc] init];
+                [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+                
+                }];
+            };
+            btnCell.threeClick = ^{
+                @strongify(self);
+                EFToPayDetailViewController *vc = [[EFToPayDetailViewController alloc] init];
                 [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
                 
                 }];
