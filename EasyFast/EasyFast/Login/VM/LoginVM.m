@@ -39,6 +39,16 @@
         return [[FMARCNetwork sharedInstance] userLogin:account code:code loginToken:loginToken password:password phone:phone type:type];
     } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
         EFUserModel *model = [EFUserModel modelWithJSON:result.reqResult];
+        if ([EFUserModel bg_findAll:nil] == nil) {
+            
+        }
+        for (EFUserModel *user in [EFUserModel bg_findAll:nil]) {
+            if ([user.username isEqualToString:model.username]) {
+                model.isLogin = YES;
+            }else{
+                user.isLogin = NO;
+            }
+        }
         [model bg_saveOrUpdate];
         XYLog(@"model = >%@",model);
         return @(result.isSuccess);
