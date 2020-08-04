@@ -183,7 +183,7 @@
 {
     NSLog(@"viewcontoller===%@",viewController.childViewControllers);
     if ([viewController.childViewControllers[0] isKindOfClass:[EFMeViewController class]]) {
-        if (kUserManager.userModel == nil) {
+        if (kUserManager.userModel == nil || !kUserManager.userModel.isLogin) {
             [EFOnePhoneLoginManager show];
             return NO;
         }

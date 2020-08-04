@@ -60,20 +60,53 @@
         appleIDBtn.layer.masksToBounds = YES;
     }
     
-    
+    @weakify(self);
     for (int i = 0 ; i < titles.count; i++) {
         QMUIButton *btn = [QMUIButton buttonWithType:(UIButtonTypeCustom)];
         if (![titles[i] isEqualToString:@"apple"]) {
             [btn setBackgroundImage:UIImageMake(titles[i]) forState:(UIControlStateNormal)];
+            btn.tag = i;
             [self.contentView addSubview:btn];
             [btn mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.top.equalTo(topLab.mas_bottom).equalTo(@(WidthOfScale(20)));
                 make.left.equalTo(@(left+i*(WidthOfScale(50)+WidthOfScale(30))));
                 make.size.mas_equalTo(CGSizeMake(WidthOfScale(50), WidthOfScale(50)));
             }];
+            [[btn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(QMUIButton *x) {
+                UMSocialPlatformType type;
+                if (x.tag == 0) {
+                    type = UMSocialPlatformType_WechatSession;
+                }else if (x.tag == 1) {
+                    type = UMSocialPlatformType_Sina;
+                }else {
+                    type = UMSocialPlatformType_QQ;
+                }
+                @strongify(self);
+                [self getUserInfoForPlatform:type];
+            }];
         }
     }
     
+}
+
+- (void)getUserInfoForPlatform:(UMSocialPlatformType)platformType
+{
+    [[UMSocialManager defaultManager] getUserInfoWithPlatform:platformType currentViewController:nil completion:^(id result, NSError *error) {
+        UMSocialUserInfoResponse *resp = result;
+        // 第三方登录数据(为空表示平台未提供)
+        // 授权数据
+        NSLog(@" uid: %@", resp.uid);
+        NSLog(@" openid: %@", resp.openid);
+        NSLog(@" accessToken: %@", resp.accessToken);
+        NSLog(@" refreshToken: %@", resp.refreshToken);
+        NSLog(@" expiration: %@", resp.expiration);
+        // 用户数据
+        NSLog(@" name: %@", resp.name);
+        NSLog(@" iconurl: %@", resp.iconurl);
+        NSLog(@" gender: %@", resp.unionGender);
+        // 第三方平台SDK原始数据
+        NSLog(@" originalResponse: %@", resp.originalResponse);
+    }];
 }
 
 // 自己用UIButton按钮调用处理授权的方法
