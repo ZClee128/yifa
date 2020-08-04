@@ -211,7 +211,7 @@
     };
     cell.CodeBlock = ^(QMUIButton * _Nonnull btn) {
         @strongify(self);
-        [(LoginVM *)self.viewModel getCodeWithBtn:btn];
+        [(LoginVM *)self.viewModel getCodeWithBtn:btn withType:6 phone:self.phone];
     };
     
         

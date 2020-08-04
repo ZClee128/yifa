@@ -125,9 +125,24 @@
 		0C8A27B124D8315200E40ED8 /* FMARCNetwork+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27B024D8315200E40ED8 /* FMARCNetwork+Login.m */; };
 		0C8A27B224D8315200E40ED8 /* FMARCNetwork+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27B024D8315200E40ED8 /* FMARCNetwork+Login.m */; };
 		0C8A27B324D8315200E40ED8 /* FMARCNetwork+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27B024D8315200E40ED8 /* FMARCNetwork+Login.m */; };
-		0C8A27C524D84ADD00E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A27C424D84ADD00E40ED8 /* dist */; };
-		0C8A27C624D84ADD00E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A27C424D84ADD00E40ED8 /* dist */; };
-		0C8A27C724D84ADD00E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A27C424D84ADD00E40ED8 /* dist */; };
+		0C8A27CA24D8F15000E40ED8 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27C924D8F15000E40ED8 /* UserManager.m */; };
+		0C8A27CB24D8F15000E40ED8 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27C924D8F15000E40ED8 /* UserManager.m */; };
+		0C8A27CC24D8F15000E40ED8 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27C924D8F15000E40ED8 /* UserManager.m */; };
+		0C8A27D024D8F28500E40ED8 /* EFUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27CF24D8F28500E40ED8 /* EFUserModel.m */; };
+		0C8A27D124D8F28500E40ED8 /* EFUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27CF24D8F28500E40ED8 /* EFUserModel.m */; };
+		0C8A27D224D8F28500E40ED8 /* EFUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27CF24D8F28500E40ED8 /* EFUserModel.m */; };
+		0C8A27D524D9341900E40ED8 /* MBProgressHUD+FULI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27D324D9341700E40ED8 /* MBProgressHUD+FULI.m */; };
+		0C8A27D624D9341900E40ED8 /* MBProgressHUD+FULI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27D324D9341700E40ED8 /* MBProgressHUD+FULI.m */; };
+		0C8A27D724D9341A00E40ED8 /* MBProgressHUD+FULI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27D324D9341700E40ED8 /* MBProgressHUD+FULI.m */; };
+		0C8A27DA24D9348D00E40ED8 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27D824D9348C00E40ED8 /* UILabel+Extension.m */; };
+		0C8A27DB24D9348D00E40ED8 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27D824D9348C00E40ED8 /* UILabel+Extension.m */; };
+		0C8A27DC24D9348D00E40ED8 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27D824D9348C00E40ED8 /* UILabel+Extension.m */; };
+		0C8A27E024D934E200E40ED8 /* CALayer+Anim.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27DF24D934E200E40ED8 /* CALayer+Anim.m */; };
+		0C8A27E124D934E200E40ED8 /* CALayer+Anim.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27DF24D934E200E40ED8 /* CALayer+Anim.m */; };
+		0C8A27E224D934E200E40ED8 /* CALayer+Anim.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27DF24D934E200E40ED8 /* CALayer+Anim.m */; };
+		0C8A29A824D93F8E00E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A29A724D93F8E00E40ED8 /* dist */; };
+		0C8A29A924D93F8E00E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A29A724D93F8E00E40ED8 /* dist */; };
+		0C8A29AA24D93F8E00E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A29A724D93F8E00E40ED8 /* dist */; };
 		0CCEC45324CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45424CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45524CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
@@ -625,7 +640,17 @@
 		0C8A27AD24D8309700E40ED8 /* Api.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Api.h; sourceTree = "<group>"; };
 		0C8A27AF24D8315200E40ED8 /* FMARCNetwork+Login.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FMARCNetwork+Login.h"; sourceTree = "<group>"; };
 		0C8A27B024D8315200E40ED8 /* FMARCNetwork+Login.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FMARCNetwork+Login.m"; sourceTree = "<group>"; };
-		0C8A27C424D84ADD00E40ED8 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dist; sourceTree = "<group>"; };
+		0C8A27C824D8F15000E40ED8 /* UserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
+		0C8A27C924D8F15000E40ED8 /* UserManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
+		0C8A27CE24D8F28500E40ED8 /* EFUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFUserModel.h; sourceTree = "<group>"; };
+		0C8A27CF24D8F28500E40ED8 /* EFUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFUserModel.m; sourceTree = "<group>"; };
+		0C8A27D324D9341700E40ED8 /* MBProgressHUD+FULI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+FULI.m"; sourceTree = "<group>"; };
+		0C8A27D424D9341800E40ED8 /* MBProgressHUD+FULI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+FULI.h"; sourceTree = "<group>"; };
+		0C8A27D824D9348C00E40ED8 /* UILabel+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extension.m"; sourceTree = "<group>"; };
+		0C8A27D924D9348C00E40ED8 /* UILabel+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
+		0C8A27DE24D934E200E40ED8 /* CALayer+Anim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Anim.h"; sourceTree = "<group>"; };
+		0C8A27DF24D934E200E40ED8 /* CALayer+Anim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Anim.m"; sourceTree = "<group>"; };
+		0C8A29A724D93F8E00E40ED8 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dist; sourceTree = "<group>"; };
 		0CCEC45124CA7A6000976D24 /* EFWuliuTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFWuliuTableViewCell.h; sourceTree = "<group>"; };
 		0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFWuliuTableViewCell.m; sourceTree = "<group>"; };
 		0CCEC45624CA7D8900976D24 /* EFOrderMoreDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderMoreDetailViewController.h; sourceTree = "<group>"; };
@@ -1033,6 +1058,24 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		0C8A27CD24D8F26D00E40ED8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0C8A27CE24D8F28500E40ED8 /* EFUserModel.h */,
+				0C8A27CF24D8F28500E40ED8 /* EFUserModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0C8A27DD24D934E200E40ED8 /* CALayer */ = {
+			isa = PBXGroup;
+			children = (
+				0C8A27DE24D934E200E40ED8 /* CALayer+Anim.h */,
+				0C8A27DF24D934E200E40ED8 /* CALayer+Anim.m */,
+			);
+			path = CALayer;
+			sourceTree = "<group>";
+		};
 		0CCEC47924CABB9700976D24 /* IM */ = {
 			isa = PBXGroup;
 			children = (
@@ -1210,7 +1253,7 @@
 		84760F9924C196FF002B34E4 /* Web */ = {
 			isa = PBXGroup;
 			children = (
-				0C8A27C424D84ADD00E40ED8 /* dist */,
+				0C8A29A724D93F8E00E40ED8 /* dist */,
 				0C4BAF9624D0212E0037CDCF /* Bridge */,
 				0C6CB5B924CFBE1C00471A8D /* WebViewPool */,
 				8476102B24C52BDC002B34E4 /* H5Manager.h */,
@@ -1519,6 +1562,11 @@
 		84A820D324B6CD9E00EAC652 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				0C8A27DD24D934E200E40ED8 /* CALayer */,
+				0C8A27D924D9348C00E40ED8 /* UILabel+Extension.h */,
+				0C8A27D824D9348C00E40ED8 /* UILabel+Extension.m */,
+				0C8A27D424D9341800E40ED8 /* MBProgressHUD+FULI.h */,
+				0C8A27D324D9341700E40ED8 /* MBProgressHUD+FULI.m */,
 				0CE285DD24D3AD5F00AAC334 /* ZLPhotoActionSheet */,
 				0C6CB58C24CEB19000471A8D /* UITextField+MyExtension.h */,
 				0C6CB58D24CEB19000471A8D /* UITextField+MyExtension.m */,
@@ -1613,10 +1661,13 @@
 		84A8213F24BC558C00EAC652 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				0C8A27CD24D8F26D00E40ED8 /* Model */,
 				84A8214024BC55CB00EAC652 /* HttpManager.h */,
 				84A8214124BC55CB00EAC652 /* HttpManager.m */,
 				8476119424C82515002B34E4 /* SysManager.h */,
 				8476119524C82515002B34E4 /* SysManager.m */,
+				0C8A27C824D8F15000E40ED8 /* UserManager.h */,
+				0C8A27C924D8F15000E40ED8 /* UserManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1865,7 +1916,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C8A27C524D84ADD00E40ED8 /* dist in Resources */,
+				0C8A29A824D93F8E00E40ED8 /* dist in Resources */,
 				84A8208624B6C62300EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8208324B6C62300EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -1875,7 +1926,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C8A27C624D84ADD00E40ED8 /* dist in Resources */,
+				0C8A29A924D93F8E00E40ED8 /* dist in Resources */,
 				84A8211324BC4F5400EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8211424BC4F5400EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -1885,7 +1936,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C8A27C724D84ADD00E40ED8 /* dist in Resources */,
+				0C8A29AA24D93F8E00E40ED8 /* dist in Resources */,
 				84A8213724BC513500EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8213824BC513500EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -2073,6 +2124,8 @@
 				0C8A278824D79BCE00E40ED8 /* EFFastTuanListViewController.m in Sources */,
 				84A820EE24B6F65100EAC652 /* EFFollowViewController.m in Sources */,
 				0C6CB5C124CFD6B200471A8D /* EFRefreshHeader.m in Sources */,
+				0C8A27D024D8F28500E40ED8 /* EFUserModel.m in Sources */,
+				0C8A27CA24D8F15000E40ED8 /* UserManager.m in Sources */,
 				0C6CB58E24CEB19000471A8D /* UITextField+MyExtension.m in Sources */,
 				84A821B324BFFAE700EAC652 /* EFSearchViewController.m in Sources */,
 				84187CA424C05D0200ED3F96 /* MeHeaderView.m in Sources */,
@@ -2098,6 +2151,7 @@
 				84A8216B24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
 				847610C424C6D44C002B34E4 /* EFBaseWebViewController.m in Sources */,
 				8476119624C82515002B34E4 /* SysManager.m in Sources */,
+				0C8A27D524D9341900E40ED8 /* MBProgressHUD+FULI.m in Sources */,
 				0C6CB56A24CE688300471A8D /* LRAnimationProgress.m in Sources */,
 				0CCEC48C24CAC2F000976D24 /* EFIMListTableViewCell.m in Sources */,
 				847610CE24C6D898002B34E4 /* PowerTableViewCell.m in Sources */,
@@ -2146,6 +2200,7 @@
 				0C6CB5A224CEC1F000471A8D /* EFCodeLoginTableViewCell.m in Sources */,
 				8476102824C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */,
 				0C6CB5B124CECBC200471A8D /* EFFastRegViewController.m in Sources */,
+				0C8A27E024D934E200E40ED8 /* CALayer+Anim.m in Sources */,
 				84A821C324C03BB800EAC652 /* SeachOneCollectionViewCell.m in Sources */,
 				84A8207824B6C61800EAC652 /* AppDelegate.m in Sources */,
 				847610BF24C6D1D0002B34E4 /* EFPrivacyViewController.m in Sources */,
@@ -2162,6 +2217,7 @@
 				0C6CB56F24CE7A1400471A8D /* EFOneLoginViewController.m in Sources */,
 				8476107D24C5A06F002B34E4 /* EFSetUpViewController.m in Sources */,
 				84760F9124C17AC1002B34E4 /* NSString+NSMutableAttributedString.m in Sources */,
+				0C8A27DA24D9348D00E40ED8 /* UILabel+Extension.m in Sources */,
 				0CE2860824D3EC4F00AAC334 /* LTSCalendarManager.m in Sources */,
 				84B2437824C8406C00E9967C /* RightThreeCollectionViewCell.m in Sources */,
 				84A820CC24B6CCC600EAC652 /* FMARCNetwork.m in Sources */,
@@ -2253,6 +2309,8 @@
 				0C8A278924D79BCE00E40ED8 /* EFFastTuanListViewController.m in Sources */,
 				84A820FA24BC4F5400EAC652 /* EFFollowViewController.m in Sources */,
 				0C6CB5C224CFD6B200471A8D /* EFRefreshHeader.m in Sources */,
+				0C8A27D124D8F28500E40ED8 /* EFUserModel.m in Sources */,
+				0C8A27CB24D8F15000E40ED8 /* UserManager.m in Sources */,
 				0C6CB58F24CEB19000471A8D /* UITextField+MyExtension.m in Sources */,
 				84A821B424BFFAE700EAC652 /* EFSearchViewController.m in Sources */,
 				84187CA524C05D0200ED3F96 /* MeHeaderView.m in Sources */,
@@ -2278,6 +2336,7 @@
 				84A8216C24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
 				847610C524C6D44C002B34E4 /* EFBaseWebViewController.m in Sources */,
 				8476119724C82516002B34E4 /* SysManager.m in Sources */,
+				0C8A27D624D9341900E40ED8 /* MBProgressHUD+FULI.m in Sources */,
 				0C6CB56B24CE688300471A8D /* LRAnimationProgress.m in Sources */,
 				0CCEC48D24CAC2F000976D24 /* EFIMListTableViewCell.m in Sources */,
 				847610CF24C6D898002B34E4 /* PowerTableViewCell.m in Sources */,
@@ -2326,6 +2385,7 @@
 				0C6CB5A324CEC1F000471A8D /* EFCodeLoginTableViewCell.m in Sources */,
 				8476102924C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */,
 				0C6CB5B224CECBC200471A8D /* EFFastRegViewController.m in Sources */,
+				0C8A27E124D934E200E40ED8 /* CALayer+Anim.m in Sources */,
 				84A821C424C03BB800EAC652 /* SeachOneCollectionViewCell.m in Sources */,
 				84A8210724BC4F5400EAC652 /* AppDelegate.m in Sources */,
 				847610C024C6D1D1002B34E4 /* EFPrivacyViewController.m in Sources */,
@@ -2342,6 +2402,7 @@
 				0C6CB57024CE7A1400471A8D /* EFOneLoginViewController.m in Sources */,
 				8476107E24C5A06F002B34E4 /* EFSetUpViewController.m in Sources */,
 				84760F9224C17AC1002B34E4 /* NSString+NSMutableAttributedString.m in Sources */,
+				0C8A27DB24D9348D00E40ED8 /* UILabel+Extension.m in Sources */,
 				0CE2860924D3EC4F00AAC334 /* LTSCalendarManager.m in Sources */,
 				84B2437924C8406C00E9967C /* RightThreeCollectionViewCell.m in Sources */,
 				84A8210824BC4F5400EAC652 /* FMARCNetwork.m in Sources */,
@@ -2433,6 +2494,8 @@
 				0C8A278A24D79BCE00E40ED8 /* EFFastTuanListViewController.m in Sources */,
 				84A8211E24BC513500EAC652 /* EFFollowViewController.m in Sources */,
 				0C6CB5C324CFD6B200471A8D /* EFRefreshHeader.m in Sources */,
+				0C8A27D224D8F28500E40ED8 /* EFUserModel.m in Sources */,
+				0C8A27CC24D8F15000E40ED8 /* UserManager.m in Sources */,
 				0C6CB59024CEB19000471A8D /* UITextField+MyExtension.m in Sources */,
 				84A821B524BFFAE700EAC652 /* EFSearchViewController.m in Sources */,
 				84187CA624C05D0200ED3F96 /* MeHeaderView.m in Sources */,
@@ -2458,6 +2521,7 @@
 				84A8216D24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
 				847610C624C6D44C002B34E4 /* EFBaseWebViewController.m in Sources */,
 				8476119824C82516002B34E4 /* SysManager.m in Sources */,
+				0C8A27D724D9341A00E40ED8 /* MBProgressHUD+FULI.m in Sources */,
 				0C6CB56C24CE688300471A8D /* LRAnimationProgress.m in Sources */,
 				0CCEC48E24CAC2F000976D24 /* EFIMListTableViewCell.m in Sources */,
 				847610D024C6D898002B34E4 /* PowerTableViewCell.m in Sources */,
@@ -2506,6 +2570,7 @@
 				0C6CB5A424CEC1F000471A8D /* EFCodeLoginTableViewCell.m in Sources */,
 				8476102A24C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */,
 				0C6CB5B324CECBC200471A8D /* EFFastRegViewController.m in Sources */,
+				0C8A27E224D934E200E40ED8 /* CALayer+Anim.m in Sources */,
 				84A821C524C03BB800EAC652 /* SeachOneCollectionViewCell.m in Sources */,
 				84A8212B24BC513500EAC652 /* AppDelegate.m in Sources */,
 				847610C124C6D1D1002B34E4 /* EFPrivacyViewController.m in Sources */,
@@ -2522,6 +2587,7 @@
 				0C6CB57124CE7A1400471A8D /* EFOneLoginViewController.m in Sources */,
 				8476107F24C5A06F002B34E4 /* EFSetUpViewController.m in Sources */,
 				84760F9324C17AC1002B34E4 /* NSString+NSMutableAttributedString.m in Sources */,
+				0C8A27DC24D9348D00E40ED8 /* UILabel+Extension.m in Sources */,
 				0CE2860A24D3EC4F00AAC334 /* LTSCalendarManager.m in Sources */,
 				84B2437A24C8406C00E9967C /* RightThreeCollectionViewCell.m in Sources */,
 				84A8212C24BC513500EAC652 /* FMARCNetwork.m in Sources */,

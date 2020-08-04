@@ -135,4 +135,9 @@
         make.centerX.equalTo(self.phoneBtn.mas_centerX);
     }];
 }
+
+- (void)setBtnLogin {
+    [self.locationBtn setTitle:@"" forState:(UIControlStateNormal)];
+    [self.locationBtn setImage:UIImageMake(@"delet") forState:(UIControlStateNormal)];
+}
 @end

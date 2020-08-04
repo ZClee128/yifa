@@ -82,9 +82,7 @@
                     break;
             }
         } vipBlock:^{
-            [[LoginVM userLogin] subscribeNext:^(id  _Nullable x) {
-                
-            }];
+            
         }];
     }
     return _headerView;

@@ -10,8 +10,19 @@
 
 @implementation FMARCNetwork (Login)
 
-- (RACSignal *)userLogin {
-    return [self fg_postRequest:kUserLogin paramters:@{@"type":@"1",@"account":@"13413686126",@"password":@"123"}];
+- (RACSignal *)userLogin:(NSString *)account code:(NSString *)code loginToken:(NSString *)loginToken password:(NSString *)password phone:(NSString *)phone type:(NSInteger)type {
+    return [self fg_postRequest:kUserLogin paramters:@{@"account":account,@"code":code,@"loginToken":loginToken,@"password":password,@"phone":phone,@"type":@(type)}];
 }
 
+- (RACSignal *)userregister:(NSString *)phone code:(NSString *)code {
+    return [self fg_postRequest:kRegister paramters:@{@"phone":phone,@"code":code}];
+}
+
+- (RACSignal *)sendCode:(NSString *)phone type:(NSInteger)type {
+    return [self fg_postRequest:ksendCode paramters:@{@"phone":phone,@"type":@(type)}];
+}
+
+- (RACSignal *)verifyMessage:(NSString *)code phone:(NSString *)phone type:(NSInteger)type {
+    return [self fg_postRequest:kverifyMessage paramters:@{@"code":code,@"phone":phone,@"type":@(type)}];
+}
 @end

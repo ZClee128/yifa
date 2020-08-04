@@ -34,7 +34,14 @@ NS_ASSUME_NONNULL_BEGIN
 //点击跳转
 - (void)recomListClick;
 
+// 发起支付
+- (void)Pay;
+
+// 选择地址
+- (void)ChooseAddress;
 - (NSDictionary *)identifyData:(id)data;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

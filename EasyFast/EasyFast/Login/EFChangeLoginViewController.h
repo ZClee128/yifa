@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EFChangeLoginViewController : EFBaseTableViewController
-
+- (instancetype)initWithType:(BOOL)hasone;
 @end
 
 NS_ASSUME_NONNULL_END

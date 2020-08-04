@@ -11,5 +11,8 @@
 
 //登陆
 #define kUserLogin  @"api-client/user/index/login"
+#define kRegister @"api-client/user/index/register" //注册
+#define ksendCode @"api-client/sms/sendUserMessage" //发送验证码
+#define kverifyMessage @"/api-client/sms/verifyMessage" //验证短信
 
 #endif /* Api_h */

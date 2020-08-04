@@ -12,9 +12,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LoginVM : EFBaseRefreshVM
 
-- (void)getCodeWithBtn:(QMUIButton *)codeBtn;
+/// 短信类型(1：登录；2：注册APP；3：注册成为商家；4：找回密码；5：解绑手机；6：绑定手机；)
+- (void)getCodeWithBtn:(QMUIButton *)codeBtn withType:(NSInteger)type phone:(NSString *)phone;
 
-+ (RACSignal *)userLogin;
++ (RACSignal *)userLogin:(NSString *)account code:(NSString *)code loginToken:(NSString *)loginToken password:(NSString *)password phone:(NSString *)phone type:(NSInteger)type;
+
++ (RACSignal *)userregister:(NSString *)phone code:(NSString *)code;
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -34,7 +34,9 @@
         @weakify(self);
         [[_nextBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self);
-            
+            [[LoginVM userregister:self.phoneText code:self.codeStr] subscribeNext:^(id  _Nullable x) {
+                
+            }];
         }];
     }
     return _nextBtn;
@@ -55,6 +57,7 @@
             make.top.equalTo(@(WidthOfScale(15.5)));
             make.left.equalTo(@(WidthOfScale(15)));
         }];
+        self.clickBrn.qmui_outsideEdge = UIEdgeInsetsMake(-20, -20, -20, -20);
         
         self.contentLab = [[YYLabel alloc] init];
         self.contentLab.font = RegularFont13;
@@ -101,9 +104,9 @@
         
         
         @weakify(self);
-        RAC(self.nextBtn,userInteractionEnabled) =  [RACSignal combineLatest:@[RACObserve(self,self.phoneText),RACObserve(self,self.codeStr)] reduce:^id _Nonnull(NSString *phone,NSString *code){
+        RAC(self.nextBtn,userInteractionEnabled) =  [RACSignal combineLatest:@[RACObserve(self,self.phoneText),RACObserve(self,self.codeStr),RACObserve(self, self.clickBrn.selected)] reduce:^id _Nonnull(NSString *phone,NSString *code, NSNumber *select){
             @strongify(self);
-            BOOL enabled = phone.length == 11 && code.length == 6;
+            BOOL enabled = phone.length == 11 && code.length == 6 && [select boolValue];
             if (!enabled) {
                 btnGradation(self.nextBtn,[colorF14745 colorWithAlphaComponent:0.6]);
             }else {
@@ -164,7 +167,7 @@
             };
             cell.CodeBlock = ^(QMUIButton * _Nonnull btn) {
                 @strongify(self);
-                [(LoginVM *)self.viewModel getCodeWithBtn:btn];
+                [(LoginVM *)self.viewModel getCodeWithBtn:btn withType:2 phone:self.phoneText];
             };
             
             return cell;

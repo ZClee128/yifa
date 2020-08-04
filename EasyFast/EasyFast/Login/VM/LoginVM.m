@@ -7,32 +7,54 @@
 //
 
 #import "LoginVM.h"
+#import "EFUserModel.h"
 
 @implementation LoginVM
 
-- (void)getCodeWithBtn:(QMUIButton *)codeBtn {
-//    [MBProgressHUD showLoadingProgress:@"获取验证码..."];
-//    @weakify(self);
-    [self intervalTimer:1 intervalBlock:^BOOL(NSDate * _Nonnull date, NSTimeInterval currenctCount) {
-        if (currenctCount == 61) {
-            [codeBtn setTitle:@"重发验证码" forState:(UIControlStateNormal)];
-            codeBtn.enabled = YES;
-            return YES;
-        }else {
-            codeBtn.enabled = NO;
-            [codeBtn setTitle:[NSString stringWithFormat:@"%.fs后重发",60-currenctCount] forState:(UIControlStateNormal)];
-            return NO;
+- (void)getCodeWithBtn:(QMUIButton *)codeBtn withType:(NSInteger)type phone:(NSString *)phone{
+    [MBProgressHUD showLoadingProgress:@"获取验证码..."];
+    [[[FMARCNetwork sharedInstance] sendCode:phone type:type] subscribeNext:^(FMHttpResonse *x) {
+        [[RACScheduler mainThreadScheduler] schedule:^{
+            [MBProgressHUD removeProgressFromSuperView];
+        }];
+        if (x.isSuccess) {
+            [self intervalTimer:1 intervalBlock:^BOOL(NSDate * _Nonnull date, NSTimeInterval currenctCount) {
+                if (currenctCount == 61) {
+                    [codeBtn setTitle:@"重发验证码" forState:(UIControlStateNormal)];
+                    codeBtn.enabled = YES;
+                    return YES;
+                }else {
+                    codeBtn.enabled = NO;
+                    [codeBtn setTitle:[NSString stringWithFormat:@"%.fs后重发",60-currenctCount] forState:(UIControlStateNormal)];
+                    return NO;
+                }
+            }];
         }
+    }];
+    
+}
+
++ (RACSignal *)userLogin:(NSString *)account code:(NSString *)code loginToken:(NSString *)loginToken password:(NSString *)password phone:(NSString *)phone type:(NSInteger)type {
+    return [self requsetNetwork:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] userLogin:account code:code loginToken:loginToken password:password phone:phone type:type];
+    } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
+        EFUserModel *model = [EFUserModel modelWithJSON:result.reqResult];
+        [model bg_saveOrUpdate];
+        XYLog(@"model = >%@",model);
+        return @(result.isSuccess);
     }];
 }
 
-+ (RACSignal *)userLogin {
++ (RACSignal *)userregister:(NSString *)phone code:(NSString *)code {
     return [self requsetNetwork:^RACSignal * _Nonnull{
-        return [[FMARCNetwork sharedInstance] userLogin];
+        return [[FMARCNetwork sharedInstance] userregister:phone code:code];
     } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
-        XYLog(@"%@",result);
-        return result;
+        EFUserModel *model = [EFUserModel modelWithJSON:result.reqResult];
+        [model bg_saveOrUpdate];
+        return @(result.isSuccess);
     }];
 }
+
+
 
 @end

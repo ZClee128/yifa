@@ -75,4 +75,12 @@
     return 10;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.navigationController qmui_popViewControllerAnimated:YES completion:^{
+    
+    }];
+    if (self.chooseAddress) {
+        self.chooseAddress(@"dddddd");
+    }
+}
 @end

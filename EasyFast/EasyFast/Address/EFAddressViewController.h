@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EFAddressViewController : EFBaseTableViewController
 
+@property (nonatomic,copy)void(^chooseAddress)(NSString *str);
+
 @end
 
 NS_ASSUME_NONNULL_END

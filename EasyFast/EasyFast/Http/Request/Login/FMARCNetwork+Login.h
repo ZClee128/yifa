@@ -12,7 +12,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FMARCNetwork (Login)
 
-- (RACSignal *)userLogin;
+// 登陆
+- (RACSignal *)userLogin:(NSString *)account code:(NSString *)code loginToken:(NSString *)loginToken password:(NSString *)password phone:(NSString *)phone type:(NSInteger)type;
+
+// 注册
+- (RACSignal *)userregister:(NSString *)phone code:(NSString *)code;
+
+/// 短信类型(1：登录；2：注册APP；3：注册成为商家；4：找回密码；5：解绑手机；6：绑定手机；)
+- (RACSignal *)sendCode:(NSString *)phone type:(NSInteger)type;
+
+/// 短信类型(1：登录；2：注册APP；3：注册成为商家；4：找回密码；5：解绑手机；6：绑定手机；)
+- (RACSignal *)verifyMessage:(NSString *)code phone:(NSString *)phone type:(NSInteger)type;
 @end
 
 NS_ASSUME_NONNULL_END

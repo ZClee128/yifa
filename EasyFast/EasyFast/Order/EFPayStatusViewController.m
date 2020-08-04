@@ -99,7 +99,13 @@
     goHome.titleLabel.font = MedFont13;
     [goHome layoutIfNeeded];
     [goHome AddImageRadiusBorderWithColor:UIColor.whiteColor lineWidth:1 radius:WidthOfScale(35)/2];
-    
+    @weakify(self);
+    [[goHome rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        @strongify(self);
+        [self.navigationController qmui_popToRootViewControllerAnimated:YES completion:^{
+            
+        }];
+    }];
     
     QMUIButton *lookOrder = [QMUIButton buttonWithType:(UIButtonTypeCustom)];
     [view addSubview:lookOrder];

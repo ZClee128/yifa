@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EFChangeLoginHeaderView : UIView
 
+- (void)setBtnLogin;
 @property (nonatomic,copy)void(^selectBlock)(NSInteger index);
 
 @end

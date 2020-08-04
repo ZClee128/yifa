@@ -25,7 +25,11 @@
 
 + (void)show {
     if(![JVERIFICATIONService checkVerifyEnable]) {
-        NSLog(@"当前网络环境不支持认证！");
+        EFChangeLoginViewController *vc = [[EFChangeLoginViewController alloc] initWithType:NO];
+        vc.hidesBottomBarWhenPushed = YES;
+        [[UIViewController getCurrentVC].navigationController qmui_pushViewController:vc animated:YES completion:^{
+            
+        }];
         return;
     }
     [self setUI];
@@ -44,6 +48,11 @@
 + (void)showBindPhone {
     if(![JVERIFICATIONService checkVerifyEnable]) {
         NSLog(@"当前网络环境不支持认证！");
+        EFBindPhoneViewController *bind = [[EFBindPhoneViewController alloc] init];
+        bind.hidesBottomBarWhenPushed = YES;
+        [[UIViewController getCurrentVC].navigationController qmui_pushViewController:bind animated:YES completion:^{
+            
+        }];
         return;
     }
     [self setBindPhoneUI];
@@ -128,7 +137,7 @@
         ChangeBtn.titleLabel.font = RegularFont17;
         [ChangeBtn setTitleColor:colorFE851E forState:(UIControlStateNormal)];
         [[ChangeBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-            EFChangeLoginViewController *vc = [[EFChangeLoginViewController alloc] init];
+            EFChangeLoginViewController *vc = [[EFChangeLoginViewController alloc] initWithType:YES];
             [[UIViewController getCurrentVC].navigationController qmui_pushViewController:vc animated:YES completion:^{
                 
             }];

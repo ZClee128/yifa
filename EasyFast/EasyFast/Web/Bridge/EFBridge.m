@@ -9,7 +9,8 @@
 #import "EFBridge.h"
 #import "TuanListViewController.h"
 #import "EFConversationViewController.h"
-
+#import "EFPayStatusViewController.h"
+#import "EFAddressViewController.h"
 @interface EFBridge ()
 @property (nonatomic,strong)WebViewJavascriptBridge *bridge;
 @end
@@ -87,6 +88,28 @@
     [self.bridge registerHandler:@"IM" handler:^(id data, WVJBResponseCallback responseCallback) {
         @strongify(self);
         EFConversationViewController *vc = [[EFConversationViewController alloc] init];
+        [self push:vc];
+    }];
+}
+
+
+- (void)Pay {
+    @weakify(self);
+    [self.bridge registerHandler:@"Pay" handler:^(id data, WVJBResponseCallback responseCallback) {
+        @strongify(self);
+        EFPayStatusViewController *vc = [[EFPayStatusViewController alloc] init];
+        [self push:vc];
+    }];
+}
+
+- (void)ChooseAddress {
+    @weakify(self);
+    [self.bridge registerHandler:@"ChooseAddress" handler:^(id data, WVJBResponseCallback responseCallback) {
+        @strongify(self);
+        EFAddressViewController *vc = [[EFAddressViewController alloc] init];
+        vc.chooseAddress = ^(NSString * _Nonnull str) {
+            responseCallback(str);
+        };
         [self push:vc];
     }];
 }

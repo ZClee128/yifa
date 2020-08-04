@@ -61,4 +61,8 @@
 #import "ShareManager.h"
 #import "EFOnePhoneLoginManager.h"
 #import "FMARCNetwork+Login.h"
+#import "UserManager.h"
+#import "UILabel+Extension.h"
+#import "MBProgressHUD+FULI.h"
+#import "CALayer+Anim.h"
 #endif /* Header_h */
