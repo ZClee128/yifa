@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong)EFUserModel *userModel;
 + (instancetype)defaultManager;
-- (void)saveUserModel;
+- (void)saveUserModel:(EFUserModel *)model;
 @end
 
 NS_ASSUME_NONNULL_END

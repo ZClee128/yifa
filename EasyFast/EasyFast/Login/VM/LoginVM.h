@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (RACSignal *)userregister:(NSString *)phone code:(NSString *)code;
 
-
++ (RACSignal *)loginOut;
 
 @end
 

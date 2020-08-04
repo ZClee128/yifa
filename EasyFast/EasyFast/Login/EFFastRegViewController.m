@@ -34,8 +34,10 @@
         @weakify(self);
         [[_nextBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self);
-            [[LoginVM userregister:self.phoneText code:self.codeStr] subscribeNext:^(id  _Nullable x) {
-                
+            [[LoginVM userregister:self.phoneText code:self.codeStr] subscribeNext:^(NSNumber *x) {
+                if ([x boolValue]) {
+                    [self.navigationController popToRootViewControllerAnimated:YES];
+                }
             }];
         }];
     }

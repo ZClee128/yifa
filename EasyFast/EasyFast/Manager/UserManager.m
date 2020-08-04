@@ -20,6 +20,19 @@
     return _sharedManager;
 }
 
+- (void)saveUserModel:(EFUserModel *)model {
+    if ([[EFUserModel bg_findAll:nil] count] != 0) {
+        for (EFUserModel *user in [EFUserModel bg_findAll:nil]) {
+            if (![user.username isEqualToString:model.username]) {
+                user.isLogin = NO;
+            }
+            model.isLogin = YES;
+        }
+    }else {
+        model.isLogin = YES;
+    }
+}
+
 - (EFUserModel *)userModel{
     if (!_userModel) {
         NSArray* finfAlls = [EFUserModel bg_findAll:nil];

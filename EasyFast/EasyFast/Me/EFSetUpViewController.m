@@ -13,6 +13,7 @@
 #import "EFPrivacyViewController.h"
 #import "EFNotiViewController.h"
 #import "EFSafeAccountViewController.h"
+#import "LoginVM.h"
 
 @interface EFSetUpViewController ()
 
@@ -40,7 +41,15 @@
 }
 
 - (void)bottomClick {
-    
+    [[LoginVM loginOut] subscribeNext:^(id  _Nullable x) {
+        
+    }];
+    /**
+    单个对象更新.
+    支持keyPath.
+    */
+    NSString* where = [NSString stringWithFormat:@"where %@ or %@=%@",bg_keyPathValues(@[@"username",bg_equal,kUserManager.userModel.username]),bg_sqlKey(@"token"),bg_sqlValue(@"")];
+    [kUserManager.userModel bg_updateWhere:where];
 }
 
 - (void)viewDidLoad {

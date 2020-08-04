@@ -162,17 +162,12 @@ static FMARCNetwork * _instance = nil;
      /// request 必须的有值
     if (!req) return [RACSignal error:[NSError errorWithDomain:HTTPServiceErrorDomain code:-1 userInfo:nil]];
     
-//    NSString *accessToken = kUserManager.userModel.ctoken;
-//    NSString *userid = kUserManager.userModel.cuserid;
-//    if (accessToken && accessToken.length > 0 && userid && userid.length > 0) {
-//        
-//        if (![req.path isEqualToString:kCheakPhone] || ![req.path isEqualToString:kLogin]) {
-//            
-//            [self.manager.requestSerializer setValue:[NSString stringWithFormat:@"%@",accessToken] forHTTPHeaderField:@"token"];
-//        }
-//    }else {
-//        [self.manager.requestSerializer clearAuthorizationHeader];
-//    }
+    NSString *accessToken = kUserManager.userModel.token;
+    if (accessToken && accessToken.length > 0) {
+        [self.manager.requestSerializer setValue:[NSString stringWithFormat:@"%@",accessToken] forHTTPHeaderField:@"token"];
+    }else {
+        [self.manager.requestSerializer clearAuthorizationHeader];
+    }
     
     @weakify(self);
     /// 创建信号

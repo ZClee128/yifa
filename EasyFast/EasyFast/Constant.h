@@ -17,6 +17,7 @@
 // h5manager
 #define kH5Manager [H5Manager defaultManager]
 #define kShareManager [ShareManager defaultManager]
+#define kUserManager [UserManager defaultManager]
 
 /// 屏幕宽
 #define kPHONE_WIDTH [UIScreen mainScreen].bounds.size.width

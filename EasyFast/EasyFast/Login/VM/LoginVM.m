@@ -39,16 +39,7 @@
         return [[FMARCNetwork sharedInstance] userLogin:account code:code loginToken:loginToken password:password phone:phone type:type];
     } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
         EFUserModel *model = [EFUserModel modelWithJSON:result.reqResult];
-        if ([EFUserModel bg_findAll:nil] == nil) {
-            
-        }
-        for (EFUserModel *user in [EFUserModel bg_findAll:nil]) {
-            if ([user.username isEqualToString:model.username]) {
-                model.isLogin = YES;
-            }else{
-                user.isLogin = NO;
-            }
-        }
+        [[UserManager defaultManager] saveUserModel:model];
         [model bg_saveOrUpdate];
         XYLog(@"model = >%@",model);
         return @(result.isSuccess);
@@ -60,11 +51,18 @@
         return [[FMARCNetwork sharedInstance] userregister:phone code:code];
     } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
         EFUserModel *model = [EFUserModel modelWithJSON:result.reqResult];
+        [[UserManager defaultManager] saveUserModel:model];
         [model bg_saveOrUpdate];
         return @(result.isSuccess);
     }];
 }
 
-
++ (RACSignal *)loginOut {
+    return [self requsetNetwork:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] loginOut];
+    } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
+        return @(result.isSuccess);
+    }];
+}
 
 @end

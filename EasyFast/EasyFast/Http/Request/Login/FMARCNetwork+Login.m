@@ -25,4 +25,8 @@
 - (RACSignal *)verifyMessage:(NSString *)code phone:(NSString *)phone type:(NSInteger)type {
     return [self fg_postRequest:kverifyMessage paramters:@{@"code":code,@"phone":phone,@"type":@(type)}];
 }
+
+- (RACSignal *)loginOut {
+    return [self fg_postRequest:kLoginOut paramters:@{}];
+}
 @end
