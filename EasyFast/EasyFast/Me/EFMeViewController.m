@@ -144,10 +144,10 @@
                               @{@"title":@"待拼团",@"icon":@"daifukuan"}] title:@"我的团购"];
             MeCell.seletBtn = ^(NSInteger index) {
                 XYLog(@"tuan->%ld",(long)index);
-                [kH5Manager gotoUrl:@"myGroup" hasNav:YES navTitle:@"我的团购" query:@{@"index" : index == 0 ? @(3) :(index == 1 ? @(2) : (index == 2 ? @(4) : @(1)))}];
+                [kH5Manager gotoUrl:@"myGroup" hasNav:NO navTitle:@"" query:@{@"index" : index == 0 ? @(3) :(index == 1 ? @(2) : (index == 2 ? @(4) : @(1)))}];
             };
             MeCell.moreBlock = ^{
-                [kH5Manager gotoUrl:@"myGroup" hasNav:YES navTitle:@"我的团购" query:@{@"index" : @(0)}];
+                [kH5Manager gotoUrl:@"myGroup" hasNav:NO navTitle:@"" query:@{@"index" : @(0)}];
             };
             return MeCell;
         }
@@ -168,7 +168,7 @@
                         
                     }];
                 }else {
-                    [kH5Manager gotoUrl:@"return" hasNav:YES navTitle:@"售后退款" query:@{}];
+                    [kH5Manager gotoUrl:@"return" hasNav:NO navTitle:@"" query:@{}];
                 }
             };
             MeCell.moreBlock = ^{

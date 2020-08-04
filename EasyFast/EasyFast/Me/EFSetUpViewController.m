@@ -44,12 +44,12 @@
     [[LoginVM loginOut] subscribeNext:^(id  _Nullable x) {
         
     }];
-    /**
-    单个对象更新.
-    支持keyPath.
-    */
-    NSString* where = [NSString stringWithFormat:@"where %@ or %@=%@",bg_keyPathValues(@[@"username",bg_equal,kUserManager.userModel.username]),bg_sqlKey(@"token"),bg_sqlValue(@"")];
-    [kUserManager.userModel bg_updateWhere:where];
+    NSString* where = [NSString stringWithFormat:@"set %@=%@ ,%@=%@ where %@=%@",bg_sqlKey(@"token"),bg_sqlValue(@""),bg_sqlKey(@"isLogin"),bg_sqlValue(@NO),bg_sqlKey(@"username"),bg_sqlValue(kUserManager.userModel.username)];
+    [EFUserModel bg_update:nil where:where];
+    [self.navigationController qmui_popToRootViewControllerAnimated:NO completion:^{
+        
+    }];
+    kAppDelegate.efTabbar.selectedIndex = 0;
 }
 
 - (void)viewDidLoad {

@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "EFBaseTabBarViewController.h"
 #import "EFOneLoginViewController.h"
 #import <BaiduMapAPI_Map/BMKMapView.h>
 @interface AppDelegate ()
@@ -42,7 +41,8 @@
     }];
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = [[EFBaseTabBarViewController alloc] initWithContext:@""];
+    self.efTabbar = [[EFBaseTabBarViewController alloc] initWithContext:@""];
+    self.window.rootViewController = self.efTabbar;
 //    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[EFOneLoginViewController alloc] init]];
     [self.window makeKeyAndVisible];
     
