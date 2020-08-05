@@ -197,7 +197,7 @@
             }
         }];
     }else {
-        [[LoginVM bindingPhone:self.phone type:2 loginToken:@"" code:self.codeStr verifyToken:@"" oldPhone:kUserManager.userModel.phone] subscribeNext:^(NSNumber *x) {
+        [[LoginVM bindingPhone:self.phone type:1 loginToken:@"" code:self.codeStr verifyToken:@"" oldPhone:kUserManager.userModel.phone] subscribeNext:^(NSNumber *x) {
             if ([x boolValue]) {
                 for (UIViewController *vc in self.navigationController.viewControllers) {
                     if ([vc isKindOfClass:[EFSafeAccountViewController class]]) {

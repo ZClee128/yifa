@@ -73,7 +73,7 @@
         if ([result[@"code"] intValue] == 6000) {
             [JVERIFICATIONService getToken:5000 completion:^(NSDictionary *verifyresult) {
                 if ([verifyresult[@"code"] intValue] == 6000) {
-                    [[LoginVM bindingPhone:@"" type:1 loginToken:result[@"loginToken"] code:@"" verifyToken:verifyresult[@"loginToken"] oldPhone:kUserManager.userModel.phone] subscribeNext:^(NSNumber *x) {
+                    [[LoginVM bindingPhone:@"" type:2 loginToken:result[@"loginToken"] code:@"" verifyToken:verifyresult[@"loginToken"] oldPhone:kUserManager.userModel.phone] subscribeNext:^(NSNumber *x) {
                         if ([x boolValue]) {
                             [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:^{
                                 

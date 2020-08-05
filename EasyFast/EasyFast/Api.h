@@ -13,7 +13,7 @@
 #define kUserLogin  @"api-client/user/index/login"
 #define kRegister @"api-client/user/index/register" //注册
 #define ksendCode @"api-client/sms/sendUserMessage" //发送验证码
-#define kverifyMessage @"api-client/sms/verifyMessage" //验证短信
+#define kverifyMessage @"api-client/user/verifyMessage" //验证短信
 #define kLoginOut @"api-client/user/loginOut" //退出接口
 #define kupdateUserInfo @"api-client/user/info/updateUserInfo" //修改个人信息接口
 #define kunbindPhone @"api-client/user/info/unbindPhone" //解绑
