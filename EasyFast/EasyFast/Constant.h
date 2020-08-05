@@ -138,4 +138,6 @@ fprintf(stderr,"[--%s--]\n[--%s:%d--]\n[--%s--]\n===========================\n",
 
 // 通知
 #define kTabFollow @"TabFollow" //个人中心关注通知
+#define knickName @"knickName" //修改昵称
+#define kChangePhone @"kChangePhone" //修改手机
 #endif /* Constant_h */

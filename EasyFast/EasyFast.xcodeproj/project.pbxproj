@@ -152,6 +152,9 @@
 		0C8A29CC24DA9CAF00E40ED8 /* MeVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29CB24DA9CAF00E40ED8 /* MeVM.m */; };
 		0C8A29CD24DA9CAF00E40ED8 /* MeVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29CB24DA9CAF00E40ED8 /* MeVM.m */; };
 		0C8A29CE24DA9CAF00E40ED8 /* MeVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29CB24DA9CAF00E40ED8 /* MeVM.m */; };
+		0C8A29D624DAAF5E00E40ED8 /* NSString+base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29D524DAAF5D00E40ED8 /* NSString+base64.m */; };
+		0C8A29D724DAAF5F00E40ED8 /* NSString+base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29D524DAAF5D00E40ED8 /* NSString+base64.m */; };
+		0C8A29D824DAAF5F00E40ED8 /* NSString+base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29D524DAAF5D00E40ED8 /* NSString+base64.m */; };
 		0CCEC45324CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45424CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45524CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
@@ -666,6 +669,8 @@
 		0C8A29C624DA9AE000E40ED8 /* FMARCNetwork+Me.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FMARCNetwork+Me.m"; sourceTree = "<group>"; };
 		0C8A29CA24DA9CAF00E40ED8 /* MeVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeVM.h; sourceTree = "<group>"; };
 		0C8A29CB24DA9CAF00E40ED8 /* MeVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeVM.m; sourceTree = "<group>"; };
+		0C8A29D424DAAF5D00E40ED8 /* NSString+base64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+base64.h"; sourceTree = "<group>"; };
+		0C8A29D524DAAF5D00E40ED8 /* NSString+base64.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+base64.m"; sourceTree = "<group>"; };
 		0CCEC45124CA7A6000976D24 /* EFWuliuTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFWuliuTableViewCell.h; sourceTree = "<group>"; };
 		0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFWuliuTableViewCell.m; sourceTree = "<group>"; };
 		0CCEC45624CA7D8900976D24 /* EFOrderMoreDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderMoreDetailViewController.h; sourceTree = "<group>"; };
@@ -1619,6 +1624,8 @@
 				84760F9024C17AC1002B34E4 /* NSString+NSMutableAttributedString.m */,
 				84760F9424C1806D002B34E4 /* NSMutableAttributedString+Size.h */,
 				84760F9524C1806D002B34E4 /* NSMutableAttributedString+Size.m */,
+				0C8A29D424DAAF5D00E40ED8 /* NSString+base64.h */,
+				0C8A29D524DAAF5D00E40ED8 /* NSString+base64.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -2193,6 +2200,7 @@
 				84A8218E24BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */,
 				84187CA924C05E8200ED3F96 /* VerticalLabelBotton.m in Sources */,
 				84A820E224B6EADF00EAC652 /* EFBaseTabBarViewController.m in Sources */,
+				0C8A29D624DAAF5E00E40ED8 /* NSString+base64.m in Sources */,
 				8476117F24C6F3A9002B34E4 /* UIView+XQCAlertPop.m in Sources */,
 				0C6CB5A724CEC61100471A8D /* EFOneBtnLoginTableViewCell.m in Sources */,
 				841B94FD24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.m in Sources */,
@@ -2381,6 +2389,7 @@
 				84A8218F24BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */,
 				84187CAA24C05E8200ED3F96 /* VerticalLabelBotton.m in Sources */,
 				84A8210024BC4F5400EAC652 /* EFMeViewController.m in Sources */,
+				0C8A29D724DAAF5F00E40ED8 /* NSString+base64.m in Sources */,
 				8476118024C6F3A9002B34E4 /* UIView+XQCAlertPop.m in Sources */,
 				0C6CB5A824CEC61100471A8D /* EFOneBtnLoginTableViewCell.m in Sources */,
 				841B94FE24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.m in Sources */,
@@ -2569,6 +2578,7 @@
 				84A8219024BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */,
 				84187CAB24C05E8200ED3F96 /* VerticalLabelBotton.m in Sources */,
 				84A8212324BC513500EAC652 /* EFBaseTabBarViewController.m in Sources */,
+				0C8A29D824DAAF5F00E40ED8 /* NSString+base64.m in Sources */,
 				8476118124C6F3A9002B34E4 /* UIView+XQCAlertPop.m in Sources */,
 				0C6CB5A924CEC61100471A8D /* EFOneBtnLoginTableViewCell.m in Sources */,
 				841B94FF24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.m in Sources */,

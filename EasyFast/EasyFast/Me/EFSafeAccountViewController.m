@@ -9,7 +9,7 @@
 #import "EFSafeAccountViewController.h"
 #import "EFSetUpTableViewCell.h"
 #import "EFEditPasswordViewController.h"
-#import "EFOnePhoneViewController.h"
+#import "EFBindPhoneViewController.h"
 
 @interface EFSafeAccountViewController ()
 
@@ -24,6 +24,11 @@
     self.EFData = [@[@{@"title":@"会员账号",@"subTitle":kUserManager.userModel.username},
                      @{@"title":@"修改手机",@"subTitle":kUserManager.userModel.phone},
                      @{@"title":@"修改登录密码",@"subTitle":kUserManager.userModel.isPassword ? @"" : @"初始密码为123456"},@{@"title":@"注销账号",@"subTitle":@""}] mutableCopy];
+    @weakify(self);
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kChangePhone object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        @strongify(self);
+        [self.EFTableView reloadData];
+    }];
 }
 
 - (void)setLoginOUtBtn {
@@ -65,9 +70,9 @@
         }
             case 1:
         {
-            EFOnePhoneViewController *vc = [[EFOnePhoneViewController alloc] init];
+            EFCodeViewController *vc = [[EFCodeViewController alloc] initWithPhone:kUserManager.userModel.phone];
             [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
-                
+
             }];
             break;
         }

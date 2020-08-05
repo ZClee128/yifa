@@ -113,7 +113,11 @@
         make.height.equalTo(@(kPHONE_HEIGHT/2));
     }];
     self.EFTableView.backgroundColor = [UIColor clearColor];
-  
+    @weakify(self);
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:knickName object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        @strongify(self);
+        [self.headerView setData];
+    }];
 }
 
 

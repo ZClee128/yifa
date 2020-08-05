@@ -10,8 +10,9 @@
 #import "EFSetUpTableViewCell.h"
 #import "EFOnePhoneViewController.h"
 #import "BRAddressPickerView.h"
-
-@interface EFMeDataViewController ()
+#import "MeVM.h"
+#import "BRStringPickerView.h"
+@interface EFMeDataViewController ()<UITextFieldDelegate>
 @property (nonatomic,strong)UIView *otherView;
 @property (nonatomic,strong)UIImage *headerImage;
 @end
@@ -58,14 +59,15 @@
     [self.EFTableView registerClass:[EFSetUpTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFSetUpTableViewCell class])];
     
     self.EFData = [@[@{@"title":@"头像",@"subTitle":@"",@"header":kUserManager.userModel.headImgUrl ? kUserManager.userModel.headImgUrl : @""},
-                     [@{@"title":@"昵称",@"subTitle":kUserManager.userModel.nickname,@"header":@""} mutableCopy],
-                     @{@"title":@"性别",@"subTitle":kUserManager.userModel.sex == 1 ? @"男" : (kUserManager.userModel.sex == 2 ? @"女" : @"不限"),@"header":@""},
+                     [@{@"title":@"昵称",@"subTitle":kUserManager.userModel.nickname.base64DecodeString,@"header":@""} mutableCopy],
+                     [@{@"title":@"性别",@"subTitle":kUserManager.userModel.sex == 1 ? @"男" : (kUserManager.userModel.sex == 2 ? @"女" : @"不限"),@"header":@""} mutableCopy],
                      [@{@"title":@"地区",@"subTitle":kUserManager.userModel.city == nil ? @"请选择" :[NSString stringWithFormat:@"%@ %@",kUserManager.userModel.province,kUserManager.userModel.city],@"header":@""} mutableCopy],
                      @{@"title":@"绑定手机",@"subTitle":kUserManager.userModel.phone,@"header":@""},
                      @{@"title":@"绑定微信号",@"subTitle":kUserManager.userModel.wxname == nil ? @"去绑定" : kUserManager.userModel.wxname,@"header":@""},
                      @{@"title":@"实名认证",@"subTitle":@"未认证",@"header":@""},
                      ] mutableCopy];
     self.EFTableView.tableFooterView = self.otherView;
+    
 }
 
 
@@ -113,19 +115,51 @@
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"请输入昵称" preferredStyle:UIAlertControllerStyleAlert];
             [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
             [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                @strongify(self);
                 UITextField *userNameTextField = alertController.textFields.firstObject;
-                self.EFData[1][@"subTitle"] = userNameTextField.text;
-                [self.EFTableView reloadData];
+                [[MeVM updateUserInfo:@"" headImgUrl:@"" nickname:userNameTextField.text province:@"" sex:4 type:2] subscribeNext:^(NSNumber *x) {
+                    if ([x boolValue]) {
+                        @strongify(self)
+                        for (EFUserModel *model in [EFUserModel bg_findAll:nil]) {
+                            if ([model.username isEqualToString:kUserManager.userModel.username]) {
+                                model.nickname = userNameTextField.text.base64EncodeString;
+                                [model bg_saveOrUpdate];
+                            }
+                        }
+                        [[NSNotificationCenter defaultCenter] postNotificationName:knickName object:nil];
+                        self.EFData[1][@"subTitle"] = userNameTextField.text;
+                        [self.EFTableView reloadData];
+                    }
+                }];
             }]];
             [alertController addTextFieldWithConfigurationHandler:^(UITextField *_Nonnull textField) {
                 textField.placeholder=@"请输入昵称";
+                textField.delegate = self;
             }];
             [self presentViewController:alertController animated:YES completion:nil];
             break;
         }
             case 2:
         {
+            BRStringPickerView *sexPickerView = [[BRStringPickerView alloc] initWithPickerMode:(BRStringPickerComponentSingle)];
+            sexPickerView.dataSourceArr = @[@"男",@"女",@"不限"];
+            sexPickerView.resultModelBlock = ^(BRResultModel * _Nullable resultModel) {
+                [[MeVM updateUserInfo:@"" headImgUrl:@"" nickname:@"" province:@"" sex:[resultModel.value isEqualToString:@"男"] ? 1 : ([resultModel.value isEqualToString:@"女"] ? 2 : 3) type:3] subscribeNext:^(NSNumber *x) {
+                    if ([x boolValue]) {
+                        self.EFData[2][@"subTitle"] = resultModel.value;
+                        for (EFUserModel *model in [EFUserModel bg_findAll:nil]) {
+                            if ([model.username isEqualToString:kUserManager.userModel.username]) {
+                                model.sex = [resultModel.value isEqualToString:@"男"] ? 1 : ([resultModel.value isEqualToString:@"女"] ? 2 : 3);
+                                [model bg_saveOrUpdate];
+                            }
+                        }
+                        [[RACScheduler mainThreadScheduler] schedule:^{
+                            [self.EFTableView reloadData];
+                        }];
+                    }
+                }];
+            };
+            
+            [sexPickerView show];
             break;
         }
             case 3:
@@ -139,7 +173,21 @@
             addressPickerView.isAutoSelect = YES;
             addressPickerView.resultBlock = ^(BRProvinceModel *province, BRCityModel *city, BRAreaModel *area) {
                 @strongify(self);
-                self.EFData[3][@"subTitle"] = [NSString stringWithFormat:@"%@ %@", province.name, city.name];
+                [[MeVM updateUserInfo:city.name headImgUrl:@"" nickname:@"" province:province.name sex:4 type:4] subscribeNext:^(NSNumber *x) {
+                    if ([x boolValue]) {
+                        self.EFData[3][@"subTitle"] = [NSString stringWithFormat:@"%@ %@", province.name, city.name];
+                        for (EFUserModel *model in [EFUserModel bg_findAll:nil]) {
+                            if ([model.username isEqualToString:kUserManager.userModel.username]) {
+                                model.city = city.name;
+                                model.province = province.name;
+                                [model bg_saveOrUpdate];
+                            }
+                        }
+                        [[RACScheduler mainThreadScheduler] schedule:^{
+                            [self.EFTableView reloadData];
+                        }];
+                    }
+                }];
                 [[RACScheduler mainThreadScheduler] schedule:^{
                     [self.EFTableView reloadData];
                 }];
@@ -162,5 +210,10 @@
     }
 }
 
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    NSInteger strLength = textField.text.length - range.length + string.length;
+    return (strLength <= 8);
+}
 
 @end

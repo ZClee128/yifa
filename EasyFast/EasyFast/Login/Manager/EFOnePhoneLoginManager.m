@@ -40,7 +40,9 @@
             NSLog(@"一键登录 result:%@", result);
             if ([result[@"code"] intValue] == 6000) {
 //                result[@"loginToken"]
+                [MBProgressHUD showAlertProgress:@"登录中..."];
                 [[LoginVM userLogin:@"" code:@"" loginToken:result[@"loginToken"] password:@"" phone:@"" type:3] subscribeNext:^(NSNumber *x) {
+                    [MBProgressHUD hideHUD];
                     if ([x boolValue]) {
                         [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:^{
                             
@@ -71,10 +73,19 @@
         NSLog(@"登录预取号 result:%@", result);
         [JVERIFICATIONService getAuthorizationWithController:[UIViewController getCurrentVC] hide:NO animated:YES timeout:5*1000 completion:^(NSDictionary *result) {
             NSLog(@"一键登录 result:%@", result);
-            [JVERIFICATIONService getToken:5000 completion:^(NSDictionary *result) {
-                NSLog(@"getToken result:%@", result);
-                
-            }];
+            if ([result[@"code"] intValue] == 6000) {
+                [JVERIFICATIONService getToken:5000 completion:^(NSDictionary *verifyresult) {
+                    if ([verifyresult[@"code"] intValue] == 6000) {
+                        [[LoginVM bindingPhone:@"" type:1 loginToken:result[@"loginToken"] code:@"" verifyToken:verifyresult[@"loginToken"]] subscribeNext:^(NSNumber *x) {
+                            if ([x boolValue]) {
+                                [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:^{
+                                    
+                                }];
+                            }
+                        }];
+                    }
+                }];
+            }
         } actionBlock:^(NSInteger type, NSString *content) {
             
         }];

@@ -12,8 +12,7 @@
 #import "EFPhoneTableViewCell.h"
 #import "EFCodeTableViewCell.h"
 #import "LoginVM.h"
-
-
+#import "EFSafeAccountViewController.h"
 
 @interface EFBindPhoneViewController ()
 
@@ -46,16 +45,10 @@
         @weakify(self);
         [[_nextBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self);
-            if ([self isKindOfClass:[EFCodeViewController class]]) {
-                [self.navigationController qmui_popToRootViewControllerAnimated:YES completion:^{
-                    
-                }];
-            }else {
-                EFCodeViewController *vc = [[EFCodeViewController alloc] initWithPhone:self.phoneText];
-                [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
-                    
-                }];
-            }
+            EFCodeViewController *vc = [[EFCodeViewController alloc] initWithPhone:self.phoneText];
+            [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+                
+            }];
         }];
     }
     return _nextBtn;
@@ -190,6 +183,27 @@
     [super viewDidLoad];
     [self setHeaderTitle:[NSString stringWithFormat:@"请输入%@收到的短信验证码",self.phone]];
     [self.EFTableView registerClass:[EFCodeTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFCodeTableViewCell class])];
+    [[self.nextBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        if ([self.phone isEqualToString:kUserManager.userModel.phone]) {
+            [[LoginVM unbindPhone:self.phone code:self.codeStr] subscribeNext:^(NSNumber *x) {
+                if ([x boolValue]) {
+                    [EFOnePhoneLoginManager showBindPhone];
+                }
+            }];
+        }else {
+            [[LoginVM bindingPhone:self.phone type:2 loginToken:@"" code:self.codeStr verifyToken:@""] subscribeNext:^(NSNumber *x) {
+                if ([x boolValue]) {
+                    for (UIViewController *vc in self.navigationController.viewControllers) {
+                        if ([vc isKindOfClass:[EFSafeAccountViewController class]]) {
+                            [self.navigationController qmui_popToViewController:vc animated:YES completion:^{
+                                
+                            }];
+                        }
+                    }
+                }
+            }];
+        }
+    }];
 }
 
 
@@ -211,7 +225,7 @@
     };
     cell.CodeBlock = ^(QMUIButton * _Nonnull btn) {
         @strongify(self);
-        [(LoginVM *)self.viewModel getCodeWithBtn:btn withType:6 phone:self.phone];
+        [(LoginVM *)self.viewModel getCodeWithBtn:btn withType:[self.phone isEqualToString:kUserManager.userModel.phone] ? 5 : 6 phone:self.phone];
     };
     
         

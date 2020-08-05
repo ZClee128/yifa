@@ -65,4 +65,29 @@
     }];
 }
 
+
++ (RACSignal *)unbindPhone:(NSString *)phone code:(NSString *)code {
+    return [self requsetNetwork:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] unbindPhone:phone code:code];
+    } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
+        return @(result.isSuccess);
+    }];
+}
+
++ (RACSignal *)bindingPhone:(NSString *)phone type:(NSInteger)type loginToken:(NSString *)loginToken code:(NSString *)code verifyToken:(NSString *)verifyToken {
+    return [self requsetNetwork:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] bindingPhone:phone type:type loginToken:loginToken code:code verifyToken:verifyToken];
+    } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
+        if (result.isSuccess) {
+            for (EFUserModel *model in [EFUserModel bg_findAll:nil]) {
+                if ([model.username isEqualToString:kUserManager.userModel.username]) {
+                    model.phone = result.reqResult[@"phone"];
+                    [model bg_saveOrUpdate];
+                }
+            }
+            [[NSNotificationCenter defaultCenter] postNotificationName:kChangePhone object:nil];
+        }
+        return @(result.isSuccess);
+    }];
+}
 @end

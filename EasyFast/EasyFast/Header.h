@@ -67,4 +67,6 @@
 #import "MBProgressHUD+FULI.h"
 #import "CALayer+Anim.h"
 #import <BGDB.h>
+#import "FMARCNetwork+Me.h"
+#import "NSString+base64.h"
 #endif /* Header_h */
