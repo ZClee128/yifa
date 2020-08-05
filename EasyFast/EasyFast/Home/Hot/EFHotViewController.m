@@ -136,7 +136,7 @@
             EFFastTableViewCell *fastCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFFastTableViewCell class])];
             [fastCell setCollectData:[@[@1,@2,@3,@4] mutableCopy]];
             fastCell.selectIndex = ^(NSInteger index) {
-                [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO)}];
+                [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(YES)}];
             };
             return fastCell;
         }

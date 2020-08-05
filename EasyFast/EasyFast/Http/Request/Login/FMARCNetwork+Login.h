@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 短信类型(1：登录；2：注册APP；3：注册成为商家；4：找回密码；5：解绑手机；6：绑定手机；)
 - (RACSignal *)sendCode:(NSString *)phone type:(NSInteger)type;
 
-/// 短信类型(1：登录；2：注册APP；3：注册成为商家；4：找回密码；5：解绑手机；6：绑定手机；)
+/// 短信类型(1：登录；2：注册APP；3：注册成为商家；4：找回密码；5：解绑手机；6：绑定手机；) 验证
 - (RACSignal *)verifyMessage:(NSString *)code phone:(NSString *)phone type:(NSInteger)type;
 
 /// 退出登录

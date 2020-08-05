@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.gk_backImage = [UIImageMake(@"btn_back_black") qmui_imageWithTintColor:UIColor.whiteColor];
-    self.gk_navTitle = @"极速拼团";
+    self.gk_navTitle = @"急速拼团";
     self.gk_navTitleColor = UIColor.whiteColor;
     self.gk_navBackgroundColor = UIColor.clearColor;
     self.gk_navLineHidden = YES;
@@ -110,7 +110,7 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
+    [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(YES)}];
 }
 
 @end

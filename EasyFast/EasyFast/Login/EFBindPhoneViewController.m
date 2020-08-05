@@ -185,7 +185,7 @@
     [self.EFTableView registerClass:[EFCodeTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFCodeTableViewCell class])];
     [[self.nextBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
         if ([self.phone isEqualToString:kUserManager.userModel.phone]) {
-            [[LoginVM unbindPhone:self.phone code:self.codeStr] subscribeNext:^(NSNumber *x) {
+            [[LoginVM verifyMessage:self.codeStr phone:self.phone type:5] subscribeNext:^(NSNumber *x) {
                 if ([x boolValue]) {
                     [EFOnePhoneLoginManager showBindPhone];
                 }

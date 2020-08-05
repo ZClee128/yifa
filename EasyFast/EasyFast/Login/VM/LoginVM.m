@@ -90,4 +90,13 @@
         return @(result.isSuccess);
     }];
 }
+
+
++ (RACSignal *)verifyMessage:(NSString *)code phone:(NSString *)phone type:(NSInteger)type {
+    return [self requsetNetwork:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] verifyMessage:code phone:phone type:type];
+    } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
+        return @(result.isSuccess);
+    }];
+}
 @end

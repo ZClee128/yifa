@@ -75,6 +75,9 @@
         {
             EFGoodsTableViewCell *goodsCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFGoodsTableViewCell class])];
             [goodsCell setModel:@""];
+            goodsCell.btnSelect = ^{
+              [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(YES)}];
+            };
             return goodsCell;
         }
     }
