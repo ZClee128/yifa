@@ -218,4 +218,9 @@
     
 }
 
+- (void)setData {
+    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:kUserManager.userModel.headImgUrl] placeholderImage:UIImageMake(@"header")];
+    self.nameLab.text = kUserManager.userModel.nickname;
+}
+
 @end

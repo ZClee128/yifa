@@ -84,6 +84,7 @@
         } vipBlock:^{
             
         }];
+        [_headerView setData];
     }
     return _headerView;
 }
@@ -93,7 +94,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.EFTableView.frame = CGRectMake(0, 0, kPHONE_WIDTH, kPHONE_HEIGHT - TAB_BAR_HEIGHT);
-    self.gk_navTitle = @"昵称";
+    self.gk_navTitle = kUserManager.userModel.nickname;
     self.gk_navigationBar.alpha = 0;
     self.EFTableView.tableHeaderView = self.headerView;
     [self.EFTableView registerClass:[MeTabTableViewCell class] forCellReuseIdentifier:NSStringFromClass([MeTabTableViewCell class])];

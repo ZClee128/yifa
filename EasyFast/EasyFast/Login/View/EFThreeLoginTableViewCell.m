@@ -60,7 +60,6 @@
         appleIDBtn.layer.masksToBounds = YES;
     }
     
-    @weakify(self);
     for (int i = 0 ; i < titles.count; i++) {
         QMUIButton *btn = [QMUIButton buttonWithType:(UIButtonTypeCustom)];
         if (![titles[i] isEqualToString:@"apple"]) {
@@ -81,7 +80,7 @@
                 }else {
                     type = UMSocialPlatformType_QQ;
                 }
-                @strongify(self);
+//                @strongify(self);
                 [self getUserInfoForPlatform:type];
             }];
         }
@@ -91,7 +90,8 @@
 
 - (void)getUserInfoForPlatform:(UMSocialPlatformType)platformType
 {
-    [[UMSocialManager defaultManager] getUserInfoWithPlatform:platformType currentViewController:nil completion:^(id result, NSError *error) {
+    XYLog(@">>>>>>>");
+    [[UMSocialManager defaultManager] getUserInfoWithPlatform:platformType currentViewController:[UIViewController getCurrentVC] completion:^(id result, NSError *error) {
         UMSocialUserInfoResponse *resp = result;
         // 第三方登录数据(为空表示平台未提供)
         // 授权数据

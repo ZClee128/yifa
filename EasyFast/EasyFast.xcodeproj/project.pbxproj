@@ -140,9 +140,18 @@
 		0C8A27E024D934E200E40ED8 /* CALayer+Anim.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27DF24D934E200E40ED8 /* CALayer+Anim.m */; };
 		0C8A27E124D934E200E40ED8 /* CALayer+Anim.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27DF24D934E200E40ED8 /* CALayer+Anim.m */; };
 		0C8A27E224D934E200E40ED8 /* CALayer+Anim.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A27DF24D934E200E40ED8 /* CALayer+Anim.m */; };
-		0C8A29B824D99D5200E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A29B724D99D5200E40ED8 /* dist */; };
-		0C8A29B924D99D5200E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A29B724D99D5200E40ED8 /* dist */; };
-		0C8A29BA24D99D5200E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A29B724D99D5200E40ED8 /* dist */; };
+		0C8A29BD24DA52A000E40ED8 /* NSMutableURLRequest+FormData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29BC24DA52A000E40ED8 /* NSMutableURLRequest+FormData.m */; };
+		0C8A29BE24DA52A000E40ED8 /* NSMutableURLRequest+FormData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29BC24DA52A000E40ED8 /* NSMutableURLRequest+FormData.m */; };
+		0C8A29BF24DA52A000E40ED8 /* NSMutableURLRequest+FormData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29BC24DA52A000E40ED8 /* NSMutableURLRequest+FormData.m */; };
+		0C8A29C124DA580400E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A29C024DA580400E40ED8 /* dist */; };
+		0C8A29C224DA580400E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A29C024DA580400E40ED8 /* dist */; };
+		0C8A29C324DA580400E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A29C024DA580400E40ED8 /* dist */; };
+		0C8A29C724DA9AE000E40ED8 /* FMARCNetwork+Me.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29C624DA9AE000E40ED8 /* FMARCNetwork+Me.m */; };
+		0C8A29C824DA9AE000E40ED8 /* FMARCNetwork+Me.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29C624DA9AE000E40ED8 /* FMARCNetwork+Me.m */; };
+		0C8A29C924DA9AE100E40ED8 /* FMARCNetwork+Me.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29C624DA9AE000E40ED8 /* FMARCNetwork+Me.m */; };
+		0C8A29CC24DA9CAF00E40ED8 /* MeVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29CB24DA9CAF00E40ED8 /* MeVM.m */; };
+		0C8A29CD24DA9CAF00E40ED8 /* MeVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29CB24DA9CAF00E40ED8 /* MeVM.m */; };
+		0C8A29CE24DA9CAF00E40ED8 /* MeVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29CB24DA9CAF00E40ED8 /* MeVM.m */; };
 		0CCEC45324CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45424CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45524CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
@@ -650,7 +659,13 @@
 		0C8A27D924D9348C00E40ED8 /* UILabel+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
 		0C8A27DE24D934E200E40ED8 /* CALayer+Anim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Anim.h"; sourceTree = "<group>"; };
 		0C8A27DF24D934E200E40ED8 /* CALayer+Anim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Anim.m"; sourceTree = "<group>"; };
-		0C8A29B724D99D5200E40ED8 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dist; sourceTree = "<group>"; };
+		0C8A29BB24DA52A000E40ED8 /* NSMutableURLRequest+FormData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+FormData.h"; sourceTree = "<group>"; };
+		0C8A29BC24DA52A000E40ED8 /* NSMutableURLRequest+FormData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+FormData.m"; sourceTree = "<group>"; };
+		0C8A29C024DA580400E40ED8 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dist; sourceTree = "<group>"; };
+		0C8A29C524DA9AE000E40ED8 /* FMARCNetwork+Me.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FMARCNetwork+Me.h"; sourceTree = "<group>"; };
+		0C8A29C624DA9AE000E40ED8 /* FMARCNetwork+Me.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FMARCNetwork+Me.m"; sourceTree = "<group>"; };
+		0C8A29CA24DA9CAF00E40ED8 /* MeVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeVM.h; sourceTree = "<group>"; };
+		0C8A29CB24DA9CAF00E40ED8 /* MeVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeVM.m; sourceTree = "<group>"; };
 		0CCEC45124CA7A6000976D24 /* EFWuliuTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFWuliuTableViewCell.h; sourceTree = "<group>"; };
 		0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFWuliuTableViewCell.m; sourceTree = "<group>"; };
 		0CCEC45624CA7D8900976D24 /* EFOrderMoreDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderMoreDetailViewController.h; sourceTree = "<group>"; };
@@ -1076,6 +1091,15 @@
 			path = CALayer;
 			sourceTree = "<group>";
 		};
+		0C8A29C424DA9A8400E40ED8 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				0C8A29C524DA9AE000E40ED8 /* FMARCNetwork+Me.h */,
+				0C8A29C624DA9AE000E40ED8 /* FMARCNetwork+Me.m */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
 		0CCEC47924CABB9700976D24 /* IM */ = {
 			isa = PBXGroup;
 			children = (
@@ -1253,7 +1277,7 @@
 		84760F9924C196FF002B34E4 /* Web */ = {
 			isa = PBXGroup;
 			children = (
-				0C8A29B724D99D5200E40ED8 /* dist */,
+				0C8A29C024DA580400E40ED8 /* dist */,
 				0C4BAF9624D0212E0037CDCF /* Bridge */,
 				0C6CB5B924CFBE1C00471A8D /* WebViewPool */,
 				8476102B24C52BDC002B34E4 /* H5Manager.h */,
@@ -1326,6 +1350,8 @@
 			children = (
 				8476108124C5A09E002B34E4 /* EFSetUpVM.h */,
 				8476108224C5A09E002B34E4 /* EFSetUpVM.m */,
+				0C8A29CA24DA9CAF00E40ED8 /* MeVM.h */,
+				0C8A29CB24DA9CAF00E40ED8 /* MeVM.m */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -1531,6 +1557,7 @@
 		84A820C224B6CCC600EAC652 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				0C8A29C424DA9A8400E40ED8 /* Me */,
 				0C8A27AE24D830CC00E40ED8 /* Login */,
 				84A820C324B6CCC600EAC652 /* FMARCNetwork+interface.h */,
 				84A820C424B6CCC600EAC652 /* FMARCNetwork.m */,
@@ -1538,6 +1565,8 @@
 				84A820C624B6CCC600EAC652 /* FMARCNetwork.h */,
 				84A820C724B6CCC600EAC652 /* FMARCNetwork+interface.m */,
 				84A820C824B6CCC600EAC652 /* FMHttpRequest.m */,
+				0C8A29BB24DA52A000E40ED8 /* NSMutableURLRequest+FormData.h */,
+				0C8A29BC24DA52A000E40ED8 /* NSMutableURLRequest+FormData.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1916,7 +1945,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C8A29B824D99D5200E40ED8 /* dist in Resources */,
+				0C8A29C124DA580400E40ED8 /* dist in Resources */,
 				84A8208624B6C62300EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8208324B6C62300EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -1926,7 +1955,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C8A29B924D99D5200E40ED8 /* dist in Resources */,
+				0C8A29C224DA580400E40ED8 /* dist in Resources */,
 				84A8211324BC4F5400EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8211424BC4F5400EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -1936,7 +1965,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C8A29BA24D99D5200E40ED8 /* dist in Resources */,
+				0C8A29C324DA580400E40ED8 /* dist in Resources */,
 				84A8213724BC513500EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8213824BC513500EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -2132,8 +2161,10 @@
 				8476104D24C573B1002B34E4 /* TuanListDetailViewController.m in Sources */,
 				0C8A27A024D812C600E40ED8 /* EFPayStatusViewController.m in Sources */,
 				847610B424C6C209002B34E4 /* EFEditPasswordViewController.m in Sources */,
+				0C8A29C724DA9AE000E40ED8 /* FMARCNetwork+Me.m in Sources */,
 				0CCEC49224CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.m in Sources */,
 				0C4BAFDF24D26B2D0037CDCF /* cityModel.m in Sources */,
+				0C8A29CC24DA9CAF00E40ED8 /* MeVM.m in Sources */,
 				8476105C24C57E81002B34E4 /* TuanOtherGoodsView.m in Sources */,
 				8476104324C54B72002B34E4 /* TuanPeopleView.m in Sources */,
 				0C8A274C24D6711F00E40ED8 /* EFCalendarView.m in Sources */,
@@ -2169,6 +2200,7 @@
 				0CE2860E24D3EC4F00AAC334 /* LTSCalendarViewController.m in Sources */,
 				8476108D24C5ABE6002B34E4 /* EFAccountTableViewCell.m in Sources */,
 				8476104824C54E21002B34E4 /* TuanListTableViewCell.m in Sources */,
+				0C8A29BD24DA52A000E40ED8 /* NSMutableURLRequest+FormData.m in Sources */,
 				84A8215924BDB45E00EAC652 /* UIImage+Darw.m in Sources */,
 				847610C924C6D7FA002B34E4 /* EFPowerViewController.m in Sources */,
 				84A821A024BF146200EAC652 /* EFFollowSubViewController.m in Sources */,
@@ -2317,8 +2349,10 @@
 				8476104E24C573B1002B34E4 /* TuanListDetailViewController.m in Sources */,
 				0C8A27A124D812C600E40ED8 /* EFPayStatusViewController.m in Sources */,
 				847610B524C6C209002B34E4 /* EFEditPasswordViewController.m in Sources */,
+				0C8A29C824DA9AE000E40ED8 /* FMARCNetwork+Me.m in Sources */,
 				0CCEC49324CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.m in Sources */,
 				0C4BAFE024D26B2D0037CDCF /* cityModel.m in Sources */,
+				0C8A29CD24DA9CAF00E40ED8 /* MeVM.m in Sources */,
 				8476105D24C57E81002B34E4 /* TuanOtherGoodsView.m in Sources */,
 				8476104424C54B72002B34E4 /* TuanPeopleView.m in Sources */,
 				0C8A274D24D6711F00E40ED8 /* EFCalendarView.m in Sources */,
@@ -2354,6 +2388,7 @@
 				0CE2860F24D3EC4F00AAC334 /* LTSCalendarViewController.m in Sources */,
 				8476108E24C5ABE6002B34E4 /* EFAccountTableViewCell.m in Sources */,
 				8476104924C54E21002B34E4 /* TuanListTableViewCell.m in Sources */,
+				0C8A29BE24DA52A000E40ED8 /* NSMutableURLRequest+FormData.m in Sources */,
 				84A8215A24BDB45E00EAC652 /* UIImage+Darw.m in Sources */,
 				847610CA24C6D7FA002B34E4 /* EFPowerViewController.m in Sources */,
 				84A821A124BF146200EAC652 /* EFFollowSubViewController.m in Sources */,
@@ -2502,8 +2537,10 @@
 				8476104F24C573B1002B34E4 /* TuanListDetailViewController.m in Sources */,
 				0C8A27A224D812C600E40ED8 /* EFPayStatusViewController.m in Sources */,
 				847610B624C6C209002B34E4 /* EFEditPasswordViewController.m in Sources */,
+				0C8A29C924DA9AE100E40ED8 /* FMARCNetwork+Me.m in Sources */,
 				0CCEC49424CACC0A00976D24 /* EFLogisticsTwoLabTableViewCell.m in Sources */,
 				0C4BAFE124D26B2D0037CDCF /* cityModel.m in Sources */,
+				0C8A29CE24DA9CAF00E40ED8 /* MeVM.m in Sources */,
 				8476105E24C57E81002B34E4 /* TuanOtherGoodsView.m in Sources */,
 				8476104524C54B72002B34E4 /* TuanPeopleView.m in Sources */,
 				0C8A274E24D6711F00E40ED8 /* EFCalendarView.m in Sources */,
@@ -2539,6 +2576,7 @@
 				0CE2861024D3EC4F00AAC334 /* LTSCalendarViewController.m in Sources */,
 				8476108F24C5ABE6002B34E4 /* EFAccountTableViewCell.m in Sources */,
 				8476104A24C54E21002B34E4 /* TuanListTableViewCell.m in Sources */,
+				0C8A29BF24DA52A000E40ED8 /* NSMutableURLRequest+FormData.m in Sources */,
 				84A8215B24BDB45E00EAC652 /* UIImage+Darw.m in Sources */,
 				847610CB24C6D7FA002B34E4 /* EFPowerViewController.m in Sources */,
 				84A821A224BF146200EAC652 /* EFFollowSubViewController.m in Sources */,

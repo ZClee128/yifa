@@ -59,6 +59,8 @@
         NSLog(@"manager start failed!");
     }
     
+//    数据库日志
+    [BGDB shareManager].debug = YES;
     // U-Share 平台设置
 //    [self confitUShareSettings];
     [self configUSharePlatforms];
@@ -104,8 +106,11 @@
 
 - (void)configUSharePlatforms
 {
-    /* 设置微信的appKey和appSecret */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxdc1e388c3822c80b" appSecret:@"bb7ee5e143ad9e83e8d78c868c4e1892" redirectURL:@"http://mobile.umeng.com/social"];
+
+    [UMConfigure initWithAppkey:@"5f226944d309322154737f12" channel:@"App Store"];
+
+    /* 设置微信的appKey和appSecret *///
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wx2456b611d95ac358" appSecret:@"bb7ee5e143ad9e83e8d78c868c4e1892" redirectURL:@"https://www.one-fast.com"];
     /*设置小程序回调app的回调*/
 //    [[UMSocialManager defaultManager] setLauchFromPlatform:(UMSocialPlatformType_WechatSession) completion:^(id userInfoResponse, NSError *error) {
 //        NSLog(@"setLauchFromPlatform:userInfoResponse:%@",userInfoResponse);

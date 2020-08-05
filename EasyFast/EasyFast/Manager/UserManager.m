@@ -34,6 +34,7 @@
 }
 
 - (EFUserModel *)userModel{
+    _userModel = nil;
     if (!_userModel) {
         NSArray* finfAlls = [EFUserModel bg_findAll:nil];
         for (EFUserModel *model in finfAlls) {

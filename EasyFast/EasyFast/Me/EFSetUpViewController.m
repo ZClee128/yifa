@@ -49,13 +49,12 @@
         if ([model.username isEqualToString:kUserManager.userModel.username]) {
             model.isLogin = NO;
             model.token = @"";
-            [model bg_updateWhere:[NSString stringWithFormat:@"where username=%@",kUserManager.userModel.username]];
+            [model bg_saveOrUpdate];
         }
     }
     
     XYLog(@">>>>%@",[EFUserModel bg_findAll:nil]);
     [self.navigationController qmui_popToRootViewControllerAnimated:NO completion:^{
-        
     }];
     kAppDelegate.efTabbar.selectedIndex = 0;
 }

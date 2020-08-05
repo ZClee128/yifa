@@ -57,7 +57,7 @@
     self.gk_navTitle = @"个人资料";
     [self.EFTableView registerClass:[EFSetUpTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFSetUpTableViewCell class])];
     
-    self.EFData = [@[@{@"title":@"头像",@"subTitle":@"",@"header":kUserManager.userModel.headImgUrl},
+    self.EFData = [@[@{@"title":@"头像",@"subTitle":@"",@"header":kUserManager.userModel.headImgUrl ? kUserManager.userModel.headImgUrl : @""},
                      [@{@"title":@"昵称",@"subTitle":kUserManager.userModel.nickname,@"header":@""} mutableCopy],
                      @{@"title":@"性别",@"subTitle":kUserManager.userModel.sex == 1 ? @"男" : (kUserManager.userModel.sex == 2 ? @"女" : @"不限"),@"header":@""},
                      [@{@"title":@"地区",@"subTitle":kUserManager.userModel.city == nil ? @"请选择" :[NSString stringWithFormat:@"%@ %@",kUserManager.userModel.province,kUserManager.userModel.city],@"header":@""} mutableCopy],

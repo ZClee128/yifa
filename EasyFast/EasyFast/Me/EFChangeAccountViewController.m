@@ -8,7 +8,7 @@
 
 #import "EFChangeAccountViewController.h"
 #import "EFAccountTableViewCell.h"
-
+#import "LoginVM.h"
 @interface EFChangeAccountViewController ()
 
 @property (nonatomic,strong)QMUIButton *changeBtn;
@@ -34,6 +34,7 @@
     self.gk_navTitle = @"切换账号";
     [self.EFTableView registerClass:[EFAccountTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFAccountTableViewCell class])];
     self.EFTableView.tableFooterView = self.changeBtn;
+    self.EFData = [[EFUserModel bg_findAll:nil] mutableCopy];
     
 }
 
@@ -42,12 +43,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 3;
+    return self.EFData.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EFAccountTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFAccountTableViewCell class])];
-    [cell setModel:@""];
+    [cell setModel:self.EFData[indexPath.row]];
     return cell;
 }
 
@@ -63,4 +64,23 @@
     return 10;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [[LoginVM loginOut] subscribeNext:^(id  _Nullable x) {
+        
+    }];
+    
+    for (EFUserModel *model in [EFUserModel bg_findAll:nil]) {
+        if ([model.username isEqualToString:kUserManager.userModel.username]) {
+            model.isLogin = NO;
+            model.token = @"";
+            [model bg_saveOrUpdate];
+        }
+    }
+    
+    XYLog(@">>>>%@",[EFUserModel bg_findAll:nil]);
+    [self.navigationController qmui_popToRootViewControllerAnimated:NO completion:^{
+        [EFOnePhoneLoginManager show];
+    }];
+    kAppDelegate.efTabbar.selectedIndex = 0;
+}
 @end

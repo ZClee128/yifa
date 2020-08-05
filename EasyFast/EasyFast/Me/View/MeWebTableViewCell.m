@@ -73,7 +73,7 @@
     NSURL *fileURL = [NSURL fileURLWithPath:path];
 
     [_webView loadFileURL:fileURL allowingReadAccessToURL:fileURL];
-    [self.bridge callHandler:@"goTo" data:@{@"page":@"recom",@"isShow":@(NO)} responseCallback:^(id responseData) {
+    [self.bridge callHandler:@"goTo" data:@{@"page":@"recom",@"query":@{},} responseCallback:^(id responseData) {
 
     }];
     

@@ -27,6 +27,6 @@
 }
 
 - (RACSignal *)loginOut {
-    return [self fg_postRequest:kLoginOut paramters:@{@"pageNum":@4}];
+    return [self fg_postRequest:kLoginOut paramters:@{}];
 }
 @end

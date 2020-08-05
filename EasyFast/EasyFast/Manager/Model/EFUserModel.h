@@ -18,15 +18,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign)NSInteger sex;
 @property (nonatomic,strong)NSString *province;
 @property (nonatomic,strong)NSString *city;
-@property (nonatomic,assign)BOOL isPhone;
+@property (nonatomic,assign)NSInteger isPhone;
 @property (nonatomic,strong)NSString *phone;
 @property (nonatomic,strong)NSString *wxname;
-@property (nonatomic,assign)BOOL isPassword;
-@property (nonatomic,assign)BOOL isWeChat;
+@property (nonatomic,assign)NSInteger isPassword;
+@property (nonatomic,assign)NSInteger isWeChat;
 @property (nonatomic,strong)NSString *username;
 
 //自己参数
-@property (nonatomic,assign)BOOL isLogin;
+@property (nonatomic,assign)NSInteger isLogin;
 
 @end
 

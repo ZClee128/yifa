@@ -58,6 +58,7 @@
 #import <UMShare/UMShare.h>
 // U-Share分享面板SDK，未添加分享面板SDK可将此行去掉
 #import <UShareUI/UShareUI.h>
+#import <UMCommon/UMCommon.h>
 #import "ShareManager.h"
 #import "EFOnePhoneLoginManager.h"
 #import "FMARCNetwork+Login.h"
@@ -65,4 +66,5 @@
 #import "UILabel+Extension.h"
 #import "MBProgressHUD+FULI.h"
 #import "CALayer+Anim.h"
+#import <BGDB.h>
 #endif /* Header_h */

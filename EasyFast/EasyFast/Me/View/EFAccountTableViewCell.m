@@ -69,8 +69,10 @@
     }];
 }
 
-- (void)setModel:(id)model {
-    self.titleLab.text = @"easy***123";
+- (void)setModel:(EFUserModel *)model {
+    self.titleLab.text = model.username;
+    [self.iconView sd_setImageWithURL:[NSURL URLWithString:model.headImgUrl] placeholderImage:UIImageMake(@"header")];
+    self.moreView.hidden = !model.isLogin;
 }
 
 - (void)awakeFromNib {

@@ -11,6 +11,7 @@
 #import "EFThreeLoginTableViewCell.h"
 #import "EFChangeLoginViewController.h"
 #import "EFBindPhoneViewController.h"
+#import "LoginVM.h"
 
 @implementation EFOnePhoneLoginManager
 
@@ -37,6 +38,16 @@
         NSLog(@"登录预取号 result:%@", result);
         [JVERIFICATIONService getAuthorizationWithController:[UIViewController getCurrentVC] hide:NO animated:YES timeout:5*1000 completion:^(NSDictionary *result) {
             NSLog(@"一键登录 result:%@", result);
+            if ([result[@"code"] intValue] == 6000) {
+//                result[@"loginToken"]
+                [[LoginVM userLogin:@"" code:@"" loginToken:result[@"loginToken"] password:@"" phone:@"" type:3] subscribeNext:^(NSNumber *x) {
+                    if ([x boolValue]) {
+                        [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:^{
+                            
+                        }];
+                    }
+                }];
+            }
         } actionBlock:^(NSInteger type, NSString *content) {
             if (type == 8) {
                 

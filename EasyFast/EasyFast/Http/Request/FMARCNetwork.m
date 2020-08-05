@@ -13,11 +13,11 @@
 #import "AFNetworking.h"
 #import "AFNetworkActivityIndicatorManager.h"
 #import "MBProgressHUD.h"
-
+#import "NSMutableURLRequest+FormData.h"
 
 /// 请求数据返回的状态码、根据自己的服务端数据来
 typedef NS_ENUM(NSUInteger, HTTPResponseCode) {
-    HTTPResponseCodeSuccess = 0,           /// 请求成功
+    HTTPResponseCodeSuccess = 200,           /// 请求成功
     HTTPResponseCodeNotLogin = 1009,       /// 用户尚未登录，一般在网络请求前判断处理，也可以在网络层处理
 };
 
@@ -83,13 +83,15 @@ static FMARCNetwork * _instance = nil;
     /// config
     self.manager.responseSerializer = responseSerializer;
 //    self.manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    self.manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+//    self.manager.requestSerializer = [AFHTTPRequestSerializer serializer];
 //    self.manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    self.manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    
     /// 安全策略
     AFSecurityPolicy *securityPolicy = [AFSecurityPolicy defaultPolicy];
     //allowInvalidCertificates 是否允许无效证书（也就是自建的证书），默认为NO
     //如果是需要验证自建证书，需要设置为YES
-    securityPolicy.allowInvalidCertificates = NO;
+    securityPolicy.allowInvalidCertificates = YES;
     //validatesDomainName 是否需要验证域名，默认为YES；
     //假如证书的域名与你请求的域名不一致，需把该项设置为NO
     //主要用于这种情况：客户端请求的是子域名，而证书上的是另外一个域名。因为SSL证书上的域名是独立的，假如证书上注册的域名是www.google.com，那么mail.google.com是无法验证通过的；当然，有钱可以注册通配符的域名*.google.com，但这个还是比较贵的。
@@ -106,7 +108,7 @@ static FMARCNetwork * _instance = nil;
                                                       nil];
 
 //    [self.manager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [self.manager.requestSerializer setValue:@"application/form-data" forHTTPHeaderField:@"Content-Type"];
+    [self.manager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Disposition"];
     /// 开启网络监测
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     [self.manager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
@@ -178,15 +180,9 @@ static FMARCNetwork * _instance = nil;
         /// 获取request
         
         NSError *serializationError = nil;
-//        NSError *error;
-//        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:req.parameters
-//                                                           options:0
-//                                                             error:&error];
-//        NSMutableURLRequest *request = [self.manager.requestSerializer multipartFormRequestWithMethod:req.method URLString:[[NSURL URLWithString:req.path relativeToURL:self->efBaseURL ] absoluteString] parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-//
-//        } error:&serializationError];
+
         NSMutableURLRequest *request = [self.manager.requestSerializer requestWithMethod:req.method URLString:[[NSURL URLWithString:req.path relativeToURL:self->efBaseURL ] absoluteString] parameters:req.parameters error:&serializationError];
-        
+        [request setFormData:req.parameters];
         if (serializationError) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wgnu"

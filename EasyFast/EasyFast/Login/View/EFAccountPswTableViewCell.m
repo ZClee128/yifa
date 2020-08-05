@@ -20,6 +20,13 @@
     if (_passTextField == nil) {
         _passTextField = [[EFPasswordTextField alloc] init];
         _passTextField.font = RegularFont15;
+        @weakify(self);
+        [[_passTextField rac_signalForControlEvents:(UIControlEventEditingChanged)] subscribeNext:^(QMUITextField *x) {
+            @strongify(self);
+            if (self.TextValue) {
+                self.TextValue(x.text);
+            }
+        }];
     }
     return _passTextField;
 }
