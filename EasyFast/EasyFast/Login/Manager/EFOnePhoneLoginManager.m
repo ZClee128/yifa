@@ -72,8 +72,8 @@
         NSLog(@"一键登录 result:%@", result);
         if ([result[@"code"] intValue] == 6000) {
             [JVERIFICATIONService getToken:5000 completion:^(NSDictionary *verifyresult) {
-                if ([verifyresult[@"code"] intValue] == 6000) {
-                    [[LoginVM bindingPhone:@"" type:2 loginToken:result[@"loginToken"] code:@"" verifyToken:verifyresult[@"loginToken"] oldPhone:kUserManager.userModel.phone] subscribeNext:^(NSNumber *x) {
+                if ([verifyresult[@"code"] intValue] == 2000) {
+                    [[LoginVM bindingPhone:@"" type:2 loginToken:result[@"loginToken"] code:@"" verifyToken:verifyresult[@"token"] oldPhone:kUserManager.userModel.phone] subscribeNext:^(NSNumber *x) {
                         if ([x boolValue]) {
                             [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:^{
                                 
