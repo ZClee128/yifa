@@ -34,7 +34,7 @@
     return [self fg_postRequest:kunbindPhone paramters:@{@"phone":phone,@"code":code}];
 }
 
-- (RACSignal *)bindingPhone:(NSString *)phone type:(NSInteger)type loginToken:(NSString *)loginToken code:(NSString *)code verifyToken:(NSString *)verifyToken {
-    return [self fg_postRequest:kbindingPhone paramters:@{@"phone":phone,@"type":@(type),@"loginToken":loginToken,@"code":code,@"verifyToken":verifyToken}];
+- (RACSignal *)bindingPhone:(NSString *)phone type:(NSInteger)type loginToken:(NSString *)loginToken code:(NSString *)code verifyToken:(NSString *)verifyToken oldPhone:(NSString *)oldPhone {
+    return [self fg_postRequest:kbindingPhone paramters:@{@"phone":phone,@"type":@(type),@"loginToken":loginToken,@"code":code,@"verifyToken":verifyToken,@"oldPhone":oldPhone}];
 }
 @end

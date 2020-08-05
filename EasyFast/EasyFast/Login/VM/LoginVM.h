@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (RACSignal *)unbindPhone:(NSString *)phone code:(NSString *)code;
 
 /// 绑定手机 (逻辑已废弃)
-+ (RACSignal *)bindingPhone:(NSString *)phone type:(NSInteger)type loginToken:(NSString *)loginToken code:(NSString *)code verifyToken:(NSString *)verifyToken;
++ (RACSignal *)bindingPhone:(NSString *)phone type:(NSInteger)type loginToken:(NSString *)loginToken code:(NSString *)code verifyToken:(NSString *)verifyToken oldPhone:(NSString *)oldPhone;
 
 /// 验证短信
 + (RACSignal *)verifyMessage:(NSString *)code phone:(NSString *)phone type:(NSInteger)type;

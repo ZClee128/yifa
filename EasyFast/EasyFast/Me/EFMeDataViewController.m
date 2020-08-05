@@ -85,9 +85,9 @@
     [cell setModel:dict];
     indexPath.row == 0 ? [cell showHeader] : [cell hiddenHeader];
     indexPath.row == 4 ? [cell hiddenMore] : [cell showMore];
-    if (indexPath.row == 0) {
-        [cell setHeaderImage:self.headerImage];
-    }
+//    if (indexPath.row == 0) {
+//        [cell setHeaderImage:self.headerImage];
+//    }
     return cell;
 }
 

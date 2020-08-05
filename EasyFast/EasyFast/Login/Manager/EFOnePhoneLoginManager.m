@@ -25,7 +25,7 @@
 }
 
 + (void)show {
-    if(![JVERIFICATIONService checkVerifyEnable]) {
+    if(!kAppDelegate.isOkOnePhone) {
         EFChangeLoginViewController *vc = [[EFChangeLoginViewController alloc] initWithType:NO];
         vc.hidesBottomBarWhenPushed = YES;
         [[UIViewController getCurrentVC].navigationController qmui_pushViewController:vc animated:YES completion:^{
@@ -34,32 +34,30 @@
         return;
     }
     [self setUI];
-    [JVERIFICATIONService preLogin:5000 completion:^(NSDictionary *result) {
-        NSLog(@"登录预取号 result:%@", result);
-        [JVERIFICATIONService getAuthorizationWithController:[UIViewController getCurrentVC] hide:NO animated:YES timeout:5*1000 completion:^(NSDictionary *result) {
-            NSLog(@"一键登录 result:%@", result);
-            if ([result[@"code"] intValue] == 6000) {
-//                result[@"loginToken"]
-                [MBProgressHUD showAlertProgress:@"登录中..."];
-                [[LoginVM userLogin:@"" code:@"" loginToken:result[@"loginToken"] password:@"" phone:@"" type:3] subscribeNext:^(NSNumber *x) {
-                    [MBProgressHUD hideHUD];
-                    if ([x boolValue]) {
-                        [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:^{
-                            
-                        }];
-                    }
-                }];
-            }
-        } actionBlock:^(NSInteger type, NSString *content) {
-            if (type == 8) {
-                
-            }
-        }];
+    
+    [JVERIFICATIONService getAuthorizationWithController:[UIViewController getCurrentVC] hide:NO animated:YES timeout:5*1000 completion:^(NSDictionary *result) {
+        NSLog(@"一键登录 result:%@", result);
+        if ([result[@"code"] intValue] == 6000) {
+            //                result[@"loginToken"]
+            [MBProgressHUD showAlertProgress:@"登录中..."];
+            [[LoginVM userLogin:@"" code:@"" loginToken:result[@"loginToken"] password:@"" phone:@"" type:3] subscribeNext:^(NSNumber *x) {
+                [MBProgressHUD hideHUD];
+                if ([x boolValue]) {
+                    [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:^{
+                        
+                    }];
+                }
+            }];
+        }
+    } actionBlock:^(NSInteger type, NSString *content) {
+        if (type == 8) {
+            
+        }
     }];
 }
 
 + (void)showBindPhone {
-    if(![JVERIFICATIONService checkVerifyEnable]) {
+    if(!kAppDelegate.isOkOnePhone) {
         NSLog(@"当前网络环境不支持认证！");
         EFBindPhoneViewController *bind = [[EFBindPhoneViewController alloc] init];
         bind.hidesBottomBarWhenPushed = YES;
@@ -69,26 +67,24 @@
         return;
     }
     [self setBindPhoneUI];
-    [JVERIFICATIONService preLogin:5000 completion:^(NSDictionary *result) {
-        NSLog(@"登录预取号 result:%@", result);
-        [JVERIFICATIONService getAuthorizationWithController:[UIViewController getCurrentVC] hide:NO animated:YES timeout:5*1000 completion:^(NSDictionary *result) {
-            NSLog(@"一键登录 result:%@", result);
-            if ([result[@"code"] intValue] == 6000) {
-                [JVERIFICATIONService getToken:5000 completion:^(NSDictionary *verifyresult) {
-                    if ([verifyresult[@"code"] intValue] == 6000) {
-                        [[LoginVM bindingPhone:@"" type:1 loginToken:result[@"loginToken"] code:@"" verifyToken:verifyresult[@"loginToken"]] subscribeNext:^(NSNumber *x) {
-                            if ([x boolValue]) {
-                                [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:^{
-                                    
-                                }];
-                            }
-                        }];
-                    }
-                }];
-            }
-        } actionBlock:^(NSInteger type, NSString *content) {
-            
-        }];
+    
+    [JVERIFICATIONService getAuthorizationWithController:[UIViewController getCurrentVC] hide:NO animated:YES timeout:5*1000 completion:^(NSDictionary *result) {
+        NSLog(@"一键登录 result:%@", result);
+        if ([result[@"code"] intValue] == 6000) {
+            [JVERIFICATIONService getToken:5000 completion:^(NSDictionary *verifyresult) {
+                if ([verifyresult[@"code"] intValue] == 6000) {
+                    [[LoginVM bindingPhone:@"" type:1 loginToken:result[@"loginToken"] code:@"" verifyToken:verifyresult[@"loginToken"] oldPhone:kUserManager.userModel.phone] subscribeNext:^(NSNumber *x) {
+                        if ([x boolValue]) {
+                            [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:^{
+                                
+                            }];
+                        }
+                    }];
+                }
+            }];
+        }
+    } actionBlock:^(NSInteger type, NSString *content) {
+        
     }];
 }
 

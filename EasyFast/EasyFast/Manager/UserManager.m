@@ -27,7 +27,7 @@
                 user.isLogin = NO;
             }
             model.isLogin = YES;
-            
+            model.nickname = model.nickname.base64EncodeString;
         }
     }else {
         model.isLogin = YES;

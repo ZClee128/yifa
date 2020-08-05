@@ -74,9 +74,9 @@
     }];
 }
 
-+ (RACSignal *)bindingPhone:(NSString *)phone type:(NSInteger)type loginToken:(NSString *)loginToken code:(NSString *)code verifyToken:(NSString *)verifyToken {
++ (RACSignal *)bindingPhone:(NSString *)phone type:(NSInteger)type loginToken:(NSString *)loginToken code:(NSString *)code verifyToken:(NSString *)verifyToken oldPhone:(NSString *)oldPhone {
     return [self requsetNetwork:^RACSignal * _Nonnull{
-        return [[FMARCNetwork sharedInstance] bindingPhone:phone type:type loginToken:loginToken code:code verifyToken:verifyToken];
+        return [[FMARCNetwork sharedInstance] bindingPhone:phone type:type loginToken:loginToken code:code verifyToken:verifyToken oldPhone:oldPhone];
     } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
         if (result.isSuccess) {
             for (EFUserModel *model in [EFUserModel bg_findAll:nil]) {

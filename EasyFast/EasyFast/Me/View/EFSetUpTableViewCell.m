@@ -92,6 +92,7 @@
     if ([model isKindOfClass:[NSDictionary class]]) {
         self.titleLab.text = model[@"title"];
         self.subTitleLab.text = model[@"subTitle"];
+        [self.headerImageView sd_setImageWithURL:model[@"header"] placeholderImage:UIImageMake(@"header")];
     }
 }
 

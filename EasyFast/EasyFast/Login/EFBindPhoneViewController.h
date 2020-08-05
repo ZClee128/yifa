@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)NSString *codeStr;
 @property (nonatomic,strong)QMUIButton *nextBtn;
 - (void)setHeaderTitle:(NSString *)title;
-
+- (void)seletNext;
 
 @end
 

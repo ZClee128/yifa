@@ -74,6 +74,14 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         EFCustomWebViewPool *webViewPool = [EFCustomWebViewPool sharedInstance];
         [webViewPool prepareWithCount:10];
+        if(![JVERIFICATIONService checkVerifyEnable]) {
+            self.isOkOnePhone = NO;
+        }else {
+            self.isOkOnePhone = YES;
+        }
+        [JVERIFICATIONService preLogin:5000 completion:^(NSDictionary *result) {
+        NSLog(@"登录预取号 result:%@", result);
+        }];
     });
     return YES;
 }
