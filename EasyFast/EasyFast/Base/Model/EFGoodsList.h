@@ -40,6 +40,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)NSString *title;
 /// 商品主图
 @property (nonatomic,strong)NSString *url;
+/// 是否收藏
+@property (nonatomic,assign)BOOL isCollect;
 @end
 
 NS_ASSUME_NONNULL_END

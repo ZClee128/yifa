@@ -141,4 +141,10 @@ fprintf(stderr,"[--%s--]\n[--%s:%d--]\n[--%s--]\n===========================\n",
 #define knickName @"knickName" //修改昵称
 #define kChangePhone @"kChangePhone" //修改手机
 #define kChangePassword @"kChangePassword" // 修改密码
+
+
+// 图片
+#define kup UIImageMake(@"up") // 降序
+#define kdown UIImageMake(@"down") // 升序
+#define knormal UIImageMake(@"normal") //正常
 #endif /* Constant_h */

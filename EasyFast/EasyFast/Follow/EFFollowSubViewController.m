@@ -13,6 +13,7 @@
 @interface EFFollowSubViewController ()
 
 @property (nonatomic,assign)Follow type;
+@property (nonatomic,strong)EFFollowVM *followVM;
 
 @end
 
@@ -31,12 +32,15 @@
     self.viewModel = [[EFFollowVM alloc] init];
     self.viewModel.branches = @(10);
     [super viewDidLoad];
+    self.followVM = (EFFollowVM *)self.viewModel;
     self.gk_navigationBar.hidden = YES;
-    self.EFTableView.frame = CGRectMake(0, 0, kPHONE_WIDTH, kPHONE_HEIGHT-NAVIGATION_BAR_HEIGHT-30-TAB_BAR_HEIGHT);
+    self.EFTableView.frame = CGRectMake(0, 0, kPHONE_WIDTH, kPHONE_HEIGHT-NAVIGATION_BAR_HEIGHT-45-TAB_BAR_HEIGHT);
     self.gk_navLineHidden = YES;
     
     [self.EFTableView registerClass:[EFFollowTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFFollowTableViewCell class])];
     [self.EFTableView registerClass:[EFFollowTuanTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFFollowTuanTableViewCell class])];
+    self.EFTableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[EFFollowTableViewCell class] cellHeight:WidthOfScale(243)];
+    self.EFTableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[EFFollowTuanTableViewCell class] cellHeight:WidthOfScale(327)];
     [self addRefshDown];
     [self addRefshUp];
     switch (self.type) {
@@ -45,15 +49,47 @@
             [self FollowLoad];
             break;
         }
+        case FollowGM:
+        {
+            [self payload];
+            break;
+        }
         default:
+            [self teamload];
             break;
     }
 }
 
 - (void)FollowLoad {
-    [[self.viewModel refreshForDown] subscribeNext:^(RACTuple *x) {
-        [self.EFTableView.mj_header endRefreshing];
-        self.EFData = x.first;
+    [self.EFTableView tab_startAnimationWithCompletion:^{
+        [[self.viewModel refreshForDown] subscribeNext:^(RACTuple *x) {
+            [self.EFTableView.mj_header endRefreshing];
+            [self.EFTableView tab_endAnimation];
+            self.EFData = x.first;
+            [self.EFTableView reloadData];
+        }];
+    }];
+}
+
+- (void)payload{
+    [self.EFTableView tab_startAnimationWithCompletion:^{
+        [[self.followVM TransactionRefreshForeDown] subscribeNext:^(RACTuple *x) {
+            [self.EFTableView.mj_header endRefreshing];
+            [self.EFTableView tab_endAnimation];
+            self.EFData = x.first;
+            [self.EFTableView reloadData];
+        }];
+    }];
+}
+
+- (void)teamload {
+    [self.EFTableView tab_startAnimationWithCompletion:^{
+        [[self.followVM TeamRefreshForeDown] subscribeNext:^(RACTuple *x) {
+            [self.EFTableView.mj_header endRefreshing];
+            [self.EFTableView tab_endAnimation];
+            self.EFData = x.first;
+            [self.EFTableView reloadData];
+        }];
     }];
 }
 
@@ -64,7 +100,13 @@
             [self FollowLoad];
             break;
         }
+        case FollowGM:
+        {
+            [self payload];
+            break;
+        }
         default:
+            [self teamload];
             break;
     }
 }
@@ -73,8 +115,21 @@
     switch (self.type) {
         case FollowGZ:
         {
-            [[self.viewModel refreshForUp] subscribeNext:^(id  _Nullable x) {
+            [[self.viewModel refreshForUp] subscribeNext:^(RACTuple *x) {
                 [self.EFTableView.mj_footer endRefreshing];
+                //                [self.EFData appendObjects:x.first];
+                self.EFData = x.first;
+                [self.EFTableView reloadData];
+            }];
+            break;
+        }
+        case FollowGM:
+        {
+            [[self.followVM TransactionRefreshForeUp] subscribeNext:^(RACTuple *x) {
+                [self.EFTableView.mj_footer endRefreshing];
+                //                [self.EFData appendObjects:x.first];
+                self.EFData = x.first;
+                [self.EFTableView reloadData];
             }];
             break;
         }
@@ -98,6 +153,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EFFollowTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFFollowTableViewCell class])];
+    EFFollowModel *model = self.EFData[indexPath.section];
     cell.selectIndex = ^(NSInteger index) {
         [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO)}];
     };
@@ -107,22 +163,60 @@
     switch (self.type) {
         case FollowGZ:
         {
-            [cell setModel:self.EFData[indexPath.section]];
+            
+            [cell setModel:model];
+            cell.follow = ^(QMUIButton * _Nonnull sender) {
+                if (sender.selected) {
+                    [[EFFollowVM cancelFollowShop:model.shopNo] subscribeNext:^(NSNumber *ok) {
+                        if ([ok boolValue]) {
+                            model.isFollow = NO;
+                            sender.selected = !sender.selected;
+                        }
+                    }];
+                }else {
+                    [[EFFollowVM setFollowShopCategory:@"" shopNo:model.shopNo] subscribeNext:^(NSNumber *ok) {
+                        if ([ok boolValue]) {
+                            model.isFollow = YES;
+                            sender.selected = !sender.selected;
+                        }
+                    }];
+                }
+            };
             return cell;
         }
-            case FollowGM:
+        case FollowGM:
         {
-            [cell setModel:@""];
+            [cell setModel:model];
+            cell.follow = ^(QMUIButton * _Nonnull sender) {
+                if (sender.selected) {
+                    [[EFFollowVM cancelFollowShop:model.shopNo] subscribeNext:^(NSNumber *ok) {
+                        if ([ok boolValue]) {
+                            model.isFollow = NO;
+                            sender.selected = !sender.selected;
+                        }
+                    }];
+                }else {
+                    [[EFFollowVM setFollowShopCategory:@"" shopNo:model.shopNo] subscribeNext:^(NSNumber *ok) {
+                        if ([ok boolValue]) {
+                            model.isFollow = YES;
+                            sender.selected = !sender.selected;
+                        }
+                    }];
+                }
+            };
             return cell;
         }
         default:
         {
             EFFollowTuanTableViewCell *tuanCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFFollowTuanTableViewCell class])];
-            [tuanCell setModel:@""];
+            [tuanCell setModel:model];
             tuanCell.headerSelect = ^{
                 [kH5Manager gotoUrl:@"shop" hasNav:NO navTitle:@"" query:@{}];
             };
             tuanCell.pintuanBlock = ^{
+                [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(YES)}];
+            };
+            tuanCell.selectIndex = ^(NSInteger index) {
                 [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO)}];
             };
             return tuanCell;

@@ -69,7 +69,14 @@
     JVAuthConfig *config = [[JVAuthConfig alloc] init];
     config.appKey = @"dd10c0e76e97072558cf1d77";
     [JVERIFICATIONService setupWithConfig:config];
-    [JVERIFICATIONService setDebug:YES];
+    [JVERIFICATIONService setDebug:NO];
+    
+    // 骨架屏
+    [[TABAnimated sharedAnimated] initWithOnlySkeleton];
+    [TABAnimated sharedAnimated].openLog = YES;
+    [TABAnimated sharedAnimated].openAnimationTag = NO;
+    [TABAnimated sharedAnimated].animationType = TABAnimationTypeShimmer;
+    [TABAnimated sharedAnimated].animatedColor = colorfafafa;
     
     dispatch_async(dispatch_get_main_queue(), ^{
         EFCustomWebViewPool *webViewPool = [EFCustomWebViewPool sharedInstance];

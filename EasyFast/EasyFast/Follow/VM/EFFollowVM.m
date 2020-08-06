@@ -21,7 +21,7 @@
 
 - (RACSignal *)refreshForUp {
     return [self refreshForUp:^RACSignal * _Nonnull{
-        return [[FMARCNetwork sharedInstance] findFollowShopList:self.paging];
+        return [[FMARCNetwork sharedInstance] findFollowShopList:@([self.paging intValue]+1)];
     } toMap:^NSArray * _Nonnull(FMHttpResonse * _Nonnull result) {
         NSArray *list = [NSArray modelArrayWithClass:[EFFollowModel class] json:result.reqResult];
         return list;
@@ -31,7 +31,7 @@
 
 - (RACSignal *)TransactionRefreshForeDown {
     return [self refreshForDown:^RACSignal * _Nonnull{
-        return [[FMARCNetwork sharedInstance] findTheTeamShopList:self.firstPage];
+        return [[FMARCNetwork sharedInstance] findTransactionShopList:self.firstPage];
     } toMap:^NSArray * _Nonnull(FMHttpResonse * _Nonnull result) {
         NSArray *list = [NSArray modelArrayWithClass:[EFFollowModel class] json:result.reqResult];
         return list;
@@ -40,12 +40,31 @@
 
 - (RACSignal *)TransactionRefreshForeUp {
     return [self refreshForUp:^RACSignal * _Nonnull{
-        return [[FMARCNetwork sharedInstance] findTransactionShopList:self.paging];
+        return [[FMARCNetwork sharedInstance] findTransactionShopList:@([self.paging intValue]+1)];
     } toMap:^NSArray * _Nonnull(FMHttpResonse * _Nonnull result) {
         NSArray *list = [NSArray modelArrayWithClass:[EFFollowModel class] json:result.reqResult];
         return list;
     }];
 }
+
+- (RACSignal *)TeamRefreshForeDown {
+    return [self refreshForDown:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] findTheTeamShopList:self.firstPage];
+    } toMap:^NSArray * _Nonnull(FMHttpResonse * _Nonnull result) {
+        NSArray *list = [NSArray modelArrayWithClass:[EFFollowModel class] json:result.reqResult];
+        return list;
+    }];
+}
+
+- (RACSignal *)TeamRefreshForeUp {
+    return [self refreshForUp:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] findTheTeamShopList:@([self.paging intValue]+1)];
+    } toMap:^NSArray * _Nonnull(FMHttpResonse * _Nonnull result) {
+        NSArray *list = [NSArray modelArrayWithClass:[EFFollowModel class] json:result.reqResult];
+        return list;
+    }];
+}
+
 
 + (RACSignal *)setFollowShopCategory:(NSString *)category shopNo:(NSString *)shopNo {
     return [self requsetNetwork:^RACSignal * _Nonnull{
@@ -63,19 +82,5 @@
     }];
 }
 
-+ (RACSignal *)setCollectGoods:(NSString *)goodsNo {
-    return [self requsetNetwork:^RACSignal * _Nonnull{
-        return [[FMARCNetwork sharedInstance] setCollectGoods:goodsNo];
-    } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
-        return @(result.isSuccess);
-    }];
-}
 
-+ (RACSignal *)cancelCollectGoods:(NSString *)goodsNo {
-    return [self requsetNetwork:^RACSignal * _Nonnull{
-        return [[FMARCNetwork sharedInstance] cancelCollectGoods:goodsNo];
-    } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
-        return @(result.isSuccess);
-    }];
-}
 @end

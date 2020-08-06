@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TuanListTableViewCell : BaseTableViewCell
 
+@property (nonatomic,copy)void(^btnBlock)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

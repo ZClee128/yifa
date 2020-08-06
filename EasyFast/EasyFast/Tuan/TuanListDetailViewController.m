@@ -105,15 +105,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.gk_navTitle = @"拼团详情";
     self.EFTableView.height = kPHONE_HEIGHT - NAVIGATION_BAR_HEIGHT - WidthOfScale(60) - TAB_SAFE_HEIGHT;
     [self.EFTableView registerClass:[TuanListDetailTableViewCell class] forCellReuseIdentifier:NSStringFromClass([TuanListDetailTableViewCell class])];
     [self.EFTableView registerClass:[TuanOtherGoodsTableViewCell class] forCellReuseIdentifier:NSStringFromClass([TuanOtherGoodsTableViewCell class])];
     self.EFData = [@[@1,@2,@3,@5] mutableCopy];
     [self.view addSubview:self.buyBtn];
     [self.buyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.view);
+        make.bottom.equalTo(@(-TAB_SAFE_HEIGHT));
         make.centerX.equalTo(self.view);
-        make.height.equalTo(@(WidthOfScale(60)+TAB_SAFE_HEIGHT));
+        make.height.equalTo(@(WidthOfScale(60)));
         make.width.equalTo(@(kPHONE_WIDTH));
     }];
 

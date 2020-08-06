@@ -7,7 +7,7 @@
 //
 
 #import "EFFollowTuanTableViewCell.h"
-
+#import "EFFollowModel.h"
 
 @interface EFTuanTimeView : UIView
 
@@ -57,6 +57,7 @@
         [_pinBtn setTitleColor:UIColor.whiteColor forState:(UIControlStateNormal)];
         _pinBtn.titleLabel.font = MedFont13;
         _pinBtn.backgroundColor = colorF14745;
+        _pinBtn.userInteractionEnabled = NO;
     }
     return _pinBtn;
 }
@@ -132,6 +133,7 @@
     self.timeLab.text = @"仅剩 23:59:59";
     self.progressView.progress = 0.4;
     [self.progressView setTitle:@"剩余28%"];
+    
 }
 @end
 
@@ -186,12 +188,15 @@
     return self;
 }
 
-- (void)setModel:(id)model {
-    self.shopNameLab.text = @"刘德华的店";
-    self.shopClassLab.text = @"男装，女装，内衣";
-    self.followLab.text = @"关注数：8255  回头率：60% ";
-    self.adressLab.text = @"广东 深圳";
-    [self.tuanView setData:@""];
+- (void)setModel:(EFFollowModel *)model {
+    self.shopNameLab.text = model.shopName;
+    self.shopClassLab.text = [model.shopTagList componentsJoinedByString:@","];
+    self.followLab.text =  [NSString stringWithFormat:@"关注数：%ld  回头率：%@ ",model.followNum,model.lookBackRate];
+    self.adressLab.text =  [NSString stringWithFormat:@"%@ %@",model.city,model.province];
+    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:model.shopIcon] placeholderImage:UIImageMake(@"header")];
+    self.data = [model.goodsList mutableCopy];
+    self.followBtn.selected = model.isFollow;
+    [self.tuanView setData:model.teamList];
     [self.collect reloadData];
 }
 

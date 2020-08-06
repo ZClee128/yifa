@@ -8,6 +8,7 @@
 
 #import "SeachOneCollectionViewCell.h"
 #import "TKTagView.h"
+#import "EFGoodsList.h"
 
 @interface SeachOneCollectionViewCell ()
 
@@ -97,7 +98,9 @@
         _buyBtn.titleLabel.font = MedFont13;
         [_buyBtn setBackgroundImage:[UIImage imageWithMixColors:@[RGB16(0xFFBD20),RGB16(0xFF3B37)] size:CGSizeMake(90, 27)] forState:(UIControlStateNormal)];
         [[_buyBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(QMUIButton *x) {
-            x.selected = !x.selected;
+            if (self.seletBtnBlock) {
+                self.seletBtnBlock(x);
+            }
         }];
     }
     return _buyBtn;
@@ -169,21 +172,32 @@
 
 
 - (void)setModel:(id)model {
-    self.goodsNameLab.text = @"商品名称只有一行，多余的";
-    self.listView.tagTitleArray = @[@"极速发货",@"极速发货"];
-    [self.listView createTags];
-    self.numLab.text = @"最低采购量：100";
-    self.sellLab.text = @"成交量：9999+";
-    self.priceLab.text = @"7899.8";
+    if ([model isKindOfClass:[EFGoodsList class]]) {
+        EFGoodsList *goodModel = model;
+        self.goodsNameLab.text = goodModel.title;
+        if (goodModel.tags.count != 0) {
+            NSMutableArray *titles = [[NSMutableArray alloc] init];
+            for (EFTagsModel *tag in goodModel.tags) {
+                [titles addObject:tag.title];
+            }
+            self.listView.tagTitleArray = titles;
+            [self.listView createTags];
+        }
+        self.numLab.text = [NSString stringWithFormat:@"最低采购量：%ld",(long)goodModel.miniOrderLimit];
+        self.sellLab.text = [NSString stringWithFormat:@"成交量：%ld",(long)goodModel.sales];
+        self.priceLab.text = [NSString stringWithFormat:@"¥%.1f",goodModel.price];
+        self.buyBtn.selected = goodModel.isCollect;
+        [self.goods sd_setImageWithURL:[NSURL URLWithString:goodModel.url] placeholderImage:UIImageMake(@"gg")];
+    }
 }
 
 - (void)setBtnStyle {
-    [self.buyBtn setTitle:@"已收藏" forState:(UIControlStateNormal)];
-    [self.buyBtn setTitle:@"收藏" forState:(UIControlStateSelected)];
-    [self.buyBtn setTitleColor:colorF14745 forState:(UIControlStateNormal)];
-    [self.buyBtn setTitleColor:UIColor.whiteColor forState:(UIControlStateSelected)];
-    [self.buyBtn setBackgroundImage:[UIImage imageWithColor:colorF14745 size:self.buyBtn.size] forState:(UIControlStateSelected)];
-    [self.buyBtn setBackgroundImage:[UIImage imageWithColor:UIColor.whiteColor size:self.buyBtn.size] forState:(UIControlStateNormal)];
+    [self.buyBtn setTitle:@"已收藏" forState:(UIControlStateSelected)];
+    [self.buyBtn setTitle:@"收藏" forState:(UIControlStateNormal)];
+    [self.buyBtn setTitleColor:colorF14745 forState:(UIControlStateSelected)];
+    [self.buyBtn setTitleColor:UIColor.whiteColor forState:(UIControlStateNormal)];
+    [self.buyBtn setBackgroundImage:[UIImage imageWithColor:colorF14745 size:self.buyBtn.size] forState:(UIControlStateNormal)];
+    [self.buyBtn setBackgroundImage:[UIImage imageWithColor:UIColor.whiteColor size:self.buyBtn.size] forState:(UIControlStateSelected)];
     [self.buyBtn layoutIfNeeded];
     [self.buyBtn ViewRadius:0];
     self.buyBtn.layer.borderWidth = 1;

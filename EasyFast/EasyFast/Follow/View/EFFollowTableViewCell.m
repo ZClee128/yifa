@@ -9,6 +9,7 @@
 #import "EFFollowTableViewCell.h"
 #import "EFFollowCollectionViewCell.h"
 #import "EFFollowModel.h"
+#import "EFFollowVM.h"
 
 @interface EFFollowTableViewCell ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -43,6 +44,15 @@
         _shopNameLab.font = MedFont16;
         _shopNameLab.textColor = tabbarBlackColor;
         _shopNameLab.textAlignment = NSTextAlignmentLeft;
+        _shopNameLab.userInteractionEnabled = YES;
+        @weakify(self);
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithActionBlock:^(id  _Nonnull sender) {
+            @strongify(self);
+            if (self.headerSelect) {
+                self.headerSelect();
+            }
+        }];
+        [_shopNameLab addGestureRecognizer:tap];
     }
     return _shopNameLab;
 }
@@ -89,10 +99,11 @@
         [_followBtn setTitle:@"关注" forState:(UIControlStateNormal)];
         [_followBtn setTitle:@"已关注" forState:(UIControlStateSelected)];
         _followBtn.titleLabel.font = MedFont13;
-        [[_followBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(QMUIButton *x) {
-            x.selected = !x.selected;
+        [[self.followBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(QMUIButton *x) {
+            if (self.follow) {
+                self.follow(x);
+            }
         }];
-        
     }
     return _followBtn;
 }
@@ -203,7 +214,11 @@
     self.shopClassLab.text = [model.shopTagList componentsJoinedByString:@","];
     self.followLab.text =  [NSString stringWithFormat:@"关注数：%ld  回头率：%@ ",model.followNum,model.lookBackRate];
     self.adressLab.text =  [NSString stringWithFormat:@"%@ %@",model.city,model.province];
+    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:model.shopIcon] placeholderImage:UIImageMake(@"header")];
+    self.data = [model.goodsList mutableCopy];
+    self.followBtn.selected = model.isFollow;
     [self.collect reloadData];
+    
 }
 
 #pragma mark - collection
@@ -212,12 +227,12 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 3;
+    return self.data.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     EFFollowCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([EFFollowCollectionViewCell class]) forIndexPath:indexPath];
-    [cell setModel:@""];
+    [cell setModel:self.data[indexPath.item]];
     return cell;
 }
 

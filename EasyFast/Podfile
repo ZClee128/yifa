@@ -51,6 +51,7 @@ targets.each do |t|
     pod 'UMCShare/Social/ReducedQQ'
     pod 'UMCShare/Social/ReducedSina'
     pod 'UMCShare/UI'
+    pod 'TABAnimated'
     # Pods for EasyFast
   end
 

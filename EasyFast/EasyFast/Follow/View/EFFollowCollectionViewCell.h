@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "EFGoodsList.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EFFollowCollectionViewCell : UICollectionViewCell
 
-- (void)setModel:(id)model;
+- (void)setModel:(EFGoodsList *)model;
 @end
 
 NS_ASSUME_NONNULL_END

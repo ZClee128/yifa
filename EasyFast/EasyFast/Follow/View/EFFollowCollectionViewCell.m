@@ -65,13 +65,14 @@
 
 }
 
-- (void)setModel:(id)model {
-    self.priceLab.attributedText = [@"¥99999.8" getAttributeWithChangeString:@"¥" ChangeFont:RegularFont10 textColor:[UIColor whiteColor]];
+- (void)setModel:(EFGoodsList *)model {
+    self.priceLab.attributedText = [[NSString stringWithFormat:@"¥%.1f",model.price] getAttributeWithChangeString:@"¥" ChangeFont:RegularFont10 textColor:[UIColor whiteColor]];
     [self.priceLab mas_updateConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(@([self.priceLab.attributedText AttributedStringFont:RegularFont11 maxHeight:WidthOfScale(20)] + 18));
     }];
     [self.priceLab layoutIfNeeded];
     [self.contentView layoutIfNeeded];
     [self.priceLab ViewRadius:WidthOfScale(20)/2];
+    [self.goods sd_setImageWithURL:[NSURL URLWithString:model.url] placeholderImage:UIImageMake(@"gg")];
 }
 @end

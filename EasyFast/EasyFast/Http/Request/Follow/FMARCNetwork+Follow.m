@@ -10,8 +10,8 @@
 
 @implementation FMARCNetwork (Follow)
 
-- (RACSignal *)findCollectGoodsList:(NSNumber *)pageNum type:(NSInteger)type {
-    return [self fg_postRequest:kfindCollectGoodsList paramters:@{@"pageNum":pageNum,@"type":@(type)}];
+- (RACSignal *)findCollectGoodsList:(NSNumber *)pageNum type:(NSInteger)type sortType:(NSInteger)sortType{
+    return [self fg_postRequest:kfindCollectGoodsList paramters:@{@"pageNum":pageNum,@"type":@(type),@"sortType":@(sortType)}];
 }
 
 - (RACSignal *)findFollowShopList:(NSNumber *)pageNum {

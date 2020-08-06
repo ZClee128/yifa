@@ -8,6 +8,7 @@
 
 #import "EFBaseModel.h"
 #import "EFGoodsList.h"
+#import "EFTeamModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -23,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)NSString *shopNo;
 @property (nonatomic,strong)NSArray *shopTagList;
 @property (nonatomic,strong)NSArray<EFGoodsList *> *goodsList;
+@property (nonatomic,strong)NSArray<EFTeamModel *> *teamList;
 @end
 
 NS_ASSUME_NONNULL_END

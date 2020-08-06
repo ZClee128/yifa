@@ -50,6 +50,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TuanListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TuanListTableViewCell class])];
     [cell setModel:@""];
+    cell.btnBlock = ^{
+        [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(YES)}];
+    };
     return cell;
 }
 

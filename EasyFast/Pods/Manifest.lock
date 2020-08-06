@@ -79,6 +79,7 @@ PODS:
     - SDWebImage/Core (= 5.5.2)
   - SDWebImage/Core (5.5.2)
   - SSZipArchive (2.2.3)
+  - TABAnimated (2.4.5)
   - Toast (4.0.0)
   - TXIMSDK_iOS (4.9.1)
   - TXIMSDK_TUIKit_iOS (4.9.1):
@@ -143,6 +144,7 @@ DEPENDENCIES:
   - SDCycleScrollView (>= 1.80)
   - SDWebImage
   - SSZipArchive
+  - TABAnimated
   - TXIMSDK_TUIKit_iOS
   - UMCCommon
   - UMCShare/Social/ReducedQQ
@@ -157,6 +159,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
     - BaiduMapKit
+    - TABAnimated
     - UMCCommon
     - UMCShare
     - ZLPhotoBrowser
@@ -215,6 +218,7 @@ SPEC CHECKSUMS:
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: 4d5c027c935438f341ed33dbac53ff9f479922ca
   SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
+  TABAnimated: 496f3836b5922923899865644167cda7f3ed3465
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   TXIMSDK_iOS: 587e25fa8b42c9f228bb9065084270fa6990190f
   TXIMSDK_TUIKit_iOS: 6bb8125bd29debc723bb64e3514e7c2f11bc538a
@@ -226,6 +230,6 @@ SPEC CHECKSUMS:
   YZTagList: 43dc1909e38d88124e3256ffc51c62cc904d8240
   ZLPhotoBrowser: 3748fdbeb2b28961c2495d15131dbf413082e1b9
 
-PODFILE CHECKSUM: f1f8be604156ed6966b6e1887b6e22bbf411786c
+PODFILE CHECKSUM: cd1baaa96b38d6b0f49f46e4a1272c402a2981ec
 
 COCOAPODS: 1.9.3

@@ -12,8 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SeachOneCollectionViewCell : UICollectionViewCell
 
+@property (nonatomic,copy)void(^seletBtnBlock)(QMUIButton *sender);
 - (void)setBtnStyle;
 - (void)setModel:(id)model;
+
 @end
 
 NS_ASSUME_NONNULL_END

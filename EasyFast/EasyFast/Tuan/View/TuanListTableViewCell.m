@@ -63,6 +63,11 @@
         [_buyBtn setTitleColor:UIColor.whiteColor forState:(UIControlStateNormal)];
         _buyBtn.titleLabel.font = MedFont15;
         _buyBtn.backgroundColor = colorF14745;
+        [[_buyBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            if (self.btnBlock) {
+                self.btnBlock();
+            }
+        }];
     }
     return _buyBtn;
 }

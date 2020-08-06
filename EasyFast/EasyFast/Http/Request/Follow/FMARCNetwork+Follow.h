@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface FMARCNetwork (Follow)
 
 /// 收藏店铺列表
-- (RACSignal *)findCollectGoodsList:(NSNumber *)pageNum type:(NSInteger)type;
+- (RACSignal *)findCollectGoodsList:(NSNumber *)pageNum type:(NSInteger)type sortType:(NSInteger )sortType;
 
 /// 关注店铺列表
 - (RACSignal *)findFollowShopList:(NSNumber *)pageNum;

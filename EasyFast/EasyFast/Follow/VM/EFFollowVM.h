@@ -17,15 +17,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (RACSignal *)cancelFollowShop:(NSString *)shopNo;
 
-+ (RACSignal *)setCollectGoods:(NSString *)goodsNo;
-
-+ (RACSignal *)cancelCollectGoods:(NSString *)goodsNo;
-
 /// 交易过店铺的下拉
 - (RACSignal *)TransactionRefreshForeDown;
 
 /// 交易过店铺的上拉
 - (RACSignal *)TransactionRefreshForeUp;
+
+/// 成团下拉
+- (RACSignal *)TeamRefreshForeDown;
+
+/// 成团上拉
+- (RACSignal *)TeamRefreshForeUp;
 @end
 
 NS_ASSUME_NONNULL_END
