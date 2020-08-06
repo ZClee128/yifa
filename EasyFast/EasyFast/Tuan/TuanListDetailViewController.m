@@ -30,6 +30,9 @@
         [_buyBtn setTitleColor:UIColor.whiteColor forState:(UIControlStateNormal)];
         _buyBtn.titleLabel.font = MedFont15;
         _buyBtn.backgroundColor = colorF14745;
+        [[_buyBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+           [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(YES)}];
+        }];
     }
     return _buyBtn;
 }
