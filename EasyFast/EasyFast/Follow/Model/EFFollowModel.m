@@ -14,7 +14,6 @@
 + (NSDictionary *)modelContainerPropertyGenericClass {
     return @{
              @"goodsList" : [EFGoodsList class],
-             @"teamList" : [EFTeamModel class]
              };
 }
 

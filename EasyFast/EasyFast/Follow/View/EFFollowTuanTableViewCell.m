@@ -16,7 +16,7 @@
 @property (nonatomic,strong)QMUILabel *timeLab;
 @property (nonatomic,strong)LRAnimationProgress *progressView;
 @property (nonatomic,strong)QMUIButton *pinBtn;
-
+@property (nonatomic,strong)CountDown *timer;
 
 - (void)setData:(id)data;
 @end
@@ -86,6 +86,7 @@
 }
 
 - (void)setUI {
+    self.timer = [[CountDown alloc] init];
     [self addSubview:self.headerImageView];
     [self.headerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@(WidthOfScale(13.5)));
@@ -128,11 +129,14 @@
 }
 
 
-- (void)setData:(id)data {
-    self.nameLab.text = @"玛丽莲梦露";
-    self.timeLab.text = @"仅剩 23:59:59";
-    self.progressView.progress = 0.4;
-    [self.progressView setTitle:@"剩余28%"];
+- (void)setData:(EFTeamModel *)data {
+    self.nameLab.text = data.teamLeaderName;
+    [self.timer countDownWithStratDate:[NSDate new] finishDate:data.expireDate completeBlock:^(NSInteger day, NSInteger hour, NSInteger minute, NSInteger second) {
+        self.timeLab.text = [NSString stringWithFormat:@"剩余 %ld:%ld:%ld",(long)hour,(long)minute,(long)second];
+    }];
+    self.progressView.progress = data.teamProcess / 100;
+    [self.progressView setTitle:[NSString stringWithFormat:@"剩余%.f%%",data.teamProcess]];
+    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:data.teamLeaderUrl] placeholderImage:UIImageMake(@"header")];
     
 }
 @end
@@ -196,7 +200,7 @@
     [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:model.shopIcon] placeholderImage:UIImageMake(@"header")];
     self.data = [model.goodsList mutableCopy];
     self.followBtn.selected = model.isFollow;
-    [self.tuanView setData:model.teamList];
+    [self.tuanView setData:model.team];
     [self.collect reloadData];
 }
 

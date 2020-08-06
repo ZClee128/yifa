@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C0CC27524DC3202005E50ED /* CountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC27424DC3202005E50ED /* CountDown.m */; };
+		0C0CC27624DC3202005E50ED /* CountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC27424DC3202005E50ED /* CountDown.m */; };
+		0C0CC27724DC3202005E50ED /* CountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC27424DC3202005E50ED /* CountDown.m */; };
 		0C4BAF9324D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
 		0C4BAF9424D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
 		0C4BAF9524D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
@@ -588,6 +591,8 @@
 
 /* Begin PBXFileReference section */
 		00D88C6799F2691F0B67B541 /* libPods-EasyFast_Dev.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EasyFast_Dev.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C0CC27324DC3202005E50ED /* CountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDown.h; sourceTree = "<group>"; };
+		0C0CC27424DC3202005E50ED /* CountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDown.m; sourceTree = "<group>"; };
 		0C4BAF9124D0085F0037CDCF /* EFMeRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFMeRefreshHeader.h; sourceTree = "<group>"; };
 		0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFMeRefreshHeader.m; sourceTree = "<group>"; };
 		0C4BAF9724D021440037CDCF /* EFBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFBridge.h; sourceTree = "<group>"; };
@@ -1020,6 +1025,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C0CC27224DC3202005E50ED /* CountDown */ = {
+			isa = PBXGroup;
+			children = (
+				0C0CC27324DC3202005E50ED /* CountDown.h */,
+				0C0CC27424DC3202005E50ED /* CountDown.m */,
+			);
+			path = CountDown;
+			sourceTree = "<group>";
+		};
 		0C4BAF9624D0212E0037CDCF /* Bridge */ = {
 			isa = PBXGroup;
 			children = (
@@ -1831,6 +1845,7 @@
 		84A8219724BF010800EAC652 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0C0CC27224DC3202005E50ED /* CountDown */,
 				0C8A276A24D6C44400E40ED8 /* Tags */,
 				0C8A276424D6AD0000E40ED8 /* Share */,
 				0C8A274924D670BC00E40ED8 /* MyCalendar */,
@@ -2224,6 +2239,7 @@
 			files = (
 				0C8A277424D6C44F00E40ED8 /* SKTag.m in Sources */,
 				0C8A278824D79BCE00E40ED8 /* EFFastTuanListViewController.m in Sources */,
+				0C0CC27524DC3202005E50ED /* CountDown.m in Sources */,
 				84A820EE24B6F65100EAC652 /* EFFollowViewController.m in Sources */,
 				0C6CB5C124CFD6B200471A8D /* EFRefreshHeader.m in Sources */,
 				0C8A27D024D8F28500E40ED8 /* EFUserModel.m in Sources */,
@@ -2419,6 +2435,7 @@
 			files = (
 				0C8A277524D6C44F00E40ED8 /* SKTag.m in Sources */,
 				0C8A278924D79BCE00E40ED8 /* EFFastTuanListViewController.m in Sources */,
+				0C0CC27624DC3202005E50ED /* CountDown.m in Sources */,
 				84A820FA24BC4F5400EAC652 /* EFFollowViewController.m in Sources */,
 				0C6CB5C224CFD6B200471A8D /* EFRefreshHeader.m in Sources */,
 				0C8A27D124D8F28500E40ED8 /* EFUserModel.m in Sources */,
@@ -2614,6 +2631,7 @@
 			files = (
 				0C8A277624D6C44F00E40ED8 /* SKTag.m in Sources */,
 				0C8A278A24D79BCE00E40ED8 /* EFFastTuanListViewController.m in Sources */,
+				0C0CC27724DC3202005E50ED /* CountDown.m in Sources */,
 				84A8211E24BC513500EAC652 /* EFFollowViewController.m in Sources */,
 				0C6CB5C324CFD6B200471A8D /* EFRefreshHeader.m in Sources */,
 				0C8A27D224D8F28500E40ED8 /* EFUserModel.m in Sources */,

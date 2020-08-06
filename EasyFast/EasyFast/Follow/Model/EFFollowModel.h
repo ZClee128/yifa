@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)NSString *shopNo;
 @property (nonatomic,strong)NSArray *shopTagList;
 @property (nonatomic,strong)NSArray<EFGoodsList *> *goodsList;
-@property (nonatomic,strong)NSArray<EFTeamModel *> *teamList;
+@property (nonatomic,strong)EFTeamModel *team;
 @end
 
 NS_ASSUME_NONNULL_END

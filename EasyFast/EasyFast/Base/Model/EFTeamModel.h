@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EFTeamOrderDtoListModel : EFBaseModel
 /// 发起/参团时间
-@property (nonatomic,assign)double createDate;
+@property (nonatomic,strong)NSDate *createDate;
 /// 团员头像
 @property (nonatomic,strong)NSString *headImgUrl;
 /// 团员昵称
@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface EFTeamModel : EFBaseModel
 
 /// 过期时间
-@property (nonatomic,assign)double expireDate;
+@property (nonatomic,strong)NSDate *expireDate;
 /// 商品编码
 @property (nonatomic,strong)NSString *ggNo;
 @property (nonatomic,strong)NSString *groupMethod;

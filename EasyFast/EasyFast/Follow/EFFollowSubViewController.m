@@ -160,50 +160,31 @@
     cell.headerSelect = ^{
         [kH5Manager gotoUrl:@"shop" hasNav:NO navTitle:@"" query:@{}];
     };
+    [cell setModel:model];
+    cell.follow = ^(QMUIButton * _Nonnull sender) {
+        if (sender.selected) {
+            [[EFFollowVM cancelFollowShop:model.shopNo] subscribeNext:^(NSNumber *ok) {
+                if ([ok boolValue]) {
+                    model.isFollow = NO;
+                    sender.selected = !sender.selected;
+                }
+            }];
+        }else {
+            [[EFFollowVM setFollowShopCategory:@"" shopNo:model.shopNo] subscribeNext:^(NSNumber *ok) {
+                if ([ok boolValue]) {
+                    model.isFollow = YES;
+                    sender.selected = !sender.selected;
+                }
+            }];
+        }
+    };
     switch (self.type) {
         case FollowGZ:
         {
-            
-            [cell setModel:model];
-            cell.follow = ^(QMUIButton * _Nonnull sender) {
-                if (sender.selected) {
-                    [[EFFollowVM cancelFollowShop:model.shopNo] subscribeNext:^(NSNumber *ok) {
-                        if ([ok boolValue]) {
-                            model.isFollow = NO;
-                            sender.selected = !sender.selected;
-                        }
-                    }];
-                }else {
-                    [[EFFollowVM setFollowShopCategory:@"" shopNo:model.shopNo] subscribeNext:^(NSNumber *ok) {
-                        if ([ok boolValue]) {
-                            model.isFollow = YES;
-                            sender.selected = !sender.selected;
-                        }
-                    }];
-                }
-            };
             return cell;
         }
         case FollowGM:
         {
-            [cell setModel:model];
-            cell.follow = ^(QMUIButton * _Nonnull sender) {
-                if (sender.selected) {
-                    [[EFFollowVM cancelFollowShop:model.shopNo] subscribeNext:^(NSNumber *ok) {
-                        if ([ok boolValue]) {
-                            model.isFollow = NO;
-                            sender.selected = !sender.selected;
-                        }
-                    }];
-                }else {
-                    [[EFFollowVM setFollowShopCategory:@"" shopNo:model.shopNo] subscribeNext:^(NSNumber *ok) {
-                        if ([ok boolValue]) {
-                            model.isFollow = YES;
-                            sender.selected = !sender.selected;
-                        }
-                    }];
-                }
-            };
             return cell;
         }
         default:
@@ -218,6 +199,23 @@
             };
             tuanCell.selectIndex = ^(NSInteger index) {
                 [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO)}];
+            };
+            tuanCell.follow = ^(QMUIButton * _Nonnull sender) {
+                if (sender.selected) {
+                    [[EFFollowVM cancelFollowShop:model.shopNo] subscribeNext:^(NSNumber *ok) {
+                        if ([ok boolValue]) {
+                            model.isFollow = NO;
+                            sender.selected = !sender.selected;
+                        }
+                    }];
+                }else {
+                    [[EFFollowVM setFollowShopCategory:@"" shopNo:model.shopNo] subscribeNext:^(NSNumber *ok) {
+                        if ([ok boolValue]) {
+                            model.isFollow = YES;
+                            sender.selected = !sender.selected;
+                        }
+                    }];
+                }
             };
             return tuanCell;
         }
