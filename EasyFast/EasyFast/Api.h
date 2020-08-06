@@ -23,4 +23,10 @@
 // 关注
 #define kfindCollectGoodsList @"api-client/follow/findCollectGoodsList" // 收藏商品列表接口
 #define kfindFollowShopList @"api-client/follow/findFollowShopList" // 关注店铺列表接口
+#define kfindTransactionShopList @"api-client/follow/findTransactionShopList" //交易过的店铺列表接口
+#define kfindTheTeamShopList @"api-client/follow/findTheTeamShopList" //即将成团的店铺列表接口
+#define ksetFollowShop @"api-client/follow/setFollowShop" //关注店铺接口
+#define kcancelFollowShop @"api-client/follow/cancelFollowShop" //取消关注店铺接口
+#define ksetCollectGoods @"api-client/follow/setCollectGoods" //收藏商品接口
+#define kcancelCollectGoods @"api-client/follow/cancelCollectGoods" //取消收藏商品接口
 #endif /* Api_h */

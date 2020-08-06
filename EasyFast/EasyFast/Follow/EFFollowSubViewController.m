@@ -51,8 +51,9 @@
 }
 
 - (void)FollowLoad {
-    [[self.viewModel refreshForDown] subscribeNext:^(id  _Nullable x) {
+    [[self.viewModel refreshForDown] subscribeNext:^(RACTuple *x) {
         [self.EFTableView.mj_header endRefreshing];
+        self.EFData = x.first;
     }];
 }
 
@@ -88,7 +89,7 @@
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 20;
+    return self.EFData.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -106,7 +107,7 @@
     switch (self.type) {
         case FollowGZ:
         {
-            [cell setModel:@""];
+            [cell setModel:self.EFData[indexPath.section]];
             return cell;
         }
             case FollowGM:

@@ -10,7 +10,35 @@
 
 @implementation FMARCNetwork (Follow)
 
+- (RACSignal *)findCollectGoodsList:(NSNumber *)pageNum type:(NSInteger)type {
+    return [self fg_postRequest:kfindCollectGoodsList paramters:@{@"pageNum":pageNum,@"type":@(type)}];
+}
+
 - (RACSignal *)findFollowShopList:(NSNumber *)pageNum {
     return [self fg_postRequest:kfindFollowShopList paramters:@{@"pageNum":pageNum}];
+}
+
+- (RACSignal *)findTransactionShopList:(NSNumber *)pageNum {
+    return [self fg_postRequest:kfindTransactionShopList paramters:@{@"pageNum":pageNum}];
+}
+
+- (RACSignal *)findTheTeamShopList:(NSNumber *)pageNum  {
+    return [self fg_postRequest:kfindTheTeamShopList paramters:@{@"pageNum":pageNum}];
+}
+
+- (RACSignal *)setFollowShopCategory:(NSString *)category shopNo:(NSString *)shopNo {
+    return [self fg_postRequest:ksetFollowShop paramters:@{@"category":category,@"shopNo":shopNo}];
+}
+
+- (RACSignal *)cancelFollowShop:(NSString *)shopNo {
+    return [self fg_postRequest:kcancelFollowShop paramters:@{@"shopNo":shopNo}];
+}
+
+- (RACSignal *)setCollectGoods:(NSString *)goodsNo {
+    return [self fg_postRequest:ksetCollectGoods paramters:@{@"goodsNo":goodsNo}];
+}
+
+- (RACSignal *)cancelCollectGoods:(NSString *)goodsNo {
+    return [self fg_postRequest:kcancelCollectGoods paramters:@{@"goodsNo":goodsNo}];
 }
 @end

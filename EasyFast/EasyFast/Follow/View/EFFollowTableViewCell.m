@@ -8,7 +8,7 @@
 
 #import "EFFollowTableViewCell.h"
 #import "EFFollowCollectionViewCell.h"
-
+#import "EFFollowModel.h"
 
 @interface EFFollowTableViewCell ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -198,11 +198,11 @@
 }
 
 
-- (void)setModel:(id)model {
-    self.shopNameLab.text = @"刘德华的店";
-    self.shopClassLab.text = @"男装，女装，内衣";
-    self.followLab.text = @"关注数：8255  回头率：60% ";
-    self.adressLab.text = @"广东 深圳";
+- (void)setModel:(EFFollowModel *)model {
+    self.shopNameLab.text = model.shopName;
+    self.shopClassLab.text = [model.shopTagList componentsJoinedByString:@","];
+    self.followLab.text =  [NSString stringWithFormat:@"关注数：%ld  回头率：%@ ",model.followNum,model.lookBackRate];
+    self.adressLab.text =  [NSString stringWithFormat:@"%@ %@",model.city,model.province];
     [self.collect reloadData];
 }
 
