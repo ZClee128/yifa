@@ -1,0 +1,6 @@
+module TABAnimated {
+  umbrella header "TABAnimated-umbrella.h"
+
+  export *
+  module * { export * }
+}
