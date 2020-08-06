@@ -23,11 +23,15 @@
     self.gk_navTitle = @"账号与安全";
     self.EFData = [@[@{@"title":@"会员账号",@"subTitle":kUserManager.userModel.username},
                      [@{@"title":@"修改手机",@"subTitle":kUserManager.userModel.phone} mutableCopy],
-                     @{@"title":@"修改登录密码",@"subTitle":kUserManager.userModel.isPassword ? @"" : @"初始密码为123456"},@{@"title":@"注销账号",@"subTitle":@""}] mutableCopy];
+                     [@{@"title":@"修改登录密码",@"subTitle":!kUserManager.userModel.isPassword ? @"" : @"初始密码为123456"} mutableCopy],@{@"title":@"注销账号",@"subTitle":@""}] mutableCopy];
     @weakify(self);
     [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kChangePhone object:nil] subscribeNext:^(NSNotification * _Nullable x) {
         @strongify(self);
         self.EFData[1][@"subTitle"] = kUserManager.userModel.phone;
+        [self.EFTableView reloadData];
+    }];
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kChangePassword object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        self.EFData[2][@"subTitle"] = @"";
         [self.EFTableView reloadData];
     }];
 }

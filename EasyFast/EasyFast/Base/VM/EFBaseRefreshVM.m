@@ -21,7 +21,7 @@
     if (self = [super init]) {
         _firstPage = @(1);
         _paging = @(self.firstPage.integerValue);
-        _branches = @(100);
+        _branches = @(50);
         _currentRefreshState = kFGRefreshPullDown;
     }
     return self;

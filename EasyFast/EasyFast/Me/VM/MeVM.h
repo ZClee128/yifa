@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MeVM : EFBaseRefreshVM
 
 + (RACSignal *)updateUserInfo:(NSString *)city headImgUrl:(NSString *)headImgUrl nickname:(NSString *)nickname province:(NSString *)province sex:(NSInteger)sex type:(NSInteger)type;
+
++ (RACSignal *)updatePassWord:(NSString *)oldPassword password:(NSString *)password confirmPassword:(NSString *)confirmPassword;
 @end
 
 NS_ASSUME_NONNULL_END

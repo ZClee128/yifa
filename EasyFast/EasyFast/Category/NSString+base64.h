@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 解密
 -(NSString *)base64DecodeString;
+
+- (NSString *)md5;
 @end
 
 NS_ASSUME_NONNULL_END

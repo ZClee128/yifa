@@ -155,6 +155,18 @@
 		0C8A29E224DAD77000E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A29E124DAD77000E40ED8 /* dist */; };
 		0C8A29E324DAD77000E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A29E124DAD77000E40ED8 /* dist */; };
 		0C8A29E424DAD77000E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A29E124DAD77000E40ED8 /* dist */; };
+		0C8A29F024DBA24300E40ED8 /* FMARCNetwork+Follow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29EF24DBA24200E40ED8 /* FMARCNetwork+Follow.m */; };
+		0C8A29F124DBA24400E40ED8 /* FMARCNetwork+Follow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29EF24DBA24200E40ED8 /* FMARCNetwork+Follow.m */; };
+		0C8A29F224DBA24400E40ED8 /* FMARCNetwork+Follow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29EF24DBA24200E40ED8 /* FMARCNetwork+Follow.m */; };
+		0C8A29F624DBA32100E40ED8 /* EFFollowVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29F524DBA32100E40ED8 /* EFFollowVM.m */; };
+		0C8A29F724DBA32100E40ED8 /* EFFollowVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29F524DBA32100E40ED8 /* EFFollowVM.m */; };
+		0C8A29F824DBA32100E40ED8 /* EFFollowVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29F524DBA32100E40ED8 /* EFFollowVM.m */; };
+		0C8A29FC24DBA3A400E40ED8 /* EFFollowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29FB24DBA3A400E40ED8 /* EFFollowModel.m */; };
+		0C8A29FD24DBA3A400E40ED8 /* EFFollowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29FB24DBA3A400E40ED8 /* EFFollowModel.m */; };
+		0C8A29FE24DBA3A400E40ED8 /* EFFollowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29FB24DBA3A400E40ED8 /* EFFollowModel.m */; };
+		0C8A2A0124DBA4A700E40ED8 /* EFGoodsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A2A0024DBA4A700E40ED8 /* EFGoodsList.m */; };
+		0C8A2A0224DBA4A700E40ED8 /* EFGoodsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A2A0024DBA4A700E40ED8 /* EFGoodsList.m */; };
+		0C8A2A0324DBA4A700E40ED8 /* EFGoodsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A2A0024DBA4A700E40ED8 /* EFGoodsList.m */; };
 		0CCEC45324CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45424CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45524CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
@@ -671,6 +683,14 @@
 		0C8A29D424DAAF5D00E40ED8 /* NSString+base64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+base64.h"; sourceTree = "<group>"; };
 		0C8A29D524DAAF5D00E40ED8 /* NSString+base64.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+base64.m"; sourceTree = "<group>"; };
 		0C8A29E124DAD77000E40ED8 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dist; sourceTree = "<group>"; };
+		0C8A29EE24DBA24200E40ED8 /* FMARCNetwork+Follow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FMARCNetwork+Follow.h"; sourceTree = "<group>"; };
+		0C8A29EF24DBA24200E40ED8 /* FMARCNetwork+Follow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FMARCNetwork+Follow.m"; sourceTree = "<group>"; };
+		0C8A29F424DBA32100E40ED8 /* EFFollowVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFFollowVM.h; sourceTree = "<group>"; };
+		0C8A29F524DBA32100E40ED8 /* EFFollowVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFFollowVM.m; sourceTree = "<group>"; };
+		0C8A29FA24DBA3A400E40ED8 /* EFFollowModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFFollowModel.h; sourceTree = "<group>"; };
+		0C8A29FB24DBA3A400E40ED8 /* EFFollowModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFFollowModel.m; sourceTree = "<group>"; };
+		0C8A29FF24DBA4A700E40ED8 /* EFGoodsList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFGoodsList.h; sourceTree = "<group>"; };
+		0C8A2A0024DBA4A700E40ED8 /* EFGoodsList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFGoodsList.m; sourceTree = "<group>"; };
 		0CCEC45124CA7A6000976D24 /* EFWuliuTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFWuliuTableViewCell.h; sourceTree = "<group>"; };
 		0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFWuliuTableViewCell.m; sourceTree = "<group>"; };
 		0CCEC45624CA7D8900976D24 /* EFOrderMoreDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderMoreDetailViewController.h; sourceTree = "<group>"; };
@@ -845,7 +865,7 @@
 		8476119524C82515002B34E4 /* SysManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SysManager.m; sourceTree = "<group>"; };
 		8476119B24C838A6002B34E4 /* EFClassifyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFClassifyModel.h; sourceTree = "<group>"; };
 		8476119C24C838A6002B34E4 /* EFClassifyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFClassifyModel.m; sourceTree = "<group>"; };
-		84A8207324B6C61800EAC652 /* EasyFast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyFast.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84A8207324B6C61800EAC652 /* 易发拼货.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "易发拼货.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A8207624B6C61800EAC652 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84A8207724B6C61800EAC652 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		84A8208224B6C62300EAC652 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -1105,6 +1125,33 @@
 			path = Me;
 			sourceTree = "<group>";
 		};
+		0C8A29ED24DBA22000E40ED8 /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+				0C8A29EE24DBA24200E40ED8 /* FMARCNetwork+Follow.h */,
+				0C8A29EF24DBA24200E40ED8 /* FMARCNetwork+Follow.m */,
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
+		0C8A29F324DBA30A00E40ED8 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				0C8A29F424DBA32100E40ED8 /* EFFollowVM.h */,
+				0C8A29F524DBA32100E40ED8 /* EFFollowVM.m */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		0C8A29F924DBA38800E40ED8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0C8A29FA24DBA3A400E40ED8 /* EFFollowModel.h */,
+				0C8A29FB24DBA3A400E40ED8 /* EFFollowModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		0CCEC47924CABB9700976D24 /* IM */ = {
 			isa = PBXGroup;
 			children = (
@@ -1266,6 +1313,8 @@
 			children = (
 				84760F8424C1596E002B34E4 /* EFBaseModel.h */,
 				84760F8524C1596E002B34E4 /* EFBaseModel.m */,
+				0C8A29FF24DBA4A700E40ED8 /* EFGoodsList.h */,
+				0C8A2A0024DBA4A700E40ED8 /* EFGoodsList.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1469,7 +1518,7 @@
 		84A8207424B6C61800EAC652 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				84A8207324B6C61800EAC652 /* EasyFast.app */,
+				84A8207324B6C61800EAC652 /* 易发拼货.app */,
 				84A8211924BC4F5400EAC652 /* EasyFast_Dev.app */,
 				84A8213D24BC513500EAC652 /* EasyFast_Test.app */,
 			);
@@ -1562,6 +1611,7 @@
 		84A820C224B6CCC600EAC652 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				0C8A29ED24DBA22000E40ED8 /* Follow */,
 				0C8A29C424DA9A8400E40ED8 /* Me */,
 				0C8A27AE24D830CC00E40ED8 /* Login */,
 				84A820C324B6CCC600EAC652 /* FMARCNetwork+interface.h */,
@@ -1656,6 +1706,8 @@
 		84A820EB24B6F63E00EAC652 /* Follow */ = {
 			isa = PBXGroup;
 			children = (
+				0C8A29F924DBA38800E40ED8 /* Model */,
+				0C8A29F324DBA30A00E40ED8 /* VM */,
 				84A821A324BF15CC00EAC652 /* View */,
 				84A820EC24B6F65100EAC652 /* EFFollowViewController.h */,
 				84A820ED24B6F65100EAC652 /* EFFollowViewController.m */,
@@ -1870,7 +1922,7 @@
 			);
 			name = EasyFast;
 			productName = EasyFast;
-			productReference = 84A8207324B6C61800EAC652 /* EasyFast.app */;
+			productReference = 84A8207324B6C61800EAC652 /* 易发拼货.app */;
 			productType = "com.apple.product-type.application";
 		};
 		84A820F724BC4F5400EAC652 /* EasyFast_Dev */ = {
@@ -2180,6 +2232,7 @@
 				84A820B724B6CA8A00EAC652 /* EFBaseTableView.m in Sources */,
 				84A820A424B6CA0900EAC652 /* BaseTableViewCell.m in Sources */,
 				0C8A275124D672A200E40ED8 /* EFCalendarCollectionViewCell.m in Sources */,
+				0C8A29F624DBA32100E40ED8 /* EFFollowVM.m in Sources */,
 				0CE285FC24D3EC4F00AAC334 /* LTSCalendarCollectionCell.m in Sources */,
 				8476105724C57636002B34E4 /* TuanListDetailSecsionView.m in Sources */,
 				841B94E824C95F6C0054D8D5 /* EFOrderPriceTableViewCell.m in Sources */,
@@ -2211,6 +2264,7 @@
 				0C8A29BD24DA52A000E40ED8 /* NSMutableURLRequest+FormData.m in Sources */,
 				84A8215924BDB45E00EAC652 /* UIImage+Darw.m in Sources */,
 				847610C924C6D7FA002B34E4 /* EFPowerViewController.m in Sources */,
+				0C8A29F024DBA24300E40ED8 /* FMARCNetwork+Follow.m in Sources */,
 				84A821A024BF146200EAC652 /* EFFollowSubViewController.m in Sources */,
 				84760F8624C1596E002B34E4 /* EFBaseModel.m in Sources */,
 				8476109924C67D19002B34E4 /* EFBindPhoneViewController.m in Sources */,
@@ -2287,12 +2341,14 @@
 				84760F8C24C15AD5002B34E4 /* EFSearchModel.m in Sources */,
 				8476106724C58861002B34E4 /* EFAddressViewController.m in Sources */,
 				84760F9624C1806D002B34E4 /* NSMutableAttributedString+Size.m in Sources */,
+				0C8A2A0124DBA4A700E40ED8 /* EFGoodsList.m in Sources */,
 				8476119D24C838A6002B34E4 /* EFClassifyModel.m in Sources */,
 				841B94F324C979790054D8D5 /* FTPopOverMenu.m in Sources */,
 				0C4BAF9E24D1013D0037CDCF /* EFFollowTuanTableViewCell.m in Sources */,
 				84A8216624BE92B900EAC652 /* HotTabTableViewCell.m in Sources */,
 				0C6CB57924CE7E2D00471A8D /* EFOneLoginPhoneTableViewCell.m in Sources */,
 				84A8217524BEAE3000EAC652 /* EFHeaderView.m in Sources */,
+				0C8A29FC24DBA3A400E40ED8 /* EFFollowModel.m in Sources */,
 				8476103324C54189002B34E4 /* TuanListViewController.m in Sources */,
 				84B2437D24C8425700E9967C /* ThreeCollectionViewCellItem.m in Sources */,
 				0C6CB59D24CEBD2800471A8D /* EFPhoneLoginTableViewCell.m in Sources */,
@@ -2369,6 +2425,7 @@
 				84A820FB24BC4F5400EAC652 /* EFBaseTableView.m in Sources */,
 				84A820FC24BC4F5400EAC652 /* BaseTableViewCell.m in Sources */,
 				0C8A275224D672A200E40ED8 /* EFCalendarCollectionViewCell.m in Sources */,
+				0C8A29F724DBA32100E40ED8 /* EFFollowVM.m in Sources */,
 				0CE285FD24D3EC4F00AAC334 /* LTSCalendarCollectionCell.m in Sources */,
 				8476105824C57636002B34E4 /* TuanListDetailSecsionView.m in Sources */,
 				841B94E924C95F6C0054D8D5 /* EFOrderPriceTableViewCell.m in Sources */,
@@ -2400,6 +2457,7 @@
 				0C8A29BE24DA52A000E40ED8 /* NSMutableURLRequest+FormData.m in Sources */,
 				84A8215A24BDB45E00EAC652 /* UIImage+Darw.m in Sources */,
 				847610CA24C6D7FA002B34E4 /* EFPowerViewController.m in Sources */,
+				0C8A29F124DBA24400E40ED8 /* FMARCNetwork+Follow.m in Sources */,
 				84A821A124BF146200EAC652 /* EFFollowSubViewController.m in Sources */,
 				84760F8724C1596E002B34E4 /* EFBaseModel.m in Sources */,
 				8476109A24C67D19002B34E4 /* EFBindPhoneViewController.m in Sources */,
@@ -2476,12 +2534,14 @@
 				84760F8D24C15AD5002B34E4 /* EFSearchModel.m in Sources */,
 				8476106824C58861002B34E4 /* EFAddressViewController.m in Sources */,
 				84760F9724C1806D002B34E4 /* NSMutableAttributedString+Size.m in Sources */,
+				0C8A2A0224DBA4A700E40ED8 /* EFGoodsList.m in Sources */,
 				8476119E24C838A7002B34E4 /* EFClassifyModel.m in Sources */,
 				841B94F424C979790054D8D5 /* FTPopOverMenu.m in Sources */,
 				0C4BAF9F24D1013D0037CDCF /* EFFollowTuanTableViewCell.m in Sources */,
 				84A8216724BE92B900EAC652 /* HotTabTableViewCell.m in Sources */,
 				0C6CB57A24CE7E2D00471A8D /* EFOneLoginPhoneTableViewCell.m in Sources */,
 				84A8217624BEAE3000EAC652 /* EFHeaderView.m in Sources */,
+				0C8A29FD24DBA3A400E40ED8 /* EFFollowModel.m in Sources */,
 				8476103424C54189002B34E4 /* TuanListViewController.m in Sources */,
 				84B2437E24C8425700E9967C /* ThreeCollectionViewCellItem.m in Sources */,
 				0C6CB59E24CEBD2800471A8D /* EFPhoneLoginTableViewCell.m in Sources */,
@@ -2558,6 +2618,7 @@
 				84A8211F24BC513500EAC652 /* EFBaseTableView.m in Sources */,
 				84A8212024BC513500EAC652 /* BaseTableViewCell.m in Sources */,
 				0C8A275324D672A200E40ED8 /* EFCalendarCollectionViewCell.m in Sources */,
+				0C8A29F824DBA32100E40ED8 /* EFFollowVM.m in Sources */,
 				0CE285FE24D3EC4F00AAC334 /* LTSCalendarCollectionCell.m in Sources */,
 				8476105924C57636002B34E4 /* TuanListDetailSecsionView.m in Sources */,
 				841B94EA24C95F6C0054D8D5 /* EFOrderPriceTableViewCell.m in Sources */,
@@ -2589,6 +2650,7 @@
 				0C8A29BF24DA52A000E40ED8 /* NSMutableURLRequest+FormData.m in Sources */,
 				84A8215B24BDB45E00EAC652 /* UIImage+Darw.m in Sources */,
 				847610CB24C6D7FA002B34E4 /* EFPowerViewController.m in Sources */,
+				0C8A29F224DBA24400E40ED8 /* FMARCNetwork+Follow.m in Sources */,
 				84A821A224BF146200EAC652 /* EFFollowSubViewController.m in Sources */,
 				84760F8824C1596E002B34E4 /* EFBaseModel.m in Sources */,
 				8476109B24C67D19002B34E4 /* EFBindPhoneViewController.m in Sources */,
@@ -2665,12 +2727,14 @@
 				84760F8E24C15AD5002B34E4 /* EFSearchModel.m in Sources */,
 				8476106924C58861002B34E4 /* EFAddressViewController.m in Sources */,
 				84760F9824C1806D002B34E4 /* NSMutableAttributedString+Size.m in Sources */,
+				0C8A2A0324DBA4A700E40ED8 /* EFGoodsList.m in Sources */,
 				8476119F24C838A7002B34E4 /* EFClassifyModel.m in Sources */,
 				841B94F524C979790054D8D5 /* FTPopOverMenu.m in Sources */,
 				0C4BAFA024D1013D0037CDCF /* EFFollowTuanTableViewCell.m in Sources */,
 				84A8216824BE92B900EAC652 /* HotTabTableViewCell.m in Sources */,
 				0C6CB57B24CE7E2D00471A8D /* EFOneLoginPhoneTableViewCell.m in Sources */,
 				84A8217724BEAE3000EAC652 /* EFHeaderView.m in Sources */,
+				0C8A29FE24DBA3A400E40ED8 /* EFFollowModel.m in Sources */,
 				8476103524C54189002B34E4 /* TuanListViewController.m in Sources */,
 				84B2437F24C8425700E9967C /* ThreeCollectionViewCellItem.m in Sources */,
 				0C6CB59F24CEBD2800471A8D /* EFPhoneLoginTableViewCell.m in Sources */,
@@ -2868,7 +2932,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.easy.EasyFast;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "易发拼货";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WARNING_CFLAGS = "-Wno-ambiguous-macro ";
@@ -2900,7 +2964,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.easy.EasyFast;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "易发拼货";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WARNING_CFLAGS = "-Wno-ambiguous-macro ";

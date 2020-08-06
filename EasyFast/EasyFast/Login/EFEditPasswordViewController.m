@@ -8,6 +8,8 @@
 
 #import "EFEditPasswordViewController.h"
 #import "EFPasswordTextField.h"
+#import "MeVM.h"
+#import "LoginVM.h"
 
 @interface EFEditPasswordViewController ()
 
@@ -66,10 +68,22 @@
         @weakify(self);
         [[_nextBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self);
-            
+            [self nextClick];
         }];
     }
     return _nextBtn;
+}
+
+- (void)nextClick {
+    @weakify(self);
+    [[MeVM updatePassWord:self.oldTextField.text password:self.newsTextField.text confirmPassword:self.comfirTextField.text] subscribeNext:^(NSNumber *x) {
+        if ([x boolValue]) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:kChangePassword object:nil];
+            [[LoginVM loginOut] subscribeNext:^(id  _Nullable x) {
+                
+            }];
+        }
+    }];
 }
 
 - (void)viewDidLoad {

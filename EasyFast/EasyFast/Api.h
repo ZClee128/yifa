@@ -18,4 +18,9 @@
 #define kupdateUserInfo @"api-client/user/info/updateUserInfo" //修改个人信息接口
 #define kunbindPhone @"api-client/user/info/unbindPhone" //解绑
 #define kbindingPhone @"api-client/user/info/bindingPhone" //绑定手机
+#define kupdatePassWord @"api-client/user/info/updatePassWord" // 修改密码
+
+// 关注
+#define kfindCollectGoodsList @"api-client/follow/findCollectGoodsList" // 收藏商品列表接口
+#define kfindFollowShopList @"api-client/follow/findFollowShopList" // 关注店铺列表接口
 #endif /* Api_h */

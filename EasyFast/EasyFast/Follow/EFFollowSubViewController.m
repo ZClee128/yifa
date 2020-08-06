@@ -9,6 +9,7 @@
 #import "EFFollowSubViewController.h"
 #import "EFFollowTableViewCell.h"
 #import "EFFollowTuanTableViewCell.h"
+#import "EFFollowVM.h"
 @interface EFFollowSubViewController ()
 
 @property (nonatomic,assign)Follow type;
@@ -27,6 +28,8 @@
 }
 
 - (void)viewDidLoad {
+    self.viewModel = [[EFFollowVM alloc] init];
+    self.viewModel.branches = @(10);
     [super viewDidLoad];
     self.gk_navigationBar.hidden = YES;
     self.EFTableView.frame = CGRectMake(0, 0, kPHONE_WIDTH, kPHONE_HEIGHT-NAVIGATION_BAR_HEIGHT-30-TAB_BAR_HEIGHT);
@@ -34,6 +37,49 @@
     
     [self.EFTableView registerClass:[EFFollowTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFFollowTableViewCell class])];
     [self.EFTableView registerClass:[EFFollowTuanTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFFollowTuanTableViewCell class])];
+    [self addRefshDown];
+    [self addRefshUp];
+    switch (self.type) {
+        case FollowGZ:
+        {
+            [self FollowLoad];
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+- (void)FollowLoad {
+    [[self.viewModel refreshForDown] subscribeNext:^(id  _Nullable x) {
+        [self.EFTableView.mj_header endRefreshing];
+    }];
+}
+
+- (void)loadNewData {
+    switch (self.type) {
+        case FollowGZ:
+        {
+            [self FollowLoad];
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+- (void)loadMoreData {
+    switch (self.type) {
+        case FollowGZ:
+        {
+            [[self.viewModel refreshForUp] subscribeNext:^(id  _Nullable x) {
+                [self.EFTableView.mj_footer endRefreshing];
+            }];
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 - (UIView *)listView {

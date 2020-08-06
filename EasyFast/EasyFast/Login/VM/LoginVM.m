@@ -14,10 +14,10 @@
 - (void)getCodeWithBtn:(QMUIButton *)codeBtn withType:(NSInteger)type phone:(NSString *)phone{
     [MBProgressHUD showLoadingProgress:@"获取验证码..."];
     [[[FMARCNetwork sharedInstance] sendCode:phone type:type] subscribeNext:^(FMHttpResonse *x) {
-        [[RACScheduler mainThreadScheduler] schedule:^{
-            [MBProgressHUD removeProgressFromSuperView];
-        }];
         if (x.isSuccess) {
+            [[RACScheduler mainThreadScheduler] schedule:^{
+                       [MBProgressHUD removeProgressFromSuperView];
+            }];
             [self intervalTimer:1 intervalBlock:^BOOL(NSDate * _Nonnull date, NSTimeInterval currenctCount) {
                 if (currenctCount == 61) {
                     [codeBtn setTitle:@"重发验证码" forState:(UIControlStateNormal)];
@@ -61,6 +61,16 @@
     return [self requsetNetwork:^RACSignal * _Nonnull{
         return [[FMARCNetwork sharedInstance] loginOut];
     } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
+        for (EFUserModel *model in [EFUserModel bg_findAll:nil]) {
+            if ([model.username isEqualToString:kUserManager.userModel.username]) {
+                model.isLogin = NO;
+                model.token = @"";
+                [model bg_saveOrUpdate];
+            }
+        }
+        [[UIViewController getCurrentVC].navigationController qmui_popToRootViewControllerAnimated:NO completion:^{
+        }];
+        kAppDelegate.efTabbar.selectedIndex = 0;
         return @(result.isSuccess);
     }];
 }

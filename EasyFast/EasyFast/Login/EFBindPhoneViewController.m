@@ -199,11 +199,19 @@
     }else {
         [[LoginVM bindingPhone:self.phone type:1 loginToken:@"" code:self.codeStr verifyToken:@"" oldPhone:kUserManager.userModel.phone] subscribeNext:^(NSNumber *x) {
             if ([x boolValue]) {
-                for (UIViewController *vc in self.navigationController.viewControllers) {
-                    if ([vc isKindOfClass:[EFSafeAccountViewController class]]) {
-                        [self.navigationController qmui_popToViewController:vc animated:YES completion:^{
+                if (kAppDelegate.isOkOnePhone) {
+                    [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:^{
+                        [self.navigationController qmui_popViewControllerAnimated:YES completion:^{
                             
                         }];
+                    }];
+                }else{
+                    for (UIViewController *vc in self.navigationController.viewControllers) {
+                        if ([vc isKindOfClass:[EFSafeAccountViewController class]]) {
+                            [self.navigationController qmui_popToViewController:vc animated:YES completion:^{
+                                
+                            }];
+                        }
                     }
                 }
             }

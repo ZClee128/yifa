@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EFBaseRefreshVM : EFBaseVM
 
-@property (nonatomic, strong) NSNumber *paging;                 //翻页当前的页码，默认为0
+@property (nonatomic, strong) NSNumber *paging;                 //翻页当前的页码，默认为1
 @property (nonatomic, strong, readonly) NSNumber *firstPage;    //第一页，默认为1
 @property (nonatomic, strong) NSNumber *branches;               //每页的总条数，默认为100
 

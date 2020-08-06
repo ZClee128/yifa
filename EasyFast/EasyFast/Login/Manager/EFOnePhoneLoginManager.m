@@ -76,7 +76,9 @@
                     [[LoginVM bindingPhone:@"" type:2 loginToken:result[@"loginToken"] code:@"" verifyToken:verifyresult[@"token"] oldPhone:kUserManager.userModel.phone] subscribeNext:^(NSNumber *x) {
                         if ([x boolValue]) {
                             [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:^{
-                                
+                                [[UIViewController getCurrentVC].navigationController  qmui_popViewControllerAnimated:YES completion:^{
+                                    
+                                }];
                             }];
                         }
                     }];

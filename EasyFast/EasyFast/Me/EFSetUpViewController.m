@@ -44,19 +44,6 @@
     [[LoginVM loginOut] subscribeNext:^(id  _Nullable x) {
         
     }];
-    
-    for (EFUserModel *model in [EFUserModel bg_findAll:nil]) {
-        if ([model.username isEqualToString:kUserManager.userModel.username]) {
-            model.isLogin = NO;
-            model.token = @"";
-            [model bg_saveOrUpdate];
-        }
-    }
-    
-    XYLog(@">>>>%@",[EFUserModel bg_findAll:nil]);
-    [self.navigationController qmui_popToRootViewControllerAnimated:NO completion:^{
-    }];
-    kAppDelegate.efTabbar.selectedIndex = 0;
 }
 
 - (void)viewDidLoad {

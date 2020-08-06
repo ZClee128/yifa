@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface EFEditPasswordViewController : EFBaseViewController
 
 - (void)setUI;
+- (void)nextClick;
 @end
 
 

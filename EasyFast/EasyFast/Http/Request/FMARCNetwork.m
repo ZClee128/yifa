@@ -18,7 +18,7 @@
 /// 请求数据返回的状态码、根据自己的服务端数据来
 typedef NS_ENUM(NSUInteger, HTTPResponseCode) {
     HTTPResponseCodeSuccess = 200,           /// 请求成功
-    HTTPResponseCodeNotLogin = 1009,       /// 用户尚未登录，一般在网络请求前判断处理，也可以在网络层处理
+    HTTPResponseCodeNotLogin = 401,       /// 用户尚未登录，一般在网络请求前判断处理，也可以在网络层处理
 };
 
 /// The Http request error domain
@@ -493,15 +493,16 @@ static FMARCNetwork * _instance = nil;
 
 #pragma 错误提示
 - (void)showMsgtext:(NSString *)text {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].delegate.window animated:YES];
-    
-    // Set the text mode to show only text.
-    hud.mode = MBProgressHUDModeText;
-    hud.label.text = text;
-    // Move to bottm center.
-    hud.offset = CGPointMake(0.f, MBProgressMaxOffset);
-    
-    [hud hideAnimated:YES afterDelay:2.f];
+//    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].delegate.window animated:YES];
+//
+//    // Set the text mode to show only text.
+//    hud.mode = MBProgressHUDModeText;
+//    hud.label.text = text;
+//    // Move to bottm center.
+//    hud.offset = CGPointMake(0.f, MBProgressMaxOffset);
+//
+//    [hud hideAnimated:YES afterDelay:2.f];
+    [MBProgressHUD showFailureProgress:text];
     
 }
 

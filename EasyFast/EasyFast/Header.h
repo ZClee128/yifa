@@ -69,4 +69,5 @@
 #import <BGDB.h>
 #import "FMARCNetwork+Me.h"
 #import "NSString+base64.h"
+#import "FMARCNetwork+Follow.h"
 #endif /* Header_h */

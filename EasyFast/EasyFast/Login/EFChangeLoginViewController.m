@@ -84,6 +84,7 @@
             EFPhoneLoginTableViewCell *phoneCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFPhoneLoginTableViewCell class])];
             self.isAccount ? [phoneCell setModel:@"账号"] : [phoneCell setModel:@"手机号"];
             self.isAccount ? [phoneCell setPlaceholder:@"请输入易发账号"] : [phoneCell setPlaceholder:@"请输入手机号"];
+            self.isAccount ? (phoneCell.phoneTextfield.keyboardType = UIKeyboardTypeDefault) : (phoneCell.phoneTextfield.keyboardType = UIKeyboardTypeNumberPad);
             @weakify(self);
             phoneCell.TextValue = ^(NSString * _Nonnull text) {
                 @strongify(self);

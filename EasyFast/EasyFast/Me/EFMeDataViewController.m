@@ -59,7 +59,7 @@
     [self.EFTableView registerClass:[EFSetUpTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFSetUpTableViewCell class])];
     
     self.EFData = [@[@{@"title":@"头像",@"subTitle":@"",@"header":kUserManager.userModel.headImgUrl ? kUserManager.userModel.headImgUrl : @""},
-                     [@{@"title":@"昵称",@"subTitle":kUserManager.userModel.nickname.base64DecodeString,@"header":@""} mutableCopy],
+                     [@{@"title":@"昵称",@"subTitle":kUserManager.userModel.nickname,@"header":@""} mutableCopy],
                      [@{@"title":@"性别",@"subTitle":kUserManager.userModel.sex == 1 ? @"男" : (kUserManager.userModel.sex == 2 ? @"女" : @"不限"),@"header":@""} mutableCopy],
                      [@{@"title":@"地区",@"subTitle":kUserManager.userModel.city == nil ? @"请选择" :[NSString stringWithFormat:@"%@ %@",kUserManager.userModel.province,kUserManager.userModel.city],@"header":@""} mutableCopy],
                      @{@"title":@"绑定手机",@"subTitle":kUserManager.userModel.phone,@"header":@""},
@@ -121,7 +121,7 @@
                         @strongify(self)
                         for (EFUserModel *model in [EFUserModel bg_findAll:nil]) {
                             if ([model.username isEqualToString:kUserManager.userModel.username]) {
-                                model.nickname = userNameTextField.text.base64EncodeString;
+                                model.nickname = userNameTextField.text;
                                 [model bg_saveOrUpdate];
                             }
                         }

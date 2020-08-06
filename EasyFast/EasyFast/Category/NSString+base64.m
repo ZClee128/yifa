@@ -7,6 +7,7 @@
 //
 
 #import "NSString+base64.h"
+#import <CommonCrypto/CommonCrypto.h>
 
 @implementation NSString (base64)
 
@@ -22,6 +23,17 @@
     NSData *data=[[NSData alloc]initWithBase64EncodedString:self options:0];
     //2、把二进制数据转换成字符串
     return [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+}
+
+- (NSString *)md5
+{
+    const char *cStr = [self UTF8String];
+    unsigned char digest[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(cStr,(CC_LONG)strlen(cStr), digest);
+    NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
+    for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++)
+    [output appendFormat:@"%02x", digest[i]];
+    return  output;
 }
 
 @end

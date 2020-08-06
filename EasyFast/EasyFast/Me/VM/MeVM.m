@@ -18,4 +18,20 @@
     }];
 }
 
++ (RACSignal *)updatePassWord:(NSString *)oldPassword password:(NSString *)password confirmPassword:(NSString *)confirmPassword {
+    return [self requsetNetwork:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] updatePassWord:oldPassword password:password confirmPassword:confirmPassword];
+    } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
+        if (result.isSuccess) {
+            for (EFUserModel *model in [EFUserModel bg_findAll:nil]) {
+                if ([model.username isEqualToString:kUserManager.userModel.username]) {
+                    model.isPassword = 0;
+                    [model bg_saveOrUpdate];
+                }
+            }
+        }
+        return @(result.isSuccess);
+    }];
+}
+
 @end
