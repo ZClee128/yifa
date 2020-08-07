@@ -29,4 +29,7 @@
 #define kcancelFollowShop @"api-client/follow/cancelFollowShop" //取消关注店铺接口
 #define ksetCollectGoods @"api-client/follow/setCollectGoods" //收藏商品接口
 #define kcancelCollectGoods @"api-client/follow/cancelCollectGoods" //取消收藏商品接口
+
+// 订单
+#define kmyOrderList @"api-client/user/order/myOrderList" //订单接口
 #endif /* Api_h */

@@ -13,6 +13,12 @@
 		0C0CC3BD24DD43AB005E50ED /* EFOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3BC24DD43AB005E50ED /* EFOrderModel.m */; };
 		0C0CC3BE24DD43AB005E50ED /* EFOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3BC24DD43AB005E50ED /* EFOrderModel.m */; };
 		0C0CC3BF24DD43AB005E50ED /* EFOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3BC24DD43AB005E50ED /* EFOrderModel.m */; };
+		0C0CC3C324DD4C5B005E50ED /* EFOrderVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3C224DD4C5B005E50ED /* EFOrderVM.m */; };
+		0C0CC3C424DD4C5B005E50ED /* EFOrderVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3C224DD4C5B005E50ED /* EFOrderVM.m */; };
+		0C0CC3C524DD4C5B005E50ED /* EFOrderVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3C224DD4C5B005E50ED /* EFOrderVM.m */; };
+		0C0CC3C924DD4CA3005E50ED /* FMARCNetwork+Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3C824DD4CA3005E50ED /* FMARCNetwork+Order.m */; };
+		0C0CC3CA24DD4CA3005E50ED /* FMARCNetwork+Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3C824DD4CA3005E50ED /* FMARCNetwork+Order.m */; };
+		0C0CC3CB24DD4CA3005E50ED /* FMARCNetwork+Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3C824DD4CA3005E50ED /* FMARCNetwork+Order.m */; };
 		0C4BAF9324D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
 		0C4BAF9424D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
 		0C4BAF9524D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
@@ -598,6 +604,10 @@
 		0C0CC27424DC3202005E50ED /* CountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDown.m; sourceTree = "<group>"; };
 		0C0CC3BB24DD43AB005E50ED /* EFOrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderModel.h; sourceTree = "<group>"; };
 		0C0CC3BC24DD43AB005E50ED /* EFOrderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFOrderModel.m; sourceTree = "<group>"; };
+		0C0CC3C124DD4C5B005E50ED /* EFOrderVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderVM.h; sourceTree = "<group>"; };
+		0C0CC3C224DD4C5B005E50ED /* EFOrderVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFOrderVM.m; sourceTree = "<group>"; };
+		0C0CC3C724DD4CA3005E50ED /* FMARCNetwork+Order.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FMARCNetwork+Order.h"; sourceTree = "<group>"; };
+		0C0CC3C824DD4CA3005E50ED /* FMARCNetwork+Order.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FMARCNetwork+Order.m"; sourceTree = "<group>"; };
 		0C4BAF9124D0085F0037CDCF /* EFMeRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFMeRefreshHeader.h; sourceTree = "<group>"; };
 		0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFMeRefreshHeader.m; sourceTree = "<group>"; };
 		0C4BAF9724D021440037CDCF /* EFBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFBridge.h; sourceTree = "<group>"; };
@@ -1046,6 +1056,24 @@
 				0C0CC3BC24DD43AB005E50ED /* EFOrderModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0C0CC3C024DD4C43005E50ED /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				0C0CC3C124DD4C5B005E50ED /* EFOrderVM.h */,
+				0C0CC3C224DD4C5B005E50ED /* EFOrderVM.m */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		0C0CC3C624DD4C8E005E50ED /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				0C0CC3C724DD4CA3005E50ED /* FMARCNetwork+Order.h */,
+				0C0CC3C824DD4CA3005E50ED /* FMARCNetwork+Order.m */,
+			);
+			path = Order;
 			sourceTree = "<group>";
 		};
 		0C4BAF9624D0212E0037CDCF /* Bridge */ = {
@@ -1653,6 +1681,7 @@
 		84A820C224B6CCC600EAC652 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				0C0CC3C624DD4C8E005E50ED /* Order */,
 				0C8A29ED24DBA22000E40ED8 /* Follow */,
 				0C8A29C424DA9A8400E40ED8 /* Me */,
 				0C8A27AE24D830CC00E40ED8 /* Login */,
@@ -1928,6 +1957,7 @@
 		84B2438024C84D1C00E9967C /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				0C0CC3C024DD4C43005E50ED /* VM */,
 				0C0CC3BA24DD438B005E50ED /* Model */,
 				841B94DB24C93C540054D8D5 /* View */,
 				841B94D124C935B20054D8D5 /* EFOrderViewController.h */,
@@ -2293,6 +2323,7 @@
 				847610CE24C6D898002B34E4 /* PowerTableViewCell.m in Sources */,
 				8476106124C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m in Sources */,
 				0C6CB5B624CEDCAD00471A8D /* EFAddAddressViewController.m in Sources */,
+				0C0CC3C924DD4CA3005E50ED /* FMARCNetwork+Order.m in Sources */,
 				841B94E324C93F980054D8D5 /* EFOrderGoodsTableViewCell.m in Sources */,
 				847610AF24C6A011002B34E4 /* LoginVM.m in Sources */,
 				84A8218E24BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */,
@@ -2309,6 +2340,7 @@
 				0C8A29BD24DA52A000E40ED8 /* NSMutableURLRequest+FormData.m in Sources */,
 				84A8215924BDB45E00EAC652 /* UIImage+Darw.m in Sources */,
 				847610C924C6D7FA002B34E4 /* EFPowerViewController.m in Sources */,
+				0C0CC3C324DD4C5B005E50ED /* EFOrderVM.m in Sources */,
 				0C8A29F024DBA24300E40ED8 /* FMARCNetwork+Follow.m in Sources */,
 				84A821A024BF146200EAC652 /* EFFollowSubViewController.m in Sources */,
 				84760F8624C1596E002B34E4 /* EFBaseModel.m in Sources */,
@@ -2490,6 +2522,7 @@
 				847610CF24C6D898002B34E4 /* PowerTableViewCell.m in Sources */,
 				8476106224C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m in Sources */,
 				0C6CB5B724CEDCAD00471A8D /* EFAddAddressViewController.m in Sources */,
+				0C0CC3CA24DD4CA3005E50ED /* FMARCNetwork+Order.m in Sources */,
 				841B94E424C93F980054D8D5 /* EFOrderGoodsTableViewCell.m in Sources */,
 				847610B024C6A012002B34E4 /* LoginVM.m in Sources */,
 				84A8218F24BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */,
@@ -2506,6 +2539,7 @@
 				0C8A29BE24DA52A000E40ED8 /* NSMutableURLRequest+FormData.m in Sources */,
 				84A8215A24BDB45E00EAC652 /* UIImage+Darw.m in Sources */,
 				847610CA24C6D7FA002B34E4 /* EFPowerViewController.m in Sources */,
+				0C0CC3C424DD4C5B005E50ED /* EFOrderVM.m in Sources */,
 				0C8A29F124DBA24400E40ED8 /* FMARCNetwork+Follow.m in Sources */,
 				84A821A124BF146200EAC652 /* EFFollowSubViewController.m in Sources */,
 				84760F8724C1596E002B34E4 /* EFBaseModel.m in Sources */,
@@ -2687,6 +2721,7 @@
 				847610D024C6D898002B34E4 /* PowerTableViewCell.m in Sources */,
 				8476106324C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m in Sources */,
 				0C6CB5B824CEDCAD00471A8D /* EFAddAddressViewController.m in Sources */,
+				0C0CC3CB24DD4CA3005E50ED /* FMARCNetwork+Order.m in Sources */,
 				841B94E524C93F980054D8D5 /* EFOrderGoodsTableViewCell.m in Sources */,
 				847610B124C6A012002B34E4 /* LoginVM.m in Sources */,
 				84A8219024BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */,
@@ -2703,6 +2738,7 @@
 				0C8A29BF24DA52A000E40ED8 /* NSMutableURLRequest+FormData.m in Sources */,
 				84A8215B24BDB45E00EAC652 /* UIImage+Darw.m in Sources */,
 				847610CB24C6D7FA002B34E4 /* EFPowerViewController.m in Sources */,
+				0C0CC3C524DD4C5B005E50ED /* EFOrderVM.m in Sources */,
 				0C8A29F224DBA24400E40ED8 /* FMARCNetwork+Follow.m in Sources */,
 				84A821A224BF146200EAC652 /* EFFollowSubViewController.m in Sources */,
 				84760F8824C1596E002B34E4 /* EFBaseModel.m in Sources */,
