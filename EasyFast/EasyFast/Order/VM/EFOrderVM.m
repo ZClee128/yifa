@@ -10,4 +10,22 @@
 
 @implementation EFOrderVM
 
+- (RACSignal *)refreshForDown {
+    return [self refreshForDown:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] myOrderListpPageNum:self.firstPage type:self.type];
+    } toMap:^NSArray * _Nonnull(FMHttpResonse * _Nonnull result) {
+        NSArray *list = [NSArray modelArrayWithClass:[EFOrderModel class] json:result.reqResult];
+        return list;
+    }];
+}
+
+- (RACSignal *)refreshForUp {
+    return [self refreshForUp:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] myOrderListpPageNum:@([self.paging intValue]+1) type:self.type];
+    } toMap:^NSArray * _Nonnull(FMHttpResonse * _Nonnull result) {
+        NSArray *list = [NSArray modelArrayWithClass:[EFOrderModel class] json:result.reqResult];
+        return list;
+    }];
+}
+
 @end

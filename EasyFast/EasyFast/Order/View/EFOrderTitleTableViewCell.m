@@ -7,6 +7,7 @@
 //
 
 #import "EFOrderTitleTableViewCell.h"
+#import "EFOrderModel.h"
 
 @interface EFOrderTitleTableViewCell ()
 
@@ -71,11 +72,28 @@
     }];
 }
 
-- (void)setModel:(id)model
+- (void)setModel:(EFOrderModel *)model
 {
-    self.shopNameLab.text = @"张飞的店";
-    self.orderNoLab.text = @"订单号：YFMY202007091459003";
-    self.payStatusLab.text = @"已发货";
+    self.shopNameLab.text = model.shopTitle;
+    self.orderNoLab.text = [NSString stringWithFormat:@"订单号：%@",model.orderNum];
+    NSString *status = @"";
+    switch (model.orderState) {
+        case 100:
+            status = @"";
+            break;
+        case 200:
+            status = @"待发货";
+            break;
+        case 300:
+            status = @"已发货";
+            break;
+        case 400:
+            status = @"已收货";
+            break;
+        default:
+            break;
+    }
+    self.payStatusLab.text = status;
 }
 
 - (void)awakeFromNib {

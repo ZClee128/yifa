@@ -7,6 +7,7 @@
 //
 
 #import "EFOrderPriceTableViewCell.h"
+#import "EFOrderModel.h"
 
 @interface EFOrderPriceTableViewCell ()
 
@@ -95,9 +96,9 @@
     }];
 }
 
-- (void)setModel:(id)model {
-    self.numLab.text = @"共600件";
-    self.priceLab.text = @"¥479,400";
+- (void)setModel:(EFOrderModel *)model {
+    self.numLab.text = [NSString stringWithFormat:@"共%ld件",model.quantity];
+    self.priceLab.text = [NSString stringWithFormat:@"¥479,400"];
     self.yunfeiLab.text = @"（含运费 ¥50）";
     self.payStatusLab.text = @"已付款";
 }

@@ -7,12 +7,14 @@
 //
 
 #import "EFBaseRefreshVM.h"
+#import "EFOrderModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EFOrderVM : EFBaseRefreshVM
 
-+ (RACSignal *)myOrderListpPageNum:(NSNumber *)pageNum type:(NSInteger)type;
+@property (nonatomic,assign)NSInteger type;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -10,6 +10,20 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef enum : NSUInteger {
+    /// 全部
+    OrderTypeALL,
+    /// 待付款
+    OrderTypePay,
+    /// 待发货
+    OrderTypeSend,
+    /// 待收货
+    OrderTypeGet,
+    /// 待评价
+    OrderTypeSay
+} OrderType;
+
+
 @interface EFOrderDetailViewController : EFBaseTableViewController<JXCategoryListContentViewDelegate>
 
 @end
