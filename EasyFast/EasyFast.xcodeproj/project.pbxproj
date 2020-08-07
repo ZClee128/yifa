@@ -10,6 +10,9 @@
 		0C0CC27524DC3202005E50ED /* CountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC27424DC3202005E50ED /* CountDown.m */; };
 		0C0CC27624DC3202005E50ED /* CountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC27424DC3202005E50ED /* CountDown.m */; };
 		0C0CC27724DC3202005E50ED /* CountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC27424DC3202005E50ED /* CountDown.m */; };
+		0C0CC3BD24DD43AB005E50ED /* EFOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3BC24DD43AB005E50ED /* EFOrderModel.m */; };
+		0C0CC3BE24DD43AB005E50ED /* EFOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3BC24DD43AB005E50ED /* EFOrderModel.m */; };
+		0C0CC3BF24DD43AB005E50ED /* EFOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3BC24DD43AB005E50ED /* EFOrderModel.m */; };
 		0C4BAF9324D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
 		0C4BAF9424D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
 		0C4BAF9524D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
@@ -593,6 +596,8 @@
 		00D88C6799F2691F0B67B541 /* libPods-EasyFast_Dev.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EasyFast_Dev.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C0CC27324DC3202005E50ED /* CountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDown.h; sourceTree = "<group>"; };
 		0C0CC27424DC3202005E50ED /* CountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDown.m; sourceTree = "<group>"; };
+		0C0CC3BB24DD43AB005E50ED /* EFOrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderModel.h; sourceTree = "<group>"; };
+		0C0CC3BC24DD43AB005E50ED /* EFOrderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFOrderModel.m; sourceTree = "<group>"; };
 		0C4BAF9124D0085F0037CDCF /* EFMeRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFMeRefreshHeader.h; sourceTree = "<group>"; };
 		0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFMeRefreshHeader.m; sourceTree = "<group>"; };
 		0C4BAF9724D021440037CDCF /* EFBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFBridge.h; sourceTree = "<group>"; };
@@ -1032,6 +1037,15 @@
 				0C0CC27424DC3202005E50ED /* CountDown.m */,
 			);
 			path = CountDown;
+			sourceTree = "<group>";
+		};
+		0C0CC3BA24DD438B005E50ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0C0CC3BB24DD43AB005E50ED /* EFOrderModel.h */,
+				0C0CC3BC24DD43AB005E50ED /* EFOrderModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		0C4BAF9624D0212E0037CDCF /* Bridge */ = {
@@ -1914,6 +1928,7 @@
 		84B2438024C84D1C00E9967C /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				0C0CC3BA24DD438B005E50ED /* Model */,
 				841B94DB24C93C540054D8D5 /* View */,
 				841B94D124C935B20054D8D5 /* EFOrderViewController.h */,
 				841B94D224C935B20054D8D5 /* EFOrderViewController.m */,
@@ -2360,6 +2375,7 @@
 				84760F7524C1432F002B34E4 /* MeTabTableViewCell.m in Sources */,
 				0CCEC45324CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */,
 				84A8218424BED7E400EAC652 /* EFFastTableViewCell.m in Sources */,
+				0C0CC3BD24DD43AB005E50ED /* EFOrderModel.m in Sources */,
 				8476102D24C52BDC002B34E4 /* H5Manager.m in Sources */,
 				84760F8024C1551B002B34E4 /* EFWKWebConfig.m in Sources */,
 				0CCEC45824CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */,
@@ -2556,6 +2572,7 @@
 				84760F7624C1432F002B34E4 /* MeTabTableViewCell.m in Sources */,
 				0CCEC45424CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */,
 				84A8218524BED7E400EAC652 /* EFFastTableViewCell.m in Sources */,
+				0C0CC3BE24DD43AB005E50ED /* EFOrderModel.m in Sources */,
 				8476102E24C52BDC002B34E4 /* H5Manager.m in Sources */,
 				84760F8124C1551B002B34E4 /* EFWKWebConfig.m in Sources */,
 				0CCEC45924CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */,
@@ -2752,6 +2769,7 @@
 				84760F7724C1432F002B34E4 /* MeTabTableViewCell.m in Sources */,
 				0CCEC45524CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */,
 				84A8218624BED7E400EAC652 /* EFFastTableViewCell.m in Sources */,
+				0C0CC3BF24DD43AB005E50ED /* EFOrderModel.m in Sources */,
 				8476102F24C52BDC002B34E4 /* H5Manager.m in Sources */,
 				84760F8224C1551B002B34E4 /* EFWKWebConfig.m in Sources */,
 				0CCEC45A24CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */,
