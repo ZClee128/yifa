@@ -8,6 +8,12 @@
 
 #import "EFFollowModel.h"
 
+@implementation FollowTeamModel
+
+
+
+@end
+
 @implementation EFFollowModel
 
 // 设置集合属性中的类型

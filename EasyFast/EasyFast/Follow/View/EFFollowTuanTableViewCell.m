@@ -129,9 +129,9 @@
 }
 
 
-- (void)setData:(EFTeamModel *)data {
+- (void)setData:(FollowTeamModel *)data {
     self.nameLab.text = data.teamLeaderName;
-    [self.timer countDownWithStratDate:[NSDate new] finishDate:data.expireDate completeBlock:^(NSInteger day, NSInteger hour, NSInteger minute, NSInteger second) {
+    [self.timer countDownWithStratDate:data.createDate finishDate:data.expireDate completeBlock:^(NSInteger day, NSInteger hour, NSInteger minute, NSInteger second) {
         self.timeLab.text = [NSString stringWithFormat:@"剩余 %ld:%ld:%ld",(long)hour,(long)minute,(long)second];
     }];
     self.progressView.progress = data.teamProcess / 100;

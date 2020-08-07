@@ -75,7 +75,7 @@
     [[TABAnimated sharedAnimated] initWithOnlySkeleton];
     [TABAnimated sharedAnimated].openLog = YES;
     [TABAnimated sharedAnimated].openAnimationTag = NO;
-    [TABAnimated sharedAnimated].animationType = TABAnimationTypeShimmer;
+    [TABAnimated sharedAnimated].animationType = TABAnimationTypeBinAnimation;
     [TABAnimated sharedAnimated].animatedColor = colorfafafa;
     
     dispatch_async(dispatch_get_main_queue(), ^{
