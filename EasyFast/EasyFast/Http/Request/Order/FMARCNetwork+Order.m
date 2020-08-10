@@ -21,4 +21,8 @@
 - (RACSignal *)myOrderDetailExpressNum:(NSString *)expressNum orderNum:(NSString *)orderNum {
     return [self fg_postRequest:kmyOrderDetail paramters:@{@"expressNum":expressNum,@"orderNum":orderNum}];
 }
+
+- (RACSignal *)confirmReceiptExpressNum:(NSString *)expressNum orderNum:(NSString *)orderNum {
+    return [self fg_postRequest:kconfirmReceipt paramters:@{@"expressNum":expressNum,@"orderNum":orderNum}];
+}
 @end

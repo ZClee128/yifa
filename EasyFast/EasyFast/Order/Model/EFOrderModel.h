@@ -78,7 +78,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 邮费优惠金额
 @property (nonatomic,assign)CGFloat postageDiscountAmount;
 /// 商品总价
-@property (nonatomic,assign)CGFloat amount;
+@property (nonatomic,assign)CGFloat goodsTotalAmount;
 /// 商品价格
 @property (nonatomic,assign)CGFloat goodsAmount;
 @end

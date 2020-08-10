@@ -104,7 +104,7 @@
     @weakify(self);
     [[EFOrderVM myOrderDetailExpressNum:self.model.expressNum orderNum:self.model.orderNum] subscribeNext:^(EFOrderModel *x) {
         @strongify(self);
-        self.priceArr = [@[@[@"商品价格",[NSString stringWithFormat:@"¥ %.1f",x.goodsAmount]],@[@"运费",[NSString stringWithFormat:@"¥ %.f",x.postageAmount]],@[@"商品总价",[NSString stringWithFormat:@"¥ %.1f",x.amount]],@[@"实付款",[NSString stringWithFormat:@"¥ %.1f",x.totalAmount]]] mutableCopy];
+        self.priceArr = [@[@[@"商品价格",[NSString stringWithFormat:@"¥ %.1f",x.goodsAmount]],@[@"运费",[NSString stringWithFormat:@"¥ %.f",x.postageAmount]],@[@"商品总价",[NSString stringWithFormat:@"¥ %.1f",x.goodsTotalAmount]],@[@"实付款",[NSString stringWithFormat:@"¥ %.1f",x.totalAmount]]] mutableCopy];
         self.orderArr = [@[@[@"订单编号：",x.orderNum ? x.orderNum : @""],@[@"交易方式：",x.payMethod ? (x.payMethod == 1 ? @"微信支付" : @"支付宝支付") : @""],@[@"创建时间：",x.createTime ? x.createTime : @""],@[@"付款时间：",x.payTime ? x.payTime : @""],@[@"发货时间：",x.deliverTime ? x.deliverTime : @""]] mutableCopy];
         self.goodsArr = [x.goodsList mutableCopy];
         self.model = x;

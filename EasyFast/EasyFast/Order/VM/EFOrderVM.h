@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (RACSignal *)searchRefreshForUp;
 
 + (RACSignal *)myOrderDetailExpressNum:(NSString *)expressNum orderNum:(NSString *)orderNum;
+
++ (RACSignal *)confirmReceiptExpressNum:(NSString *)expressNum orderNum:(NSString *)orderNum;
 @end
 
 NS_ASSUME_NONNULL_END

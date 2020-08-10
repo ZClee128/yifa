@@ -34,6 +34,7 @@
 #define kmyOrderList @"api-client/user/order/myOrderList" //订单接口
 #define kmyOrderSearchList @"api-client/user/order/myOrderSearchList" //订单搜索列表接口
 #define kmyOrderDetail @"api-client/user/order/myOrderDetail" //订单明细接口
+#define kconfirmReceipt @"api-client/user/order/confirmReceipt" //确认收货接口
 
 
 // 我的

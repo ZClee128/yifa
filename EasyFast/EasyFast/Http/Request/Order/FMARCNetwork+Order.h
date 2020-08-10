@@ -20,6 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 订单详情
 - (RACSignal *)myOrderDetailExpressNum:(NSString *)expressNum orderNum:(NSString *)orderNum;
+
+/// 确认收货
+- (RACSignal *)confirmReceiptExpressNum:(NSString *)expressNum orderNum:(NSString *)orderNum;
 @end
 
 NS_ASSUME_NONNULL_END
