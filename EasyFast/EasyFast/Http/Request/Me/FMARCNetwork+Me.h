@@ -17,6 +17,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 修改密码
 - (RACSignal *)updatePassWord:(NSString *)oldPassword password:(NSString *)password confirmPassword:(NSString *)confirmPassword;
+
+/// 商品当月足迹接口
+- (RACSignal *)goodsMonthFootprint;
+
+/// 商品足迹列表接口
+- (RACSignal *)goodsFootprintList:(NSString *)queryTime pageNum:(NSNumber *)pageNum;
+
+- (RACSignal *)uploadImage:(NSInteger)type image:(UIImage *)image;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -43,8 +43,11 @@
 
 }
 
-- (void)setModel:(id)model {
+- (void)setLeftModel:(EFGoodsList *)model {
     [self.leftView setModel:model];
+}
+
+- (void)setRightModel:(EFGoodsList *)model {
     [self.rightView setModel:model];
 }
 

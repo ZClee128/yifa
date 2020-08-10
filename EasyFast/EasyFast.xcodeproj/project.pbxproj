@@ -19,6 +19,9 @@
 		0C0CC3C924DD4CA3005E50ED /* FMARCNetwork+Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3C824DD4CA3005E50ED /* FMARCNetwork+Order.m */; };
 		0C0CC3CA24DD4CA3005E50ED /* FMARCNetwork+Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3C824DD4CA3005E50ED /* FMARCNetwork+Order.m */; };
 		0C0CC3CB24DD4CA3005E50ED /* FMARCNetwork+Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3C824DD4CA3005E50ED /* FMARCNetwork+Order.m */; };
+		0C0CC3CF24E0DD83005E50ED /* EFFootPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3CE24E0DD83005E50ED /* EFFootPrint.m */; };
+		0C0CC3D024E0DD83005E50ED /* EFFootPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3CE24E0DD83005E50ED /* EFFootPrint.m */; };
+		0C0CC3D124E0DD83005E50ED /* EFFootPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3CE24E0DD83005E50ED /* EFFootPrint.m */; };
 		0C4BAF9324D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
 		0C4BAF9424D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
 		0C4BAF9524D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
@@ -608,6 +611,8 @@
 		0C0CC3C224DD4C5B005E50ED /* EFOrderVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFOrderVM.m; sourceTree = "<group>"; };
 		0C0CC3C724DD4CA3005E50ED /* FMARCNetwork+Order.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FMARCNetwork+Order.h"; sourceTree = "<group>"; };
 		0C0CC3C824DD4CA3005E50ED /* FMARCNetwork+Order.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FMARCNetwork+Order.m"; sourceTree = "<group>"; };
+		0C0CC3CD24E0DD83005E50ED /* EFFootPrint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFFootPrint.h; sourceTree = "<group>"; };
+		0C0CC3CE24E0DD83005E50ED /* EFFootPrint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFFootPrint.m; sourceTree = "<group>"; };
 		0C4BAF9124D0085F0037CDCF /* EFMeRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFMeRefreshHeader.h; sourceTree = "<group>"; };
 		0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFMeRefreshHeader.m; sourceTree = "<group>"; };
 		0C4BAF9724D021440037CDCF /* EFBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFBridge.h; sourceTree = "<group>"; };
@@ -1074,6 +1079,15 @@
 				0C0CC3C824DD4CA3005E50ED /* FMARCNetwork+Order.m */,
 			);
 			path = Order;
+			sourceTree = "<group>";
+		};
+		0C0CC3CC24E0DD62005E50ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0C0CC3CD24E0DD83005E50ED /* EFFootPrint.h */,
+				0C0CC3CE24E0DD83005E50ED /* EFFootPrint.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		0C4BAF9624D0212E0037CDCF /* Bridge */ = {
@@ -1793,6 +1807,7 @@
 		84A820EF24B6F65600EAC652 /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				0C0CC3CC24E0DD62005E50ED /* Model */,
 				8476108024C5A082002B34E4 /* VM */,
 				84187CA124C05CEA00ED3F96 /* View */,
 				84A820F024B6F66400EAC652 /* EFMeViewController.h */,
@@ -2393,6 +2408,7 @@
 				0C8A27DA24D9348D00E40ED8 /* UILabel+Extension.m in Sources */,
 				0CE2860824D3EC4F00AAC334 /* LTSCalendarManager.m in Sources */,
 				84B2437824C8406C00E9967C /* RightThreeCollectionViewCell.m in Sources */,
+				0C0CC3CF24E0DD83005E50ED /* EFFootPrint.m in Sources */,
 				84A820CC24B6CCC600EAC652 /* FMARCNetwork.m in Sources */,
 				8476103E24C54854002B34E4 /* TuanListSelectView.m in Sources */,
 				84A820DF24B6CE6B00EAC652 /* UIViewController+Runtime.m in Sources */,
@@ -2592,6 +2608,7 @@
 				0C8A27DB24D9348D00E40ED8 /* UILabel+Extension.m in Sources */,
 				0CE2860924D3EC4F00AAC334 /* LTSCalendarManager.m in Sources */,
 				84B2437924C8406C00E9967C /* RightThreeCollectionViewCell.m in Sources */,
+				0C0CC3D024E0DD83005E50ED /* EFFootPrint.m in Sources */,
 				84A8210824BC4F5400EAC652 /* FMARCNetwork.m in Sources */,
 				8476103F24C54854002B34E4 /* TuanListSelectView.m in Sources */,
 				84A8210924BC4F5400EAC652 /* UIViewController+Runtime.m in Sources */,
@@ -2791,6 +2808,7 @@
 				0C8A27DC24D9348D00E40ED8 /* UILabel+Extension.m in Sources */,
 				0CE2860A24D3EC4F00AAC334 /* LTSCalendarManager.m in Sources */,
 				84B2437A24C8406C00E9967C /* RightThreeCollectionViewCell.m in Sources */,
+				0C0CC3D124E0DD83005E50ED /* EFFootPrint.m in Sources */,
 				84A8212C24BC513500EAC652 /* FMARCNetwork.m in Sources */,
 				8476104024C54854002B34E4 /* TuanListSelectView.m in Sources */,
 				84A8212D24BC513500EAC652 /* UIViewController+Runtime.m in Sources */,

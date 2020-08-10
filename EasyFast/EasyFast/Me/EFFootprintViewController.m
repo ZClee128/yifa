@@ -11,6 +11,7 @@
 #import "TuanOtherGoodsTableViewCell.h"
 #import "EFCalendarView.h"
 #import "CalendarModel.h"
+#import "MeVM.h"
 
 @interface EFFootprintViewController ()<LTSCalendarEventSource>{
     NSMutableDictionary *eventsByDate;
@@ -24,18 +25,28 @@
 @implementation EFFootprintViewController
 
 - (void)viewDidLoad {
+    self.viewModel = [[MeVM alloc] init];
     [super viewDidLoad];
     self.gk_navTitle = @"浏览足迹";
     self.gk_navLineHidden = NO;
+    NSDate *today = [NSDate new];
+    NSInteger timeSp = [today timeIntervalSince1970];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeSp];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *dateString = [formatter stringFromDate: date];
+    ((MeVM *)self.viewModel).dateStr = dateString;
     
-    
-    
-    
-    EFCalendarView *calendarView = [[EFCalendarView alloc] initWithFrame:CGRectMake(0, NAVIGATION_BAR_HEIGHT, kPHONE_WIDTH, WidthOfScale(91)) withData:[self getDay]];
-    [self.view addSubview:calendarView];
-    calendarView.seletDay = ^(CalendarModel * _Nonnull model) {
-        
-    };
+    @weakify(self);
+    [[self getDay] subscribeNext:^(NSArray *x) {
+        EFCalendarView *calendarView = [[EFCalendarView alloc] initWithFrame:CGRectMake(0, NAVIGATION_BAR_HEIGHT, kPHONE_WIDTH, WidthOfScale(91)) withData:[x mutableCopy]];
+        @strongify(self);
+        [self.view addSubview:calendarView];
+        calendarView.seletDay = ^(CalendarModel * _Nonnull model) {
+            ((MeVM *)self.viewModel).dateStr = model.dayStr;
+            [self loadList];
+        };
+    }];
 //    self.manager = [LTSCalendarManager new];
 //    self.manager.eventSource = self;
 //    self.manager.weekDayView = [[LTSCalendarWeekDayView alloc]initWithFrame:CGRectMake(0, NAVIGATION_BAR_HEIGHT, kPHONE_WIDTH, 30)];
@@ -54,29 +65,62 @@
 //    self.automaticallyAdjustsScrollViewInsets = false;
 //    [self.manager showSingleWeek];
     
-    self.EFTableView.frame = CGRectMake(0, NAVIGATION_BAR_HEIGHT + 91, kPHONE_WIDTH, kPHONE_HEIGHT - NAVIGATION_BAR_HEIGHT + 91);
-    self.EFData = [@[@1,@2,@3,@5] mutableCopy];
+    self.EFTableView.frame = CGRectMake(0, NAVIGATION_BAR_HEIGHT + 91, kPHONE_WIDTH, kPHONE_HEIGHT - NAVIGATION_BAR_HEIGHT - 91 - TAB_SAFE_HEIGHT);
+//    self.EFData = [@[@1,@2,@3,@5] mutableCopy];
     [self.EFTableView registerClass:[TuanOtherGoodsTableViewCell class] forCellReuseIdentifier:NSStringFromClass([TuanOtherGoodsTableViewCell class])];
+    [self addRefshUp];
+    [self addRefshDown];
+    [self loadList];
+}
+
+- (void)loadList {
+    @weakify(self);
+    [[self.viewModel refreshForDown] subscribeNext:^(RACTuple *x) {
+        @strongify(self);
+        [self.EFTableView.mj_header endRefreshing];
+        self.EFData = x.first;
+        [self.EFTableView reloadData];
+    }];
+}
+
+- (void)loadNewData {
+    [self loadList];
+}
+
+- (void)loadMoreData {
+    @weakify(self);
+    [[self.viewModel refreshForUp] subscribeNext:^(RACTuple *x) {
+        @strongify(self);
+        [self.EFTableView.mj_footer endRefreshing];
+        self.EFData = x.first;
+        [self.EFTableView reloadData];
+    }];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return self.EFData.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.EFData.count % 2 == 0 ? self.EFData.count / 2 : (self.EFData.count) - (self.EFData.count / 2) ;
+    EFFootPrint *model = self.EFData[section];
+    return model.goodsList.count % 2 == 0 ? model.goodsList.count / 2 : (model.goodsList.count) - (model.goodsList.count / 2) ;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     TuanOtherGoodsTableViewCell *goodsCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TuanOtherGoodsTableViewCell class])];
-    [goodsCell setModel:self.EFData];
-    if (self.EFData.count % 2 == 0) {
+    EFFootPrint *model = self.EFData[indexPath.section];
+    if (model.goodsList.count % 2 == 0) {
+        [goodsCell setLeftModel:model.goodsList[indexPath.row*2]];
+        [goodsCell setRightModel:model.goodsList[indexPath.row*2+1]];
         [goodsCell showRightView];
     }else {
-        if (indexPath.row == (self.EFData.count) - (self.EFData.count / 2) - 1) {
+        if (indexPath.row == (model.goodsList.count) - (model.goodsList.count / 2) - 1) {
+            [goodsCell setLeftModel:model.goodsList[indexPath.row*2]];
             [goodsCell hiddenRightView];
         }else {
+            [goodsCell setLeftModel:model.goodsList[indexPath.row*2]];
+            [goodsCell setRightModel:model.goodsList[indexPath.row*2+1]];
             [goodsCell showRightView];
         }
     }
@@ -89,6 +133,7 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    EFFootPrint *model = self.EFData[section];
     QMUILabel *titleLab = [self.EFTableView viewWithTag:section+100];
     if (titleLab == nil) {
         titleLab = [[QMUILabel alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, WidthOfScale(42.5))];
@@ -97,7 +142,12 @@
         titleLab.textColor = tabbarBlackColor;
         titleLab.tag = section+100;
     }
-    titleLab.text = @"7月29日";
+    NSDateFormatter *dstFmt = [[NSDateFormatter alloc]init];
+    dstFmt.dateFormat = @"yyyy-MM-dd";
+    NSDate * srcDate = [dstFmt dateFromString:model.dateTime];
+    NSDateFormatter *fmt = [[NSDateFormatter alloc]init];
+    fmt.dateFormat = @"MM月dd日";
+    titleLab.text = [fmt stringFromDate:srcDate];
     return titleLab;
 }
 
@@ -105,49 +155,57 @@
     return WidthOfScale(42.5);
 }
 
-- (NSMutableArray *)getDay {
-    NSMutableArray *days = [[NSMutableArray alloc] init];
-    NSDate *today = [NSDate new];
-    NSInteger timeSp = [today timeIntervalSince1970];
-    for (int i = 0 ; i < 32; i++) {
-        NSInteger daySp = timeSp - (24 * 3600)*i;
-        NSDate *date = [NSDate dateWithTimeIntervalSince1970:daySp];
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"yyyy-MM-dd"];
-        NSString *dateString = [formatter stringFromDate: date];
-        NSDate *dayDate = [formatter dateFromString:dateString];
-        CalendarModel *model = [[CalendarModel alloc] init];
-        model.day = [NSString stringWithFormat:@"%ld",[dayDate day]];
-        switch ([dayDate weekday]) {
-            case 1:
-                model.week = @"日";
-                break;
-            case 2:
-                model.week = @"一";
-                break;
-            case 3:
-                model.week = @"二";
-                break;
-            case 4:
-                model.week = @"三";
-                break;
-            case 5:
-                model.week = @"四";
-                break;
-            case 6:
-                model.week = @"五";
-                break;
-            default:
-                model.week = @"六";
-                break;
-        }
-        model.isToday = dayDate.isToday;
-        model.isSelect = NO;
-        model.hasFoot = YES;
-        model.dayStr = dateString;
-        [days addObject:model];
-    }
-    return [[[days reverseObjectEnumerator] allObjects] mutableCopy];
+- (RACSignal *)getDay {
+   return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        NSMutableArray *days = [[NSMutableArray alloc] init];
+        [[MeVM goodsMonthFootprint] subscribeNext:^(NSArray *x) {
+            NSDate *today = [NSDate new];
+            NSInteger timeSp = [today timeIntervalSince1970];
+            for (int i = 0 ; i < 32; i++) {
+                NSInteger daySp = timeSp - (24 * 3600)*i;
+                NSDate *date = [NSDate dateWithTimeIntervalSince1970:daySp];
+                NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+                [formatter setDateFormat:@"yyyy-MM-dd"];
+                NSString *dateString = [formatter stringFromDate: date];
+                NSDate *dayDate = [formatter dateFromString:dateString];
+                CalendarModel *model = [[CalendarModel alloc] init];
+                model.day = [NSString stringWithFormat:@"%ld",(long)[dayDate day]];
+                switch ([dayDate weekday]) {
+                    case 1:
+                        model.week = @"日";
+                        break;
+                    case 2:
+                        model.week = @"一";
+                        break;
+                    case 3:
+                        model.week = @"二";
+                        break;
+                    case 4:
+                        model.week = @"三";
+                        break;
+                    case 5:
+                        model.week = @"四";
+                        break;
+                    case 6:
+                        model.week = @"五";
+                        break;
+                    default:
+                        model.week = @"六";
+                        break;
+                }
+                model.isToday = dayDate.isToday;
+                model.isSelect = NO;
+                model.hasFoot = [x containsObject: dateString];
+                model.dayStr = dateString;
+                [days addObject:model];
+            }
+            [subscriber sendNext:[[[days reverseObjectEnumerator] allObjects] mutableCopy]];
+            [subscriber sendCompleted];
+        }];
+        return [RACDisposable disposableWithBlock:^{
+            
+        }];
+    }];
 }
 
 @end

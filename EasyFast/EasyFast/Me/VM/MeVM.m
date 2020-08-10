@@ -34,4 +34,37 @@
     }];
 }
 
++ (RACSignal *)goodsMonthFootprint {
+    return [self requsetNetwork:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] goodsMonthFootprint];
+    } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
+        return result.reqResult;
+    }];
+}
+
+- (RACSignal *)refreshForDown {
+    return [self refreshForDown:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] goodsFootprintList:self.dateStr pageNum:self.firstPage];
+    } toMap:^NSArray * _Nonnull(FMHttpResonse * _Nonnull result) {
+        NSArray *list = [NSArray modelArrayWithClass:[EFFootPrint class] json:result.reqResult];
+        return list;
+    }];
+}
+
+- (RACSignal *)refreshForUp {
+    return [self refreshForUp:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] goodsFootprintList:self.dateStr pageNum:@([self.paging intValue] + 1)];
+    } toMap:^NSArray * _Nonnull(FMHttpResonse * _Nonnull result) {
+        NSArray *list = [NSArray modelArrayWithClass:[EFFootPrint class] json:result.reqResult];
+        return list;
+    }];
+}
+
++ (RACSignal *)uploadImage:(NSInteger)type image:(UIImage *)image {
+    return [self requsetNetwork:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] uploadImage:type image:image];
+    } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
+        return result.reqResult;
+    }];
+}
 @end

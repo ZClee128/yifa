@@ -7,14 +7,20 @@
 //
 
 #import "EFBaseRefreshVM.h"
-
+#import "EFFootPrint.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MeVM : EFBaseRefreshVM
 
+@property (nonatomic,strong)NSString *dateStr;
+
 + (RACSignal *)updateUserInfo:(NSString *)city headImgUrl:(NSString *)headImgUrl nickname:(NSString *)nickname province:(NSString *)province sex:(NSInteger)sex type:(NSInteger)type;
 
 + (RACSignal *)updatePassWord:(NSString *)oldPassword password:(NSString *)password confirmPassword:(NSString *)confirmPassword;
+
++ (RACSignal *)goodsMonthFootprint;
+
++ (RACSignal *)uploadImage:(NSInteger)type image:(UIImage *)image;
 @end
 
 NS_ASSUME_NONNULL_END

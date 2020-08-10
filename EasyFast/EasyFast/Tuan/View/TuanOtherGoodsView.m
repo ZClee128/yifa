@@ -7,6 +7,7 @@
 //
 
 #import "TuanOtherGoodsView.h"
+#import "EFGoodsList.h"
 
 @interface TuanOtherGoodsView ()
 
@@ -108,10 +109,10 @@
     [self layoutIfNeeded];
 }
 
-- (void)setModel:(id)model {
-    self.goodsNameLab.text = @"这里左右边距20像素";
-    self.sellLab.text = @"成交量：9999+";
-    self.priceLab.attributedText = [@"¥7899.8" getAttributeWithChangeString:@"¥" ChangeFont:RegularFont12 textColor:self.priceLab.textColor];
+- (void)setModel:(EFGoodsList *)model {
+    self.goodsNameLab.text = model.title;
+    self.sellLab.text = [NSString stringWithFormat:@"成交量：%ld",(long)model.sales];
+    self.priceLab.attributedText = [[NSString stringWithFormat:@"¥%.1f",model.price] getAttributeWithChangeString:@"¥" ChangeFont:RegularFont12 textColor:self.priceLab.textColor];
 }
 
 @end

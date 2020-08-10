@@ -7,7 +7,7 @@
 //
 
 #import "BaseTableViewCell.h"
-
+#import "EFFootPrint.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TuanOtherGoodsTableViewCell : BaseTableViewCell
@@ -15,6 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)hiddenRightView;
 
 - (void)showRightView;
+
+- (void)setLeftModel:(EFGoodsList *)model;
+
+- (void)setRightModel:(EFGoodsList *)model;
 @end
 
 NS_ASSUME_NONNULL_END
