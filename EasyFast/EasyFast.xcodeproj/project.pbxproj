@@ -22,6 +22,12 @@
 		0C0CC3CF24E0DD83005E50ED /* EFFootPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3CE24E0DD83005E50ED /* EFFootPrint.m */; };
 		0C0CC3D024E0DD83005E50ED /* EFFootPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3CE24E0DD83005E50ED /* EFFootPrint.m */; };
 		0C0CC3D124E0DD83005E50ED /* EFFootPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3CE24E0DD83005E50ED /* EFFootPrint.m */; };
+		0C0CC3D524E12087005E50ED /* EFAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3D424E12087005E50ED /* EFAddressModel.m */; };
+		0C0CC3D624E12087005E50ED /* EFAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3D424E12087005E50ED /* EFAddressModel.m */; };
+		0C0CC3D724E12087005E50ED /* EFAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3D424E12087005E50ED /* EFAddressModel.m */; };
+		0C0CC3DA24E12148005E50ED /* EFExpressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3D924E12148005E50ED /* EFExpressModel.m */; };
+		0C0CC3DB24E12148005E50ED /* EFExpressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3D924E12148005E50ED /* EFExpressModel.m */; };
+		0C0CC3DC24E12148005E50ED /* EFExpressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3D924E12148005E50ED /* EFExpressModel.m */; };
 		0C4BAF9324D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
 		0C4BAF9424D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
 		0C4BAF9524D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
@@ -613,6 +619,10 @@
 		0C0CC3C824DD4CA3005E50ED /* FMARCNetwork+Order.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FMARCNetwork+Order.m"; sourceTree = "<group>"; };
 		0C0CC3CD24E0DD83005E50ED /* EFFootPrint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFFootPrint.h; sourceTree = "<group>"; };
 		0C0CC3CE24E0DD83005E50ED /* EFFootPrint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFFootPrint.m; sourceTree = "<group>"; };
+		0C0CC3D324E12087005E50ED /* EFAddressModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFAddressModel.h; sourceTree = "<group>"; };
+		0C0CC3D424E12087005E50ED /* EFAddressModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFAddressModel.m; sourceTree = "<group>"; };
+		0C0CC3D824E12148005E50ED /* EFExpressModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFExpressModel.h; sourceTree = "<group>"; };
+		0C0CC3D924E12148005E50ED /* EFExpressModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFExpressModel.m; sourceTree = "<group>"; };
 		0C4BAF9124D0085F0037CDCF /* EFMeRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFMeRefreshHeader.h; sourceTree = "<group>"; };
 		0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFMeRefreshHeader.m; sourceTree = "<group>"; };
 		0C4BAF9724D021440037CDCF /* EFBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFBridge.h; sourceTree = "<group>"; };
@@ -1059,6 +1069,10 @@
 			children = (
 				0C0CC3BB24DD43AB005E50ED /* EFOrderModel.h */,
 				0C0CC3BC24DD43AB005E50ED /* EFOrderModel.m */,
+				0C0CC3D324E12087005E50ED /* EFAddressModel.h */,
+				0C0CC3D424E12087005E50ED /* EFAddressModel.m */,
+				0C0CC3D824E12148005E50ED /* EFExpressModel.h */,
+				0C0CC3D924E12148005E50ED /* EFExpressModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2302,6 +2316,7 @@
 				0C0CC27524DC3202005E50ED /* CountDown.m in Sources */,
 				84A820EE24B6F65100EAC652 /* EFFollowViewController.m in Sources */,
 				0C6CB5C124CFD6B200471A8D /* EFRefreshHeader.m in Sources */,
+				0C0CC3DA24E12148005E50ED /* EFExpressModel.m in Sources */,
 				0C8A27D024D8F28500E40ED8 /* EFUserModel.m in Sources */,
 				0C8A27CA24D8F15000E40ED8 /* UserManager.m in Sources */,
 				0C6CB58E24CEB19000471A8D /* UITextField+MyExtension.m in Sources */,
@@ -2468,6 +2483,7 @@
 				84A8208924B6C62300EAC652 /* main.m in Sources */,
 				84A821AB24BF15FF00EAC652 /* EFFollowCollectionViewCell.m in Sources */,
 				847610A924C69AD0002B34E4 /* EFCodeTableViewCell.m in Sources */,
+				0C0CC3D524E12087005E50ED /* EFAddressModel.m in Sources */,
 				0CCEC45D24CA80EE00976D24 /* EFOrderAddressTableViewCell.m in Sources */,
 				84A820CD24B6CCC600EAC652 /* FMARCNetwork+interface.m in Sources */,
 				0C4BAFA324D10A2D0037CDCF /* EFCollectionViewController.m in Sources */,
@@ -2502,6 +2518,7 @@
 				0C0CC27624DC3202005E50ED /* CountDown.m in Sources */,
 				84A820FA24BC4F5400EAC652 /* EFFollowViewController.m in Sources */,
 				0C6CB5C224CFD6B200471A8D /* EFRefreshHeader.m in Sources */,
+				0C0CC3DB24E12148005E50ED /* EFExpressModel.m in Sources */,
 				0C8A27D124D8F28500E40ED8 /* EFUserModel.m in Sources */,
 				0C8A27CB24D8F15000E40ED8 /* UserManager.m in Sources */,
 				0C6CB58F24CEB19000471A8D /* UITextField+MyExtension.m in Sources */,
@@ -2668,6 +2685,7 @@
 				84A8210C24BC4F5400EAC652 /* FMARCNetwork+interface.m in Sources */,
 				84A821AC24BF15FF00EAC652 /* EFFollowCollectionViewCell.m in Sources */,
 				847610AA24C69AD0002B34E4 /* EFCodeTableViewCell.m in Sources */,
+				0C0CC3D624E12087005E50ED /* EFAddressModel.m in Sources */,
 				0CCEC45E24CA80EE00976D24 /* EFOrderAddressTableViewCell.m in Sources */,
 				84A8210D24BC4F5400EAC652 /* EFClassifyViewController.m in Sources */,
 				0C4BAFA424D10A2D0037CDCF /* EFCollectionViewController.m in Sources */,
@@ -2702,6 +2720,7 @@
 				0C0CC27724DC3202005E50ED /* CountDown.m in Sources */,
 				84A8211E24BC513500EAC652 /* EFFollowViewController.m in Sources */,
 				0C6CB5C324CFD6B200471A8D /* EFRefreshHeader.m in Sources */,
+				0C0CC3DC24E12148005E50ED /* EFExpressModel.m in Sources */,
 				0C8A27D224D8F28500E40ED8 /* EFUserModel.m in Sources */,
 				0C8A27CC24D8F15000E40ED8 /* UserManager.m in Sources */,
 				0C6CB59024CEB19000471A8D /* UITextField+MyExtension.m in Sources */,
@@ -2868,6 +2887,7 @@
 				84A8212F24BC513500EAC652 /* main.m in Sources */,
 				84A821AD24BF15FF00EAC652 /* EFFollowCollectionViewCell.m in Sources */,
 				847610AB24C69AD0002B34E4 /* EFCodeTableViewCell.m in Sources */,
+				0C0CC3D724E12087005E50ED /* EFAddressModel.m in Sources */,
 				0CCEC45F24CA80EE00976D24 /* EFOrderAddressTableViewCell.m in Sources */,
 				84A8213024BC513500EAC652 /* FMARCNetwork+interface.m in Sources */,
 				0C4BAFA524D10A2D0037CDCF /* EFCollectionViewController.m in Sources */,

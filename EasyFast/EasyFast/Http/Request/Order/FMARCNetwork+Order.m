@@ -14,4 +14,7 @@
     return [self fg_postRequest:kmyOrderList paramters:@{@"pageNum":pageNum,@"type":@(type)}];
 }
 
+- (RACSignal *)myOrderSearchListPageNum:(NSNumber *)pageNum type:(NSInteger)type searchText:(NSString *)searchText {
+    return [self fg_postRequest:kmyOrderSearchList paramters:@{@"pageNum":pageNum,@"type":@(type),@"searchText":searchText}];
+}
 @end

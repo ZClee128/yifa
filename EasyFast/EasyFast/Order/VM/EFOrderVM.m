@@ -28,4 +28,22 @@
     }];
 }
 
+- (RACSignal *)searchRefreshForDown {
+    return [self refreshForDown:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] myOrderSearchListPageNum:self.firstPage type:self.type searchText:self.searchText];
+    } toMap:^NSArray * _Nonnull(FMHttpResonse * _Nonnull result) {
+        NSArray *list = [NSArray modelArrayWithClass:[EFOrderModel class] json:result.reqResult];
+        return list;
+    }];
+}
+
+- (RACSignal *)searchRefreshForUp {
+    return [self refreshForUp:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] myOrderSearchListPageNum:@([self.paging intValue] + 1) type:self.type searchText:self.searchText];
+    } toMap:^NSArray * _Nonnull(FMHttpResonse * _Nonnull result) {
+        NSArray *list = [NSArray modelArrayWithClass:[EFOrderModel class] json:result.reqResult];
+        return list;
+    }];
+}
+
 @end

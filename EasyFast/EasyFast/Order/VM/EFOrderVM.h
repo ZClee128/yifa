@@ -14,7 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface EFOrderVM : EFBaseRefreshVM
 
 @property (nonatomic,assign)NSInteger type;
+@property (nonatomic,strong)NSString *searchText;
 
+- (RACSignal *)searchRefreshForDown;
+- (RACSignal *)searchRefreshForUp;
 @end
 
 NS_ASSUME_NONNULL_END

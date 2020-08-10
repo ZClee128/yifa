@@ -117,7 +117,11 @@
         {
             [[self.viewModel refreshForUp] subscribeNext:^(RACTuple *x) {
                 [self.EFTableView.mj_footer endRefreshing];
-                //                [self.EFData appendObjects:x.first];
+//                if ([x.second count] == 0) {
+//                    [self.EFTableView.mj_footer endRefreshingWithNoMoreData];
+//                }else {
+//                    [self.EFTableView.mj_footer resetNoMoreData];
+//                }
                 self.EFData = x.first;
                 [self.EFTableView reloadData];
             }];

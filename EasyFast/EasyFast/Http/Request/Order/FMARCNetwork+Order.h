@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 类型，1：全部；2：待付款，3：待发货，4：待收货，5：待评价
 - (RACSignal *)myOrderListpPageNum:(NSNumber *)pageNum type:(NSInteger)type;
 
+- (RACSignal *)myOrderSearchListPageNum:(NSNumber *)pageNum type:(NSInteger)type searchText:(NSString *)searchText;
 @end
 
 NS_ASSUME_NONNULL_END

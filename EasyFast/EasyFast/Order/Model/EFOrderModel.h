@@ -7,6 +7,8 @@
 //
 
 #import "EFBaseModel.h"
+#import "EFAddressModel.h"
+#import "EFExpressModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -53,7 +55,26 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)NSString *shopTitle;
 /// 合计金额
 @property (nonatomic,assign)CGFloat totalAmount;
-
+/// 收货信息
+@property (nonatomic,strong)EFAddressModel *address;
+/// 物流信息
+@property (nonatomic,strong)EFExpressModel *express;
+/// 支付方式，1：微信、2：支付宝
+@property (nonatomic,assign)NSInteger payMethod;
+/// 支付状态, 0：待支付、1：已支付
+@property (nonatomic,assign)NSInteger payState;
+/// 创建时间
+@property (nonatomic,strong)NSDate *createTime;
+/// 发货时间
+@property (nonatomic,strong)NSDate *deliverTime;
+/// 付款时间
+@property (nonatomic,strong)NSDate *payTime;
+/// 优惠金额
+@property (nonatomic,assign)CGFloat discountAmount;
+/// 邮费金额
+@property (nonatomic,assign)CGFloat postageAmount;
+/// 邮费优惠金额
+@property (nonatomic,assign)CGFloat postageDiscountAmount;
 @end
 
 NS_ASSUME_NONNULL_END

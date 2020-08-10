@@ -28,6 +28,6 @@
 
 - (RACSignal *)uploadImage:(NSInteger)type image:(UIImage *)image {
     NSData *data = UIImageJPEGRepresentation(image, 1.0f);
-    return [[FMARCNetwork sharedInstance] uploadNetworkPath:kuploadImage params:@{@"type":@(type)} fileDatas:@[data] name:@"file" mimeType:@"multipart/form-data"];
+    return [[FMARCNetwork sharedInstance] uploadNetworkPath:kuploadImage params:@{@"type":@(type)} fileDatas:@[data] name:@"file" mimeType:@"image/jpg"];
 }
 @end

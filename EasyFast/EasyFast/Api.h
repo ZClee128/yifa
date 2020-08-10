@@ -32,10 +32,11 @@
 
 // 订单
 #define kmyOrderList @"api-client/user/order/myOrderList" //订单接口
+#define kmyOrderSearchList @"api-client/user/order/myOrderSearchList" //订单搜索列表接口
 
 
 // 我的
 #define kgoodsMonthFootprint @"api-client/user/footprint/goodsMonthFootprint" //商品当月足迹接口
 #define kgoodsFootprintList @"api-client/user/footprint/goodsFootprintList" //商品足迹列表接口
-#define kuploadImage @"api-client/file/uploadImage" // 上传图片
+#define kuploadImage @"api-client/file/upload" // 上传图片
 #endif /* Api_h */

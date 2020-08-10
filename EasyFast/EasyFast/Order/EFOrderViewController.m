@@ -110,7 +110,7 @@
 }
 //根据下标index返回对应遵从`JXCategoryListContentViewDelegate`协议的列表实例
 - (id<JXCategoryListContentViewDelegate>)listContainerView:(JXCategoryListContainerView *)listContainerView initListForIndex:(NSInteger)index {
-    EFOrderDetailViewController *order =  [[EFOrderDetailViewController alloc] init];
+    EFOrderDetailViewController *order =  [[EFOrderDetailViewController alloc] initWithType:index + 1];
     return order;
 }
 

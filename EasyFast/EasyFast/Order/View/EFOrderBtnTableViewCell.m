@@ -123,6 +123,7 @@
 }
 
 - (void)setModel:(id)model {
+    
     [self.oneBtn setTitle:@"查看物流" forState:(UIControlStateNormal)];
     [self.twoBtn setTitle:@"确认收货" forState:(UIControlStateNormal)];
     [self.threeBtn setTitle:@"待付款" forState:(UIControlStateNormal)];

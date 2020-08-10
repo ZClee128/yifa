@@ -75,11 +75,11 @@
         EFOrderTitleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFOrderTitleTableViewCell class])];
         [cell setModel:model];
         return cell;
-    }else if (indexPath.row == model.goodsList.count - 2) {
+    }else if (indexPath.row == model.goodsList.count + 1) {
         EFOrderPriceTableViewCell *priceCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFOrderPriceTableViewCell class])];
         [priceCell setModel:model];
         return priceCell;
-    }else if (indexPath.row == model.goodsList.count - 1) {
+    }else if (indexPath.row == model.goodsList.count + 2) {
         EFOrderBtnTableViewCell *btnCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFOrderBtnTableViewCell class])];
         [btnCell setModel:model];
         @weakify(self);
@@ -94,14 +94,14 @@
             @strongify(self);
             EFLogisticsViewController *vc = [[EFLogisticsViewController alloc] init];
             [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
-            
+                
             }];
         };
         btnCell.threeClick = ^{
             @strongify(self);
             EFToPayDetailViewController *vc = [[EFToPayDetailViewController alloc] init];
             [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
-            
+                
             }];
         };
         return btnCell;
@@ -113,15 +113,15 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    switch (indexPath.row) {
-        case 0:
-            return WidthOfScale(61);
-        case 2:
-            return WidthOfScale(45.5);
-        case 3:
-            return WidthOfScale(70);
-        default:
-            return WidthOfScale(130);
+    EFOrderModel *model = self.EFData[indexPath.section];
+    if (indexPath.row == 0) {
+        return WidthOfScale(61);
+    }else if (indexPath.row == model.goodsList.count + 1) {
+        return WidthOfScale(45.5);
+    }else if (indexPath.row == model.goodsList.count + 2) {
+        return WidthOfScale(70);
+    }else {
+        return WidthOfScale(130);
     }
 }
 
