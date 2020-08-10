@@ -32,6 +32,7 @@
         _searchField.placeholder = @"搜索我的订单";
         _searchField.backgroundColor = colorEFEFEF;
         _searchField.textInsets = UIEdgeInsetsMake(0, WidthOfScale(21), 0, WidthOfScale(21));
+        _searchField.returnKeyType = UIReturnKeySearch;//变为搜索按钮
         _searchField.delegate = self;
     }
     return _searchField;
@@ -118,6 +119,14 @@
     if (textField.text.length == 0) {
         self.searchBtn.hidden = NO;
     }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    NSLog(@"点击了搜索");
+    [self.searchField resignFirstResponder];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kOrderSearch object:@{@"text":textField.text,@"type":@(self.jxTitleView.selectedIndex)}];
+    return YES;
 }
 
 @end

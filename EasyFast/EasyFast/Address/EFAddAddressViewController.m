@@ -10,10 +10,17 @@
 #import <BRPickerView/BRPickerView.h>
 #import "EFPhoneTableViewCell.h"
 #import "EFMapViewController.h"
+#import "EFAddressVM.h"
 
 @interface EFAddAddressViewController ()
 
 @property (nonatomic,strong)NSString *address;
+@property (nonatomic,strong)NSString *name;
+@property (nonatomic,strong)NSString *phone;
+@property (nonatomic,strong)NSString *detail;
+@property (nonatomic,strong)NSString *city;
+@property (nonatomic,strong)NSString *province;
+@property (nonatomic,strong)NSString *area;
 @property (nonatomic,strong)QMUIButton *nextBtn;
 
 @end
@@ -30,11 +37,40 @@
         @weakify(self);
         [[_nextBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self);
-            
+            [self nextClick];
         }];
         _nextBtn.backgroundColor = colorF14745;
     }
     return _nextBtn;
+}
+
+- (void)nextClick {
+    if (self.name == nil || [self.name isEqualToString:@""]) {
+        [MBProgressHUD showError:@"请输入收货人"];
+        return;
+    }
+    if (self.phone == nil || [self.phone isEqualToString:@""]) {
+        [MBProgressHUD showError:@"请输入手机号"];
+        return;
+    }
+    if (self.province == nil || [self.province isEqualToString:@""]) {
+        [MBProgressHUD showError:@"请选择地区"];
+        return;
+    }
+    if (self.detail == nil || [self.detail isEqualToString:@""]) {
+        [MBProgressHUD showError:@"请输入详细地址"];
+        return;
+    }
+    @weakify(self);
+    [[EFAddressVM addAddress:self.detail city:self.city province:self.province recipientName:self.name recipientPhone:self.phone area:self.area] subscribeNext:^(NSNumber *x) {
+        if ([x boolValue]) {
+            @strongify(self);
+            [[NSNotificationCenter defaultCenter] postNotificationName:kaddAddress object:nil];
+            [self.navigationController qmui_popViewControllerAnimated:YES completion:^{
+                
+            }];
+        }
+    }];
 }
 
 
@@ -76,8 +112,12 @@
             cell.phoneTextField.rightView = nil;
             cell.phoneTextField.keyboardType = UIKeyboardTypeDefault;
             cell.phoneTextField.enabled = YES;
+            cell.phoneTextField.text = self.name;
+            @weakify(self);
             cell.TextValue = ^(NSString * _Nonnull text) {
                 XYLog(@"%@",text);
+                @strongify(self);
+                self.name = text;
             };
             break;
         }
@@ -88,8 +128,12 @@
             cell.phoneTextField.maximumTextLength = 11;
             cell.phoneTextField.rightView = nil;
             cell.phoneTextField.enabled = YES;
+            cell.phoneTextField.text = self.phone;
+            @weakify(self);
             cell.TextValue = ^(NSString * _Nonnull text) {
                 XYLog(@"%@",text);
+                @strongify(self);
+                self.phone = text;
             };
             break;
         }
@@ -107,6 +151,7 @@
             cell.phoneTextField.rightView = [[UIImageView alloc] initWithImage:UIImageMake(@"dizhi")];
             cell.phoneTextField.enabled = YES;
             cell.phoneTextField.keyboardType = UIKeyboardTypeDefault;
+            cell.phoneTextField.text = self.detail;
             @weakify(self);
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithActionBlock:^(id  _Nonnull sender) {
                 @strongify(self);
@@ -116,6 +161,7 @@
                 }];
                 map.seletCity = ^(cityModel * _Nonnull model) {
                     cell.phoneTextField.text = [NSString stringWithFormat:@"%@%@",model.address,model.name];
+                    self.detail = [NSString stringWithFormat:@"%@%@",model.address,model.name];
                 };
             }];
             cell.phoneTextField.rightView.userInteractionEnabled = YES;
@@ -141,8 +187,13 @@
             addressPickerView.title = @"请选择地区";
             //addressPickerView.selectValues = @[@"浙江省", @"杭州市", @"西湖区"];
             addressPickerView.isAutoSelect = YES;
+            @weakify(self);
             addressPickerView.resultBlock = ^(BRProvinceModel *province, BRCityModel *city, BRAreaModel *area) {
                 NSLog(@"选择的值：%@", [NSString stringWithFormat:@"%@ %@ %@", province.name, city.name, area.name]);
+                @strongify(self);
+                self.city = city.name;
+                self.province = province.name;
+                self.area = area.name;
                 self.address = [NSString stringWithFormat:@"%@ %@ %@", province.name, city.name, area.name];
                 [[RACScheduler mainThreadScheduler] schedule:^{
                     [self.EFTableView reloadData];
@@ -155,5 +206,65 @@
         default:
             break;
     }
+}
+@end
+
+
+@interface EFEditAddressViewController ()
+
+@property (nonatomic,strong)EFAdsModel *adModel;
+@end
+
+@implementation EFEditAddressViewController
+
+- (instancetype)initWithModel:(EFAdsModel *)model
+{
+    self = [super init];
+    if (self) {
+        self.phone = model.recipientPhone;
+        self.name = model.recipientName;
+        self.address = [NSString stringWithFormat:@"%@ %@ %@", model.province, model.city, model.area];
+        self.province = model.province;
+        self.city = model.city;
+        self.area = model.area;
+        self.detail = model.address;
+        self.adModel = model;
+    }
+    return self;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.gk_navTitle = @"修改收货地址";
+}
+
+
+- (void)nextClick {
+    if (self.name == nil || [self.name isEqualToString:@""]) {
+        [MBProgressHUD showError:@"请输入收货人"];
+        return;
+    }
+    if (self.phone == nil || [self.phone isEqualToString:@""]) {
+        [MBProgressHUD showError:@"请输入手机号"];
+        return;
+    }
+    if (self.province == nil || [self.province isEqualToString:@""]) {
+        [MBProgressHUD showError:@"请选择地区"];
+        return;
+    }
+    if (self.detail == nil || [self.detail isEqualToString:@""]) {
+        [MBProgressHUD showError:@"请输入详细地址"];
+        return;
+    }
+    @weakify(self);
+    [[EFAddressVM updateAddress:self.detail city:self.city province:self.province recipientName:self.name recipientPhone:self.phone area:self.area addressNo:self.adModel.uuaNo] subscribeNext:^(NSNumber *x) {
+        if ([x boolValue]) {
+            @strongify(self);
+            [[NSNotificationCenter defaultCenter] postNotificationName:kaddAddress object:nil];
+            [self.navigationController qmui_popViewControllerAnimated:YES completion:^{
+                
+            }];
+        }
+    }];
 }
 @end

@@ -39,6 +39,8 @@
     return _addBtn;
 }
 
+
+
 - (void)viewDidLoad {
     self.viewModel = [[EFAddressVM alloc] init];
     [super viewDidLoad];
@@ -47,24 +49,47 @@
     [self.EFTableView registerClass:[EFAddressTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFAddressTableViewCell class])];
     [self.view addSubview:self.addBtn];
     [self.addBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.view);
+        make.bottom.equalTo(@(-TAB_SAFE_HEIGHT));
         make.centerX.equalTo(self.view);
-        make.height.equalTo(@(WidthOfScale(60)+TAB_SAFE_HEIGHT));
+        make.height.equalTo(@(WidthOfScale(60)));
         make.width.equalTo(@(kPHONE_WIDTH));
     }];
     [self addRefshUp];
     [self addRefshDown];
+    [self loadList];
+    @weakify(self);
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kaddAddress object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        @strongify(self);
+        [self loadList];
+    }];
 }
 
 - (void)loadList {
     @weakify(self);
-    [[self.viewModel refreshForDown] subscribeNext:^(id  _Nullable x) {
-        
+    [[self.viewModel refreshForDown] subscribeNext:^(RACTuple *x) {
+        @strongify(self);
+        [self.EFTableView.mj_header endRefreshing];
+        self.EFData = x.first;
+        [self.EFTableView reloadData];
+    }];
+}
+
+- (void)loadNewData {
+    [self loadList];
+}
+
+- (void)loadMoreData {
+    @weakify(self);
+    [[self.viewModel refreshForUp] subscribeNext:^(RACTuple *x) {
+        @strongify(self);
+        [self.EFTableView.mj_footer endRefreshing];
+        self.EFData = x.first;
+        [self.EFTableView reloadData];
     }];
 }
 
 - (NSInteger )numberOfSectionsInTableView:(UITableView *)tableView {
-    return 10;
+    return self.EFData.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -73,8 +98,35 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EFAddressTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFAddressTableViewCell class]) forIndexPath:indexPath];
-    [cell setModel:@""];
+    EFAdsModel *model = self.EFData[indexPath.section];
+    [cell setModel:model];
     self.cellHeight = [cell getCellHeight];
+    @weakify(self);
+    cell.deletBlcok = ^{
+        [[EFAddressVM delAddress:model.uuaNo] subscribeNext:^(NSNumber *x) {
+            @strongify(self);
+            if ([x boolValue]) {
+                [self loadList];
+            }
+        }];
+    };
+    
+    cell.editBlock = ^{
+        @strongify(self);
+        EFEditAddressViewController *vc = [[EFEditAddressViewController alloc] initWithModel:model];
+        [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+            
+        }];
+    };
+    
+    cell.defBlock = ^(QMUIButton * _Nonnull btn, QMUILabel * _Nonnull lab) {
+        [[EFAddressVM setDefaultAddress:model.uuaNo] subscribeNext:^(NSNumber *x) {
+            @strongify(self);
+            if ([x boolValue]) {
+                [self loadList];
+            }
+        }];
+    };
     return cell;
 }
 

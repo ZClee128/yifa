@@ -131,6 +131,7 @@
             self.moreBtn.hidden = YES;
             [self.threeBtn setTitle:@"立即付款" forState:(UIControlStateNormal)];
             [self.threeBtn AddImageRadiusBorderWithColor:colorF14745 lineWidth:1 radius:WidthOfScale(35)/2];
+            [self.threeBtn layoutIfNeeded];
             [self.threeBtn setTitleColor:colorF14745 forState:(UIControlStateNormal)];
             break;
         }
@@ -149,6 +150,7 @@
             [self.threeBtn setTitle:@"再来一单" forState:(UIControlStateNormal)];
             [self.threeBtn AddImageRadiusBorderWithColor:colorF14745 lineWidth:1 radius:WidthOfScale(35)/2];
             [self.threeBtn setTitleColor:colorF14745 forState:(UIControlStateNormal)];
+            [self.threeBtn layoutIfNeeded];
             break;
         }
             case 400:

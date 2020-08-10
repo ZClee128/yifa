@@ -31,7 +31,23 @@
     return [[FMARCNetwork sharedInstance] uploadNetworkPath:kuploadImage params:@{@"type":@(type)} fileDatas:@[data] name:@"file" mimeType:@"image/jpg"];
 }
 
-- (RACSignal *)findAddressListPageNum:(NSNumber *)pageNum {
-    return [self fg_postRequest:kfindAddressList paramters:@{@"pageNum":pageNum}];
+- (RACSignal *)findAddressListPageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize{
+    return [self fg_postRequest:kfindAddressList paramters:@{@"pageNum":pageNum,@"pageSize":pageSize}];
+}
+
+- (RACSignal *)addAddress:(NSString *)address city:(NSString *)city province:(NSString *)province recipientName:(NSString *)recipientName recipientPhone:(NSString *)recipientPhone area:(NSString *)area {
+    return [self fg_postRequest:kaddAddress paramters:@{@"address":address,@"city":city,@"province":province,@"recipientName":recipientName,@"recipientPhone":recipientPhone,@"area":area}];
+}
+
+- (RACSignal *)delAddress:(NSString *)addressNo {
+    return [self fg_postRequest:kdelAddress paramters:@{@"addressNo":addressNo}];
+}
+
+- (RACSignal *)setDefaultAddress:(NSString *)addressNo {
+    return [self fg_postRequest:ksetDefaultAddress paramters:@{@"addressNo":addressNo}];
+}
+
+- (RACSignal *)updateAddress:(NSString *)address city:(NSString *)city province:(NSString *)province recipientName:(NSString *)recipientName recipientPhone:(NSString *)recipientPhone area:(NSString *)area addressNo:(NSString *)addressNo {
+    return [self fg_postRequest:kupdateAddress paramters:@{@"address":address,@"city":city,@"province":province,@"recipientName":recipientName,@"recipientPhone":recipientPhone,@"area":area,@"addressNo":addressNo}];
 }
 @end

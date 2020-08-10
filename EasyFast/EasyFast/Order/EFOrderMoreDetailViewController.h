@@ -15,6 +15,7 @@
 #import "EFRealPriceTableViewCell.h"
 #import "EFTimeTableViewCell.h"
 #import "TuanOtherGoodsTableViewCell.h"
+#import "EFOrderModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -25,7 +26,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)UIView *headerView;
 @property (nonatomic,strong)NSMutableArray *priceArr;
 @property (nonatomic,strong)NSMutableArray *orderArr;
+@property (nonatomic,strong)NSMutableArray *goodsArr;
 @property (nonatomic,assign)BOOL ismore;
+@property (nonatomic,strong)EFOrderModel *model;
 @end
 
 

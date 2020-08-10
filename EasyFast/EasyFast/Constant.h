@@ -141,7 +141,8 @@ fprintf(stderr,"[--%s--]\n[--%s:%d--]\n[--%s--]\n===========================\n",
 #define knickName @"knickName" //修改昵称
 #define kChangePhone @"kChangePhone" //修改手机
 #define kChangePassword @"kChangePassword" // 修改密码
-
+#define kAddress @"kAddress" // 新增地址
+#define kOrderSearch @"kOrderSearch" //订单搜索
 
 // 图片
 #define kup UIImageMake(@"up") // 降序

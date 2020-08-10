@@ -27,7 +27,19 @@ NS_ASSUME_NONNULL_BEGIN
 - (RACSignal *)uploadImage:(NSInteger)type image:(UIImage *)image;
 
 /// 地址列表
-- (RACSignal *)findAddressListPageNum:(NSNumber *)pageNum;
+- (RACSignal *)findAddressListPageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize;
+
+/// 新增地址
+- (RACSignal *)addAddress:(NSString *)address city:(NSString *)city province:(NSString *)province recipientName:(NSString *)recipientName recipientPhone:(NSString *)recipientPhone area:(NSString *)area;
+
+/// 删除地址
+- (RACSignal *)delAddress:(NSString *)addressNo;
+
+/// 设置默认
+- (RACSignal *)setDefaultAddress:(NSString *)addressNo;
+
+/// 修改地址
+- (RACSignal *)updateAddress:(NSString *)address city:(NSString *)city province:(NSString *)province recipientName:(NSString *)recipientName recipientPhone:(NSString *)recipientPhone area:(NSString *)area addressNo:(NSString *)addressNo;
 @end
 
 NS_ASSUME_NONNULL_END

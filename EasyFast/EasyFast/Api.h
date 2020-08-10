@@ -33,6 +33,7 @@
 // 订单
 #define kmyOrderList @"api-client/user/order/myOrderList" //订单接口
 #define kmyOrderSearchList @"api-client/user/order/myOrderSearchList" //订单搜索列表接口
+#define kmyOrderDetail @"api-client/user/order/myOrderDetail" //订单明细接口
 
 
 // 我的
@@ -40,4 +41,8 @@
 #define kgoodsFootprintList @"api-client/user/footprint/goodsFootprintList" //商品足迹列表接口
 #define kuploadImage @"api-client/file/upload" // 上传图片
 #define kfindAddressList @"api-client/user/address/findAddressList" // 地址列表接口
+#define kaddAddress @"api-client/user/address/addAddress" //新增地址接口
+#define kdelAddress @"api-client/user/address/delAddress" //删除地址接口
+#define ksetDefaultAddress @"api-client/user/address/setDefaultAddress" //设置默认地址
+#define kupdateAddress @"api-client/user/address/updateAddress" // 修改收货地址
 #endif /* Api_h */

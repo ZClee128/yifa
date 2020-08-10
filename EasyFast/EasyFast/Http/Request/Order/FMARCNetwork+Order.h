@@ -15,7 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// 类型，1：全部；2：待付款，3：待发货，4：待收货，5：待评价
 - (RACSignal *)myOrderListpPageNum:(NSNumber *)pageNum type:(NSInteger)type;
 
+/// 搜索订单
 - (RACSignal *)myOrderSearchListPageNum:(NSNumber *)pageNum type:(NSInteger)type searchText:(NSString *)searchText;
+
+/// 订单详情
+- (RACSignal *)myOrderDetailExpressNum:(NSString *)expressNum orderNum:(NSString *)orderNum;
 @end
 
 NS_ASSUME_NONNULL_END

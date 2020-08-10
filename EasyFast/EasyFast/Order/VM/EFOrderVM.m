@@ -46,4 +46,12 @@
     }];
 }
 
++ (RACSignal *)myOrderDetailExpressNum:(NSString *)expressNum orderNum:(NSString *)orderNum {
+    return [self requsetNetwork:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] myOrderDetailExpressNum:expressNum orderNum:orderNum];
+    } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
+        EFOrderModel *model = [EFOrderModel modelWithJSON:result.reqResult];
+        return model;
+    }];
+}
 @end

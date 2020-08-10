@@ -7,7 +7,7 @@
 //
 
 #import "EFOrderGoodsTableViewCell.h"
-
+#import "EFOrderModel.h"
 @interface EFOrderGoodsTableViewCell ()
 
 
@@ -129,12 +129,13 @@
     
 }
 
-- (void)setModel:(id)model {
-    self.goodsNameLab.text = @"商品名称复古宫廷风台灯具灯罩，可以换行，最多两行";
-    self.goodsSizeLab.text = @"属性:蓝色（不包含灯泡） 中码";
-    self.goodsPriceLab.text = @"￥799/件";
-    self.goodsStatusLab.text = @"已退款";
-    self.goodsNumLab.text = @"X 300";
+- (void)setModel:(EFOrderGoodsModel *)model {
+    self.goodsNameLab.text = model.goodsTitle;
+    self.goodsSizeLab.text = model.goodsProperty;
+    self.goodsPriceLab.text = [NSString stringWithFormat:@"￥%.1f/件",model.goodsPrice];
+    self.goodsStatusLab.text = model.isAftersale ? @"已退款" : @"";
+    self.goodsNumLab.text = [NSString stringWithFormat:@"X %ld",model.quantity];
+    [self.goods sd_setImageWithURL:[NSURL URLWithString:model.goodsImage] placeholderImage:UIImageMake(@"gg")];
 }
 
 - (void)awakeFromNib {

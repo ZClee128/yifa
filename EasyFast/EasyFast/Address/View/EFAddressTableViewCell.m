@@ -7,7 +7,7 @@
 //
 
 #import "EFAddressTableViewCell.h"
-
+#import "EFAdsModel.h"
 @interface EFAddressTableViewCell ()
 
 @property (nonatomic,strong)QMUILabel *nameLab;
@@ -86,6 +86,13 @@
         [_deletBtn setTitle:@"删除" forState:(UIControlStateNormal)];
         _deletBtn.titleLabel.font = RegularFont13;
         [_deletBtn setTitleColor:[tabbarBlackColor colorWithAlphaComponent:0.7] forState:(UIControlStateNormal)];
+        @weakify(self);
+        [[_deletBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(QMUIButton *x) {
+            @strongify(self);
+            if (self.deletBlcok) {
+                self.deletBlcok();
+            }
+        }];
     }
     return _deletBtn;
 }
@@ -97,6 +104,13 @@
         [_editBtn setTitle:@"修改" forState:(UIControlStateNormal)];
         _editBtn.titleLabel.font = RegularFont13;
         [_editBtn setTitleColor:[tabbarBlackColor colorWithAlphaComponent:0.7] forState:(UIControlStateNormal)];
+        @weakify(self);
+        [[_editBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(QMUIButton *x) {
+            @strongify(self);
+            if (self.editBlock) {
+                self.editBlock();
+            }
+        }];
     }
     return _editBtn;
 }
@@ -110,9 +124,10 @@
         _chooseBtn.qmui_outsideEdge = UIEdgeInsetsMake(-10, -10, -10, -20);
         @weakify(self);
         [[_chooseBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(QMUIButton *x) {
-            x.selected = !x.selected;
             @strongify(self);
-            x.selected ? (self.addressDefLab.text = @"已设为默认") : (self.addressDefLab.text = @"设为默认");
+            if (self.defBlock) {
+                self.defBlock(x, self.addressDefLab);
+            }
         }];
     }
     return _chooseBtn;
@@ -172,11 +187,11 @@
         make.bottom.equalTo(@(-WidthOfScale(12.5)));
     }];
     
-    [self.contentView addSubview:self.topBtn];
-    [self.topBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.deletBtn.mas_left).equalTo(@(-WidthOfScale(35)));
-        make.bottom.equalTo(@(-WidthOfScale(12.5)));
-    }];
+//    [self.contentView addSubview:self.topBtn];
+//    [self.topBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.right.equalTo(self.deletBtn.mas_left).equalTo(@(-WidthOfScale(35)));
+//        make.bottom.equalTo(@(-WidthOfScale(12.5)));
+//    }];
     
     [self.contentView addSubview:self.chooseBtn];
     [self.chooseBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -191,14 +206,17 @@
     }];
 }
 
-- (void)setModel:(id)model {
-    self.nameLab.text = @"李啦啦";
-    self.phoneLab.text = @"18737528967";
-    self.text  = [[NSMutableAttributedString alloc] initWithString: @"广东省 深圳市 南山区 桃源街道 桃花小苑B708广东省 深圳市 南山区 桃源街道 桃花小苑B708广东省 深圳市 南山区 桃源街道 桃花小苑B708"];
+- (void)setModel:(EFAdsModel *)model {
+    self.nameLab.text = model.recipientName;
+    self.phoneLab.text = model.recipientPhone;
+    self.text  = [[NSMutableAttributedString alloc] initWithString: model.address];
     self.text.font = MedFont13;
     self.text.color = tabbarBlackColor;
     self.text.lineSpacing = 10; // 行间距
     self.addressLab.attributedText = self.text;
+    self.chooseBtn.selected = model.isDefault;
+    self.addressDefLab.text = model.isDefault ? @"已设为默认" : @"设为默认";
+    self.selectBtn.hidden = !model.isDefault;
 }
 
 - (CGFloat)getCellHeight{

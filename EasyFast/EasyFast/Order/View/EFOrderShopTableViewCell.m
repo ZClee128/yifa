@@ -7,7 +7,7 @@
 //
 
 #import "EFOrderShopTableViewCell.h"
-
+#import "EFOrderModel.h"
 @interface EFOrderShopTableViewCell ()
 
 @property (nonatomic,strong)QMUIButton *shopNameBtn;
@@ -64,8 +64,8 @@
     line.backgroundColor = RGB16(0xF2F2F2);
 }
 
-- (void)setModel:(id)model {
-    [self.shopNameBtn setTitle:@"张飞的店" forState:(UIControlStateNormal)];
+- (void)setModel:(EFOrderModel *)model {
+    [self.shopNameBtn setTitle:model.shopTitle forState:(UIControlStateNormal)];
     [self.contactBtn setTitle:@"联系卖家" forState:(UIControlStateNormal)];
     
     

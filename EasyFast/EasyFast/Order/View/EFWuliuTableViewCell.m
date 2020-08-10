@@ -7,7 +7,7 @@
 //
 
 #import "EFWuliuTableViewCell.h"
-
+#import "EFOrderModel.h"
 
 @interface EFWuliuTableViewCell ()
 
@@ -85,9 +85,9 @@
     
 }
 
-- (void)setModel:(id)model {
-    self.StatusLab.text = @"已收货";
-    self.text  = [[NSMutableAttributedString alloc] initWithString: @"2020-7-22 10:49，签收人已凭借取款单，在深圳前海港仓库签收货物，感谢您对XX物流的的支持"];
+- (void)setModel:(EFOrderModel *)model {
+    self.StatusLab.text = model.express.state;
+    self.text  = [[NSMutableAttributedString alloc] initWithString: [NSString stringWithFormat:@"%@,%@",model.express.create,model.express.context]];
     self.text.font = RegularFont13;
     self.text.color = tabbarBlackColor;
     self.text.lineSpacing = 10; // 行间距

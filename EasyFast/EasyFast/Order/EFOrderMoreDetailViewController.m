@@ -7,7 +7,7 @@
 //
 
 #import "EFOrderMoreDetailViewController.h"
-
+#import "EFOrderVM.h"
 
 
 @interface EFOrderMoreDetailViewController ()
@@ -79,6 +79,12 @@
     return _headerView;
 }
 
+- (NSMutableArray *)goodsArr {
+    if (_goodsArr == nil) {
+        _goodsArr = [[NSMutableArray alloc] init];
+    }
+    return _goodsArr;
+}
 
 
 - (void)viewDidLoad {
@@ -93,9 +99,17 @@
     [self.EFTableView registerClass:[EFRealPriceTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFRealPriceTableViewCell class])];
     [self.EFTableView registerClass:[EFTimeTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFTimeTableViewCell class])];
     [self.EFTableView registerClass:[TuanOtherGoodsTableViewCell class] forCellReuseIdentifier:NSStringFromClass([TuanOtherGoodsTableViewCell class])];
-    self.priceArr = [@[@[@"商品价格",@"¥ 467,358.00"],@[@"运费",@"¥ 50.00"],@[@"商品总价",@"¥ 467,408.00"],@[@"实付款",@"¥ 50.00"]] mutableCopy];
-    self.orderArr = [@[@[@"订单编号：",@"YF13432132131"],@[@"交易方式：",@"微信支付"],@[@"创建时间：",@"2020-7-22 11:25:33"],@[@"付款时间：",@"2020-7-22 11:25:23"],@[@"发货时间：",@"2020-7-22 11:25:33"],@[@"成交时间：",@"2020-7-22 11:25:23"]] mutableCopy];
+    
     self.EFData = [@[@1,@2,@3,@5] mutableCopy];
+    @weakify(self);
+    [[EFOrderVM myOrderDetailExpressNum:self.model.expressNum orderNum:self.model.orderNum] subscribeNext:^(EFOrderModel *x) {
+        @strongify(self);
+        self.priceArr = [@[@[@"商品价格",[NSString stringWithFormat:@"¥ %.1f",x.goodsAmount]],@[@"运费",[NSString stringWithFormat:@"¥ %.f",x.postageAmount]],@[@"商品总价",[NSString stringWithFormat:@"¥ %.1f",x.amount]],@[@"实付款",[NSString stringWithFormat:@"¥ %.1f",x.totalAmount]]] mutableCopy];
+        self.orderArr = [@[@[@"订单编号：",x.orderNum ? x.orderNum : @""],@[@"交易方式：",x.payMethod ? (x.payMethod == 1 ? @"微信支付" : @"支付宝支付") : @""],@[@"创建时间：",x.createTime ? x.createTime : @""],@[@"付款时间：",x.payTime ? x.payTime : @""],@[@"发货时间：",x.deliverTime ? x.deliverTime : @""]] mutableCopy];
+        self.goodsArr = [x.goodsList mutableCopy];
+        self.model = x;
+        [self.EFTableView reloadData];
+    }];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -107,7 +121,7 @@
         case 0:
             return 2; //头部
         case 1:
-            return 4; //商品信息
+            return self.goodsArr.count + 1; //商品信息
         case 2:
             return self.priceArr.count; //价格
         case 3:
@@ -125,14 +139,14 @@
                 case 0:
                 {
                     EFWuliuTableViewCell *wuCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFWuliuTableViewCell class])];
-                    [wuCell setModel:@""];
+                    [wuCell setModel:self.model];
                     self.wuliHeight = [wuCell getCellHeight];
                     return wuCell;
                 }
                 default:
                 {
                     EFOrderAddressTableViewCell *adCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFOrderAddressTableViewCell class])];
-                    [adCell setModel:@""];
+                    [adCell setModel:self.model];
                     self.addressHeight = [adCell getCellHeight];
                     return adCell;
                 }
@@ -144,13 +158,13 @@
                 case 0:
                 {
                     EFOrderShopTableViewCell *shopCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFOrderShopTableViewCell class])];
-                    [shopCell setModel:@""];
+                    [shopCell setModel:self.model];
                     return shopCell;
                 }
                 default:
                 {
                     EFOrderDetailGoodsTableViewCell *goodsCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFOrderDetailGoodsTableViewCell class])];
-                    [goodsCell setModel:@""];
+                    [goodsCell setModel:self.goodsArr[indexPath.row - 1]];
                     return goodsCell;
                 }
             }

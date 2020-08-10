@@ -12,7 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EFAddressTableViewCell : BaseTableViewCell
 
+@property (nonatomic,copy)void(^deletBlcok)(void);
+@property (nonatomic,copy)void(^editBlock)(void);
+@property (nonatomic,copy)void(^defBlock)(QMUIButton *btn,QMUILabel *lab);
+
 - (CGFloat)getCellHeight;
+
 @end
 
 NS_ASSUME_NONNULL_END

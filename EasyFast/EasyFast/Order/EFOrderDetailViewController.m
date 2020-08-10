@@ -48,8 +48,40 @@
     [self.EFTableView registerClass:[EFOrderBtnTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFOrderBtnTableViewCell class])];
     UIView *foot = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, 70)];
     self.EFTableView.tableFooterView = foot;
+    [self addRefshUp];
+    [self addRefshDown];
+    [self loadList];
     
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kOrderSearch object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        NSDictionary *dict = x.object;
+        ((EFOrderVM *)self.viewModel).searchText = dict[@"text"];
+        [[((EFOrderVM *)self.viewModel) searchRefreshForDown] subscribeNext:^(RACTuple *x) {
+            self.EFData = x.first;
+            [self.EFTableView reloadData];
+        }];
+    }];
+    
+}
+
+- (void)loadList {
+    @weakify(self);
     [[self.viewModel refreshForDown] subscribeNext:^(RACTuple *x) {
+        @strongify(self);
+        [self.EFTableView.mj_header endRefreshing];
+        self.EFData = x.first;
+        [self.EFTableView reloadData];
+    }];
+}
+
+- (void)loadNewData {
+    [self loadList];
+}
+
+- (void)loadMoreData {
+    @weakify(self);
+    [[self.viewModel refreshForUp] subscribeNext:^(RACTuple *x) {
+        @strongify(self);
+        [self.EFTableView.mj_footer endRefreshing];
         self.EFData = x.first;
         [self.EFTableView reloadData];
     }];
@@ -107,7 +139,7 @@
         return btnCell;
     }else {
         EFOrderGoodsTableViewCell *goodCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFOrderGoodsTableViewCell class])];
-        [goodCell setModel:@""];
+        [goodCell setModel:model.goodsList[indexPath.row - 1]];
         return goodCell;
     }
 }
@@ -130,10 +162,21 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    EFOrderMoreDetailViewController *vc = [[EFOrderMoreDetailViewController alloc] init];
-    [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
-        
-    }];
+    EFOrderModel *model = self.EFData[indexPath.section];
+     if (indexPath.row == 0) {
+           
+       }else if (indexPath.row == model.goodsList.count + 1) {
+           
+       }else if (indexPath.row == model.goodsList.count + 2) {
+           
+       }else {
+           EFOrderMoreDetailViewController *vc = [[EFOrderMoreDetailViewController alloc] init];
+           vc.model = model;
+           [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+               
+           }];
+       }
+   
 }
 
 @end

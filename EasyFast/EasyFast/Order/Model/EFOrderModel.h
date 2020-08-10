@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)NSString *goodsTitle;
 /// 商品件数
 @property (nonatomic,assign)NSInteger quantity;
+/// 是否售后，0：否；1：是；
+@property (nonatomic,assign)NSInteger isAftersale;
 
 @end
 
@@ -75,6 +77,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign)CGFloat postageAmount;
 /// 邮费优惠金额
 @property (nonatomic,assign)CGFloat postageDiscountAmount;
+/// 商品总价
+@property (nonatomic,assign)CGFloat amount;
+/// 商品价格
+@property (nonatomic,assign)CGFloat goodsAmount;
 @end
 
 NS_ASSUME_NONNULL_END

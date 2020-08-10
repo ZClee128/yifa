@@ -7,7 +7,7 @@
 //
 
 #import "EFOrderAddressTableViewCell.h"
-
+#import "EFOrderModel.h"
 @interface EFOrderAddressTableViewCell ()
 
 @property(nonatomic,strong)UIImageView *icon;
@@ -85,14 +85,14 @@
     
 }
 
-- (void)setModel:(id)model {
-    self.NameLab.text = @"李啦啦";
-    self.text  = [[NSMutableAttributedString alloc] initWithString: @"广东省 深圳市 南山区 桃源街道 桃花小苑B708"];
+- (void)setModel:(EFOrderModel *)model {
+    self.NameLab.text = model.address.concatName;
+    self.text  = [[NSMutableAttributedString alloc] initWithString: model.address.address];
     self.text.font = RegularFont13;
     self.text.color = tabbarBlackColor;
     self.text.lineSpacing = 10; // 行间距
     self.detailLab.attributedText = self.text;
-    self.phoneLab.text = @"18737528967";
+    self.phoneLab.text = model.address.phone;
 }
 
 - (CGFloat)getCellHeight{
