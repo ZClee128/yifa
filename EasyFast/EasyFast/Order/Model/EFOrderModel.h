@@ -66,11 +66,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// 支付状态, 0：待支付、1：已支付
 @property (nonatomic,assign)NSInteger payState;
 /// 创建时间
-@property (nonatomic,strong)NSDate *createTime;
+@property (nonatomic,strong)NSString *createTime;
 /// 发货时间
-@property (nonatomic,strong)NSDate *deliverTime;
+@property (nonatomic,strong)NSString *deliverTime;
 /// 付款时间
-@property (nonatomic,strong)NSDate *payTime;
+@property (nonatomic,strong)NSString *payTime;
 /// 优惠金额
 @property (nonatomic,assign)CGFloat discountAmount;
 /// 邮费金额
