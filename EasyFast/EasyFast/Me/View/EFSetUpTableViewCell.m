@@ -118,8 +118,8 @@
     self.headerImageView.hidden = NO;
 }
 
-- (void)setHeaderImage:(UIImage *)header {
-    self.headerImageView.image = header;
+- (void)setHeaderImage:(NSString *)header {
+    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:header] placeholderImage:UIImageMake(@"header")];
 }
 - (void)awakeFromNib {
     [super awakeFromNib];

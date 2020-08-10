@@ -85,9 +85,9 @@
     [cell setModel:dict];
     indexPath.row == 0 ? [cell showHeader] : [cell hiddenHeader];
     indexPath.row == 4 ? [cell hiddenMore] : [cell showMore];
-//    if (indexPath.row == 0) {
-//        [cell setHeaderImage:self.headerImage];
-//    }
+    if (indexPath.row == 0) {
+        [cell setHeaderImage:dict[@"header"]];
+    }
     return cell;
 }
 
@@ -103,7 +103,9 @@
             [[ZLPhotoActionSheet zlPhotoWithCamera:self] subscribeNext:^(RACTuple * _Nullable x) {
                 @strongify(self);
                 if (x.first) {
-                    self.headerImage = x.first;
+                    [[MeVM uploadImage:1 image:x.first] subscribeNext:^(id  _Nullable x) {
+                        
+                    }];
                     [self.EFTableView reloadData];
                 }
             }];
