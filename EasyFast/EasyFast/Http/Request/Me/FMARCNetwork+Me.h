@@ -25,6 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (RACSignal *)goodsFootprintList:(NSString *)queryTime pageNum:(NSNumber *)pageNum;
 
 - (RACSignal *)uploadImage:(NSInteger)type image:(UIImage *)image;
+
+/// 地址列表
+- (RACSignal *)findAddressListPageNum:(NSNumber *)pageNum;
 @end
 
 NS_ASSUME_NONNULL_END

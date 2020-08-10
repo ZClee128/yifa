@@ -9,6 +9,7 @@
 #import "EFAddressViewController.h"
 #import "EFAddressTableViewCell.h"
 #import "EFAddAddressViewController.h"
+#import "EFAddressVM.h"
 
 @interface EFAddressViewController ()
 
@@ -39,6 +40,7 @@
 }
 
 - (void)viewDidLoad {
+    self.viewModel = [[EFAddressVM alloc] init];
     [super viewDidLoad];
     self.gk_navTitle = @"收货地址";
     self.EFTableView.height = kPHONE_HEIGHT - NAVIGATION_BAR_HEIGHT - WidthOfScale(60) - TAB_SAFE_HEIGHT;
@@ -49,6 +51,15 @@
         make.centerX.equalTo(self.view);
         make.height.equalTo(@(WidthOfScale(60)+TAB_SAFE_HEIGHT));
         make.width.equalTo(@(kPHONE_WIDTH));
+    }];
+    [self addRefshUp];
+    [self addRefshDown];
+}
+
+- (void)loadList {
+    @weakify(self);
+    [[self.viewModel refreshForDown] subscribeNext:^(id  _Nullable x) {
+        
     }];
 }
 

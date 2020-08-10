@@ -39,4 +39,5 @@
 #define kgoodsMonthFootprint @"api-client/user/footprint/goodsMonthFootprint" //商品当月足迹接口
 #define kgoodsFootprintList @"api-client/user/footprint/goodsFootprintList" //商品足迹列表接口
 #define kuploadImage @"api-client/file/upload" // 上传图片
+#define kfindAddressList @"api-client/user/address/findAddressList" // 地址列表接口
 #endif /* Api_h */

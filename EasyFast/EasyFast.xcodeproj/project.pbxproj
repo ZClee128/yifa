@@ -28,6 +28,12 @@
 		0C0CC3DA24E12148005E50ED /* EFExpressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3D924E12148005E50ED /* EFExpressModel.m */; };
 		0C0CC3DB24E12148005E50ED /* EFExpressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3D924E12148005E50ED /* EFExpressModel.m */; };
 		0C0CC3DC24E12148005E50ED /* EFExpressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3D924E12148005E50ED /* EFExpressModel.m */; };
+		0C0CC3E424E12C0A005E50ED /* EFAddressVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3E324E12C0A005E50ED /* EFAddressVM.m */; };
+		0C0CC3E524E12C0A005E50ED /* EFAddressVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3E324E12C0A005E50ED /* EFAddressVM.m */; };
+		0C0CC3E624E12C0A005E50ED /* EFAddressVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3E324E12C0A005E50ED /* EFAddressVM.m */; };
+		0C0CC3EE24E12CB0005E50ED /* EFAdsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3ED24E12CB0005E50ED /* EFAdsModel.m */; };
+		0C0CC3EF24E12CB0005E50ED /* EFAdsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3ED24E12CB0005E50ED /* EFAdsModel.m */; };
+		0C0CC3F024E12CB0005E50ED /* EFAdsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3ED24E12CB0005E50ED /* EFAdsModel.m */; };
 		0C4BAF9324D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
 		0C4BAF9424D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
 		0C4BAF9524D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
@@ -623,6 +629,10 @@
 		0C0CC3D424E12087005E50ED /* EFAddressModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFAddressModel.m; sourceTree = "<group>"; };
 		0C0CC3D824E12148005E50ED /* EFExpressModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFExpressModel.h; sourceTree = "<group>"; };
 		0C0CC3D924E12148005E50ED /* EFExpressModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFExpressModel.m; sourceTree = "<group>"; };
+		0C0CC3E224E12C0A005E50ED /* EFAddressVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFAddressVM.h; sourceTree = "<group>"; };
+		0C0CC3E324E12C0A005E50ED /* EFAddressVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFAddressVM.m; sourceTree = "<group>"; };
+		0C0CC3EC24E12CB0005E50ED /* EFAdsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFAdsModel.h; sourceTree = "<group>"; };
+		0C0CC3ED24E12CB0005E50ED /* EFAdsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFAdsModel.m; sourceTree = "<group>"; };
 		0C4BAF9124D0085F0037CDCF /* EFMeRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFMeRefreshHeader.h; sourceTree = "<group>"; };
 		0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFMeRefreshHeader.m; sourceTree = "<group>"; };
 		0C4BAF9724D021440037CDCF /* EFBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFBridge.h; sourceTree = "<group>"; };
@@ -1104,6 +1114,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		0C0CC3E124E12BEB005E50ED /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				0C0CC3E224E12C0A005E50ED /* EFAddressVM.h */,
+				0C0CC3E324E12C0A005E50ED /* EFAddressVM.m */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
 		0C4BAF9624D0212E0037CDCF /* Bridge */ = {
 			isa = PBXGroup;
 			children = (
@@ -1118,6 +1137,8 @@
 			children = (
 				0C4BAFDD24D26B2D0037CDCF /* cityModel.h */,
 				0C4BAFDE24D26B2D0037CDCF /* cityModel.m */,
+				0C0CC3EC24E12CB0005E50ED /* EFAdsModel.h */,
+				0C0CC3ED24E12CB0005E50ED /* EFAdsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1476,6 +1497,7 @@
 		8476106424C58848002B34E4 /* Address */ = {
 			isa = PBXGroup;
 			children = (
+				0C0CC3E124E12BEB005E50ED /* VM */,
 				0C4BAFDC24D26B1D0037CDCF /* Model */,
 				8476106F24C58B31002B34E4 /* View */,
 				8476106524C58861002B34E4 /* EFAddressViewController.h */,
@@ -2450,11 +2472,13 @@
 				84A821C824C047C000EAC652 /* EFClassTabTableViewCell.m in Sources */,
 				0C8A279A24D7C1F800E40ED8 /* EFOnePhoneLoginManager.m in Sources */,
 				84760F8C24C15AD5002B34E4 /* EFSearchModel.m in Sources */,
+				0C0CC3EE24E12CB0005E50ED /* EFAdsModel.m in Sources */,
 				8476106724C58861002B34E4 /* EFAddressViewController.m in Sources */,
 				84760F9624C1806D002B34E4 /* NSMutableAttributedString+Size.m in Sources */,
 				0C8A2A0124DBA4A700E40ED8 /* EFGoodsList.m in Sources */,
 				8476119D24C838A6002B34E4 /* EFClassifyModel.m in Sources */,
 				841B94F324C979790054D8D5 /* FTPopOverMenu.m in Sources */,
+				0C0CC3E424E12C0A005E50ED /* EFAddressVM.m in Sources */,
 				0C4BAF9E24D1013D0037CDCF /* EFFollowTuanTableViewCell.m in Sources */,
 				84A8216624BE92B900EAC652 /* HotTabTableViewCell.m in Sources */,
 				0C6CB57924CE7E2D00471A8D /* EFOneLoginPhoneTableViewCell.m in Sources */,
@@ -2652,11 +2676,13 @@
 				84A821C924C047C000EAC652 /* EFClassTabTableViewCell.m in Sources */,
 				0C8A279B24D7C1F800E40ED8 /* EFOnePhoneLoginManager.m in Sources */,
 				84760F8D24C15AD5002B34E4 /* EFSearchModel.m in Sources */,
+				0C0CC3EF24E12CB0005E50ED /* EFAdsModel.m in Sources */,
 				8476106824C58861002B34E4 /* EFAddressViewController.m in Sources */,
 				84760F9724C1806D002B34E4 /* NSMutableAttributedString+Size.m in Sources */,
 				0C8A2A0224DBA4A700E40ED8 /* EFGoodsList.m in Sources */,
 				8476119E24C838A7002B34E4 /* EFClassifyModel.m in Sources */,
 				841B94F424C979790054D8D5 /* FTPopOverMenu.m in Sources */,
+				0C0CC3E524E12C0A005E50ED /* EFAddressVM.m in Sources */,
 				0C4BAF9F24D1013D0037CDCF /* EFFollowTuanTableViewCell.m in Sources */,
 				84A8216724BE92B900EAC652 /* HotTabTableViewCell.m in Sources */,
 				0C6CB57A24CE7E2D00471A8D /* EFOneLoginPhoneTableViewCell.m in Sources */,
@@ -2854,11 +2880,13 @@
 				84A821CA24C047C100EAC652 /* EFClassTabTableViewCell.m in Sources */,
 				0C8A279C24D7C1F800E40ED8 /* EFOnePhoneLoginManager.m in Sources */,
 				84760F8E24C15AD5002B34E4 /* EFSearchModel.m in Sources */,
+				0C0CC3F024E12CB0005E50ED /* EFAdsModel.m in Sources */,
 				8476106924C58861002B34E4 /* EFAddressViewController.m in Sources */,
 				84760F9824C1806D002B34E4 /* NSMutableAttributedString+Size.m in Sources */,
 				0C8A2A0324DBA4A700E40ED8 /* EFGoodsList.m in Sources */,
 				8476119F24C838A7002B34E4 /* EFClassifyModel.m in Sources */,
 				841B94F524C979790054D8D5 /* FTPopOverMenu.m in Sources */,
+				0C0CC3E624E12C0A005E50ED /* EFAddressVM.m in Sources */,
 				0C4BAFA024D1013D0037CDCF /* EFFollowTuanTableViewCell.m in Sources */,
 				84A8216824BE92B900EAC652 /* HotTabTableViewCell.m in Sources */,
 				0C6CB57B24CE7E2D00471A8D /* EFOneLoginPhoneTableViewCell.m in Sources */,

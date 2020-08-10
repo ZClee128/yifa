@@ -30,4 +30,8 @@
     NSData *data = UIImageJPEGRepresentation(image, 1.0f);
     return [[FMARCNetwork sharedInstance] uploadNetworkPath:kuploadImage params:@{@"type":@(type)} fileDatas:@[data] name:@"file" mimeType:@"image/jpg"];
 }
+
+- (RACSignal *)findAddressListPageNum:(NSNumber *)pageNum {
+    return [self fg_postRequest:kfindAddressList paramters:@{@"pageNum":pageNum}];
+}
 @end
