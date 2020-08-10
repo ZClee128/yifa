@@ -122,11 +122,46 @@
     [self.oneBtn AddImageRadiusBorderWithColor:RGB16(0xD6D6D6) lineWidth:1 radius:WidthOfScale(35)/2];
 }
 
-- (void)setModel:(id)model {
-    
-    [self.oneBtn setTitle:@"查看物流" forState:(UIControlStateNormal)];
-    [self.twoBtn setTitle:@"确认收货" forState:(UIControlStateNormal)];
-    [self.threeBtn setTitle:@"待付款" forState:(UIControlStateNormal)];
+- (void)setModel:(EFOrderModel *)model {
+    switch (model.orderState) {
+        case 100:
+        {
+            self.oneBtn.hidden = YES;
+            self.twoBtn.hidden = YES;
+            self.moreBtn.hidden = YES;
+            [self.threeBtn setTitle:@"立即付款" forState:(UIControlStateNormal)];
+            [self.threeBtn AddImageRadiusBorderWithColor:colorF14745 lineWidth:1 radius:WidthOfScale(35)/2];
+            [self.threeBtn setTitleColor:colorF14745 forState:(UIControlStateNormal)];
+            break;
+        }
+        case 200:
+        {
+            self.oneBtn.hidden = YES;
+            self.moreBtn.hidden = YES;
+            [self.twoBtn setTitle:@"催促发货" forState:(UIControlStateNormal)];
+            [self.threeBtn setTitle:@"退货退款" forState:(UIControlStateNormal)];
+            break;
+        }
+        case 300:
+        {
+            [self.oneBtn setTitle:@"查看物流" forState:(UIControlStateNormal)];
+            [self.twoBtn setTitle:@"确认收货" forState:(UIControlStateNormal)];
+            [self.threeBtn setTitle:@"再来一单" forState:(UIControlStateNormal)];
+            [self.threeBtn AddImageRadiusBorderWithColor:colorF14745 lineWidth:1 radius:WidthOfScale(35)/2];
+            [self.threeBtn setTitleColor:colorF14745 forState:(UIControlStateNormal)];
+            break;
+        }
+            case 400:
+        {
+            [self.oneBtn setTitle:@"联系客服" forState:(UIControlStateNormal)];
+            self.moreBtn.hidden = YES;
+            [self.twoBtn setTitle:@"评价" forState:(UIControlStateNormal)];
+            [self.threeBtn setTitle:@"退货退款" forState:(UIControlStateNormal)];
+            break;
+        }
+        default:
+            break;
+    }
 }
 
 - (void)awakeFromNib {
