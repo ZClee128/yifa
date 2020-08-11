@@ -21,6 +21,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)NSString *icon;
 /// 标签名称
 @property (nonatomic,strong)NSString *title;
+/// 标签背景颜色
+@property (nonatomic,strong)NSString *color;
+/// 文字颜色
+@property (nonatomic,strong)NSString *colorWord;
 @end
 
 

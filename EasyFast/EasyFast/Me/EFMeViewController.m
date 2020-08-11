@@ -139,10 +139,10 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-     MeTabTableViewCell *MeCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MeTabTableViewCell class])];
     switch (indexPath.section) {
         case 0:
         {
+            MeTabTableViewCell *MeCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MeTabTableViewCell class])];
             [MeCell setData:@[@{@"title":@"已完成",@"icon":@"yiwancheng"},
             @{@"title":@"等待中",@"icon":@"waitting"},
             @{@"title":@"已失效",@"icon":@"yishixiao"},
@@ -158,6 +158,7 @@
         }
             case 1:
         {
+            MeTabTableViewCell *MeCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MeTabTableViewCell class])];
             [MeCell setData:@[@{@"title":@"待付款",@"icon":@"wallet"},@{@"title":@"待发货",@"icon":@"daifahuo"},
             @{@"title":@"待收货",@"icon":@"daishouhuo"},
             @{@"title":@"待评价",@"icon":@"daipingjia"},
@@ -233,7 +234,7 @@
         switch (indexPath.row) {
             case 0:
             {
-                EFAddressViewController *VC = [[EFAddressViewController alloc] init];
+                EFAddressViewController *VC = [[EFAddressViewController alloc] initWithType:(AddressTypeApp)];
                 VC.hidesBottomBarWhenPushed = YES;
                 [self.navigationController qmui_pushViewController:VC animated:YES completion:^{
                     

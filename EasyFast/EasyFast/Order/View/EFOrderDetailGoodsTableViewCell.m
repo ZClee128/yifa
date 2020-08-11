@@ -43,7 +43,10 @@
             make.size.mas_equalTo(CGSizeMake(WidthOfScale(89), WidthOfScale(35)));
         }];
         [self.moreBtn layoutIfNeeded];
-        [self.moreBtn AddImageRadiusBorderWithColor:RGB16(0xD6D6D6) lineWidth:1 radius:WidthOfScale(35)/2];
+        self.moreBtn.layer.borderColor = RGB16(0xD6D6D6).CGColor;
+        self.moreBtn.layer.borderWidth = 1;
+        self.moreBtn.layer.cornerRadius = WidthOfScale(35)/2;
+        self.moreBtn.layer.masksToBounds = YES;
         
         [self.goods mas_updateConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(WidthOfScale(80), WidthOfScale(80)));

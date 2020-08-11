@@ -8,6 +8,7 @@
 
 #import "EFBaseRefreshVM.h"
 #import "EFOrderModel.h"
+#import "EFLogisticsModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,6 +23,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (RACSignal *)myOrderDetailExpressNum:(NSString *)expressNum orderNum:(NSString *)orderNum;
 
 + (RACSignal *)confirmReceiptExpressNum:(NSString *)expressNum orderNum:(NSString *)orderNum;
+
++ (RACSignal *)urgedDeliveryOrderNum:(NSString *)orderNum;
+
++ (RACSignal *)orderExpressExpressNum:(NSString *)expressNum orderNum:(NSString *)orderNum;
 @end
 
 NS_ASSUME_NONNULL_END

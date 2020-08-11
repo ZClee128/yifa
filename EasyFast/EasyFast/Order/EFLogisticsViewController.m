@@ -12,13 +12,26 @@
 #import "EFLogisticsTwoLabTableViewCell.h"
 #import "EFTimeAxisTableViewCell.h"
 
+
 @interface EFLogisticsViewController ()
 
 @property (nonatomic,strong)NSMutableArray *wuliuArr;
 @property (nonatomic,assign)CGFloat cellHeight;
+
+@property (nonatomic,strong)EFOrderModel *model;
 @end
 
 @implementation EFLogisticsViewController
+
+- (instancetype)initWithExpressNum:(EFOrderModel *)model
+{
+    self = [super init];
+    if (self) {
+        self.model = model;
+    }
+    return self;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,8 +39,13 @@
     [self.EFTableView registerClass:[LogisticsHeaderTableViewCell class] forCellReuseIdentifier:NSStringFromClass([LogisticsHeaderTableViewCell class])];
     [self.EFTableView registerClass:[EFLogisticsTwoLabTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFLogisticsTwoLabTableViewCell class])];
     [self.EFTableView registerClass:[EFTimeAxisTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFTimeAxisTableViewCell class])];
-    self.wuliuArr = [@[@[@"快递公司：",@"货拉拉"],@[@"收货地址：",@"广东省深圳市南山区大新时代广场1302"],@[@"订单号：",@"SF10752482411"]] mutableCopy];
-    self.EFData = [@[@1,@1,@1,@1,@1,@1] mutableCopy];
+    @weakify(self);
+    [[EFOrderVM orderExpressExpressNum:self.model.expressNum orderNum:self.model.orderNum] subscribeNext:^(EFLogisticsModel *x) {
+        @strongify(self);
+        self.wuliuArr = [@[@[@"快递公司：",x.expressTitle ? x.expressTitle : @""],@[@"收货地址：",x.recipientAddress ? x.recipientAddress : @""],@[@"订单号：",x.expressNum ? x.expressNum : @""]] mutableCopy];
+        self.EFData = [x.expressItemList mutableCopy];
+        [self.EFTableView reloadData];
+    }];
 }
 
 
@@ -51,7 +69,7 @@
         case 0:
         {
             LogisticsHeaderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([LogisticsHeaderTableViewCell class])];
-            [cell setModel:@""];
+            [cell setModel:self.model];
             return cell;
         }
         case 1:
@@ -63,10 +81,12 @@
         default:
         {
             EFTimeAxisTableViewCell *timeCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFTimeAxisTableViewCell class])];
-            [timeCell setModel:@""];
+            ExpressItemModel *model = self.EFData[indexPath.row];
+            [timeCell setModel:model];
             indexPath.row == 0 ? [timeCell hiddenTop] : [timeCell showTop];
             indexPath.row == 0 ? [timeCell setSelectImage] : [timeCell setNormalImage];
             indexPath.row == self.EFData.count - 1 ? [timeCell hiddenBottom] : [timeCell showBottom];
+            indexPath.row == 0 ? [timeCell setBlack] : [timeCell setNormal];
             self.cellHeight = [timeCell getCellHeight];
             return timeCell;
         }

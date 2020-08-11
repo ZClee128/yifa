@@ -26,6 +26,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setNormalImage;
 
 - (CGFloat)getCellHeight;
+
+- (void)setBlack;
+
+- (void)setNormal;
 @end
 
 NS_ASSUME_NONNULL_END

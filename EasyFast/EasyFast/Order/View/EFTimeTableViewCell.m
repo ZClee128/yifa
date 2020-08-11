@@ -46,9 +46,9 @@
         @weakify(self);
         [[_CopyBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self);
-            if (self.copyBlock) {
-                self.copyBlock();
-            }
+            UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+            pasteboard.string = self.rightLab.text;
+            [MBProgressHUD showSuccess:@"复制成功"];
         }];
     }
     return _CopyBtn;

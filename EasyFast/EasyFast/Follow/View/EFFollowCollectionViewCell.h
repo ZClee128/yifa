@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EFFollowCollectionViewCell : UICollectionViewCell
 
-- (void)setModel:(EFGoodsList *)model;
+- (void)setModel:(id)model;
 @end
 
 NS_ASSUME_NONNULL_END

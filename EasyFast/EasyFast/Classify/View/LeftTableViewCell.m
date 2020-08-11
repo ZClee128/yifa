@@ -7,6 +7,7 @@
 //
 
 #import "LeftTableViewCell.h"
+#import "EFClassifyModel.h"
 
 @interface LeftTableViewCell ()
 
@@ -44,8 +45,8 @@
     [self.contentView addSubview:self.flagView];
 }
 
-- (void)setModel:(id)model {
-    self.titleLab.text = model;
+- (void)setModel:(EFClassifyModel *)model {
+    self.titleLab.text = model.title;
 }
 
 - (void)awakeFromNib {

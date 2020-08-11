@@ -7,7 +7,7 @@
 //
 
 #import "EFFollowCollectionViewCell.h"
-
+#import "EFOrderModel.h"
 @interface EFFollowCollectionViewCell()
 
 @property (nonatomic,strong)UIImageView *goods;
@@ -65,14 +65,28 @@
 
 }
 
-- (void)setModel:(EFGoodsList *)model {
-    self.priceLab.attributedText = [[NSString stringWithFormat:@"¥%.1f",model.price] getAttributeWithChangeString:@"¥" ChangeFont:RegularFont10 textColor:[UIColor whiteColor]];
-    [self.priceLab mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(@([self.priceLab.attributedText AttributedStringFont:RegularFont11 maxHeight:WidthOfScale(20)] + 18));
-    }];
-    [self.priceLab layoutIfNeeded];
-    [self.contentView layoutIfNeeded];
-    [self.priceLab ViewRadius:WidthOfScale(20)/2];
-    [self.goods sd_setImageWithURL:[NSURL URLWithString:model.url] placeholderImage:UIImageMake(@"gg")];
+- (void)setModel:(id)model {
+    if ([model isKindOfClass:[EFGoodsList class]]) {
+        EFGoodsList *gModel = (EFGoodsList *)model;
+        self.priceLab.attributedText = [[NSString stringWithFormat:@"¥%.1f",gModel.price] getAttributeWithChangeString:@"¥" ChangeFont:RegularFont10 textColor:[UIColor whiteColor]];
+        [self.priceLab mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(@([self.priceLab.attributedText AttributedStringFont:RegularFont11 maxHeight:WidthOfScale(20)] + 18));
+        }];
+        [self.priceLab layoutIfNeeded];
+        [self.contentView layoutIfNeeded];
+        [self.priceLab ViewRadius:WidthOfScale(20)/2];
+        [self.goods sd_setImageWithURL:[NSURL URLWithString:gModel.url] placeholderImage:UIImageMake(@"gg")];
+    }else if ([model isKindOfClass:[EFOrderGoodsModel class]]) {
+        EFOrderGoodsModel *gModel = (EFOrderGoodsModel *)model;
+        self.priceLab.attributedText = [[NSString stringWithFormat:@"¥%.1f",gModel.goodsPrice] getAttributeWithChangeString:@"¥" ChangeFont:RegularFont10 textColor:[UIColor whiteColor]];
+        [self.priceLab mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(@([self.priceLab.attributedText AttributedStringFont:RegularFont11 maxHeight:WidthOfScale(20)] + 18));
+        }];
+        [self.priceLab layoutIfNeeded];
+        [self.contentView layoutIfNeeded];
+        [self.priceLab ViewRadius:WidthOfScale(20)/2];
+        [self.goods sd_setImageWithURL:[NSURL URLWithString:gModel.goodsImage] placeholderImage:UIImageMake(@"gg")];
+    }
+    
 }
 @end

@@ -67,4 +67,13 @@
         return result.reqResult;
     }];
 }
+
++ (RACSignal *)queryUserInfoCount {
+    return [self requsetNetwork:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] queryUserInfoCount];
+    } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
+        EFQueryUserInfoCountModel *model = [EFQueryUserInfoCountModel modelWithJSON:result.reqResult];
+        return model;
+    }];
+}
 @end

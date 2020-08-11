@@ -148,4 +148,9 @@ fprintf(stderr,"[--%s--]\n[--%s:%d--]\n[--%s--]\n===========================\n",
 #define kup UIImageMake(@"up") // 降序
 #define kdown UIImageMake(@"down") // 升序
 #define knormal UIImageMake(@"normal") //正常
+
+// 数据库表名
+
+/// 首页分类
+#define kHomeCategory @"HomeCategory"
 #endif /* Constant_h */

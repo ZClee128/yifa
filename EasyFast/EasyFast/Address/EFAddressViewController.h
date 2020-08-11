@@ -10,10 +10,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef enum : NSUInteger {
+    AddressTypeWeb,
+    AddressTypeApp,
+} AddressType;
+
 @interface EFAddressViewController : EFBaseTableViewController
 
 @property (nonatomic,copy)void(^chooseAddress)(NSString *str);
 
+- (instancetype)initWithType:(AddressType )type;
 @end
 
 NS_ASSUME_NONNULL_END

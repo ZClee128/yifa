@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)QMUILabel *topLab;
 @property (nonatomic,strong)QMUILabel *bottomLab;
 - (void)setTopTilte:(NSString *)top bottomTitle:(NSString *)bottom;
+
+- (void)hiddenDot;
+- (void)showDot;
 @end
 
 NS_ASSUME_NONNULL_END

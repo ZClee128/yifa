@@ -8,12 +8,14 @@
 
 #import "EFToPayDetailViewController.h"
 #import "EFPayTypeTableViewCell.h"
+#import "EFOrderVM.h"
 
 @interface EFToPayDetailViewController ()
 
 @property (nonatomic,assign)BOOL isMorePay;
 @property (nonatomic,strong)QMUIButton *morePayBtn;
 @property (nonatomic,strong)QMUILabel *timeLab;
+@property (nonatomic,strong)NSMutableArray *PayArr;
 
 @end
 
@@ -23,10 +25,20 @@
     [super viewDidLoad];
     self.EFTableView.frame = CGRectMake(0, NAVIGATION_BAR_HEIGHT + WidthOfScale(30), kPHONE_WIDTH, kPHONE_HEIGHT - NAVIGATION_BAR_HEIGHT - WidthOfScale(60) - TAB_SAFE_HEIGHT - WidthOfScale(30));
     [self.EFTableView registerClass:[EFPayTypeTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFPayTypeTableViewCell class])];
-    self.orderArr = [@[@{@"icon":@"wxpay",@"title":@"微信支付"},@{@"icon":@"alipay",@"title":@"支付宝"}] mutableCopy];
+    self.PayArr = [@[@{@"icon":@"wxpay",@"title":@"微信支付"},@{@"icon":@"alipay",@"title":@"支付宝"}] mutableCopy];
     self.EFTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, 50)];
     [self setBottom];
     [self.view addSubview:self.timeLab];
+    
+}
+
+- (void)day:(NSInteger)day hour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second {
+//    XYLog(@"%ld,%ld,%ld,%ld",day,hour,minute,second);
+    if (hour == 0 && minute == 0) {
+        self.timeLab.text = @"订单已取消";
+    }else {
+        self.timeLab.text = [NSString stringWithFormat:@"请在%ld时%ld分内支付，逾期订单将自动取消",hour,minute];
+    }
 }
 
 - (QMUILabel *)timeLab {
@@ -35,7 +47,7 @@
         _timeLab.font = RegularFont13;
         _timeLab.textColor = colorFE851E;
         _timeLab.backgroundColor = [colorFE851E colorWithAlphaComponent:0.2];
-        _timeLab.text = @"请在22时50分内支付，逾期订单将自动取消";
+        _timeLab.text = @"订单已取消";
         _timeLab.textAlignment = NSTextAlignmentCenter;
     }
     return _timeLab;
@@ -96,7 +108,7 @@
     QMUILabel *priceLab = [[QMUILabel alloc] init];
     priceLab.font = MedFont16;
     priceLab.textColor = colorF14745;
-    priceLab.attributedText = [@"合计：￥28,379.85" getAttributeWithChangeString:@"合计：" ChangeFont:priceLab.font textColor:tabbarBlackColor];
+    priceLab.attributedText = [[NSString stringWithFormat:@"合计：￥%.1f",self.model.totalAmount] getAttributeWithChangeString:@"合计：" ChangeFont:priceLab.font textColor:tabbarBlackColor];
     [bg addSubview:priceLab];
     [priceLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@(15.5));
@@ -113,11 +125,11 @@
         case 0:
             return 1; //头部
         case 1:
-            return 4; //商品信息
+            return self.model.goodsList.count + 1; //商品信息
         case 2:
             return self.priceArr.count; //价格
         default:
-            return self.isMorePay ? self.orderArr.count : self.orderArr.count - 1;
+            return self.isMorePay ? self.PayArr.count : self.PayArr.count - 1;
     }
 }
 
@@ -126,7 +138,7 @@
         case 0:
         {
             EFOrderAddressTableViewCell *adCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFOrderAddressTableViewCell class])];
-            [adCell setModel:@""];
+            [adCell setModel:self.model];
             self.addressHeight = [adCell getCellHeight];
             return adCell;
         }
@@ -136,13 +148,13 @@
                 case 0:
                 {
                     EFOrderShopTableViewCell *shopCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFOrderShopTableViewCell class])];
-                    [shopCell setModel:@""];
+                    [shopCell setModel:self.model];
                     return shopCell;
                 }
                 default:
                 {
                     EFOrderDetailGoodsTableViewCell *goodsCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFOrderDetailGoodsTableViewCell class])];
-                    [goodsCell setModel:@""];
+                    [goodsCell setModel:self.model.goodsList[indexPath.row - 1]];
                     return goodsCell;
                 }
             }
@@ -175,13 +187,16 @@
             default:
         {
             EFPayTypeTableViewCell *timeCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFPayTypeTableViewCell class])];
-            [timeCell setModel:self.orderArr[indexPath.row]];
+            [timeCell setModel:self.PayArr[indexPath.row]];
             return timeCell;
         }
         
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.section) {

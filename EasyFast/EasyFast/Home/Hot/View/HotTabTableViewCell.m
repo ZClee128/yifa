@@ -9,7 +9,7 @@
 #import "HotTabTableViewCell.h"
 #import "HotTabCollectionViewCell.h"
 #import "SLScrollViewHorizontalItem.h"
-
+#import "EFActivityModel.h"
 @interface HotTabTableViewCell ()<SLScrollViewHorizontalItemDelegate>
 
 @property (strong, nonatomic) SLScrollViewHorizontalItem *scrollViewHorizontalItem;
@@ -107,9 +107,9 @@
     [btn.titleLabel sizeToFit];
     [btn sizeToFit];
     [btn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
-    NSDictionary *dict = self.data[index];
-    [btn setTitle:dict[@"title"] forState:(UIControlStateNormal)];
-    [btn setImage:[UIImage imageNamed:dict[@"icon"]] forState:(UIControlStateNormal)];
+    EFActivityModel *model = self.data[index];
+    [btn setTitle:model.iconTitle forState:(UIControlStateNormal)];
+    [btn setImage:[UIImage imageNamed:model.icon] forState:(UIControlStateNormal)];
     return btn;
     
 }

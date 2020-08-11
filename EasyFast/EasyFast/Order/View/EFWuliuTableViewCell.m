@@ -87,7 +87,7 @@
 
 - (void)setModel:(EFOrderModel *)model {
     self.StatusLab.text = model.express.state;
-    self.text  = [[NSMutableAttributedString alloc] initWithString: [NSString stringWithFormat:@"%@,%@",model.express.create,model.express.context]];
+    self.text  = [[NSMutableAttributedString alloc] initWithString: [NSString stringWithFormat:@"%@,%@",model.express.time,model.express.context]];
     self.text.font = RegularFont13;
     self.text.color = tabbarBlackColor;
     self.text.lineSpacing = 10; // 行间距

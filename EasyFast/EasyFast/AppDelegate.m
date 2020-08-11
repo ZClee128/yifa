@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "EFOneLoginViewController.h"
 #import <BaiduMapAPI_Map/BMKMapView.h>
+
 @interface AppDelegate ()
 
 @property (nonatomic,strong)BMKMapManager *mapManager;
@@ -77,6 +78,7 @@
     [TABAnimated sharedAnimated].openAnimationTag = NO;
     [TABAnimated sharedAnimated].animationType = TABAnimationTypeBinAnimation;
     [TABAnimated sharedAnimated].animatedColor = colorfafafa;
+    
     
     dispatch_async(dispatch_get_main_queue(), ^{
         EFCustomWebViewPool *webViewPool = [EFCustomWebViewPool sharedInstance];

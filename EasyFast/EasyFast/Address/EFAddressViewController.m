@@ -15,6 +15,7 @@
 
 @property (nonatomic,strong)QMUIButton *addBtn;
 @property (nonatomic,assign) CGFloat  cellHeight;
+@property (nonatomic,assign)AddressType addressType;
 @end
 
 @implementation EFAddressViewController
@@ -39,6 +40,14 @@
     return _addBtn;
 }
 
+- (instancetype)initWithType:(AddressType )type
+{
+    self = [super init];
+    if (self) {
+        self.addressType = type;
+    }
+    return self;
+}
 
 
 - (void)viewDidLoad {
@@ -139,11 +148,13 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.navigationController qmui_popViewControllerAnimated:YES completion:^{
-    
-    }];
-    if (self.chooseAddress) {
-        self.chooseAddress(@"dddddd");
+    if (self.addressType == AddressTypeWeb) {
+        [self.navigationController qmui_popViewControllerAnimated:YES completion:^{
+            
+        }];
+        if (self.chooseAddress) {
+            self.chooseAddress(@"dddddd");
+        }
     }
 }
 @end

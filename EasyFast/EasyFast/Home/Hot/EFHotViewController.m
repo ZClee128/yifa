@@ -13,15 +13,33 @@
 #import "EFFastTableViewCell.h"
 #import "EFGoodsTableViewCell.h"
 #import "EFFastTuanListViewController.h"
+#import "EFHomeVM.h"
 
 @interface EFHotViewController ()
 
 @property (nonatomic,strong)SDCycleScrollView *cycleScrollView;
 @property (nonatomic,strong)EFHeaderView *fastHeader;
 @property (nonatomic,strong)EFHeaderView *wholesaleHeader;
+@property (nonatomic,strong)NSMutableArray *activityArr;
+@property (nonatomic,strong)NSMutableArray *noticeArr;
 @end
 
 @implementation EFHotViewController
+
+- (NSMutableArray *)activityArr {
+    if (_activityArr == nil) {
+        _activityArr = [[NSMutableArray alloc] init];
+    }
+    return _activityArr;
+}
+
+- (NSMutableArray *)noticeArr {
+    if (_noticeArr == nil) {
+        _noticeArr = [[NSMutableArray alloc] init];
+    }
+    return _noticeArr;
+}
+
 
 -(EFHeaderView *)wholesaleHeader
 {
@@ -58,7 +76,6 @@
 {
     if (_cycleScrollView == nil) {
         _cycleScrollView = [[SDCycleScrollView alloc] init];
-        _cycleScrollView.imageURLStringsGroup = @[@"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=349017606,698810927&fm=26&gp=0.jpg",@"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3364826732,178479767&fm=26&gp=0.jpg",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596111509403&di=3c2d5f36ad341f339395a874a08074a1&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Fback_pic%2F03%2F77%2F68%2F7357c0421e95241.jpg"];
         _cycleScrollView.currentPageDotImage = [UIImage imageWithColor:UIColor.whiteColor size:CGSizeMake(20, 4) cornerRadius:2];
         _cycleScrollView.pageDotImage = [UIImage imageWithColor:UIColorFromRGBA(0xf5f5f5, 0.5) size:CGSizeMake(20, 4) cornerRadius:2];
     }
@@ -66,6 +83,7 @@
 }
 
 - (void)viewDidLoad {
+    self.viewModel = [[EFHomeVM alloc] init];
     [super viewDidLoad];
     self.gk_navigationBar.hidden = YES;
     self.EFTableView.frame = CGRectMake(0, 0, kPHONE_WIDTH, kPHONE_HEIGHT-NAVIGATION_BAR_HEIGHT-30-TAB_BAR_HEIGHT);
@@ -75,11 +93,48 @@
     [self.EFTableView registerClass:[EFFastTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFFastTableViewCell class])];
     [self.EFTableView registerClass:[EFGoodsTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFGoodsTableViewCell class])];
     [self addRefshDown];
+    [self addRefshUp];
+    [self loadList];
 }
 
+- (void)loadList {
+    [[EFHomeVM activity] subscribeNext:^(NSArray *x) {
+        self.activityArr = [x mutableCopy];
+        [self.EFTableView reloadData];
+    }];
+    
+    [[EFHomeVM banner] subscribeNext:^(NSArray *x) {
+        NSMutableArray *images = [[NSMutableArray alloc] init];
+        for (int i = 0 ; i < x.count; i++) {
+            EFBannerModel *model = x[i];
+            [images addObject:model.url];
+        }
+        self.cycleScrollView.imageURLStringsGroup = images;
+    }];
+    
+    [[EFHomeVM notice] subscribeNext:^(NSArray *x) {
+        self.noticeArr = [x mutableCopy];
+        [self.EFTableView reloadData];
+    }];
+    
+    [[self.viewModel refreshForDown] subscribeNext:^(RACTuple *x) {
+        [self.EFTableView.mj_header endRefreshing];
+        self.EFData = x.first;
+        [self.EFTableView reloadData];
+    }];
+    
+}
 
 - (void)loadNewData {
-    [self.EFTableView.mj_header endRefreshing];
+    [self loadList];
+}
+
+- (void)loadMoreData {
+    [[self.viewModel refreshForUp] subscribeNext:^(RACTuple *x) {
+        [self.EFTableView.mj_footer endRefreshing];
+        self.EFData = x.first;
+        [self.EFTableView reloadData];
+    }];
 }
 
 - (UIView *)headerView {
@@ -112,7 +167,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     switch (section) {
         case 3:
-            return 10;
+            return self.EFData.count;
         default:
             return 1;
     }
@@ -123,12 +178,13 @@
         case 0:
         {
             HotTabTableViewCell *hotCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HotTabTableViewCell class])];
-            [hotCell setCollectData:[@[@{@"title":@"签到奖励",@"icon":@"1"},@{@"title":@"平台活动",@"icon":@"2"},@{@"title":@"清仓减价",@"icon":@"3"},@{@"title":@"反向拍卖",@"icon":@"4"},@{@"title":@"签到奖励",@"icon":@"1"},@{@"title":@"平台活动",@"icon":@"2"},@{@"title":@"清仓减价",@"icon":@"3"},@{@"title":@"反向拍卖",@"icon":@"4"},@{@"title":@"反向拍卖",@"icon":@"4"}] mutableCopy]];
+            [hotCell setCollectData:self.activityArr];
             return hotCell;
         }
         case 1:
         {
             EFNoticeTableViewCell *noticeCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFNoticeTableViewCell class])];
+            [noticeCell setModel:self.noticeArr];
             return noticeCell;
         }
             case 2:
@@ -143,7 +199,8 @@
         default:
         {
             EFGoodsTableViewCell *goodsCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFGoodsTableViewCell class])];
-            [goodsCell setModel:@""];
+            EFGoodsList *model = self.EFData[indexPath.row];
+            [goodsCell setModel:model];
             goodsCell.btnSelect = ^{
                 [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(YES)}];
             };
@@ -161,8 +218,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.section) {
         case 0:
-            
-            return WidthOfScale(208); //WidthOfScale(123.5);
+            return self.activityArr.count <= 4 ? WidthOfScale(123.5) : WidthOfScale(208);
             case 1:
         {
             return WidthOfScale(30);

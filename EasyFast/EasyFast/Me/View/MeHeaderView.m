@@ -8,6 +8,7 @@
 
 #import "MeHeaderView.h"
 #import "VerticalLabelBotton.h"
+#import "MeVM.h"
 
 @interface MeHeaderView ()
 
@@ -133,6 +134,9 @@
         self.message = message;
         self.vip = vip;
         [self setUI];
+        [[MeVM queryUserInfoCount] subscribeNext:^(EFQueryUserInfoCountModel *x) {
+            
+        }];
     }
     return self;
 }
@@ -202,7 +206,7 @@
         VerticalLabelBotton *btn = [[VerticalLabelBotton alloc] initWithFrame:CGRectMake(i*bottomBg.width/3, WidthOfScale(22), bottomBg.width/3, WidthOfScale(37))];
         btn.tag = i+100;
         [bottomBg addSubview:btn];
-        [btn setTopTilte:@"99+" bottomTitle:titles[i]];
+        [btn setTopTilte:@"99" bottomTitle:titles[i]];
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(click:)];
         btn.userInteractionEnabled = YES;
         [btn addGestureRecognizer:tap];

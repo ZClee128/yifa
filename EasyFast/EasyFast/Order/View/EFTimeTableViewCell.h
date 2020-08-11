@@ -15,7 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)QMUILabel *leftLab;
 @property (nonatomic,strong)QMUILabel *rightLab;
 @property (nonatomic,strong)QMUIButton *CopyBtn;
-@property (nonatomic,copy)void(^copyBlock)(void);
 
 - (void)hiddenCopy;
 

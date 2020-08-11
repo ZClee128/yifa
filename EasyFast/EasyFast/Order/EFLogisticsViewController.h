@@ -7,11 +7,11 @@
 //
 
 #import "EFBaseTableViewController.h"
-
+#import "EFOrderVM.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EFLogisticsViewController : EFBaseTableViewController
-
+- (instancetype)initWithExpressNum:(EFOrderModel *)model;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -7,7 +7,7 @@
 //
 
 #import "HotTabCollectionViewCell.h"
-
+#import "EFClassifyModel.h"
 
 
 @interface HotTabCollectionViewCell ()
@@ -44,8 +44,12 @@
     [self.tabBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
 }
 
-- (void)setModel:(id)model {
-    [self.tabBtn setTitle:model[@"title"] forState:(UIControlStateNormal)];
-    [self.tabBtn setImage:[UIImage imageNamed:model[@"icon"]] forState:(UIControlStateNormal)];
+- (void)setModel:(EFClassifyModel *)model {
+    [self.tabBtn setTitle:model.title forState:(UIControlStateNormal)];
+    if ([model.title isEqualToString:@"查看更多"]) {
+        [self.tabBtn setImage:UIImageMake(model.icon) forState:(UIControlStateNormal)];
+    }else {
+        [self.tabBtn setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:model.icon]]] forState:(UIControlStateNormal)];
+    }
 }
 @end

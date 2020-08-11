@@ -25,4 +25,12 @@
 - (RACSignal *)confirmReceiptExpressNum:(NSString *)expressNum orderNum:(NSString *)orderNum {
     return [self fg_postRequest:kconfirmReceipt paramters:@{@"expressNum":expressNum,@"orderNum":orderNum}];
 }
+
+- (RACSignal *)urgedDeliveryOrderNum:(NSString *)orderNum {
+    return [self fg_postRequest:kurgedDelivery paramters:@{@"orderNum":orderNum}];
+}
+
+- (RACSignal *)orderExpressExpressNum:(NSString *)expressNum orderNum:(NSString *)orderNum {
+    return [self fg_postRequest:korderExpress paramters:@{@"expressNum":expressNum,@"orderNum":orderNum}];
+}
 @end

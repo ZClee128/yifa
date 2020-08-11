@@ -29,6 +29,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)NSMutableArray *goodsArr;
 @property (nonatomic,assign)BOOL ismore;
 @property (nonatomic,strong)EFOrderModel *model;
+@property (nonatomic,strong)CountDown *timer;
+
+- (void)day:(NSInteger)day hour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second;
 @end
 
 

@@ -121,7 +121,7 @@
 {
     ThreeCollectionViewCellItem * cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([ThreeCollectionViewCellItem class]) forIndexPath:indexPath];
     EFClassifyModel *model = [self.dataArray objectAtIndex:indexPath.row];
-
+    [cell setModel:model];
     return cell;
 }
 
@@ -137,7 +137,7 @@
     {
         if (self.returnSelectItemBlock)
         {
-            self.returnSelectItemBlock(@"");
+            self.returnSelectItemBlock(model);
         }
     }
 }

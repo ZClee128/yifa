@@ -13,13 +13,8 @@
 // 设置集合属性中的类型
 + (NSDictionary *)modelContainerPropertyGenericClass {
     return @{
-             @"childrenList" : [EFClassifyModel class],
+             @"children" : [EFClassifyModel class],
              };
 }
 
-+ (NSDictionary *)modelCustomPropertyMapper {
-    return @{
-             @"idField" : @"id",
-             };
-}
 @end

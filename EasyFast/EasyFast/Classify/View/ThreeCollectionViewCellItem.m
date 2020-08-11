@@ -7,7 +7,7 @@
 //
 
 #import "ThreeCollectionViewCellItem.h"
-
+#import "EFClassifyModel.h"
 @interface ThreeCollectionViewCellItem ()
 
 @property (nonatomic, strong) UIImageView *logoImgView;
@@ -50,7 +50,8 @@
     return self;
 }
 
-- (void)setModel:(id)model {
-    
+- (void)setModel:(EFClassifyModel *)model {
+    [self.logoImgView sd_setImageWithURL:[NSURL URLWithString:model.icon] placeholderImage:UIImageMake(@"")];
+    self.nameLabel.text = model.title;
 }
 @end

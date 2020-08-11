@@ -182,7 +182,11 @@ static FMARCNetwork * _instance = nil;
         NSError *serializationError = nil;
 
         NSMutableURLRequest *request = [self.manager.requestSerializer requestWithMethod:req.method URLString:[[NSURL URLWithString:req.path relativeToURL:self->efBaseURL ] absoluteString] parameters:req.parameters error:&serializationError];
-        [request setFormData:req.parameters];
+        if (req.method == HTTP_METHOD_GET) {
+            
+        }else {
+            [request setFormData:req.parameters];
+        }
         if (serializationError) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wgnu"

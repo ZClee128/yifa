@@ -107,7 +107,7 @@
     @weakify(self);
     [self.bridge registerHandler:@"ChooseAddress" handler:^(id data, WVJBResponseCallback responseCallback) {
         @strongify(self);
-        EFAddressViewController *vc = [[EFAddressViewController alloc] init];
+        EFAddressViewController *vc = [[EFAddressViewController alloc] initWithType:(AddressTypeWeb)];
         vc.chooseAddress = ^(NSString * _Nonnull str) {
             responseCallback(str);
         };
@@ -119,7 +119,7 @@
     [self.bridge registerHandler:@"Camera" handler:^(id data, WVJBResponseCallback responseCallback) {
         NSDictionary *dict = [self identifyData:data];
         [[ZLPhotoActionSheet zlPhotos:[UIViewController getCurrentVC] maxCount:[dict[@"size"] intValue]] subscribeNext:^(RACTuple * _Nullable x) {
-            responseCallback(@{@"image":x.first});
+            responseCallback(@{@"image":@"sdfsdfsdfsdf"});
         }];
     }];
 }

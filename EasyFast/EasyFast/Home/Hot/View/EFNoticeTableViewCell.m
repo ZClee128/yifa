@@ -8,15 +8,24 @@
 
 #import "EFNoticeTableViewCell.h"
 #import "EFNoticTitleCell.h"
+#import "EFNoticeModel.h"
 
 @interface EFNoticeTableViewCell()<GYRollingNoticeViewDelegate,GYRollingNoticeViewDataSource>
 
 @property (nonatomic,strong)GYRollingNoticeView *rollView;
+@property (nonatomic,strong)NSMutableArray *data;
 
 @end
 
 
 @implementation EFNoticeTableViewCell
+
+- (NSMutableArray *)data {
+    if (_data == nil) {
+        _data = [[NSMutableArray alloc] init];
+    }
+    return _data;
+}
 
 -(GYRollingNoticeView *)rollView
 {
@@ -26,7 +35,6 @@
         _rollView.delegate = self;
         _rollView.dataSource = self;
         [_rollView registerClass:[EFNoticTitleCell class] forCellReuseIdentifier:NSStringFromClass([EFNoticTitleCell class])];
-        [_rollView reloadDataAndStartRoll];
     }
     return _rollView;
 }
@@ -79,14 +87,20 @@
     [self.contentView layoutIfNeeded];
 }
 
+- (void)setModel:(NSMutableArray *)model {
+    self.data = model;
+    [self.rollView reloadDataAndStartRoll];
+}
+
 #pragma GYRollingNoticeViewDelegate,GYRollingNoticeViewDataSource
 - (NSInteger)numberOfRowsForRollingNoticeView:(GYRollingNoticeView *)rollingView {
-    return 3;
+    return self.data.count;
 }
 
 - (GYNoticeViewCell *)rollingNoticeView:(GYRollingNoticeView *)rollingView cellAtIndex:(NSUInteger)index {
     EFNoticTitleCell *cell = [rollingView dequeueReusableCellWithIdentifier:NSStringFromClass([EFNoticTitleCell class])];
-    [cell setTitle:@"此地方为平台公告展示地"];
+    EFNoticeModel *model = self.data[index];
+    [cell setTitle:model.title];
     return cell;
 }
 

@@ -11,12 +11,21 @@
 #import "EFGoodsTableViewCell.h"
 #import "EFClassDetailViewController.h"
 #import "TuanListViewController.h"
+#import "EFClassifyVM.h"
 
 @interface EFHomeOtherViewController ()
 @property (nonatomic,assign)id type;
+@property (nonatomic,strong)NSMutableArray *classData;
 @end
 
 @implementation EFHomeOtherViewController
+
+- (NSMutableArray *)classData {
+    if (_classData == nil) {
+        _classData = [[NSMutableArray alloc] init];
+    }
+    return _classData;
+}
 
 - (instancetype)initWithType:(id)type
 {
@@ -33,6 +42,19 @@
     self.EFTableView.frame = CGRectMake(0, 0, kPHONE_WIDTH, kPHONE_HEIGHT-NAVIGATION_BAR_HEIGHT-30-TAB_BAR_HEIGHT);
     [self.EFTableView registerClass:[EFClassTabTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFClassTabTableViewCell class])];
     [self.EFTableView registerClass:[EFGoodsTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFGoodsTableViewCell class])];
+    [self loadList];
+}
+
+- (void)loadList {
+    //@{@"title":@"查看更多",@"icon":@"6"}
+    [[EFClassifyVM thirdCategory:self.type size:@"9"] subscribeNext:^(NSArray *x) {
+        self.classData = [x mutableCopy];
+        EFClassifyModel *model = [[EFClassifyModel alloc] init];
+        model.icon = @"6";
+        model.title = @"查看更多";
+        [self.classData addObject:model];
+        [self.EFTableView reloadData];
+    }];
 }
 
 - (UIView *)listView {
@@ -58,8 +80,7 @@
         case 0:
          {
              EFClassTabTableViewCell *classCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFClassTabTableViewCell class])];
-             [classCell setCollectData:[@[@{@"title":@"T恤",@"icon":@"14"},@{@"title":@"POLO衫",@"icon":@"13"},@{@"title":@"衬衫",@"icon":@"7"},@{@"title":@"背心/马甲",@"icon":@"5"},@{@"title":@"针织衫",@"icon":@"12"}
-             ,@{@"title":@"短裤",@"icon":@"8"},@{@"title":@"休闲裤",@"icon":@"10"},@{@"title":@"牛仔裤",@"icon":@"9"},@{@"title":@"休闲套装",@"icon":@"11"},@{@"title":@"查看更多",@"icon":@"6"}] mutableCopy]];
+             [classCell setCollectData:self.classData];
              classCell.selectItem = ^(id  _Nonnull model) {
                  EFClassDetailViewController *VC = [[EFClassDetailViewController alloc] init];
                  VC.hidesBottomBarWhenPushed = YES;
@@ -74,7 +95,7 @@
         default:
         {
             EFGoodsTableViewCell *goodsCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFGoodsTableViewCell class])];
-            [goodsCell setModel:@""];
+//            [goodsCell setModel:@""];
             goodsCell.btnSelect = ^{
               [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(YES)}];
             };

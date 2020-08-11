@@ -34,6 +34,36 @@
 		0C0CC3EE24E12CB0005E50ED /* EFAdsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3ED24E12CB0005E50ED /* EFAdsModel.m */; };
 		0C0CC3EF24E12CB0005E50ED /* EFAdsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3ED24E12CB0005E50ED /* EFAdsModel.m */; };
 		0C0CC3F024E12CB0005E50ED /* EFAdsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3ED24E12CB0005E50ED /* EFAdsModel.m */; };
+		0C0CC3FC24E237AB005E50ED /* XQCAlertTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3FB24E237AB005E50ED /* XQCAlertTool.m */; };
+		0C0CC3FD24E237AB005E50ED /* XQCAlertTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3FB24E237AB005E50ED /* XQCAlertTool.m */; };
+		0C0CC3FE24E237AB005E50ED /* XQCAlertTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC3FB24E237AB005E50ED /* XQCAlertTool.m */; };
+		0C0CC40124E23AD3005E50ED /* EFLogisticsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC40024E23AD3005E50ED /* EFLogisticsModel.m */; };
+		0C0CC40224E23AD3005E50ED /* EFLogisticsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC40024E23AD3005E50ED /* EFLogisticsModel.m */; };
+		0C0CC40324E23AD3005E50ED /* EFLogisticsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC40024E23AD3005E50ED /* EFLogisticsModel.m */; };
+		0C0CC40724E275F3005E50ED /* FMARCNetwork+Home.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC40624E275F3005E50ED /* FMARCNetwork+Home.m */; };
+		0C0CC40824E275F3005E50ED /* FMARCNetwork+Home.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC40624E275F3005E50ED /* FMARCNetwork+Home.m */; };
+		0C0CC40924E275F3005E50ED /* FMARCNetwork+Home.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC40624E275F3005E50ED /* FMARCNetwork+Home.m */; };
+		0C0CC40D24E2766D005E50ED /* EFActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC40C24E2766D005E50ED /* EFActivityModel.m */; };
+		0C0CC40E24E2766D005E50ED /* EFActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC40C24E2766D005E50ED /* EFActivityModel.m */; };
+		0C0CC40F24E2766D005E50ED /* EFActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC40C24E2766D005E50ED /* EFActivityModel.m */; };
+		0C0CC41324E27BF7005E50ED /* EFHomeVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC41224E27BF7005E50ED /* EFHomeVM.m */; };
+		0C0CC41424E27BF7005E50ED /* EFHomeVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC41224E27BF7005E50ED /* EFHomeVM.m */; };
+		0C0CC41524E27BF7005E50ED /* EFHomeVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC41224E27BF7005E50ED /* EFHomeVM.m */; };
+		0C0CC41824E2827E005E50ED /* EFBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC41724E2827E005E50ED /* EFBannerModel.m */; };
+		0C0CC41924E2827E005E50ED /* EFBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC41724E2827E005E50ED /* EFBannerModel.m */; };
+		0C0CC41A24E2827E005E50ED /* EFBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC41724E2827E005E50ED /* EFBannerModel.m */; };
+		0C0CC41D24E28516005E50ED /* EFNoticeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC41C24E28516005E50ED /* EFNoticeModel.m */; };
+		0C0CC41E24E28516005E50ED /* EFNoticeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC41C24E28516005E50ED /* EFNoticeModel.m */; };
+		0C0CC41F24E28516005E50ED /* EFNoticeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC41C24E28516005E50ED /* EFNoticeModel.m */; };
+		0C0CC42324E294B7005E50ED /* FMARCNetwork+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC42224E294B7005E50ED /* FMARCNetwork+Category.m */; };
+		0C0CC42424E294B7005E50ED /* FMARCNetwork+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC42224E294B7005E50ED /* FMARCNetwork+Category.m */; };
+		0C0CC42524E294B7005E50ED /* FMARCNetwork+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC42224E294B7005E50ED /* FMARCNetwork+Category.m */; };
+		0C0CC42924E2953C005E50ED /* EFClassifyVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC42824E2953C005E50ED /* EFClassifyVM.m */; };
+		0C0CC42A24E2953C005E50ED /* EFClassifyVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC42824E2953C005E50ED /* EFClassifyVM.m */; };
+		0C0CC42B24E2953C005E50ED /* EFClassifyVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC42824E2953C005E50ED /* EFClassifyVM.m */; };
+		0C0CC42E24E2BDA2005E50ED /* EFQueryUserInfoCountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC42D24E2BDA2005E50ED /* EFQueryUserInfoCountModel.m */; };
+		0C0CC42F24E2BDA2005E50ED /* EFQueryUserInfoCountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC42D24E2BDA2005E50ED /* EFQueryUserInfoCountModel.m */; };
+		0C0CC43024E2BDA2005E50ED /* EFQueryUserInfoCountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC42D24E2BDA2005E50ED /* EFQueryUserInfoCountModel.m */; };
 		0C4BAF9324D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
 		0C4BAF9424D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
 		0C4BAF9524D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
@@ -633,6 +663,26 @@
 		0C0CC3E324E12C0A005E50ED /* EFAddressVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFAddressVM.m; sourceTree = "<group>"; };
 		0C0CC3EC24E12CB0005E50ED /* EFAdsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFAdsModel.h; sourceTree = "<group>"; };
 		0C0CC3ED24E12CB0005E50ED /* EFAdsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFAdsModel.m; sourceTree = "<group>"; };
+		0C0CC3FA24E237AB005E50ED /* XQCAlertTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQCAlertTool.h; sourceTree = "<group>"; };
+		0C0CC3FB24E237AB005E50ED /* XQCAlertTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XQCAlertTool.m; sourceTree = "<group>"; };
+		0C0CC3FF24E23AD3005E50ED /* EFLogisticsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFLogisticsModel.h; sourceTree = "<group>"; };
+		0C0CC40024E23AD3005E50ED /* EFLogisticsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFLogisticsModel.m; sourceTree = "<group>"; };
+		0C0CC40524E275F3005E50ED /* FMARCNetwork+Home.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FMARCNetwork+Home.h"; sourceTree = "<group>"; };
+		0C0CC40624E275F3005E50ED /* FMARCNetwork+Home.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FMARCNetwork+Home.m"; sourceTree = "<group>"; };
+		0C0CC40B24E2766D005E50ED /* EFActivityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFActivityModel.h; sourceTree = "<group>"; };
+		0C0CC40C24E2766D005E50ED /* EFActivityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFActivityModel.m; sourceTree = "<group>"; };
+		0C0CC41124E27BF7005E50ED /* EFHomeVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFHomeVM.h; sourceTree = "<group>"; };
+		0C0CC41224E27BF7005E50ED /* EFHomeVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFHomeVM.m; sourceTree = "<group>"; };
+		0C0CC41624E2827E005E50ED /* EFBannerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFBannerModel.h; sourceTree = "<group>"; };
+		0C0CC41724E2827E005E50ED /* EFBannerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFBannerModel.m; sourceTree = "<group>"; };
+		0C0CC41B24E28516005E50ED /* EFNoticeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFNoticeModel.h; sourceTree = "<group>"; };
+		0C0CC41C24E28516005E50ED /* EFNoticeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFNoticeModel.m; sourceTree = "<group>"; };
+		0C0CC42124E294B7005E50ED /* FMARCNetwork+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FMARCNetwork+Category.h"; sourceTree = "<group>"; };
+		0C0CC42224E294B7005E50ED /* FMARCNetwork+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FMARCNetwork+Category.m"; sourceTree = "<group>"; };
+		0C0CC42724E2953C005E50ED /* EFClassifyVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFClassifyVM.h; sourceTree = "<group>"; };
+		0C0CC42824E2953C005E50ED /* EFClassifyVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFClassifyVM.m; sourceTree = "<group>"; };
+		0C0CC42C24E2BDA2005E50ED /* EFQueryUserInfoCountModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFQueryUserInfoCountModel.h; sourceTree = "<group>"; };
+		0C0CC42D24E2BDA2005E50ED /* EFQueryUserInfoCountModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFQueryUserInfoCountModel.m; sourceTree = "<group>"; };
 		0C4BAF9124D0085F0037CDCF /* EFMeRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFMeRefreshHeader.h; sourceTree = "<group>"; };
 		0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFMeRefreshHeader.m; sourceTree = "<group>"; };
 		0C4BAF9724D021440037CDCF /* EFBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFBridge.h; sourceTree = "<group>"; };
@@ -1083,6 +1133,8 @@
 				0C0CC3D424E12087005E50ED /* EFAddressModel.m */,
 				0C0CC3D824E12148005E50ED /* EFExpressModel.h */,
 				0C0CC3D924E12148005E50ED /* EFExpressModel.m */,
+				0C0CC3FF24E23AD3005E50ED /* EFLogisticsModel.h */,
+				0C0CC40024E23AD3005E50ED /* EFLogisticsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1110,6 +1162,8 @@
 			children = (
 				0C0CC3CD24E0DD83005E50ED /* EFFootPrint.h */,
 				0C0CC3CE24E0DD83005E50ED /* EFFootPrint.m */,
+				0C0CC42C24E2BDA2005E50ED /* EFQueryUserInfoCountModel.h */,
+				0C0CC42D24E2BDA2005E50ED /* EFQueryUserInfoCountModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1119,6 +1173,64 @@
 			children = (
 				0C0CC3E224E12C0A005E50ED /* EFAddressVM.h */,
 				0C0CC3E324E12C0A005E50ED /* EFAddressVM.m */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		0C0CC3F924E237AB005E50ED /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				0C0CC3FA24E237AB005E50ED /* XQCAlertTool.h */,
+				0C0CC3FB24E237AB005E50ED /* XQCAlertTool.m */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		0C0CC40424E275E6005E50ED /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0C0CC40524E275F3005E50ED /* FMARCNetwork+Home.h */,
+				0C0CC40624E275F3005E50ED /* FMARCNetwork+Home.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0C0CC40A24E27659005E50ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0C0CC40B24E2766D005E50ED /* EFActivityModel.h */,
+				0C0CC40C24E2766D005E50ED /* EFActivityModel.m */,
+				0C0CC41624E2827E005E50ED /* EFBannerModel.h */,
+				0C0CC41724E2827E005E50ED /* EFBannerModel.m */,
+				0C0CC41B24E28516005E50ED /* EFNoticeModel.h */,
+				0C0CC41C24E28516005E50ED /* EFNoticeModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0C0CC41024E27BE3005E50ED /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				0C0CC41124E27BF7005E50ED /* EFHomeVM.h */,
+				0C0CC41224E27BF7005E50ED /* EFHomeVM.m */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		0C0CC42024E294A2005E50ED /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				0C0CC42124E294B7005E50ED /* FMARCNetwork+Category.h */,
+				0C0CC42224E294B7005E50ED /* FMARCNetwork+Category.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		0C0CC42624E29526005E50ED /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				0C0CC42724E2953C005E50ED /* EFClassifyVM.h */,
+				0C0CC42824E2953C005E50ED /* EFClassifyVM.m */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -1731,6 +1843,8 @@
 		84A820C224B6CCC600EAC652 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				0C0CC42024E294A2005E50ED /* Category */,
+				0C0CC40424E275E6005E50ED /* Home */,
 				0C0CC3C624DD4C8E005E50ED /* Order */,
 				0C8A29ED24DBA22000E40ED8 /* Follow */,
 				0C8A29C424DA9A8400E40ED8 /* Me */,
@@ -1767,6 +1881,7 @@
 		84A820D324B6CD9E00EAC652 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				0C0CC3F924E237AB005E50ED /* Alert */,
 				0C8A27DD24D934E200E40ED8 /* CALayer */,
 				0C8A27D924D9348C00E40ED8 /* UILabel+Extension.h */,
 				0C8A27D824D9348C00E40ED8 /* UILabel+Extension.m */,
@@ -1804,6 +1919,8 @@
 		84A820E324B6F5DA00EAC652 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0C0CC41024E27BE3005E50ED /* VM */,
+				0C0CC40A24E27659005E50ED /* Model */,
 				84A820E424B6F5E800EAC652 /* EFHomeViewController.h */,
 				84A820E524B6F5E800EAC652 /* EFHomeViewController.m */,
 				84A8215124BDA08600EAC652 /* Hot */,
@@ -1814,6 +1931,7 @@
 		84A820E724B6F5EE00EAC652 /* Classify */ = {
 			isa = PBXGroup;
 			children = (
+				0C0CC42624E29526005E50ED /* VM */,
 				8476119A24C83882002B34E4 /* Model */,
 				8476119924C83878002B34E4 /* View */,
 				84A821D024C04EA900EAC652 /* EFClassDetailViewController.h */,
@@ -2341,6 +2459,7 @@
 				0C0CC3DA24E12148005E50ED /* EFExpressModel.m in Sources */,
 				0C8A27D024D8F28500E40ED8 /* EFUserModel.m in Sources */,
 				0C8A27CA24D8F15000E40ED8 /* UserManager.m in Sources */,
+				0C0CC41D24E28516005E50ED /* EFNoticeModel.m in Sources */,
 				0C6CB58E24CEB19000471A8D /* UITextField+MyExtension.m in Sources */,
 				84A821B324BFFAE700EAC652 /* EFSearchViewController.m in Sources */,
 				84187CA424C05D0200ED3F96 /* MeHeaderView.m in Sources */,
@@ -2378,6 +2497,7 @@
 				0C0CC3C924DD4CA3005E50ED /* FMARCNetwork+Order.m in Sources */,
 				841B94E324C93F980054D8D5 /* EFOrderGoodsTableViewCell.m in Sources */,
 				847610AF24C6A011002B34E4 /* LoginVM.m in Sources */,
+				0C0CC41824E2827E005E50ED /* EFBannerModel.m in Sources */,
 				84A8218E24BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */,
 				84187CA924C05E8200ED3F96 /* VerticalLabelBotton.m in Sources */,
 				84A820E224B6EADF00EAC652 /* EFBaseTabBarViewController.m in Sources */,
@@ -2394,6 +2514,8 @@
 				847610C924C6D7FA002B34E4 /* EFPowerViewController.m in Sources */,
 				0C0CC3C324DD4C5B005E50ED /* EFOrderVM.m in Sources */,
 				0C8A29F024DBA24300E40ED8 /* FMARCNetwork+Follow.m in Sources */,
+				0C0CC40724E275F3005E50ED /* FMARCNetwork+Home.m in Sources */,
+				0C0CC3FC24E237AB005E50ED /* XQCAlertTool.m in Sources */,
 				84A821A024BF146200EAC652 /* EFFollowSubViewController.m in Sources */,
 				84760F8624C1596E002B34E4 /* EFBaseModel.m in Sources */,
 				8476109924C67D19002B34E4 /* EFBindPhoneViewController.m in Sources */,
@@ -2425,6 +2547,7 @@
 				8476102824C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */,
 				0C8A2A0624DBEABB00E40ED8 /* EFCollectionVM.m in Sources */,
 				0C6CB5B124CECBC200471A8D /* EFFastRegViewController.m in Sources */,
+				0C0CC42E24E2BDA2005E50ED /* EFQueryUserInfoCountModel.m in Sources */,
 				0C8A27E024D934E200E40ED8 /* CALayer+Anim.m in Sources */,
 				84A821C324C03BB800EAC652 /* SeachOneCollectionViewCell.m in Sources */,
 				84A8207824B6C61800EAC652 /* AppDelegate.m in Sources */,
@@ -2448,6 +2571,7 @@
 				0C0CC3CF24E0DD83005E50ED /* EFFootPrint.m in Sources */,
 				84A820CC24B6CCC600EAC652 /* FMARCNetwork.m in Sources */,
 				8476103E24C54854002B34E4 /* TuanListSelectView.m in Sources */,
+				0C0CC42324E294B7005E50ED /* FMARCNetwork+Category.m in Sources */,
 				84A820DF24B6CE6B00EAC652 /* UIViewController+Runtime.m in Sources */,
 				0CCEC49724CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */,
 				84A821D224C04EAA00EAC652 /* EFClassDetailViewController.m in Sources */,
@@ -2519,16 +2643,20 @@
 				847610A424C68962002B34E4 /* EFPhoneTableViewCell.m in Sources */,
 				84A821A624BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */,
 				0CCEC47C24CABBF300976D24 /* EFHelpViewController.m in Sources */,
+				0C0CC40D24E2766D005E50ED /* EFActivityModel.m in Sources */,
 				841B94DE24C93C690054D8D5 /* EFOrderTitleTableViewCell.m in Sources */,
 				84A821BE24C033EC00EAC652 /* SearchTwoCollectionViewCell.m in Sources */,
 				0C8A276124D68D1600E40ED8 /* CalendarModel.m in Sources */,
 				84A820EA24B6F62900EAC652 /* EFClassifyViewController.m in Sources */,
 				84A820DD24B6CE6B00EAC652 /* UIView+Frame.m in Sources */,
+				0C0CC41324E27BF7005E50ED /* EFHomeVM.m in Sources */,
 				8476109F24C684EA002B34E4 /* EFQPTableViewCell.m in Sources */,
 				84A8219B24BF011700EAC652 /* TKTagView.m in Sources */,
 				0CE2861424D3EC4F00AAC334 /* LTSCircleView.m in Sources */,
+				0C0CC42924E2953C005E50ED /* EFClassifyVM.m in Sources */,
 				84A820BE24B6CAC400EAC652 /* EFBaseVM.m in Sources */,
 				0CE2860224D3EC4F00AAC334 /* LTSCalendarContentView.m in Sources */,
+				0C0CC40124E23AD3005E50ED /* EFLogisticsModel.m in Sources */,
 				8476118D24C7DBD5002B34E4 /* EFOnePhoneViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2545,6 +2673,7 @@
 				0C0CC3DB24E12148005E50ED /* EFExpressModel.m in Sources */,
 				0C8A27D124D8F28500E40ED8 /* EFUserModel.m in Sources */,
 				0C8A27CB24D8F15000E40ED8 /* UserManager.m in Sources */,
+				0C0CC41E24E28516005E50ED /* EFNoticeModel.m in Sources */,
 				0C6CB58F24CEB19000471A8D /* UITextField+MyExtension.m in Sources */,
 				84A821B424BFFAE700EAC652 /* EFSearchViewController.m in Sources */,
 				84187CA524C05D0200ED3F96 /* MeHeaderView.m in Sources */,
@@ -2582,6 +2711,7 @@
 				0C0CC3CA24DD4CA3005E50ED /* FMARCNetwork+Order.m in Sources */,
 				841B94E424C93F980054D8D5 /* EFOrderGoodsTableViewCell.m in Sources */,
 				847610B024C6A012002B34E4 /* LoginVM.m in Sources */,
+				0C0CC41924E2827E005E50ED /* EFBannerModel.m in Sources */,
 				84A8218F24BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */,
 				84187CAA24C05E8200ED3F96 /* VerticalLabelBotton.m in Sources */,
 				84A8210024BC4F5400EAC652 /* EFMeViewController.m in Sources */,
@@ -2598,6 +2728,8 @@
 				847610CA24C6D7FA002B34E4 /* EFPowerViewController.m in Sources */,
 				0C0CC3C424DD4C5B005E50ED /* EFOrderVM.m in Sources */,
 				0C8A29F124DBA24400E40ED8 /* FMARCNetwork+Follow.m in Sources */,
+				0C0CC40824E275F3005E50ED /* FMARCNetwork+Home.m in Sources */,
+				0C0CC3FD24E237AB005E50ED /* XQCAlertTool.m in Sources */,
 				84A821A124BF146200EAC652 /* EFFollowSubViewController.m in Sources */,
 				84760F8724C1596E002B34E4 /* EFBaseModel.m in Sources */,
 				8476109A24C67D19002B34E4 /* EFBindPhoneViewController.m in Sources */,
@@ -2629,6 +2761,7 @@
 				8476102924C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */,
 				0C8A2A0724DBEABB00E40ED8 /* EFCollectionVM.m in Sources */,
 				0C6CB5B224CECBC200471A8D /* EFFastRegViewController.m in Sources */,
+				0C0CC42F24E2BDA2005E50ED /* EFQueryUserInfoCountModel.m in Sources */,
 				0C8A27E124D934E200E40ED8 /* CALayer+Anim.m in Sources */,
 				84A821C424C03BB800EAC652 /* SeachOneCollectionViewCell.m in Sources */,
 				84A8210724BC4F5400EAC652 /* AppDelegate.m in Sources */,
@@ -2652,6 +2785,7 @@
 				0C0CC3D024E0DD83005E50ED /* EFFootPrint.m in Sources */,
 				84A8210824BC4F5400EAC652 /* FMARCNetwork.m in Sources */,
 				8476103F24C54854002B34E4 /* TuanListSelectView.m in Sources */,
+				0C0CC42424E294B7005E50ED /* FMARCNetwork+Category.m in Sources */,
 				84A8210924BC4F5400EAC652 /* UIViewController+Runtime.m in Sources */,
 				0CCEC49824CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */,
 				84A821D324C04EAA00EAC652 /* EFClassDetailViewController.m in Sources */,
@@ -2723,16 +2857,20 @@
 				847610A524C68962002B34E4 /* EFPhoneTableViewCell.m in Sources */,
 				84A821A724BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */,
 				0CCEC47D24CABBF300976D24 /* EFHelpViewController.m in Sources */,
+				0C0CC40E24E2766D005E50ED /* EFActivityModel.m in Sources */,
 				841B94DF24C93C690054D8D5 /* EFOrderTitleTableViewCell.m in Sources */,
 				84A821BF24C033EC00EAC652 /* SearchTwoCollectionViewCell.m in Sources */,
 				0C8A276224D68D1600E40ED8 /* CalendarModel.m in Sources */,
 				84A8210E24BC4F5400EAC652 /* UIView+Frame.m in Sources */,
 				84A8210F24BC4F5400EAC652 /* EFBaseVM.m in Sources */,
+				0C0CC41424E27BF7005E50ED /* EFHomeVM.m in Sources */,
 				847610A024C684EA002B34E4 /* EFQPTableViewCell.m in Sources */,
 				84A8219C24BF011700EAC652 /* TKTagView.m in Sources */,
 				0CE2861524D3EC4F00AAC334 /* LTSCircleView.m in Sources */,
+				0C0CC42A24E2953C005E50ED /* EFClassifyVM.m in Sources */,
 				84A8215024BD841900EAC652 /* EFBaseTabBarViewController.m in Sources */,
 				0CE2860324D3EC4F00AAC334 /* LTSCalendarContentView.m in Sources */,
+				0C0CC40224E23AD3005E50ED /* EFLogisticsModel.m in Sources */,
 				8476118E24C7DBD5002B34E4 /* EFOnePhoneViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2749,6 +2887,7 @@
 				0C0CC3DC24E12148005E50ED /* EFExpressModel.m in Sources */,
 				0C8A27D224D8F28500E40ED8 /* EFUserModel.m in Sources */,
 				0C8A27CC24D8F15000E40ED8 /* UserManager.m in Sources */,
+				0C0CC41F24E28516005E50ED /* EFNoticeModel.m in Sources */,
 				0C6CB59024CEB19000471A8D /* UITextField+MyExtension.m in Sources */,
 				84A821B524BFFAE700EAC652 /* EFSearchViewController.m in Sources */,
 				84187CA624C05D0200ED3F96 /* MeHeaderView.m in Sources */,
@@ -2786,6 +2925,7 @@
 				0C0CC3CB24DD4CA3005E50ED /* FMARCNetwork+Order.m in Sources */,
 				841B94E524C93F980054D8D5 /* EFOrderGoodsTableViewCell.m in Sources */,
 				847610B124C6A012002B34E4 /* LoginVM.m in Sources */,
+				0C0CC41A24E2827E005E50ED /* EFBannerModel.m in Sources */,
 				84A8219024BEE61700EAC652 /* EFGoodsTableViewCell.m in Sources */,
 				84187CAB24C05E8200ED3F96 /* VerticalLabelBotton.m in Sources */,
 				84A8212324BC513500EAC652 /* EFBaseTabBarViewController.m in Sources */,
@@ -2802,6 +2942,8 @@
 				847610CB24C6D7FA002B34E4 /* EFPowerViewController.m in Sources */,
 				0C0CC3C524DD4C5B005E50ED /* EFOrderVM.m in Sources */,
 				0C8A29F224DBA24400E40ED8 /* FMARCNetwork+Follow.m in Sources */,
+				0C0CC40924E275F3005E50ED /* FMARCNetwork+Home.m in Sources */,
+				0C0CC3FE24E237AB005E50ED /* XQCAlertTool.m in Sources */,
 				84A821A224BF146200EAC652 /* EFFollowSubViewController.m in Sources */,
 				84760F8824C1596E002B34E4 /* EFBaseModel.m in Sources */,
 				8476109B24C67D19002B34E4 /* EFBindPhoneViewController.m in Sources */,
@@ -2833,6 +2975,7 @@
 				8476102A24C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */,
 				0C8A2A0824DBEABB00E40ED8 /* EFCollectionVM.m in Sources */,
 				0C6CB5B324CECBC200471A8D /* EFFastRegViewController.m in Sources */,
+				0C0CC43024E2BDA2005E50ED /* EFQueryUserInfoCountModel.m in Sources */,
 				0C8A27E224D934E200E40ED8 /* CALayer+Anim.m in Sources */,
 				84A821C524C03BB800EAC652 /* SeachOneCollectionViewCell.m in Sources */,
 				84A8212B24BC513500EAC652 /* AppDelegate.m in Sources */,
@@ -2856,6 +2999,7 @@
 				0C0CC3D124E0DD83005E50ED /* EFFootPrint.m in Sources */,
 				84A8212C24BC513500EAC652 /* FMARCNetwork.m in Sources */,
 				8476104024C54854002B34E4 /* TuanListSelectView.m in Sources */,
+				0C0CC42524E294B7005E50ED /* FMARCNetwork+Category.m in Sources */,
 				84A8212D24BC513500EAC652 /* UIViewController+Runtime.m in Sources */,
 				0CCEC49924CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */,
 				84A821D424C04EAA00EAC652 /* EFClassDetailViewController.m in Sources */,
@@ -2927,16 +3071,20 @@
 				847610A624C68962002B34E4 /* EFPhoneTableViewCell.m in Sources */,
 				84A821A824BF15E700EAC652 /* EFFollowTableViewCell.m in Sources */,
 				0CCEC47E24CABBF300976D24 /* EFHelpViewController.m in Sources */,
+				0C0CC40F24E2766D005E50ED /* EFActivityModel.m in Sources */,
 				841B94E024C93C690054D8D5 /* EFOrderTitleTableViewCell.m in Sources */,
 				84A821C024C033ED00EAC652 /* SearchTwoCollectionViewCell.m in Sources */,
 				0C8A276324D68D1600E40ED8 /* CalendarModel.m in Sources */,
 				84A8213124BC513500EAC652 /* EFClassifyViewController.m in Sources */,
 				84A8213224BC513500EAC652 /* UIView+Frame.m in Sources */,
+				0C0CC41524E27BF7005E50ED /* EFHomeVM.m in Sources */,
 				847610A124C684EA002B34E4 /* EFQPTableViewCell.m in Sources */,
 				84A8219D24BF011700EAC652 /* TKTagView.m in Sources */,
 				0CE2861624D3EC4F00AAC334 /* LTSCircleView.m in Sources */,
+				0C0CC42B24E2953C005E50ED /* EFClassifyVM.m in Sources */,
 				84A8213324BC513500EAC652 /* EFBaseVM.m in Sources */,
 				0CE2860424D3EC4F00AAC334 /* LTSCalendarContentView.m in Sources */,
+				0C0CC40324E23AD3005E50ED /* EFLogisticsModel.m in Sources */,
 				8476118F24C7DBD5002B34E4 /* EFOnePhoneViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

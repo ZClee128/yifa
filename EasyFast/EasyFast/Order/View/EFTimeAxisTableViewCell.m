@@ -8,6 +8,7 @@
 
 #import "EFTimeAxisTableViewCell.h"
 #import "VerticalLabelBotton.h"
+#import "EFLogisticsModel.h"
 
 @interface EFTimeAxisTableViewCell ()
 
@@ -105,7 +106,7 @@
     
     [self.contentView addSubview:self.timeView];
     [self.timeView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.dotImageView);
+        make.centerY.equalTo(self.tmpImageView);
         make.left.equalTo(@(WidthOfScale(15)));
 //        make.right.equalTo(self.tmpImageView.mas_left).equalTo(@(-WidthOfScale(10)));
         make.height.equalTo(@(WidthOfScale(25)));
@@ -132,15 +133,16 @@
     [self.contentView addSubview:self.detailLab];
     [self.detailLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@(WidthOfScale(89)));
-        make.top.equalTo(self.tmpImageView.mas_top).equalTo(@(-WidthOfScale(5)));
+        make.top.equalTo(self.tmpImageView.mas_top).equalTo(@(-WidthOfScale(0)));
         make.right.equalTo(@(-WidthOfScale(25.5)));
         make.bottom.equalTo(@(-WidthOfScale(21)));
     }];
 }
 
-- (void)setModel:(id)model {
-    [self.timeView setTopTilte:@"06-19" bottomTitle:@"18:22"];
-    self.text  = [[NSMutableAttributedString alloc] initWithString: @"在广东省后海港口装箱，即将发往深圳前海港口在广东省后海港口装箱，即将发往深圳前海港口广东省后海港口装箱，即将发往深圳前海港口"];
+- (void)setModel:(ExpressItemModel *)model {
+    NSArray *times = [model.formatTime componentsSeparatedByString:@" "];
+    [self.timeView setTopTilte:times[0] bottomTitle:times[1]];
+    self.text  = [[NSMutableAttributedString alloc] initWithString: model.context];
     self.text.font = RegularFont12;
     self.text.color = [tabbarBlackColor colorWithAlphaComponent:0.7];
     self.text.lineSpacing = 5; // 行间距
@@ -150,6 +152,16 @@
 - (CGFloat)getCellHeight{
     YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:CGSizeMake(WidthOfScale(206.5), CGFLOAT_MAX) text:self.text];
     return WidthOfScale(42)+layout.textBoundingSize.height;
+}
+
+- (void)setBlack {
+    self.text.color = tabbarBlackColor;
+    self.detailLab.attributedText = self.text;
+}
+
+- (void)setNormal {
+    self.text.color = [tabbarBlackColor colorWithAlphaComponent:0.7];
+    self.detailLab.attributedText = self.text;
 }
 
 - (void)hiddenTop {

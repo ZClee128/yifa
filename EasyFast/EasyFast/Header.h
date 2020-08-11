@@ -73,4 +73,7 @@
 #import <TABAnimated.h>
 #import "CountDown.h"
 #import "FMARCNetwork+Order.h"
+#import "XQCAlertTool.h"
+#import "FMARCNetwork+Home.h"
+#import "FMARCNetwork+Category.h"
 #endif /* Header_h */

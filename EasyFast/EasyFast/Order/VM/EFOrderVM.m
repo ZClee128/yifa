@@ -62,4 +62,21 @@
         return @(result.isSuccess);
     }];
 }
+
++ (RACSignal *)urgedDeliveryOrderNum:(NSString *)orderNum {
+    return [self requsetNetwork:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] urgedDeliveryOrderNum:orderNum];
+    } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
+        return @(result.isSuccess);
+    }];
+}
+
++ (RACSignal *)orderExpressExpressNum:(NSString *)expressNum orderNum:(NSString *)orderNum {
+    return [self requsetNetwork:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] orderExpressExpressNum:expressNum orderNum:orderNum];
+    } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
+        EFLogisticsModel *model = [EFLogisticsModel modelWithJSON:result.reqResult];
+        return model;
+    }];
+}
 @end

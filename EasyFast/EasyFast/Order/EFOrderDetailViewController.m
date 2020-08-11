@@ -125,22 +125,93 @@
         };
         btnCell.oneClick = ^{
             @strongify(self);
-            EFLogisticsViewController *vc = [[EFLogisticsViewController alloc] init];
-            [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
-                
-            }];
+            switch (model.orderState) {
+                case 300:
+                {
+                    EFLogisticsViewController *vc = [[EFLogisticsViewController alloc] initWithExpressNum:model];
+                    [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+                        
+                    }];
+                }
+                    break;
+                default:
+                    break;
+            }
         };
         
         btnCell.twoClick = ^{
-            
+            @strongify(self);
+            switch (model.orderState) {
+                case 300:
+                {
+                    [[XQCAlertTool showAlertTitle:@"" message:@"是否确认收货" cancle:@"取消" sure:@"确认"] subscribeNext:^(id  _Nullable x) {
+                        [[EFOrderVM confirmReceiptExpressNum:model.expressNum orderNum:model.orderNum] subscribeNext:^(NSNumber *x) {
+                            if ([x boolValue]) {
+                                [self loadList];
+                            }
+                        }];
+                    } error:^(NSError * _Nullable error) {
+                        
+                    }];
+                }
+                    break;
+                    case 400:
+                {
+                    [kH5Manager gotoUrl:@"evalWriting" hasNav:NO navTitle:@"" query:@{@"expressNum":model.expressNum,@"orderNum":model.orderNum}];
+                    break;
+                }
+                default:
+                    break;
+            }
         };
         
         btnCell.threeClick = ^{
             @strongify(self);
-            EFToPayDetailViewController *vc = [[EFToPayDetailViewController alloc] init];
-            [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
-                
-            }];
+            switch (model.orderState) {
+                case 100:
+                {
+                    EFToPayDetailViewController *vc = [[EFToPayDetailViewController alloc] init];
+                    vc.model = model;
+                    [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+                        
+                    }];
+                }
+                    break;
+                case 200:
+                {
+                    [[EFOrderVM urgedDeliveryOrderNum:model.orderNum] subscribeNext:^(NSNumber *x) {
+                        if ([x boolValue]) {
+                            [MBProgressHUD showSuccess:@"催促成功"];
+                        }
+                    }];
+                    break;
+                }
+                case 300:
+                {
+                    [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{}];
+                    break;
+                }
+                case 400:
+                {
+                    [kH5Manager gotoUrl:@"returnApply" hasNav:NO navTitle:@"" query:@{}];
+                    break;
+                }
+                case 600:
+                {
+                    [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{}];
+                    break;
+                }
+                case 800:
+                {
+                    [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{}];
+                    break;
+                }
+                default:
+                {
+                    
+                }
+                    break;
+            }
         };
         return btnCell;
     }else {
@@ -169,20 +240,35 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     EFOrderModel *model = self.EFData[indexPath.section];
-     if (indexPath.row == 0) {
-           
-       }else if (indexPath.row == model.goodsList.count + 1) {
-           
-       }else if (indexPath.row == model.goodsList.count + 2) {
-           
-       }else {
-           EFOrderMoreDetailViewController *vc = [[EFOrderMoreDetailViewController alloc] init];
-           vc.model = model;
-           [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
-               
-           }];
-       }
-   
+    if (indexPath.row == 0) {
+        
+    }else if (indexPath.row == model.goodsList.count + 1) {
+        
+    }else if (indexPath.row == model.goodsList.count + 2) {
+        
+    }else {
+        switch (model.orderState) {
+            case 100:
+            {
+                EFToPayDetailViewController *vc = [[EFToPayDetailViewController alloc] init];
+                vc.model = model;
+                [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+                    
+                }];
+            }
+                break;
+            default:
+            {
+                EFOrderMoreDetailViewController *vc = [[EFOrderMoreDetailViewController alloc] init];
+                vc.model = model;
+                [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+                    
+                }];
+            }
+                break;
+        }
+    }
+    
 }
 
 @end

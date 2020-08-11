@@ -45,7 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)NSString *orderNum;
 /// 订单支付状态, 1：未支付；2：已支付
 @property (nonatomic,assign)NSInteger orderPayState;
-/// 订单状态，100：未付款、200：待发货、300：待收货、400：待评价、500：退款/售后
+/// 订单状态，100：未付款、200：待发货、300：待收货、400：待评价、500：退款/售后、600：已完成、800：已失效
 @property (nonatomic,assign)NSInteger orderState;
 /// 子订单编码
 @property (nonatomic,strong)NSString *orderSubNo;
@@ -81,6 +81,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign)CGFloat goodsTotalAmount;
 /// 商品价格
 @property (nonatomic,assign)CGFloat goodsAmount;
+/// 结束时间
+@property (nonatomic,strong)NSDate *endTime;
+/// 当前时间
+@property (nonatomic,strong)NSDate *currentTime;
 @end
 
 NS_ASSUME_NONNULL_END

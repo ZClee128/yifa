@@ -8,6 +8,7 @@
 
 #import "EFGoodsTableViewCell.h"
 #import "TKTagView.h"
+#import "EFGoodsList.h"
 
 @interface EFGoodsTableViewCell()
 
@@ -172,13 +173,20 @@
 }
 
 
-- (void)setModel:(id)model {
-    self.goodsNameLab.text = @"商品名称只有一行，多余的";
-    self.listView.tagTitleArray = @[@"极速发货",@"极速发货"];
-    [self.listView createTags];
-    self.numLab.text = @"最低采购量：100";
-    self.sellLab.text = @"成交量：9999+";
-    self.priceLab.attributedText = [@"¥7899.00" getAttributeWithChangeString:@"¥" ChangeFont:RegularFont12 textColor:self.priceLab.textColor];
+- (void)setModel:(EFGoodsList *)model {
+    self.goodsNameLab.text = model.title;
+    if (model.tags.count != 0) {
+        NSMutableArray *titles = [[NSMutableArray alloc] init];
+        for (EFTagsModel *tag in model.tags) {
+            [titles addObject:tag.title];
+        }
+        self.listView.tagTitleArray = titles;
+        [self.listView createTags];
+    }
+    self.numLab.text = [NSString stringWithFormat:@"最低采购量：%ld",model.miniOrderLimit];
+    self.sellLab.text = [NSString stringWithFormat:@"成交量：%ld",model.sales];
+    self.priceLab.attributedText = [[NSString stringWithFormat:@"¥%.1f",model.price] getAttributeWithChangeString:@"¥" ChangeFont:RegularFont12 textColor:self.priceLab.textColor];
+    [self.goods sd_setImageWithURL:[NSURL URLWithString:model.url] placeholderImage:UIImageMake(@"gg")];
 }
 
 - (void)awakeFromNib {

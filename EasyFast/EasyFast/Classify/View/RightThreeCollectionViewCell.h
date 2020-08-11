@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "EFClassifyModel.h"
 NS_ASSUME_NONNULL_BEGIN
-typedef void(^ReturnSelectItemBlock)(NSString *selectItemId);
+typedef void(^ReturnSelectItemBlock)(EFClassifyModel *selectItemId);
 
 @interface RightThreeCollectionViewCell : UICollectionViewCell
 

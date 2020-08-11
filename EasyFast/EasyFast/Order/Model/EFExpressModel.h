@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 内容
 @property (nonatomic,strong)NSString *context;
 /// 时间
-@property (nonatomic,strong)NSString *create;
+@property (nonatomic,strong)NSString *time;
 /// 快递状态
 @property (nonatomic,strong)NSString *state;
 

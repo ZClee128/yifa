@@ -141,9 +141,8 @@
         {
             self.oneBtn.hidden = YES;
             self.moreBtn.hidden = YES;
-            self.twoBtn.hidden = NO;
-            [self.twoBtn setTitle:@"催促发货" forState:(UIControlStateNormal)];
-            [self.threeBtn setTitle:@"退货退款" forState:(UIControlStateNormal)];
+            self.twoBtn.hidden = YES;
+            [self.threeBtn setTitle:@"催促发货" forState:(UIControlStateNormal)];
             self.threeBtn.layer.borderColor = RGB16(0xD6D6D6).CGColor;
             [self.threeBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
             break;
@@ -151,7 +150,7 @@
         case 300:
         {
             self.oneBtn.hidden = NO;
-            self.moreBtn.hidden = NO;
+            self.moreBtn.hidden = YES;
             self.twoBtn.hidden = NO;
             [self.oneBtn setTitle:@"查看物流" forState:(UIControlStateNormal)];
             [self.twoBtn setTitle:@"确认收货" forState:(UIControlStateNormal)];
@@ -170,6 +169,25 @@
             [self.threeBtn setTitle:@"退货退款" forState:(UIControlStateNormal)];
             self.threeBtn.layer.borderColor = RGB16(0xD6D6D6).CGColor;
             [self.threeBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
+            break;
+        }
+        case 600: {
+            self.oneBtn.hidden = YES;
+            self.moreBtn.hidden = YES;
+            self.twoBtn.hidden = YES;
+            [self.threeBtn setTitle:@"再来一单" forState:(UIControlStateNormal)];
+            self.threeBtn.layer.borderColor = colorF14745.CGColor;
+            [self.threeBtn setTitleColor:colorF14745 forState:(UIControlStateNormal)];
+            break;
+        }
+            case 800:
+        {
+            self.oneBtn.hidden = YES;
+            self.moreBtn.hidden = YES;
+            self.twoBtn.hidden = YES;
+            [self.threeBtn setTitle:@"再来一单" forState:(UIControlStateNormal)];
+            self.threeBtn.layer.borderColor = colorF14745.CGColor;
+            [self.threeBtn setTitleColor:colorF14745 forState:(UIControlStateNormal)];
             break;
         }
         default:

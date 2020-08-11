@@ -10,6 +10,8 @@
 #import "EFHotViewController.h"
 #import "EFSearchViewController.h"
 #import "EFHomeOtherViewController.h"
+#import "EFClassifyModel.h"
+#import "EFClassifyVM.h"
 
 @interface EFHomeViewController ()<JXCategoryViewDelegate, JXCategoryListContainerViewDelegate>
 
@@ -26,7 +28,15 @@
     self.jxTitleView = [[JXCategoryTitleView alloc] initWithFrame:CGRectMake(0, NAVIGATION_BAR_HEIGHT, kPHONE_WIDTH, 30)];
     self.jxTitleView.delegate = self;
     [self.view addSubview:self.jxTitleView];
-    self.jxTitleView.titles = @[@"热门", @"男装", @"鞋包",@"手机",@"电器",@"家纺",@"家纺",@"家纺",@"家纺",@"家纺"];
+    [[EFClassifyVM categoryByPno:@"0"] subscribeNext:^(NSArray *x) {
+        NSMutableArray *titles = [[NSMutableArray alloc] init];
+        [titles addObject:@"热门"];
+        for (EFClassifyModel *model in x) {
+            [titles addObject:model.title];
+        }
+        self.jxTitleView.titles = titles;
+        [self.jxTitleView reloadData];
+    }];
     self.jxTitleView.titleColorGradientEnabled = NO;
     self.jxTitleView.titleColor = tabbarBlackColor;
     self.jxTitleView.titleSelectedColor = colorF14745;
@@ -79,7 +89,9 @@
         }
         default:
         {
-            EFHomeOtherViewController *other = [[EFHomeOtherViewController alloc] initWithType:@""];
+            NSArray *testResult = [NSArray bg_arrayWithName:kHomeCategory];
+            EFClassifyModel *model = testResult[index - 1];
+            EFHomeOtherViewController *other = [[EFHomeOtherViewController alloc] initWithType:model.code];
             return other;
         }
     }

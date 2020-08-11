@@ -35,7 +35,8 @@
 #define kmyOrderSearchList @"api-client/user/order/myOrderSearchList" //订单搜索列表接口
 #define kmyOrderDetail @"api-client/user/order/myOrderDetail" //订单明细接口
 #define kconfirmReceipt @"api-client/user/order/confirmReceipt" //确认收货接口
-
+#define kurgedDelivery @"api-client/user/order/urgedDelivery" //催促发货接口
+#define korderExpress @"api-client/user/order/orderExpress" //订单物流接口
 
 // 我的
 #define kgoodsMonthFootprint @"api-client/user/footprint/goodsMonthFootprint" //商品当月足迹接口
@@ -46,4 +47,19 @@
 #define kdelAddress @"api-client/user/address/delAddress" //删除地址接口
 #define ksetDefaultAddress @"api-client/user/address/setDefaultAddress" //设置默认地址
 #define kupdateAddress @"api-client/user/address/updateAddress" // 修改收货地址
+#define kqueryUserInfoCount @"api-client/user/index/queryUserInfoCount" //我的信息数量接口
+
+
+// 首页
+#define kactivity @"api-client/index/activity" // 查询活动信息
+#define kbanner @"api-client/index/banner" // 查询banner信息
+#define knotice @"api-client/index/notice" // 查询公告信息
+#define khome @"api-client/goods/home" // 首页-企业批发
+#define kpageGoodsByCategory @"api-client/goods/pageGoodsByCategory" // 根据商家分类编码查询商品列表
+
+// 分类
+#define kcategory @"api-client/platform/category/category" //APP端商品分类-所有
+#define kcategoryByPno @"api-client/platform/category/categoryByPno" ///根据APP端父级代码code查询APP端下级分类,pCode为0时获取一级标签
+#define kthirdCategory @"api-client/platform/category/thirdCategory" // 根据一级分类查询三级分类
+
 #endif /* Api_h */

@@ -8,7 +8,7 @@
 
 #import "EFOrderMoreDetailViewController.h"
 #import "EFOrderVM.h"
-
+#import "EFLogisticsViewController.h"
 
 @interface EFOrderMoreDetailViewController ()
 
@@ -99,7 +99,7 @@
     [self.EFTableView registerClass:[EFRealPriceTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFRealPriceTableViewCell class])];
     [self.EFTableView registerClass:[EFTimeTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFTimeTableViewCell class])];
     [self.EFTableView registerClass:[TuanOtherGoodsTableViewCell class] forCellReuseIdentifier:NSStringFromClass([TuanOtherGoodsTableViewCell class])];
-    
+    self.timer = [[CountDown alloc] init];
     self.EFData = [@[@1,@2,@3,@5] mutableCopy];
     @weakify(self);
     [[EFOrderVM myOrderDetailExpressNum:self.model.expressNum orderNum:self.model.orderNum] subscribeNext:^(EFOrderModel *x) {
@@ -108,8 +108,38 @@
         self.orderArr = [@[@[@"订单编号：",x.orderNum ? x.orderNum : @""],@[@"交易方式：",x.payMethod ? (x.payMethod == 1 ? @"微信支付" : @"支付宝支付") : @""],@[@"创建时间：",x.createTime ? x.createTime : @""],@[@"付款时间：",x.payTime ? x.payTime : @""],@[@"发货时间：",x.deliverTime ? x.deliverTime : @""]] mutableCopy];
         self.goodsArr = [x.goodsList mutableCopy];
         self.model = x;
+//        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//        [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+//        NSTimeZone *zone = [NSTimeZone systemTimeZone];
+//        [formatter setTimeZone:zone];
+//        NSDate *date = [formatter dateFromString:x.createTime];
+//        NSInteger interval = [zone secondsFromGMTForDate: date];
+//        NSDate *localeDate = [date dateByAddingTimeInterval: interval];
+        [self.timer countDownWithStratDate:x.currentTime finishDate:x.endTime completeBlock:^(NSInteger day, NSInteger hour, NSInteger minute, NSInteger second) {
+            [self day:day hour:hour minute:minute second:second];
+        }];
         [self.EFTableView reloadData];
     }];
+}
+
+- (void )pleaseInsertStarTimeo:(NSDate *)time1 andInsertEndTime:(NSDate *)time2{
+    // 2.创建日历
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSCalendarUnit type = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+    // 3.利用日历对象比较两个时间的差值
+    NSDateComponents *cmps = [calendar components:type fromDate:time1 toDate:time2 options:0];
+    // 4.输出结果
+    XYLog(@"两个时间相差%ld年%ld月%ld日%ld小时%ld分钟%ld秒", cmps.year, cmps.month, cmps.day, cmps.hour, cmps.minute, cmps.second);
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.timer destoryTimer];
+}
+
+
+- (void)day:(NSInteger)day hour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second {
+    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -215,6 +245,17 @@
                 }
             }
             return goodsCell;
+        }
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            EFLogisticsViewController *vc = [[EFLogisticsViewController alloc] initWithExpressNum:self.model];
+            [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+                
+            }];
         }
     }
 }

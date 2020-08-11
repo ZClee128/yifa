@@ -11,6 +11,7 @@
 #import "LeftTableViewCell.h"
 #import "RightThreeCollectionViewCell.h"
 #import "EFClassDetailViewController.h"
+#import "EFClassifyVM.h"
 
 @interface EFClassifyViewController ()<UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -29,9 +30,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.gk_navTitle = @"分类";
-    self.leftDataArray = [@[@"热门推荐",@"男装",@"男装",@"男装",@"男装",@"男装",@"男装",@"男装",@"男装",@"男装"] mutableCopy];
-    self.rightDataArray = [@[@[@1,@1,@1,@1,@1],@[@1,@1,@1,@1,@1],@[@1,@1,@1,@1,@1,@1] ] mutableCopy];
     [self initView];
+    @weakify(self);
+    [[EFClassifyVM category] subscribeNext:^(NSArray *x) {
+        @strongify(self);
+        self.leftDataArray = [x mutableCopy];
+        [self.tableView reloadData];
+        if (self.leftDataArray.count > 0) {
+            EFClassifyModel *model = [self.leftDataArray objectAtIndex:0];
+            self.currentSelectModel = model;
+            [self.collectionView scrollToTop];
+            [self.collectionView reloadData];
+        }
+        [[RACScheduler mainThreadScheduler] schedule:^{
+           [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:(UITableViewScrollPositionNone)];
+        }];
+    }];
 }
 
 - (void)initView {
@@ -50,7 +64,6 @@
         _tableView.dataSource = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_tableView registerClass:[LeftTableViewCell class] forCellReuseIdentifier:NSStringFromClass([LeftTableViewCell class])];
-        [_tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:(UITableViewScrollPositionNone)];
     }
     return _tableView;
 }
@@ -78,6 +91,8 @@
     [tableView scrollToNearestSelectedRowAtScrollPosition:UITableViewScrollPositionMiddle animated:YES];
     EFClassifyModel *model = [self.leftDataArray objectAtIndex:indexPath.row];
     self.currentSelectModel = model;
+    [self.collectionView scrollToTop];
+    [self.collectionView reloadData];
 }
 
 #pragma mark
@@ -107,13 +122,12 @@
 {
     RightThreeCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([RightThreeCollectionViewCell class]) forIndexPath:indexPath];
     EFClassifyModel *model = [self.rightDataArray objectAtIndex:indexPath.section];
-    [cell getCollectionHeight:(NSMutableArray *)[self.rightDataArray objectAtIndex:indexPath.section]];
+    [cell getCollectionHeight:(NSMutableArray *)model.children];
     [cell reloadData];
     
     @weakify(self);
-    [cell selectBlock:^(NSString *selectItemId) {
-//        NSLog(@"pid : %@", self.currentSelectModel.idField);
-//        NSLog(@"选中id : %@", selectItemId);
+    [cell selectBlock:^(EFClassifyModel *selectItemId) {
+        XYLog(@">>>>%@",selectItemId.title);
         @strongify(self);
         EFClassDetailViewController *vc = [[EFClassDetailViewController alloc] init];
         vc.hidesBottomBarWhenPushed = YES;
@@ -126,6 +140,7 @@
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
+    self.rightDataArray = [self.currentSelectModel.children mutableCopy];
     return self.rightDataArray.count;
 }
 
@@ -159,7 +174,7 @@
         }
         
         EFClassifyModel *rightModel = [self.rightDataArray objectAtIndex:indexPath.section];
-        label.text = @"上衣";
+        label.text = rightModel.title;
         
         reusableView = headerView;
     }
@@ -197,9 +212,9 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-        EFClassifyModel *model = [self.rightDataArray objectAtIndex:indexPath.section];
-        CGSize size = CGSizeMake(self.collectionView.width, [self getCellHeight:(NSMutableArray *)[self.rightDataArray objectAtIndex:indexPath.section]]);
-        return size;
+    EFClassifyModel *model = [self.rightDataArray objectAtIndex:indexPath.section];
+    CGSize size = CGSizeMake(self.collectionView.width, [self getCellHeight:(NSMutableArray *)model.children]);
+    return size;
 }
 
 #pragma mark 预算高度

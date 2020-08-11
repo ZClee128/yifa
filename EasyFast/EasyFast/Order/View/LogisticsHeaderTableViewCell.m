@@ -8,12 +8,14 @@
 
 #import "LogisticsHeaderTableViewCell.h"
 #import "EFFollowCollectionViewCell.h"
+#import "EFOrderModel.h"
 
 @interface LogisticsHeaderTableViewCell ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic,strong)UICollectionView *collect;
 @property (nonatomic,strong)QMUILabel *numLab;
 @property (nonatomic,strong)QMUILabel *priceLab;
+@property (nonatomic,strong)NSMutableArray *data;
 
 @end
 
@@ -59,6 +61,13 @@
     return _priceLab;
 }
 
+- (NSMutableArray *)data {
+    if (_data == nil) {
+        _data = [[NSMutableArray alloc] init];
+    }
+    return _data;
+}
+
 - (void)setUI {
     [self.contentView addSubview:self.collect];
     
@@ -88,15 +97,17 @@
     
     [self.contentView addSubview:self.priceLab];
     [self.priceLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(more.mas_left).equalTo(@(-WidthOfScale(5)));
+        make.right.equalTo(more.mas_left).equalTo(@(-WidthOfScale(2)));
         make.left.equalTo(line.mas_right).equalTo(@(WidthOfScale(9.5)));
         make.top.equalTo(@(WidthOfScale(65)));
     }];
 }
 
-- (void)setModel:(id)model {
-    self.numLab.text = @"共600件";
-    self.priceLab.text = @"合计 ¥8000";
+- (void)setModel:(EFOrderModel *)model {
+    self.numLab.text = [NSString stringWithFormat:@"共%ld件",model.quantity];
+    self.priceLab.text = [NSString stringWithFormat:@"合计 ¥%.1f",model.totalAmount];
+    self.data = [model.goodsList mutableCopy];
+    [self.collect reloadData];
 }
 
 #pragma mark - collection
@@ -105,12 +116,12 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 3;
+    return self.data.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     EFFollowCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([EFFollowCollectionViewCell class]) forIndexPath:indexPath];
-    [cell setModel:@""];
+    [cell setModel:self.data[indexPath.row]];
     return cell;
 }
 

@@ -112,7 +112,7 @@
         default:
             break;
     }
-    self.payStatusLab.text = status;
+    self.payStatusLab.text = model.orderState == 800 ? @"" : status;
 }
 
 - (void)awakeFromNib {

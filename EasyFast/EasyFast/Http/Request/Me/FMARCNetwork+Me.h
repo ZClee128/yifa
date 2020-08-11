@@ -40,6 +40,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 修改地址
 - (RACSignal *)updateAddress:(NSString *)address city:(NSString *)city province:(NSString *)province recipientName:(NSString *)recipientName recipientPhone:(NSString *)recipientPhone area:(NSString *)area addressNo:(NSString *)addressNo;
+
+/// 我的信息数量接口
+- (RACSignal *)queryUserInfoCount;
 @end
 
 NS_ASSUME_NONNULL_END
