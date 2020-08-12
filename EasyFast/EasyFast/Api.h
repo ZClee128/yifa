@@ -13,7 +13,7 @@
 #define kUserLogin  @"api-client/user/index/login"
 #define kRegister @"api-client/user/index/register" //注册
 #define ksendCode @"api-client/sms/sendUserMessage" //发送验证码
-#define kverifyMessage @"api-client/user/verifyMessage" //验证短信
+#define kverifyMessage @"api-client/sms/verifyMessage" //验证短信
 #define kLoginOut @"api-client/user/loginOut" //退出接口
 #define kupdateUserInfo @"api-client/user/info/updateUserInfo" //修改个人信息接口
 #define kunbindPhone @"api-client/user/info/unbindPhone" //解绑
@@ -47,7 +47,12 @@
 #define kdelAddress @"api-client/user/address/delAddress" //删除地址接口
 #define ksetDefaultAddress @"api-client/user/address/setDefaultAddress" //设置默认地址
 #define kupdateAddress @"api-client/user/address/updateAddress" // 修改收货地址
-#define kqueryUserInfoCount @"api-client/user/index/queryUserInfoCount" //我的信息数量接口
+#define kqueryUserInfoCount @"api-client/user/info/queryUserInfoCount" //我的信息数量接口
+#define kqueryUserOrderCount @"api-client/user/info/queryUserOrderCount" // 我的订单数量接口
+#define kqueryUserTeamCount @"api-client/user/info/queryUserTeamCount" // 我的团购数量接口
+#define kmyMessageList @"api-client/user/message/myMessageList" //我的消息列表接口
+#define khelpCenterList @"api-client/user/help/helpCenterList" // 帮助中心
+
 
 
 // 首页
@@ -57,6 +62,8 @@
 #define khome @"api-client/goods/home" // 首页-企业批发
 #define kpageGoodsByCategory @"api-client/goods/pageGoodsByCategory" // 根据商家分类编码查询商品列表
 #define kpageShopNewGoods @"api-client/goods/pageShopNewGoods" // 店铺新品
+#define kfast @"api-client/team/fast" //急速拼团
+#define kpageTeam @"api-client/team/pageTeam" //急速拼团列表
 
 // 分类
 #define kcategory @"api-client/platform/category/category" //APP端商品分类-所有

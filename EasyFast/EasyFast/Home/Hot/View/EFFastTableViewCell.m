@@ -75,13 +75,14 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     EFFastCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([EFFastCollectionViewCell class]) forIndexPath:indexPath];
-    [cell setModel:@""];
+    [cell setModel:self.data[indexPath.item]];
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    EFFastModel *model = self.data[indexPath.item];
     if (self.selectIndex) {
-        self.selectIndex(indexPath.item);
+        self.selectIndex(model);
     }
 }
 

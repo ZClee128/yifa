@@ -7,7 +7,7 @@
 //
 
 #import "EFIMListTableViewCell.h"
-
+#import "EFIMModel.h"
 @interface EFIMListTableViewCell ()
 
 @property (nonatomic,strong)UIImageView *headerImageView;
@@ -114,11 +114,11 @@
     [self.contentView addSubview:line];
 }
 
-- (void)setModel:(id)model {
-    self.nameLab.text = @"张飞的店";
-    self.contentLab.text = @"恭喜您获得本次平台福利，总共奖励...";
+- (void)setModel:(EFIMModel *)model {
+    self.nameLab.text = model.shopName;
+    self.contentLab.text = model.msgText;
     self.timeLab.text = @"12:22";
-    self.numLab.text = @"99+";
+    self.numLab.text = model.msgCount;
     CGSize size = [self.numLab.text boundingRectWithSize:CGSizeMake(MAXFLOAT,WidthOfScale(22)) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:RegularFont13 } context:nil].size;
     if (self.numLab.text.length != 1) {
         if (size.width) {
@@ -127,6 +127,7 @@
             }];
         }
     }
+    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:model.shopIcon] placeholderImage:UIImageMake(@"")];
 }
 
 - (void)awakeFromNib {

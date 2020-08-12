@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)NSDate *createDate;
 /// 过期时间
 @property (nonatomic,strong)NSDate *expireDate;
+/// 当前时间
+@property (nonatomic,strong)NSDate *currentTime;
 /// 拼团编码
 @property (nonatomic,strong)NSString *ootNo;
 /// 团长昵称

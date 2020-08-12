@@ -42,6 +42,7 @@ targets.each do |t|
     pod 'TXIMSDK_TUIKit_iOS'
     pod 'BaiduMapKit','~>2.10.2'
     pod 'ZLPhotoBrowser'
+    pod 'JSBadgeView'
 #    pod 'BMKLocationKit'
 
 
@@ -52,6 +53,7 @@ targets.each do |t|
     pod 'UMCShare/Social/ReducedSina'
     pod 'UMCShare/UI'
     pod 'TABAnimated'
+    
     # Pods for EasyFast
   end
 

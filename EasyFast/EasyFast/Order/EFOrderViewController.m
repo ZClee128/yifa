@@ -8,6 +8,7 @@
 
 #import "EFOrderViewController.h"
 #import "EFOrderDetailViewController.h"
+#import "EFOrderSearchViewController.h"
 
 @interface EFOrderViewController ()<JXCategoryViewDelegate, JXCategoryListContainerViewDelegate,QMUITextFieldDelegate>
 
@@ -52,11 +53,10 @@
         @weakify(self);
         [[_searchBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self);
-            [UIView animateWithDuration:0.3 animations:^{
-               [self.searchField becomeFirstResponder];
-                self.searchBtn.hidden = YES;
+            EFOrderSearchViewController *vc = [[EFOrderSearchViewController alloc] init];
+            [self.navigationController qmui_pushViewController:vc animated:NO completion:^{
+                
             }];
-            
         }];
     }
     return _searchBtn;
@@ -115,18 +115,18 @@
     return order;
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    if (textField.text.length == 0) {
-        self.searchBtn.hidden = NO;
-    }
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    NSLog(@"点击了搜索");
-    [self.searchField resignFirstResponder];
-    [[NSNotificationCenter defaultCenter] postNotificationName:kOrderSearch object:@{@"text":textField.text,@"type":@(self.jxTitleView.selectedIndex)}];
-    return YES;
-}
+//- (void)textFieldDidEndEditing:(UITextField *)textField {
+//    if (textField.text.length == 0) {
+//        self.searchBtn.hidden = NO;
+//    }
+//}
+//
+//- (BOOL)textFieldShouldReturn:(UITextField *)textField
+//{
+//    NSLog(@"点击了搜索");
+//    [self.searchField resignFirstResponder];
+////    [[NSNotificationCenter defaultCenter] postNotificationName:kOrderSearch object:@{@"text":textField.text,@"type":@(self.jxTitleView.selectedIndex)}];
+//    return YES;
+//}
 
 @end

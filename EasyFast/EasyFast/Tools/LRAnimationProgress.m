@@ -105,8 +105,8 @@ const NSTimeInterval LRProgressAnimationTime    = 0.5f;
         if (progress > 1.0f){
             progress = 1.0f;
         }
-        else if (progress < 0.0f){
-            progress = 0.0f;
+        else if (progress < 0.1f){
+            progress = 0.1f;
         }
         
         _numberOfHighlightNodes = floorf(progress * _numberOfNodes + 0.5);

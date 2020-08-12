@@ -14,6 +14,7 @@
 #import "EFGoodsTableViewCell.h"
 #import "EFFastTuanListViewController.h"
 #import "EFHomeVM.h"
+#import "EFFastVM.h"
 
 @interface EFHotViewController ()
 
@@ -22,6 +23,8 @@
 @property (nonatomic,strong)EFHeaderView *wholesaleHeader;
 @property (nonatomic,strong)NSMutableArray *activityArr;
 @property (nonatomic,strong)NSMutableArray *noticeArr;
+@property (nonatomic,strong)NSMutableArray *fastArr;
+@property (nonatomic,strong)EFFastVM *fastVM;
 @end
 
 @implementation EFHotViewController
@@ -40,6 +43,12 @@
     return _noticeArr;
 }
 
+- (NSMutableArray *)fastArr {
+    if (_fastArr== nil) {
+        _fastArr = [[NSMutableArray alloc] init];
+    }
+    return _fastArr;
+}
 
 -(EFHeaderView *)wholesaleHeader
 {
@@ -85,6 +94,10 @@
 - (void)viewDidLoad {
     self.viewModel = [[EFHomeVM alloc] init];
     [super viewDidLoad];
+    self.fastVM = [[EFFastVM alloc] init];
+    self.fastVM.orderBy = @1;
+    self.fastVM.type = @1;
+    self.fastVM.branches = @3;
     self.gk_navigationBar.hidden = YES;
     self.EFTableView.frame = CGRectMake(0, 0, kPHONE_WIDTH, kPHONE_HEIGHT-NAVIGATION_BAR_HEIGHT-30-TAB_BAR_HEIGHT);
     self.EFTableView.tableHeaderView = [self headerView];
@@ -120,6 +133,11 @@
     [[self.viewModel refreshForDown] subscribeNext:^(RACTuple *x) {
         [self.EFTableView.mj_header endRefreshing];
         self.EFData = x.first;
+        [self.EFTableView reloadData];
+    }];
+    
+    [[EFHomeVM fastOrderBy:@1 type:@1 PageNum:@1 pageSize:@3] subscribeNext:^(NSArray *x) {
+        self.fastArr = [x mutableCopy];
         [self.EFTableView reloadData];
     }];
     
@@ -190,8 +208,8 @@
             case 2:
         {
             EFFastTableViewCell *fastCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFFastTableViewCell class])];
-            [fastCell setCollectData:[@[@1,@2,@3,@4] mutableCopy]];
-            fastCell.selectIndex = ^(NSInteger index) {
+            [fastCell setCollectData:self.fastArr];
+            fastCell.selectIndex = ^(EFFastModel *model) {
                 [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(YES)}];
             };
             return fastCell;

@@ -56,4 +56,20 @@
 - (RACSignal *)queryUserInfoCount {
     return [self fg_postRequest:kqueryUserInfoCount paramters:@{}];
 }
+
+- (RACSignal *)queryUserOrderCount {
+    return [self fg_postRequest:kqueryUserOrderCount paramters:@{}];
+}
+
+- (RACSignal *)queryUserTeamCount {
+    return [self fg_postRequest:kqueryUserTeamCount paramters:@{}];
+}
+
+- (RACSignal *)myMessageListPageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize shopName:(NSString *)shopName{
+    return [self fg_postRequest:kmyMessageList paramters:@{@"pageNum":pageNum,@"pageSize":pageSize,@"shopName":shopName}];
+}
+
+- (RACSignal *)helpCenterListPageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize title:(NSString *)title {
+    return [self fg_postRequest:khelpCenterList paramters:@{@"pageNum":pageNum,@"pageSize":pageSize,@"title":title}];
+}
 @end

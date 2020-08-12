@@ -8,6 +8,7 @@
 
 #import "EFHelpViewController.h"
 #import "EFHelpTableViewCell.h"
+#import "EFHelpVM.h"
 
 @interface EFHelpViewController ()<QMUITextFieldDelegate>
 
@@ -27,6 +28,7 @@
         _searchField.backgroundColor = colorEFEFEF;
         _searchField.textInsets = UIEdgeInsetsMake(0, WidthOfScale(21), 0, WidthOfScale(21));
         _searchField.delegate = self;
+        _searchField.returnKeyType =  UIReturnKeySearch;
     }
     return _searchField;
 }
@@ -56,7 +58,9 @@
 }
 
 - (void)viewDidLoad {
+    self.viewModel = [[EFHelpVM alloc] init];
     [super viewDidLoad];
+    ((EFHelpVM *)self.viewModel).title = @"";
     self.gk_navTitle = @"我的客服";
     self.EFTableView.y = NAVIGATION_BAR_HEIGHT + WidthOfScale(51.5);
     self.EFTableView.height = kPHONE_HEIGHT - NAVIGATION_BAR_HEIGHT -  WidthOfScale(51.5) - WidthOfScale(50);
@@ -85,12 +89,47 @@
         make.width.equalTo(@(kPHONE_WIDTH));
         make.height.equalTo(@(WidthOfScale(50)));
     }];
+    [self addRefshUp];
+    [self addRefshDown];
+    [self loadList];
+}
+
+- (void)loadList {
+    @weakify(self);
+    [[self.viewModel refreshForDown] subscribeNext:^(RACTuple *x) {
+        @strongify(self);
+        [self.EFTableView.mj_header endRefreshing];
+        self.EFData = x.first;
+        [self.EFTableView reloadData];
+    }];
+}
+
+- (void)loadNewData {
+    [self loadList];
+}
+
+- (void)loadMoreData {
+    @weakify(self);
+    [[self.viewModel refreshForUp] subscribeNext:^(RACTuple *x) {
+        @strongify(self);
+        [self.EFTableView.mj_footer endRefreshing];
+        self.EFData = x.first;
+        [self.EFTableView reloadData];
+    }];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     if (textField.text.length == 0) {
         self.searchBtn.hidden = NO;
     }
+    ((EFHelpVM *)self.viewModel).title = textField.text;
+    [self loadList];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    ((EFHelpVM *)self.viewModel).title = textField.text;
+    [self loadList];
+    return YES;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -98,12 +137,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return  5;//self.EFData.count;
+    return  self.EFData.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EFHelpTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFHelpTableViewCell class])];
-    [cell setModel:@"为什么一直是拼单状态"];
+    [cell setModel:self.EFData[indexPath.row]];
     return cell;
 }
 

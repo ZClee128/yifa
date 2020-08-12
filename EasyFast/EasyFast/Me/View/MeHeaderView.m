@@ -134,11 +134,27 @@
         self.message = message;
         self.vip = vip;
         [self setUI];
-        [[MeVM queryUserInfoCount] subscribeNext:^(EFQueryUserInfoCountModel *x) {
-            
+        [self loadNum];
+        @weakify(self);
+        [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kselectTabBarMe object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+            @strongify(self);
+            [self loadNum];
         }];
+        
     }
     return self;
+}
+
+- (void)loadNum {
+    [[MeVM queryUserInfoCount] subscribeNext:^(EFQueryUserInfoCountModel *x) {
+        VerticalLabelBotton *btn1 = [self viewWithTag:100];
+        [btn1 setTopTilte:x.followShopCount bottomTitle:@"关注店铺"];
+        VerticalLabelBotton *btn2 = [self viewWithTag:101];
+        [btn2 setTopTilte:x.footprintCount bottomTitle:@"浏览足迹"];
+        VerticalLabelBotton *btn3 = [self viewWithTag:102];
+        [btn3 setTopTilte:x.messageCount bottomTitle:@"我的消息"];
+        [x.messageCount intValue] ? ([btn3 showDot]) : ([btn3 hiddenDot]);
+    }];
 }
 
 - (void)setUI {
@@ -210,7 +226,7 @@
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(click:)];
         btn.userInteractionEnabled = YES;
         [btn addGestureRecognizer:tap];
-        
+        [btn hiddenDot];
     }
 }
 

@@ -43,6 +43,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 我的信息数量接口
 - (RACSignal *)queryUserInfoCount;
+
+- (RACSignal *)queryUserOrderCount;
+
+- (RACSignal *)queryUserTeamCount;
+
+- (RACSignal *)myMessageListPageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize shopName:(NSString *)shopName;
+
+- (RACSignal *)helpCenterListPageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize title:(NSString *)title;
 @end
 
 NS_ASSUME_NONNULL_END

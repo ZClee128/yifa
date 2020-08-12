@@ -7,7 +7,7 @@
 //
 
 #import "EFHelpTableViewCell.h"
-
+#import "EFHelpModel.h"
 @interface EFHelpTableViewCell ()
 
 @property (nonatomic,strong)QMUILabel *titleLab;
@@ -44,8 +44,8 @@
     }];
 }
 
-- (void)setModel:(id)model {
-    self.titleLab.text = model;
+- (void)setModel:(EFHelpModel *)model {
+    self.titleLab.text = model.title;
 }
 
 - (void)awakeFromNib {

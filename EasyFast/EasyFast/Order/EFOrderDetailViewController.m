@@ -52,14 +52,14 @@
     [self addRefshDown];
     [self loadList];
     
-    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kOrderSearch object:nil] subscribeNext:^(NSNotification * _Nullable x) {
-        NSDictionary *dict = x.object;
-        ((EFOrderVM *)self.viewModel).searchText = dict[@"text"];
-        [[((EFOrderVM *)self.viewModel) searchRefreshForDown] subscribeNext:^(RACTuple *x) {
-            self.EFData = x.first;
-            [self.EFTableView reloadData];
-        }];
-    }];
+//    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kOrderSearch object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+//        NSDictionary *dict = x.object;
+//        ((EFOrderVM *)self.viewModel).searchText = dict[@"text"];
+//        [[((EFOrderVM *)self.viewModel) searchRefreshForDown] subscribeNext:^(RACTuple *x) {
+//            self.EFData = x.first;
+//            [self.EFTableView reloadData];
+//        }];
+//    }];
     
 }
 

@@ -194,9 +194,13 @@
         BRResultModel *selectModel = nil;
         BOOL hasNext = YES;
         NSInteger i = 0;
+
+        NSMutableArray *dataArr = [self.dataSourceArr mutableCopy];
+        
         do {
-            NSArray *nextArr = [self getNextDataArr:self.dataSourceArr selectModel:selectModel];
-            if (nextArr.count == 0) {
+            NSArray *nextArr = [self getNextDataArr:dataArr selectModel:selectModel];
+            // 设置 numberOfComponents，防止 key 等于 parentKey 时进入死循环
+            if (nextArr.count == 0 || i > self.numberOfComponents - 1) {
                 hasNext = NO;
                 break;
             }
@@ -209,7 +213,7 @@
             
             [selectIndexs addObject:@(selectIndex)];
             [mDataSourceArr addObject:nextArr];
-            
+
             i++;
             
         } while (hasNext);
@@ -221,9 +225,9 @@
 
 - (NSArray <BRResultModel *>*)getNextDataArr:(NSArray *)dataArr selectModel:(BRResultModel *)selectModel {
     NSMutableArray *tempArr = [[NSMutableArray alloc]init];
+    // parentKey = @"-1"，表示是第一列数据
+    NSString *key = selectModel ? selectModel.key : @"-1";
     for (BRResultModel *model in dataArr) {
-        // parentKey = @"-1"，表示是第一列数据
-        NSString *key = selectModel ? selectModel.key : @"-1";
         if ([model.parentKey isEqualToString:key]) {
             [tempArr addObject:model];
         }
@@ -235,7 +239,7 @@
 - (UIPickerView *)pickerView {
     if (!_pickerView) {
         CGFloat pickerHeaderViewHeight = self.pickerHeaderView ? self.pickerHeaderView.bounds.size.height : 0;
-        _pickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, self.pickerStyle.titleBarHeight + pickerHeaderViewHeight, SCREEN_WIDTH, self.pickerStyle.pickerHeight)];
+        _pickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, self.pickerStyle.titleBarHeight + pickerHeaderViewHeight, BRScreenWidth(), self.pickerStyle.pickerHeight)];
         _pickerView.backgroundColor = self.pickerStyle.pickerColor;
         _pickerView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
         _pickerView.dataSource = self;
@@ -556,7 +560,7 @@
             if (self.resultModelBlock) {
                 self.resultModelBlock([self getResultModel]);
             }
-        } else if (self.pickerMode == BRStringPickerComponentMulti) {
+        } else if (self.pickerMode == BRStringPickerComponentMulti || self.pickerMode == BRStringPickerComponentLinkage) {
             if (self.resultModelArrayBlock) {
                 self.resultModelArrayBlock([self getResultModelArr]);
             }
@@ -617,6 +621,13 @@
         _mSelectValues = [NSArray array];
     }
     return _mSelectValues;
+}
+
+- (NSInteger)numberOfComponents {
+    if (_numberOfComponents <= 0) {
+        _numberOfComponents = 3;
+    }
+    return _numberOfComponents;
 }
 
 @end

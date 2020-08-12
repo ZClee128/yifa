@@ -131,11 +131,11 @@
 
 - (void)setData:(FollowTeamModel *)data {
     self.nameLab.text = data.teamLeaderName;
-    [self.timer countDownWithStratDate:data.createDate finishDate:data.expireDate completeBlock:^(NSInteger day, NSInteger hour, NSInteger minute, NSInteger second) {
+    [self.timer countDownWithStratDate:data.currentTime finishDate:data.expireDate completeBlock:^(NSInteger day, NSInteger hour, NSInteger minute, NSInteger second) {
         self.timeLab.text = [NSString stringWithFormat:@"剩余 %ld:%ld:%ld",(long)hour,(long)minute,(long)second];
     }];
     self.progressView.progress = data.teamProcess / 100;
-    [self.progressView setTitle:[NSString stringWithFormat:@"剩余%.f%%",data.teamProcess]];
+    [self.progressView setTitle:[NSString stringWithFormat:@"剩余%.f%%",100 - data.teamProcess]];
     [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:data.teamLeaderUrl] placeholderImage:UIImageMake(@"header")];
     
 }

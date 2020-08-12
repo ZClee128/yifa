@@ -29,6 +29,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 店铺新品
 - (RACSignal *)pageShopNewGoodssssNo:(NSString *)sssNo PageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize;
+
+/// 急速拼团  orderby 类型-1:降序，2:升序  type类型-1:最快，2:时间最短
+- (RACSignal *)fastOrderBy:(NSNumber *)orderBy type:(NSNumber *)type PageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize;
+
+/// 急速拼团 列表
+- (RACSignal *)pageTeamOrderBy:(NSNumber *)orderBy type:(NSNumber *)type PageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize;
 @end
 
 NS_ASSUME_NONNULL_END

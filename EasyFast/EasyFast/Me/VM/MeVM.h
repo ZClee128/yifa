@@ -9,6 +9,8 @@
 #import "EFBaseRefreshVM.h"
 #import "EFFootPrint.h"
 #import "EFQueryUserInfoCountModel.h"
+#import "EFQueryUserOrderCountModel.h"
+#import "EFQueryUserTeamCountModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MeVM : EFBaseRefreshVM
@@ -24,6 +26,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (RACSignal *)uploadImage:(NSInteger)type image:(UIImage *)image;
 
 + (RACSignal *)queryUserInfoCount;
+
++ (RACSignal *)queryUserOrderCount;
+
++ (RACSignal *)queryUserTeamCount;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -23,15 +23,31 @@
 #import "EFFootprintViewController.h"
 #import "EFPayStatusViewController.h"
 #import "LoginVM.h"
+#import "MeVM.h"
 @interface EFMeViewController ()
 
 @property (nonatomic,strong)MeHeaderView *headerView;
 @property (nonatomic,strong)NSArray *list;
 @property (nonatomic,assign)CGFloat cellHeight;
-
+@property (nonatomic,strong)NSMutableArray *teamArr;
+@property (nonatomic,strong)NSMutableArray *orderArr;
 @end
 
 @implementation EFMeViewController
+
+- (NSMutableArray *)teamArr {
+    if (_teamArr == nil) {
+        _teamArr = [[NSMutableArray alloc] init];
+    }
+    return _teamArr;
+}
+
+- (NSMutableArray *)orderArr {
+    if (_orderArr == nil) {
+        _orderArr = [[NSMutableArray alloc] init];
+    }
+    return _orderArr;
+}
 
 -(MeHeaderView *)headerView
 {
@@ -118,11 +134,35 @@
         @strongify(self);
         [self.headerView setData];
     }];
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kselectTabBarMe object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        @strongify(self);
+        [self loadOrder];
+    }];
+    [self loadOrder];
 }
 
+- (void)loadOrder {
+    [[MeVM queryUserOrderCount] subscribeNext:^(EFQueryUserOrderCountModel *x) {
+        [self.EFTableView.mj_header endRefreshing];
+        self.orderArr = [@[@{@"title":@"待付款",@"icon":@"wallet",@"num":x.pendingPayCount},@{@"title":@"待发货",@"icon":@"daifahuo",@"num":x.pendingDeliverCount},
+                           @{@"title":@"待收货",@"icon":@"daishouhuo",@"num":x.pendingReceiveCount},
+                           @{@"title":@"待评价",@"icon":@"daipingjia",@"num":x.pendingEvalCount},
+                           @{@"title":@"退款/售后",@"icon":@"tuikuan",@"num":x.pendingSaleCount}] mutableCopy];
+        [self.EFTableView reloadData];
+    }];
+    
+    [[MeVM queryUserTeamCount] subscribeNext:^(EFQueryUserTeamCountModel *x) {
+        [self.EFTableView.mj_header endRefreshing];
+        self.teamArr = [@[@{@"title":@"已完成",@"icon":@"yiwancheng",@"num":x.successCount},
+                          @{@"title":@"等待中",@"icon":@"waitting",@"num":x.waitingCount},
+                          @{@"title":@"已失效",@"icon":@"yishixiao",@"num":x.failCount},
+                          @{@"title":@"待拼团",@"icon":@"daifukuan",@"num":x.pendingPayCount}] mutableCopy];
+        [self.EFTableView reloadData];
+    }];
+}
 
 - (void)loadNewData {
-    [self.EFTableView.mj_header endRefreshing];
+    [self loadOrder];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -143,10 +183,7 @@
         case 0:
         {
             MeTabTableViewCell *MeCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MeTabTableViewCell class])];
-            [MeCell setData:@[@{@"title":@"已完成",@"icon":@"yiwancheng"},
-            @{@"title":@"等待中",@"icon":@"waitting"},
-            @{@"title":@"已失效",@"icon":@"yishixiao"},
-                              @{@"title":@"待拼团",@"icon":@"daifukuan"}] title:@"我的团购"];
+            [MeCell setData:self.teamArr title:@"我的团购"];
             MeCell.seletBtn = ^(NSInteger index) {
                 XYLog(@"tuan->%ld",(long)index);
                 [kH5Manager gotoUrl:@"myGroup" hasNav:NO navTitle:@"" query:@{@"index" : index == 0 ? @(3) :(index == 1 ? @(2) : (index == 2 ? @(4) : @(1)))}];
@@ -159,10 +196,7 @@
             case 1:
         {
             MeTabTableViewCell *MeCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MeTabTableViewCell class])];
-            [MeCell setData:@[@{@"title":@"待付款",@"icon":@"wallet"},@{@"title":@"待发货",@"icon":@"daifahuo"},
-            @{@"title":@"待收货",@"icon":@"daishouhuo"},
-            @{@"title":@"待评价",@"icon":@"daipingjia"},
-                              @{@"title":@"退款/售后",@"icon":@"tuikuan"}] title:@"我的订单"];
+            [MeCell setData:self.orderArr title:@"我的订单"];
             @weakify(self);
             MeCell.seletBtn = ^(NSInteger index) {
                 XYLog(@"me->%ld",(long)index);

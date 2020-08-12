@@ -7,7 +7,7 @@
 //
 
 #import "EFFastCollectionViewCell.h"
-
+#import "EFFastModel.h"
 @interface EFFastCollectionViewCell ()
 
 
@@ -88,9 +88,10 @@
 }
 
 
-- (void)setModel:(id)model {
-    self.priceLab.attributedText = [@"¥7899.00" getAttributeWithChangeString:@"¥" ChangeFont:RegularFont12 textColor:self.priceLab.textColor];
-    self.progressView.progress = 0.6;
-    [self.progressView setTitle:@"剩余30%"];
+- (void)setModel:(EFFastModel *)model {
+    self.priceLab.attributedText = [[NSString stringWithFormat:@"¥%.1f",model.groupPrice] getAttributeWithChangeString:@"¥" ChangeFont:RegularFont12 textColor:self.priceLab.textColor];
+    self.progressView.progress = model.teamProcess / 100;
+    [self.progressView setTitle:[NSString stringWithFormat:@"剩余%.f%%",100 - model.teamProcess]];
+    [self.goods sd_setImageWithURL:[NSURL URLWithString:model.url] placeholderImage:UIImageMake(@"")];
 }
 @end

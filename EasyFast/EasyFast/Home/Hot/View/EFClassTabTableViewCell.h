@@ -7,12 +7,12 @@
 //
 
 #import "BaseTableViewCell.h"
-
+#import "EFClassifyModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EFClassTabTableViewCell : BaseTableViewCell
 
-@property (nonatomic,copy)void(^selectItem)(id model);
+@property (nonatomic,copy)void(^selectItem)(EFClassifyModel *model);
 
 - (void)setCollectData:(NSMutableArray *)data;
 @end

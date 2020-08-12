@@ -7,16 +7,36 @@
 //
 
 #import "EFClassDetailViewController.h"
+#import "EFHomeVM.h"
 
 @interface EFClassDetailViewController ()
 
+@property (nonatomic,strong)EFClassifyModel *model;
 @end
 
 @implementation EFClassDetailViewController
 
+- (instancetype)initWithModel:(EFClassifyModel *)model
+{
+    self = [super init];
+    if (self) {
+        self.model = model;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
+    self.viewModel = [[EFHomeVM alloc] init];
+    ((EFHomeVM *)self.viewModel).orderBy = @(0);
     [super viewDidLoad];
-    self.gk_navTitle = @"衣服";
+    self.gk_navTitle = self.model.title;
+}
+
+- (void)loadList {
+    [[(EFHomeVM *)self.viewModel refreshOtherForDown:self.model.ggcsCode] subscribeNext:^(RACTuple *x) {
+        self.data = [x.first mutableCopy];
+        [self.collect reloadData];
+    }];
 }
 
 - (void)setSearch {
@@ -29,47 +49,30 @@
     [self.view addSubview:bg];
     QMUIButton *leftBtn = [QMUIButton buttonWithType:(UIButtonTypeCustom)];
     [leftBtn setTitle:@"全部" forState:(UIControlStateNormal)];
-    [leftBtn setTitle:@"全部" forState:(UIControlStateSelected)];
     leftBtn.titleLabel.font = RegularFont15;
-    [leftBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
-    [leftBtn setTitleColor:colorF14745 forState:(UIControlStateSelected)];
-    [[leftBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(QMUIButton *x) {
-        x.selected = !x.selected;
-    }];
+    [leftBtn setTitleColor:colorF14745 forState:(UIControlStateNormal)];
+    leftBtn.selected = YES;
+    
     
     QMUIButton *leftMiddleBtn = [QMUIButton buttonWithType:(UIButtonTypeCustom)];
     [leftMiddleBtn setTitle:@"销量" forState:(UIControlStateNormal)];
-    [leftMiddleBtn setTitle:@"销量" forState:(UIControlStateSelected)];
     leftMiddleBtn.titleLabel.font = RegularFont15;
     [leftMiddleBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
-    [leftMiddleBtn setTitleColor:colorF14745 forState:(UIControlStateSelected)];
-    [[leftMiddleBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(QMUIButton *x) {
-        x.selected = !x.selected;
-    }];
+    
     
     QMUIButton *MiddleBtn = [QMUIButton buttonWithType:(UIButtonTypeCustom)];
     MiddleBtn.titleLabel.font = RegularFont15;
     [MiddleBtn setTitle:@"价格" forState:(UIControlStateNormal)];
-    [MiddleBtn setTitle:@"价格" forState:(UIControlStateSelected)];
-    [MiddleBtn setImage:UIImageMake(@"up") forState:(UIControlStateNormal)];
-    [MiddleBtn setImage:UIImageMake(@"down") forState:(UIControlStateSelected)];
+    [MiddleBtn setImage:knormal forState:(UIControlStateNormal)];
     [MiddleBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
-    [MiddleBtn setTitleColor:colorF14745 forState:(UIControlStateSelected)];
-    [[MiddleBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(QMUIButton *x) {
-        x.selected = !x.selected;
-    }];
     MiddleBtn.imagePosition = QMUIButtonImagePositionRight;
     
     
     QMUIButton *rightMiddleBtn = [QMUIButton buttonWithType:(UIButtonTypeCustom)];
     [rightMiddleBtn setTitle:@"新品" forState:(UIControlStateNormal)];
-    [rightMiddleBtn setTitle:@"新品" forState:(UIControlStateSelected)];
     rightMiddleBtn.titleLabel.font = RegularFont15;
     [rightMiddleBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
-    [rightMiddleBtn setTitleColor:colorF14745 forState:(UIControlStateSelected)];
-    [[rightMiddleBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(QMUIButton *x) {
-        x.selected = !x.selected;
-    }];
+    
     
     QMUIButton *rightBtn = [QMUIButton buttonWithType:(UIButtonTypeCustom)];
     [rightBtn setImage:UIImageMake(@"two") forState:(UIControlStateNormal)];
@@ -137,6 +140,60 @@
         make.height.equalTo(bg);
     }];
     
+
+    [[leftBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(QMUIButton *x) {
+        @strongify(self);
+        [x setTitleColor:colorF14745 forState:(UIControlStateNormal)];
+        [leftMiddleBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
+        [MiddleBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
+        [MiddleBtn setImage:knormal forState:(UIControlStateNormal)];
+        MiddleBtn.selected = NO;
+        [rightMiddleBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
+        ((EFHomeVM *)self.viewModel).orderBy = @0;
+        [self loadList];
+    }];
+    
+    [[leftMiddleBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(QMUIButton *x) {
+        @strongify(self);
+        [x setTitleColor:colorF14745 forState:(UIControlStateNormal)];
+        [leftBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
+        [MiddleBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
+        [MiddleBtn setImage:knormal forState:(UIControlStateNormal)];
+        MiddleBtn.selected = NO;
+        [rightMiddleBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
+        ((EFHomeVM *)self.viewModel).orderBy = @1;
+        [self loadList];
+    }];
+    
+    [[MiddleBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(QMUIButton *x) {
+        @strongify(self);
+        x.selected = !x.selected;
+        if (x.selected) {
+            [x setImage:kup forState:(UIControlStateNormal)];
+            [x setTitleColor:colorF14745 forState:(UIControlStateNormal)];
+            ((EFHomeVM *)self.viewModel).orderBy = @3;
+        }else {
+            [x setImage:kdown forState:(UIControlStateNormal)];
+            [x setTitleColor:colorF14745 forState:(UIControlStateNormal)];
+            ((EFHomeVM *)self.viewModel).orderBy = @2;
+        }
+        [leftBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
+        [leftMiddleBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
+        [rightMiddleBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
+        [self loadList];
+    }];
+    
+    [[rightMiddleBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(QMUIButton *x) {
+        @strongify(self);
+        [x setTitleColor:colorF14745 forState:(UIControlStateNormal)];
+        [leftBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
+        [MiddleBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
+        [MiddleBtn setImage:knormal forState:(UIControlStateNormal)];
+        MiddleBtn.selected = NO;
+        [leftMiddleBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
+        ((EFHomeVM *)self.viewModel).orderBy = @4;
+        [self loadList];
+    }];
     return bg;
 }
 

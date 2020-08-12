@@ -143,6 +143,7 @@ fprintf(stderr,"[--%s--]\n[--%s:%d--]\n[--%s--]\n===========================\n",
 #define kChangePassword @"kChangePassword" // 修改密码
 #define kAddress @"kAddress" // 新增地址
 #define kOrderSearch @"kOrderSearch" //订单搜索
+#define kselectTabBarMe @"kselectTabBarMe" //点击tabbar个人中心通知
 
 // 图片
 #define kup UIImageMake(@"up") // 降序

@@ -187,6 +187,7 @@
             [EFOnePhoneLoginManager show];
             return NO;
         }
+        [[NSNotificationCenter defaultCenter] postNotificationName:kselectTabBarMe object:nil];
         return YES;
     }
     

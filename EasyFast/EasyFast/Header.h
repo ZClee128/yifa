@@ -76,4 +76,7 @@
 #import "XQCAlertTool.h"
 #import "FMARCNetwork+Home.h"
 #import "FMARCNetwork+Category.h"
+#import "EFBaseCollectionViewController.h"
+#import "CQBadgeButton.h"
+#import <JSBadgeView.h>
 #endif /* Header_h */

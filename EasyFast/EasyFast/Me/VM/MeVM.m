@@ -76,4 +76,22 @@
         return model;
     }];
 }
+
++ (RACSignal *)queryUserOrderCount {
+    return [self requsetNetwork:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] queryUserOrderCount];
+    } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
+        EFQueryUserOrderCountModel *model = [EFQueryUserOrderCountModel modelWithJSON:result.reqResult];
+        return model;
+    }];
+}
+
++ (RACSignal *)queryUserTeamCount {
+    return [self requsetNetwork:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] queryUserTeamCount];
+    } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
+        EFQueryUserTeamCountModel *model = [EFQueryUserTeamCountModel modelWithJSON:result.reqResult];
+        return model;
+    }];
+}
 @end

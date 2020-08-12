@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)QMUITextField *searchField;
 @property (nonatomic,strong)QMUIButton *searchBtn;
 @property (nonatomic,strong)QMUIButton *kefu;
+- (void)loadList;
 @end
 
 

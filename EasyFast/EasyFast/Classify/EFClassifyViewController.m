@@ -127,9 +127,9 @@
     
     @weakify(self);
     [cell selectBlock:^(EFClassifyModel *selectItemId) {
-        XYLog(@">>>>%@",selectItemId.title);
+        XYLog(@">>>>%@",selectItemId.ggcsCode);
         @strongify(self);
-        EFClassDetailViewController *vc = [[EFClassDetailViewController alloc] init];
+        EFClassDetailViewController *vc = [[EFClassDetailViewController alloc] initWithModel:selectItemId];
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
             

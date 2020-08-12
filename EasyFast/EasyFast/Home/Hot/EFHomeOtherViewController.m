@@ -40,6 +40,7 @@
 - (void)viewDidLoad {
     self.viewModel = [[EFHomeVM alloc] init];
     [super viewDidLoad];
+    ((EFHomeVM *)self.viewModel).orderBy = @(0);
     self.gk_navigationBar.hidden = YES;
     self.EFTableView.frame = CGRectMake(0, 0, kPHONE_WIDTH, kPHONE_HEIGHT-NAVIGATION_BAR_HEIGHT-30-TAB_BAR_HEIGHT);
     [self.EFTableView registerClass:[EFClassTabTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFClassTabTableViewCell class])];
@@ -98,8 +99,8 @@
          {
              EFClassTabTableViewCell *classCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFClassTabTableViewCell class])];
              [classCell setCollectData:self.classData];
-             classCell.selectItem = ^(id  _Nonnull model) {
-                 EFClassDetailViewController *VC = [[EFClassDetailViewController alloc] init];
+             classCell.selectItem = ^(EFClassifyModel *model) {
+                 EFClassDetailViewController *VC = [[EFClassDetailViewController alloc] initWithModel:model];
                  VC.hidesBottomBarWhenPushed = YES;
 //                 TuanListViewController *VC = [[TuanListViewController alloc] init];
 //                 VC.hidesBottomBarWhenPushed = YES;

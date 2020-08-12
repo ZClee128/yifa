@@ -11,9 +11,12 @@
 #import "EFBannerModel.h"
 #import "EFNoticeModel.h"
 #import "EFGoodsList.h"
+#import "EFFastModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EFHomeVM : EFBaseRefreshVM
+
+@property (nonatomic,strong)NSNumber *orderBy;
 
 + (RACSignal *)activity;
 
@@ -24,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (RACSignal *)refreshOtherForDown:(NSString *)ggcsCode;
 
 - (RACSignal *)refreshOtherForUp:(NSString *)ggcsCode;
+
++ (RACSignal *)fastOrderBy:(NSNumber *)orderBy type:(NSNumber *)type PageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize;
 @end
 
 NS_ASSUME_NONNULL_END

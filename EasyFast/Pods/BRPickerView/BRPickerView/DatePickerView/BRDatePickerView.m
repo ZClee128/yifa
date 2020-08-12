@@ -143,8 +143,16 @@ typedef NS_ENUM(NSInteger, BRDatePickerStyle) {
             hourIndex = [self.hourArr indexOfObject:[self getMDHMSNumber:self.mSelectDate.br_hour]];
         }
         self.hourIndex = hourIndex;
-        self.minuteIndex = [self.minuteArr indexOfObject:[self getMDHMSNumber:self.mSelectDate.br_minute]];
-        self.secondIndex = [self.secondArr indexOfObject:[self getMDHMSNumber:self.mSelectDate.br_second]];
+        NSInteger minuteIndex = 0;
+        if ([self.minuteArr containsObject:[self getMDHMSNumber:self.mSelectDate.br_minute]]) {
+            minuteIndex = [self.minuteArr indexOfObject:[self getMDHMSNumber:self.mSelectDate.br_minute]];
+        }
+        NSInteger secondIndex = 0;
+        if ([self.secondArr containsObject:[self getMDHMSNumber:self.mSelectDate.br_second]]) {
+            secondIndex = [self.secondArr indexOfObject:[self getMDHMSNumber:self.mSelectDate.br_second]];
+        }
+        self.minuteIndex = minuteIndex;
+        self.secondIndex = secondIndex;
     }
     
     if (self.selectValue && [self.selectValue isEqualToString:self.addCustomString]) {
@@ -419,8 +427,14 @@ typedef NS_ENUM(NSInteger, BRDatePickerStyle) {
     } else {
         hourIndex = [self.hourArr indexOfObject:[self getMDHMSNumber:selectDate.br_hour]];
     }
-    NSInteger minuteIndex = [self.minuteArr indexOfObject:[self getMDHMSNumber:selectDate.br_minute]];
-    NSInteger secondIndex = [self.secondArr indexOfObject:[self getMDHMSNumber:selectDate.br_second]];
+    NSInteger minuteIndex = 0;
+    if ([self.minuteArr containsObject:[self getMDHMSNumber:selectDate.br_minute]]) {
+        minuteIndex = [self.minuteArr indexOfObject:[self getMDHMSNumber:selectDate.br_minute]];
+    }
+    NSInteger secondIndex = 0;
+    if ([self.secondArr containsObject:[self getMDHMSNumber:selectDate.br_second]]) {
+        secondIndex = [self.secondArr indexOfObject:[self getMDHMSNumber:selectDate.br_second]];
+    }
     NSArray *indexArr = [NSArray array];
     if (self.pickerMode == BRDatePickerModeYMDHMS) {
         indexArr = @[@(yearIndex), @(monthIndex), @(dayIndex), @(hourIndex), @(minuteIndex), @(secondIndex)];
@@ -509,7 +523,7 @@ typedef NS_ENUM(NSInteger, BRDatePickerStyle) {
 - (UIDatePicker *)datePicker {
     if (!_datePicker) {
         CGFloat pickerHeaderViewHeight = self.pickerHeaderView ? self.pickerHeaderView.bounds.size.height : 0;
-        _datePicker = [[UIDatePicker alloc]initWithFrame:CGRectMake(0, self.pickerStyle.titleBarHeight + pickerHeaderViewHeight, SCREEN_WIDTH, self.pickerStyle.pickerHeight)];
+        _datePicker = [[UIDatePicker alloc]initWithFrame:CGRectMake(0, self.pickerStyle.titleBarHeight + pickerHeaderViewHeight, BRScreenWidth(), self.pickerStyle.pickerHeight)];
         _datePicker.backgroundColor = self.pickerStyle.pickerColor;
         _datePicker.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
         // 滚动改变值的响应事件
@@ -522,7 +536,7 @@ typedef NS_ENUM(NSInteger, BRDatePickerStyle) {
 - (UIPickerView *)pickerView {
     if (!_pickerView) {
         CGFloat pickerHeaderViewHeight = self.pickerHeaderView ? self.pickerHeaderView.bounds.size.height : 0;
-        _pickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, self.pickerStyle.titleBarHeight + pickerHeaderViewHeight, SCREEN_WIDTH, self.pickerStyle.pickerHeight)];
+        _pickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, self.pickerStyle.titleBarHeight + pickerHeaderViewHeight, BRScreenWidth(), self.pickerStyle.pickerHeight)];
         _pickerView.backgroundColor = self.pickerStyle.pickerColor;
         _pickerView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
         _pickerView.dataSource = self;
@@ -1128,6 +1142,13 @@ typedef NS_ENUM(NSInteger, BRDatePickerStyle) {
     if (self.style == BRDatePickerStyleSystem) {
         // 2.刷新选择器（重新设置相关值）
         self.datePicker.datePickerMode = _datePickerMode;
+        if (@available(iOS 13.4, *)) {
+            // 适配 iOS14。如果编译报错，请使用 Xcode11.5 以上版本进行编译
+            // 如果不考虑适配 iOS14，可将下面这行代码注释 或使用上一个版本 pod 'BRPickerView', '~> 2.6.6'
+            self.datePicker.preferredDatePickerStyle = UIDatePickerStyleWheels;
+        } else {
+            // Fallback on earlier versions
+        }
         // 设置该 UIDatePicker 的国际化 Locale
         self.datePicker.locale = [[NSLocale alloc]initWithLocaleIdentifier:self.pickerStyle.language];
         if (self.minDate) {

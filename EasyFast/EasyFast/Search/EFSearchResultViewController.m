@@ -84,6 +84,11 @@
     [self setSearch];
     [self.view addSubview:[self headerView]];
     [self.view addSubview:self.collect];
+    [self loadList];
+}
+
+- (void)loadList {
+    
 }
 
 - (void)setSearch {
@@ -175,17 +180,18 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 20;
+    return self.data.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    EFGoodsList *model = self.data[indexPath.item];
     if (self.isOne) {
         SeachOneCollectionViewCell *oneCell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([SeachOneCollectionViewCell class]) forIndexPath:indexPath];
-        [oneCell setModel:@""];
+        [oneCell setModel:model];
         return oneCell;
     }else{
         SearchTwoCollectionViewCell *twoCell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([SearchTwoCollectionViewCell class]) forIndexPath:indexPath];
-        [twoCell setModel:@""];
+        [twoCell setModel:model];
         return twoCell;
     }
 }

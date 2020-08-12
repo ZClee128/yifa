@@ -8,6 +8,7 @@
 
 #import "SearchTwoCollectionViewCell.h"
 #import "TKTagView.h"
+#import "EFGoodsList.h"
 
 @interface SearchTwoCollectionViewCell ()
 
@@ -145,11 +146,21 @@
 }
 
 - (void)setModel:(id)model {
-    self.goodsNameLab.text = @"这里左右边距20像素";
-    self.listView.tagTitleArray = @[@"极速",@"极货"];
-    [self.listView createTags];
-    self.numLab.text = @"最低采购量：100";
-    self.sellLab.text = @"成交量：9999+";
-    self.priceLab.text = @"7899.8";
+    if ([model isKindOfClass:[EFGoodsList class]]) {
+        EFGoodsList *goodModel = model;
+        self.goodsNameLab.text = goodModel.title;
+        if (goodModel.tags.count != 0) {
+            NSMutableArray *titles = [[NSMutableArray alloc] init];
+            for (EFTagsModel *tag in goodModel.tags) {
+                [titles addObject:tag.title];
+            }
+            self.listView.tagTitleArray = titles;
+            [self.listView createTags];
+        }
+        self.numLab.text = [NSString stringWithFormat:@"最低采购量：%ld",(long)goodModel.miniOrderLimit];
+        self.sellLab.text = [NSString stringWithFormat:@"成交量：%ld",(long)goodModel.sales];
+        self.priceLab.text = [NSString stringWithFormat:@"¥%.1f",goodModel.price];
+        [self.goods sd_setImageWithURL:[NSURL URLWithString:goodModel.url] placeholderImage:UIImageMake(@"gg")];
+    }
 }
 @end

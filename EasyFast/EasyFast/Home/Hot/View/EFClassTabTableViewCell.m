@@ -79,8 +79,9 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    EFClassifyModel *model = self.data[indexPath.item];
     if (self.selectItem) {
-        self.selectItem(@"");
+        self.selectItem(model);
     }
 }
 
