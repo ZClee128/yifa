@@ -1,0 +1,6 @@
+module JSBadgeView {
+  umbrella header "JSBadgeView-umbrella.h"
+
+  export *
+  module * { export * }
+}
