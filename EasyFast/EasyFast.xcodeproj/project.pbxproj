@@ -1636,8 +1636,8 @@
 			children = (
 				8476108124C5A09E002B34E4 /* EFSetUpVM.h */,
 				8476108224C5A09E002B34E4 /* EFSetUpVM.m */,
-				0C8A29CA24DA9CAF00E40ED8 /* MeVM.h */,
 				0C8A29CB24DA9CAF00E40ED8 /* MeVM.m */,
+				0C8A29CA24DA9CAF00E40ED8 /* MeVM.h */,
 			);
 			path = VM;
 			sourceTree = "<group>";

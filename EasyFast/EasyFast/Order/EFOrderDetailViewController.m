@@ -157,7 +157,7 @@
                     break;
                     case 400:
                 {
-                    [kH5Manager gotoUrl:@"evalWriting" hasNav:NO navTitle:@"" query:@{@"expressNum":model.expressNum,@"orderNum":model.orderNum}];
+                    //联系客服
                     break;
                 }
                 default:
@@ -188,12 +188,12 @@
                 }
                 case 300:
                 {
-                    [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{}];
+                    // 售后退款
                     break;
                 }
                 case 400:
                 {
-                    [kH5Manager gotoUrl:@"returnApply" hasNav:NO navTitle:@"" query:@{}];
+                    [kH5Manager gotoUrl:@"evalWriting" hasNav:NO navTitle:@"" query:@{@"expressNum":model.expressNum,@"orderNum":model.orderNum}];
                     break;
                 }
                 case 600:

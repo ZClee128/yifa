@@ -154,19 +154,18 @@
             self.twoBtn.hidden = NO;
             [self.oneBtn setTitle:@"查看物流" forState:(UIControlStateNormal)];
             [self.twoBtn setTitle:@"确认收货" forState:(UIControlStateNormal)];
-            [self.threeBtn setTitle:@"再来一单" forState:(UIControlStateNormal)];
+            [self.threeBtn setTitle:@"退货退款" forState:(UIControlStateNormal)];
             self.threeBtn.layer.borderColor = colorF14745.CGColor;
             [self.threeBtn setTitleColor:colorF14745 forState:(UIControlStateNormal)];
             break;
         }
             case 400:
         {
-            self.oneBtn.hidden = NO;;
+            self.oneBtn.hidden = YES;;
             self.twoBtn.hidden = NO;
-            [self.oneBtn setTitle:@"联系客服" forState:(UIControlStateNormal)];
             self.moreBtn.hidden = YES;
-            [self.twoBtn setTitle:@"评价" forState:(UIControlStateNormal)];
-            [self.threeBtn setTitle:@"退货退款" forState:(UIControlStateNormal)];
+            [self.twoBtn setTitle:@"联系客服" forState:(UIControlStateNormal)];
+            [self.threeBtn setTitle:@"评价" forState:(UIControlStateNormal)];
             self.threeBtn.layer.borderColor = RGB16(0xD6D6D6).CGColor;
             [self.threeBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
             break;

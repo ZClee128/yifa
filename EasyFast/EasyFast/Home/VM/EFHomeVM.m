@@ -59,7 +59,7 @@
 
 - (RACSignal *)refreshOtherForDown:(NSString *)ggcsCode {
     return [self refreshForDown:^RACSignal * _Nonnull{
-        return [[FMARCNetwork sharedInstance] pageGoodsByCategoryggcsCode:ggcsCode PageNum:self.firstPage pageSize:self.branches];
+        return [[FMARCNetwork sharedInstance] pageGoodsByCategoryggcsCode:ggcsCode orderBy:@(0) PageNum:self.firstPage pageSize:self.branches];
     } toMap:^NSArray * _Nonnull(FMHttpResonse * _Nonnull result) {
         NSArray *list = [NSArray modelArrayWithClass:[EFGoodsList class] json:result.reqResult];
         return list;
@@ -68,7 +68,7 @@
 
 - (RACSignal *)refreshOtherForUp:(NSString *)ggcsCode {
     return [self refreshForUp:^RACSignal * _Nonnull{
-        return [[FMARCNetwork sharedInstance] pageGoodsByCategoryggcsCode:ggcsCode PageNum:@([self.paging intValue] + 1) pageSize:self.branches];
+        return [[FMARCNetwork sharedInstance] pageGoodsByCategoryggcsCode:ggcsCode orderBy:@(0) PageNum:@([self.paging intValue] + 1) pageSize:self.branches];
     } toMap:^NSArray * _Nonnull(FMHttpResonse * _Nonnull result) {
         NSArray *list = [NSArray modelArrayWithClass:[EFGoodsList class] json:result.reqResult];
         return list;

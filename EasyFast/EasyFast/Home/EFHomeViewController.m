@@ -18,9 +18,18 @@
 @property (nonatomic,strong)QMUIButton *searchBtn;
 @property (nonatomic,strong)JXCategoryTitleView *jxTitleView;
 @property (nonatomic,strong)JXCategoryListContainerView *listContainerView;
+@property (nonatomic,strong)NSMutableArray *titles;
 @end
 
 @implementation EFHomeViewController
+
+- (NSMutableArray *)titles {
+    if (_titles == nil) {
+        _titles = [[NSMutableArray alloc] init];
+    }
+    return _titles;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,12 +38,13 @@
     self.jxTitleView.delegate = self;
     [self.view addSubview:self.jxTitleView];
     [[EFClassifyVM categoryByPno:@"0"] subscribeNext:^(NSArray *x) {
-        NSMutableArray *titles = [[NSMutableArray alloc] init];
-        [titles addObject:@"热门"];
+        self.titles = [x mutableCopy];
+        NSMutableArray *Temtitles = [[NSMutableArray alloc] init];
+        [Temtitles addObject:@"热门"];
         for (EFClassifyModel *model in x) {
-            [titles addObject:model.title];
+            [Temtitles addObject:model.title];
         }
-        self.jxTitleView.titles = titles;
+        self.jxTitleView.titles = Temtitles;
         [self.jxTitleView reloadData];
     }];
     self.jxTitleView.titleColorGradientEnabled = NO;
@@ -89,8 +99,7 @@
         }
         default:
         {
-            NSArray *testResult = [NSArray bg_arrayWithName:kHomeCategory];
-            EFClassifyModel *model = testResult[index - 1];
+            EFClassifyModel *model = self.titles[index - 1];
             EFHomeOtherViewController *other = [[EFHomeOtherViewController alloc] initWithType:model.code];
             return other;
         }

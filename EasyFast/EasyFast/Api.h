@@ -56,6 +56,7 @@
 #define knotice @"api-client/index/notice" // 查询公告信息
 #define khome @"api-client/goods/home" // 首页-企业批发
 #define kpageGoodsByCategory @"api-client/goods/pageGoodsByCategory" // 根据商家分类编码查询商品列表
+#define kpageShopNewGoods @"api-client/goods/pageShopNewGoods" // 店铺新品
 
 // 分类
 #define kcategory @"api-client/platform/category/category" //APP端商品分类-所有

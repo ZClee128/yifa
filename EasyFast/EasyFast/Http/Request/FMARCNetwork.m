@@ -83,9 +83,9 @@ static FMARCNetwork * _instance = nil;
     /// config
     self.manager.responseSerializer = responseSerializer;
 //    self.manager.requestSerializer = [AFJSONRequestSerializer serializer];
-//    self.manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    self.manager.requestSerializer = [AFHTTPRequestSerializer serializer];
 //    self.manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    self.manager.requestSerializer = [AFJSONRequestSerializer serializer];
+//    self.manager.requestSerializer = [AFJSONRequestSerializer serializer];
     
     /// 安全策略
     AFSecurityPolicy *securityPolicy = [AFSecurityPolicy defaultPolicy];
@@ -108,7 +108,7 @@ static FMARCNetwork * _instance = nil;
                                                       nil];
 
 //    [self.manager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [self.manager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Disposition"];
+    [self.manager.requestSerializer setValue:@"multipart/form-data" forHTTPHeaderField:@"Content-Disposition"];
     /// 开启网络监测
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     [self.manager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
@@ -182,7 +182,7 @@ static FMARCNetwork * _instance = nil;
         NSError *serializationError = nil;
 
         NSMutableURLRequest *request = [self.manager.requestSerializer requestWithMethod:req.method URLString:[[NSURL URLWithString:req.path relativeToURL:self->efBaseURL ] absoluteString] parameters:req.parameters error:&serializationError];
-        if (req.method == HTTP_METHOD_GET) {
+        if ([req.method isEqualToString:HTTP_METHOD_GET]) {
             
         }else {
             [request setFormData:req.parameters];
@@ -322,6 +322,7 @@ static FMARCNetwork * _instance = nil;
         
         
         NSMutableURLRequest *request = [self.manager.requestSerializer multipartFormRequestWithMethod:@"POST" URLString:[[NSURL URLWithString:path relativeToURL:[NSURL URLWithString:ImgBaseURL]] absoluteString] parameters:parameters constructingBodyWithBlock:block error:&serializationError];
+        [request setFormData:parameters];
         if (serializationError) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wgnu"

@@ -29,4 +29,8 @@
 - (RACSignal *)pageGoodsByCategoryggcsCode:(NSString *)ggcsCode PageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize {
     return [self fg_getRequest:kpageGoodsByCategory paramters:@{@"ggcsCode":ggcsCode,@"pageNum":pageNum,@"pageSize":pageSize}];
 }
+
+- (RACSignal *)pageShopNewGoodssssNo:(NSString *)sssNo PageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize {
+    return [self fg_getRequest:kpageShopNewGoods paramters:@{@"sssNo":sssNo,@"pageNum":pageNum,@"pageSize":pageSize}];
+}
 @end

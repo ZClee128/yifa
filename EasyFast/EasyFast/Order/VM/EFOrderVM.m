@@ -79,4 +79,22 @@
         return model;
     }];
 }
+
+- (RACSignal *)newGoodsRefreshForDown:(NSString *)sssNO {
+    return [self refreshForDown:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] pageShopNewGoodssssNo:sssNO PageNum:self.firstPage pageSize:self.branches];
+    } toMap:^NSArray * _Nonnull(FMHttpResonse * _Nonnull result) {
+        NSArray *list = [NSArray modelArrayWithClass:[EFGoodsList class] json:result.reqResult];
+        return list;
+    }];
+}
+
+- (RACSignal *)newGoodsRefreshForUp:(NSString *)sssNO {
+    return [self refreshForUp:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] pageShopNewGoodssssNo:sssNO PageNum:@([self.paging intValue] + 1) pageSize:self.branches];
+    } toMap:^NSArray * _Nonnull(FMHttpResonse * _Nonnull result) {
+        NSArray *list = [NSArray modelArrayWithClass:[EFGoodsList class] json:result.reqResult];
+        return list;
+    }];
+}
 @end

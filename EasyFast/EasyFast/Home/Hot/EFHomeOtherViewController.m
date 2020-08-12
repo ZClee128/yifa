@@ -12,6 +12,7 @@
 #import "EFClassDetailViewController.h"
 #import "TuanListViewController.h"
 #import "EFClassifyVM.h"
+#import "EFHomeVM.h"
 
 @interface EFHomeOtherViewController ()
 @property (nonatomic,assign)id type;
@@ -37,6 +38,7 @@
 }
 
 - (void)viewDidLoad {
+    self.viewModel = [[EFHomeVM alloc] init];
     [super viewDidLoad];
     self.gk_navigationBar.hidden = YES;
     self.EFTableView.frame = CGRectMake(0, 0, kPHONE_WIDTH, kPHONE_HEIGHT-NAVIGATION_BAR_HEIGHT-30-TAB_BAR_HEIGHT);
@@ -47,13 +49,28 @@
 
 - (void)loadList {
     //@{@"title":@"查看更多",@"icon":@"6"}
-    [[EFClassifyVM thirdCategory:self.type size:@"9"] subscribeNext:^(NSArray *x) {
-        self.classData = [x mutableCopy];
-        EFClassifyModel *model = [[EFClassifyModel alloc] init];
-        model.icon = @"6";
-        model.title = @"查看更多";
-        [self.classData addObject:model];
-        [self.EFTableView reloadData];
+    [[self defCode] subscribeNext:^(EFClassifyModel  *x) {
+        [[(EFHomeVM *)self.viewModel refreshOtherForDown:x.ggcsCode] subscribeNext:^(RACTuple *x) {
+            self.EFData = [x.first mutableCopy];
+            [self.EFTableView reloadData];
+        }];
+    }];
+}
+
+- (RACSignal *)defCode {
+    return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        [[EFClassifyVM thirdCategory:self.type size:@"9"] subscribeNext:^(NSArray *x) {
+            self.classData = [x mutableCopy];
+            EFClassifyModel *model = [[EFClassifyModel alloc] init];
+            model.icon = @"6";
+            model.title = @"查看更多";
+            [self.classData addObject:model];
+            [subscriber sendNext:self.classData[0]];
+            [subscriber sendCompleted];
+        }];
+        return [RACDisposable disposableWithBlock:^{
+            
+        }];
     }];
 }
 
@@ -71,7 +88,7 @@
         case 0:
             return 1;
         default:
-            return 20;
+            return self.EFData.count;
     }
 }
 
@@ -95,7 +112,7 @@
         default:
         {
             EFGoodsTableViewCell *goodsCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFGoodsTableViewCell class])];
-//            [goodsCell setModel:@""];
+            [goodsCell setModel:self.EFData[indexPath.row]];
             goodsCell.btnSelect = ^{
               [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(YES)}];
             };

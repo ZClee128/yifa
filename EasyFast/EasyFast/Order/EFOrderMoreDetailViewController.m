@@ -88,6 +88,8 @@
 
 
 - (void)viewDidLoad {
+    self.viewModel = [[EFOrderVM alloc] init];
+    self.viewModel.branches = @(10);
     [super viewDidLoad];
     self.ismore = YES;
     self.gk_navTitle = @"订单详情";
@@ -100,8 +102,13 @@
     [self.EFTableView registerClass:[EFTimeTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFTimeTableViewCell class])];
     [self.EFTableView registerClass:[TuanOtherGoodsTableViewCell class] forCellReuseIdentifier:NSStringFromClass([TuanOtherGoodsTableViewCell class])];
     self.timer = [[CountDown alloc] init];
-    self.EFData = [@[@1,@2,@3,@5] mutableCopy];
     @weakify(self);
+    [[((EFOrderVM *)self.viewModel) newGoodsRefreshForDown:self.model.shopNo] subscribeNext:^(RACTuple *x) {
+        @strongify(self);
+        self.EFData = [x.first mutableCopy];
+        [self.EFTableView reloadData];
+    }];
+    
     [[EFOrderVM myOrderDetailExpressNum:self.model.expressNum orderNum:self.model.orderNum] subscribeNext:^(EFOrderModel *x) {
         @strongify(self);
         self.priceArr = [@[@[@"商品价格",[NSString stringWithFormat:@"¥ %.1f",x.goodsAmount]],@[@"运费",[NSString stringWithFormat:@"¥ %.f",x.postageAmount]],@[@"商品总价",[NSString stringWithFormat:@"¥ %.1f",x.goodsTotalAmount]],@[@"实付款",[NSString stringWithFormat:@"¥ %.1f",x.totalAmount]]] mutableCopy];
@@ -120,6 +127,7 @@
         }];
         [self.EFTableView reloadData];
     }];
+    
 }
 
 - (void )pleaseInsertStarTimeo:(NSDate *)time1 andInsertEndTime:(NSDate *)time2{
@@ -234,13 +242,17 @@
         default:
         {
             TuanOtherGoodsTableViewCell *goodsCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TuanOtherGoodsTableViewCell class])];
-            [goodsCell setModel:self.EFData];
             if (self.EFData.count % 2 == 0) {
+                [goodsCell setLeftModel:self.EFData[indexPath.row*2]];
+                [goodsCell setRightModel:self.EFData[indexPath.row*2+1]];
                 [goodsCell showRightView];
             }else {
                 if (indexPath.row == (self.EFData.count) - (self.EFData.count / 2) - 1) {
+                    [goodsCell setLeftModel:self.EFData[indexPath.row*2]];
                     [goodsCell hiddenRightView];
                 }else {
+                    [goodsCell setLeftModel:self.EFData[indexPath.row*2]];
+                    [goodsCell setRightModel:self.EFData[indexPath.row*2+1]];
                     [goodsCell showRightView];
                 }
             }

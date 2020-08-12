@@ -113,6 +113,7 @@
     self.goodsNameLab.text = model.title;
     self.sellLab.text = [NSString stringWithFormat:@"成交量：%ld",(long)model.sales];
     self.priceLab.attributedText = [[NSString stringWithFormat:@"¥%.1f",model.price] getAttributeWithChangeString:@"¥" ChangeFont:RegularFont12 textColor:self.priceLab.textColor];
+    [self.goods sd_setImageWithURL:[NSURL URLWithString:model.url] placeholderImage:UIImageMake(@"")];
 }
 
 @end

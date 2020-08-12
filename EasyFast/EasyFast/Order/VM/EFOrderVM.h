@@ -9,6 +9,7 @@
 #import "EFBaseRefreshVM.h"
 #import "EFOrderModel.h"
 #import "EFLogisticsModel.h"
+#import "EFGoodsList.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -27,6 +28,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (RACSignal *)urgedDeliveryOrderNum:(NSString *)orderNum;
 
 + (RACSignal *)orderExpressExpressNum:(NSString *)expressNum orderNum:(NSString *)orderNum;
+
+- (RACSignal *)newGoodsRefreshForDown:(NSString *)sssNO;
+
+- (RACSignal *)newGoodsRefreshForUp:(NSString *)sssNO;
 @end
 
 NS_ASSUME_NONNULL_END
