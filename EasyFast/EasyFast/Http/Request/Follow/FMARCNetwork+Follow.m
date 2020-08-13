@@ -11,19 +11,19 @@
 @implementation FMARCNetwork (Follow)
 
 - (RACSignal *)findCollectGoodsList:(NSNumber *)pageNum type:(NSInteger)type sortType:(NSInteger)sortType{
-    return [self fg_postRequest:kfindCollectGoodsList paramters:@{@"pageNum":pageNum,@"type":@(type),@"sortType":@(sortType)}];
+    return [self fg_getRequest:kfindCollectGoodsList paramters:@{@"pageNum":pageNum,@"type":@(type),@"sortType":@(sortType)}];
 }
 
 - (RACSignal *)findFollowShopList:(NSNumber *)pageNum {
-    return [self fg_postRequest:kfindFollowShopList paramters:@{@"pageNum":pageNum}];
+    return [self fg_getRequest:kfindFollowShopList paramters:@{@"pageNum":pageNum}];
 }
 
 - (RACSignal *)findTransactionShopList:(NSNumber *)pageNum {
-    return [self fg_postRequest:kfindTransactionShopList paramters:@{@"pageNum":pageNum}];
+    return [self fg_getRequest:kfindTransactionShopList paramters:@{@"pageNum":pageNum}];
 }
 
 - (RACSignal *)findTheTeamShopList:(NSNumber *)pageNum  {
-    return [self fg_postRequest:kfindTheTeamShopList paramters:@{@"pageNum":pageNum}];
+    return [self fg_getRequest:kfindTheTeamShopList paramters:@{@"pageNum":pageNum}];
 }
 
 - (RACSignal *)setFollowShopCategory:(NSString *)category shopNo:(NSString *)shopNo {

@@ -11,15 +11,15 @@
 @implementation FMARCNetwork (Order)
 
 - (RACSignal *)myOrderListpPageNum:(NSNumber *)pageNum type:(NSInteger)type {
-    return [self fg_postRequest:kmyOrderList paramters:@{@"pageNum":pageNum,@"type":@(type)}];
+    return [self fg_getRequest:kmyOrderList paramters:@{@"pageNum":pageNum,@"type":@(type)}];
 }
 
 - (RACSignal *)myOrderSearchListPageNum:(NSNumber *)pageNum type:(NSInteger)type searchText:(NSString *)searchText {
-    return [self fg_postRequest:kmyOrderSearchList paramters:@{@"pageNum":pageNum,@"type":@(type),@"searchText":searchText}];
+    return [self fg_getRequest:kmyOrderSearchList paramters:@{@"pageNum":pageNum,@"type":@(type),@"searchText":searchText}];
 }
 
 - (RACSignal *)myOrderDetailExpressNum:(NSString *)expressNum orderNum:(NSString *)orderNum {
-    return [self fg_postRequest:kmyOrderDetail paramters:@{@"expressNum":expressNum,@"orderNum":orderNum}];
+    return [self fg_getRequest:kmyOrderDetail paramters:@{@"expressNum":expressNum,@"orderNum":orderNum}];
 }
 
 - (RACSignal *)confirmReceiptExpressNum:(NSString *)expressNum orderNum:(NSString *)orderNum {
@@ -31,6 +31,6 @@
 }
 
 - (RACSignal *)orderExpressExpressNum:(NSString *)expressNum orderNum:(NSString *)orderNum {
-    return [self fg_postRequest:korderExpress paramters:@{@"expressNum":expressNum,@"orderNum":orderNum}];
+    return [self fg_getRequest:korderExpress paramters:@{@"expressNum":expressNum,@"orderNum":orderNum}];
 }
 @end

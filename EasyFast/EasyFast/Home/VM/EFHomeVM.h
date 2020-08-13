@@ -29,6 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (RACSignal *)refreshOtherForUp:(NSString *)ggcsCode;
 
 + (RACSignal *)fastOrderBy:(NSNumber *)orderBy type:(NSNumber *)type PageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

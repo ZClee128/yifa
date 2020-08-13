@@ -58,7 +58,7 @@
     self.gk_navTitle = @"个人资料";
     [self.EFTableView registerClass:[EFSetUpTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFSetUpTableViewCell class])];
     
-    self.EFData = [@[@{@"title":@"头像",@"subTitle":@"",@"header":kUserManager.userModel.headImgUrl ? kUserManager.userModel.headImgUrl : @""},
+    self.EFData = [@[[@{@"title":@"头像",@"subTitle":@"",@"header":kUserManager.userModel.headImgUrl ? kUserManager.userModel.headImgUrl : @""} mutableCopy],
                      [@{@"title":@"昵称",@"subTitle":kUserManager.userModel.nickname,@"header":@""} mutableCopy],
                      [@{@"title":@"性别",@"subTitle":kUserManager.userModel.sex == 1 ? @"男" : (kUserManager.userModel.sex == 2 ? @"女" : @"不限"),@"header":@""} mutableCopy],
                      [@{@"title":@"地区",@"subTitle":kUserManager.userModel.city == nil ? @"请选择" :[NSString stringWithFormat:@"%@ %@",kUserManager.userModel.province,kUserManager.userModel.city],@"header":@""} mutableCopy],
@@ -103,10 +103,19 @@
             [[ZLPhotoActionSheet zlPhotoWithCamera:self] subscribeNext:^(RACTuple * _Nullable x) {
                 @strongify(self);
                 if (x.first) {
-                    [[MeVM uploadImage:1 image:x.first] subscribeNext:^(id  _Nullable x) {
-                        
+                    [[MeVM uploadImage:1 image:x.first] subscribeNext:^(NSArray *x) {
+                        if (x.count != 0) {
+                            self.EFData[0][@"header"] = x[0][@"fileUrl"];
+                            for (EFUserModel *model in [EFUserModel bg_findAll:nil]) {
+                                if ([model.username isEqualToString:kUserManager.userModel.username]) {
+                                    model.headImgUrl = x[0][@"fileUrl"];
+                                    [model bg_saveOrUpdate];
+                                }
+                            }
+                            [[NSNotificationCenter defaultCenter] postNotificationName:knickName object:nil];
+                            [self.EFTableView reloadData];
+                        }
                     }];
-                    [self.EFTableView reloadData];
                 }
             }];
         }

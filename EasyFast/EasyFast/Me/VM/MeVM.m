@@ -62,7 +62,7 @@
 
 + (RACSignal *)uploadImage:(NSInteger)type image:(UIImage *)image {
     return [self requsetNetwork:^RACSignal * _Nonnull{
-        return [[FMARCNetwork sharedInstance] uploadImage:type image:image];
+        return [[FMARCNetwork sharedInstance] uploadImage:type image:@[image]];
     } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
         return result.reqResult;
     }];

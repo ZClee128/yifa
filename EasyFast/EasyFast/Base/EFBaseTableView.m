@@ -22,7 +22,9 @@
             if (@available(iOS 13.0, *)) {
                 self.automaticallyAdjustsScrollIndicatorInsets = NO;
             } else {
-                // Fallback on earlier versions
+                self.estimatedRowHeight = 0;
+                self.estimatedSectionHeaderHeight = 0;
+                self.estimatedSectionFooterHeight = 0;
             }
         }
     }

@@ -6,11 +6,11 @@
 //  Copyright © 2020 EasyFast. All rights reserved.
 //
 
-#import "EFSearchResultViewController.h"
+#import "EFBaseCollectionViewController.h"
 #import "EFClassifyModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EFClassDetailViewController : EFSearchResultViewController
+@interface EFClassDetailViewController : EFBaseCollectionViewController
 - (instancetype)initWithModel:(EFClassifyModel *)model;
 @end
 

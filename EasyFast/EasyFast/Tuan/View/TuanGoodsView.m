@@ -7,6 +7,7 @@
 //
 
 #import "TuanGoodsView.h"
+#import "EFTeamGoodsModel.h"
 
 @interface TuanGoodsView ()
 
@@ -157,16 +158,17 @@
     }];
 }
 
-- (void)setModel:(id)model {
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"这里是标题，商品名称多余的可以换行"];
+- (void)setModel:(EFTeamGoodsModel *)model {
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:model.title];
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     [paragraphStyle setLineSpacing:(10-(self.goodsNameLab.font.lineHeight - self.goodsNameLab.font.pointSize))];
-    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [@"这里是标题，商品名称多余的可以换行" length])];
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [model.title length])];
     self.goodsNameLab.attributedText = attributedString;
-    self.numLab.text = @"最低采购量：100";
-    self.sellLab.text = @"当前总量：999999";
-    self.peopleLab.text = @"已有拼单人数：200";
-    self.priceLab.attributedText = [@"¥7899.8" getAttributeWithChangeString:@"¥" ChangeFont:MedFont12 textColor:self.priceLab.textColor];
+    self.numLab.text = [NSString stringWithFormat:@"最低采购量：%@",model.miniOrderQuantity];
+    self.sellLab.text = [NSString stringWithFormat:@"当前总量：%@",model.stock];
+    self.peopleLab.text = [NSString stringWithFormat:@"已有拼单人数：%@",model.currentTeamSize];
+    self.priceLab.attributedText = [[NSString stringWithFormat:@"¥%.1f",model.miniPrice] getAttributeWithChangeString:@"¥" ChangeFont:MedFont12 textColor:self.priceLab.textColor];
+    [self.goods sd_setImageWithURL:[NSURL URLWithString:model.image] placeholderImage:UIImageMake(@"")];
 }
 
 @end

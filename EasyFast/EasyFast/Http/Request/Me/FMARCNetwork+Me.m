@@ -19,22 +19,24 @@
 }
 
 - (RACSignal *)goodsMonthFootprint {
-    return [self fg_postRequest:kgoodsMonthFootprint paramters:@{}];
+    return [self fg_getRequest:kgoodsMonthFootprint paramters:@{}];
 }
 
 - (RACSignal *)goodsFootprintList:(NSString *)queryTime pageNum:(NSNumber *)pageNum {
-    return [self fg_postRequest:kgoodsFootprintList paramters:@{@"queryTime":queryTime,@"pageNum":pageNum}];
+    return [self fg_getRequest:kgoodsFootprintList paramters:@{@"queryTime":queryTime,@"pageNum":pageNum}];
 }
 
-- (RACSignal *)uploadImage:(NSInteger)type image:(UIImage *)image {
-    NSData *data = UIImageJPEGRepresentation(image, 1.0f);
-//    NSString *encodedImageStr = [data base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
-//    return [[FMARCNetwork sharedInstance] uploadNetworkPath:kuploadImage params:@{@"type":@(type)} fileDatas:@[data] name:@"file" mimeType:@"image/jpg"];
-    return [self fg_postRequest:kuploadImage paramters:@{@"file":data,@"type":@(type)}];
+- (RACSignal *)uploadImage:(NSInteger)type image:(NSArray *)image {
+    NSMutableArray *datas = [[NSMutableArray alloc] init];
+    for (UIImage *img in image) {
+        NSData *data = UIImageJPEGRepresentation(img, 1.0f);
+        [datas addObject:data];
+    }
+    return [self uploadNetworkPath:kuploadImage params:@{@"type":@(type)} fileDatas:datas name:@"file" mimeType:@""];
 }
 
 - (RACSignal *)findAddressListPageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize{
-    return [self fg_postRequest:kfindAddressList paramters:@{@"pageNum":pageNum,@"pageSize":pageSize}];
+    return [self fg_getRequest:kfindAddressList paramters:@{@"pageNum":pageNum,@"pageSize":pageSize}];
 }
 
 - (RACSignal *)addAddress:(NSString *)address city:(NSString *)city province:(NSString *)province recipientName:(NSString *)recipientName recipientPhone:(NSString *)recipientPhone area:(NSString *)area {
@@ -54,22 +56,26 @@
 }
 
 - (RACSignal *)queryUserInfoCount {
-    return [self fg_postRequest:kqueryUserInfoCount paramters:@{}];
+    return [self fg_getRequest:kqueryUserInfoCount paramters:@{}];
 }
 
 - (RACSignal *)queryUserOrderCount {
-    return [self fg_postRequest:kqueryUserOrderCount paramters:@{}];
+    return [self fg_getRequest:kqueryUserOrderCount paramters:@{}];
 }
 
 - (RACSignal *)queryUserTeamCount {
-    return [self fg_postRequest:kqueryUserTeamCount paramters:@{}];
+    return [self fg_getRequest:kqueryUserTeamCount paramters:@{}];
 }
 
 - (RACSignal *)myMessageListPageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize shopName:(NSString *)shopName{
-    return [self fg_postRequest:kmyMessageList paramters:@{@"pageNum":pageNum,@"pageSize":pageSize,@"shopName":shopName}];
+    return [self fg_getRequest:kmyMessageList paramters:@{@"pageNum":pageNum,@"pageSize":pageSize,@"shopName":shopName}];
 }
 
 - (RACSignal *)helpCenterListPageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize title:(NSString *)title {
-    return [self fg_postRequest:khelpCenterList paramters:@{@"pageNum":pageNum,@"pageSize":pageSize,@"title":title}];
+    return [self fg_getRequest:khelpCenterList paramters:@{@"pageNum":pageNum,@"pageSize":pageSize,@"title":title}];
+}
+
+- (RACSignal *)recordGoodsLogType:(NSInteger )type category:(NSString *)category goodsNo:(NSString *)goodsNo searchText:(NSString *)searchText {
+    return [self fg_postRequest:krecordGoodsLog paramters:@{@"type":@(type),@"category":category,@"goodsNo":goodsNo,@"searchText":searchText}];
 }
 @end

@@ -42,4 +42,24 @@
 - (RACSignal *)pageTeamOrderBy:(NSNumber *)orderBy type:(NSNumber *)type PageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize {
     return [self fg_getRequest:kpageTeam paramters:@{@"orderBy":orderBy,@"type":type,@"pageNum":pageNum,@"pageSize":pageSize}];
 }
+
+- (RACSignal *)getSearchHistoryList {
+    return [self fg_getRequest:kgetSearchHistoryList paramters:@{}];
+}
+
+- (RACSignal *)pageTeamByGoodsNoGGNo:(NSString *)ggNo orderBy:(NSInteger )orderBy pageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize teamInfo:(BOOL )teamInfo type:(NSInteger)type {
+    return [self fg_getRequest:kpageTeamByGoodsNo paramters:@{@"ggNo":ggNo,@"orderBy":@(orderBy),@"pageNum":pageNum,@"pageSize":pageSize,@"teamInfo":@(teamInfo),@"type":@(type)}];
+}
+
+- (RACSignal *)goodsSummaryGGNo:(NSString *)ggNo {
+    return [self fg_getRequest:kgoodsSummary paramters:@{@"ggNo":ggNo}];
+}
+
+- (RACSignal *)teamInfo:(NSString *)ootNo {
+    return [self fg_getRequest:kteamInfo paramters:@{@"ootNo":ootNo}];
+}
+
+- (RACSignal *)searchGoodsListPageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize sortType:(NSInteger)sortType title:(NSString *)title {
+    return [self fg_getRequest:ksearchGoodsList paramters:@{@"pageNum":pageNum,@"pageSize":pageSize,@"sortType":@(sortType),@"title":title}];
+}
 @end

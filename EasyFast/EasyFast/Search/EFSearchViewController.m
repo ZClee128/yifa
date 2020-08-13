@@ -9,7 +9,9 @@
 #import "EFSearchViewController.h"
 #import "TKTagView.h"
 #import "EFSearchResultViewController.h"
-@interface EFSearchViewController ()<QMUITableViewDelegate,QMUITableViewDataSource>
+#import "EFSearchVM.h"
+
+@interface EFSearchViewController ()<QMUITableViewDelegate,QMUITableViewDataSource,TKTagViewTapDelegate,QMUITextFieldDelegate>
 
 @property (nonatomic,strong)QMUITextField *searchField;
 @property (nonatomic,strong)QMUIButton *cancle;
@@ -28,6 +30,7 @@
         _tagView.tagTitleColorArray = @[tabbarBlackColor];
         _tagView.tagColorArray = @[colorfafafa];
         _tagView.padding = WidthOfScale(10);
+        _tagView.delegate = self;
     }
     return _tagView;
 }
@@ -44,6 +47,11 @@
         _searchField.backgroundColor = colorEFEFEF;
         _searchField.textInsets = UIEdgeInsetsMake(0, WidthOfScale(21), 0, WidthOfScale(21));
         [_searchField becomeFirstResponder];
+        _searchField.returnKeyType = UIReturnKeySearch;
+        _searchField.delegate = self;
+        [[RACSignal merge:@[_searchField.rac_textSignal, RACObserve(_searchField, text)]] subscribeNext:^(RACTuple *x) {
+            XYLog(@"%@",x);
+        }];
     }
     return _searchField;
 }
@@ -76,6 +84,7 @@
 }
 
 - (void)viewDidLoad {
+    self.viewModel = [[EFSearchVM alloc] init];
     [super viewDidLoad];
     self.gk_navigationBar.hidden = YES;
     self.view.backgroundColor = UIColor.whiteColor;
@@ -87,12 +96,53 @@
         make.centerY.equalTo(self.searchField);
         make.height.equalTo(@(WidthOfScale(36)));
     }];
-    [self.view addSubview:self.tableView];
-//    [self.view addSubview:self.tagView];
-//    self.tagView.tagTitleArray = @[@"华为pro 30",@"无袖吊带T恤",@"滑板车"];
-//    [self.tagView createTags];
+    [self.view addSubview:self.tagView];
+    [self loadHistory];
 }
 
+- (void)loadHistory {
+    @weakify(self);
+    [[EFSearchVM getSearchHistoryList] subscribeNext:^(NSArray *x) {
+        @strongify(self);
+        self.tagView.tagTitleArray = x;
+        [self.tagView createTags];
+    }];
+}
+
+- (void)tapTag:(UILabel *)aTag index:(NSInteger)index {
+    NSString *searchTitle = self.tagView.tagTitleArray[index];
+    self.searchField.text = searchTitle;
+    [self.view addSubview:self.tableView];
+}
+
+- (void)recordSearch:(NSString *)text {
+    @weakify(self);
+    [[[FMARCNetwork sharedInstance] recordGoodsLogType:1 category:@"" goodsNo:@"" searchText:text] subscribeNext:^(FMHttpResonse *x) {
+        @strongify(self);
+       [self loadHistory];
+    }];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    if (textField.text.length != 0) {
+        [self recordSearch:textField.text];
+        [self.view addSubview:self.tableView];
+    }else {
+        [self.tableView removeFromSuperview];
+    }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField.text.length != 0) {
+        [self recordSearch:textField.text];
+        [self.view addSubview:self.tableView];
+    }else {
+        [self.tableView removeFromSuperview];
+    }
+    EFSearchResultViewController *resultVC = [[EFSearchResultViewController alloc] initWithSearchTitle:textField.text];
+    [self.navigationController pushViewController:resultVC animated:NO];
+    return YES;
+}
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

@@ -14,7 +14,7 @@
 #import "AFNetworkActivityIndicatorManager.h"
 #import "MBProgressHUD.h"
 #import "NSMutableURLRequest+FormData.h"
-
+#import "LoginVM.h"
 /// 请求数据返回的状态码、根据自己的服务端数据来
 typedef NS_ENUM(NSUInteger, HTTPResponseCode) {
     HTTPResponseCodeSuccess = 200,           /// 请求成功
@@ -83,7 +83,7 @@ static FMARCNetwork * _instance = nil;
     /// config
     self.manager.responseSerializer = responseSerializer;
 //    self.manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    self.manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+//    self.manager.requestSerializer = [AFHTTPRequestSerializer serializer];
 //    self.manager.responseSerializer = [AFHTTPResponseSerializer serializer];
 //    self.manager.requestSerializer = [AFJSONRequestSerializer serializer];
     
@@ -108,7 +108,7 @@ static FMARCNetwork * _instance = nil;
                                                       nil];
 
 //    [self.manager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [self.manager.requestSerializer setValue:@"multipart/form-data" forHTTPHeaderField:@"Content-Disposition"];
+    [self.manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Disposition"];
     /// 开启网络监测
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     [self.manager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
@@ -174,6 +174,13 @@ static FMARCNetwork * _instance = nil;
     }
     
     @weakify(self);
+    
+    if ([req.method isEqualToString:HTTP_METHOD_GET]) {
+        self.manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    }else {
+        self.manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    }
+    
     /// 创建信号
     RACSignal *signal = [RACSignal createSignal:^(id<RACSubscriber> subscriber) {
         @strongify(self);
@@ -182,11 +189,11 @@ static FMARCNetwork * _instance = nil;
         NSError *serializationError = nil;
 
         NSMutableURLRequest *request = [self.manager.requestSerializer requestWithMethod:req.method URLString:[[NSURL URLWithString:req.path relativeToURL:self->efBaseURL ] absoluteString] parameters:req.parameters error:&serializationError];
-        if ([req.method isEqualToString:HTTP_METHOD_GET]) {
-            
-        }else {
-            [request setFormData:req.parameters];
-        }
+//        if ([req.method isEqualToString:HTTP_METHOD_GET]) {
+//
+//        }else {
+////            [request setFormData:req.parameters];
+//        }
         if (serializationError) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wgnu"
@@ -240,6 +247,9 @@ static FMARCNetwork * _instance = nil;
                         [subscriber sendCompleted];
                         //错误提示
                         [self showMsgtext:@"请登录!"];
+                        [[LoginVM loginOut] subscribeNext:^(id  _Nullable x) {
+                            
+                        }];
                         
                     }else{
                         NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
@@ -321,8 +331,8 @@ static FMARCNetwork * _instance = nil;
         NSError *serializationError = nil;
         
         
-        NSMutableURLRequest *request = [self.manager.requestSerializer multipartFormRequestWithMethod:@"POST" URLString:[[NSURL URLWithString:path relativeToURL:[NSURL URLWithString:ImgBaseURL]] absoluteString] parameters:parameters constructingBodyWithBlock:block error:&serializationError];
-        [request setFormData:parameters];
+        NSMutableURLRequest *request = [self.manager.requestSerializer multipartFormRequestWithMethod:@"POST" URLString:[[NSURL URLWithString:path relativeToURL:self->efBaseURL] absoluteString] parameters:parameters constructingBodyWithBlock:block error:&serializationError];
+//        [request setFormData:parameters];
         if (serializationError) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wgnu"
@@ -378,6 +388,9 @@ static FMARCNetwork * _instance = nil;
                         [subscriber sendCompleted];
                         
                         [self showMsgtext:@"请登录"];
+                        [[LoginVM loginOut] subscribeNext:^(id  _Nullable x) {
+                            
+                        }];
                         
                     }else{
                         NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];

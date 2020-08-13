@@ -7,11 +7,12 @@
 //
 
 #import "TuanListViewController.h"
-
+#import "EFTeamGoodsModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TuanListDetailViewController : TuanListViewController
+@interface TuanListDetailViewController : EFBaseTableViewController
 
+- (instancetype)initWithGGNo:(NSString *)ggNO ootNo:(NSString *)ootNo model:(EFTeamGoodsModel *)model;
 @end
 
 NS_ASSUME_NONNULL_END

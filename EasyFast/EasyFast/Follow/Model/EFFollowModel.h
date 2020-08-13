@@ -28,7 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)NSString *teamLeaderUrl;
 /// 拼团进度
 @property (nonatomic,assign)CGFloat teamProcess;
-
+/// 商品编码
+@property (nonatomic,strong)NSString *ggNo;
 @end
 
 

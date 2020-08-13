@@ -113,9 +113,10 @@
         default:
         {
             EFGoodsTableViewCell *goodsCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFGoodsTableViewCell class])];
-            [goodsCell setModel:self.EFData[indexPath.row]];
+            EFGoodsList *model = self.EFData[indexPath.row];
+            [goodsCell setModel:model];
             goodsCell.btnSelect = ^{
-              [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(YES)}];
+              [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(YES),@"ggNo":model.ggNo}];
             };
             return goodsCell;
         }
@@ -125,7 +126,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
-        [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO)}];
+        EFGoodsList *model = self.EFData[indexPath.row];
+        [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO),@"ggNo":model.ggNo}];
     }
 }
 

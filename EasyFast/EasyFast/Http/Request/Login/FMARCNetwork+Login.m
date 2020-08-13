@@ -19,7 +19,7 @@
 }
 
 - (RACSignal *)sendCode:(NSString *)phone type:(NSInteger)type {
-    return [self fg_postRequest:ksendCode paramters:@{@"phone":phone,@"type":@(type)}];
+    return [self fg_getRequest:ksendCode paramters:@{@"phone":phone,@"type":@(type)}];
 }
 
 - (RACSignal *)verifyMessage:(NSString *)code phone:(NSString *)phone type:(NSInteger)type {

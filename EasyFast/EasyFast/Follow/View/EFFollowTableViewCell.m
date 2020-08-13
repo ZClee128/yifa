@@ -237,8 +237,9 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    EFFollowModel *model = self.data[indexPath.item];
     if (self.selectIndex) {
-        self.selectIndex(indexPath.item);
+        self.selectIndex(model);
     }
 }
 

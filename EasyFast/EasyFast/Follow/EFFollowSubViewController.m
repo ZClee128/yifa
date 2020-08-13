@@ -158,8 +158,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EFFollowTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFFollowTableViewCell class])];
     EFFollowModel *model = self.EFData[indexPath.section];
-    cell.selectIndex = ^(NSInteger index) {
-        [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO)}];
+    cell.selectIndex = ^(EFGoodsList *model) {
+        [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO),@"ggNO":model.ggNo}];
     };
     cell.headerSelect = ^{
         [kH5Manager gotoUrl:@"shop" hasNav:NO navTitle:@"" query:@{}];
@@ -199,10 +199,10 @@
                 [kH5Manager gotoUrl:@"shop" hasNav:NO navTitle:@"" query:@{}];
             };
             tuanCell.pintuanBlock = ^{
-                [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(YES)}];
+                [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(YES),@"ggNo":model.team.ggNo}];
             };
-            tuanCell.selectIndex = ^(NSInteger index) {
-                [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO)}];
+            tuanCell.selectIndex = ^(EFGoodsList *model) {
+                [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO),@"ggNo":model.ggNo}];
             };
             tuanCell.follow = ^(QMUIButton * _Nonnull sender) {
                 if (sender.selected) {

@@ -94,6 +94,10 @@
     [self.efbridge Pay];
     [self.efbridge ChooseAddress];
     [self.efbridge Camera];
+    [self.efbridge goOrderDetail];
+    [self.efbridge goOrderList];
+    [self.efbridge evalWritingOver];
+    [self.efbridge returnApplyOver];
 }
 
 

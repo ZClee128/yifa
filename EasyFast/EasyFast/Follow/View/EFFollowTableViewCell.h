@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)QMUILabel *adressLab;
 @property (nonatomic,strong)QMUIButton *followBtn;
 
-@property (nonatomic,copy)void(^selectIndex)(NSInteger index);
+@property (nonatomic,copy)void(^selectIndex)(id model);
 @property (nonatomic,copy)void(^headerSelect)(void);
 @property (nonatomic,copy)void(^follow)(QMUIButton *sender);
 

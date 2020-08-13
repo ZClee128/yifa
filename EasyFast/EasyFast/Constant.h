@@ -142,8 +142,10 @@ fprintf(stderr,"[--%s--]\n[--%s:%d--]\n[--%s--]\n===========================\n",
 #define kChangePhone @"kChangePhone" //修改手机
 #define kChangePassword @"kChangePassword" // 修改密码
 #define kAddress @"kAddress" // 新增地址
-#define kOrderSearch @"kOrderSearch" //订单搜索
 #define kselectTabBarMe @"kselectTabBarMe" //点击tabbar个人中心通知
+#define kLoginOut @"kLoginOut"  //退出登录通知
+#define kevalWritingOver @"kevalWritingOver" //订单评价通知
+#define kreturnApplyOver @"kreturnApplyOver" // 订单售后通知
 
 // 图片
 #define kup UIImageMake(@"up") // 降序

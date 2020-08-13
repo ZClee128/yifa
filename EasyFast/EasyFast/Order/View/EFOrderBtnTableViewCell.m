@@ -170,6 +170,15 @@
             [self.threeBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
             break;
         }
+            case 500:
+        {
+            self.oneBtn.hidden = YES;;
+            self.twoBtn.hidden = YES;
+            self.moreBtn.hidden = YES;
+            [self.threeBtn setTitle:@"联系客服" forState:(UIControlStateNormal)];
+            self.threeBtn.layer.borderColor = RGB16(0xD6D6D6).CGColor;
+            [self.threeBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
+        }
         case 600: {
             self.oneBtn.hidden = YES;
             self.moreBtn.hidden = YES;

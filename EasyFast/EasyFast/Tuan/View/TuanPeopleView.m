@@ -7,7 +7,7 @@
 //
 
 #import "TuanPeopleView.h"
-
+#import "EFTeamListModel.h"
 @interface TuanPeopleView ()
 
 @property (nonatomic,strong)UIImageView *headerImageView;
@@ -98,10 +98,10 @@
     return self;
 }
 
-- (void)setModel:(id)model {
-    self.nameLab.text = @"夏天的风...";
-    self.numLab.text = @"购买量：9999";
-    self.timeLab.text = @"07.11 15:30发起";
+- (void)setModel:(TeamOrderDtoModel *)model {
+    self.nameLab.text = model.nickName;
+    self.numLab.text = [NSString stringWithFormat:@"购买量：%@",model.quantity];
+    self.timeLab.text = [NSString stringWithFormat:@"%@发起",model.createDate];
 }
 
 @end

@@ -10,8 +10,9 @@
 #import "EFSearchViewController.h"
 #import "SearchTwoCollectionViewCell.h"
 #import "SeachOneCollectionViewCell.h"
+#import "EFSearchVM.h"
 
-@interface EFSearchResultViewController ()<UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface EFSearchResultViewController ()
 
 @property (nonatomic,strong)QMUILabel *searchField;
 
@@ -20,34 +21,34 @@
 
 @implementation EFSearchResultViewController
 
--(NSMutableArray *)data
-{
-    if (_data == nil) {
-        _data = [[NSMutableArray alloc]init];
-    }
-    return _data;
-}
-
--(UICollectionView *)collect
-{
-    if (_collect == nil) {
-        self.flow = [[UICollectionViewFlowLayout alloc] init];
-        [self.flow setScrollDirection:UICollectionViewScrollDirectionVertical];//竖滑动
-        self.flow.minimumLineSpacing = WidthOfScale(11);
-        self.flow.minimumInteritemSpacing = WidthOfScale(10);
-        self.flow.itemSize = CGSizeMake(WidthOfScale(167), WidthOfScale(280));
-        _collect = [[UICollectionView alloc] initWithFrame:CGRectMake(0, NAVIGATION_BAR_HEIGHT + 45, kPHONE_WIDTH,kPHONE_HEIGHT - NAVIGATION_BAR_HEIGHT - 45) collectionViewLayout:self.flow];
-        _collect.backgroundColor = [UIColor clearColor];
-        _collect.delegate = self;
-        _collect.dataSource = self;
-        _collect.showsHorizontalScrollIndicator = NO;
-        _collect.showsVerticalScrollIndicator = NO;
-        _collect.contentInset = UIEdgeInsetsMake(WidthOfScale(15), WidthOfScale(15), WidthOfScale(15), WidthOfScale(15));
-        [_collect registerClass:[SearchTwoCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([SearchTwoCollectionViewCell class])];
-        [_collect registerClass:[SeachOneCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([SeachOneCollectionViewCell class])];
-    }
-    return _collect;
-}
+//-(NSMutableArray *)data
+//{
+//    if (_data == nil) {
+//        _data = [[NSMutableArray alloc]init];
+//    }
+//    return _data;
+//}
+//
+//-(UICollectionView *)collect
+//{
+//    if (_collect == nil) {
+//        self.flow = [[UICollectionViewFlowLayout alloc] init];
+//        [self.flow setScrollDirection:UICollectionViewScrollDirectionVertical];//竖滑动
+//        self.flow.minimumLineSpacing = WidthOfScale(11);
+//        self.flow.minimumInteritemSpacing = WidthOfScale(10);
+//        self.flow.itemSize = CGSizeMake(WidthOfScale(167), WidthOfScale(280));
+//        _collect = [[UICollectionView alloc] initWithFrame:CGRectMake(0, NAVIGATION_BAR_HEIGHT + 45, kPHONE_WIDTH,kPHONE_HEIGHT - NAVIGATION_BAR_HEIGHT - 45) collectionViewLayout:self.flow];
+//        _collect.backgroundColor = [UIColor clearColor];
+//        _collect.delegate = self;
+//        _collect.dataSource = self;
+//        _collect.showsHorizontalScrollIndicator = NO;
+//        _collect.showsVerticalScrollIndicator = NO;
+//        _collect.contentInset = UIEdgeInsetsMake(WidthOfScale(15), WidthOfScale(15), WidthOfScale(15), WidthOfScale(15));
+//        [_collect registerClass:[SearchTwoCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([SearchTwoCollectionViewCell class])];
+//        [_collect registerClass:[SeachOneCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([SeachOneCollectionViewCell class])];
+//    }
+//    return _collect;
+//}
 
 
 -(QMUILabel *)searchField
@@ -76,19 +77,42 @@
     return _searchField;
 }
 
+- (instancetype)initWithSearchTitle:(NSString *)title
+{
+    self = [super init];
+    if (self) {
+        self.searchField.text = title;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
+    self.viewModel = [[EFSearchVM alloc] init];
+    self.collectionView.frame = CGRectMake(0, NAVIGATION_BAR_HEIGHT + 45, kPHONE_WIDTH,kPHONE_HEIGHT - NAVIGATION_BAR_HEIGHT - 45);
+    self.lineSpacing = WidthOfScale(11);
+    self.interitemSpacing = WidthOfScale(10);
+    self.itemSize = CGSizeMake(WidthOfScale(167), WidthOfScale(280));
+    self.registerClasses = @[@{@"SearchTwoCollectionViewCell":@"SearchTwoCollectionViewCell"},@{@"SeachOneCollectionViewCell":@"SeachOneCollectionViewCell"}];
+    self.collectionEdgeInsets = UIEdgeInsetsMake(0, WidthOfScale(15), WidthOfScale(15), WidthOfScale(15));
+    ((EFSearchVM *)self.viewModel).title = self.searchField.text;
+    ((EFSearchVM *)self.viewModel).sortType = 0;
     [super viewDidLoad];
+    self.collectionView.frame = CGRectMake(0, NAVIGATION_BAR_HEIGHT + 45, kPHONE_WIDTH,kPHONE_HEIGHT - NAVIGATION_BAR_HEIGHT - 45);
     self.isOne = NO;
     self.gk_navigationBar.hidden = NO;
     self.gk_navLineHidden = YES;
     [self setSearch];
     [self.view addSubview:[self headerView]];
-    [self.view addSubview:self.collect];
     [self loadList];
 }
 
 - (void)loadList {
-    
+    @weakify(self);
+    [[self.viewModel refreshForDown] subscribeNext:^(RACTuple *x) {
+        @strongify(self);
+        self.EFData = x.first;
+        [self.collectionView reloadData];
+    }];
 }
 
 - (void)setSearch {
@@ -101,25 +125,15 @@
     [self.view addSubview:bg];
     QMUIButton *leftBtn = [QMUIButton buttonWithType:(UIButtonTypeCustom)];
     [leftBtn setTitle:@"销量" forState:(UIControlStateNormal)];
-    [leftBtn setTitle:@"销量" forState:(UIControlStateSelected)];
     leftBtn.titleLabel.font = RegularFont15;
-    [leftBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
-    [leftBtn setTitleColor:colorF14745 forState:(UIControlStateSelected)];
-    [[leftBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(QMUIButton *x) {
-        x.selected = !x.selected;
-    }];
+    [leftBtn setTitleColor:colorF14745 forState:(UIControlStateNormal)];
+    
     
     QMUIButton *MiddleBtn = [QMUIButton buttonWithType:(UIButtonTypeCustom)];
     MiddleBtn.titleLabel.font = RegularFont15;
     [MiddleBtn setTitle:@"价格" forState:(UIControlStateNormal)];
-    [MiddleBtn setTitle:@"价格" forState:(UIControlStateSelected)];
-    [MiddleBtn setImage:UIImageMake(@"up") forState:(UIControlStateNormal)];
-    [MiddleBtn setImage:UIImageMake(@"down") forState:(UIControlStateSelected)];
+    [MiddleBtn setImage:knormal forState:(UIControlStateNormal)];
     [MiddleBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
-    [MiddleBtn setTitleColor:colorF14745 forState:(UIControlStateSelected)];
-    [[MiddleBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(QMUIButton *x) {
-        x.selected = !x.selected;
-    }];
     MiddleBtn.imagePosition = QMUIButtonImagePositionRight;
     
     
@@ -132,19 +146,19 @@
         @strongify(self);
         self.isOne = x.selected;
         if (self.isOne) {
-            self.collect.contentInset = UIEdgeInsetsMake(15,0,0,0);
-            self.flow.minimumLineSpacing = WidthOfScale(0);
-            self.flow.minimumInteritemSpacing = WidthOfScale(0);
-            self.flow.itemSize = CGSizeMake(kPHONE_WIDTH, WidthOfScale(155));
+            self.collectionEdgeInsets = UIEdgeInsetsMake(15,0,0,0);
+            [self defaultCollectionFlowLayout].minimumLineSpacing = WidthOfScale(0);
+            [self defaultCollectionFlowLayout].minimumInteritemSpacing = WidthOfScale(0);
+            [self defaultCollectionFlowLayout].itemSize = CGSizeMake(kPHONE_WIDTH, WidthOfScale(155));
         }else {
-            self.collect.contentInset = UIEdgeInsetsMake(WidthOfScale(15), WidthOfScale(15), WidthOfScale(15), WidthOfScale(15));
-            self.flow.minimumLineSpacing = WidthOfScale(11);
-            self.flow.minimumInteritemSpacing = WidthOfScale(10);
-            self.flow.itemSize = CGSizeMake(WidthOfScale(167), WidthOfScale(280));
-                                            
+            self.collectionEdgeInsets = UIEdgeInsetsMake(0, WidthOfScale(15), WidthOfScale(15), WidthOfScale(15));
+            [self defaultCollectionFlowLayout].minimumLineSpacing  = WidthOfScale(11);
+            [self defaultCollectionFlowLayout].minimumInteritemSpacing = WidthOfScale(10);
+            [self defaultCollectionFlowLayout].itemSize = CGSizeMake(WidthOfScale(167), WidthOfScale(280));
+            
         }
         [[RACScheduler mainThreadScheduler] schedule:^{
-           [self.collect reloadSections:[NSIndexSet indexSetWithIndex:0]];
+            [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
         }];
     }];
     
@@ -153,23 +167,46 @@
     [bg addSubview:rightBtn];
     
     [leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(@(WidthOfScale(14.5)));
+        make.left.equalTo(@(WidthOfScale(50)));
         make.bottom.equalTo(@(-WidthOfScale(10.5)));
         //        make.height.equalTo(@(WidthOfScale(36.5)));
     }];
     
     [MiddleBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(@(WidthOfScale(178.5)));
+        make.centerX.equalTo(bg);
         make.bottom.equalTo(@(-WidthOfScale(10.5)));
         //        make.height.equalTo(@(WidthOfScale(36.5)));
     }];
     
     [rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(@(-WidthOfScale(15.5)));
+        make.right.equalTo(@(-WidthOfScale(50)));
         make.bottom.equalTo(@(-WidthOfScale(10.5)));
         //        make.height.equalTo(@(WidthOfScale(36.5)));
     }];
     
+    
+    [[leftBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(QMUIButton *x) {
+        [x setTitleColor:colorF14745 forState:(UIControlStateNormal)];
+        [MiddleBtn setImage:knormal forState:(UIControlStateNormal)];
+        [MiddleBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
+        MiddleBtn.selected = NO;
+    }];
+    
+    [[MiddleBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(QMUIButton *x) {
+        @strongify(self);
+        x.selected = !x.selected;
+        if (x.selected) {
+            [x setImage:kup forState:(UIControlStateNormal)];
+            [x setTitleColor:colorF14745 forState:(UIControlStateNormal)];
+            ((EFSearchVM *)self.viewModel).sortType = 1;
+        }else {
+            [x setImage:kdown forState:(UIControlStateNormal)];
+            [x setTitleColor:colorF14745 forState:(UIControlStateNormal)];
+            ((EFSearchVM *)self.viewModel).sortType = 2;
+        }
+        [self loadList];
+        [leftBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
+    }];
     return bg;
 }
 
@@ -180,11 +217,11 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.data.count;
+    return self.EFData.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    EFGoodsList *model = self.data[indexPath.item];
+    EFGoodsList *model = self.EFData[indexPath.item];
     if (self.isOne) {
         SeachOneCollectionViewCell *oneCell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([SeachOneCollectionViewCell class]) forIndexPath:indexPath];
         [oneCell setModel:model];
@@ -198,7 +235,8 @@
 
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO)}];
+    EFGoodsList *model = self.EFData[indexPath.item];
+    [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO),@"ggNo":model.ggNo}];
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {

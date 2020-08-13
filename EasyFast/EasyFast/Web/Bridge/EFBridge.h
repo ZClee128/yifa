@@ -42,6 +42,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 相机
 - (void)Camera;
+
+// 订单详情
+- (void)goOrderDetail;
+
+/// 订单列表
+- (void)goOrderList;
+
+/// 评价完成
+- (void)evalWritingOver;
+
+/// 售后完成
+- (void)returnApplyOver;
 - (NSDictionary *)identifyData:(id)data;
 
 

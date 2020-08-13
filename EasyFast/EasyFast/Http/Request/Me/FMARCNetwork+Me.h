@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 商品足迹列表接口
 - (RACSignal *)goodsFootprintList:(NSString *)queryTime pageNum:(NSNumber *)pageNum;
 
-- (RACSignal *)uploadImage:(NSInteger)type image:(UIImage *)image;
+- (RACSignal *)uploadImage:(NSInteger)type image:(NSArray *)image;
 
 /// 地址列表
 - (RACSignal *)findAddressListPageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize;
@@ -51,6 +51,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (RACSignal *)myMessageListPageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize shopName:(NSString *)shopName;
 
 - (RACSignal *)helpCenterListPageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize title:(NSString *)title;
+
+
+/// 记录商品日志接口
+/// @param type 商品日志分类，1：搜索商品；2：浏览商品
+/// @param category 商品分类
+/// @param goodsNo 商品编号
+/// @param searchText 商品搜索文本
+- (RACSignal *)recordGoodsLogType:(NSInteger )type category:(NSString *)category goodsNo:(NSString *)goodsNo searchText:(NSString *)searchText;
 @end
 
 NS_ASSUME_NONNULL_END

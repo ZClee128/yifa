@@ -290,7 +290,7 @@
                 case 0:
                    return WidthOfScale(48);
                 default:
-                return WidthOfScale(145);
+                return WidthOfScale(110);
             }
         }
         case 2: {
@@ -337,6 +337,6 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return section == 1 ? 20 : (section == 2 ? 10 : 0.001 );
+    return section == 1 ? 0.001 : (section == 2 ? 10 : 0.001 );
 }
 @end

@@ -23,13 +23,29 @@
         _leftBtn = [QMUIButton buttonWithType:(UIButtonTypeCustom)];
         _leftBtn.titleLabel.font = RegularFont15;
         [_leftBtn setTitle:@"时间顺序" forState:(UIControlStateNormal)];
-        [_leftBtn setTitle:@"时间顺序" forState:(UIControlStateSelected)];
-        [_leftBtn setTitleColor:colorF14745 forState:(UIControlStateSelected)];
-        [_leftBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
-        [_leftBtn setImage:UIImageMake(@"normal") forState:(UIControlStateNormal)];
-        [_leftBtn setImage:UIImageMake(@"up") forState:(UIControlStateSelected)];
+        [_leftBtn setTitleColor:colorF14745 forState:(UIControlStateNormal)];
+        _leftBtn.selected = YES;
+        [_leftBtn setImage:kup forState:(UIControlStateNormal)];
         _leftBtn.imagePosition = QMUIButtonImagePositionRight;
         _leftBtn.imageEdgeInsets = UIEdgeInsetsMake(0, WidthOfScale(10.5), 0, 0);
+        @weakify(self);
+        [[_leftBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(QMUIButton *x) {
+            x.selected = !x.selected;
+            @strongify(self);
+            if (x.selected) {
+                [x setImage:kup forState:(UIControlStateNormal)];
+                [self.rightBtn setImage:knormal forState:(UIControlStateNormal)];
+                [self.rightBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
+                self.rightBtn.selected = NO;
+                [x setTitleColor:colorF14745 forState:(UIControlStateNormal)];
+            }else {
+                [x setImage:kdown forState:(UIControlStateNormal)];
+                [x setTitleColor:colorF14745 forState:(UIControlStateNormal)];
+            }
+            if (self.leftBtnBlock) {
+                self.leftBtnBlock(x.selected ? 1 : 2);
+            }
+        }];
     }
     return _leftBtn;
 }
@@ -40,13 +56,28 @@
         _rightBtn = [QMUIButton buttonWithType:(UIButtonTypeCustom)];
         _rightBtn.titleLabel.font = RegularFont15;
         [_rightBtn setTitle:@"剩余最少" forState:(UIControlStateNormal)];
-        [_rightBtn setTitle:@"剩余最少" forState:(UIControlStateSelected)];
-        [_rightBtn setTitleColor:colorF14745 forState:(UIControlStateSelected)];
         [_rightBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
-        [_rightBtn setImage:UIImageMake(@"normal") forState:(UIControlStateNormal)];
-        [_rightBtn setImage:UIImageMake(@"up") forState:(UIControlStateSelected)];
+        [_rightBtn setImage:knormal forState:(UIControlStateNormal)];
         _rightBtn.imagePosition = QMUIButtonImagePositionRight;
         _rightBtn.imageEdgeInsets = UIEdgeInsetsMake(0, WidthOfScale(10.5), 0, 0);
+        @weakify(self);
+        [[_rightBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(QMUIButton *x) {
+            x.selected = !x.selected;
+            @strongify(self);
+            if (x.selected) {
+                [x setImage:kup forState:(UIControlStateNormal)];
+                [self.leftBtn setImage:knormal forState:(UIControlStateNormal)];
+                [self.leftBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
+                self.leftBtn.selected = NO;
+                [x setTitleColor:colorF14745 forState:(UIControlStateNormal)];
+            }else {
+                [x setImage:kdown forState:(UIControlStateNormal)];
+                [x setTitleColor:colorF14745 forState:(UIControlStateNormal)];
+            }
+            if (self.rightBtnBlock) {
+                self.rightBtnBlock(x.selected ? 1 : 2);
+            }
+        }];
     }
     return _rightBtn;
 }

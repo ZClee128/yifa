@@ -10,14 +10,20 @@
 #import "TuanListDetailSecsionView.h"
 #import "TuanListDetailTableViewCell.h"
 #import "TuanOtherGoodsTableViewCell.h"
-
+#import "EFTeamVM.h"
+#import "EFOrderVM.h"
+#import "TuanGoodsView.h"
 @interface TuanListDetailViewController ()
 
 @property(nonatomic,strong)TuanListDetailSecsionView *secsionView;
 @property (nonatomic,strong)QMUIButton *moreBtn;
 @property (nonatomic,strong)UIView *otherView;
 @property (nonatomic,strong)QMUIButton *buyBtn;
-
+@property (nonatomic,strong)NSString *ggNO;
+@property (nonatomic,strong)NSString *ootNo;
+@property (nonatomic,strong)EFTeamGoodsModel *model;
+@property (nonatomic,strong)EFTeamListModel *teamModel;
+@property (nonatomic,strong)TuanGoodsView *goodsHeaderView;
 @end
 
 @implementation TuanListDetailViewController
@@ -31,7 +37,7 @@
         _buyBtn.titleLabel.font = MedFont15;
         _buyBtn.backgroundColor = colorF14745;
         [[_buyBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-           [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(YES)}];
+            [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(YES),@"ggNo":self.ggNO}];
         }];
     }
     return _buyBtn;
@@ -106,13 +112,33 @@
     return _moreBtn;
 }
 
+- (instancetype)initWithGGNo:(NSString *)ggNO ootNo:(NSString *)ootNo model:(EFTeamGoodsModel *)model
+{
+    self = [super init];
+    if (self) {
+        self.ggNO = ggNO;
+        self.ootNo = ootNo;
+        self.model = model;
+    }
+    return self;
+}
+
+-(TuanGoodsView *)goodsHeaderView
+{
+    if (_goodsHeaderView == nil) {
+        _goodsHeaderView = [[TuanGoodsView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, WidthOfScale(180))];
+    }
+    return _goodsHeaderView;
+}
+
 - (void)viewDidLoad {
+    self.viewModel = [[EFOrderVM alloc] init];
     [super viewDidLoad];
     self.gk_navTitle = @"拼团详情";
+    self.EFTableView.y = NAVIGATION_BAR_HEIGHT;
     self.EFTableView.height = kPHONE_HEIGHT - NAVIGATION_BAR_HEIGHT - WidthOfScale(60) - TAB_SAFE_HEIGHT;
     [self.EFTableView registerClass:[TuanListDetailTableViewCell class] forCellReuseIdentifier:NSStringFromClass([TuanListDetailTableViewCell class])];
     [self.EFTableView registerClass:[TuanOtherGoodsTableViewCell class] forCellReuseIdentifier:NSStringFromClass([TuanOtherGoodsTableViewCell class])];
-    self.EFData = [@[@1,@2,@3,@5] mutableCopy];
     [self.view addSubview:self.buyBtn];
     [self.buyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(@(-TAB_SAFE_HEIGHT));
@@ -120,7 +146,26 @@
         make.height.equalTo(@(WidthOfScale(60)));
         make.width.equalTo(@(kPHONE_WIDTH));
     }];
+    [self.goodsHeaderView setModel:self.model];
+    self.EFTableView.tableHeaderView = self.goodsHeaderView;
+    [self addRefshDown];
+    [self loadNewData];
+}
 
+- (void)loadNewData {
+    @weakify(self);
+    [[EFTeamVM teamInfo:self.ootNo] subscribeNext:^(EFTeamListModel *x) {
+        @strongify(self);
+        [self.EFTableView.mj_header endRefreshing];
+        self.teamModel = x;
+        [self.EFTableView reloadData];
+    }];
+    [[((EFOrderVM *)self.viewModel) newGoodsRefreshForDown:self.model.sssNo] subscribeNext:^(RACTuple *x) {
+        @strongify(self);
+        [self.EFTableView.mj_header endRefreshing];
+        self.EFData = [x.first mutableCopy];
+        [self.EFTableView reloadData];
+    }];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -131,7 +176,7 @@
     switch (section) {
         case 0:
         {
-            return self.moreBtn.selected ? 10 : 3;
+            return self.moreBtn.selected ? self.teamModel.teamOrderDtoList.count : (self.teamModel.teamOrderDtoList.count <= 3 ? self.teamModel.teamOrderDtoList.count : 3);
         }
         default:
         {
@@ -145,19 +190,23 @@
         case 0:
         {
             TuanListDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TuanListDetailTableViewCell class])];
-            [cell setModel:@""];
+            [cell setModel:self.teamModel.teamOrderDtoList[indexPath.row]];
             return cell;
         }
         default:
         {
             TuanOtherGoodsTableViewCell *goodsCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TuanOtherGoodsTableViewCell class])];
-            [goodsCell setModel:self.EFData];
             if (self.EFData.count % 2 == 0) {
+                [goodsCell setLeftModel:self.EFData[indexPath.row*2]];
+                [goodsCell setRightModel:self.EFData[indexPath.row*2+1]];
                 [goodsCell showRightView];
             }else {
                 if (indexPath.row == (self.EFData.count) - (self.EFData.count / 2) - 1) {
+                    [goodsCell setLeftModel:self.EFData[indexPath.row*2]];
                     [goodsCell hiddenRightView];
                 }else {
+                    [goodsCell setLeftModel:self.EFData[indexPath.row*2]];
+                    [goodsCell setRightModel:self.EFData[indexPath.row*2+1]];
                     [goodsCell showRightView];
                 }
             }

@@ -37,16 +37,7 @@
     self.jxTitleView = [[JXCategoryTitleView alloc] initWithFrame:CGRectMake(0, NAVIGATION_BAR_HEIGHT, kPHONE_WIDTH, 30)];
     self.jxTitleView.delegate = self;
     [self.view addSubview:self.jxTitleView];
-    [[EFClassifyVM categoryByPno:@"0"] subscribeNext:^(NSArray *x) {
-        self.titles = [x mutableCopy];
-        NSMutableArray *Temtitles = [[NSMutableArray alloc] init];
-        [Temtitles addObject:@"热门"];
-        for (EFClassifyModel *model in x) {
-            [Temtitles addObject:model.title];
-        }
-        self.jxTitleView.titles = Temtitles;
-        [self.jxTitleView reloadData];
-    }];
+    [self loadTopTitle];
     self.jxTitleView.titleColorGradientEnabled = NO;
     self.jxTitleView.titleColor = tabbarBlackColor;
     self.jxTitleView.titleSelectedColor = colorF14745;
@@ -59,6 +50,24 @@
     [self.view addSubview:self.listContainerView];
     //关联到categoryView
     self.jxTitleView.listContainer = self.listContainerView;
+    @weakify(self);
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kLoginOut object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        @strongify(self);
+        [self loadTopTitle];
+    }];
+}
+
+- (void)loadTopTitle {
+    [[EFClassifyVM categoryByPno:@"0"] subscribeNext:^(NSArray *x) {
+        self.titles = [x mutableCopy];
+        NSMutableArray *Temtitles = [[NSMutableArray alloc] init];
+        [Temtitles addObject:@"热门"];
+        for (EFClassifyModel *model in x) {
+            [Temtitles addObject:model.title];
+        }
+        self.jxTitleView.titles = Temtitles;
+        [self.jxTitleView reloadData];
+    }];
 }
 
 - (void)addSearchBtn {

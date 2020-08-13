@@ -51,15 +51,27 @@
     [self addRefshUp];
     [self addRefshDown];
     [self loadList];
-    
-//    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kOrderSearch object:nil] subscribeNext:^(NSNotification * _Nullable x) {
-//        NSDictionary *dict = x.object;
-//        ((EFOrderVM *)self.viewModel).searchText = dict[@"text"];
-//        [[((EFOrderVM *)self.viewModel) searchRefreshForDown] subscribeNext:^(RACTuple *x) {
-//            self.EFData = x.first;
-//            [self.EFTableView reloadData];
-//        }];
-//    }];
+    @weakify(self);
+    switch (self.type) {
+        case OrderTypeSay:
+        {
+            [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kevalWritingOver object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+                @strongify(self);
+                [self loadList];
+            }];
+        }
+            break;
+            case OrderTypeGet:
+        {
+            [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kreturnApplyOver object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+                @strongify(self);
+                [self loadList];
+            }];
+            break;
+        }
+        default:
+            break;
+    }
     
 }
 
@@ -189,6 +201,7 @@
                 case 300:
                 {
                     // 售后退款
+                    [kH5Manager gotoUrl:@"returnApply" hasNav:NO navTitle:@"" query:@{@"expressNum":model.expressNum,@"orderNum":model.orderNum}];
                     break;
                 }
                 case 400:
@@ -204,6 +217,11 @@
                 case 800:
                 {
                     [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{}];
+                    break;
+                }
+                    case 500:
+                {
+                    // 联系客服
                     break;
                 }
                 default:

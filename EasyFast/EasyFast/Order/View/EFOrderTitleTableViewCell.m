@@ -90,11 +90,14 @@
         case 400:
             status = @"已收货";
             break;
-            case 600:
+        case 600:
             status = @"已完成";
             break;
-            case 800:
+        case 800:
             status = @"已失效";
+            break;
+        case 500:
+            status = @"已售后";
             break;
         default:
             break;

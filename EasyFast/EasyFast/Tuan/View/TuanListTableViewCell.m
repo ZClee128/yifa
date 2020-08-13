@@ -8,7 +8,7 @@
 
 #import "TuanListTableViewCell.h"
 #import "TuanPeopleView.h"
-
+#import "EFTeamListModel.h"
 
 @interface TuanListTableViewCell ()
 
@@ -16,6 +16,7 @@
 @property (nonatomic,strong)QMUILabel *numLab;
 @property (nonatomic,strong)QMUILabel *timeLab;
 @property (nonatomic,strong)QMUIButton *buyBtn;
+@property (nonatomic,strong)CountDown *timer;
 
 @end
 
@@ -108,23 +109,32 @@
         make.left.equalTo(self.contentView);
         make.size.mas_equalTo(CGSizeMake(kPHONE_WIDTH, WidthOfScale(10)));
     }];
+        
 }
 
-- (void)setModel:(id)model {
-    self.progressView.progress = 0.6;
-    [self.progressView setTitle:@"剩余30%"];
+- (void)setModel:(EFTeamListModel *)model {
+    self.progressView.progress = model.teamProcess / 100;
+    [self.progressView setTitle:[NSString stringWithFormat:@"剩余%.f%%",100 - model.teamProcess]];
 //    self.numLab.text = @"30%";
-    self.timeLab.text = @"05:59:59";
-    for (int i = 0; i < 3; i++) {
-        if ([self.contentView viewWithTag:300+i]) {
-            TuanPeopleView *p = (TuanPeopleView *)[self.contentView viewWithTag:300+i];
-            [p setModel:@""];
+    [self.timer destoryTimer];
+    self.timer = [[CountDown alloc] init];
+    [self.timer countDownWithStratDate:model.currentDate finishDate:model.expireDate completeBlock:^(NSInteger day, NSInteger hour, NSInteger minute, NSInteger second) {
+        if (day) {
+            self.timeLab.text = [NSString stringWithFormat:@"%ld:%ld:%ld:%ld",(long)day,(long)hour,(long)minute,(long)second];
         }else {
-            TuanPeopleView *p = [[TuanPeopleView alloc] initWithFrame:CGRectMake(15, WidthOfScale(55)+i*(WidthOfScale(40)), kPHONE_WIDTH-30, WidthOfScale(30))];
-            p.tag = i+300;
-            [self.contentView addSubview:p];
-            [p setModel:@""];
+            self.timeLab.text = [NSString stringWithFormat:@"%ld:%ld:%ld",(long)hour,(long)minute,(long)second];
         }
+    }];
+    for (UIView *view in self.contentView.subviews) {
+        if ([view isKindOfClass:[TuanPeopleView class]]) {
+            [view removeFromSuperview];
+        }
+    }
+    for (int i = 0; i < model.teamOrderDtoList.count; i++) {
+        TuanPeopleView *p = [[TuanPeopleView alloc] initWithFrame:CGRectMake(15, WidthOfScale(55)+i*(WidthOfScale(40)), kPHONE_WIDTH-30, WidthOfScale(30))];
+        p.tag = i+300;
+        [self.contentView addSubview:p];
+        [p setModel:model.teamOrderDtoList[i]];
     }
 }
 

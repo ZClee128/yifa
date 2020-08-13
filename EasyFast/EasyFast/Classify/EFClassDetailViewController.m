@@ -8,10 +8,13 @@
 
 #import "EFClassDetailViewController.h"
 #import "EFHomeVM.h"
+#import "SearchTwoCollectionViewCell.h"
+#import "SeachOneCollectionViewCell.h"
 
 @interface EFClassDetailViewController ()
 
 @property (nonatomic,strong)EFClassifyModel *model;
+@property (nonatomic,assign) BOOL isOne;
 @end
 
 @implementation EFClassDetailViewController
@@ -28,20 +31,26 @@
 - (void)viewDidLoad {
     self.viewModel = [[EFHomeVM alloc] init];
     ((EFHomeVM *)self.viewModel).orderBy = @(0);
+    self.lineSpacing = WidthOfScale(11);
+    self.interitemSpacing = WidthOfScale(10);
+    self.itemSize = CGSizeMake(WidthOfScale(167), WidthOfScale(280));
+    self.registerClasses = @[@{@"SearchTwoCollectionViewCell":@"SearchTwoCollectionViewCell"},@{@"SeachOneCollectionViewCell":@"SeachOneCollectionViewCell"}];
+    self.collectionEdgeInsets = UIEdgeInsetsMake(0, WidthOfScale(15), WidthOfScale(15), WidthOfScale(15));
     [super viewDidLoad];
+    self.collectionView.frame = CGRectMake(0, NAVIGATION_BAR_HEIGHT + 45, kPHONE_WIDTH,kPHONE_HEIGHT - NAVIGATION_BAR_HEIGHT - 45);
     self.gk_navTitle = self.model.title;
+    [self.view addSubview:[self headerView]];
+    [self loadList];
 }
 
 - (void)loadList {
     [[(EFHomeVM *)self.viewModel refreshOtherForDown:self.model.ggcsCode] subscribeNext:^(RACTuple *x) {
-        self.data = [x.first mutableCopy];
-        [self.collect reloadData];
+        self.EFData = [x.first mutableCopy];
+        [self.collectionView reloadData];
     }];
 }
 
-- (void)setSearch {
-    
-}
+
 
 - (UIView *)headerView {
     UIView *bg = [[UIView alloc] initWithFrame:CGRectMake(0, NAVIGATION_BAR_HEIGHT, kPHONE_WIDTH, 45)];
@@ -83,19 +92,19 @@
         @strongify(self);
         self.isOne = x.selected;
         if (self.isOne) {
-            self.collect.contentInset = UIEdgeInsetsMake(15,0,0,0);
-            self.flow.minimumLineSpacing = WidthOfScale(0);
-            self.flow.minimumInteritemSpacing = WidthOfScale(0);
-            self.flow.itemSize = CGSizeMake(kPHONE_WIDTH, WidthOfScale(155));
+            self.collectionEdgeInsets = UIEdgeInsetsMake(15,0,0,0);
+            [self defaultCollectionFlowLayout].minimumLineSpacing = WidthOfScale(0);
+            [self defaultCollectionFlowLayout].minimumInteritemSpacing = WidthOfScale(0);
+            [self defaultCollectionFlowLayout].itemSize = CGSizeMake(kPHONE_WIDTH, WidthOfScale(155));
         }else {
-            self.collect.contentInset = UIEdgeInsetsMake(WidthOfScale(15), WidthOfScale(15), WidthOfScale(15), WidthOfScale(15));
-            self.flow.minimumLineSpacing = WidthOfScale(11);
-            self.flow.minimumInteritemSpacing = WidthOfScale(10);
-            self.flow.itemSize = CGSizeMake(WidthOfScale(167), WidthOfScale(280));
-                                            
+            self.collectionEdgeInsets = UIEdgeInsetsMake(0, WidthOfScale(15), WidthOfScale(15), WidthOfScale(15));
+            [self defaultCollectionFlowLayout].minimumLineSpacing  = WidthOfScale(11);
+            [self defaultCollectionFlowLayout].minimumInteritemSpacing = WidthOfScale(10);
+            [self defaultCollectionFlowLayout].itemSize = CGSizeMake(WidthOfScale(167), WidthOfScale(280));
+            
         }
         [[RACScheduler mainThreadScheduler] schedule:^{
-           [self.collect reloadSections:[NSIndexSet indexSetWithIndex:0]];
+            [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
         }];
     }];
     
@@ -195,6 +204,42 @@
         [self loadList];
     }];
     return bg;
+}
+
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.EFData.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    EFGoodsList *model = self.EFData[indexPath.item];
+    if (self.isOne) {
+        SeachOneCollectionViewCell *oneCell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([SeachOneCollectionViewCell class]) forIndexPath:indexPath];
+        [oneCell setModel:model];
+        return oneCell;
+    }else{
+        SearchTwoCollectionViewCell *twoCell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([SearchTwoCollectionViewCell class]) forIndexPath:indexPath];
+        [twoCell setModel:model];
+        return twoCell;
+    }
+}
+
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    EFGoodsList *model = self.EFData[indexPath.item];
+    [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO),@"ggNo":model.ggNo}];
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
+    return CGSizeMake(0, 0);
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+    return CGSizeMake(0, 0);
 }
 
 @end

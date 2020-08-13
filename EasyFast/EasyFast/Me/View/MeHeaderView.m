@@ -191,7 +191,7 @@
     [self.nameLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.headerImageView.mas_right).equalTo(@(WidthOfScale(16)));
         make.top.equalTo(self.headerImageView.mas_top).equalTo(@(WidthOfScale(12.5)));
-        make.height.equalTo(@(WidthOfScale(16.5)));
+        make.height.equalTo(@(flat(WidthOfScale(17))));
         make.right.equalTo(@(-WidthOfScale(25)));
     }];
     

@@ -79,7 +79,8 @@
     @weakify(self);
     [self.bridge registerHandler:@"goTuanList" handler:^(id data, WVJBResponseCallback responseCallback) {
         @strongify(self);
-        TuanListViewController *vc = [[TuanListViewController alloc] init];
+        NSDictionary *dict = [self identifyData:data];
+        TuanListViewController *vc = [[TuanListViewController alloc] initWithGGNo:dict[@"ggNo"]];
         [self push:vc];
     }];
 }
@@ -98,6 +99,8 @@
     @weakify(self);
     [self.bridge registerHandler:@"Pay" handler:^(id data, WVJBResponseCallback responseCallback) {
         @strongify(self);
+        //item
+        NSDictionary *dict = [self identifyData:data];
         EFPayStatusViewController *vc = [[EFPayStatusViewController alloc] init];
         [self push:vc];
     }];
@@ -119,7 +122,9 @@
     [self.bridge registerHandler:@"Camera" handler:^(id data, WVJBResponseCallback responseCallback) {
         NSDictionary *dict = [self identifyData:data];
         [[ZLPhotoActionSheet zlPhotos:[UIViewController getCurrentVC] maxCount:[dict[@"size"] intValue]] subscribeNext:^(RACTuple * _Nullable x) {
-            responseCallback(@{@"image":@"sdfsdfsdfsdf"});
+            [[[FMARCNetwork sharedInstance] uploadImage:[dict[@"type"] intValue] image:x.first] subscribeNext:^(FMHttpResonse *x) {
+                responseCallback(x.reqResult);
+            }];
         }];
     }];
 }
@@ -128,6 +133,32 @@
     [self.bridge registerHandler:@"goOrderDetail" handler:^(id data, WVJBResponseCallback responseCallback) {
         EFOrderMoreDetailViewController *vc = [[EFOrderMoreDetailViewController alloc] init];
         [self push:vc];
+    }];
+}
+
+
+- (void)goOrderList {
+    [self.bridge registerHandler:@"goOrderList" handler:^(id data, WVJBResponseCallback responseCallback) {
+        EFOrderMoreDetailViewController *vc = [[EFOrderMoreDetailViewController alloc] init];
+        [self push:vc];
+    }];
+}
+
+- (void)evalWritingOver {
+    [self.bridge registerHandler:@"evalWritingOver" handler:^(id data, WVJBResponseCallback responseCallback) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kevalWritingOver object:nil];
+        [[UIViewController getCurrentVC].navigationController qmui_popViewControllerAnimated:YES completion:^{
+            
+        }];
+    }];
+}
+
+- (void)returnApplyOver {
+    [self.bridge registerHandler:@"returnApplyOver" handler:^(id data, WVJBResponseCallback responseCallback) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kreturnApplyOver object:nil];
+        [[UIViewController getCurrentVC].navigationController qmui_popViewControllerAnimated:YES completion:^{
+            
+        }];
     }];
 }
 

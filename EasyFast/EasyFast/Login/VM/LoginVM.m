@@ -68,6 +68,7 @@
                 [model bg_saveOrUpdate];
             }
         }
+        [[NSNotificationCenter defaultCenter] postNotificationName:kLoginOut object:nil];
         [[UIViewController getCurrentVC].navigationController qmui_popToRootViewControllerAnimated:NO completion:^{
         }];
         kAppDelegate.efTabbar.selectedIndex = 0;

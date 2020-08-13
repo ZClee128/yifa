@@ -41,7 +41,7 @@
 // 我的
 #define kgoodsMonthFootprint @"api-client/user/footprint/goodsMonthFootprint" //商品当月足迹接口
 #define kgoodsFootprintList @"api-client/user/footprint/goodsFootprintList" //商品足迹列表接口
-#define kuploadImage @"api-client/file/upload" // 上传图片
+#define kuploadImage @"api-client/file/uploadImage" // 上传图片
 #define kfindAddressList @"api-client/user/address/findAddressList" // 地址列表接口
 #define kaddAddress @"api-client/user/address/addAddress" //新增地址接口
 #define kdelAddress @"api-client/user/address/delAddress" //删除地址接口
@@ -52,7 +52,7 @@
 #define kqueryUserTeamCount @"api-client/user/info/queryUserTeamCount" // 我的团购数量接口
 #define kmyMessageList @"api-client/user/message/myMessageList" //我的消息列表接口
 #define khelpCenterList @"api-client/user/help/helpCenterList" // 帮助中心
-
+#define krecordGoodsLog @"api-client/user/log/recordGoodsLog" //记录商品日志接口
 
 
 // 首页
@@ -64,10 +64,16 @@
 #define kpageShopNewGoods @"api-client/goods/pageShopNewGoods" // 店铺新品
 #define kfast @"api-client/team/fast" //急速拼团
 #define kpageTeam @"api-client/team/pageTeam" //急速拼团列表
+#define kgetSearchHistoryList @"api-client/index/getSearchHistoryList" //首页搜索-获取搜索历史
+#define ksearchGoodsList @"api-client/index/searchGoodsList" //首页搜索-搜索商品列表
+#define kpageTeamByGoodsNo @"api-client/team/pageTeamByGoodsNo" //分页查询商品的拼团列表
+#define kgoodsSummary @"api-client/goods/goodsSummary" //根据商品编码查询商品摘要-拼团列表用
+#define kteamInfo @"api-client/team/teamInfo" //拼团团员详情
 
 // 分类
 #define kcategory @"api-client/platform/category/category" //APP端商品分类-所有
 #define kcategoryByPno @"api-client/platform/category/categoryByPno" ///根据APP端父级代码code查询APP端下级分类,pCode为0时获取一级标签
 #define kthirdCategory @"api-client/platform/category/thirdCategory" // 根据一级分类查询三级分类
+#define kpageTeamByGoodsNo @"api-client/team/pageTeamByGoodsNo" //分页查询商品的拼团列表
 
 #endif /* Api_h */

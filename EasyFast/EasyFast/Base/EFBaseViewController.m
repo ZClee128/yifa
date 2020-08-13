@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = colorfafafa;
-    self.navigationController.navigationBarHidden = YES;
+//    self.navigationController.navigationBarHidden = YES;
     self.gk_backImage = [UIImage imageNamed:@"btn_back_black"];
     
 //    QMUIButton *leftItem = [QMUIButton buttonWithType:UIButtonTypeSystem];

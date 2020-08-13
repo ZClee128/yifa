@@ -36,17 +36,17 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self.contentView addSubview:self.moreBtn];
-        [self.moreBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.equalTo(@(-0));
-            make.right.equalTo(@(-WidthOfScale(14.5)));
-            make.size.mas_equalTo(CGSizeMake(WidthOfScale(89), WidthOfScale(35)));
-        }];
-        [self.moreBtn layoutIfNeeded];
-        self.moreBtn.layer.borderColor = RGB16(0xD6D6D6).CGColor;
-        self.moreBtn.layer.borderWidth = 1;
-        self.moreBtn.layer.cornerRadius = WidthOfScale(35)/2;
-        self.moreBtn.layer.masksToBounds = YES;
+//        [self.contentView addSubview:self.moreBtn];
+//        [self.moreBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.bottom.equalTo(@(-0));
+//            make.right.equalTo(@(-WidthOfScale(14.5)));
+//            make.size.mas_equalTo(CGSizeMake(WidthOfScale(89), WidthOfScale(35)));
+//        }];
+//        [self.moreBtn layoutIfNeeded];
+//        self.moreBtn.layer.borderColor = RGB16(0xD6D6D6).CGColor;
+//        self.moreBtn.layer.borderWidth = 1;
+//        self.moreBtn.layer.cornerRadius = WidthOfScale(35)/2;
+//        self.moreBtn.layer.masksToBounds = YES;
         
         [self.goods mas_updateConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(WidthOfScale(80), WidthOfScale(80)));
@@ -66,8 +66,9 @@
     self.goodsNameLab.text = model.goodsTitle;
     self.goodsSizeLab.text = model.goodsProperty;
     self.goodsPriceLab.text = [NSString stringWithFormat:@"￥%.1f/件",model.goodsPrice];
-    self.goodsStatusLab.text = model.isAftersale ? @"已退款" : @"";
-    self.goodsNumLab.text = [NSString stringWithFormat:@"X %ld",model.quantity];
+//    self.goodsStatusLab.text = model.isAftersale ? @"已退款" : @"";
+    self.goodsStatusLab.text = @"";
+    self.goodsNumLab.text = [NSString stringWithFormat:@"X %ld",(long)model.quantity];
     [self.goods sd_setImageWithURL:[NSURL URLWithString:model.goodsImage] placeholderImage:UIImageMake(@"gg")];
 }
 
