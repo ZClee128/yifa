@@ -143,9 +143,10 @@ fprintf(stderr,"[--%s--]\n[--%s:%d--]\n[--%s--]\n===========================\n",
 #define kChangePassword @"kChangePassword" // 修改密码
 #define kAddress @"kAddress" // 新增地址
 #define kselectTabBarMe @"kselectTabBarMe" //点击tabbar个人中心通知
-#define kLoginOut @"kLoginOut"  //退出登录通知
+#define kLoginNoti @"kLoginNoti"  //退出登录通知
 #define kevalWritingOver @"kevalWritingOver" //订单评价通知
 #define kreturnApplyOver @"kreturnApplyOver" // 订单售后通知
+#define kwxLogin @"wxLogin" // 微信登录
 
 // 图片
 #define kup UIImageMake(@"up") // 降序
@@ -156,4 +157,10 @@ fprintf(stderr,"[--%s--]\n[--%s:%d--]\n[--%s--]\n===========================\n",
 
 /// 首页分类
 #define kHomeCategory @"HomeCategory"
+
+
+
+// 三方
+#define kwxappSecret @"bb7ee5e143ad9e83e8d78c868c4e1892"
+#define kwxappId @"wx2456b611d95ac358"
 #endif /* Constant_h */

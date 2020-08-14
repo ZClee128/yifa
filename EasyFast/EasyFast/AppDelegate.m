@@ -9,8 +9,8 @@
 #import "AppDelegate.h"
 #import "EFOneLoginViewController.h"
 #import <BaiduMapAPI_Map/BMKMapView.h>
-
-@interface AppDelegate ()
+#import "LoginVM.h"
+@interface AppDelegate ()<WXApiDelegate>
 
 @property (nonatomic,strong)BMKMapManager *mapManager;
 @end
@@ -127,7 +127,8 @@
     [UMConfigure initWithAppkey:@"5f226944d309322154737f12" channel:@"App Store"];
 
     /* 设置微信的appKey和appSecret *///
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wx2456b611d95ac358" appSecret:@"bb7ee5e143ad9e83e8d78c868c4e1892" redirectURL:@"https://www.one-fast.com"];
+//    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wx2456b611d95ac358" appSecret:@"bb7ee5e143ad9e83e8d78c868c4e1892" redirectURL:@"https://www.one-fast.com"];
+    [WXApi registerApp:@"wx2456b611d95ac358" universalLink:@"https://www.one-fast.com"];
     /*设置小程序回调app的回调*/
 //    [[UMSocialManager defaultManager] setLauchFromPlatform:(UMSocialPlatformType_WechatSession) completion:^(id userInfoResponse, NSError *error) {
 //        NSLog(@"setLauchFromPlatform:userInfoResponse:%@",userInfoResponse);
@@ -146,22 +147,51 @@
 }
 
 // 支持所有iOS系统
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+//{
+//    //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
+//    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
+//    if (!result) {
+//         // 其他如支付等SDK的回调
+//    }
+//    return result;
+//}
+//
+//- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+//    //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
+//    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url options:options];
+//    if (!result) {
+//         // 其他如支付等SDK的回调
+//    }
+//    return result;
+//}
+
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
 {
-    //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
-    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
-    if (!result) {
-         // 其他如支付等SDK的回调
+  if ([url.host isEqualToString:@"oauth"]){//微信登录
+        return [WXApi handleOpenURL:url delegate:self];
     }
-    return result;
+    return YES;
 }
 
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-    //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
-    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url options:options];
-    if (!result) {
-         // 其他如支付等SDK的回调
-    }
-    return result;
+
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void(^)(NSArray<id<UIUserActivityRestoring>> * __nullable restorableObjects))restorationHandler {
+    return [WXApi handleOpenUniversalLink:userActivity delegate:self];
 }
+
+- (void)onReq:(BaseReq *)req {
+    
+}
+
+- (void)onResp:(BaseResp *)resp {
+    if([resp isKindOfClass:[SendAuthResp class]]){
+        SendAuthResp *resp2 = (SendAuthResp *)resp;
+        [[NSNotificationCenter defaultCenter] postNotificationName:kwxLogin object:resp2];
+    }else{
+        NSLog(@"授权失败");
+    }
+    
+}
+
 @end

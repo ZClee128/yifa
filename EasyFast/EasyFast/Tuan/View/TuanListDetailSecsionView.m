@@ -7,13 +7,14 @@
 //
 
 #import "TuanListDetailSecsionView.h"
-
+#import "EFTeamListModel.h"
 
 @interface TuanListDetailSecsionView ()
 
 @property (nonatomic,strong)QMUILabel *numLab;
 @property (nonatomic,strong)QMUILabel *timeLab;
 @property (nonatomic,strong)LRAnimationProgress *progressView;
+@property (nonatomic,strong)CountDown *timer;
 
 @end
 
@@ -82,13 +83,20 @@
         make.right.equalTo(@(-WidthOfScale(15.5)));
         make.centerY.equalTo(self.numLab);
     }];
+    self.timer = [[CountDown alloc] init];
 
 }
 
 
-- (void)setModel:(id)model {
-    self.progressView.progress = 0.6;
-    self.timeLab.text = @"仅剩05:59:59";
-    [self.progressView setTitle:@"剩余30%"];
+- (void)setModel:(EFTeamListModel *)model {
+    self.progressView.progress = model.teamProcess / 100;
+    [self.timer countDownWithStratDate:model.currentDate finishDate:model.expireDate completeBlock:^(NSInteger day, NSInteger hour, NSInteger minute, NSInteger second) {
+        if (day) {
+            self.timeLab.text = [NSString stringWithFormat:@"仅剩%ld:%ld:%ld:%ld",(long)day,(long)hour,(long)minute,(long)second];
+        }else {
+            self.timeLab.text = [NSString stringWithFormat:@"仅剩%ld:%ld:%ld",(long)hour,(long)minute,(long)second];
+        }
+    }];
+    [self.progressView setTitle:[NSString stringWithFormat:@"剩余%.f%%",100 - model.teamProcess]];
 }
 @end

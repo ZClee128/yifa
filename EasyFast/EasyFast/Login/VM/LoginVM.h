@@ -29,6 +29,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 验证短信
 + (RACSignal *)verifyMessage:(NSString *)code phone:(NSString *)phone type:(NSInteger)type;
+
++ (RACSignal *)thirdLoginType:(NSInteger)type city:(NSString *)city province:(NSString *)province headImgUrl:(NSString *)headImgUrl nickname:(NSString *)nickname openid:(NSString *)openid  sex:(NSInteger)sex uid:(NSString *)uid unionid:(NSString *)unionid;
+
++ (RACSignal *)thirdLoginBindingMessage:(NSString *)code phone:(NSString *)phone;
+
+
++ (RACSignal *)bindingWechatType:(NSInteger)type city:(NSString *)city province:(NSString *)province headImgUrl:(NSString *)headImgUrl nickname:(NSString *)nickname openid:(NSString *)openid  sex:(NSInteger)sex uid:(NSString *)uid unionid:(NSString *)unionid;
 @end
 
 NS_ASSUME_NONNULL_END

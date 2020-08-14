@@ -314,7 +314,7 @@ static FMARCNetwork * _instance = nil;
             NSString *dateString = [formatter stringFromDate:[NSDate date]];
             NSString *fileName = [NSString  stringWithFormat:@"senba_empty_%@_%d.jpg", dateString , i];
             
-            [formData appendPartWithFileData:fileData name:name fileName:fileName mimeType:!(mimeType.length == 0 || mimeType == nil || [mimeType isKindOfClass:[NSNull class]])?mimeType:@"application/octet-stream"];
+            [formData appendPartWithFileData:fileData name:name fileName:fileName mimeType:!(mimeType.length == 0 || mimeType == nil || [mimeType isKindOfClass:[NSNull class]])?mimeType:@"image/jpg"];
             
         }
     }] replayLazily];

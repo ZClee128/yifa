@@ -81,7 +81,6 @@
 {
     if (_secsionView == nil) {
         _secsionView = [[TuanListDetailSecsionView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, WidthOfScale(48))];
-        [_secsionView setModel:@""];
     }
     return _secsionView;
 }
@@ -158,6 +157,7 @@
         @strongify(self);
         [self.EFTableView.mj_header endRefreshing];
         self.teamModel = x;
+        [self.secsionView setModel:x];
         [self.EFTableView reloadData];
     }];
     [[((EFOrderVM *)self.viewModel) newGoodsRefreshForDown:self.model.sssNo] subscribeNext:^(RACTuple *x) {

@@ -54,6 +54,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 售后完成
 - (void)returnApplyOver;
+
+/// 登录
+- (void)login;
 - (NSDictionary *)identifyData:(id)data;
 
 

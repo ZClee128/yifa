@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EFOrderSearchViewController : EFOrderDetailViewController
 
+- (instancetype)initWithSearchTitle:(NSString *)searchTitle;
 @end
 
 NS_ASSUME_NONNULL_END

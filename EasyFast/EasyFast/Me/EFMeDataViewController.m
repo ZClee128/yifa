@@ -12,6 +12,7 @@
 #import "BRAddressPickerView.h"
 #import "MeVM.h"
 #import "BRStringPickerView.h"
+#import "EFWxLoginManager.h"
 @interface EFMeDataViewController ()<UITextFieldDelegate>
 @property (nonatomic,strong)UIView *otherView;
 @property (nonatomic,strong)UIImage *headerImage;
@@ -214,6 +215,10 @@
 //
 //            }];
             [EFOnePhoneLoginManager showBindPhone];
+            break;
+        }
+        case 5:{
+            [[EFWxLoginManager defaultManager] sendAuthRequest];
             break;
         }
         default:

@@ -101,7 +101,7 @@
 - (void)setModel:(TeamOrderDtoModel *)model {
     self.nameLab.text = model.nickName;
     self.numLab.text = [NSString stringWithFormat:@"购买量：%@",model.quantity];
-    self.timeLab.text = [NSString stringWithFormat:@"%@发起",model.createDate];
+    self.timeLab.text = [NSString stringWithFormat:@"%@发起",[model.createDate DateToStringFormatter:@"MM.dd HH:mm"]];
 }
 
 @end

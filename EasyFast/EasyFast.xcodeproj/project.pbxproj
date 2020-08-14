@@ -278,6 +278,18 @@
 		0CBE6A4224E54549003C300F /* EFTeamGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A4124E54549003C300F /* EFTeamGoodsModel.m */; };
 		0CBE6A4324E54549003C300F /* EFTeamGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A4124E54549003C300F /* EFTeamGoodsModel.m */; };
 		0CBE6A4424E54549003C300F /* EFTeamGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A4124E54549003C300F /* EFTeamGoodsModel.m */; };
+		0CBE6A4724E621D9003C300F /* NSDictionary+Null.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A4624E621D9003C300F /* NSDictionary+Null.m */; };
+		0CBE6A4824E621DA003C300F /* NSDictionary+Null.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A4624E621D9003C300F /* NSDictionary+Null.m */; };
+		0CBE6A4924E621DA003C300F /* NSDictionary+Null.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A4624E621D9003C300F /* NSDictionary+Null.m */; };
+		0CBE6A4C24E62F52003C300F /* NSDate+Format.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A4B24E62F52003C300F /* NSDate+Format.m */; };
+		0CBE6A4D24E62F52003C300F /* NSDate+Format.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A4B24E62F52003C300F /* NSDate+Format.m */; };
+		0CBE6A4E24E62F52003C300F /* NSDate+Format.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A4B24E62F52003C300F /* NSDate+Format.m */; };
+		0CBE6A5224E68569003C300F /* EFWXModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A5124E68569003C300F /* EFWXModel.m */; };
+		0CBE6A5324E6856A003C300F /* EFWXModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A5124E68569003C300F /* EFWXModel.m */; };
+		0CBE6A5424E6856A003C300F /* EFWXModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A5124E68569003C300F /* EFWXModel.m */; };
+		0CBE6A5724E68E71003C300F /* EFWxLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A5624E68E71003C300F /* EFWxLoginManager.m */; };
+		0CBE6A5824E68E71003C300F /* EFWxLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A5624E68E71003C300F /* EFWxLoginManager.m */; };
+		0CBE6A5924E68E71003C300F /* EFWxLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A5624E68E71003C300F /* EFWxLoginManager.m */; };
 		0CCEC45324CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45424CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45524CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
@@ -876,6 +888,14 @@
 		0CBE6A3C24E52AEE003C300F /* EFTeamListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFTeamListModel.m; sourceTree = "<group>"; };
 		0CBE6A4024E54549003C300F /* EFTeamGoodsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFTeamGoodsModel.h; sourceTree = "<group>"; };
 		0CBE6A4124E54549003C300F /* EFTeamGoodsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFTeamGoodsModel.m; sourceTree = "<group>"; };
+		0CBE6A4524E621D9003C300F /* NSDictionary+Null.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Null.h"; sourceTree = "<group>"; };
+		0CBE6A4624E621D9003C300F /* NSDictionary+Null.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Null.m"; sourceTree = "<group>"; };
+		0CBE6A4A24E62F52003C300F /* NSDate+Format.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Format.h"; sourceTree = "<group>"; };
+		0CBE6A4B24E62F52003C300F /* NSDate+Format.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Format.m"; sourceTree = "<group>"; };
+		0CBE6A5024E68569003C300F /* EFWXModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFWXModel.h; sourceTree = "<group>"; };
+		0CBE6A5124E68569003C300F /* EFWXModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFWXModel.m; sourceTree = "<group>"; };
+		0CBE6A5524E68E71003C300F /* EFWxLoginManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFWxLoginManager.h; sourceTree = "<group>"; };
+		0CBE6A5624E68E71003C300F /* EFWxLoginManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFWxLoginManager.m; sourceTree = "<group>"; };
 		0CCEC45124CA7A6000976D24 /* EFWuliuTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFWuliuTableViewCell.h; sourceTree = "<group>"; };
 		0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFWuliuTableViewCell.m; sourceTree = "<group>"; };
 		0CCEC45624CA7D8900976D24 /* EFOrderMoreDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderMoreDetailViewController.h; sourceTree = "<group>"; };
@@ -1402,6 +1422,8 @@
 			children = (
 				0C8A279824D7C1F800E40ED8 /* EFOnePhoneLoginManager.h */,
 				0C8A279924D7C1F800E40ED8 /* EFOnePhoneLoginManager.m */,
+				0CBE6A5524E68E71003C300F /* EFWxLoginManager.h */,
+				0CBE6A5624E68E71003C300F /* EFWxLoginManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1523,6 +1545,15 @@
 				0CBE6A3C24E52AEE003C300F /* EFTeamListModel.m */,
 				0CBE6A4024E54549003C300F /* EFTeamGoodsModel.h */,
 				0CBE6A4124E54549003C300F /* EFTeamGoodsModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0CBE6A4F24E68553003C300F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0CBE6A5024E68569003C300F /* EFWXModel.h */,
+				0CBE6A5124E68569003C300F /* EFWXModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1797,6 +1828,7 @@
 		8476109624C67CE8002B34E4 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				0CBE6A4F24E68553003C300F /* Model */,
 				0C8A279724D7C1C300E40ED8 /* Manager */,
 				847610AC24C69FF2002B34E4 /* VM */,
 				8476109C24C684BE002B34E4 /* View */,
@@ -2066,6 +2098,10 @@
 				84760F9524C1806D002B34E4 /* NSMutableAttributedString+Size.m */,
 				0C8A29D424DAAF5D00E40ED8 /* NSString+base64.h */,
 				0C8A29D524DAAF5D00E40ED8 /* NSString+base64.m */,
+				0CBE6A4524E621D9003C300F /* NSDictionary+Null.h */,
+				0CBE6A4624E621D9003C300F /* NSDictionary+Null.m */,
+				0CBE6A4A24E62F52003C300F /* NSDate+Format.h */,
+				0CBE6A4B24E62F52003C300F /* NSDate+Format.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -2636,6 +2672,7 @@
 				0C8A274C24D6711F00E40ED8 /* EFCalendarView.m in Sources */,
 				0C4BAF9924D021440037CDCF /* EFBridge.m in Sources */,
 				84A8215424BDA0F200EAC652 /* EFHotViewController.m in Sources */,
+				0CBE6A5224E68569003C300F /* EFWXModel.m in Sources */,
 				84A820B724B6CA8A00EAC652 /* EFBaseTableView.m in Sources */,
 				84A820A424B6CA0900EAC652 /* BaseTableViewCell.m in Sources */,
 				0C8A275124D672A200E40ED8 /* EFCalendarCollectionViewCell.m in Sources */,
@@ -2686,6 +2723,7 @@
 				84760F8624C1596E002B34E4 /* EFBaseModel.m in Sources */,
 				8476109924C67D19002B34E4 /* EFBindPhoneViewController.m in Sources */,
 				0CE285CF24D2D3D800AAC334 /* EFSafeAccountViewController.m in Sources */,
+				0CBE6A4724E621D9003C300F /* NSDictionary+Null.m in Sources */,
 				0C8A27A524D81E7400E40ED8 /* EFToPayDetailViewController.m in Sources */,
 				84A820B824B6CA8A00EAC652 /* EFBaseTableViewController.m in Sources */,
 				84A820D624B6CDA600EAC652 /* UIFont+RuntimeFit.m in Sources */,
@@ -2699,6 +2737,7 @@
 				84A820CE24B6CCC600EAC652 /* FMHttpRequest.m in Sources */,
 				0C8A2A0B24DC14A800E40ED8 /* EFTeamModel.m in Sources */,
 				0CCEC47624CAB46200976D24 /* EFTimeTableViewCell.m in Sources */,
+				0CBE6A5724E68E71003C300F /* EFWxLoginManager.m in Sources */,
 				841B94F824C9809C0054D8D5 /* EFLogisticsViewController.m in Sources */,
 				84A8215F24BDB90C00EAC652 /* HotTabCollectionViewCell.m in Sources */,
 				0C4BAF9324D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */,
@@ -2750,6 +2789,7 @@
 				84760FAD24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
 				84A8214D24BD432B00EAC652 /* TabbarBackView.m in Sources */,
 				8476117624C6E2ED002B34E4 /* NotiTableViewCell.m in Sources */,
+				0CBE6A4C24E62F52003C300F /* NSDate+Format.m in Sources */,
 				84A8214224BC55CB00EAC652 /* HttpManager.m in Sources */,
 				0CBE6A3724E52861003C300F /* EFTeamVM.m in Sources */,
 				0CBE6A1524E3FA95003C300F /* EFHelpVM.m in Sources */,
@@ -2866,6 +2906,7 @@
 				0C8A274D24D6711F00E40ED8 /* EFCalendarView.m in Sources */,
 				0C4BAF9A24D021440037CDCF /* EFBridge.m in Sources */,
 				84A8215524BDA0F200EAC652 /* EFHotViewController.m in Sources */,
+				0CBE6A5324E6856A003C300F /* EFWXModel.m in Sources */,
 				84A820FB24BC4F5400EAC652 /* EFBaseTableView.m in Sources */,
 				84A820FC24BC4F5400EAC652 /* BaseTableViewCell.m in Sources */,
 				0C8A275224D672A200E40ED8 /* EFCalendarCollectionViewCell.m in Sources */,
@@ -2916,6 +2957,7 @@
 				84760F8724C1596E002B34E4 /* EFBaseModel.m in Sources */,
 				8476109A24C67D19002B34E4 /* EFBindPhoneViewController.m in Sources */,
 				0CE285D024D2D3D800AAC334 /* EFSafeAccountViewController.m in Sources */,
+				0CBE6A4824E621DA003C300F /* NSDictionary+Null.m in Sources */,
 				0C8A27A624D81E7400E40ED8 /* EFToPayDetailViewController.m in Sources */,
 				84A8210224BC4F5400EAC652 /* UIFont+RuntimeFit.m in Sources */,
 				84A8210324BC4F5400EAC652 /* EFBaseRefreshVM.m in Sources */,
@@ -2929,6 +2971,7 @@
 				84A8214E24BD43F000EAC652 /* TabbarBackView.m in Sources */,
 				0C8A2A0C24DC14A800E40ED8 /* EFTeamModel.m in Sources */,
 				0CCEC47724CAB46200976D24 /* EFTimeTableViewCell.m in Sources */,
+				0CBE6A5824E68E71003C300F /* EFWxLoginManager.m in Sources */,
 				841B94F924C9809C0054D8D5 /* EFLogisticsViewController.m in Sources */,
 				84A8216024BDB90C00EAC652 /* HotTabCollectionViewCell.m in Sources */,
 				0C4BAF9424D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */,
@@ -2980,6 +3023,7 @@
 				84760FAE24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
 				84A8214324BC55CB00EAC652 /* HttpManager.m in Sources */,
 				8476117724C6E2ED002B34E4 /* NotiTableViewCell.m in Sources */,
+				0CBE6A4D24E62F52003C300F /* NSDate+Format.m in Sources */,
 				84A8210A24BC4F5400EAC652 /* EFHomeViewController.m in Sources */,
 				0CBE6A3824E52861003C300F /* EFTeamVM.m in Sources */,
 				0CBE6A1624E3FA95003C300F /* EFHelpVM.m in Sources */,
@@ -3096,6 +3140,7 @@
 				0C8A274E24D6711F00E40ED8 /* EFCalendarView.m in Sources */,
 				0C4BAF9B24D021440037CDCF /* EFBridge.m in Sources */,
 				84A8215624BDA0F200EAC652 /* EFHotViewController.m in Sources */,
+				0CBE6A5424E6856A003C300F /* EFWXModel.m in Sources */,
 				84A8211F24BC513500EAC652 /* EFBaseTableView.m in Sources */,
 				84A8212024BC513500EAC652 /* BaseTableViewCell.m in Sources */,
 				0C8A275324D672A200E40ED8 /* EFCalendarCollectionViewCell.m in Sources */,
@@ -3146,6 +3191,7 @@
 				84760F8824C1596E002B34E4 /* EFBaseModel.m in Sources */,
 				8476109B24C67D19002B34E4 /* EFBindPhoneViewController.m in Sources */,
 				0CE285D124D2D3D800AAC334 /* EFSafeAccountViewController.m in Sources */,
+				0CBE6A4924E621DA003C300F /* NSDictionary+Null.m in Sources */,
 				0C8A27A724D81E7400E40ED8 /* EFToPayDetailViewController.m in Sources */,
 				84A8212524BC513500EAC652 /* EFBaseTableViewController.m in Sources */,
 				84A8212624BC513500EAC652 /* UIFont+RuntimeFit.m in Sources */,
@@ -3159,6 +3205,7 @@
 				84A8212924BC513500EAC652 /* FMHttpRequest.m in Sources */,
 				0C8A2A0D24DC14A800E40ED8 /* EFTeamModel.m in Sources */,
 				0CCEC47824CAB46200976D24 /* EFTimeTableViewCell.m in Sources */,
+				0CBE6A5924E68E71003C300F /* EFWxLoginManager.m in Sources */,
 				841B94FA24C9809C0054D8D5 /* EFLogisticsViewController.m in Sources */,
 				84A8216124BDB90C00EAC652 /* HotTabCollectionViewCell.m in Sources */,
 				0C4BAF9524D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */,
@@ -3210,6 +3257,7 @@
 				84760FAF24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
 				84A8214F24BD43F100EAC652 /* TabbarBackView.m in Sources */,
 				8476117824C6E2ED002B34E4 /* NotiTableViewCell.m in Sources */,
+				0CBE6A4E24E62F52003C300F /* NSDate+Format.m in Sources */,
 				84A8214424BC55CB00EAC652 /* HttpManager.m in Sources */,
 				0CBE6A3924E52861003C300F /* EFTeamVM.m in Sources */,
 				0CBE6A1724E3FA95003C300F /* EFHelpVM.m in Sources */,

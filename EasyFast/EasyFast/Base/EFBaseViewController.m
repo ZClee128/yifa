@@ -22,7 +22,11 @@
     self.view.backgroundColor = colorfafafa;
 //    self.navigationController.navigationBarHidden = YES;
     self.gk_backImage = [UIImage imageNamed:@"btn_back_black"];
-    
+    if (NSFoundationVersionNumber>=NSFoundationVersionNumber_iOS_8_0) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+        self.extendedLayoutIncludesOpaqueBars = NO;
+        self.modalPresentationCapturesStatusBarAppearance = NO;
+    }
 //    QMUIButton *leftItem = [QMUIButton buttonWithType:UIButtonTypeSystem];
 //    [leftItem setImage:[UIImage imageNamed:@"btn_back_black"] forState:UIControlStateNormal];
 //    UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];

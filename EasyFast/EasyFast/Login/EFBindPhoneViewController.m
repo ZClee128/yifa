@@ -190,32 +190,46 @@
 }
 
 - (void)seletNext {
+    @weakify(self);
     if ([self.phone isEqualToString:kUserManager.userModel.phone]) {
+        // 解绑
         [[LoginVM verifyMessage:self.codeStr phone:self.phone type:5] subscribeNext:^(NSNumber *x) {
             if ([x boolValue]) {
                 [EFOnePhoneLoginManager showBindPhone];
             }
         }];
     }else {
-        [[LoginVM bindingPhone:self.phone type:1 loginToken:@"" code:self.codeStr verifyToken:@"" oldPhone:kUserManager.userModel.phone] subscribeNext:^(NSNumber *x) {
-            if ([x boolValue]) {
-                if (kAppDelegate.isOkOnePhone) {
+        if (kAppDelegate.isOneBindPhone) {
+            [[LoginVM thirdLoginBindingMessage:self.codeStr phone:self.phone] subscribeNext:^(NSNumber *x) {
+                if ([x boolValue]) {
                     [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:^{
-                        [self.navigationController qmui_popViewControllerAnimated:YES completion:^{
-                            
-                        }];
+                        
                     }];
-                }else{
-                    for (UIViewController *vc in self.navigationController.viewControllers) {
-                        if ([vc isKindOfClass:[EFSafeAccountViewController class]]) {
-                            [self.navigationController qmui_popToViewController:vc animated:YES completion:^{
+                }
+            }];
+        }else {
+            [[LoginVM bindingPhone:self.phone type:1 loginToken:@"" code:self.codeStr verifyToken:@"" oldPhone:kUserManager.userModel.phone] subscribeNext:^(NSNumber *x) {
+                if ([x boolValue]) {
+                    if (kAppDelegate.isOkOnePhone) {
+                        [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:^{
+                            @strongify(self);
+                            [self.navigationController qmui_popViewControllerAnimated:YES completion:^{
                                 
                             }];
+                        }];
+                    }else{
+                        @strongify(self);
+                        for (UIViewController *vc in self.navigationController.viewControllers) {
+                            if ([vc isKindOfClass:[EFSafeAccountViewController class]]) {
+                                [self.navigationController qmui_popToViewController:vc animated:YES completion:^{
+                                    
+                                }];
+                            }
                         }
                     }
                 }
-            }
-        }];
+            }];
+        }
     }
 }
 
@@ -238,7 +252,7 @@
     };
     cell.CodeBlock = ^(QMUIButton * _Nonnull btn) {
         @strongify(self);
-        [(LoginVM *)self.viewModel getCodeWithBtn:btn withType:[self.phone isEqualToString:kUserManager.userModel.phone] ? 5 : 6 phone:self.phone];
+        [(LoginVM *)self.viewModel getCodeWithBtn:btn withType:([self.phone isEqualToString:kUserManager.userModel.phone] && !kAppDelegate.isOneBindPhone) ? 5 : (kAppDelegate.isOneBindPhone ? 7 : 6)  phone:self.phone];
     };
     
         

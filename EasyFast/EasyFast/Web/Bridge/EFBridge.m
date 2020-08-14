@@ -12,6 +12,7 @@
 #import "EFPayStatusViewController.h"
 #import "EFAddressViewController.h"
 #import "EFOrderMoreDetailViewController.h"
+#import "EFOrderSearchViewController.h"
 @interface EFBridge ()
 @property (nonatomic,strong)WebViewJavascriptBridge *bridge;
 @end
@@ -63,7 +64,11 @@
 }
 
 - (void)goTo:(NSString *)page query:(id )query {
-    [self.bridge callHandler:@"goTo" data:@{@"page":page,@"query":query,} responseCallback:^(id responseData) {
+    NSMutableDictionary *dict = [query mutableCopy];
+    if (kUserManager.userModel != nil) {
+        [dict setValue:kUserManager.userModel.token forKey:@"token"];
+    }
+    [self.bridge callHandler:@"goTo" data:@{@"page":page,@"query":dict,} responseCallback:^(id responseData) {
         XYLog(@">>>>>>%@",responseData);
     }];
 }
@@ -71,7 +76,7 @@
 - (void)recomListClick {
     [self.bridge registerHandler:@"recomListClick" handler:^(id data, WVJBResponseCallback responseCallback) {
         NSDictionary *dict = [self identifyData:data];
-        [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:dict[@"params"]];
+        [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:dict];
     }];
 }
 
@@ -139,7 +144,8 @@
 
 - (void)goOrderList {
     [self.bridge registerHandler:@"goOrderList" handler:^(id data, WVJBResponseCallback responseCallback) {
-        EFOrderMoreDetailViewController *vc = [[EFOrderMoreDetailViewController alloc] init];
+        NSDictionary *dict = [self identifyData:data];
+        EFOrderSearchViewController *vc = [[EFOrderSearchViewController alloc] initWithSearchTitle:dict[@"orderNum"]];
         [self push:vc];
     }];
 }
@@ -158,6 +164,15 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:kreturnApplyOver object:nil];
         [[UIViewController getCurrentVC].navigationController qmui_popViewControllerAnimated:YES completion:^{
             
+        }];
+    }];
+}
+
+- (void)login {
+    [self.bridge registerHandler:@"login" handler:^(id data, WVJBResponseCallback responseCallback) {
+        [EFOnePhoneLoginManager show];
+        [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kLoginNoti object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+            responseCallback(@{@"token":kUserManager.userModel.token});
         }];
     }];
 }

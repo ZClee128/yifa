@@ -8,6 +8,7 @@
 
 #import "LoginVM.h"
 #import "EFUserModel.h"
+#import "EFBindPhoneViewController.h"
 
 @implementation LoginVM
 
@@ -38,10 +39,13 @@
     return [self requsetNetwork:^RACSignal * _Nonnull{
         return [[FMARCNetwork sharedInstance] userLogin:account code:code loginToken:loginToken password:password phone:phone type:type];
     } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
-        EFUserModel *model = [EFUserModel modelWithJSON:result.reqResult];
-        [[UserManager defaultManager] saveUserModel:model];
-        [model bg_saveOrUpdate];
-        XYLog(@"model = >%@",model);
+        if (result.isSuccess) {
+            EFUserModel *model = [EFUserModel modelWithJSON:result.reqResult];
+            [[UserManager defaultManager] saveUserModel:model];
+            [model bg_saveOrUpdate];
+            XYLog(@"model = >%@",model);
+            [[NSNotificationCenter defaultCenter] postNotificationName:kLoginNoti object:nil];
+        }
         return @(result.isSuccess);
     }];
 }
@@ -50,9 +54,12 @@
     return [self requsetNetwork:^RACSignal * _Nonnull{
         return [[FMARCNetwork sharedInstance] userregister:phone code:code];
     } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
-        EFUserModel *model = [EFUserModel modelWithJSON:result.reqResult];
-        [[UserManager defaultManager] saveUserModel:model];
-        [model bg_saveOrUpdate];
+        if (result.isSuccess) {
+            EFUserModel *model = [EFUserModel modelWithJSON:result.reqResult];
+            [[UserManager defaultManager] saveUserModel:model];
+            [model bg_saveOrUpdate];
+            XYLog(@"model = >%@",model);
+        }
         return @(result.isSuccess);
     }];
 }
@@ -68,7 +75,7 @@
                 [model bg_saveOrUpdate];
             }
         }
-        [[NSNotificationCenter defaultCenter] postNotificationName:kLoginOut object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kLoginNoti object:nil];
         [[UIViewController getCurrentVC].navigationController qmui_popToRootViewControllerAnimated:NO completion:^{
         }];
         kAppDelegate.efTabbar.selectedIndex = 0;
@@ -107,6 +114,64 @@
     return [self requsetNetwork:^RACSignal * _Nonnull{
         return [[FMARCNetwork sharedInstance] verifyMessage:code phone:phone type:type];
     } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
+        return @(result.isSuccess);
+    }];
+}
+
++ (RACSignal *)thirdLoginType:(NSInteger)type city:(NSString *)city province:(NSString *)province headImgUrl:(NSString *)headImgUrl nickname:(NSString *)nickname openid:(NSString *)openid  sex:(NSInteger)sex uid:(NSString *)uid unionid:(NSString *)unionid {
+    return [self requsetNetwork:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] thirdLoginType:type city:city province:province headImgUrl:headImgUrl nickname:nickname openid:openid sex:sex uid:uid unionid:unionid];
+    } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
+        if (result.isSuccess) {
+            EFUserModel *model = [EFUserModel modelWithJSON:result.reqResult];
+            if (model.isPhone) {
+                [[UserManager defaultManager] saveUserModel:model];
+                [model bg_saveOrUpdate];
+                XYLog(@"model = >%@",model);
+                [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:^{
+                    
+                }];
+            }else {
+                kAppDelegate.isOneBindPhone = YES;
+                kAppDelegate.BindPhoneUid = result.reqResult[@"username"];
+                EFBindPhoneViewController *bind = [[EFBindPhoneViewController alloc] init];
+                bind.hidesBottomBarWhenPushed = YES;
+                [[UIViewController getCurrentVC].navigationController qmui_pushViewController:bind animated:YES completion:^{
+                    
+                }];
+            }
+        }
+        return @(result.isSuccess);
+    }];
+}
+
++ (RACSignal *)thirdLoginBindingMessage:(NSString *)code phone:(NSString *)phone {
+    return [self requsetNetwork:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] thirdLoginBindingMessage:code phone:phone];
+    } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
+        if (result.isSuccess) {
+            EFUserModel *model = [EFUserModel modelWithJSON:result.reqResult];
+            [[UserManager defaultManager] saveUserModel:model];
+            [model bg_saveOrUpdate];
+            XYLog(@"model = >%@",model);
+        }
+        return @(result.isSuccess);
+    }];
+}
+
++ (RACSignal *)bindingWechatType:(NSInteger)type city:(NSString *)city province:(NSString *)province headImgUrl:(NSString *)headImgUrl nickname:(NSString *)nickname openid:(NSString *)openid  sex:(NSInteger)sex uid:(NSString *)uid unionid:(NSString *)unionid {
+    return [self requsetNetwork:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] bindingWechatType:type city:city province:province headImgUrl:headImgUrl nickname:nickname openid:openid sex:sex uid:uid unionid:unionid];
+    } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
+        if (result.isSuccess) {
+            for (EFUserModel *model in [EFUserModel bg_findAll:nil]) {
+                if ([model.username isEqualToString:kUserManager.userModel.username]) {
+                    model.isWeChat = 1;
+                    model.wxname = nickname;
+                    [model bg_saveOrUpdate];
+                }
+            }
+        }
         return @(result.isSuccess);
     }];
 }

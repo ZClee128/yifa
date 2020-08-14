@@ -51,7 +51,7 @@
     //关联到categoryView
     self.jxTitleView.listContainer = self.listContainerView;
     @weakify(self);
-    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kLoginOut object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kLoginNoti object:nil] subscribeNext:^(NSNotification * _Nullable x) {
         @strongify(self);
         [self loadTopTitle];
     }];

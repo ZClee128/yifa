@@ -104,12 +104,29 @@
     [self setSearch];
     [self.view addSubview:[self headerView]];
     [self loadList];
+    [self addRefshUp];
+    [self addRefshDown];
 }
 
 - (void)loadList {
     @weakify(self);
     [[self.viewModel refreshForDown] subscribeNext:^(RACTuple *x) {
         @strongify(self);
+        [self.collectionView.mj_header endRefreshing];
+        self.EFData = x.first;
+        [self.collectionView reloadData];
+    }];
+}
+
+- (void)loadNewData {
+    [self loadList];
+}
+
+- (void)loadMoreData {
+    @weakify(self);
+    [[self.viewModel refreshForUp] subscribeNext:^(RACTuple *x) {
+        @strongify(self);
+        [self.collectionView.mj_footer endRefreshing];
         self.EFData = x.first;
         [self.collectionView reloadData];
     }];

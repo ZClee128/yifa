@@ -50,6 +50,15 @@
     return _cancle;
 }
 
+- (instancetype)initWithSearchTitle:(NSString *)searchTitle
+{
+    self = [super init];
+    if (self) {
+        self.searchField.text = searchTitle;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.EFTableView.frame = CGRectMake(0, NAVIGATION_BAR_HEIGHT, kPHONE_WIDTH, kPHONE_HEIGHT-NAVIGATION_BAR_HEIGHT-TAB_SAFE_HEIGHT);
@@ -64,6 +73,10 @@
         make.centerY.equalTo(self.searchField);
         make.height.equalTo(@(WidthOfScale(36)));
     }];
+    if (self.searchField.text.length != 0) {
+        ((EFOrderVM *)self.viewModel).searchText = self.searchField.text;
+        [self loadList];
+    }
 }
 
 - (void)loadList {

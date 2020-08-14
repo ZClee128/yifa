@@ -8,7 +8,7 @@
 
 #import "SignInApple.h"
 #import <AuthenticationServices/AuthenticationServices.h>
-
+#import "LoginVM.h"
 
 #define KEYCHAIN_IDENTIFIER(a) ([NSString stringWithFormat:@"%@_%@",[[NSBundle mainBundle] bundleIdentifier],a])
 
@@ -98,7 +98,9 @@
         // For the purpose of this demo app, store the userIdentifier in the keychain.
         //  需要使用钥匙串的方式保存用户的唯一信息
 //        [YostarKeychain save:KEYCHAIN_IDENTIFIER(@"userIdentifier") data:user];
-        
+        [[LoginVM thirdLoginType:4 city:@"" province:@"" headImgUrl:@"" nickname:@"" openid:@"" sex:3 uid:user unionid:@""] subscribeNext:^(id  _Nullable x) {
+            
+        }];
     }else if ([authorization.credential isKindOfClass:[ASPasswordCredential class]]){
         // 这个获取的是iCloud记录的账号密码，需要输入框支持iOS 12 记录账号密码的新特性，如果不支持，可以忽略
         // Sign in using an existing iCloud Keychain credential.
@@ -108,6 +110,9 @@
         NSString *user = passwordCredential.user;
         // 密码凭证对象的密码
         NSString *password = passwordCredential.password;
+        [[LoginVM thirdLoginType:4 city:@"" province:@"" headImgUrl:@"" nickname:@"" openid:@"" sex:3 uid:user unionid:@""] subscribeNext:^(id  _Nullable x) {
+            
+        }];
         
     }else{
         NSLog(@"授权信息均不符");

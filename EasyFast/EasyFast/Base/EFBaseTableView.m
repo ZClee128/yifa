@@ -22,14 +22,14 @@
             if (@available(iOS 13.0, *)) {
                 self.automaticallyAdjustsScrollIndicatorInsets = NO;
             } else {
-                self.estimatedRowHeight = 0;
-                self.estimatedSectionHeaderHeight = 0;
-                self.estimatedSectionFooterHeight = 0;
+
             }
         }
     }
     return self;
 }
+
+
 
 + (instancetype)defaultTableView:(id<QMUITableViewDelegate>)delegate dataSource:(id<QMUITableViewDataSource>)dataSource style:(UITableViewStyle)style
 {

@@ -53,6 +53,7 @@ targets.each do |t|
     pod 'UMCShare/Social/ReducedSina'
     pod 'UMCShare/UI'
     pod 'TABAnimated'
+#    pod 'WechatOpenSDK'
     
     # Pods for EasyFast
   end

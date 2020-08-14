@@ -79,4 +79,7 @@
 #import "EFBaseCollectionViewController.h"
 #import "CQBadgeButton.h"
 #import <JSBadgeView.h>
+#import "NSDictionary+Null.h"
+#import "NSDate+Format.h"
+#import "WXApi.h"
 #endif /* Header_h */

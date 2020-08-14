@@ -144,19 +144,32 @@
 - (void)loadOrder {
     [[MeVM queryUserOrderCount] subscribeNext:^(EFQueryUserOrderCountModel *x) {
         [self.EFTableView.mj_header endRefreshing];
-        self.orderArr = [@[@{@"title":@"待付款",@"icon":@"wallet",@"num":x.pendingPayCount},@{@"title":@"待发货",@"icon":@"daifahuo",@"num":x.pendingDeliverCount},
-                           @{@"title":@"待收货",@"icon":@"daishouhuo",@"num":x.pendingReceiveCount},
-                           @{@"title":@"待评价",@"icon":@"daipingjia",@"num":x.pendingEvalCount},
-                           @{@"title":@"退款/售后",@"icon":@"tuikuan",@"num":x.pendingSaleCount}] mutableCopy];
+        self.orderArr = [@[[@{@"title":@"待付款",@"icon":@"wallet",@"num":@""} mutableCopy],[@{@"title":@"待发货",@"icon":@"daifahuo",@"num":@""} mutableCopy],
+                           [@{@"title":@"待收货",@"icon":@"daishouhuo",@"num":@""} mutableCopy],
+                           [@{@"title":@"待评价",@"icon":@"daipingjia",@"num":@""} mutableCopy],
+                           [@{@"title":@"退款/售后",@"icon":@"tuikuan",@"num":@""} mutableCopy]] mutableCopy];
+        if (x) {
+            self.orderArr[0][@"num"] = x.pendingPayCount;
+            self.orderArr[1][@"num"] = x.pendingDeliverCount;
+            self.orderArr[2][@"num"] = x.pendingReceiveCount;
+            self.orderArr[3][@"num"] = x.pendingEvalCount;
+            self.orderArr[4][@"num"] = x.pendingSaleCount;
+        }
         [self.EFTableView reloadData];
     }];
     
     [[MeVM queryUserTeamCount] subscribeNext:^(EFQueryUserTeamCountModel *x) {
         [self.EFTableView.mj_header endRefreshing];
-        self.teamArr = [@[@{@"title":@"已完成",@"icon":@"yiwancheng",@"num":x.successCount},
-                          @{@"title":@"等待中",@"icon":@"waitting",@"num":x.waitingCount},
-                          @{@"title":@"已失效",@"icon":@"yishixiao",@"num":x.failCount},
-                          @{@"title":@"待拼团",@"icon":@"daifukuan",@"num":x.pendingPayCount}] mutableCopy];
+        self.teamArr = [@[[@{@"title":@"已完成",@"icon":@"yiwancheng",@"num":@""} mutableCopy],
+                          [@{@"title":@"等待中",@"icon":@"waitting",@"num":@""} mutableCopy],
+                          [@{@"title":@"已失效",@"icon":@"yishixiao",@"num":@""} mutableCopy],
+                          [@{@"title":@"待拼团",@"icon":@"daifukuan",@"num":@""} mutableCopy]] mutableCopy];
+        if (x) {
+            self.teamArr[0][@"num"] = x.successCount;
+            self.teamArr[1][@"num"] = x.waitingCount;
+            self.teamArr[2][@"num"] = x.failCount;
+            self.teamArr[3][@"num"] = x.pendingPayCount;
+        }
         [self.EFTableView reloadData];
     }];
 }

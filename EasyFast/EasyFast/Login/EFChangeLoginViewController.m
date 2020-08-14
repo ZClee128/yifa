@@ -133,6 +133,15 @@
                                 
                             }];
                         }else{
+                            @strongify(self);
+                            for (UIViewController *vc in self.navigationController.viewControllers) {
+                                if ([vc isKindOfClass:[EFBaseWebViewController class]]) {
+                                    [self.navigationController qmui_popToViewController:vc animated:YES completion:^{
+                                        
+                                    }];
+                                    return;
+                                }
+                            }
                             [self.navigationController qmui_popToRootViewControllerAnimated:NO completion:^{
                                 
                             }];

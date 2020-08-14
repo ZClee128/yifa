@@ -98,6 +98,7 @@
     [self.efbridge goOrderList];
     [self.efbridge evalWritingOver];
     [self.efbridge returnApplyOver];
+    [self.efbridge login];
 }
 
 
