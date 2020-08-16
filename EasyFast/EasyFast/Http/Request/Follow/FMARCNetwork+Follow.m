@@ -27,18 +27,18 @@
 }
 
 - (RACSignal *)setFollowShopCategory:(NSString *)category shopNo:(NSString *)shopNo {
-    return [self fg_postRequest:ksetFollowShop paramters:@{@"category":category,@"shopNo":shopNo}];
+    return [self fg_getRequest:ksetFollowShop paramters:@{@"category":category,@"shopNo":shopNo}];
 }
 
 - (RACSignal *)cancelFollowShop:(NSString *)shopNo {
-    return [self fg_postRequest:kcancelFollowShop paramters:@{@"shopNo":shopNo}];
+    return [self fg_getRequest:kcancelFollowShop paramters:@{@"shopNo":shopNo}];
 }
 
 - (RACSignal *)setCollectGoods:(NSString *)goodsNo {
-    return [self fg_postRequest:ksetCollectGoods paramters:@{@"goodsNo":goodsNo}];
+    return [self fg_getRequest:ksetCollectGoods paramters:@{@"goodsNo":goodsNo}];
 }
 
 - (RACSignal *)cancelCollectGoods:(NSString *)goodsNo {
-    return [self fg_postRequest:kcancelCollectGoods paramters:@{@"goodsNo":goodsNo}];
+    return [self fg_getRequest:kcancelCollectGoods paramters:@{@"goodsNo":goodsNo}];
 }
 @end

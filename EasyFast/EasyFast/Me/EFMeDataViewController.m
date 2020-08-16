@@ -64,11 +64,19 @@
                      [@{@"title":@"性别",@"subTitle":kUserManager.userModel.sex == 1 ? @"男" : (kUserManager.userModel.sex == 2 ? @"女" : @"不限"),@"header":@""} mutableCopy],
                      [@{@"title":@"地区",@"subTitle":kUserManager.userModel.city == nil ? @"请选择" :[NSString stringWithFormat:@"%@ %@",kUserManager.userModel.province,kUserManager.userModel.city],@"header":@""} mutableCopy],
                      @{@"title":@"绑定手机",@"subTitle":kUserManager.userModel.phone,@"header":@""},
-                     @{@"title":@"绑定微信号",@"subTitle":kUserManager.userModel.wxname == nil ? @"去绑定" : kUserManager.userModel.wxname,@"header":@""},
+                     [@{@"title":@"绑定微信号",@"subTitle":kUserManager.userModel.wxname == nil ? @"去绑定" : kUserManager.userModel.wxname,@"header":@""} mutableCopy],
                      @{@"title":@"实名认证",@"subTitle":@"未认证",@"header":@""},
                      ] mutableCopy];
     self.EFTableView.tableFooterView = self.otherView;
-    
+    @weakify(self);
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kwxLogin object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        [[EFWxLoginManager defaultManager] wxLogin:x withType:2];
+    }];
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kwxBing object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        @strongify(self);
+        self.EFData[5][@"subTitle"] = kUserManager.userModel.wxname;
+        [self.EFTableView reloadData];
+    }];
 }
 
 

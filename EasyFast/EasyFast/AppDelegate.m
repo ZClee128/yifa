@@ -140,9 +140,9 @@
     /* 设置分享到QQ互联的appID
      * U-Share SDK为了兼容大部分平台命名，统一用appKey和appSecret进行参数设置，而QQ平台仅需将appID作为U-Share的appKey参数传进即可。
      */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1110677743"/*设置QQ平台的appID*/  appSecret:nil redirectURL:@"http://mobile.umeng.com/social"];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"1110677743"/*设置QQ平台的appID*/  appSecret:nil redirectURL:@"https://www.one-fast.com"];
     /* 设置新浪的appKey和appSecret */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"1452254064"  appSecret:@"c70f9d5fbfb686cc8611d49dbaea2b21" redirectURL:@"https://sns.whalecloud.com/sina2/callback"];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"1452254064"  appSecret:@"c70f9d5fbfb686cc8611d49dbaea2b21" redirectURL:@"https://api.one-fast.com/api-client/thrid/weibo/oauth"];
     
 }
 
@@ -169,10 +169,14 @@
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
 {
-  if ([url.host isEqualToString:@"oauth"]){//微信登录
-        return [WXApi handleOpenURL:url delegate:self];
+    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url options:options];
+    if (!result) {
+         // 其他如支付等SDK的回调
+        if ([url.host isEqualToString:@"oauth"]){//微信登录
+            return [WXApi handleOpenURL:url delegate:self];
+        }
     }
-    return YES;
+    return result;
 }
 
 

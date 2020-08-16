@@ -75,7 +75,10 @@
 }
 
 - (void)nextClick {
-    @weakify(self);
+    if (![self.newsTextField.text deptNumInputShouldNumber]) {
+        [MBProgressHUD showFailureProgress:@"必须是6-20个英文字母，数字或符号（除空格），且字母，数字和标点至少包含两种"];
+        return;
+    }
     [[MeVM updatePassWord:self.oldTextField.text password:self.newsTextField.text confirmPassword:self.comfirTextField.text] subscribeNext:^(NSNumber *x) {
         if ([x boolValue]) {
             [[NSNotificationCenter defaultCenter] postNotificationName:kChangePassword object:nil];
@@ -295,4 +298,18 @@
         return @(enabled);
     }];
 }
+
+- (void)nextClick {
+//    设置新密码
+    @weakify(self);
+    [[LoginVM setNewPasswordNewPassword:self.newsTextField.text confirmPassword:self.comfirTextField.text] subscribeNext:^(NSNumber *x) {
+        @strongify(self);
+        if ([x boolValue]) {
+            [self.navigationController qmui_popViewControllerAnimated:YES completion:^{
+                
+            }];
+        }
+    }];
+}
+
 @end

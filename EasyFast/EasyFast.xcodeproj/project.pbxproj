@@ -290,6 +290,9 @@
 		0CBE6A5724E68E71003C300F /* EFWxLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A5624E68E71003C300F /* EFWxLoginManager.m */; };
 		0CBE6A5824E68E71003C300F /* EFWxLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A5624E68E71003C300F /* EFWxLoginManager.m */; };
 		0CBE6A5924E68E71003C300F /* EFWxLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A5624E68E71003C300F /* EFWxLoginManager.m */; };
+		0CBE6A5D24E914AF003C300F /* TimeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A5C24E914AF003C300F /* TimeLabel.m */; };
+		0CBE6A5E24E914AF003C300F /* TimeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A5C24E914AF003C300F /* TimeLabel.m */; };
+		0CBE6A5F24E914AF003C300F /* TimeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A5C24E914AF003C300F /* TimeLabel.m */; };
 		0CCEC45324CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45424CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45524CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
@@ -896,6 +899,8 @@
 		0CBE6A5124E68569003C300F /* EFWXModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFWXModel.m; sourceTree = "<group>"; };
 		0CBE6A5524E68E71003C300F /* EFWxLoginManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFWxLoginManager.h; sourceTree = "<group>"; };
 		0CBE6A5624E68E71003C300F /* EFWxLoginManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFWxLoginManager.m; sourceTree = "<group>"; };
+		0CBE6A5B24E914AF003C300F /* TimeLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeLabel.h; sourceTree = "<group>"; };
+		0CBE6A5C24E914AF003C300F /* TimeLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeLabel.m; sourceTree = "<group>"; };
 		0CCEC45124CA7A6000976D24 /* EFWuliuTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFWuliuTableViewCell.h; sourceTree = "<group>"; };
 		0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFWuliuTableViewCell.m; sourceTree = "<group>"; };
 		0CCEC45624CA7D8900976D24 /* EFOrderMoreDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderMoreDetailViewController.h; sourceTree = "<group>"; };
@@ -1556,6 +1561,15 @@
 				0CBE6A5124E68569003C300F /* EFWXModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0CBE6A5A24E91483003C300F /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				0CBE6A5B24E914AF003C300F /* TimeLabel.h */,
+				0CBE6A5C24E914AF003C300F /* TimeLabel.m */,
+			);
+			path = Label;
 			sourceTree = "<group>";
 		};
 		0CCEC47924CABB9700976D24 /* IM */ = {
@@ -2249,6 +2263,7 @@
 		84A8219724BF010800EAC652 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0CBE6A5A24E91483003C300F /* Label */,
 				0CBE6A0824E3E4E2003C300F /* CQBadgeButton */,
 				0C0CC27224DC3202005E50ED /* CountDown */,
 				0C8A276A24D6C44400E40ED8 /* Tags */,
@@ -2828,6 +2843,7 @@
 				0C6CB58824CE960700471A8D /* SignInApple.m in Sources */,
 				0CE285FF24D3EC4F00AAC334 /* LTSCalendarCollectionViewFlowLayout.m in Sources */,
 				8476107824C59780002B34E4 /* UILabel+LabelHeightAndWidth.m in Sources */,
+				0CBE6A5D24E914AF003C300F /* TimeLabel.m in Sources */,
 				0CCEC46224CA837400976D24 /* EFOrderShopTableViewCell.m in Sources */,
 				0CCEC48724CAC27A00976D24 /* EFIMListViewController.m in Sources */,
 				841B94D324C935B20054D8D5 /* EFOrderViewController.m in Sources */,
@@ -3062,6 +3078,7 @@
 				0C6CB58924CE960700471A8D /* SignInApple.m in Sources */,
 				0CE2860024D3EC4F00AAC334 /* LTSCalendarCollectionViewFlowLayout.m in Sources */,
 				8476107924C59780002B34E4 /* UILabel+LabelHeightAndWidth.m in Sources */,
+				0CBE6A5E24E914AF003C300F /* TimeLabel.m in Sources */,
 				0CCEC46324CA837400976D24 /* EFOrderShopTableViewCell.m in Sources */,
 				0CCEC48824CAC27A00976D24 /* EFIMListViewController.m in Sources */,
 				841B94D424C935B20054D8D5 /* EFOrderViewController.m in Sources */,
@@ -3296,6 +3313,7 @@
 				0C6CB58A24CE960700471A8D /* SignInApple.m in Sources */,
 				0CE2860124D3EC4F00AAC334 /* LTSCalendarCollectionViewFlowLayout.m in Sources */,
 				8476107A24C59780002B34E4 /* UILabel+LabelHeightAndWidth.m in Sources */,
+				0CBE6A5F24E914AF003C300F /* TimeLabel.m in Sources */,
 				0CCEC46424CA837400976D24 /* EFOrderShopTableViewCell.m in Sources */,
 				0CCEC48924CAC27A00976D24 /* EFIMListViewController.m in Sources */,
 				841B94D524C935B20054D8D5 /* EFOrderViewController.m in Sources */,

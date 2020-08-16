@@ -147,6 +147,7 @@ fprintf(stderr,"[--%s--]\n[--%s:%d--]\n[--%s--]\n===========================\n",
 #define kevalWritingOver @"kevalWritingOver" //订单评价通知
 #define kreturnApplyOver @"kreturnApplyOver" // 订单售后通知
 #define kwxLogin @"wxLogin" // 微信登录
+#define kwxBing @"kwxBing" // 微信绑定成功
 
 // 图片
 #define kup UIImageMake(@"up") // 降序

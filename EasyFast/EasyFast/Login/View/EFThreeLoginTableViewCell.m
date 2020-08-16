@@ -10,7 +10,7 @@
 #import <AuthenticationServices/AuthenticationServices.h>
 #import "SignInApple.h"
 #import "EFWxLoginManager.h"
-
+#import "LoginVM.h"
 
 
 @interface EFThreeLoginTableViewCell () <ASAuthorizationControllerDelegate,ASAuthorizationControllerPresentationContextProviding,WXApiDelegate>
@@ -116,6 +116,9 @@
             XYLog(@" gender: %@", resp.unionGender);
             // 第三方平台SDK原始数据
             XYLog(@" originalResponse: %@", resp.originalResponse);
+            [[LoginVM thirdLoginType:platformType == UMSocialPlatformType_Sina ? 3 : 2 city:resp.originalResponse[@"city"] ? resp.originalResponse[@"city"] : @"" province:resp.originalResponse[@"province"] ? resp.originalResponse[@"province"] : @"" headImgUrl:resp.iconurl nickname:resp.name openid:resp.openid sex:[resp.unionGender isEqualToString:@"男"] ? 1 : ([resp.unionGender isEqualToString:@"女"] ? 2 : 3) uid:resp.uid unionid:resp.unionId ? resp.unionId : @""] subscribeNext:^(id  _Nullable x) {
+                
+            }];
         }];
     }
     

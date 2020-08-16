@@ -24,9 +24,29 @@
 
 - (void)exchangedDealloc
 {
-    
+    if ([self respondsToSelector:@selector(viewModel)]) {
+        EFBaseViewController *viewController = (EFBaseViewController *)self;
+        @autoreleasepool {
+            NSLog(@"");
+            //            viewController.viewModel = nil;
+            [viewController setViewModel:nil];
+            NSLog(@"");
+        }
+    }
+    else if ([self isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *navigationController = (UINavigationController *)self;
+        if (![navigationController isKindOfClass:NSClassFromString(@"ZLImageNavigationController")]) {
+            @autoreleasepool {
+                
+                if ([navigationController.topViewController respondsToSelector:@selector(setViewModel:)]) {
+                    
+                    [(EFBaseViewController *)navigationController.topViewController setViewModel:nil];
+                }
+            }
+        }
+    }
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    NSLog(@"%@->ViewController class execute dealloc completed !", self.class);
+    XYLog(@"%@->ViewController class execute dealloc completed !", self.class);
     [self exchangedDealloc];
 }
 

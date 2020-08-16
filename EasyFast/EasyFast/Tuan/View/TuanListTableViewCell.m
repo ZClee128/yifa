@@ -9,14 +9,16 @@
 #import "TuanListTableViewCell.h"
 #import "TuanPeopleView.h"
 #import "EFTeamListModel.h"
+#import "TimeLabel.h"
 
 @interface TuanListTableViewCell ()
 
 @property (nonatomic,strong)LRAnimationProgress *progressView;
 @property (nonatomic,strong)QMUILabel *numLab;
-@property (nonatomic,strong)QMUILabel *timeLab;
+@property (nonatomic,strong)TimeLabel *timeLab;
 @property (nonatomic,strong)QMUIButton *buyBtn;
 @property (nonatomic,strong)CountDown *timer;
+@property (nonatomic,strong)EFTeamListModel *teamModel;
 
 @end
 
@@ -46,10 +48,10 @@
     return _numLab;
 }
 
--(QMUILabel *)timeLab
+-(TimeLabel *)timeLab
 {
     if (_timeLab == nil) {
-        _timeLab = [[QMUILabel alloc] init];
+        _timeLab = [[TimeLabel alloc] init];
         _timeLab.font = RegularFont14;
         _timeLab.textColor = tabbarBlackColor;
     }
@@ -71,6 +73,13 @@
         }];
     }
     return _buyBtn;
+}
+
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        
+    }
+    return self;
 }
 
 - (void)setUI {
@@ -109,22 +118,24 @@
         make.left.equalTo(self.contentView);
         make.size.mas_equalTo(CGSizeMake(kPHONE_WIDTH, WidthOfScale(10)));
     }];
-        
+//    self.timer = [[CountDown alloc] init];
+    
 }
 
+
 - (void)setModel:(EFTeamListModel *)model {
+    self.teamModel = model;
     self.progressView.progress = model.teamProcess / 100;
     [self.progressView setTitle:[NSString stringWithFormat:@"剩余%.f%%",100 - model.teamProcess]];
 //    self.numLab.text = @"30%";
-    [self.timer destoryTimer];
-    self.timer = [[CountDown alloc] init];
-    [self.timer countDownWithStratDate:model.currentDate finishDate:model.expireDate completeBlock:^(NSInteger day, NSInteger hour, NSInteger minute, NSInteger second) {
-        if (day) {
-            self.timeLab.text = [NSString stringWithFormat:@"%ld:%ld:%ld:%ld",(long)day,(long)hour,(long)minute,(long)second];
-        }else {
-            self.timeLab.text = [NSString stringWithFormat:@"%ld:%ld:%ld",(long)hour,(long)minute,(long)second];
-        }
-    }];
+//    [self.timer countDownWithStratDate:model.currentDate finishDate:model.expireDate completeBlock:^(NSInteger day, NSInteger hour, NSInteger minute, NSInteger second) {
+//        if (day) {
+//            self.timeLab.text = [NSString stringWithFormat:@"%02ld:%02ld:%02ld:%02ld",(long)day,(long)hour,(long)minute,(long)second];
+//        }else {
+//            self.timeLab.text = [NSString stringWithFormat:@"%02ld:%02ld:%02ld",(long)hour,(long)minute,(long)second];
+//        }
+//    }];
+    [self.timeLab countDownWithStratDate:model.currentDate finishDate:model.expireDate];
     for (UIView *view in self.contentView.subviews) {
         if ([view isKindOfClass:[TuanPeopleView class]]) {
             [view removeFromSuperview];
@@ -136,6 +147,7 @@
         [self.contentView addSubview:p];
         [p setModel:model.teamOrderDtoList[i]];
     }
+    [self.contentView layoutIfNeeded];
 }
 
 - (void)awakeFromNib {

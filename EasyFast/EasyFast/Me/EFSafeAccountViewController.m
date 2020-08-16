@@ -31,6 +31,7 @@
         [self.EFTableView reloadData];
     }];
     [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kChangePassword object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        @strongify(self);
         self.EFData[2][@"subTitle"] = @"";
         [self.EFTableView reloadData];
     }];

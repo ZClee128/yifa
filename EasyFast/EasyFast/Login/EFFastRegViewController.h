@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)QMUIButton *nextBtn;
 @property (nonatomic,strong)NSString *phoneText;
 @property (nonatomic,strong)NSString *codeStr;
+- (void)nextClick;
 @end
 
 

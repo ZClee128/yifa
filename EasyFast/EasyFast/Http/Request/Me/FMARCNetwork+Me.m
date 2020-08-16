@@ -44,11 +44,11 @@
 }
 
 - (RACSignal *)delAddress:(NSString *)addressNo {
-    return [self fg_postRequest:kdelAddress paramters:@{@"addressNo":addressNo}];
+    return [self fg_getRequest:kdelAddress paramters:@{@"addressNo":addressNo}];
 }
 
 - (RACSignal *)setDefaultAddress:(NSString *)addressNo {
-    return [self fg_postRequest:ksetDefaultAddress paramters:@{@"addressNo":addressNo}];
+    return [self fg_getRequest:ksetDefaultAddress paramters:@{@"addressNo":addressNo}];
 }
 
 - (RACSignal *)updateAddress:(NSString *)address city:(NSString *)city province:(NSString *)province recipientName:(NSString *)recipientName recipientPhone:(NSString *)recipientPhone area:(NSString *)area addressNo:(NSString *)addressNo {

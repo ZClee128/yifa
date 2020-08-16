@@ -128,6 +128,7 @@
                 @strongify(self);
                 [[LoginVM userLogin:self.isAccount ? self.phoneText : @""  code:self.isAccount ? @"" : self.codeText loginToken:@"" password:self.password phone:self.isAccount ? @"" : self.phoneText type:self.isAccount ? 1 : 2] subscribeNext:^(NSNumber *x) {
                     if ([x boolValue]) {
+                        @strongify(self);
                         if (self.hasone) {
                             [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:^{
                                 

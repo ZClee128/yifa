@@ -28,8 +28,10 @@
 -(void)setRightViewWithimageName:(NSString *)imageName click:(void (^)(QMUIButton *))next{
     
     QMUIButton *rightView = [[QMUIButton alloc]init];
+    rightView.size = CGSizeMake(WidthOfScale(35), WidthOfScale(35));
     [rightView setImage:[UIImage imageNamed:imageName] forState:(UIControlStateNormal)];
     rightView.contentMode = UIViewContentModeCenter;
+    rightView.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, WidthOfScale(15.5));
     self.rightView = rightView;
     self.rightViewMode = UITextFieldViewModeAlways;
 //    @weakify(self);

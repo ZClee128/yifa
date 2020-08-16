@@ -63,6 +63,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param uid 用户标识
 /// @param unionid 微信或QQ的unionid
 - (RACSignal *)bindingWechatType:(NSInteger)type city:(NSString *)city province:(NSString *)province headImgUrl:(NSString *)headImgUrl nickname:(NSString *)nickname openid:(NSString *)openid  sex:(NSInteger)sex uid:(NSString *)uid unionid:(NSString *)unionid;
+
+
+- (RACSignal *)setNewPasswordNewPassword:(NSString *)password confirmPassword:(NSString *)confirmPassword;
 @end
 
 NS_ASSUME_NONNULL_END

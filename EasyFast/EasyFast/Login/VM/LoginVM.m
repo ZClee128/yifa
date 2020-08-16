@@ -13,26 +13,46 @@
 @implementation LoginVM
 
 - (void)getCodeWithBtn:(QMUIButton *)codeBtn withType:(NSInteger)type phone:(NSString *)phone{
+    @weakify(self);
     [MBProgressHUD showLoadingProgress:@"获取验证码..."];
     [[[FMARCNetwork sharedInstance] sendCode:phone type:type] subscribeNext:^(FMHttpResonse *x) {
         if (x.isSuccess) {
             [[RACScheduler mainThreadScheduler] schedule:^{
-                       [MBProgressHUD removeProgressFromSuperView];
+                [MBProgressHUD removeProgressFromSuperView];
             }];
-            [self intervalTimer:1 intervalBlock:^BOOL(NSDate * _Nonnull date, NSTimeInterval currenctCount) {
-                if (currenctCount == 61) {
-                    [codeBtn setTitle:@"重发验证码" forState:(UIControlStateNormal)];
-                    codeBtn.enabled = YES;
-                    return YES;
-                }else {
-                    codeBtn.enabled = NO;
-                    [codeBtn setTitle:[NSString stringWithFormat:@"%.fs后重发",60-currenctCount] forState:(UIControlStateNormal)];
-                    return NO;
-                }
-            }];
+            @strongify(self);
+            [self startWithStartDate:[NSDate new] finishDate:[NSDate dateWithTimeIntervalSinceNow:60] Btn:codeBtn];
+//            [self intervalTimer:1 intervalBlock:^BOOL(NSDate * _Nonnull date, NSTimeInterval currenctCount) {
+//                if (currenctCount == 61) {
+//                    [codeBtn setTitle:@"重发验证码" forState:(UIControlStateNormal)];
+//                    codeBtn.enabled = YES;
+//                    return YES;
+//                }else {
+//                    codeBtn.enabled = NO;
+//                    [codeBtn setTitle:[NSString stringWithFormat:@"%.fs后重发",60-currenctCount] forState:(UIControlStateNormal)];
+//                    return NO;
+//                }
+//            }];
         }
     }];
     
+}
+
+//此方法用两个NSDate对象做参数进行倒计时
+-(void)startWithStartDate:(NSDate *)strtDate finishDate:(NSDate *)finishDate Btn:(QMUIButton *)codeBtn{
+    CountDown *time = [[CountDown alloc] init];
+    [time countDownWithStratDate:strtDate finishDate:finishDate completeBlock:^(NSInteger day, NSInteger hour, NSInteger minute, NSInteger second) {
+        NSLog(@"second = %li",second);
+        NSInteger totoalSecond =day*24*60*60+hour*60*60 + minute*60+second;
+        if (totoalSecond==0) {
+            codeBtn.enabled = YES;
+            [codeBtn setTitle:@"重发验证码" forState:UIControlStateNormal];
+        }else{
+            codeBtn.enabled = NO;
+            [codeBtn setTitle:[NSString stringWithFormat:@"%lis后重发",totoalSecond] forState:UIControlStateNormal];
+        }
+        
+    }];
 }
 
 + (RACSignal *)userLogin:(NSString *)account code:(NSString *)code loginToken:(NSString *)loginToken password:(NSString *)password phone:(NSString *)phone type:(NSInteger)type {
@@ -131,6 +151,7 @@
                 [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:^{
                     
                 }];
+                [[NSNotificationCenter defaultCenter] postNotificationName:kLoginNoti object:nil];
             }else {
                 kAppDelegate.isOneBindPhone = YES;
                 kAppDelegate.BindPhoneUid = result.reqResult[@"username"];
@@ -154,6 +175,7 @@
             [[UserManager defaultManager] saveUserModel:model];
             [model bg_saveOrUpdate];
             XYLog(@"model = >%@",model);
+            [[NSNotificationCenter defaultCenter] postNotificationName:kLoginNoti object:nil];
         }
         return @(result.isSuccess);
     }];
@@ -171,7 +193,16 @@
                     [model bg_saveOrUpdate];
                 }
             }
+            [[NSNotificationCenter defaultCenter] postNotificationName:kwxBing object:nil];
         }
+        return @(result.isSuccess);
+    }];
+}
+
++ (RACSignal *)setNewPasswordNewPassword:(NSString *)password confirmPassword:(NSString *)confirmPassword {
+    return [self requsetNetwork:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] setNewPasswordNewPassword:password confirmPassword:confirmPassword];
+    } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
         return @(result.isSuccess);
     }];
 }

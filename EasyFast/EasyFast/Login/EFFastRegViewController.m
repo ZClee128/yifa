@@ -34,16 +34,20 @@
         @weakify(self);
         [[_nextBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self);
-            [[LoginVM userregister:self.phoneText code:self.codeStr] subscribeNext:^(NSNumber *x) {
-                if ([x boolValue]) {
-                    [self.navigationController popToRootViewControllerAnimated:YES];
-                }
-            }];
+            [self nextClick];
         }];
     }
     return _nextBtn;
 }
 
+
+- (void)nextClick {
+    [[LoginVM userregister:self.phoneText code:self.codeStr] subscribeNext:^(NSNumber *x) {
+        if ([x boolValue]) {
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }
+    }];
+}
 
 - (UIView *)footerView {
     if (_footerView == nil) {
@@ -227,14 +231,63 @@
         return @(enabled);
     }];
     
-    [[self.nextBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-        @strongify(self);
-        EFSetNewPasswordViewController *vc = [[EFSetNewPasswordViewController alloc] init];
-        [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
-            
-        }];
-    }];
     return footerView;
+}
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 2;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    switch (indexPath.row) {
+        case 0:
+        {
+            EFPhoneTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFPhoneTableViewCell class])];
+            [cell setModel:@"手机号"];
+            @weakify(self);
+            cell.TextValue = ^(NSString * _Nonnull text) {
+                @strongify(self);
+                self.phoneText = text;
+            };
+            return cell;
+        }
+        default:
+        {
+            EFCodeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFCodeTableViewCell class])];
+            [cell setModel:@"验证码"];
+            @weakify(self);
+            cell.TextValue = ^(NSString * _Nonnull text) {
+                @strongify(self);
+                self.codeStr = text;
+            };
+            cell.CodeBlock = ^(QMUIButton * _Nonnull btn) {
+                @strongify(self);
+                [(LoginVM *)self.viewModel getCodeWithBtn:btn withType:4 phone:self.phoneText];
+            };
+            
+            return cell;
+        }
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return WidthOfScale(50);
+}
+
+- (void)nextClick {
+    [[LoginVM verifyMessage:self.codeStr phone:self.phoneText type:4] subscribeNext:^(NSNumber *x) {
+        if ([x boolValue]) {
+            EFSetNewPasswordViewController *vc = [[EFSetNewPasswordViewController alloc] init];
+            [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+                [self removeFromParentViewController];
+            }];
+        }
+    }];
 }
 
 @end

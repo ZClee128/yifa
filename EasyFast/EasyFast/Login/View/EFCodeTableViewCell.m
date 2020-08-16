@@ -55,7 +55,7 @@
 {
     if (_codeBtn == nil) {
         _codeBtn = [QMUIButton buttonWithType:(UIButtonTypeCustom)];
-        [_codeBtn setTitle:@"重发验证码" forState:(UIControlStateNormal)];
+        [_codeBtn setTitle:@"发送验证码" forState:(UIControlStateNormal)];
         [_codeBtn setTitleColor:[tabbarBlackColor colorWithAlphaComponent:0.6] forState:(UIControlStateSelected)];
         [_codeBtn setTitleColor:tabbarBlackColor forState:(UIControlStateNormal)];
         _codeBtn.titleLabel.font = RegularFont14;

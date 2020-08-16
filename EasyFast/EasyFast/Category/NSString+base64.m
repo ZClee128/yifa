@@ -36,4 +36,19 @@
     return  output;
 }
 
+
+- (BOOL)deptNumInputShouldNumber
+{
+    if (self.length == 0) {
+        return NO;
+    }
+//    NSString *regex = @"^(?![\d]+$)(?![a-zA-Z]+$)(?![!#$%^&*]+$)[\da-zA-Z!#$%^&*]{6,20}$";
+    NSString *regex = @"^[\\p{Punct}a-zA-Z0-9]{6,20}$";
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+    if ([pred evaluateWithObject:self]) {
+        return YES;
+    }
+    return NO;
+}
+
 @end

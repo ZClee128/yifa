@@ -85,15 +85,15 @@
     [manager GET:url parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"success");
         
-        NSLog(@"%@",responseObject);
+        XYLog(@"%@",responseObject);
         NSDictionary *resp = (NSDictionary*)responseObject;
         EFWXModel *model = [EFWXModel modelWithJSON:resp];
         if (self.type == 1) {
-            [[LoginVM thirdLoginType:1 city:model.city province:model.province headImgUrl:model.headimgurl nickname:model.nickname openid:model.openid sex:model.sex uid:model.openid unionid:model.unionid] subscribeNext:^(id  _Nullable x) {
+            [[LoginVM thirdLoginType:1 city:model.city ? model.city : @"" province:model.province ? model.province : @"" headImgUrl:model.headimgurl nickname:model.nickname openid:model.openid sex:model.sex uid:model.openid unionid:model.unionid ? model.unionid : @""] subscribeNext:^(id  _Nullable x) {
                 
             }];
         }else {
-            [[LoginVM bindingWechatType:1 city:model.city province:model.province headImgUrl:model.headimgurl nickname:model.nickname openid:model.openid sex:model.sex uid:model.openid unionid:model.unionid] subscribeNext:^(id  _Nullable x) {
+            [[LoginVM bindingWechatType:1 city:model.city ? model.city : @"" province:model.province ? model.province : @"" headImgUrl:model.headimgurl nickname:model.nickname openid:model.openid sex:model.sex uid:model.openid unionid:model.unionid ? model.unionid : @""] subscribeNext:^(id  _Nullable x) {
                 
             }];
         }

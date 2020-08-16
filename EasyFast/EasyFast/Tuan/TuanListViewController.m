@@ -63,7 +63,9 @@
         @strongify(self);
         [self.EFTableView.mj_header endRefreshing];
         self.EFData = x.first;
-        [self.EFTableView reloadData];
+        [[RACScheduler mainThreadScheduler] schedule:^{
+           [self.EFTableView reloadData];
+        }];
     }];
     
     [[EFTeamVM goodsSummaryGGNo:self.ggNO] subscribeNext:^(EFTeamGoodsModel *x) {
@@ -92,7 +94,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    TuanListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TuanListTableViewCell class])];
+//    TuanListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TuanListTableViewCell class]) forIndexPath:indexPath];
+    TuanListTableViewCell *cell = [tableView viewWithTag:indexPath.row + 100];
+    if (cell == nil) {
+        cell = [[TuanListTableViewCell alloc] init];
+        cell.tag = indexPath.row + 100;
+    }
     EFTeamListModel *model = self.EFData[indexPath.row];
     [cell setModel:model];
     cell.btnBlock = ^{

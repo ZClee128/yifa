@@ -22,6 +22,7 @@
 #define kupdatePassWord @"api-client/user/info/updatePassWord" // 修改密码
 #define kthirdLoginBinding @"api-client/user/index/thirdLoginBinding" //首次绑定接口
 #define kbindingWechat @"api-client/user/info/bindingWechat" //绑定微信号接口
+#define ksetNewPassword @"api-client/user/info/setNewPassword" //设置新密码接口
 
 // 关注
 #define kfindCollectGoodsList @"api-client/follow/findCollectGoodsList" // 收藏商品列表接口

@@ -23,7 +23,7 @@
         [self setRightViewWithimageName:@"no_see" click:^(QMUIButton *x) {
             @strongify(self);
             x.selected ? [x setImage:UIImageMake(@"see") forState:(UIControlStateNormal)] : [x setImage:UIImageMake(@"no_see") forState:(UIControlStateNormal)];
-            self.secureTextEntry = x.selected;
+            self.secureTextEntry = !x.selected;
         }];
         
     }
@@ -37,17 +37,6 @@
 
 
 
-- (BOOL)deptNumInputShouldNumber:(NSString *)str
-{
-    if (str.length == 0) {
-        return NO;
-    }
-    NSString *regex = @"^(?![\d]+$)(?![a-zA-Z]+$)(?![^\da-zA-Z]+$).{6,20}$";
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
-    if ([pred evaluateWithObject:str]) {
-        return YES;
-    }
-    return NO;
-}
+
 
 @end

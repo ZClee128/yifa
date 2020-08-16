@@ -19,6 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSString *)base64DecodeString;
 
 - (NSString *)md5;
+
+/// 密码规则
+- (BOOL)deptNumInputShouldNumber;
 @end
 
 NS_ASSUME_NONNULL_END

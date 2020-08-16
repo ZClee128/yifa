@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSDate *)StringToDateFormatter:(NSString *)str date:(NSString *)time;
 - (NSString *)DateToStringFormatter:(NSString *)str;
+- (NSTimeInterval)DateToNSTimeIntervalFormatter;
 @end
 
 NS_ASSUME_NONNULL_END
