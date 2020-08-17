@@ -25,6 +25,13 @@
         [_shopNameBtn setImage:UIImageMake(@"small_more") forState:(UIControlStateNormal)];
         _shopNameBtn.imagePosition = QMUIButtonImagePositionRight;
         _shopNameBtn.imageEdgeInsets = UIEdgeInsetsMake(0, WidthOfScale(10.5), 0, 0);
+        @weakify(self);
+        [[_shopNameBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self);
+            if (self.shopClick) {
+                self.shopClick();
+            }
+        }];
     }
     return _shopNameBtn;
 }

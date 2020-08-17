@@ -119,7 +119,10 @@
     [[EFOrderVM myOrderDetailExpressNum:self.model.expressNum orderNum:self.model.orderNum] subscribeNext:^(EFOrderModel *x) {
         @strongify(self);
         self.priceArr = [@[@[@"商品价格",[NSString stringWithFormat:@"¥ %.1f",x.goodsAmount]],@[@"运费",[NSString stringWithFormat:@"¥ %.f",x.postageAmount]],@[@"商品总价",[NSString stringWithFormat:@"¥ %.1f",x.goodsTotalAmount]],@[@"实付款",[NSString stringWithFormat:@"¥ %.1f",x.totalAmount]]] mutableCopy];
-        self.orderArr = [@[@[@"订单编号：",x.orderNum ? x.orderNum : @""],@[@"交易方式：",x.payMethod ? (x.payMethod == 1 ? @"微信支付" : @"支付宝支付") : @""],@[@"创建时间：",x.createTime ? x.createTime : @""],@[@"付款时间：",x.payTime ? x.payTime : @""],@[@"发货时间：",x.deliverTime ? x.deliverTime : @""]] mutableCopy];
+        self.orderArr = [@[@[@"订单编号：",x.orderNum ? x.orderNum : @""],@[@"交易方式：",x.payMethod ? (x.payMethod == 1 ? @"微信支付" : @"支付宝支付") : @""],@[@"创建时间：",x.createTime ? x.createTime : @""],@[@"付款时间：",x.payTime ? x.payTime : @""]] mutableCopy];
+        if (x.deliverTime && ![x.deliverTime isEqualToString:@""]) {
+            [self.orderArr addObjectsFromArray:@[@"发货时间：",x.deliverTime ? x.deliverTime : @""]];
+        }
         self.goodsArr = [x.goodsList mutableCopy];
         self.model = x;
 //        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -205,6 +208,9 @@
                 {
                     EFOrderShopTableViewCell *shopCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFOrderShopTableViewCell class])];
                     [shopCell setModel:self.model];
+                    shopCell.shopClick = ^{
+                        [kH5Manager gotoUrl:@"shop" hasNav:NO navTitle:@"" query:@{@"sssNo":self.model.shopNo}];
+                    };
                     return shopCell;
                 }
                 default:
@@ -276,6 +282,11 @@
             [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
                 
             }];
+        }
+    }else if (indexPath.section == 1){
+        if (indexPath.row != 0) {
+            EFOrderGoodsModel *model = self.model.goodsList[indexPath.row - 1];
+            [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO),@"ggNo":model.goodsNo}];
         }
     }
 }

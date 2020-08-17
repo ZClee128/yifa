@@ -99,6 +99,7 @@
     [self.efbridge evalWritingOver];
     [self.efbridge returnApplyOver];
     [self.efbridge login];
+    [self.efbridge recomListClick];
 }
 
 

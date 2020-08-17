@@ -195,8 +195,9 @@
         {
             EFFollowTuanTableViewCell *tuanCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFFollowTuanTableViewCell class])];
             [tuanCell setModel:model];
+//            店铺头像
             tuanCell.headerSelect = ^{
-                [kH5Manager gotoUrl:@"shop" hasNav:NO navTitle:@"" query:@{}];
+                [kH5Manager gotoUrl:@"shop" hasNav:NO navTitle:@"" query:@{@"sssNo":model.shopNo}];
             };
             tuanCell.pintuanBlock = ^{
                 [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(YES),@"ggNo":model.team.ggNo}];

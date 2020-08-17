@@ -56,7 +56,6 @@
     self.EFTableView.tableFooterView = foot;
     [self addRefshUp];
     [self addRefshDown];
-    [self.EFTableView tab_startAnimation];
     [self loadList];
     [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kComfroOrder object:nil] subscribeNext:^(NSNotification * _Nullable x) {
         if (self.type == OrderTypeSay) {
@@ -77,6 +76,7 @@
 
 - (void)loadList {
     @weakify(self);
+    [self.EFTableView tab_startAnimation];
     [[self.viewModel refreshForDown] subscribeNext:^(RACTuple *x) {
         @strongify(self);
         [self.EFTableView tab_endAnimation];

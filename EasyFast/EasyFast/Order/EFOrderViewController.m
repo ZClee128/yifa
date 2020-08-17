@@ -74,9 +74,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.gk_navigationBar addSubview:self.searchField];
+//    [self.gk_navigationBar addSubview:self.searchField];
     [self.gk_navigationBar addSubview:self.searchBtn];
-    self.searchField.centerY = self.gk_navigationBar.centerY;
+    self.searchBtn.top = STATUS_BAR_HEIGHT;
     self.jxTitleView = [[JXCategoryTitleView alloc] initWithFrame:CGRectMake(0, NAVIGATION_BAR_HEIGHT, kPHONE_WIDTH, 45)];
     self.jxTitleView.delegate = self;
     [self.view addSubview:self.jxTitleView];

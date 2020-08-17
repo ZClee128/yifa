@@ -9,6 +9,7 @@
 #import "EFToPayDetailViewController.h"
 #import "EFPayTypeTableViewCell.h"
 #import "EFOrderVM.h"
+#import "EFPayModel.h"
 
 @interface EFToPayDetailViewController ()
 
@@ -25,7 +26,7 @@
     [super viewDidLoad];
     self.EFTableView.frame = CGRectMake(0, NAVIGATION_BAR_HEIGHT + WidthOfScale(30), kPHONE_WIDTH, kPHONE_HEIGHT - NAVIGATION_BAR_HEIGHT - WidthOfScale(60) - TAB_SAFE_HEIGHT - WidthOfScale(30));
     [self.EFTableView registerClass:[EFPayTypeTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFPayTypeTableViewCell class])];
-    self.PayArr = [@[@{@"icon":@"wxpay",@"title":@"微信支付"},@{@"icon":@"alipay",@"title":@"支付宝"}] mutableCopy];
+    self.PayArr = [[NSArray modelArrayWithClass:[EFPayModel class] json:@[@{@"icon":@"wxpay",@"title":@"微信支付",@"isChoose":@(YES),@"payType":@1},@{@"icon":@"alipay",@"title":@"支付宝",@"isChoose":@(NO),@"payType":@2}]] mutableCopy];
     self.EFTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, 50)];
     [self setBottom];
     [self.view addSubview:self.timeLab];
@@ -149,6 +150,9 @@
                 {
                     EFOrderShopTableViewCell *shopCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFOrderShopTableViewCell class])];
                     [shopCell setModel:self.model];
+                    shopCell.shopClick = ^{
+                        [kH5Manager gotoUrl:@"shop" hasNav:NO navTitle:@"" query:@{@"sssNo":self.model.shopNo}];
+                    };
                     return shopCell;
                 }
                 default:
@@ -195,7 +199,30 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    switch (indexPath.section) {
+            case 1:
+        {
+            if (indexPath.row != 0) {
+                EFOrderGoodsModel *model = self.model.goodsList[indexPath.row - 1];
+                [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO),@"ggNo":model.goodsNo}];
+            }
+        }
+            break;
+        case 3:
+        {
+            for (int i = 0; i < self.PayArr.count; i++) {
+                if (i == indexPath.row) {
+                    ((EFPayModel *)self.PayArr[i]).isChoose = YES;
+                }else {
+                    ((EFPayModel *)self.PayArr[i]).isChoose = NO;
+                }
+            }
+            [self.EFTableView reloadData];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

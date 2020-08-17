@@ -57,7 +57,7 @@
 #define kmyMessageList @"api-client/user/message/myMessageList" //我的消息列表接口
 #define khelpCenterList @"api-client/user/help/helpCenterList" // 帮助中心
 #define krecordGoodsLog @"api-client/user/log/recordGoodsLog" //记录商品日志接口
-
+#define kmessageRemind @"api-client/user/set/messageRemind" //消息提醒
 
 // 首页
 #define kactivity @"api-client/index/activity" // 查询活动信息

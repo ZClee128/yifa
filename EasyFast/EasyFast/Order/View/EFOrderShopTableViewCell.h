@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EFOrderShopTableViewCell : BaseTableViewCell
 
+@property(nonatomic,copy)void(^shopClick)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

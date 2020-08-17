@@ -7,7 +7,7 @@
 //
 
 #import "EFPayTypeTableViewCell.h"
-
+#import "EFPayModel.h"
 @interface EFPayTypeTableViewCell ()
 
 @property (nonatomic,strong)UIImageView *icon;
@@ -65,9 +65,10 @@
     }];
 }
 
-- (void)setModel:(id)model {
-    self.icon.image = UIImageMake(model[@"icon"]);
-    self.titleLab.text = model[@"title"];
+- (void)setModel:(EFPayModel *)model {
+    self.icon.image = UIImageMake(model.icon);
+    self.titleLab.text = model.title;
+    self.selectIcon.hidden = !model.isChoose;
 }
 
 - (void)awakeFromNib {
