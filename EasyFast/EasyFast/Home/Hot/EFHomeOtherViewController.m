@@ -45,13 +45,24 @@
     self.EFTableView.frame = CGRectMake(0, 0, kPHONE_WIDTH, kPHONE_HEIGHT-NAVIGATION_BAR_HEIGHT-30-TAB_BAR_HEIGHT);
     [self.EFTableView registerClass:[EFClassTabTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFClassTabTableViewCell class])];
     [self.EFTableView registerClass:[EFGoodsTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFGoodsTableViewCell class])];
-    [self loadList];
+    self.EFTableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[EFClassTabTableViewCell class] cellHeight:WidthOfScale(211.5)];
+    self.EFTableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[EFGoodsTableViewCell class] cellHeight:WidthOfScale(155)];
+    [self.EFTableView tab_startAnimationWithCompletion:^{
+       [self loadList];
+    }];
+    [self addRefshUp];
+    [self addRefshDown];
 }
 
 - (void)loadList {
     //@{@"title":@"查看更多",@"icon":@"6"}
+    @weakify(self);
     [[self defCode] subscribeNext:^(EFClassifyModel  *x) {
+        @strongify(self);
         [[(EFHomeVM *)self.viewModel refreshOtherForDown:x.ggcsCode] subscribeNext:^(RACTuple *x) {
+            @strongify(self);
+            [self.EFTableView.mj_header endRefreshing];
+            [self.EFTableView tab_endAnimation];
             self.EFData = [x.first mutableCopy];
             [self.EFTableView reloadData];
         }];
@@ -71,6 +82,23 @@
         }];
         return [RACDisposable disposableWithBlock:^{
             
+        }];
+    }];
+}
+
+- (void)loadNewData {
+    [self loadList];
+}
+
+- (void)loadMoreData {
+    @weakify(self);
+    [[self defCode] subscribeNext:^(EFClassifyModel  *x) {
+        @strongify(self);
+        [[(EFHomeVM *)self.viewModel refreshOtherForUp:x.ggcsCode] subscribeNext:^(RACTuple *x) {
+            @strongify(self);
+            [self.EFTableView.mj_footer endRefreshing];
+            self.EFData = [x.first mutableCopy];
+            [self.EFTableView reloadData];
         }];
     }];
 }

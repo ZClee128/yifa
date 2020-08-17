@@ -19,16 +19,18 @@
 @interface EFOrderDetailViewController ()
 
 @property (nonatomic,assign)OrderType type;
+@property (nonatomic,assign)NSInteger sType;
 
 @end
 
 @implementation EFOrderDetailViewController
 
-- (instancetype)initWithType:(OrderType)type
+- (instancetype)initWithType:(OrderType)type severType:(NSInteger)sType
 {
     self = [super init];
     if (self) {
         self.type = type;
+        self.sType = sType;
     }
     return self;
 }
@@ -37,7 +39,7 @@
 - (void)viewDidLoad {
     self.viewModel = [[EFOrderVM alloc] init];
     [super viewDidLoad];
-    ((EFOrderVM *)self.viewModel).type = self.type;
+    ((EFOrderVM *)self.viewModel).type = self.sType;
     self.gk_navigationBar.hidden = YES;
     self.EFTableView.frame = CGRectMake(0, 0, kPHONE_WIDTH, kPHONE_HEIGHT-NAVIGATION_BAR_HEIGHT- 45);
     self.gk_navLineHidden = YES;
@@ -46,42 +48,43 @@
     [self.EFTableView registerClass:[EFOrderGoodsTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFOrderGoodsTableViewCell class])];
     [self.EFTableView registerClass:[EFOrderPriceTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFOrderPriceTableViewCell class])];
     [self.EFTableView registerClass:[EFOrderBtnTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFOrderBtnTableViewCell class])];
+    self.EFTableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[EFOrderTitleTableViewCell class] cellHeight:WidthOfScale(61)];
+    self.EFTableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[EFOrderGoodsTableViewCell class] cellHeight:WidthOfScale(130)];
+    self.EFTableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[EFOrderPriceTableViewCell class] cellHeight:WidthOfScale(45.5)];
+    self.EFTableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[EFOrderBtnTableViewCell class] cellHeight:WidthOfScale(70)];
     UIView *foot = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, 70)];
     self.EFTableView.tableFooterView = foot;
     [self addRefshUp];
     [self addRefshDown];
+    [self.EFTableView tab_startAnimation];
     [self loadList];
-    @weakify(self);
-    switch (self.type) {
-        case OrderTypeSay:
-        {
-            [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kevalWritingOver object:nil] subscribeNext:^(NSNotification * _Nullable x) {
-                @strongify(self);
-                [self loadList];
-            }];
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kComfroOrder object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        if (self.type == OrderTypeSay) {
+            [self loadList];
         }
-            break;
-            case OrderTypeGet:
-        {
-            [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kreturnApplyOver object:nil] subscribeNext:^(NSNotification * _Nullable x) {
-                @strongify(self);
-                [self loadList];
-            }];
-            break;
+    }];
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kevalWritingOver object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        if (self.type == OrderTypeSay) {
+            [self loadList];
         }
-        default:
-            break;
-    }
-    
+    }];
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kreturnApplyOver object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        if (self.type == OrderTypeGet) {
+            [self loadList];
+        }
+    }];
 }
 
 - (void)loadList {
     @weakify(self);
     [[self.viewModel refreshForDown] subscribeNext:^(RACTuple *x) {
         @strongify(self);
+        [self.EFTableView tab_endAnimation];
         [self.EFTableView.mj_header endRefreshing];
         self.EFData = x.first;
-        [self.EFTableView reloadData];
+        [[RACScheduler mainThreadScheduler] schedule:^{
+           [self.EFTableView reloadData];
+        }];
     }];
 }
 
@@ -159,6 +162,7 @@
                     [[XQCAlertTool showAlertTitle:@"" message:@"是否确认收货" cancle:@"取消" sure:@"确认"] subscribeNext:^(id  _Nullable x) {
                         [[EFOrderVM confirmReceiptExpressNum:model.expressNum orderNum:model.orderNum] subscribeNext:^(NSNumber *x) {
                             if ([x boolValue]) {
+                                [[NSNotificationCenter defaultCenter] postNotificationName:kComfroOrder object:nil];
                                 [self loadList];
                             }
                         }];
@@ -211,17 +215,17 @@
                 }
                 case 600:
                 {
-                    [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{}];
+                    [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO),@"ggNo":model.goodsList[0].goodsNo}];
                     break;
                 }
                 case 800:
                 {
-                    [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{}];
+                    [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO),@"ggNo":model.goodsList[0].goodsNo}];
                     break;
                 }
                     case 500:
                 {
-                    // 联系客服
+                    [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO),@"ggNo":model.goodsList[0].goodsNo}];
                     break;
                 }
                 default:
@@ -277,7 +281,7 @@
                 break;
             default:
             {
-                EFOrderMoreDetailViewController *vc = [[EFOrderMoreDetailViewController alloc] init];
+                EFOrderMoreDetailViewController *vc = [[EFOrderMoreDetailViewController alloc] initWithType:self.type];
                 vc.model = model;
                 [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
                     

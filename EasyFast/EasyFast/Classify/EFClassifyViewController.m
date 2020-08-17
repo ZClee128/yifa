@@ -32,8 +32,10 @@
     self.gk_navTitle = @"分类";
     [self initView];
     @weakify(self);
+    [self.tableView tab_startAnimation];
     [[EFClassifyVM category] subscribeNext:^(NSArray *x) {
         @strongify(self);
+        [self.tableView tab_endAnimation];
         self.leftDataArray = [x mutableCopy];
         [self.tableView reloadData];
         if (self.leftDataArray.count > 0) {
@@ -64,6 +66,7 @@
         _tableView.dataSource = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_tableView registerClass:[LeftTableViewCell class] forCellReuseIdentifier:NSStringFromClass([LeftTableViewCell class])];
+        _tableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[LeftTableViewCell class] cellHeight:WidthOfScale(50)];
     }
     return _tableView;
 }

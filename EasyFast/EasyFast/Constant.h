@@ -146,6 +146,7 @@ fprintf(stderr,"[--%s--]\n[--%s:%d--]\n[--%s--]\n===========================\n",
 #define kLoginNoti @"kLoginNoti"  //退出登录通知
 #define kevalWritingOver @"kevalWritingOver" //订单评价通知
 #define kreturnApplyOver @"kreturnApplyOver" // 订单售后通知
+#define kComfroOrder @"kComfroOrder" // 确认收货通知
 #define kwxLogin @"wxLogin" // 微信登录
 #define kwxBing @"kwxBing" // 微信绑定成功
 

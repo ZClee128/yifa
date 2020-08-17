@@ -293,6 +293,9 @@
 		0CBE6A5D24E914AF003C300F /* TimeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A5C24E914AF003C300F /* TimeLabel.m */; };
 		0CBE6A5E24E914AF003C300F /* TimeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A5C24E914AF003C300F /* TimeLabel.m */; };
 		0CBE6A5F24E914AF003C300F /* TimeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A5C24E914AF003C300F /* TimeLabel.m */; };
+		0CBE6A6324EA3741003C300F /* PayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A6224EA3741003C300F /* PayManager.m */; };
+		0CBE6A6424EA3742003C300F /* PayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A6224EA3741003C300F /* PayManager.m */; };
+		0CBE6A6524EA3742003C300F /* PayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A6224EA3741003C300F /* PayManager.m */; };
 		0CCEC45324CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45424CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45524CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
@@ -901,6 +904,8 @@
 		0CBE6A5624E68E71003C300F /* EFWxLoginManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFWxLoginManager.m; sourceTree = "<group>"; };
 		0CBE6A5B24E914AF003C300F /* TimeLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeLabel.h; sourceTree = "<group>"; };
 		0CBE6A5C24E914AF003C300F /* TimeLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeLabel.m; sourceTree = "<group>"; };
+		0CBE6A6124EA3741003C300F /* PayManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayManager.h; sourceTree = "<group>"; };
+		0CBE6A6224EA3741003C300F /* PayManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayManager.m; sourceTree = "<group>"; };
 		0CCEC45124CA7A6000976D24 /* EFWuliuTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFWuliuTableViewCell.h; sourceTree = "<group>"; };
 		0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFWuliuTableViewCell.m; sourceTree = "<group>"; };
 		0CCEC45624CA7D8900976D24 /* EFOrderMoreDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderMoreDetailViewController.h; sourceTree = "<group>"; };
@@ -1570,6 +1575,15 @@
 				0CBE6A5C24E914AF003C300F /* TimeLabel.m */,
 			);
 			path = Label;
+			sourceTree = "<group>";
+		};
+		0CBE6A6024EA3718003C300F /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				0CBE6A6124EA3741003C300F /* PayManager.h */,
+				0CBE6A6224EA3741003C300F /* PayManager.m */,
+			);
+			path = Pay;
 			sourceTree = "<group>";
 		};
 		0CCEC47924CABB9700976D24 /* IM */ = {
@@ -2263,6 +2277,7 @@
 		84A8219724BF010800EAC652 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0CBE6A6024EA3718003C300F /* Pay */,
 				0CBE6A5A24E91483003C300F /* Label */,
 				0CBE6A0824E3E4E2003C300F /* CQBadgeButton */,
 				0C0CC27224DC3202005E50ED /* CountDown */,
@@ -2720,6 +2735,7 @@
 				0C8A29D624DAAF5E00E40ED8 /* NSString+base64.m in Sources */,
 				8476117F24C6F3A9002B34E4 /* UIView+XQCAlertPop.m in Sources */,
 				0C6CB5A724CEC61100471A8D /* EFOneBtnLoginTableViewCell.m in Sources */,
+				0CBE6A6324EA3741003C300F /* PayManager.m in Sources */,
 				841B94FD24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.m in Sources */,
 				84A820F224B6F66400EAC652 /* EFMeViewController.m in Sources */,
 				0CE2860E24D3EC4F00AAC334 /* LTSCalendarViewController.m in Sources */,
@@ -2955,6 +2971,7 @@
 				0C8A29D724DAAF5F00E40ED8 /* NSString+base64.m in Sources */,
 				8476118024C6F3A9002B34E4 /* UIView+XQCAlertPop.m in Sources */,
 				0C6CB5A824CEC61100471A8D /* EFOneBtnLoginTableViewCell.m in Sources */,
+				0CBE6A6424EA3742003C300F /* PayManager.m in Sources */,
 				841B94FE24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.m in Sources */,
 				84A8210124BC4F5400EAC652 /* EFBaseTableViewController.m in Sources */,
 				0CE2860F24D3EC4F00AAC334 /* LTSCalendarViewController.m in Sources */,
@@ -3190,6 +3207,7 @@
 				0C8A29D824DAAF5F00E40ED8 /* NSString+base64.m in Sources */,
 				8476118124C6F3A9002B34E4 /* UIView+XQCAlertPop.m in Sources */,
 				0C6CB5A924CEC61100471A8D /* EFOneBtnLoginTableViewCell.m in Sources */,
+				0CBE6A6524EA3742003C300F /* PayManager.m in Sources */,
 				841B94FF24C9816B0054D8D5 /* LogisticsHeaderTableViewCell.m in Sources */,
 				84A8212424BC513500EAC652 /* EFMeViewController.m in Sources */,
 				0CE2861024D3EC4F00AAC334 /* LTSCalendarViewController.m in Sources */,

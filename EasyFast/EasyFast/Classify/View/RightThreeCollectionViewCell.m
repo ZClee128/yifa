@@ -49,6 +49,9 @@
     if (self)
     {
         [self.contentView addSubview:self.collectionView];
+//        [self.collectionView tab_startAnimationWithCompletion:^{
+//            [self.collectionView tab_endAnimation];
+//        }];
     }
     return self;
 }
@@ -90,12 +93,13 @@
 
         
         [_collectionView registerClass:[ThreeCollectionViewCellItem class] forCellWithReuseIdentifier:NSStringFromClass([ThreeCollectionViewCellItem class])];
+//        _collectionView.tabAnimated = [TABCollectionAnimated animatedWithCellClass:[ThreeCollectionViewCellItem class] cellSize:CGSizeMake(_collectionView.width/3, _collectionView.width/3)];
     }
     return _collectionView;
 }
 
 -(CGFloat) getCollectionHeight:(NSMutableArray *)dataArray
-{
+{    
     self.dataArray = dataArray;
     NSInteger a = self.dataArray.count % self.columns;
     if (a == 0)

@@ -87,17 +87,18 @@
         
         XYLog(@"%@",responseObject);
         NSDictionary *resp = (NSDictionary*)responseObject;
-        EFWXModel *model = [EFWXModel modelWithJSON:resp];
-        if (self.type == 1) {
-            [[LoginVM thirdLoginType:1 city:model.city ? model.city : @"" province:model.province ? model.province : @"" headImgUrl:model.headimgurl nickname:model.nickname openid:model.openid sex:model.sex uid:model.openid unionid:model.unionid ? model.unionid : @""] subscribeNext:^(id  _Nullable x) {
-                
-            }];
-        }else {
-            [[LoginVM bindingWechatType:1 city:model.city ? model.city : @"" province:model.province ? model.province : @"" headImgUrl:model.headimgurl nickname:model.nickname openid:model.openid sex:model.sex uid:model.openid unionid:model.unionid ? model.unionid : @""] subscribeNext:^(id  _Nullable x) {
-                
-            }];
+        if (resp[@"errcode"] == nil) {
+            EFWXModel *model = [EFWXModel modelWithJSON:resp];
+            if (self.type == 1) {
+                [[LoginVM thirdLoginType:1 city:model.city ? model.city : @"" province:model.province ? model.province : @"" headImgUrl:model.headimgurl nickname:model.nickname openid:model.openid sex:model.sex uid:model.openid unionid:model.unionid ? model.unionid : @""] subscribeNext:^(id  _Nullable x) {
+                    
+                }];
+            }else {
+                [[LoginVM bindingWechatType:1 city:model.city ? model.city : @"" province:model.province ? model.province : @"" headImgUrl:model.headimgurl nickname:model.nickname openid:model.openid sex:model.sex uid:model.openid unionid:model.unionid ? model.unionid : @""] subscribeNext:^(id  _Nullable x) {
+                    
+                }];
+            }
         }
-        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];

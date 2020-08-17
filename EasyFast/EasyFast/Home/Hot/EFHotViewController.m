@@ -87,6 +87,7 @@
         _cycleScrollView = [[SDCycleScrollView alloc] init];
         _cycleScrollView.currentPageDotImage = [UIImage imageWithColor:UIColor.whiteColor size:CGSizeMake(20, 4) cornerRadius:2];
         _cycleScrollView.pageDotImage = [UIImage imageWithColor:UIColorFromRGBA(0xf5f5f5, 0.5) size:CGSizeMake(20, 4) cornerRadius:2];
+        _cycleScrollView.placeholderImage = [UIImage imageWithColor:UIColor.whiteColor size:CGSizeMake(WidthOfScale(345), WidthOfScale(120))];
     }
     return _cycleScrollView;
 }
@@ -105,9 +106,17 @@
     [self.EFTableView registerClass:[EFNoticeTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFNoticeTableViewCell class])];
     [self.EFTableView registerClass:[EFFastTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFFastTableViewCell class])];
     [self.EFTableView registerClass:[EFGoodsTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFGoodsTableViewCell class])];
+    self.EFTableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[HotTabTableViewCell class] cellHeight:WidthOfScale(123.5)];
+    self.EFTableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[EFNoticeTableViewCell class] cellHeight:WidthOfScale(30)];
+    self.EFTableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[EFFastTableViewCell class] cellHeight:140+14.5+16+8+15+20];
+    self.EFTableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[EFGoodsTableViewCell class] cellHeight:WidthOfScale(140)+15];
     [self addRefshDown];
     [self addRefshUp];
-    [self loadList];
+    @weakify(self);
+    [self.EFTableView tab_startAnimationWithCompletion:^{
+        @strongify(self);
+       [self loadList];
+    }];
 }
 
 - (void)loadList {
@@ -132,6 +141,7 @@
     
     [[self.viewModel refreshForDown] subscribeNext:^(RACTuple *x) {
         [self.EFTableView.mj_header endRefreshing];
+        [self.EFTableView tab_endAnimation];
         self.EFData = x.first;
         [self.EFTableView reloadData];
     }];

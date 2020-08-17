@@ -10,7 +10,7 @@
 #import "EFOneLoginViewController.h"
 #import <BaiduMapAPI_Map/BMKMapView.h>
 #import "LoginVM.h"
-@interface AppDelegate ()<WXApiDelegate>
+@interface AppDelegate ()<WXApiDelegate,JPUSHRegisterDelegate>
 
 @property (nonatomic,strong)BMKMapManager *mapManager;
 @end
@@ -79,6 +79,23 @@
     [TABAnimated sharedAnimated].animationType = TABAnimationTypeBinAnimation;
     [TABAnimated sharedAnimated].animatedColor = colorfafafa;
     
+    // 极光推送
+    JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
+    if (@available(iOS 12.0, *)) {
+        entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound|JPAuthorizationOptionProvidesAppNotificationSettings;
+    } else {
+        // Fallback on earlier versions
+    }
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
+      // 可以添加自定义 categories
+      // NSSet<UNNotificationCategory *> *categories for iOS10 or later
+      // NSSet<UIUserNotificationCategory *> *categories for iOS8 and iOS9
+    }
+    [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
+    [JPUSHService setupWithOption:launchOptions appKey:@"dd10c0e76e97072558cf1d77"
+                           channel:@"App Store"
+                  apsForProduction:0
+             advertisingIdentifier:nil];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         EFCustomWebViewPool *webViewPool = [EFCustomWebViewPool sharedInstance];
@@ -92,6 +109,10 @@
         NSLog(@"登录预取号 result:%@", result);
         }];
     });
+    
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:EBBannerViewDidClickNotification object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        XYLog(@"%@",x.object);
+    }];
     return YES;
 }
 
@@ -196,6 +217,55 @@
         NSLog(@"授权失败");
     }
     
+}
+
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+
+  /// Required - 注册 DeviceToken
+  [JPUSHService registerDeviceToken:deviceToken];
+}
+
+//程序在运行时收到通知，点击通知栏进入app
+- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(NSInteger))completionHandler {
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    [JPUSHService setBadge:0];
+    NSDictionary * userInfo = notification.request.content.userInfo;
+    XYLog(@"user>>>%@",userInfo);
+    EBBannerView *banner = [EBBannerView bannerWithBlock:^(EBBannerViewMaker *make) {
+        make.style = EBBannerViewStyleiOS11;//custom system, default is current
+        //make.style = 9;
+        make.content = userInfo[@"aps"][@"alert"][@"body"];
+        make.object = userInfo;
+        make.icon = UIImageMake(@"logo");
+        make.title = userInfo[@"aps"][@"alert"][@"title"];
+        make.soundName = userInfo[@"aps"][@"sound"];
+    }];
+    [banner show];
+    
+}
+
+//程序在后台时收到通知，点击通知栏进入app
+
+- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
+    
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    [JPUSHService setBadge:0];
+    
+}
+
+//点击App图标，使App从后台恢复至前台
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    [application setApplicationIconBadgeNumber:0];
+    [application cancelAllLocalNotifications];
+}
+
+
+
+//按Home键使App进入后台
+- (void)applicationDidEnterBackground:(UIApplication *)application{
+    [application setApplicationIconBadgeNumber:0];
+    [application cancelAllLocalNotifications];
 }
 
 @end

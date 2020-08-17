@@ -26,7 +26,7 @@ typedef enum : NSUInteger {
 
 @interface EFOrderDetailViewController : EFBaseTableViewController<JXCategoryListContentViewDelegate>
 
-- (instancetype)initWithType:(OrderType)type;
+- (instancetype)initWithType:(OrderType)type severType:(NSInteger)sType;
 - (void)loadList;
 @end
 

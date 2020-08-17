@@ -57,6 +57,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)NSDate *teamSuccessDate;
 
 @property (nonatomic,strong)NSArray<TeamOrderDtoModel *> *teamOrderDtoList;
+
 @end
 
 NS_ASSUME_NONNULL_END

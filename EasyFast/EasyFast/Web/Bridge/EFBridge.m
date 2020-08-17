@@ -126,10 +126,12 @@
 - (void)Camera{
     [self.bridge registerHandler:@"Camera" handler:^(id data, WVJBResponseCallback responseCallback) {
         NSDictionary *dict = [self identifyData:data];
-        [[ZLPhotoActionSheet zlPhotos:[UIViewController getCurrentVC] maxCount:[dict[@"size"] intValue]] subscribeNext:^(RACTuple * _Nullable x) {
+        [[ZLPhotoActionSheet zlPhotos:[UIViewController getCurrentVC] maxCount:[dict[@"size"] isEqual:@"<null>"] ? 1 : [dict[@"size"] intValue]] subscribeNext:^(RACTuple * _Nullable x) {
             [[[FMARCNetwork sharedInstance] uploadImage:[dict[@"type"] intValue] image:x.first] subscribeNext:^(FMHttpResonse *x) {
                 responseCallback(x.reqResult);
             }];
+        } error:^(NSError * _Nullable error) {
+            responseCallback(@[]);
         }];
     }];
 }

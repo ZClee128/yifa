@@ -97,9 +97,13 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "${PODS_ROOT}/AlipaySDK-iOS/AlipaySDK.bundle"
   install_resource "${PODS_ROOT}/BRPickerView/BRPickerView/Base/BRPickerView.bundle"
   install_resource "${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle"
   install_resource "${PODS_ROOT}/DateTools/DateTools/DateTools/DateTools.bundle"
+  install_resource "${PODS_ROOT}/EBBannerView/EBBannerView/Classes/EBBannerView.xib"
+  install_resource "${PODS_ROOT}/EBBannerView/EBBannerView/Classes/EBBannerViewController.xib"
+  install_resource "${PODS_ROOT}/EBBannerView/EBBannerView/Classes/EBMuteDetector.mp3"
   install_resource "${PODS_ROOT}/GKNavigationBar/GKNavigationBar/GKNavigationBar.bundle"
   install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/QPDialCodePickerView/QPDialCodePickerView.bundle"
@@ -111,9 +115,13 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/ZLPhotoBrowser/ZLPhotoBrowser/PhotoBrowser/resource/ZLPhotoBrowser.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "${PODS_ROOT}/AlipaySDK-iOS/AlipaySDK.bundle"
   install_resource "${PODS_ROOT}/BRPickerView/BRPickerView/Base/BRPickerView.bundle"
   install_resource "${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle"
   install_resource "${PODS_ROOT}/DateTools/DateTools/DateTools/DateTools.bundle"
+  install_resource "${PODS_ROOT}/EBBannerView/EBBannerView/Classes/EBBannerView.xib"
+  install_resource "${PODS_ROOT}/EBBannerView/EBBannerView/Classes/EBBannerViewController.xib"
+  install_resource "${PODS_ROOT}/EBBannerView/EBBannerView/Classes/EBMuteDetector.mp3"
   install_resource "${PODS_ROOT}/GKNavigationBar/GKNavigationBar/GKNavigationBar.bundle"
   install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/QPDialCodePickerView/QPDialCodePickerView.bundle"

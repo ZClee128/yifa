@@ -108,7 +108,7 @@ static ZLPhotoActionSheet *zlPhoto = nil;
             [subscriber sendCompleted];
         };
         [ZLPhotoActionSheet zlPhotoActionSheet].cancleBlock = ^{
-            [subscriber sendCompleted];
+            [subscriber sendError:nil];
         };
         return [RACDisposable disposableWithBlock:^{
             NSLog(@"release cool signal methods “+ zlPhotos:” in %@ class", self.class);

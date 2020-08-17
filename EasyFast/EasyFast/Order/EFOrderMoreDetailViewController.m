@@ -14,6 +14,7 @@
 
 
 @property (nonatomic,strong)UIView *otherView;
+@property (nonatomic,assign)OrderType type;
 
 @end
 
@@ -86,6 +87,12 @@
     return _goodsArr;
 }
 
+- (instancetype)initWithType:(OrderType)type {
+    if (self = [super init]) {
+        self.type = type;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     self.viewModel = [[EFOrderVM alloc] init];
@@ -157,7 +164,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     switch (section) {
         case 0:
-            return 2; //头部
+            return  2; //头部
         case 1:
             return self.goodsArr.count + 1; //商品信息
         case 2:
@@ -179,6 +186,7 @@
                     EFWuliuTableViewCell *wuCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFWuliuTableViewCell class])];
                     [wuCell setModel:self.model];
                     self.wuliHeight = [wuCell getCellHeight];
+                    self.type == OrderTypeSend ? [wuCell setHidden:YES] : [wuCell setHidden:NO];
                     return wuCell;
                 }
                 default:
@@ -279,7 +287,7 @@
         {
             switch (indexPath.row) {
                 case 0:
-                    return self.wuliHeight;
+                    return self.type == OrderTypeSend ? 0 : self.wuliHeight;
                 default:
                     return self.addressHeight;
             }

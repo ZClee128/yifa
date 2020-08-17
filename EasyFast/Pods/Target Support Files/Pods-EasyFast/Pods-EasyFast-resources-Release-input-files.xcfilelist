@@ -1,7 +1,11 @@
 ${PODS_ROOT}/Target Support Files/Pods-EasyFast/Pods-EasyFast-resources.sh
+${PODS_ROOT}/AlipaySDK-iOS/AlipaySDK.bundle
 ${PODS_ROOT}/BRPickerView/BRPickerView/Base/BRPickerView.bundle
 ${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle
 ${PODS_ROOT}/DateTools/DateTools/DateTools/DateTools.bundle
+${PODS_ROOT}/EBBannerView/EBBannerView/Classes/EBBannerView.xib
+${PODS_ROOT}/EBBannerView/EBBannerView/Classes/EBBannerViewController.xib
+${PODS_ROOT}/EBBannerView/EBBannerView/Classes/EBMuteDetector.mp3
 ${PODS_ROOT}/GKNavigationBar/GKNavigationBar/GKNavigationBar.bundle
 ${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle
 ${PODS_CONFIGURATION_BUILD_DIR}/QPDialCodePickerView/QPDialCodePickerView.bundle

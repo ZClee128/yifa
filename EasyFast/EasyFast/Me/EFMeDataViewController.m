@@ -65,7 +65,7 @@
                      [@{@"title":@"地区",@"subTitle":kUserManager.userModel.city == nil ? @"请选择" :[NSString stringWithFormat:@"%@ %@",kUserManager.userModel.province,kUserManager.userModel.city],@"header":@""} mutableCopy],
                      @{@"title":@"绑定手机",@"subTitle":kUserManager.userModel.phone,@"header":@""},
                      [@{@"title":@"绑定微信号",@"subTitle":kUserManager.userModel.wxname == nil ? @"去绑定" : kUserManager.userModel.wxname,@"header":@""} mutableCopy],
-                     @{@"title":@"实名认证",@"subTitle":@"未认证",@"header":@""},
+                     //@{@"title":@"实名认证",@"subTitle":@"未认证",@"header":@""},
                      ] mutableCopy];
     self.EFTableView.tableFooterView = self.otherView;
     @weakify(self);
@@ -226,7 +226,9 @@
             break;
         }
         case 5:{
-            [[EFWxLoginManager defaultManager] sendAuthRequest];
+            if (!kUserManager.userModel.isWeChat) {
+                [[EFWxLoginManager defaultManager] sendAuthRequest];
+            }
             break;
         }
         default:

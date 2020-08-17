@@ -27,6 +27,10 @@
 //         [self shareTextToPlatformType:platformType];
          if (platformType == UMSocialPlatformType_Sina) {
              [self shareImageAndTextToPlatformType:platformType];
+         } else if (platformType == UMSocialPlatformType_WechatSession) {
+             [self wxShareLink:WXSceneSession];
+         } else if (platformType == UMSocialPlatformType_WechatTimeLine ){
+             [self wxShareLink:WXSceneTimeline];
          }else {
             [self shareWebPageToPlatformType:platformType];
          }
@@ -80,6 +84,23 @@
         }else{
             NSLog(@"response data is %@",data);
         }
+    }];
+}
+
+- (void)wxShareLink:(int)scene {
+    WXWebpageObject *webpageObject = [WXWebpageObject object];
+    webpageObject.webpageUrl = @"https://open.weixin.qq.com";
+    WXMediaMessage *message = [WXMediaMessage message];
+    message.title = @"标题";
+    message.description = @"描述";
+    [message setThumbImage:[UIImage imageNamed:@"logo"]];
+    message.mediaObject = webpageObject;
+    SendMessageToWXReq *req = [[SendMessageToWXReq alloc] init];
+    req.bText = NO;
+    req.message = message;
+    req.scene = scene; //WXSceneSession;
+    [WXApi sendReq:req completion:^(BOOL success) {
+        
     }];
 }
 @end

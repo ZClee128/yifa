@@ -159,10 +159,10 @@
     EFFollowTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFFollowTableViewCell class])];
     EFFollowModel *model = self.EFData[indexPath.section];
     cell.selectIndex = ^(EFGoodsList *model) {
-        [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO),@"ggNO":model.ggNo}];
+        [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO),@"ggNo":model.ggNo}];
     };
     cell.headerSelect = ^{
-        [kH5Manager gotoUrl:@"shop" hasNav:NO navTitle:@"" query:@{}];
+        [kH5Manager gotoUrl:@"shop" hasNav:NO navTitle:@"" query:@{@"sssNo":model.shopNo}];
     };
     [cell setModel:model];
     cell.follow = ^(QMUIButton * _Nonnull sender) {

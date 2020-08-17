@@ -16,6 +16,7 @@
 #import "EFTimeTableViewCell.h"
 #import "TuanOtherGoodsTableViewCell.h"
 #import "EFOrderModel.h"
+#import "EFOrderDetailViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -31,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)EFOrderModel *model;
 @property (nonatomic,strong)CountDown *timer;
 
+- (instancetype)initWithType:(OrderType)type;
 - (void)day:(NSInteger)day hour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second;
 @end
 

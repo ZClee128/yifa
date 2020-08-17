@@ -138,6 +138,10 @@
         @strongify(self);
         [self loadOrder];
     }];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self loadOrder];
 }
 
