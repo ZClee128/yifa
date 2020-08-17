@@ -1,0 +1,6 @@
+module EBBannerView {
+  umbrella header "EBBannerView-umbrella.h"
+
+  export *
+  module * { export * }
+}
