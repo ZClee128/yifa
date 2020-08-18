@@ -299,6 +299,15 @@
 		0CBE6A6824EA8356003C300F /* EFPayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A6724EA8356003C300F /* EFPayModel.m */; };
 		0CBE6A6924EA8357003C300F /* EFPayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A6724EA8356003C300F /* EFPayModel.m */; };
 		0CBE6A6A24EA8357003C300F /* EFPayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A6724EA8356003C300F /* EFPayModel.m */; };
+		0CBE6A6E24EB7C19003C300F /* CustomerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A6C24EB7C16003C300F /* CustomerScrollView.m */; };
+		0CBE6A6F24EB7C19003C300F /* CustomerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A6C24EB7C16003C300F /* CustomerScrollView.m */; };
+		0CBE6A7024EB7C1A003C300F /* CustomerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A6C24EB7C16003C300F /* CustomerScrollView.m */; };
+		0CBE6A7324EB85B1003C300F /* EFNotiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A7224EB85B1003C300F /* EFNotiModel.m */; };
+		0CBE6A7424EB85B2003C300F /* EFNotiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A7224EB85B1003C300F /* EFNotiModel.m */; };
+		0CBE6A7524EB85B2003C300F /* EFNotiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBE6A7224EB85B1003C300F /* EFNotiModel.m */; };
+		0CBE6A7724EBE83A003C300F /* ef.caf in Resources */ = {isa = PBXBuildFile; fileRef = 0CBE6A7624EBE838003C300F /* ef.caf */; };
+		0CBE6A7824EBE83A003C300F /* ef.caf in Resources */ = {isa = PBXBuildFile; fileRef = 0CBE6A7624EBE838003C300F /* ef.caf */; };
+		0CBE6A7924EBE83A003C300F /* ef.caf in Resources */ = {isa = PBXBuildFile; fileRef = 0CBE6A7624EBE838003C300F /* ef.caf */; };
 		0CCEC45324CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45424CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
 		0CCEC45524CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */; };
@@ -911,6 +920,11 @@
 		0CBE6A6224EA3741003C300F /* PayManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayManager.m; sourceTree = "<group>"; };
 		0CBE6A6624EA8356003C300F /* EFPayModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFPayModel.h; sourceTree = "<group>"; };
 		0CBE6A6724EA8356003C300F /* EFPayModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFPayModel.m; sourceTree = "<group>"; };
+		0CBE6A6C24EB7C16003C300F /* CustomerScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerScrollView.m; sourceTree = "<group>"; };
+		0CBE6A6D24EB7C17003C300F /* CustomerScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerScrollView.h; sourceTree = "<group>"; };
+		0CBE6A7124EB85B1003C300F /* EFNotiModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFNotiModel.h; sourceTree = "<group>"; };
+		0CBE6A7224EB85B1003C300F /* EFNotiModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFNotiModel.m; sourceTree = "<group>"; };
+		0CBE6A7624EBE838003C300F /* ef.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ef.caf; sourceTree = "<group>"; };
 		0CCEC45124CA7A6000976D24 /* EFWuliuTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFWuliuTableViewCell.h; sourceTree = "<group>"; };
 		0CCEC45224CA7A6000976D24 /* EFWuliuTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFWuliuTableViewCell.m; sourceTree = "<group>"; };
 		0CCEC45624CA7D8900976D24 /* EFOrderMoreDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOrderMoreDetailViewController.h; sourceTree = "<group>"; };
@@ -1287,6 +1301,8 @@
 				0CBE6A0F24E3F125003C300F /* EFQueryUserTeamCountModel.m */,
 				0CBE6A1824E3FB12003C300F /* EFHelpModel.h */,
 				0CBE6A1924E3FB12003C300F /* EFHelpModel.m */,
+				0CBE6A7124EB85B1003C300F /* EFNotiModel.h */,
+				0CBE6A7224EB85B1003C300F /* EFNotiModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1979,6 +1995,7 @@
 		84A8207524B6C61800EAC652 /* EasyFast */ = {
 			isa = PBXGroup;
 			children = (
+				0CBE6A7624EBE838003C300F /* ef.caf */,
 				0C8A279424D7B31C00E40ED8 /* EasyFast.entitlements */,
 				0CCEC47924CABB9700976D24 /* IM */,
 				84B2438024C84D1C00E9967C /* Order */,
@@ -2284,6 +2301,8 @@
 		84A8219724BF010800EAC652 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0CBE6A6D24EB7C17003C300F /* CustomerScrollView.h */,
+				0CBE6A6C24EB7C16003C300F /* CustomerScrollView.m */,
 				0CBE6A6024EA3718003C300F /* Pay */,
 				0CBE6A5A24E91483003C300F /* Label */,
 				0CBE6A0824E3E4E2003C300F /* CQBadgeButton */,
@@ -2481,6 +2500,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C8A29E224DAD77000E40ED8 /* dist in Resources */,
+				0CBE6A7724EBE83A003C300F /* ef.caf in Resources */,
 				84A8208624B6C62300EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8208324B6C62300EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -2491,6 +2511,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C8A29E324DAD77000E40ED8 /* dist in Resources */,
+				0CBE6A7824EBE83A003C300F /* ef.caf in Resources */,
 				84A8211324BC4F5400EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8211424BC4F5400EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -2501,6 +2522,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C8A29E424DAD77000E40ED8 /* dist in Resources */,
+				0CBE6A7924EBE83A003C300F /* ef.caf in Resources */,
 				84A8213724BC513500EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8213824BC513500EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -2826,6 +2848,7 @@
 				0CE285E024D3AD5F00AAC334 /* ZLPhotoActionSheet+RACSignal.m in Sources */,
 				0C6CB59324CEB3C500471A8D /* EFChangeLoginViewController.m in Sources */,
 				84760FAD24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
+				0CBE6A7324EB85B1003C300F /* EFNotiModel.m in Sources */,
 				84A8214D24BD432B00EAC652 /* TabbarBackView.m in Sources */,
 				8476117624C6E2ED002B34E4 /* NotiTableViewCell.m in Sources */,
 				0CBE6A4C24E62F52003C300F /* NSDate+Format.m in Sources */,
@@ -2835,6 +2858,7 @@
 				84760F7524C1432F002B34E4 /* MeTabTableViewCell.m in Sources */,
 				0CCEC45324CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */,
 				84A8218424BED7E400EAC652 /* EFFastTableViewCell.m in Sources */,
+				0CBE6A6E24EB7C19003C300F /* CustomerScrollView.m in Sources */,
 				0C0CC3BD24DD43AB005E50ED /* EFOrderModel.m in Sources */,
 				8476102D24C52BDC002B34E4 /* H5Manager.m in Sources */,
 				84760F8024C1551B002B34E4 /* EFWKWebConfig.m in Sources */,
@@ -3063,6 +3087,7 @@
 				0CE285E124D3AD5F00AAC334 /* ZLPhotoActionSheet+RACSignal.m in Sources */,
 				0C6CB59424CEB3C500471A8D /* EFChangeLoginViewController.m in Sources */,
 				84760FAE24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
+				0CBE6A7424EB85B2003C300F /* EFNotiModel.m in Sources */,
 				84A8214324BC55CB00EAC652 /* HttpManager.m in Sources */,
 				8476117724C6E2ED002B34E4 /* NotiTableViewCell.m in Sources */,
 				0CBE6A4D24E62F52003C300F /* NSDate+Format.m in Sources */,
@@ -3072,6 +3097,7 @@
 				84760F7624C1432F002B34E4 /* MeTabTableViewCell.m in Sources */,
 				0CCEC45424CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */,
 				84A8218524BED7E400EAC652 /* EFFastTableViewCell.m in Sources */,
+				0CBE6A6F24EB7C19003C300F /* CustomerScrollView.m in Sources */,
 				0C0CC3BE24DD43AB005E50ED /* EFOrderModel.m in Sources */,
 				8476102E24C52BDC002B34E4 /* H5Manager.m in Sources */,
 				84760F8124C1551B002B34E4 /* EFWKWebConfig.m in Sources */,
@@ -3300,6 +3326,7 @@
 				0CE285E224D3AD5F00AAC334 /* ZLPhotoActionSheet+RACSignal.m in Sources */,
 				0C6CB59524CEB3C500471A8D /* EFChangeLoginViewController.m in Sources */,
 				84760FAF24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
+				0CBE6A7524EB85B2003C300F /* EFNotiModel.m in Sources */,
 				84A8214F24BD43F100EAC652 /* TabbarBackView.m in Sources */,
 				8476117824C6E2ED002B34E4 /* NotiTableViewCell.m in Sources */,
 				0CBE6A4E24E62F52003C300F /* NSDate+Format.m in Sources */,
@@ -3309,6 +3336,7 @@
 				84760F7724C1432F002B34E4 /* MeTabTableViewCell.m in Sources */,
 				0CCEC45524CA7A6000976D24 /* EFWuliuTableViewCell.m in Sources */,
 				84A8218624BED7E400EAC652 /* EFFastTableViewCell.m in Sources */,
+				0CBE6A7024EB7C1A003C300F /* CustomerScrollView.m in Sources */,
 				0C0CC3BF24DD43AB005E50ED /* EFOrderModel.m in Sources */,
 				8476102F24C52BDC002B34E4 /* H5Manager.m in Sources */,
 				84760F8224C1551B002B34E4 /* EFWKWebConfig.m in Sources */,

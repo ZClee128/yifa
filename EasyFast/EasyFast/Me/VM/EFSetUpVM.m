@@ -28,5 +28,20 @@
     return self;
 }
 
++ (RACSignal *)queyMessageRemind {
+    return [self requsetNetwork:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] queyMessageRemind];
+    } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
+        EFNotiModel *model = [EFNotiModel modelWithJSON:result.reqResult];
+        return model;
+    }];
+}
 
++ (RACSignal *)messageRemindType:(NSInteger )type endTime:(NSString *)endTime startTime:(NSString *)startTime isMessageRemind:(BOOL)isMessageRemind isVibrationRemind:(BOOL)isVibrationRemind isVoiceRemind:(BOOL)isVoiceRemind {
+    return [self requsetNetwork:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] messageRemindType:type endTime:endTime startTime:startTime isMessageRemind:isMessageRemind isVibrationRemind:isVibrationRemind isVoiceRemind:isVoiceRemind];
+    } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
+        return @(result.isSuccess);
+    }];
+}
 @end

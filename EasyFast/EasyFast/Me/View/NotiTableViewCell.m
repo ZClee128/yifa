@@ -7,7 +7,6 @@
 //
 
 #import "NotiTableViewCell.h"
-
 @interface NotiTableViewCell ()
 
 @property (nonatomic,strong)QMUILabel *titleLab;
@@ -41,10 +40,8 @@
 {
     UISwitch *switchButton = (UISwitch*)sender;
     BOOL isButtonOn = [switchButton isOn];
-    if (isButtonOn) {
-        NSLog(@"开");
-    }else {
-        NSLog(@"关");
+    if (self.switchBlock) {
+        self.switchBlock(isButtonOn);
     }
 }
 
@@ -65,6 +62,7 @@
 - (void)setModel:(id)model {
     if ([model isKindOfClass:[NSArray class]]) {
         self.titleLab.text = model[0];
+        self.switchView.on = [model[1] boolValue];
     }
 }
 

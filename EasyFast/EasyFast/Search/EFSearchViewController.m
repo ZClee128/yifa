@@ -111,8 +111,10 @@
 
 - (void)tapTag:(UILabel *)aTag index:(NSInteger)index {
     NSString *searchTitle = self.tagView.tagTitleArray[index];
-    self.searchField.text = searchTitle;
-    [self.view addSubview:self.tableView];
+//    self.searchField.text = searchTitle;
+//    [self.view addSubview:self.tableView];
+    EFSearchResultViewController *resultVC = [[EFSearchResultViewController alloc] initWithSearchTitle:searchTitle];
+    [self.navigationController pushViewController:resultVC animated:NO];
 }
 
 - (void)recordSearch:(NSString *)text {
@@ -124,23 +126,25 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    if (textField.text.length != 0) {
-        [self recordSearch:textField.text];
-        [self.view addSubview:self.tableView];
-    }else {
-        [self.tableView removeFromSuperview];
-    }
+//    if (textField.text.length != 0) {
+//        [self recordSearch:textField.text];
+//        [self.view addSubview:self.tableView];
+//    }else {
+//        [self.tableView removeFromSuperview];
+//    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
+//    if (textField.text.length != 0) {
+//        [self recordSearch:textField.text];
+//        [self.view addSubview:self.tableView];
+//    }else {
+//        [self.tableView removeFromSuperview];
+//    }
     if (textField.text.length != 0) {
-        [self recordSearch:textField.text];
-        [self.view addSubview:self.tableView];
-    }else {
-        [self.tableView removeFromSuperview];
+        EFSearchResultViewController *resultVC = [[EFSearchResultViewController alloc] initWithSearchTitle:textField.text];
+        [self.navigationController pushViewController:resultVC animated:NO];
     }
-    EFSearchResultViewController *resultVC = [[EFSearchResultViewController alloc] initWithSearchTitle:textField.text];
-    [self.navigationController pushViewController:resultVC animated:NO];
     return YES;
 }
 

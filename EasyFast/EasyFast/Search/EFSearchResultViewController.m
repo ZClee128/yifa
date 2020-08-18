@@ -93,7 +93,7 @@
     self.interitemSpacing = WidthOfScale(10);
     self.itemSize = CGSizeMake(WidthOfScale(167), WidthOfScale(280));
     self.registerClasses = @[@{@"SearchTwoCollectionViewCell":@"SearchTwoCollectionViewCell"},@{@"SeachOneCollectionViewCell":@"SeachOneCollectionViewCell"}];
-    self.collectionEdgeInsets = UIEdgeInsetsMake(0, WidthOfScale(15), WidthOfScale(15), WidthOfScale(15));
+    self.collectionEdgeInsets = UIEdgeInsetsMake(WidthOfScale(15), WidthOfScale(15), WidthOfScale(15), WidthOfScale(15));
     ((EFSearchVM *)self.viewModel).title = self.searchField.text;
     ((EFSearchVM *)self.viewModel).sortType = 0;
     [super viewDidLoad];
@@ -168,7 +168,7 @@
             [self defaultCollectionFlowLayout].minimumInteritemSpacing = WidthOfScale(0);
             [self defaultCollectionFlowLayout].itemSize = CGSizeMake(kPHONE_WIDTH, WidthOfScale(155));
         }else {
-            self.collectionEdgeInsets = UIEdgeInsetsMake(0, WidthOfScale(15), WidthOfScale(15), WidthOfScale(15));
+            self.collectionEdgeInsets = UIEdgeInsetsMake(WidthOfScale(15), WidthOfScale(15), WidthOfScale(15), WidthOfScale(15));
             [self defaultCollectionFlowLayout].minimumLineSpacing  = WidthOfScale(11);
             [self defaultCollectionFlowLayout].minimumInteritemSpacing = WidthOfScale(10);
             [self defaultCollectionFlowLayout].itemSize = CGSizeMake(WidthOfScale(167), WidthOfScale(280));

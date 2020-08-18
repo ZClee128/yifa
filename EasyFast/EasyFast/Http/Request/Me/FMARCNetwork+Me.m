@@ -78,4 +78,12 @@
 - (RACSignal *)recordGoodsLogType:(NSInteger )type category:(NSString *)category goodsNo:(NSString *)goodsNo searchText:(NSString *)searchText {
     return [self fg_postRequest:krecordGoodsLog paramters:@{@"type":@(type),@"category":category,@"goodsNo":goodsNo,@"searchText":searchText}];
 }
+
+- (RACSignal *)queyMessageRemind {
+    return [self fg_getRequest:kqueyMessageRemind paramters:@{}];
+}
+
+- (RACSignal *)messageRemindType:(NSInteger )type endTime:(NSString *)endTime startTime:(NSString *)startTime isMessageRemind:(BOOL)isMessageRemind isVibrationRemind:(BOOL)isVibrationRemind isVoiceRemind:(BOOL)isVoiceRemind {
+    return [self fg_postRequest:kmessageRemind paramters:@{@"type":@(type),@"endTime":endTime,@"startTime":startTime,@"isMessageRemind":@(isMessageRemind),@"isVibrationRemind":@(isVibrationRemind),@"isVoiceRemind":@(isVoiceRemind)}];
+}
 @end

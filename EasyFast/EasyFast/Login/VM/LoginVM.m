@@ -64,6 +64,7 @@
             [[UserManager defaultManager] saveUserModel:model];
             [model bg_saveOrUpdate];
             XYLog(@"model = >%@",model);
+            [self setAlias:model.username];
             [[NSNotificationCenter defaultCenter] postNotificationName:kLoginNoti object:nil];
         }
         return @(result.isSuccess);
@@ -93,6 +94,9 @@
                 model.isLogin = NO;
                 model.token = @"";
                 [model bg_saveOrUpdate];
+                [JPUSHService deleteAlias:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
+                    
+                } seq:1];
             }
         }
         [[NSNotificationCenter defaultCenter] postNotificationName:kLoginNoti object:nil];
@@ -148,6 +152,7 @@
                 [[UserManager defaultManager] saveUserModel:model];
                 [model bg_saveOrUpdate];
                 XYLog(@"model = >%@",model);
+                [self setAlias:model.username];
                 [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:^{
                     
                 }];
@@ -175,6 +180,7 @@
             [[UserManager defaultManager] saveUserModel:model];
             [model bg_saveOrUpdate];
             XYLog(@"model = >%@",model);
+            [self setAlias:model.username];
             [[NSNotificationCenter defaultCenter] postNotificationName:kLoginNoti object:nil];
         }
         return @(result.isSuccess);
@@ -205,5 +211,11 @@
     } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
         return @(result.isSuccess);
     }];
+}
+
++ (void)setAlias:(NSString *)alias {
+    [JPUSHService setAlias:alias completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
+        
+    } seq:1];
 }
 @end

@@ -235,10 +235,10 @@
     EBBannerView *banner = [EBBannerView bannerWithBlock:^(EBBannerViewMaker *make) {
         make.style = EBBannerViewStyleiOS11;//custom system, default is current
         //make.style = 9;
-        make.content = userInfo[@"aps"][@"alert"][@"body"];
+        make.content = userInfo[@"aps"][@"alert"];
         make.object = userInfo;
         make.icon = UIImageMake(@"logo");
-        make.title = userInfo[@"aps"][@"alert"][@"title"];
+        make.title = userInfo[@"msg"];
         make.soundName = userInfo[@"aps"][@"sound"];
     }];
     [banner show];

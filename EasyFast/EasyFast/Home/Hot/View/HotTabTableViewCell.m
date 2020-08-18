@@ -10,9 +10,10 @@
 #import "HotTabCollectionViewCell.h"
 #import "SLScrollViewHorizontalItem.h"
 #import "EFActivityModel.h"
+#import "CustomerScrollView.h"
 @interface HotTabTableViewCell ()<SLScrollViewHorizontalItemDelegate>
 
-@property (strong, nonatomic) SLScrollViewHorizontalItem *scrollViewHorizontalItem;
+@property (strong, nonatomic) CustomerScrollView *scrollViewHorizontalItem;
 @property (nonatomic,strong)NSMutableArray *data;
 @end
 
@@ -49,10 +50,11 @@
 - (void)setCollectData:(NSMutableArray *)data {
     self.data = data;
     if (self.scrollViewHorizontalItem == nil) {
-        self.scrollViewHorizontalItem = [[SLScrollViewHorizontalItem alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, self.data.count > 4 ? (self.scrollViewHorizontalItem.height = WidthOfScale(208)) : (self.scrollViewHorizontalItem.height = WidthOfScale(123.5))) delegate:self];
+//        self.scrollViewHorizontalItem = [[SLScrollViewHorizontalItem alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, self.data.count > 4 ? (self.scrollViewHorizontalItem.height = WidthOfScale(208)) : (self.scrollViewHorizontalItem.height = WidthOfScale(123.5))) delegate:self];
+        self.scrollViewHorizontalItem = [[CustomerScrollView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, self.data.count > 4 ? (self.scrollViewHorizontalItem.height = WidthOfScale(208)) : (self.scrollViewHorizontalItem.height = WidthOfScale(123.5))) withData:data];
         [self.contentView addSubview:self.scrollViewHorizontalItem];
     }
-    [self.scrollViewHorizontalItem updateView];
+//    [self.scrollViewHorizontalItem updateView];
 }
 
 - (void)awakeFromNib {

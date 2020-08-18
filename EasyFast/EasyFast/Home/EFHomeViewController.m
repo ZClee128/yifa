@@ -58,13 +58,25 @@
 }
 
 - (void)loadTopTitle {
-    [[EFClassifyVM categoryByPno:@"0"] subscribeNext:^(NSArray *x) {
-        self.titles = [x mutableCopy];
+    [[EFClassifyVM categoryByPno:@"-1"] subscribeNext:^(NSArray *x) {
         NSMutableArray *Temtitles = [[NSMutableArray alloc] init];
-        [Temtitles addObject:@"热门"];
-        for (EFClassifyModel *model in x) {
-            [Temtitles addObject:model.title];
+        if (x.count != 0) {
+            self.titles = [x mutableCopy];
+            [Temtitles addObject:@"热门"];
+            for (EFClassifyModel *model in x) {
+                [Temtitles addObject:model.title];
+            }
+            [NSArray bg_clearArrayWithName:kHomeCategory];
+            [self.titles bg_saveArrayWithName:kHomeCategory];
+        }else {
+            NSArray* testResult = [NSArray bg_arrayWithName:kHomeCategory];
+            self.titles = [testResult mutableCopy];
+            [Temtitles addObject:@"热门"];
+            for (EFClassifyModel *model in self.titles) {
+                [Temtitles addObject:model.title];
+            }
         }
+        
         self.jxTitleView.titles = Temtitles;
         [self.jxTitleView reloadData];
     }];

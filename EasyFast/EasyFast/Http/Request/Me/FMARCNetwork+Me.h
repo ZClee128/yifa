@@ -59,6 +59,19 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param goodsNo 商品编号
 /// @param searchText 商品搜索文本
 - (RACSignal *)recordGoodsLogType:(NSInteger )type category:(NSString *)category goodsNo:(NSString *)goodsNo searchText:(NSString *)searchText;
+
+- (RACSignal *)queyMessageRemind;
+
+
+
+/// 设置消息提醒接口
+/// @param type 修改类型为 1：消息通知时间、2：新消息提醒、3：声音提醒、4：震动提醒
+/// @param endTime 通知结束时间
+/// @param startTime 通知开始时间
+/// @param isMessageRemind 是否消息提醒
+/// @param isVibrationRemind 是否震动提醒
+/// @param isVoiceRemind 是否声音提醒
+- (RACSignal *)messageRemindType:(NSInteger )type endTime:(NSString *)endTime startTime:(NSString *)startTime isMessageRemind:(BOOL)isMessageRemind isVibrationRemind:(BOOL)isVibrationRemind isVoiceRemind:(BOOL)isVoiceRemind;
 @end
 
 NS_ASSUME_NONNULL_END
