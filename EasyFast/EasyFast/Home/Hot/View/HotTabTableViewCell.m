@@ -11,7 +11,7 @@
 #import "SLScrollViewHorizontalItem.h"
 #import "EFActivityModel.h"
 #import "CustomerScrollView.h"
-@interface HotTabTableViewCell ()<SLScrollViewHorizontalItemDelegate>
+@interface HotTabTableViewCell ()<SLScrollViewHorizontalItemDelegate,CustomerScrollViewDelegate>
 
 @property (strong, nonatomic) CustomerScrollView *scrollViewHorizontalItem;
 @property (nonatomic,strong)NSMutableArray *data;
@@ -52,6 +52,7 @@
     if (self.scrollViewHorizontalItem == nil) {
 //        self.scrollViewHorizontalItem = [[SLScrollViewHorizontalItem alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, self.data.count > 4 ? (self.scrollViewHorizontalItem.height = WidthOfScale(208)) : (self.scrollViewHorizontalItem.height = WidthOfScale(123.5))) delegate:self];
         self.scrollViewHorizontalItem = [[CustomerScrollView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, self.data.count > 4 ? (self.scrollViewHorizontalItem.height = WidthOfScale(208)) : (self.scrollViewHorizontalItem.height = WidthOfScale(123.5))) withData:data];
+        self.scrollViewHorizontalItem.delegate = self;
         [self.contentView addSubview:self.scrollViewHorizontalItem];
     }
 //    [self.scrollViewHorizontalItem updateView];
@@ -116,9 +117,14 @@
     
 }
 
-- (void)item:(UIView *)item didSelectItemAtIndex:(NSInteger)index {
-    NSLog(@"%ld", index);
+- (void)selectBtnIndex:(NSInteger)index {
+    EFActivityModel *model = self.data[index];
+    XYLog(@"%@",model);
 }
+
+//- (void)item:(UIView *)item didSelectItemAtIndex:(NSInteger)index {
+//    NSLog(@"%ld", index);
+//}
 
 //#pragma mark - collection
 //- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {

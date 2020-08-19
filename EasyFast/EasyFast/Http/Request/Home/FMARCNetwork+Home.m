@@ -11,7 +11,7 @@
 @implementation FMARCNetwork (Home)
 
 - (RACSignal *)activity {
-    return [self fg_getRequest:kactivity paramters:@{}];
+    return [self fg_getRequest:kactivity paramters:@{@"size":@50}];
 }
 
 - (RACSignal *)banner {

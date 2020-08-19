@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol CustomerScrollViewDelegate <NSObject>
+
+- (void)selectBtnIndex:(NSInteger )index;
+
+@end
 
 @interface CustomerScrollView : UIView
 /// 按钮数据源
@@ -20,6 +25,8 @@
 @property (nonatomic,assign) CGFloat viewGap;
 /// 按钮的内边距 默认20
 @property (nonatomic,assign) CGFloat viewMargin;
+
+@property (nonatomic,weak) id<CustomerScrollViewDelegate> delegate;
 
 - (instancetype)initWithFrame:(CGRect)frame withData:(NSArray *)data;
 

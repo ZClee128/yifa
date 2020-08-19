@@ -51,7 +51,7 @@
 {
     if (self = [super initWithFrame:frame]) {
         // 属性初始值
-        self.viewSize = CGSizeMake(WidthOfScale(45), BtnWH);
+        self.viewSize = CGSizeMake([QMUIHelper is40InchScreen] ? 80 : 55, BtnWH);
         self.numberOfSinglePage = NumberOfSinglePage;
         self.viewGap = ViewGap;
         self.viewMargin = ViewMargin;
@@ -104,7 +104,7 @@
     CGFloat gap = WidthOfScale(self.viewGap); //按钮之间的间隙
     
     CGFloat btnW = WidthOfScale(self.viewSize.width);
-    CGFloat btnH = WidthOfScale(self.viewSize.height);
+    CGFloat btnH = self.viewSize.height;
     CGFloat margin = WidthOfScale(26.5); // 内边距
     NSInteger count = self.dataArr.count - (number * self.numberOfSinglePage);
     NSInteger indexCount;
@@ -137,15 +137,16 @@
         [btn setImage:[UIImage imageNamed:model.icon] forState:UIControlStateNormal];
         [btn setTitleColor:tabbarBlackColor forState:UIControlStateNormal];
         btn.titleLabel.font = RegularFont14;
+        btn.titleLabel.textAlignment = NSTextAlignmentCenter;
         // 设置图片frame
-        btn.x = col * (btnW + gap) + margin + number * self.width;
-        btn.y = row * (btnH + gap) + margin;
+        btn.x = col * (btnW + ([QMUIHelper is40InchScreen] ? WidthOfScale(0) : WidthOfScale(34))) + WidthOfScale(27) + number * self.width;
+        btn.y = row * (btnH + WidthOfScale(15)) + WidthOfScale(19.5);
         
         btn.width = btnW;
         btn.height = btnH;
         btn.tag = index;
         btn.imagePosition = QMUIButtonImagePositionTop;
-        btn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, WidthOfScale(11.5), 0);
+        btn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, [QMUIHelper is40InchScreen] ? 4 : WidthOfScale(11.5), 0);
         [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
         
         [_contentScrollView addSubview:btn];
@@ -156,8 +157,10 @@
 // 按钮点击事件
 
 -(void)btnClick:(UIButton *)btn{
-    
-    NSLog(@"click:%ld",btn.tag);
+    if ([self.delegate respondsToSelector:@selector(selectBtnIndex:)]) {
+        [self.delegate selectBtnIndex:btn.tag];
+    }
+    XYLog(@"click:%ld",btn.tag);
 }
 
 #pragma mark - scroll delegate 

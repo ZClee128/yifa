@@ -90,7 +90,7 @@
         if (resp[@"errcode"] == nil) {
             EFWXModel *model = [EFWXModel modelWithJSON:resp];
             if (self.type == 1) {
-                [[LoginVM thirdLoginType:1 city:model.city ? model.city : @"" province:model.province ? model.province : @"" headImgUrl:model.headimgurl nickname:model.nickname openid:model.openid sex:model.sex uid:model.openid unionid:model.unionid ? model.unionid : @""] subscribeNext:^(id  _Nullable x) {
+                [[LoginVM thirdLoginType:1 city:model.city ? model.city : @"" province:model.province ? model.province : @"" headImgUrl:model.headimgurl nickname:model.nickname openid:model.openid sex:model.sex uid:model.unionid ? model.unionid : @"" unionid:model.unionid ? model.unionid : @""] subscribeNext:^(id  _Nullable x) {
                     
                 }];
             }else {

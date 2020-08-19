@@ -125,7 +125,7 @@
     switch (indexPath.section) {
         case 0:
          {
-             EFClassTabTableViewCell *classCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFClassTabTableViewCell class])];
+            EFClassTabTableViewCell *classCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFClassTabTableViewCell class])];
              [classCell setCollectData:self.classData];
              classCell.selectItem = ^(EFClassifyModel *model) {
                  EFClassDetailViewController *VC = [[EFClassDetailViewController alloc] initWithModel:model];
@@ -162,7 +162,7 @@
 - (CGFloat )tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.section) {
         case 0:
-            return WidthOfScale(211.5);
+            return WidthOfScale(212);
         default:
             return WidthOfScale(155);
     }

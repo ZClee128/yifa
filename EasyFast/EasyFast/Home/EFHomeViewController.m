@@ -58,7 +58,7 @@
 }
 
 - (void)loadTopTitle {
-    [[EFClassifyVM categoryByPno:@"-1"] subscribeNext:^(NSArray *x) {
+    [[EFClassifyVM categoryByPno:@"0"] subscribeNext:^(NSArray *x) {
         NSMutableArray *Temtitles = [[NSMutableArray alloc] init];
         if (x.count != 0) {
             self.titles = [x mutableCopy];

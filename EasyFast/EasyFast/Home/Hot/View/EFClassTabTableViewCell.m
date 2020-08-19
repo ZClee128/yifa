@@ -32,8 +32,8 @@
         [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
         flow.minimumLineSpacing = WidthOfScale(15);
         flow.minimumInteritemSpacing = WidthOfScale(0);
-        flow.itemSize = CGSizeFloor(CGSizeMake(WidthOfScale((375 - 71)/5), WidthOfScale(165.5/2)));
-        _collect = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, WidthOfScale(211.5)) collectionViewLayout:flow];
+        flow.itemSize = CGSizeFloor(CGSizeMake(WidthOfScale((375 - 70)/5), WidthOfScale(83.5)));
+        _collect = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, WidthOfScale(212)) collectionViewLayout:flow];
         _collect.backgroundColor = [UIColor clearColor];
         _collect.delegate = self;
         _collect.dataSource = self;
