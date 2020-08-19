@@ -95,6 +95,18 @@
     }
 }
 
+- (void)updateViewWith:(NSArray *)data {
+    self.dataArr = data;
+    for (UIView *vc in self.subviews) {
+        [vc removeFromSuperview];
+    }
+    [self.indicatorView removeFromSuperview];
+    self.indicatorView = nil;
+    // 初始化
+    [self initDataAndSubviews];
+}
+
+
 // 循环添加按钮
 -(void)addBtnsWithPageNum:(NSInteger)number{
     

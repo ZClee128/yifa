@@ -85,6 +85,24 @@
 		0C4BAFDF24D26B2D0037CDCF /* cityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAFDE24D26B2D0037CDCF /* cityModel.m */; };
 		0C4BAFE024D26B2D0037CDCF /* cityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAFDE24D26B2D0037CDCF /* cityModel.m */; };
 		0C4BAFE124D26B2D0037CDCF /* cityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAFDE24D26B2D0037CDCF /* cityModel.m */; };
+		0C56E09C24ED46D400819D1A /* EFAppUpdateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E09B24ED46D400819D1A /* EFAppUpdateModel.m */; };
+		0C56E09D24ED46D400819D1A /* EFAppUpdateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E09B24ED46D400819D1A /* EFAppUpdateModel.m */; };
+		0C56E09E24ED46D400819D1A /* EFAppUpdateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E09B24ED46D400819D1A /* EFAppUpdateModel.m */; };
+		0C56E0A124ED499D00819D1A /* EFH5DownLoadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0A024ED499D00819D1A /* EFH5DownLoadModel.m */; };
+		0C56E0A224ED499D00819D1A /* EFH5DownLoadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0A024ED499D00819D1A /* EFH5DownLoadModel.m */; };
+		0C56E0A324ED499D00819D1A /* EFH5DownLoadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0A024ED499D00819D1A /* EFH5DownLoadModel.m */; };
+		0C56E0AD24ED59BA00819D1A /* WhdeBreakPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0A624ED59BA00819D1A /* WhdeBreakPoint.m */; };
+		0C56E0AE24ED59BA00819D1A /* WhdeBreakPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0A624ED59BA00819D1A /* WhdeBreakPoint.m */; };
+		0C56E0AF24ED59BA00819D1A /* WhdeBreakPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0A624ED59BA00819D1A /* WhdeBreakPoint.m */; };
+		0C56E0B024ED59BA00819D1A /* WhdeFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0A824ED59BA00819D1A /* WhdeFileManager.m */; };
+		0C56E0B124ED59BA00819D1A /* WhdeFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0A824ED59BA00819D1A /* WhdeFileManager.m */; };
+		0C56E0B224ED59BA00819D1A /* WhdeFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0A824ED59BA00819D1A /* WhdeFileManager.m */; };
+		0C56E0B324ED59BA00819D1A /* WhdeNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0AA24ED59BA00819D1A /* WhdeNetworkService.m */; };
+		0C56E0B424ED59BA00819D1A /* WhdeNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0AA24ED59BA00819D1A /* WhdeNetworkService.m */; };
+		0C56E0B524ED59BA00819D1A /* WhdeNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0AA24ED59BA00819D1A /* WhdeNetworkService.m */; };
+		0C56E0B624ED59BA00819D1A /* WhdeSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0AC24ED59BA00819D1A /* WhdeSession.m */; };
+		0C56E0B724ED59BA00819D1A /* WhdeSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0AC24ED59BA00819D1A /* WhdeSession.m */; };
+		0C56E0B824ED59BA00819D1A /* WhdeSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0AC24ED59BA00819D1A /* WhdeSession.m */; };
 		0C6CB56A24CE688300471A8D /* LRAnimationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56924CE688300471A8D /* LRAnimationProgress.m */; };
 		0C6CB56B24CE688300471A8D /* LRAnimationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56924CE688300471A8D /* LRAnimationProgress.m */; };
 		0C6CB56C24CE688300471A8D /* LRAnimationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56924CE688300471A8D /* LRAnimationProgress.m */; };
@@ -209,9 +227,6 @@
 		0C8A29D624DAAF5E00E40ED8 /* NSString+base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29D524DAAF5D00E40ED8 /* NSString+base64.m */; };
 		0C8A29D724DAAF5F00E40ED8 /* NSString+base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29D524DAAF5D00E40ED8 /* NSString+base64.m */; };
 		0C8A29D824DAAF5F00E40ED8 /* NSString+base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29D524DAAF5D00E40ED8 /* NSString+base64.m */; };
-		0C8A29E224DAD77000E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A29E124DAD77000E40ED8 /* dist */; };
-		0C8A29E324DAD77000E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A29E124DAD77000E40ED8 /* dist */; };
-		0C8A29E424DAD77000E40ED8 /* dist in Resources */ = {isa = PBXBuildFile; fileRef = 0C8A29E124DAD77000E40ED8 /* dist */; };
 		0C8A29F024DBA24300E40ED8 /* FMARCNetwork+Follow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29EF24DBA24200E40ED8 /* FMARCNetwork+Follow.m */; };
 		0C8A29F124DBA24400E40ED8 /* FMARCNetwork+Follow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29EF24DBA24200E40ED8 /* FMARCNetwork+Follow.m */; };
 		0C8A29F224DBA24400E40ED8 /* FMARCNetwork+Follow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A29EF24DBA24200E40ED8 /* FMARCNetwork+Follow.m */; };
@@ -776,6 +791,18 @@
 		0C4BAFDD24D26B2D0037CDCF /* cityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cityModel.h; sourceTree = "<group>"; };
 		0C4BAFDE24D26B2D0037CDCF /* cityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cityModel.m; sourceTree = "<group>"; };
 		0C4BB04A24D2A9E60037CDCF /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		0C56E09A24ED46D400819D1A /* EFAppUpdateModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFAppUpdateModel.h; sourceTree = "<group>"; };
+		0C56E09B24ED46D400819D1A /* EFAppUpdateModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFAppUpdateModel.m; sourceTree = "<group>"; };
+		0C56E09F24ED499D00819D1A /* EFH5DownLoadModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFH5DownLoadModel.h; sourceTree = "<group>"; };
+		0C56E0A024ED499D00819D1A /* EFH5DownLoadModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFH5DownLoadModel.m; sourceTree = "<group>"; };
+		0C56E0A524ED59BA00819D1A /* WhdeBreakPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhdeBreakPoint.h; sourceTree = "<group>"; };
+		0C56E0A624ED59BA00819D1A /* WhdeBreakPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhdeBreakPoint.m; sourceTree = "<group>"; };
+		0C56E0A724ED59BA00819D1A /* WhdeFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhdeFileManager.h; sourceTree = "<group>"; };
+		0C56E0A824ED59BA00819D1A /* WhdeFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhdeFileManager.m; sourceTree = "<group>"; };
+		0C56E0A924ED59BA00819D1A /* WhdeNetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhdeNetworkService.h; sourceTree = "<group>"; };
+		0C56E0AA24ED59BA00819D1A /* WhdeNetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhdeNetworkService.m; sourceTree = "<group>"; };
+		0C56E0AB24ED59BA00819D1A /* WhdeSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhdeSession.h; sourceTree = "<group>"; };
+		0C56E0AC24ED59BA00819D1A /* WhdeSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhdeSession.m; sourceTree = "<group>"; };
 		0C6CB56824CE688300471A8D /* LRAnimationProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRAnimationProgress.h; sourceTree = "<group>"; };
 		0C6CB56924CE688300471A8D /* LRAnimationProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRAnimationProgress.m; sourceTree = "<group>"; };
 		0C6CB56D24CE7A1400471A8D /* EFOneLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOneLoginViewController.h; sourceTree = "<group>"; };
@@ -861,7 +888,6 @@
 		0C8A29CB24DA9CAF00E40ED8 /* MeVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeVM.m; sourceTree = "<group>"; };
 		0C8A29D424DAAF5D00E40ED8 /* NSString+base64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+base64.h"; sourceTree = "<group>"; };
 		0C8A29D524DAAF5D00E40ED8 /* NSString+base64.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+base64.m"; sourceTree = "<group>"; };
-		0C8A29E124DAD77000E40ED8 /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = dist; sourceTree = "<group>"; };
 		0C8A29EE24DBA24200E40ED8 /* FMARCNetwork+Follow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FMARCNetwork+Follow.h"; sourceTree = "<group>"; };
 		0C8A29EF24DBA24200E40ED8 /* FMARCNetwork+Follow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FMARCNetwork+Follow.m"; sourceTree = "<group>"; };
 		0C8A29F424DBA32100E40ED8 /* EFFollowVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFFollowVM.h; sourceTree = "<group>"; };
@@ -1398,6 +1424,21 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		0C56E0A424ED59BA00819D1A /* Whde */ = {
+			isa = PBXGroup;
+			children = (
+				0C56E0A524ED59BA00819D1A /* WhdeBreakPoint.h */,
+				0C56E0A624ED59BA00819D1A /* WhdeBreakPoint.m */,
+				0C56E0A724ED59BA00819D1A /* WhdeFileManager.h */,
+				0C56E0A824ED59BA00819D1A /* WhdeFileManager.m */,
+				0C56E0A924ED59BA00819D1A /* WhdeNetworkService.h */,
+				0C56E0AA24ED59BA00819D1A /* WhdeNetworkService.m */,
+				0C56E0AB24ED59BA00819D1A /* WhdeSession.h */,
+				0C56E0AC24ED59BA00819D1A /* WhdeSession.m */,
+			);
+			path = Whde;
+			sourceTree = "<group>";
+		};
 		0C6CB5B924CFBE1C00471A8D /* WebViewPool */ = {
 			isa = PBXGroup;
 			children = (
@@ -1587,6 +1628,10 @@
 			children = (
 				0CBE6A5024E68569003C300F /* EFWXModel.h */,
 				0CBE6A5124E68569003C300F /* EFWXModel.m */,
+				0C56E09A24ED46D400819D1A /* EFAppUpdateModel.h */,
+				0C56E09B24ED46D400819D1A /* EFAppUpdateModel.m */,
+				0C56E09F24ED499D00819D1A /* EFH5DownLoadModel.h */,
+				0C56E0A024ED499D00819D1A /* EFH5DownLoadModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1792,7 +1837,6 @@
 		84760F9924C196FF002B34E4 /* Web */ = {
 			isa = PBXGroup;
 			children = (
-				0C8A29E124DAD77000E40ED8 /* dist */,
 				0C4BAF9624D0212E0037CDCF /* Bridge */,
 				0C6CB5B924CFBE1C00471A8D /* WebViewPool */,
 				8476102B24C52BDC002B34E4 /* H5Manager.h */,
@@ -2301,6 +2345,7 @@
 		84A8219724BF010800EAC652 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0C56E0A424ED59BA00819D1A /* Whde */,
 				0CBE6A6D24EB7C17003C300F /* CustomerScrollView.h */,
 				0CBE6A6C24EB7C16003C300F /* CustomerScrollView.m */,
 				0CBE6A6024EA3718003C300F /* Pay */,
@@ -2499,7 +2544,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C8A29E224DAD77000E40ED8 /* dist in Resources */,
 				0CBE6A7724EBE83A003C300F /* ef.caf in Resources */,
 				84A8208624B6C62300EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8208324B6C62300EAC652 /* Assets.xcassets in Resources */,
@@ -2510,7 +2554,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C8A29E324DAD77000E40ED8 /* dist in Resources */,
 				0CBE6A7824EBE83A003C300F /* ef.caf in Resources */,
 				84A8211324BC4F5400EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8211424BC4F5400EAC652 /* Assets.xcassets in Resources */,
@@ -2521,7 +2564,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C8A29E424DAD77000E40ED8 /* dist in Resources */,
 				0CBE6A7924EBE83A003C300F /* ef.caf in Resources */,
 				84A8213724BC513500EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8213824BC513500EAC652 /* Assets.xcassets in Resources */,
@@ -2746,6 +2788,7 @@
 				84A8216B24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
 				847610C424C6D44C002B34E4 /* EFBaseWebViewController.m in Sources */,
 				8476119624C82515002B34E4 /* SysManager.m in Sources */,
+				0C56E0B624ED59BA00819D1A /* WhdeSession.m in Sources */,
 				0C8A27D524D9341900E40ED8 /* MBProgressHUD+FULI.m in Sources */,
 				0C6CB56A24CE688300471A8D /* LRAnimationProgress.m in Sources */,
 				0CCEC48C24CAC2F000976D24 /* EFIMListTableViewCell.m in Sources */,
@@ -2823,6 +2866,7 @@
 				847610BF24C6D1D0002B34E4 /* EFPrivacyViewController.m in Sources */,
 				0C8A278D24D7A1ED00E40ED8 /* EFFastTuanListCollectionViewCell.m in Sources */,
 				0CBE6A0524E3DCDA003C300F /* EFQueryUserOrderCountModel.m in Sources */,
+				0C56E0A124ED499D00819D1A /* EFH5DownLoadModel.m in Sources */,
 				847610BA24C6C291002B34E4 /* EFPasswordTextField.m in Sources */,
 				0CCEC46724CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.m in Sources */,
 				0C6CB5BC24CFBE3800471A8D /* EFCustomWebViewPool.m in Sources */,
@@ -2844,9 +2888,11 @@
 				0C0CC42324E294B7005E50ED /* FMARCNetwork+Category.m in Sources */,
 				84A820DF24B6CE6B00EAC652 /* UIViewController+Runtime.m in Sources */,
 				0CCEC49724CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */,
+				0C56E0B024ED59BA00819D1A /* WhdeFileManager.m in Sources */,
 				84A821D224C04EAA00EAC652 /* EFClassDetailViewController.m in Sources */,
 				0CE285E024D3AD5F00AAC334 /* ZLPhotoActionSheet+RACSignal.m in Sources */,
 				0C6CB59324CEB3C500471A8D /* EFChangeLoginViewController.m in Sources */,
+				0C56E0B324ED59BA00819D1A /* WhdeNetworkService.m in Sources */,
 				84760FAD24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
 				0CBE6A7324EB85B1003C300F /* EFNotiModel.m in Sources */,
 				84A8214D24BD432B00EAC652 /* TabbarBackView.m in Sources */,
@@ -2864,6 +2910,7 @@
 				84760F8024C1551B002B34E4 /* EFWKWebConfig.m in Sources */,
 				0CCEC45824CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */,
 				0CE2860B24D3EC4F00AAC334 /* LTSCalendarScrollView.m in Sources */,
+				0C56E0AD24ED59BA00819D1A /* WhdeBreakPoint.m in Sources */,
 				84B2437324C83AB000E9967C /* LeftTableViewCell.m in Sources */,
 				0C8A277724D6C44F00E40ED8 /* SKTagView.m in Sources */,
 				841B94ED24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,
@@ -2925,6 +2972,7 @@
 				0C0CC40D24E2766D005E50ED /* EFActivityModel.m in Sources */,
 				841B94DE24C93C690054D8D5 /* EFOrderTitleTableViewCell.m in Sources */,
 				84A821BE24C033EC00EAC652 /* SearchTwoCollectionViewCell.m in Sources */,
+				0C56E09C24ED46D400819D1A /* EFAppUpdateModel.m in Sources */,
 				0C8A276124D68D1600E40ED8 /* CalendarModel.m in Sources */,
 				84A820EA24B6F62900EAC652 /* EFClassifyViewController.m in Sources */,
 				84A820DD24B6CE6B00EAC652 /* UIView+Frame.m in Sources */,
@@ -2985,6 +3033,7 @@
 				84A8216C24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
 				847610C524C6D44C002B34E4 /* EFBaseWebViewController.m in Sources */,
 				8476119724C82516002B34E4 /* SysManager.m in Sources */,
+				0C56E0B724ED59BA00819D1A /* WhdeSession.m in Sources */,
 				0C8A27D624D9341900E40ED8 /* MBProgressHUD+FULI.m in Sources */,
 				0C6CB56B24CE688300471A8D /* LRAnimationProgress.m in Sources */,
 				0CCEC48D24CAC2F000976D24 /* EFIMListTableViewCell.m in Sources */,
@@ -3062,6 +3111,7 @@
 				847610C024C6D1D1002B34E4 /* EFPrivacyViewController.m in Sources */,
 				0C8A278E24D7A1ED00E40ED8 /* EFFastTuanListCollectionViewCell.m in Sources */,
 				0CBE6A0624E3DCDA003C300F /* EFQueryUserOrderCountModel.m in Sources */,
+				0C56E0A224ED499D00819D1A /* EFH5DownLoadModel.m in Sources */,
 				847610BB24C6C291002B34E4 /* EFPasswordTextField.m in Sources */,
 				0CCEC46824CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.m in Sources */,
 				0C6CB5BD24CFBE3800471A8D /* EFCustomWebViewPool.m in Sources */,
@@ -3083,9 +3133,11 @@
 				0C0CC42424E294B7005E50ED /* FMARCNetwork+Category.m in Sources */,
 				84A8210924BC4F5400EAC652 /* UIViewController+Runtime.m in Sources */,
 				0CCEC49824CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */,
+				0C56E0B124ED59BA00819D1A /* WhdeFileManager.m in Sources */,
 				84A821D324C04EAA00EAC652 /* EFClassDetailViewController.m in Sources */,
 				0CE285E124D3AD5F00AAC334 /* ZLPhotoActionSheet+RACSignal.m in Sources */,
 				0C6CB59424CEB3C500471A8D /* EFChangeLoginViewController.m in Sources */,
+				0C56E0B424ED59BA00819D1A /* WhdeNetworkService.m in Sources */,
 				84760FAE24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
 				0CBE6A7424EB85B2003C300F /* EFNotiModel.m in Sources */,
 				84A8214324BC55CB00EAC652 /* HttpManager.m in Sources */,
@@ -3103,6 +3155,7 @@
 				84760F8124C1551B002B34E4 /* EFWKWebConfig.m in Sources */,
 				0CCEC45924CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */,
 				0CE2860C24D3EC4F00AAC334 /* LTSCalendarScrollView.m in Sources */,
+				0C56E0AE24ED59BA00819D1A /* WhdeBreakPoint.m in Sources */,
 				84B2437424C83AB000E9967C /* LeftTableViewCell.m in Sources */,
 				0C8A277824D6C44F00E40ED8 /* SKTagView.m in Sources */,
 				841B94EE24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,
@@ -3164,6 +3217,7 @@
 				0C0CC40E24E2766D005E50ED /* EFActivityModel.m in Sources */,
 				841B94DF24C93C690054D8D5 /* EFOrderTitleTableViewCell.m in Sources */,
 				84A821BF24C033EC00EAC652 /* SearchTwoCollectionViewCell.m in Sources */,
+				0C56E09D24ED46D400819D1A /* EFAppUpdateModel.m in Sources */,
 				0C8A276224D68D1600E40ED8 /* CalendarModel.m in Sources */,
 				84A8210E24BC4F5400EAC652 /* UIView+Frame.m in Sources */,
 				84A8210F24BC4F5400EAC652 /* EFBaseVM.m in Sources */,
@@ -3224,6 +3278,7 @@
 				84A8216D24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
 				847610C624C6D44C002B34E4 /* EFBaseWebViewController.m in Sources */,
 				8476119824C82516002B34E4 /* SysManager.m in Sources */,
+				0C56E0B824ED59BA00819D1A /* WhdeSession.m in Sources */,
 				0C8A27D724D9341A00E40ED8 /* MBProgressHUD+FULI.m in Sources */,
 				0C6CB56C24CE688300471A8D /* LRAnimationProgress.m in Sources */,
 				0CCEC48E24CAC2F000976D24 /* EFIMListTableViewCell.m in Sources */,
@@ -3301,6 +3356,7 @@
 				847610C124C6D1D1002B34E4 /* EFPrivacyViewController.m in Sources */,
 				0C8A278F24D7A1ED00E40ED8 /* EFFastTuanListCollectionViewCell.m in Sources */,
 				0CBE6A0724E3DCDA003C300F /* EFQueryUserOrderCountModel.m in Sources */,
+				0C56E0A324ED499D00819D1A /* EFH5DownLoadModel.m in Sources */,
 				847610BC24C6C291002B34E4 /* EFPasswordTextField.m in Sources */,
 				0CCEC46924CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.m in Sources */,
 				0C6CB5BE24CFBE3800471A8D /* EFCustomWebViewPool.m in Sources */,
@@ -3322,9 +3378,11 @@
 				0C0CC42524E294B7005E50ED /* FMARCNetwork+Category.m in Sources */,
 				84A8212D24BC513500EAC652 /* UIViewController+Runtime.m in Sources */,
 				0CCEC49924CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */,
+				0C56E0B224ED59BA00819D1A /* WhdeFileManager.m in Sources */,
 				84A821D424C04EAA00EAC652 /* EFClassDetailViewController.m in Sources */,
 				0CE285E224D3AD5F00AAC334 /* ZLPhotoActionSheet+RACSignal.m in Sources */,
 				0C6CB59524CEB3C500471A8D /* EFChangeLoginViewController.m in Sources */,
+				0C56E0B524ED59BA00819D1A /* WhdeNetworkService.m in Sources */,
 				84760FAF24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
 				0CBE6A7524EB85B2003C300F /* EFNotiModel.m in Sources */,
 				84A8214F24BD43F100EAC652 /* TabbarBackView.m in Sources */,
@@ -3342,6 +3400,7 @@
 				84760F8224C1551B002B34E4 /* EFWKWebConfig.m in Sources */,
 				0CCEC45A24CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */,
 				0CE2860D24D3EC4F00AAC334 /* LTSCalendarScrollView.m in Sources */,
+				0C56E0AF24ED59BA00819D1A /* WhdeBreakPoint.m in Sources */,
 				84B2437524C83AB000E9967C /* LeftTableViewCell.m in Sources */,
 				0C8A277924D6C44F00E40ED8 /* SKTagView.m in Sources */,
 				841B94EF24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,
@@ -3403,6 +3462,7 @@
 				0C0CC40F24E2766D005E50ED /* EFActivityModel.m in Sources */,
 				841B94E024C93C690054D8D5 /* EFOrderTitleTableViewCell.m in Sources */,
 				84A821C024C033ED00EAC652 /* SearchTwoCollectionViewCell.m in Sources */,
+				0C56E09E24ED46D400819D1A /* EFAppUpdateModel.m in Sources */,
 				0C8A276324D68D1600E40ED8 /* CalendarModel.m in Sources */,
 				84A8213124BC513500EAC652 /* EFClassifyViewController.m in Sources */,
 				84A8213224BC513500EAC652 /* UIView+Frame.m in Sources */,

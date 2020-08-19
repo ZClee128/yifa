@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EFH5DownLoadModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,6 +17,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)gotoUrl:(NSString *)url hasNav:(BOOL)show navTitle:(NSString *)title query:(id)query;
 - (NSString *)md5:(NSString *)str;
+
+- (void)downloadZipWithUrl:(NSString *)zipurl;
+- (NSString *)openIndex;
+- (BOOL)isExist;
+- (EFH5DownLoadModel *)getModel;
+- (void)deletFile;
+- (NSURL *)fileURLForBuggyWKWebView8:(NSURL *)fileURL;
 @end
 
 NS_ASSUME_NONNULL_END

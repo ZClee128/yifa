@@ -10,6 +10,9 @@
 #import <ZipArchive.h>
 #import <CommonCrypto/CommonCrypto.h>
 #import "EFBaseWebViewController.h"
+#import "WhdeBreakPoint.h"
+#import "WhdeFileManager.h"
+#import "WhdeNetworkService.h"
 
 #define fileName        @"EasyFast"
 #define pathes   NSSearchPathForDirectoriesInDomains(NSCachesDirectory,NSUserDomainMask,YES)
@@ -66,8 +69,9 @@
 }
 
 - (NSString *)openIndex {
-    NSString *zipName    = [[fileName lastPathComponent] stringByDeletingPathExtension];//获取下载链接里的文件名 即123sst文件夹
-    NSString * webPath = [NSString stringWithFormat:@"%@/%@/index.html",finishPath,zipName];
+//    NSString *zipName    = [[fileName lastPathComponent] stringByDeletingPathExtension];//获取下载链接里的文件名 即123sst文件夹
+    NSString * webPath = [NSString stringWithFormat:@"%@/dist/index.html",finishPath];
+    XYLog(@">>>>>%@",webPath);
     return webPath;
 }
 
@@ -89,5 +93,14 @@
     [output appendFormat:@"%02x", digest[i]];
     return  output;
 }
+
+- (EFH5DownLoadModel *)getModel {
+    if ([EFH5DownLoadModel bg_findAll:nil]) {
+        EFH5DownLoadModel *model = [EFH5DownLoadModel bg_findAll:nil][0];
+        return model;
+    }
+    return nil;
+}
+
 
 @end

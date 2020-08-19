@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy)void(^seletBtnBlock)(QMUIButton *sender);
 - (void)setBtnStyle;
 - (void)setModel:(id)model;
-
+- (CGFloat )cellHeight;
 @end
 
 NS_ASSUME_NONNULL_END

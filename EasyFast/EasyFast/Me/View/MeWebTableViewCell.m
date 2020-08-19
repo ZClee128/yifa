@@ -67,12 +67,12 @@
     self.bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView];
     self.efbridge = [[EFBridge alloc] initWithBridge:self.bridge];
     [self.bridge setWebViewDelegate:self];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.3.23:8080"]]]];
-//    NSString *path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:@"dist"];
-//
-//    NSURL *fileURL = [NSURL fileURLWithPath:path];
-//
-//    [_webView loadFileURL:fileURL allowingReadAccessToURL:fileURL];
+    if ([kH5Manager isExist]) {
+        NSURL *fileURL = [NSURL fileURLWithPath:[kH5Manager openIndex]];
+        [self.webView loadFileURL:fileURL allowingReadAccessToURL:fileURL];
+    }else {
+        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[kH5Manager getModel] ? [kH5Manager getModel].loadingUrl : @"http://192.168.3.23:8080/"]]];
+    }
     [self.bridge callHandler:@"goTo" data:@{@"page":@"recom",@"query":@{},} responseCallback:^(id responseData) {
 
     }];

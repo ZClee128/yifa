@@ -46,9 +46,28 @@
         }
         [[RACScheduler mainThreadScheduler] schedule:^{
            [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:(UITableViewScrollPositionNone)];
+            [self chooseLeftClass];
         }];
     }];
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kclassNoti object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        @strongify(self);
+        [self chooseLeftClass];
+    }];
 }
+
+- (void)chooseLeftClass {
+    int i = 0;
+    for (EFClassifyModel *model in self.leftDataArray) {
+        if (model.code == kAppDelegate.classCode) {
+            [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0] animated:NO scrollPosition:(UITableViewScrollPositionNone)];
+            self.currentSelectModel = model;
+            [self.collectionView scrollToTop];
+            [self.collectionView reloadData];
+        }
+        i++;
+    }
+}
+
 
 - (void)initView {
     [self.view addSubview:self.tableView];

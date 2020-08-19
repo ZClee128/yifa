@@ -117,7 +117,7 @@
         @strongify(self);
         EFAddressViewController *vc = [[EFAddressViewController alloc] initWithType:(AddressTypeWeb)];
         vc.chooseAddress = ^(NSString * _Nonnull str) {
-            responseCallback(str);
+            responseCallback(@{@"uuaNo":str});
         };
         [self push:vc];
     }];

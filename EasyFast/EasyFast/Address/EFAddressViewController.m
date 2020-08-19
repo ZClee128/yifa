@@ -149,11 +149,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (self.addressType == AddressTypeWeb) {
+        EFAdsModel *model = self.EFData[indexPath.section];
         [self.navigationController qmui_popViewControllerAnimated:YES completion:^{
             
         }];
         if (self.chooseAddress) {
-            self.chooseAddress(@"dddddd");
+            self.chooseAddress(model.uuaNo);
         }
     }
 }

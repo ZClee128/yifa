@@ -29,5 +29,5 @@
 @property (nonatomic,weak) id<CustomerScrollViewDelegate> delegate;
 
 - (instancetype)initWithFrame:(CGRect)frame withData:(NSArray *)data;
-
+- (void)updateViewWith:(NSArray *)data;
 @end

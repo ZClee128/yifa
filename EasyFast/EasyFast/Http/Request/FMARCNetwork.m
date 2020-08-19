@@ -41,6 +41,7 @@ NSString * const HTTPServiceErrorMessagesKey = @"HTTPServiceErrorMessagesKey";
 }
 //网络管理工具
 @property (nonatomic,strong) AFHTTPSessionManager * manager;
+@property (nonatomic,assign)BOOL isOut;
 
 @end
 
@@ -166,13 +167,6 @@ static FMARCNetwork * _instance = nil;
      /// request 必须的有值
     if (!req) return [RACSignal error:[NSError errorWithDomain:HTTPServiceErrorDomain code:-1 userInfo:nil]];
     
-    NSString *accessToken = kUserManager.userModel.token;
-    if (accessToken && accessToken.length > 0) {
-        [self.manager.requestSerializer setValue:[NSString stringWithFormat:@"%@",accessToken] forHTTPHeaderField:@"token"];
-    }else {
-        [self.manager.requestSerializer clearAuthorizationHeader];
-    }
-    
     @weakify(self);
     
     if ([req.method isEqualToString:HTTP_METHOD_GET]) {
@@ -180,7 +174,13 @@ static FMARCNetwork * _instance = nil;
     }else {
         self.manager.requestSerializer = [AFJSONRequestSerializer serializer];
     }
-    
+    NSString *accessToken = kUserManager.userModel.token;
+    if (accessToken && accessToken.length > 0) {
+        [self.manager.requestSerializer setValue:[NSString stringWithFormat:@"%@",accessToken] forHTTPHeaderField:@"token"];
+    }else {
+        [self.manager.requestSerializer clearAuthorizationHeader];
+    }
+    [self.manager.requestSerializer setValue:@"2" forHTTPHeaderField:@"source"];
     /// 创建信号
     RACSignal *signal = [RACSignal createSignal:^(id<RACSubscriber> subscriber) {
         @strongify(self);
@@ -220,29 +220,16 @@ static FMARCNetwork * _instance = nil;
                 //[subscriber sendError:parseError];
                 [subscriber sendCompleted];
                 //错误可以在此处处理---比如加入自己弹窗，主要是服务器错误、和请求超时、网络开小差
-                [self showMsgtext:msgStr];
-                
-            } else {
-              
-                /// 判断
-                NSInteger statusCode = [responseObject[HTTPServiceResponseCodeKey] integerValue];
-                if (statusCode == HTTPResponseCodeSuccess) {
-                    FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseSuccess:responseObject[HTTPServiceResponseDataKey] code:statusCode];
-                   
-                    [subscriber sendNext:response];
-                    [subscriber sendCompleted];
-                    
-                }else{
-                    if (statusCode == HTTPResponseCodeNotLogin) {
-                        //可以在此处理需要登录的逻辑、比如说弹出登录框，但是，一般请求某个 api 判断了是否需要登录就不会进入
-                        //如果进入可一做错误处理
+                if (code == 401) {
+                    if (!self.isOut) {
+                        self.isOut = YES;
                         NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
-                        userInfo[HTTPServiceErrorHTTPStatusCodeKey] = @(statusCode);
+                        userInfo[HTTPServiceErrorHTTPStatusCodeKey] = @(code);
                         userInfo[HTTPServiceErrorDescriptionKey] = @"请登录!";
                         
-                        NSError *noLoginError = [NSError errorWithDomain:HTTPServiceErrorDomain code:statusCode userInfo:userInfo];
+                        NSError *noLoginError = [NSError errorWithDomain:HTTPServiceErrorDomain code:code userInfo:userInfo];
                         
-                        FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseError:noLoginError code:statusCode msg:@"请登录!"];
+                        FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseError:noLoginError code:code msg:@"请登录!"];
                         [subscriber sendNext:response];
                         [subscriber sendCompleted];
                         //错误提示
@@ -250,29 +237,41 @@ static FMARCNetwork * _instance = nil;
                         [[LoginVM loginOut] subscribeNext:^(id  _Nullable x) {
                             
                         }];
-                        
-                    }else{
-                        NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
-                        userInfo[HTTPServiceErrorResponseCodeKey] = @(statusCode);
-                        //取出服务给的提示
-                        NSString *msgTips = responseObject[HTTPServiceResponseMsgKey];
-                        //服务器没有返回，错误信息
-                        if ((msgTips.length == 0 || msgTips == nil || [msgTips isKindOfClass:[NSNull class]])) {
-                            msgTips = @"服务器出错了，请稍后重试~";
-                        }
-                        
-                        userInfo[HTTPServiceErrorMessagesKey] = msgTips;
-                        if (task.currentRequest.URL != nil) userInfo[HTTPServiceErrorRequestURLKey] = task.currentRequest.URL.absoluteString;
-                        if (task.error != nil) userInfo[NSUnderlyingErrorKey] = task.error;
-                        NSError *requestError = [NSError errorWithDomain:HTTPServiceErrorDomain code:statusCode userInfo:userInfo];
-                        //错误信息反馈回去了、可以在此做响应的弹窗处理，展示出服务器给我们的信息
-                        FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseError:requestError code:statusCode msg:msgTips];
-                
-                        [subscriber sendNext:response];
-                        [subscriber sendCompleted];
-                        //错误处理
-                        [self showMsgtext:msgTips];
                     }
+                }else {
+                    [self showMsgtext:msgStr];
+                }
+                
+            } else {
+                self.isOut = NO;
+                /// 判断
+                NSInteger statusCode = [responseObject[HTTPServiceResponseCodeKey] integerValue];
+                if (statusCode == HTTPResponseCodeSuccess) {
+                    FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseSuccess:responseObject[HTTPServiceResponseDataKey] code:statusCode];
+                    [subscriber sendNext:response];
+                    [subscriber sendCompleted];
+                    
+                }else{
+                    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+                    userInfo[HTTPServiceErrorResponseCodeKey] = @(statusCode);
+                    //取出服务给的提示
+                    NSString *msgTips = responseObject[HTTPServiceResponseMsgKey];
+                    //服务器没有返回，错误信息
+                    if ((msgTips.length == 0 || msgTips == nil || [msgTips isKindOfClass:[NSNull class]])) {
+                        msgTips = @"服务器出错了，请稍后重试~";
+                    }
+                    
+                    userInfo[HTTPServiceErrorMessagesKey] = msgTips;
+                    if (task.currentRequest.URL != nil) userInfo[HTTPServiceErrorRequestURLKey] = task.currentRequest.URL.absoluteString;
+                    if (task.error != nil) userInfo[NSUnderlyingErrorKey] = task.error;
+                    NSError *requestError = [NSError errorWithDomain:HTTPServiceErrorDomain code:statusCode userInfo:userInfo];
+                    //错误信息反馈回去了、可以在此做响应的弹窗处理，展示出服务器给我们的信息
+                    FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseError:requestError code:statusCode msg:msgTips];
+                    
+                    [subscriber sendNext:response];
+                    [subscriber sendCompleted];
+                    //错误处理
+                    [self showMsgtext:msgTips];
                 }
             }
         }];
@@ -359,11 +358,30 @@ static FMARCNetwork * _instance = nil;
                 [subscriber sendNext:response];
                 //[subscriber sendError:parseError];
                 [subscriber sendCompleted];
-                
-                [self showMsgtext:msgStr];
+                if (code == 401) {
+                    if (!self.isOut) {
+                        self.isOut = YES;
+                        NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+                        userInfo[HTTPServiceErrorHTTPStatusCodeKey] = @(code);
+                        userInfo[HTTPServiceErrorDescriptionKey] = @"请登录!";
+                        
+                        NSError *noLoginError = [NSError errorWithDomain:HTTPServiceErrorDomain code:code userInfo:userInfo];
+                        
+                        FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseError:noLoginError code:code msg:@"请登录!"];
+                        [subscriber sendNext:response];
+                        [subscriber sendCompleted];
+                        //错误提示
+                        [self showMsgtext:@"请登录!"];
+                        [[LoginVM loginOut] subscribeNext:^(id  _Nullable x) {
+                            
+                        }];
+                    }
+                }else {
+                    [self showMsgtext:msgStr];
+                }
                 
             } else {
-                
+                self.isOut = NO;
                 /// 判断
                 NSInteger statusCode = [responseObject[HTTPServiceResponseCodeKey] integerValue];
                 if (statusCode == HTTPResponseCodeSuccess) {
@@ -373,46 +391,25 @@ static FMARCNetwork * _instance = nil;
                     [subscriber sendCompleted];
                     
                 }else{
-                    if (statusCode == HTTPResponseCodeNotLogin) {
-                        //可以在此处理需要登录的逻辑、比如说弹出登录框，但是，一般请求某个 api 判断了是否需要登录就不会进入
-                        //如果进入可一做错误处理
-                        NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
-                        userInfo[HTTPServiceErrorHTTPStatusCodeKey] = @(statusCode);
-                        userInfo[HTTPServiceErrorDescriptionKey] = @"请登录!";
-                        
-                        NSError *noLoginError = [NSError errorWithDomain:HTTPServiceErrorDomain code:statusCode userInfo:userInfo];
-                        
-                        FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseError:noLoginError code:statusCode msg:@"请登录!"];
-                        
-                        [subscriber sendNext:response];
-                        [subscriber sendCompleted];
-                        
-                        [self showMsgtext:@"请登录"];
-                        [[LoginVM loginOut] subscribeNext:^(id  _Nullable x) {
-                            
-                        }];
-                        
-                    }else{
-                        NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
-                        userInfo[HTTPServiceErrorResponseCodeKey] = @(statusCode);
-                        //取出服务给的提示
-                        NSString *msgTips = responseObject[HTTPServiceResponseMsgKey];
-                        //服务器没有返回，错误信息
-                        if ((msgTips.length == 0 || msgTips == nil || [msgTips isKindOfClass:[NSNull class]])) {
-                            msgTips = @"服务器出错了，请稍后重试~";
-                        }
-                        
-                        userInfo[HTTPServiceErrorMessagesKey] = msgTips;
-                        if (task.currentRequest.URL != nil) userInfo[HTTPServiceErrorRequestURLKey] = task.currentRequest.URL.absoluteString;
-                        if (task.error != nil) userInfo[NSUnderlyingErrorKey] = task.error;
-                        NSError *requestError = [NSError errorWithDomain:HTTPServiceErrorDomain code:statusCode userInfo:userInfo];
-                        //错误信息反馈回去了、可以在此做响应的弹窗处理，展示出服务器给我们的信息
-                        FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseError:requestError code:statusCode msg:msgTips];
-                        [subscriber sendNext:response];
-                        [subscriber sendCompleted];
-                        
-                        [self showMsgtext:msgTips];
+                    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+                    userInfo[HTTPServiceErrorResponseCodeKey] = @(statusCode);
+                    //取出服务给的提示
+                    NSString *msgTips = responseObject[HTTPServiceResponseMsgKey];
+                    //服务器没有返回，错误信息
+                    if ((msgTips.length == 0 || msgTips == nil || [msgTips isKindOfClass:[NSNull class]])) {
+                        msgTips = @"服务器出错了，请稍后重试~";
                     }
+                    
+                    userInfo[HTTPServiceErrorMessagesKey] = msgTips;
+                    if (task.currentRequest.URL != nil) userInfo[HTTPServiceErrorRequestURLKey] = task.currentRequest.URL.absoluteString;
+                    if (task.error != nil) userInfo[NSUnderlyingErrorKey] = task.error;
+                    NSError *requestError = [NSError errorWithDomain:HTTPServiceErrorDomain code:statusCode userInfo:userInfo];
+                    //错误信息反馈回去了、可以在此做响应的弹窗处理，展示出服务器给我们的信息
+                    FMHttpResonse *response = [[FMHttpResonse alloc] initWithResponseError:requestError code:statusCode msg:msgTips];
+                    [subscriber sendNext:response];
+                    [subscriber sendCompleted];
+                    
+                    [self showMsgtext:msgTips];
                 }
             
             }

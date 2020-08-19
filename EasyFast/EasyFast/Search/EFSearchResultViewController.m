@@ -15,7 +15,7 @@
 @interface EFSearchResultViewController ()
 
 @property (nonatomic,strong)QMUILabel *searchField;
-
+@property (nonatomic,assign)CGFloat cellHeight;
 
 @end
 
@@ -91,7 +91,7 @@
     self.collectionView.frame = CGRectMake(0, NAVIGATION_BAR_HEIGHT + 45, kPHONE_WIDTH,kPHONE_HEIGHT - NAVIGATION_BAR_HEIGHT - 45);
     self.lineSpacing = WidthOfScale(11);
     self.interitemSpacing = WidthOfScale(10);
-    self.itemSize = CGSizeMake(WidthOfScale(167), WidthOfScale(280));
+//    self.itemSize = CGSizeMake(WidthOfScale(167), WidthOfScale(280));
     self.registerClasses = @[@{@"SearchTwoCollectionViewCell":@"SearchTwoCollectionViewCell"},@{@"SeachOneCollectionViewCell":@"SeachOneCollectionViewCell"}];
     self.collectionEdgeInsets = UIEdgeInsetsMake(WidthOfScale(15), WidthOfScale(15), WidthOfScale(15), WidthOfScale(15));
     ((EFSearchVM *)self.viewModel).title = self.searchField.text;
@@ -166,12 +166,12 @@
             self.collectionEdgeInsets = UIEdgeInsetsMake(15,0,0,0);
             [self defaultCollectionFlowLayout].minimumLineSpacing = WidthOfScale(0);
             [self defaultCollectionFlowLayout].minimumInteritemSpacing = WidthOfScale(0);
-            [self defaultCollectionFlowLayout].itemSize = CGSizeMake(kPHONE_WIDTH, WidthOfScale(155));
+//            [self defaultCollectionFlowLayout].itemSize = CGSizeMake(kPHONE_WIDTH, WidthOfScale(155));
         }else {
             self.collectionEdgeInsets = UIEdgeInsetsMake(WidthOfScale(15), WidthOfScale(15), WidthOfScale(15), WidthOfScale(15));
             [self defaultCollectionFlowLayout].minimumLineSpacing  = WidthOfScale(11);
             [self defaultCollectionFlowLayout].minimumInteritemSpacing = WidthOfScale(10);
-            [self defaultCollectionFlowLayout].itemSize = CGSizeMake(WidthOfScale(167), WidthOfScale(280));
+//            [self defaultCollectionFlowLayout].itemSize = CGSizeMake(WidthOfScale(167), WidthOfScale(280));
             
         }
         [[RACScheduler mainThreadScheduler] schedule:^{
@@ -250,6 +250,18 @@
     }
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    EFGoodsList *model = self.EFData[indexPath.item];
+    if (self.isOne) {
+        SeachOneCollectionViewCell *oneCell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([SeachOneCollectionViewCell class]) forIndexPath:indexPath];
+        [oneCell setModel:model];
+        return CGSizeMake(kPHONE_WIDTH, [oneCell cellHeight]);
+    }else {
+        SearchTwoCollectionViewCell *twoCell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([SearchTwoCollectionViewCell class]) forIndexPath:indexPath];
+        [twoCell setModel:model];
+        return CGSizeMake(WidthOfScale(167), [twoCell cellHeight]);
+    }
+}
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     EFGoodsList *model = self.EFData[indexPath.item];

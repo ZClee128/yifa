@@ -17,6 +17,7 @@
 @interface EFHomeOtherViewController ()
 @property (nonatomic,assign)id type;
 @property (nonatomic,strong)NSMutableArray *classData;
+@property (nonatomic,assign)CGFloat goodsCellHeight;
 @end
 
 @implementation EFHomeOtherViewController
@@ -128,13 +129,17 @@
             EFClassTabTableViewCell *classCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFClassTabTableViewCell class])];
              [classCell setCollectData:self.classData];
              classCell.selectItem = ^(EFClassifyModel *model) {
-                 EFClassDetailViewController *VC = [[EFClassDetailViewController alloc] initWithModel:model];
-                 VC.hidesBottomBarWhenPushed = YES;
-//                 TuanListViewController *VC = [[TuanListViewController alloc] init];
-//                 VC.hidesBottomBarWhenPushed = YES;
-                 [self.navigationController qmui_pushViewController:VC animated:YES completion:^{
+                 if ([model.title isEqualToString:@"查看更多"]) {
+                     kAppDelegate.classCode = self.type;
+                     [[NSNotificationCenter defaultCenter] postNotificationName:kclassNoti object:@{@"code":self.type}];
+                     kAppDelegate.efTabbar.selectedIndex = 1;
+                 }else {
+                     EFClassDetailViewController *VC = [[EFClassDetailViewController alloc] initWithModel:model];
+                     VC.hidesBottomBarWhenPushed = YES;
+                     [self.navigationController qmui_pushViewController:VC animated:YES completion:^{
 
-                 }];
+                     }];
+                 }
              };
              return classCell;
           }
@@ -146,6 +151,7 @@
             goodsCell.btnSelect = ^{
               [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(YES),@"ggNo":model.ggNo}];
             };
+            self.goodsCellHeight = [goodsCell cellHeight];
             return goodsCell;
         }
     }
@@ -164,7 +170,7 @@
         case 0:
             return WidthOfScale(212);
         default:
-            return WidthOfScale(155);
+            return self.goodsCellHeight;
     }
 }
 

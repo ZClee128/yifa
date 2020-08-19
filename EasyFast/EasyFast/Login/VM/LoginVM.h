@@ -7,7 +7,7 @@
 //
 
 #import "EFBaseRefreshVM.h"
-
+#import "EFH5DownLoadModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LoginVM : EFBaseRefreshVM
@@ -38,6 +38,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (RACSignal *)bindingWechatType:(NSInteger)type city:(NSString *)city province:(NSString *)province headImgUrl:(NSString *)headImgUrl nickname:(NSString *)nickname openid:(NSString *)openid  sex:(NSInteger)sex uid:(NSString *)uid unionid:(NSString *)unionid;
 
 + (RACSignal *)setNewPasswordNewPassword:(NSString *)password confirmPassword:(NSString *)confirmPassword;
+
++ (RACSignal *)downloadWebPage;
 @end
 
 NS_ASSUME_NONNULL_END

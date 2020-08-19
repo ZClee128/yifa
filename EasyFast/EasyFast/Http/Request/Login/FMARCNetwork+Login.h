@@ -66,6 +66,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 - (RACSignal *)setNewPasswordNewPassword:(NSString *)password confirmPassword:(NSString *)confirmPassword;
+
+
+- (RACSignal *)queryVersion;
+
+- (RACSignal *)downloadWebPage;
 @end
 
 NS_ASSUME_NONNULL_END

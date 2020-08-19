@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HotTabTableViewCell : BaseTableViewCell
 
 - (void)setCollectData:(NSMutableArray *)data;
+
 @end
 
 NS_ASSUME_NONNULL_END

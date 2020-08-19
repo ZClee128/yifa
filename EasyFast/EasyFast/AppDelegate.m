@@ -256,6 +256,9 @@
 
 //点击App图标，使App从后台恢复至前台
 - (void)applicationWillEnterForeground:(UIApplication *)application {
+    [[LoginVM downloadWebPage] subscribeNext:^(id  _Nullable x) {
+        
+    }];
     [application setApplicationIconBadgeNumber:0];
     [application cancelAllLocalNotifications];
 }

@@ -25,6 +25,8 @@
 @property (nonatomic,strong)NSMutableArray *noticeArr;
 @property (nonatomic,strong)NSMutableArray *fastArr;
 @property (nonatomic,strong)EFFastVM *fastVM;
+@property (nonatomic,assign)BOOL isLoadActivity;
+@property (nonatomic,assign)CGFloat goodsCellHeight;
 @end
 
 @implementation EFHotViewController
@@ -110,6 +112,7 @@
     self.EFTableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[EFNoticeTableViewCell class] cellHeight:WidthOfScale(30)];
     self.EFTableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[EFFastTableViewCell class] cellHeight:140+14.5+16+8+15+20];
     self.EFTableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[EFGoodsTableViewCell class] cellHeight:WidthOfScale(140)+15];
+    self.EFTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, 10)];
     [self addRefshDown];
     [self addRefshUp];
     @weakify(self);
@@ -122,6 +125,7 @@
 - (void)loadList {
     [[EFHomeVM activity] subscribeNext:^(NSArray *x) {
         self.activityArr = [x mutableCopy];
+        self.isLoadActivity = YES;
         [self.EFTableView reloadData];
     }];
     
@@ -206,7 +210,10 @@
         case 0:
         {
             HotTabTableViewCell *hotCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HotTabTableViewCell class])];
-            [hotCell setCollectData:self.activityArr];
+            if (self.isLoadActivity) {
+                [hotCell setCollectData:self.activityArr];
+                self.isLoadActivity = NO;
+            }
             return hotCell;
         }
         case 1:
@@ -232,6 +239,7 @@
             goodsCell.btnSelect = ^{
                 [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(YES),@"ggNo":model.ggNo}];
             };
+            self.goodsCellHeight = [goodsCell cellHeight];
             return goodsCell;
         }
     }
@@ -257,7 +265,7 @@
             return 140+14.5+16+8+15+20;
         }
         default:
-            return WidthOfScale(140)+15;
+            return self.goodsCellHeight;
     }
 }
 

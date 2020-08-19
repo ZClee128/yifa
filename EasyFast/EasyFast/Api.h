@@ -82,4 +82,8 @@
 #define kthirdCategory @"api-client/platform/category/thirdCategory" // 根据一级分类查询三级分类
 #define kpageTeamByGoodsNo @"api-client/team/pageTeamByGoodsNo" //分页查询商品的拼团列表
 
+
+// app
+#define kqueryVersion @"api-client/app/queryAppVersion" //查询APP版本接口
+#define kdownloadWebPage @"api-client/app/queryAppWebVersion" // 下载网页包接口
 #endif /* Api_h */

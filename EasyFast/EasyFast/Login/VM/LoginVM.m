@@ -103,6 +103,7 @@
         [[UIViewController getCurrentVC].navigationController qmui_popToRootViewControllerAnimated:NO completion:^{
         }];
         kAppDelegate.efTabbar.selectedIndex = 0;
+        [EFOnePhoneLoginManager show];
         return @(result.isSuccess);
     }];
 }
@@ -217,5 +218,21 @@
     [JPUSHService setAlias:alias completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
         
     } seq:1];
+}
+
++ (RACSignal *)downloadWebPage {
+    return [self requsetNetwork:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] downloadWebPage];
+    } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
+        EFH5DownLoadModel *model = [EFH5DownLoadModel modelWithJSON:result.reqResult];
+        [model bg_cover];
+        if (model.isDownload) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [kH5Manager deletFile];
+                [kH5Manager downloadZipWithUrl:model.downloadUrl];
+            });
+        }
+        return @(result.isSuccess);
+    }];
 }
 @end

@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SearchTwoCollectionViewCell : UICollectionViewCell
 
 - (void)setModel:(id)model;
+- (CGFloat )cellHeight;
 @end
 
 NS_ASSUME_NONNULL_END

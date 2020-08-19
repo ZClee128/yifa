@@ -7,6 +7,7 @@
 //
 
 #import "FMARCNetwork+Login.h"
+#import "EFH5DownLoadModel.h"
 
 @implementation FMARCNetwork (Login)
 
@@ -15,7 +16,7 @@
 }
 
 - (RACSignal *)userregister:(NSString *)phone code:(NSString *)code {
-    return [self fg_getRequest:kRegister paramters:@{@"phone":phone,@"code":code}];
+    return [self fg_postRequest:kRegister paramters:@{@"phone":phone,@"code":code}];
 }
 
 - (RACSignal *)sendCode:(NSString *)phone type:(NSInteger)type {
@@ -43,7 +44,7 @@
 }
 
 - (RACSignal *)thirdLoginBindingMessage:(NSString *)code phone:(NSString *)phone {
-    return [self fg_getRequest:kthirdLoginBinding paramters:@{@"code":code,@"phone":phone,@"username":kAppDelegate.BindPhoneUid}];
+    return [self fg_postRequest:kthirdLoginBinding paramters:@{@"code":code,@"phone":phone,@"username":kAppDelegate.BindPhoneUid}];
 }
 
 - (RACSignal *)bindingWechatType:(NSInteger)type city:(NSString *)city province:(NSString *)province headImgUrl:(NSString *)headImgUrl nickname:(NSString *)nickname openid:(NSString *)openid  sex:(NSInteger)sex uid:(NSString *)uid unionid:(NSString *)unionid {
@@ -52,5 +53,14 @@
 
 - (RACSignal *)setNewPasswordNewPassword:(NSString *)password confirmPassword:(NSString *)confirmPassword {
     return [self fg_postRequest:ksetNewPassword paramters:@{@"password":password,@"confirmPassword":confirmPassword}];
+}
+
+- (RACSignal *)queryVersion {
+    return [self fg_getRequest:kqueryVersion paramters:@{@"appSource":@2,@"appVersion":kVersion}];
+}
+
+- (RACSignal *)downloadWebPage {
+    EFH5DownLoadModel *model = [[EFH5DownLoadModel bg_findAll:nil] count] > 0 ? [EFH5DownLoadModel bg_findAll:nil][0] : [[EFH5DownLoadModel alloc] init];
+    return [self fg_getRequest:kdownloadWebPage paramters:@{@"appVersion":kVersion,@"webVersion": model.versionNo ? model.versionNo : @"",@"appSource":@2}];
 }
 @end

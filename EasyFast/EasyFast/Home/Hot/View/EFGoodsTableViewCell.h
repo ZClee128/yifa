@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface EFGoodsTableViewCell : BaseTableViewCell
 
 @property (nonatomic,copy)void(^btnSelect)(void);
-
+- (CGFloat )cellHeight;
 @end
 
 NS_ASSUME_NONNULL_END

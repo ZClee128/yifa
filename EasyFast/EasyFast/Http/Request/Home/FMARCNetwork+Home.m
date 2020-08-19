@@ -27,7 +27,7 @@
 }
 
 - (RACSignal *)pageGoodsByCategoryggcsCode:(NSString *)ggcsCode orderBy:(nonnull NSNumber *)orderBy PageNum:(nonnull NSNumber *)pageNum pageSize:(nonnull NSNumber *)pageSize {
-    return [self fg_getRequest:kpageGoodsByCategory paramters:@{@"ggcsCode":ggcsCode,@"pageNum":pageNum,@"pageSize":pageSize,@"orderBy":orderBy}];
+    return [self fg_getRequest:kpageGoodsByCategory paramters:@{@"ggcsCode":ggcsCode ? ggcsCode : @"",@"pageNum":pageNum,@"pageSize":pageSize,@"orderBy":orderBy}];
 }
 
 - (RACSignal *)pageShopNewGoodssssNo:(NSString *)sssNo PageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize {

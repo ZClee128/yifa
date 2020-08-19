@@ -149,6 +149,7 @@ fprintf(stderr,"[--%s--]\n[--%s:%d--]\n[--%s--]\n===========================\n",
 #define kComfroOrder @"kComfroOrder" // 确认收货通知
 #define kwxLogin @"wxLogin" // 微信登录
 #define kwxBing @"kwxBing" // 微信绑定成功
+#define kclassNoti @"kclassNoti" //跳转分类通知
 
 // 图片
 #define kup UIImageMake(@"up") // 降序

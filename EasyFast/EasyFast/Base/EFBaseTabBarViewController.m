@@ -13,6 +13,8 @@
 #import "EFMeViewController.h"
 #import "EFPlusButton.h"
 #import "TabbarBackView.h"
+#import "EFAppUpdateModel.h"
+#import "LoginVM.h"
 @interface EFBaseTabBarViewController ()
 {
     CGFloat _tabbarheight;
@@ -45,7 +47,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    [EFPlusButton registerPlusButton];
+    [[[FMARCNetwork sharedInstance] queryVersion] subscribeNext:^(FMHttpResonse *x) {
+        EFAppUpdateModel *model = [EFAppUpdateModel modelWithJSON:x.reqResult];
+        XYLog(@"%@",model);
+    }];
     
+    [[LoginVM downloadWebPage] subscribeNext:^(id  _Nullable x) {
+        
+    }];
 }
 
 

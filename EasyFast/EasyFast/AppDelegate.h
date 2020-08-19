@@ -15,5 +15,6 @@
 @property (nonatomic,assign) BOOL  isOkOnePhone;
 @property (nonatomic,assign) BOOL  isOneBindPhone; //首次绑定
 @property (nonatomic,strong) NSString  *BindPhoneUid; // 三方登陆首次用户名
+@property (nonatomic,strong)id classCode; // 分类一级
 @end
 
