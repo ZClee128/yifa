@@ -113,11 +113,11 @@
     // 添加按钮
     NSInteger maxCol = 4;
     //NSInteger maxRow = 2;
-    CGFloat gap = WidthOfScale(self.viewGap); //按钮之间的间隙
+//    CGFloat gap = WidthOfScale(self.viewGap); //按钮之间的间隙
     
     CGFloat btnW = WidthOfScale(self.viewSize.width);
     CGFloat btnH = self.viewSize.height;
-    CGFloat margin = WidthOfScale(26.5); // 内边距
+//    CGFloat margin = WidthOfScale(26.5); // 内边距
     NSInteger count = self.dataArr.count - (number * self.numberOfSinglePage);
     NSInteger indexCount;
     if (count > 0 && count <= self.numberOfSinglePage) {

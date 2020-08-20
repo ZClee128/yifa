@@ -15,7 +15,7 @@
 @implementation LTSCalendarScrollView
 
 - (instancetype)initWithFrame:(CGRect)frame{
-    if (self == [super initWithFrame:frame]) {
+    if (self = [super initWithFrame:frame]) {
         [self initUI];
     }
     return self;

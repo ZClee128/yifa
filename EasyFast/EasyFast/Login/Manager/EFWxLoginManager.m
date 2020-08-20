@@ -54,7 +54,7 @@
         NSLog(@"success");
         NSDictionary *resp = (NSDictionary*)responseObject;
         NSString *openid = resp[@"openid"];
-        NSString *unionid = resp[@"unionid"];
+//        NSString *unionid = resp[@"unionid"];
         NSString *accessToken = resp[@"access_token"];
         NSString *refreshToken = resp[@"refresh_token"];
         if(accessToken && ![accessToken isEqualToString:@""] && openid && ![openid isEqualToString:@""]){

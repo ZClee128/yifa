@@ -140,8 +140,8 @@
 #pragma mark - Event Response
 
 - (void)clickPublish {
-    CYLTabBarController *tabBarController = [self cyl_tabBarController];
-    UIViewController *viewController = tabBarController.selectedViewController;
+//    CYLTabBarController *tabBarController = [self cyl_tabBarController];
+//    UIViewController *viewController = tabBarController.selectedViewController;
 
 }
 

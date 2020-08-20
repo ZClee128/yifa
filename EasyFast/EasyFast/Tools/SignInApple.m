@@ -82,9 +82,9 @@
         ASAuthorizationAppleIDCredential *appleIDCredential = authorization.credential;
         NSString *user = appleIDCredential.user;
         // 使用过授权的，可能获取不到以下三个参数
-        NSString *familyName = appleIDCredential.fullName.familyName;
-        NSString *givenName = appleIDCredential.fullName.givenName;
-        NSString *email = appleIDCredential.email;
+//        NSString *familyName = appleIDCredential.fullName.familyName;
+//        NSString *givenName = appleIDCredential.fullName.givenName;
+//        NSString *email = appleIDCredential.email;
         
         NSData *identityToken = appleIDCredential.identityToken;
         NSData *authorizationCode = appleIDCredential.authorizationCode;
@@ -109,7 +109,7 @@
         // 密码凭证对象的用户标识 用户的唯一标识
         NSString *user = passwordCredential.user;
         // 密码凭证对象的密码
-        NSString *password = passwordCredential.password;
+//        NSString *password = passwordCredential.password;
         [[LoginVM thirdLoginType:4 city:@"" province:@"" headImgUrl:@"" nickname:@"" openid:@"" sex:3 uid:user unionid:@""] subscribeNext:^(id  _Nullable x) {
             
         }];
