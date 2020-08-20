@@ -7,17 +7,15 @@
 //
 
 #import "EFSearchViewController.h"
-#import "TKTagView.h"
 #import "EFSearchResultViewController.h"
 #import "EFSearchVM.h"
 #import "SKTagView.h"
 
-@interface EFSearchViewController ()<QMUITableViewDelegate,QMUITableViewDataSource,TKTagViewTapDelegate,QMUITextFieldDelegate>
+@interface EFSearchViewController ()<QMUITableViewDelegate,QMUITableViewDataSource,QMUITextFieldDelegate>
 
 @property (nonatomic,strong)QMUITextField *searchField;
 @property (nonatomic,strong)QMUIButton *cancle;
 @property (nonatomic,strong)QMUITableView *tableView;
-//@property (nonatomic,strong)TKTagView *tagView;
 @property (nonatomic,strong)SKTagView *tagView;
 
 @end
@@ -27,21 +25,15 @@
 
 - (SKTagView *)tagView {
     if (_tagView == nil) {
-//        _tagView = [[TKTagView alloc] initWithFrame:CGRectMake(15, NAVIGATION_BAR_HEIGHT + 20, kPHONE_WIDTH-30, 1)];
-//        _tagView.tagFontSize = 14;
-//        _tagView.tagTitleColorArray = @[tabbarBlackColor];
-//        _tagView.tagColorArray = @[colorfafafa];
-//        _tagView.padding = WidthOfScale(10);
-//        _tagView.delegate = self;
         _tagView = [[SKTagView alloc] init];
-            // 整个tagView对应其SuperView的上左下右距离
-            _tagView.padding = UIEdgeInsetsMake(0, 15, 0, 15);
-            // 上下行之间的距离
-            _tagView.lineSpacing = 10;
-            // item之间的距离
-            _tagView.interitemSpacing = 10;
-            // 最大宽度
-            _tagView.preferredMaxLayoutWidth = kPHONE_WIDTH;
+        // 整个tagView对应其SuperView的上左下右距离
+        _tagView.padding = UIEdgeInsetsMake(0, 15, 0, 15);
+        // 上下行之间的距离
+        _tagView.lineSpacing = 10;
+        // item之间的距离
+        _tagView.interitemSpacing = 10;
+        // 最大宽度
+        _tagView.preferredMaxLayoutWidth = kPHONE_WIDTH;
     }
     return _tagView;
 }
@@ -153,14 +145,6 @@
         [self.tagView layoutSubviews];
         [self.view addSubview:self.tagView];
     }];
-}
-
-- (void)tapTag:(UILabel *)aTag index:(NSInteger)index {
-//    NSString *searchTitle = self.tagView.tagTitleArray[index];
-//    self.searchField.text = searchTitle;
-//    [self.view addSubview:self.tableView];
-//    EFSearchResultViewController *resultVC = [[EFSearchResultViewController alloc] initWithSearchTitle:searchTitle];
-//    [self.navigationController pushViewController:resultVC animated:NO];
 }
 
 - (void)recordSearch:(NSString *)text {

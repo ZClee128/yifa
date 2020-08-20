@@ -97,4 +97,12 @@
         return list;
     }];
 }
+
++ (RACSignal *)refreshOrder:(NSString *)orderNum {
+    return [self requsetNetwork:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] refreshOrder:orderNum];
+    } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
+        return result.reqResult;
+    }];
+}
 @end

@@ -13,6 +13,7 @@
 #import "EFAddressViewController.h"
 #import "EFOrderMoreDetailViewController.h"
 #import "EFOrderSearchViewController.h"
+#import "PayManager.h"
 @interface EFBridge ()
 @property (nonatomic,strong)WebViewJavascriptBridge *bridge;
 @end
@@ -106,8 +107,11 @@
         @strongify(self);
         //item
         NSDictionary *dict = [self identifyData:data];
-        EFPayStatusViewController *vc = [[EFPayStatusViewController alloc] init];
-        [self push:vc];
+        kAppDelegate.isPay = YES;
+        kAppDelegate.orderNum = dict[@"orderNum"];
+        [[PayManager defaultManager] showPay:[dict[@"payMethod"] intValue] == 1 ? wxPay : aliPay resp:dict[@"data"]];
+//        EFPayStatusViewController *vc = [[EFPayStatusViewController alloc] init];
+//        [self push:vc];
     }];
 }
 
@@ -127,7 +131,11 @@
     [self.bridge registerHandler:@"Camera" handler:^(id data, WVJBResponseCallback responseCallback) {
         NSDictionary *dict = [self identifyData:data];
         [[ZLPhotoActionSheet zlPhotos:[UIViewController getCurrentVC] maxCount:[dict[@"size"] isEqual:@"<null>"] ? 1 : [dict[@"size"] intValue]] subscribeNext:^(RACTuple * _Nullable x) {
+            [MBProgressHUD showAlertProgress:@"正在上传"];
             [[[FMARCNetwork sharedInstance] uploadImage:[dict[@"type"] intValue] image:x.first] subscribeNext:^(FMHttpResonse *x) {
+                [[RACScheduler mainThreadScheduler] schedule:^{
+                    [MBProgressHUD removeProgressFromSuperView];
+                }];
                 responseCallback(x.reqResult);
             }];
         } error:^(NSError * _Nullable error) {
@@ -176,6 +184,14 @@
         [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kLoginNoti object:nil] subscribeNext:^(NSNotification * _Nullable x) {
             responseCallback(@{@"token":kUserManager.userModel.token});
         }];
+    }];
+}
+
+- (void)tel {
+    [self.bridge registerHandler:@"tel" handler:^(id data, WVJBResponseCallback responseCallback) {
+        NSDictionary *dict = [self identifyData:data];
+        NSMutableString *str=[[NSMutableString alloc] initWithFormat:@"telprompt://%@",dict[@"tel"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
     }];
 }
 

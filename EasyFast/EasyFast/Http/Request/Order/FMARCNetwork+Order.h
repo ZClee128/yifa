@@ -29,6 +29,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 物流
 - (RACSignal *)orderExpressExpressNum:(NSString *)expressNum orderNum:(NSString *)orderNum;
+
+/// 查询支付结果
+- (RACSignal *)refreshOrder:(NSString *)orderNum;
 @end
 
 NS_ASSUME_NONNULL_END

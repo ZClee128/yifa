@@ -16,5 +16,7 @@
 @property (nonatomic,assign) BOOL  isOneBindPhone; //首次绑定
 @property (nonatomic,strong) NSString  *BindPhoneUid; // 三方登陆首次用户名
 @property (nonatomic,strong)id classCode; // 分类一级
+@property (nonatomic,assign) BOOL isPay; // 是否支付回调
+@property (nonatomic,strong) NSString *orderNum; // 订单号
 @end
 

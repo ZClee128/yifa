@@ -12,6 +12,7 @@
 #import "EFCalendarView.h"
 #import "CalendarModel.h"
 #import "MeVM.h"
+#import "EFFootprintCollectionViewCell.h"
 
 @interface EFFootprintViewController ()<LTSCalendarEventSource>{
     NSMutableDictionary *eventsByDate;
@@ -26,6 +27,11 @@
 
 - (void)viewDidLoad {
     self.viewModel = [[MeVM alloc] init];
+    self.lineSpacing = WidthOfScale(10);
+    self.interitemSpacing = WidthOfScale(10);
+    self.itemSize = CGSizeMake(WidthOfScale(167), WidthOfScale(165+72));
+    self.registerClasses = @[@{@"EFFootprintCollectionViewCell":@"EFFootprintCollectionViewCell"}];
+    self.collectionEdgeInsets = UIEdgeInsetsMake(WidthOfScale(15), WidthOfScale(15), WidthOfScale(15), WidthOfScale(15));
     [super viewDidLoad];
     self.gk_navTitle = @"浏览足迹";
     self.gk_navLineHidden = NO;
@@ -64,10 +70,8 @@
 ////    [self createRandomEvents];
 //    self.automaticallyAdjustsScrollViewInsets = false;
 //    [self.manager showSingleWeek];
-    
-    self.EFTableView.frame = CGRectMake(0, NAVIGATION_BAR_HEIGHT + 91, kPHONE_WIDTH, kPHONE_HEIGHT - NAVIGATION_BAR_HEIGHT - 91 - TAB_SAFE_HEIGHT);
-//    self.EFData = [@[@1,@2,@3,@5] mutableCopy];
-    [self.EFTableView registerClass:[TuanOtherGoodsTableViewCell class] forCellReuseIdentifier:NSStringFromClass([TuanOtherGoodsTableViewCell class])];
+    self.collectionView.frame = CGRectMake(0, NAVIGATION_BAR_HEIGHT + WidthOfScale(91), kPHONE_WIDTH, kPHONE_HEIGHT - NAVIGATION_BAR_HEIGHT - WidthOfScale(91) - TAB_SAFE_HEIGHT);
+    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
     [self addRefshUp];
     [self addRefshDown];
     [self loadList];
@@ -77,9 +81,9 @@
     @weakify(self);
     [[self.viewModel refreshForDown] subscribeNext:^(RACTuple *x) {
         @strongify(self);
-        [self.EFTableView.mj_header endRefreshing];
+        [self.collectionView.mj_header endRefreshing];
         self.EFData = x.first;
-        [self.EFTableView reloadData];
+        [self.collectionView reloadData];
     }];
 }
 
@@ -91,69 +95,77 @@
     @weakify(self);
     [[self.viewModel refreshForUp] subscribeNext:^(RACTuple *x) {
         @strongify(self);
-        [self.EFTableView.mj_footer endRefreshing];
-        self.EFData = x.first;
-        [self.EFTableView reloadData];
+        [self.collectionView.mj_footer endRefreshing];
+        NSMutableArray *tmpArr = [x.first mutableCopy];
+        for (int i = 0 ; i < [tmpArr count]; i++) {
+            EFFootPrint *model1 = tmpArr[i];
+            for (int j = 0; j< self.EFData.count; j++) {
+                EFFootPrint *model2 = self.EFData[j];
+                if ([model1.dateTime isEqualToString:model2.dateTime]) {
+                    [model2.goodsList addObjectsFromArray:model1.goodsList];
+                    [tmpArr removeObject:model1];
+                }
+            }
+        }
+        [self.EFData addObjectsFromArray:tmpArr];
+        [self.collectionView reloadData];
     }];
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
     return self.EFData.count;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
     EFFootPrint *model = self.EFData[section];
-    return model.goodsList.count % 2 == 0 ? model.goodsList.count / 2 : (model.goodsList.count) - (model.goodsList.count / 2) ;
+    return model.goodsList.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    TuanOtherGoodsTableViewCell *goodsCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TuanOtherGoodsTableViewCell class])];
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    EFFootprintCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([EFFootprintCollectionViewCell class]) forIndexPath:indexPath];
     EFFootPrint *model = self.EFData[indexPath.section];
-    if (model.goodsList.count % 2 == 0) {
-        [goodsCell setLeftModel:model.goodsList[indexPath.row*2]];
-        [goodsCell setRightModel:model.goodsList[indexPath.row*2+1]];
-        [goodsCell showRightView];
-    }else {
-        if (indexPath.row == (model.goodsList.count) - (model.goodsList.count / 2) - 1) {
-            [goodsCell setLeftModel:model.goodsList[indexPath.row*2]];
-            [goodsCell hiddenRightView];
-        }else {
-            [goodsCell setLeftModel:model.goodsList[indexPath.row*2]];
-            [goodsCell setRightModel:model.goodsList[indexPath.row*2+1]];
-            [goodsCell showRightView];
-        }
+    [cell setLeftModel:model.goodsList[indexPath.item]];
+    return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    UICollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"forIndexPath:indexPath];
+    EFFootPrint *model = self.EFData[indexPath.section];
+    for(UIView *v in header.subviews) {
+        [v removeFromSuperview];
     }
-    return goodsCell;
-}
-
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return WidthOfScale(165+72+10);
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    EFFootPrint *model = self.EFData[section];
-    QMUILabel *titleLab = [self.EFTableView viewWithTag:section+100];
+    QMUILabel *titleLab = [self.collectionView viewWithTag:indexPath.section+100];
     if (titleLab == nil) {
-        titleLab = [[QMUILabel alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, WidthOfScale(42.5))];
+        titleLab = [[QMUILabel alloc] initWithFrame:CGRectMake(0, WidthOfScale(27.5 - 12.5), kPHONE_WIDTH, WidthOfScale(12.5))];
         titleLab.contentEdgeInsets = UIEdgeInsetsMake(WidthOfScale(15), WidthOfScale(15), WidthOfScale(15), 0);
         titleLab.font = RegularFont14;
         titleLab.textColor = tabbarBlackColor;
-        titleLab.tag = section+100;
+        titleLab.tag = indexPath.section+100;
+        NSDateFormatter *dstFmt = [[NSDateFormatter alloc]init];
+        dstFmt.dateFormat = @"yyyy-MM-dd";
+        NSDate * srcDate = [dstFmt dateFromString:model.dateTime];
+        NSDateFormatter *fmt = [[NSDateFormatter alloc]init];
+        fmt.dateFormat = @"MM月dd日";
+        titleLab.text = [fmt stringFromDate:srcDate];
+        [header addSubview:titleLab];
     }
-    NSDateFormatter *dstFmt = [[NSDateFormatter alloc]init];
-    dstFmt.dateFormat = @"yyyy-MM-dd";
-    NSDate * srcDate = [dstFmt dateFromString:model.dateTime];
-    NSDateFormatter *fmt = [[NSDateFormatter alloc]init];
-    fmt.dateFormat = @"MM月dd日";
-    titleLab.text = [fmt stringFromDate:srcDate];
-    return titleLab;
+    return header;
+}
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+    return CGSizeMake(kPHONE_WIDTH, WidthOfScale(27.5));
 }
 
-- (CGFloat )tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return WidthOfScale(42.5);
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    EFFootPrint *model = self.EFData[indexPath.section];
+    EFGoodsList *gModel = model.goodsList[indexPath.item];
+    [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO),@"ggNo":gModel.ggNo}];
 }
+
 
 - (RACSignal *)getDay {
    return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {

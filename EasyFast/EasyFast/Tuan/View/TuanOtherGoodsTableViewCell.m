@@ -13,7 +13,8 @@
 
 @property (nonatomic,strong)TuanOtherGoodsView *leftView;
 @property (nonatomic,strong)TuanOtherGoodsView *rightView;
-
+@property (nonatomic,strong)EFGoodsList *leftModel;
+@property (nonatomic,strong)EFGoodsList *rightModel;
 @end
 
 
@@ -23,6 +24,15 @@
 {
     if (_leftView == nil) {
         _leftView = [[TuanOtherGoodsView alloc] initWithFrame:CGRectMake(WidthOfScale(15), 0, WidthOfScale(167),  WidthOfScale(165+72))];
+        _leftView.userInteractionEnabled = YES;
+        @weakify(self);
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithActionBlock:^(id  _Nonnull sender) {
+            @strongify(self);
+            if (self.leftBlock) {
+                self.leftBlock();
+            }
+        }];
+        [_leftView addGestureRecognizer:tap];
     }
     return _leftView;
 }
@@ -31,6 +41,15 @@
 {
     if (_rightView == nil) {
         _rightView = [[TuanOtherGoodsView alloc] initWithFrame:CGRectMake(WidthOfScale(15+167+11.5), 0, WidthOfScale(167), WidthOfScale(165+72))];
+        _rightView.userInteractionEnabled = YES;
+        @weakify(self);
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithActionBlock:^(id  _Nonnull sender) {
+            @strongify(self);
+            if (self.rightBlock) {
+                self.rightBlock();
+            }
+        }];
+        [_rightView addGestureRecognizer:tap];
     }
     return _rightView;
 }

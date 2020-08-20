@@ -32,6 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (RACSignal *)newGoodsRefreshForDown:(NSString *)sssNO;
 
 - (RACSignal *)newGoodsRefreshForUp:(NSString *)sssNO;
+
++ (RACSignal *)refreshOrder:(NSString *)orderNum;
 @end
 
 NS_ASSUME_NONNULL_END

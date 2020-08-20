@@ -33,4 +33,8 @@
 - (RACSignal *)orderExpressExpressNum:(NSString *)expressNum orderNum:(NSString *)orderNum {
     return [self fg_getRequest:korderExpress paramters:@{@"expressNum":expressNum,@"orderNum":orderNum}];
 }
+
+- (RACSignal *)refreshOrder:(NSString *)orderNum {
+    return [self fg_getRequest:krefreshOrder paramters:@{@"orderNum":orderNum}];
+}
 @end

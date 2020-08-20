@@ -270,6 +270,18 @@
                     [goodsCell showRightView];
                 }
             }
+            @weakify(self);
+            goodsCell.leftBlock = ^() {
+                @strongify(self);
+                EFGoodsList *model = self.EFData[indexPath.row*2];
+                [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO),@"ggNo":model.ggNo}];
+            };
+            
+            goodsCell.rightBlock = ^() {
+                @strongify(self);
+                EFGoodsList *model = self.EFData[indexPath.row*2+1];
+                [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO),@"ggNo":model.ggNo}];
+            };
             return goodsCell;
         }
     }
@@ -288,6 +300,8 @@
             EFOrderGoodsModel *model = self.model.goodsList[indexPath.row - 1];
             [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO),@"ggNo":model.goodsNo}];
         }
+    }else if (indexPath.section == 4) {
+        
     }
 }
 

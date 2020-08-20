@@ -103,6 +103,9 @@
 		0C56E0B624ED59BA00819D1A /* WhdeSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0AC24ED59BA00819D1A /* WhdeSession.m */; };
 		0C56E0B724ED59BA00819D1A /* WhdeSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0AC24ED59BA00819D1A /* WhdeSession.m */; };
 		0C56E0B824ED59BA00819D1A /* WhdeSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0AC24ED59BA00819D1A /* WhdeSession.m */; };
+		0C56E0BB24EE5D8D00819D1A /* EFFootprintCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0BA24EE5D8D00819D1A /* EFFootprintCollectionViewCell.m */; };
+		0C56E0BC24EE5D8D00819D1A /* EFFootprintCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0BA24EE5D8D00819D1A /* EFFootprintCollectionViewCell.m */; };
+		0C56E0BD24EE5D8D00819D1A /* EFFootprintCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0BA24EE5D8D00819D1A /* EFFootprintCollectionViewCell.m */; };
 		0C6CB56A24CE688300471A8D /* LRAnimationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56924CE688300471A8D /* LRAnimationProgress.m */; };
 		0C6CB56B24CE688300471A8D /* LRAnimationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56924CE688300471A8D /* LRAnimationProgress.m */; };
 		0C6CB56C24CE688300471A8D /* LRAnimationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56924CE688300471A8D /* LRAnimationProgress.m */; };
@@ -462,9 +465,6 @@
 		84760FAD24C19779002B34E4 /* MeWebTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84760FAC24C19779002B34E4 /* MeWebTableViewCell.m */; };
 		84760FAE24C19779002B34E4 /* MeWebTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84760FAC24C19779002B34E4 /* MeWebTableViewCell.m */; };
 		84760FAF24C19779002B34E4 /* MeWebTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84760FAC24C19779002B34E4 /* MeWebTableViewCell.m */; };
-		8476102824C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476102724C1A467002B34E4 /* SLScrollViewHorizontalItem.m */; };
-		8476102924C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476102724C1A467002B34E4 /* SLScrollViewHorizontalItem.m */; };
-		8476102A24C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476102724C1A467002B34E4 /* SLScrollViewHorizontalItem.m */; };
 		8476102D24C52BDC002B34E4 /* H5Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476102C24C52BDC002B34E4 /* H5Manager.m */; };
 		8476102E24C52BDC002B34E4 /* H5Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476102C24C52BDC002B34E4 /* H5Manager.m */; };
 		8476102F24C52BDC002B34E4 /* H5Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476102C24C52BDC002B34E4 /* H5Manager.m */; };
@@ -690,9 +690,6 @@
 		84A8219424BEF2DB00EAC652 /* UIView+GradientColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8219224BEF2D700EAC652 /* UIView+GradientColor.m */; };
 		84A8219524BEF2DB00EAC652 /* UIView+GradientColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8219224BEF2D700EAC652 /* UIView+GradientColor.m */; };
 		84A8219624BEF2DB00EAC652 /* UIView+GradientColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8219224BEF2D700EAC652 /* UIView+GradientColor.m */; };
-		84A8219B24BF011700EAC652 /* TKTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8219924BF011700EAC652 /* TKTagView.m */; };
-		84A8219C24BF011700EAC652 /* TKTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8219924BF011700EAC652 /* TKTagView.m */; };
-		84A8219D24BF011700EAC652 /* TKTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8219924BF011700EAC652 /* TKTagView.m */; };
 		84A821A024BF146200EAC652 /* EFFollowSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8219F24BF146200EAC652 /* EFFollowSubViewController.m */; };
 		84A821A124BF146200EAC652 /* EFFollowSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8219F24BF146200EAC652 /* EFFollowSubViewController.m */; };
 		84A821A224BF146200EAC652 /* EFFollowSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A8219F24BF146200EAC652 /* EFFollowSubViewController.m */; };
@@ -803,6 +800,8 @@
 		0C56E0AA24ED59BA00819D1A /* WhdeNetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhdeNetworkService.m; sourceTree = "<group>"; };
 		0C56E0AB24ED59BA00819D1A /* WhdeSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhdeSession.h; sourceTree = "<group>"; };
 		0C56E0AC24ED59BA00819D1A /* WhdeSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhdeSession.m; sourceTree = "<group>"; };
+		0C56E0B924EE5D8D00819D1A /* EFFootprintCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFFootprintCollectionViewCell.h; sourceTree = "<group>"; };
+		0C56E0BA24EE5D8D00819D1A /* EFFootprintCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFFootprintCollectionViewCell.m; sourceTree = "<group>"; };
 		0C6CB56824CE688300471A8D /* LRAnimationProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRAnimationProgress.h; sourceTree = "<group>"; };
 		0C6CB56924CE688300471A8D /* LRAnimationProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRAnimationProgress.m; sourceTree = "<group>"; };
 		0C6CB56D24CE7A1400471A8D /* EFOneLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOneLoginViewController.h; sourceTree = "<group>"; };
@@ -1049,8 +1048,6 @@
 		84760F9524C1806D002B34E4 /* NSMutableAttributedString+Size.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+Size.m"; sourceTree = "<group>"; };
 		84760FAB24C19779002B34E4 /* MeWebTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeWebTableViewCell.h; sourceTree = "<group>"; };
 		84760FAC24C19779002B34E4 /* MeWebTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeWebTableViewCell.m; sourceTree = "<group>"; };
-		8476102624C1A467002B34E4 /* SLScrollViewHorizontalItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLScrollViewHorizontalItem.h; sourceTree = "<group>"; };
-		8476102724C1A467002B34E4 /* SLScrollViewHorizontalItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLScrollViewHorizontalItem.m; sourceTree = "<group>"; };
 		8476102B24C52BDC002B34E4 /* H5Manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = H5Manager.h; sourceTree = "<group>"; };
 		8476102C24C52BDC002B34E4 /* H5Manager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = H5Manager.m; sourceTree = "<group>"; };
 		8476103124C54189002B34E4 /* TuanListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TuanListViewController.h; sourceTree = "<group>"; };
@@ -1208,8 +1205,6 @@
 		84A8218D24BEE61700EAC652 /* EFGoodsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFGoodsTableViewCell.m; sourceTree = "<group>"; };
 		84A8219224BEF2D700EAC652 /* UIView+GradientColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GradientColor.m"; sourceTree = "<group>"; };
 		84A8219324BEF2DA00EAC652 /* UIView+GradientColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GradientColor.h"; sourceTree = "<group>"; };
-		84A8219924BF011700EAC652 /* TKTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTagView.m; sourceTree = "<group>"; };
-		84A8219A24BF011700EAC652 /* TKTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTagView.h; sourceTree = "<group>"; };
 		84A8219E24BF146100EAC652 /* EFFollowSubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFFollowSubViewController.h; sourceTree = "<group>"; };
 		84A8219F24BF146200EAC652 /* EFFollowSubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFFollowSubViewController.m; sourceTree = "<group>"; };
 		84A821A424BF15E700EAC652 /* EFFollowTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFFollowTableViewCell.h; sourceTree = "<group>"; };
@@ -1762,6 +1757,8 @@
 				847610CD24C6D898002B34E4 /* PowerTableViewCell.m */,
 				8476117424C6E2ED002B34E4 /* NotiTableViewCell.h */,
 				8476117524C6E2ED002B34E4 /* NotiTableViewCell.m */,
+				0C56E0B924EE5D8D00819D1A /* EFFootprintCollectionViewCell.h */,
+				0C56E0BA24EE5D8D00819D1A /* EFFootprintCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2362,22 +2359,10 @@
 				0C6CB56924CE688300471A8D /* LRAnimationProgress.m */,
 				841B94F024C979790054D8D5 /* SXPopMenu */,
 				847610B724C6C267002B34E4 /* TextField */,
-				8476102624C1A467002B34E4 /* SLScrollViewHorizontalItem.h */,
-				8476102724C1A467002B34E4 /* SLScrollViewHorizontalItem.m */,
-				84A8219824BF011700EAC652 /* TKTagView */,
 				84187CA724C05E8200ED3F96 /* VerticalLabelBotton.h */,
 				84187CA824C05E8200ED3F96 /* VerticalLabelBotton.m */,
 			);
 			path = Tools;
-			sourceTree = "<group>";
-		};
-		84A8219824BF011700EAC652 /* TKTagView */ = {
-			isa = PBXGroup;
-			children = (
-				84A8219924BF011700EAC652 /* TKTagView.m */,
-				84A8219A24BF011700EAC652 /* TKTagView.h */,
-			);
-			path = TKTagView;
 			sourceTree = "<group>";
 		};
 		84A821A324BF15CC00EAC652 /* View */ = {
@@ -2855,7 +2840,6 @@
 				84A8219424BEF2DB00EAC652 /* UIView+GradientColor.m in Sources */,
 				8476108324C5A09E002B34E4 /* EFSetUpVM.m in Sources */,
 				0C6CB5A224CEC1F000471A8D /* EFCodeLoginTableViewCell.m in Sources */,
-				8476102824C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */,
 				0C8A2A0624DBEABB00E40ED8 /* EFCollectionVM.m in Sources */,
 				0C6CB5B124CECBC200471A8D /* EFFastRegViewController.m in Sources */,
 				0C0CC42E24E2BDA2005E50ED /* EFQueryUserInfoCountModel.m in Sources */,
@@ -2868,6 +2852,7 @@
 				0CBE6A0524E3DCDA003C300F /* EFQueryUserOrderCountModel.m in Sources */,
 				0C56E0A124ED499D00819D1A /* EFH5DownLoadModel.m in Sources */,
 				847610BA24C6C291002B34E4 /* EFPasswordTextField.m in Sources */,
+				0C56E0BB24EE5D8D00819D1A /* EFFootprintCollectionViewCell.m in Sources */,
 				0CCEC46724CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.m in Sources */,
 				0C6CB5BC24CFBE3800471A8D /* EFCustomWebViewPool.m in Sources */,
 				0C6CB5AC24CEC7BE00471A8D /* EFAccountPswTableViewCell.m in Sources */,
@@ -2978,7 +2963,6 @@
 				84A820DD24B6CE6B00EAC652 /* UIView+Frame.m in Sources */,
 				0C0CC41324E27BF7005E50ED /* EFHomeVM.m in Sources */,
 				8476109F24C684EA002B34E4 /* EFQPTableViewCell.m in Sources */,
-				84A8219B24BF011700EAC652 /* TKTagView.m in Sources */,
 				0CE2861424D3EC4F00AAC334 /* LTSCircleView.m in Sources */,
 				0CBE6A2624E405E5003C300F /* EFIMModel.m in Sources */,
 				0C0CC42924E2953C005E50ED /* EFClassifyVM.m in Sources */,
@@ -3100,7 +3084,6 @@
 				84A8219524BEF2DB00EAC652 /* UIView+GradientColor.m in Sources */,
 				8476108424C5A09E002B34E4 /* EFSetUpVM.m in Sources */,
 				0C6CB5A324CEC1F000471A8D /* EFCodeLoginTableViewCell.m in Sources */,
-				8476102924C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */,
 				0C8A2A0724DBEABB00E40ED8 /* EFCollectionVM.m in Sources */,
 				0C6CB5B224CECBC200471A8D /* EFFastRegViewController.m in Sources */,
 				0C0CC42F24E2BDA2005E50ED /* EFQueryUserInfoCountModel.m in Sources */,
@@ -3113,6 +3096,7 @@
 				0CBE6A0624E3DCDA003C300F /* EFQueryUserOrderCountModel.m in Sources */,
 				0C56E0A224ED499D00819D1A /* EFH5DownLoadModel.m in Sources */,
 				847610BB24C6C291002B34E4 /* EFPasswordTextField.m in Sources */,
+				0C56E0BC24EE5D8D00819D1A /* EFFootprintCollectionViewCell.m in Sources */,
 				0CCEC46824CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.m in Sources */,
 				0C6CB5BD24CFBE3800471A8D /* EFCustomWebViewPool.m in Sources */,
 				0C6CB5AD24CEC7BE00471A8D /* EFAccountPswTableViewCell.m in Sources */,
@@ -3223,7 +3207,6 @@
 				84A8210F24BC4F5400EAC652 /* EFBaseVM.m in Sources */,
 				0C0CC41424E27BF7005E50ED /* EFHomeVM.m in Sources */,
 				847610A024C684EA002B34E4 /* EFQPTableViewCell.m in Sources */,
-				84A8219C24BF011700EAC652 /* TKTagView.m in Sources */,
 				0CE2861524D3EC4F00AAC334 /* LTSCircleView.m in Sources */,
 				0CBE6A2724E405E5003C300F /* EFIMModel.m in Sources */,
 				0C0CC42A24E2953C005E50ED /* EFClassifyVM.m in Sources */,
@@ -3345,7 +3328,6 @@
 				84A8219624BEF2DB00EAC652 /* UIView+GradientColor.m in Sources */,
 				8476108524C5A09E002B34E4 /* EFSetUpVM.m in Sources */,
 				0C6CB5A424CEC1F000471A8D /* EFCodeLoginTableViewCell.m in Sources */,
-				8476102A24C1A467002B34E4 /* SLScrollViewHorizontalItem.m in Sources */,
 				0C8A2A0824DBEABB00E40ED8 /* EFCollectionVM.m in Sources */,
 				0C6CB5B324CECBC200471A8D /* EFFastRegViewController.m in Sources */,
 				0C0CC43024E2BDA2005E50ED /* EFQueryUserInfoCountModel.m in Sources */,
@@ -3358,6 +3340,7 @@
 				0CBE6A0724E3DCDA003C300F /* EFQueryUserOrderCountModel.m in Sources */,
 				0C56E0A324ED499D00819D1A /* EFH5DownLoadModel.m in Sources */,
 				847610BC24C6C291002B34E4 /* EFPasswordTextField.m in Sources */,
+				0C56E0BD24EE5D8D00819D1A /* EFFootprintCollectionViewCell.m in Sources */,
 				0CCEC46924CA872A00976D24 /* EFOrderDetailGoodsTableViewCell.m in Sources */,
 				0C6CB5BE24CFBE3800471A8D /* EFCustomWebViewPool.m in Sources */,
 				0C6CB5AE24CEC7BE00471A8D /* EFAccountPswTableViewCell.m in Sources */,
@@ -3468,7 +3451,6 @@
 				84A8213224BC513500EAC652 /* UIView+Frame.m in Sources */,
 				0C0CC41524E27BF7005E50ED /* EFHomeVM.m in Sources */,
 				847610A124C684EA002B34E4 /* EFQPTableViewCell.m in Sources */,
-				84A8219D24BF011700EAC652 /* TKTagView.m in Sources */,
 				0CE2861624D3EC4F00AAC334 /* LTSCircleView.m in Sources */,
 				0CBE6A2824E405E5003C300F /* EFIMModel.m in Sources */,
 				0C0CC42B24E2953C005E50ED /* EFClassifyVM.m in Sources */,

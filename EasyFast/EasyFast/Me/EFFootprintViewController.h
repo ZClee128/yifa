@@ -6,11 +6,11 @@
 //  Copyright © 2020 EasyFast. All rights reserved.
 //
 
-#import "EFBaseTableViewController.h"
+#import "EFBaseCollectionViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EFFootprintViewController : EFBaseTableViewController
+@interface EFFootprintViewController : EFBaseCollectionViewController
 
 @end
 

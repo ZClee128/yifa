@@ -57,6 +57,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 登录
 - (void)login;
+
+/// 电话
+- (void)tel;
 - (NSDictionary *)identifyData:(id)data;
 
 

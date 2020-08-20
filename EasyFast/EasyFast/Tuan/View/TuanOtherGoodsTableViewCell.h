@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TuanOtherGoodsTableViewCell : BaseTableViewCell
 
+@property (nonatomic,copy)void(^leftBlock)(void);
+@property (nonatomic,copy)void(^rightBlock)(void);
+
 - (void)hiddenRightView;
 
 - (void)showRightView;

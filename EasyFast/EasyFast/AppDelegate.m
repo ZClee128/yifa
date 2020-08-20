@@ -10,6 +10,7 @@
 #import "EFOneLoginViewController.h"
 #import <BaiduMapAPI_Map/BMKMapView.h>
 #import "LoginVM.h"
+#import "EFOrderVM.h"
 @interface AppDelegate ()<WXApiDelegate,JPUSHRegisterDelegate>
 
 @property (nonatomic,strong)BMKMapManager *mapManager;
@@ -259,6 +260,11 @@
     [[LoginVM downloadWebPage] subscribeNext:^(id  _Nullable x) {
         
     }];
+    if (self.isPay) {
+        [[EFOrderVM refreshOrder:self.orderNum] subscribeNext:^(id  _Nullable x) {
+            
+        }];
+    }
     [application setApplicationIconBadgeNumber:0];
     [application cancelAllLocalNotifications];
 }

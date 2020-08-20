@@ -77,11 +77,15 @@
     
     if ([kH5Manager isExist]) {
         NSURL *fileURL = [NSURL fileURLWithPath:[kH5Manager openIndex]];
-        [_webView loadFileURL:fileURL allowingReadAccessToURL:fileURL];
+//        [_webView loadFileURL:fileURL allowingReadAccessToURL:fileURL];
+//           NSString *path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:@"dist"];
+//            NSURL *fileURL = [NSURL fileURLWithPath:path];
+            [_webView loadFileURL:fileURL allowingReadAccessToURL:fileURL];
+
     }else {
         [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[kH5Manager getModel] ? [kH5Manager getModel].loadingUrl : @"http://192.168.3.23:8080/"]]];
     }
-    
+//    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString: @"http://192.168.3.23:8080/"]]];
     [self getFun];
     self.gk_fullScreenPopDisabled = YES;
 }
@@ -103,6 +107,7 @@
     [self.efbridge returnApplyOver];
     [self.efbridge login];
     [self.efbridge recomListClick];
+    [self.efbridge tel];
 }
 
 

@@ -88,7 +88,6 @@
 
 - (void)viewDidLoad {
     self.viewModel = [[EFSearchVM alloc] init];
-    self.collectionView.frame = CGRectMake(0, NAVIGATION_BAR_HEIGHT + 45, kPHONE_WIDTH,kPHONE_HEIGHT - NAVIGATION_BAR_HEIGHT - 45);
     self.lineSpacing = WidthOfScale(11);
     self.interitemSpacing = WidthOfScale(10);
 //    self.itemSize = CGSizeMake(WidthOfScale(167), WidthOfScale(280));

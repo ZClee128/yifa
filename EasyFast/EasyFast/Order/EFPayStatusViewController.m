@@ -53,7 +53,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.gk_backImage = [UIImageMake(@"btn_back_black") qmui_imageWithTintColor:UIColor.whiteColor];
+//    self.gk_backImage = [UIImageMake(@"btn_back_black") qmui_imageWithTintColor:UIColor.whiteColor];
+    self.gk_navLineHidden = YES;
     self.gk_navTitle = @"";
     self.gk_navBackgroundColor = UIColor.clearColor;
     self.gk_navLineHidden = YES;
@@ -135,16 +136,32 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TuanOtherGoodsTableViewCell *goodsCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([TuanOtherGoodsTableViewCell class])];
-    [goodsCell setModel:self.EFData];
     if (self.EFData.count % 2 == 0) {
+        [goodsCell setLeftModel:self.EFData[indexPath.row*2]];
+        [goodsCell setRightModel:self.EFData[indexPath.row*2+1]];
         [goodsCell showRightView];
     }else {
         if (indexPath.row == (self.EFData.count) - (self.EFData.count / 2) - 1) {
+            [goodsCell setLeftModel:self.EFData[indexPath.row*2]];
             [goodsCell hiddenRightView];
         }else {
+            [goodsCell setLeftModel:self.EFData[indexPath.row*2]];
+            [goodsCell setRightModel:self.EFData[indexPath.row*2+1]];
             [goodsCell showRightView];
         }
     }
+    @weakify(self);
+    goodsCell.leftBlock = ^() {
+        @strongify(self);
+        EFGoodsList *model = self.EFData[indexPath.row*2];
+        [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO),@"ggNo":model.ggNo}];
+    };
+    
+    goodsCell.rightBlock = ^() {
+        @strongify(self);
+        EFGoodsList *model = self.EFData[indexPath.row*2+1];
+        [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO),@"ggNo":model.ggNo}];
+    };
     return goodsCell;
 }
 

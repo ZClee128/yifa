@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EFFootPrint : EFBaseModel
 
-@property (nonatomic,strong)NSArray<EFGoodsList *> *goodsList;
+@property (nonatomic,strong)NSMutableArray<EFGoodsList *> *goodsList;
 @property (nonatomic,strong)NSString *dateTime;
 
 @end
