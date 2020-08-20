@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)defaultManager;
 
-- (void)showShareView;
+- (void)showShareViewWithTitle:(NSString *)title shareLink:(NSString *)shareLink sharetext:(NSString *)shareText shareImage:(NSString *)shareImage;
 @end
 
 NS_ASSUME_NONNULL_END

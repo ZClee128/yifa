@@ -67,7 +67,7 @@
     self.bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView];
     self.efbridge = [[EFBridge alloc] initWithBridge:self.bridge];
     [self.bridge setWebViewDelegate:self];
-    if ([kH5Manager isExist]) {
+    if ([kH5Manager isTmpExist]) {
         NSURL *fileURL = [NSURL fileURLWithPath:[kH5Manager openIndex]];
         [self.webView loadFileURL:fileURL allowingReadAccessToURL:fileURL];
     }else {

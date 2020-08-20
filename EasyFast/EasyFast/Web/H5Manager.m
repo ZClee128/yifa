@@ -80,41 +80,38 @@
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDownloadTask *downLoadTask = [session downloadTaskWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:zipurl]] completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-      if (!location) {
-          return ;
-      }
-      //下载成功，移除旧资源
-      [fileManager removeItemAtPath:finishPath error:nil];
-      
-      // 文件移动到指定目录中
-      NSError *saveError;
-      [fileManager moveItemAtURL:location toURL:[NSURL fileURLWithPath:zipPath] error:&saveError];
-      //解压zip
-      BOOL success = [SSZipArchive unzipFileAtPath:zipPath toDestination:finishPath];
-      if (!success) {
-          XYLog(@"pkgfile: unzip file error");
-          [fileManager removeItemAtPath:zipPath error:nil];
-          [fileManager removeItemAtPath:finishPath error:nil];
-          return;
-      }
-      //清除临时文件和目录
-      [fileManager removeItemAtPath:zipPath error:nil];
+        if (!location) {
+            return ;
+        }
+        //下载成功，移除旧资源
+        [fileManager removeItemAtPath:finishPath error:nil];
         
+        // 文件移动到指定目录中
+        NSError *saveError;
+        [fileManager moveItemAtURL:location toURL:[NSURL fileURLWithPath:zipPath] error:&saveError];
+        //解压zip
+        BOOL success = [SSZipArchive unzipFileAtPath:zipPath toDestination:finishPath];
+        if (!success) {
+            XYLog(@"pkgfile: unzip file error");
+            [fileManager removeItemAtPath:zipPath error:nil];
+            [fileManager removeItemAtPath:finishPath error:nil];
+            return;
+        }
+        //清除临时文件和目录
+        [fileManager removeItemAtPath:zipPath error:nil];
+        [self migrateDistToTempory];
     }];
     [downLoadTask resume];
     [session finishTasksAndInvalidate];
 }
 
 - (NSString *)openIndex {
-//    NSString *zipName    = [[fileName lastPathComponent] stringByDeletingPathExtension];//获取下载链接里的文件名 即123sst文件夹
+    //    NSString *zipName    = [[fileName lastPathComponent] stringByDeletingPathExtension];//获取下载链接里的文件名 即123sst文件夹
     // 获取Caches目录路径
-//    NSString *cachesDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
-//    NSString * webPath = [NSString stringWithFormat:@"%@/zipDownload/%@/dist/index.html",cachesDir,fileName];
-//    NSString *webPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"dist"];
-//    XYLog(@"%@",webPath);
-    if (![self isTmpExist]) {
-       [self migrateDistToTempory];
-    }
+    //    NSString *cachesDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
+    //    NSString * webPath = [NSString stringWithFormat:@"%@/zipDownload/%@/dist/index.html",cachesDir,fileName];
+    //    NSString *webPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"dist"];
+    //    XYLog(@"%@",webPath);
     return [NSString stringWithFormat:@"%@/index.html",tmpFilePath];
 }
 
@@ -133,7 +130,7 @@
     CC_MD5(cStr,(CC_LONG)strlen(cStr), digest);
     NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
     for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++)
-    [output appendFormat:@"%02x", digest[i]];
+        [output appendFormat:@"%02x", digest[i]];
     return  output;
 }
 
@@ -146,13 +143,13 @@
 }
 
 - (void)migrateDistToTempory {
-  NSFileManager *fm = [NSFileManager defaultManager];
-  NSString *cacheFilePath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"zipDownload/EasyFast/dist"];
-  // 先删除tempory已有的dist资源
-  [fm removeItemAtPath:tmpFilePath error:nil];
-  NSError *saveError;
-  // 从caches拷贝dist到tempory临时文件夹
-  [[NSFileManager defaultManager] copyItemAtURL:[NSURL fileURLWithPath:cacheFilePath] toURL:[NSURL fileURLWithPath:tmpFilePath] error:&saveError];
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSString *cacheFilePath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"zipDownload/EasyFast/dist"];
+    // 先删除tempory已有的dist资源
+    [fm removeItemAtPath:tmpFilePath error:nil];
+    NSError *saveError;
+    // 从caches拷贝dist到tempory临时文件夹
+    [[NSFileManager defaultManager] copyItemAtURL:[NSURL fileURLWithPath:cacheFilePath] toURL:[NSURL fileURLWithPath:tmpFilePath] error:&saveError];
     XYLog(@"%@",saveError);
 }
 

@@ -60,7 +60,12 @@
 
 - (void)share {
     [self.bridge registerHandler:@"share" handler:^(id data, WVJBResponseCallback responseCallback) {
-        [kShareManager showShareView];
+        // shareLink  分享链接
+        // shareTitle 分享标题
+        // shareDescr 分享内容
+        // shareImage 分享图片
+        NSDictionary *dict = [self identifyData:data];
+        [kShareManager showShareViewWithTitle:dict[@"shareTitle"] shareLink:dict[@"shareLink"] sharetext:dict[@"shareDescr"] shareImage:dict[@"shareImage"]];
     }];
 }
 
@@ -105,12 +110,13 @@
     @weakify(self);
     [self.bridge registerHandler:@"Pay" handler:^(id data, WVJBResponseCallback responseCallback) {
         @strongify(self);
-        //item
+//        //item
         NSDictionary *dict = [self identifyData:data];
         kAppDelegate.isPay = YES;
         kAppDelegate.orderNum = dict[@"orderNum"];
+        kAppDelegate.sssNo = dict[@"sssNo"];
         [[PayManager defaultManager] showPay:[dict[@"payMethod"] intValue] == 1 ? wxPay : aliPay resp:dict[@"data"]];
-//        EFPayStatusViewController *vc = [[EFPayStatusViewController alloc] init];
+//        EFPayStatusViewController *vc = [[EFPayStatusViewController alloc] initWithsssNo:dict[@"sssNo"] ? dict[@"sssNo"] : @""];
 //        [self push:vc];
     }];
 }

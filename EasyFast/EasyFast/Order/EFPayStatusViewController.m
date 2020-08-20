@@ -8,10 +8,11 @@
 
 #import "EFPayStatusViewController.h"
 #import "TuanOtherGoodsTableViewCell.h"
-
+#import "EFOrderVM.h"
 @interface EFPayStatusViewController ()
 
 @property (nonatomic,strong)UIView *otherView;
+@property (nonatomic,strong)NSString *sssNo;
 @end
 
 @implementation EFPayStatusViewController
@@ -51,17 +52,41 @@
     return _otherView;
 }
 
+- (instancetype)initWithsssNo:(NSString *)sssNo
+{
+    self = [super init];
+    if (self) {
+        self.sssNo = sssNo;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
+    self.viewModel = [[EFOrderVM alloc] init];
     [super viewDidLoad];
 //    self.gk_backImage = [UIImageMake(@"btn_back_black") qmui_imageWithTintColor:UIColor.whiteColor];
-    self.gk_navLineHidden = YES;
+    self.gk_navigationBar.hidden = YES;
     self.gk_navTitle = @"";
     self.gk_navBackgroundColor = UIColor.clearColor;
-    self.gk_navLineHidden = YES;
     self.EFTableView.frame = CGRectMake(0, 0, kPHONE_WIDTH, kPHONE_HEIGHT - TAB_SAFE_HEIGHT);
     self.EFTableView.tableHeaderView = [self headerView];
     [self.EFTableView registerClass:[TuanOtherGoodsTableViewCell class] forCellReuseIdentifier:NSStringFromClass([TuanOtherGoodsTableViewCell class])];
-     self.EFData = [@[@1,@2,@3,@5] mutableCopy];
+     @weakify(self);
+    [[((EFOrderVM *)self.viewModel) newGoodsRefreshForDown:self.sssNo] subscribeNext:^(RACTuple *x) {
+         @strongify(self);
+         self.EFData = [x.first mutableCopy];
+         [self.EFTableView reloadData];
+     }];
+    [self addRefshUp];
+}
+
+- (void)loadMoreData {
+    @weakify(self);
+    [[((EFOrderVM *)self.viewModel) newGoodsRefreshForUp:self.sssNo] subscribeNext:^(RACTuple *x) {
+        @strongify(self);
+        self.EFData = [x.first mutableCopy];
+        [self.EFTableView reloadData];
+    }];
 }
 
 - (UIView *)headerView {

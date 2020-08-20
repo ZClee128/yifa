@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EFPayStatusViewController : EFBaseTableViewController
 
+- (instancetype)initWithsssNo:(NSString *)sssNo;
 @end
 
 NS_ASSUME_NONNULL_END

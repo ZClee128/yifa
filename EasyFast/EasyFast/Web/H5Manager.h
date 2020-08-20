@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)isExist;
 - (EFH5DownLoadModel *)getModel;
 - (void)deletFile;
-
+- (BOOL)isTmpExist;
 @end
 
 NS_ASSUME_NONNULL_END

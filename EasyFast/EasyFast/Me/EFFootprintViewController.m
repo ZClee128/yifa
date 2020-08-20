@@ -96,13 +96,14 @@
     [[self.viewModel refreshForUp] subscribeNext:^(RACTuple *x) {
         @strongify(self);
         [self.collectionView.mj_footer endRefreshing];
-        NSMutableArray *tmpArr = [x.first mutableCopy];
+        NSMutableArray *tmpArr = [x.second mutableCopy];
         for (int i = 0 ; i < [tmpArr count]; i++) {
             EFFootPrint *model1 = tmpArr[i];
             for (int j = 0; j< self.EFData.count; j++) {
                 EFFootPrint *model2 = self.EFData[j];
                 if ([model1.dateTime isEqualToString:model2.dateTime]) {
                     [model2.goodsList addObjectsFromArray:model1.goodsList];
+                    self.EFData[j] = model2;
                     [tmpArr removeObject:model1];
                 }
             }
@@ -139,21 +140,18 @@
     for(UIView *v in header.subviews) {
         [v removeFromSuperview];
     }
-    QMUILabel *titleLab = [self.collectionView viewWithTag:indexPath.section+100];
-    if (titleLab == nil) {
-        titleLab = [[QMUILabel alloc] initWithFrame:CGRectMake(0, WidthOfScale(27.5 - 12.5), kPHONE_WIDTH, WidthOfScale(12.5))];
-        titleLab.contentEdgeInsets = UIEdgeInsetsMake(WidthOfScale(15), WidthOfScale(15), WidthOfScale(15), 0);
-        titleLab.font = RegularFont14;
-        titleLab.textColor = tabbarBlackColor;
-        titleLab.tag = indexPath.section+100;
-        NSDateFormatter *dstFmt = [[NSDateFormatter alloc]init];
-        dstFmt.dateFormat = @"yyyy-MM-dd";
-        NSDate * srcDate = [dstFmt dateFromString:model.dateTime];
-        NSDateFormatter *fmt = [[NSDateFormatter alloc]init];
-        fmt.dateFormat = @"MM月dd日";
-        titleLab.text = [fmt stringFromDate:srcDate];
-        [header addSubview:titleLab];
-    }
+    QMUILabel *titleLab = [[QMUILabel alloc] initWithFrame:CGRectMake(0, WidthOfScale(27.5 - 12.5), kPHONE_WIDTH, WidthOfScale(12.5))];
+    titleLab.contentEdgeInsets = UIEdgeInsetsMake(WidthOfScale(15), WidthOfScale(15), WidthOfScale(15), 0);
+    titleLab.font = RegularFont14;
+    titleLab.textColor = tabbarBlackColor;
+    NSDateFormatter *dstFmt = [[NSDateFormatter alloc]init];
+    dstFmt.dateFormat = @"yyyy-MM-dd";
+    NSDate * srcDate = [dstFmt dateFromString:model.dateTime];
+    NSDateFormatter *fmt = [[NSDateFormatter alloc]init];
+    fmt.dateFormat = @"MM月dd日";
+    titleLab.text = [fmt stringFromDate:srcDate];
+    [header addSubview:titleLab];
+    
     return header;
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {

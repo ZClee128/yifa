@@ -8,6 +8,15 @@
 
 #import "ShareManager.h"
 
+@interface ShareManager()
+
+@property (nonatomic,strong)NSString *shareTitle;
+@property (nonatomic,strong)NSString *shareLink;
+@property (nonatomic,strong)NSString *shareText;
+@property (nonatomic,strong)NSString *shareImage;
+@end
+
+
 @implementation ShareManager
 
 
@@ -20,7 +29,11 @@
     return _sharedManager;
 }
 
-- (void)showShareView {
+- (void)showShareViewWithTitle:(NSString *)title shareLink:(NSString *)shareLink sharetext:(NSString *)shareText shareImage:(NSString *)shareImage {
+    self.shareLink = shareLink;
+    self.shareTitle = title;
+    self.shareText = shareText;
+    self.shareImage = shareImage;
     [UMSocialUIManager setPreDefinePlatforms:@[@(UMSocialPlatformType_Sina),@(UMSocialPlatformType_QQ),@(UMSocialPlatformType_WechatSession),@(UMSocialPlatformType_WechatTimeLine)]];
      [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
         // 根据获取的platformType确定所选平台进行下一步操作
@@ -43,13 +56,13 @@
     UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
 
     //设置文本
-    messageObject.text = @"社会化组件UShare将各大社交平台接入您的应用，快速武装App。http://mobile.umeng.com/social";
+    messageObject.text = [NSString stringWithFormat:@"%@ %@",self.shareText,self.shareLink];
 
     //创建图片内容对象
     UMShareImageObject *shareObject = [[UMShareImageObject alloc] init];
     //如果有缩略图，则设置缩略图
     shareObject.thumbImage = [UIImage imageNamed:@"logo"];
-    [shareObject setShareImage:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597557205203&di=d4e2ead36c83412eabe1bb4d6c7a3b27&imgtype=0&src=http%3A%2F%2Fa3.att.hudong.com%2F14%2F75%2F01300000164186121366756803686.jpg"];
+    [shareObject setShareImage:self.shareImage];
 
     //分享消息对象设置分享内容对象
     messageObject.shareObject = shareObject;
@@ -70,9 +83,9 @@
     UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
 
     //创建网页内容对象
-    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"分享标题" descr:@"分享内容描述" thumImage:[UIImage imageNamed:@"logo"]];
+    UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:self.shareTitle descr:self.shareText thumImage:[UIImage imageNamed:@"logo"]];
     //设置网页地址
-    shareObject.webpageUrl =@"http://mobile.umeng.com/social";
+    shareObject.webpageUrl =self.shareLink;
 
     //分享消息对象设置分享内容对象
     messageObject.shareObject = shareObject;
@@ -89,10 +102,10 @@
 
 - (void)wxShareLink:(int)scene {
     WXWebpageObject *webpageObject = [WXWebpageObject object];
-    webpageObject.webpageUrl = @"https://open.weixin.qq.com";
+    webpageObject.webpageUrl = self.shareLink;
     WXMediaMessage *message = [WXMediaMessage message];
-    message.title = @"标题";
-    message.description = @"描述";
+    message.title = self.shareTitle;
+    message.description = self.shareText;
     [message setThumbImage:[UIImage imageNamed:@"logo"]];
     message.mediaObject = webpageObject;
     SendMessageToWXReq *req = [[SendMessageToWXReq alloc] init];

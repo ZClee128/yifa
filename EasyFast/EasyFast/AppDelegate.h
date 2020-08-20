@@ -18,5 +18,6 @@
 @property (nonatomic,strong)id classCode; // 分类一级
 @property (nonatomic,assign) BOOL isPay; // 是否支付回调
 @property (nonatomic,strong) NSString *orderNum; // 订单号
+@property (nonatomic,strong)NSString *sssNo; //支付成功页面需要的店铺编号
 @end
 
