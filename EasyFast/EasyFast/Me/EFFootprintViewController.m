@@ -83,6 +83,7 @@
         @strongify(self);
         [self.collectionView.mj_header endRefreshing];
         self.EFData = x.first;
+        XYLog(@"%@",self.EFData);
         [self.collectionView reloadData];
     }];
 }
@@ -96,19 +97,38 @@
     [[self.viewModel refreshForUp] subscribeNext:^(RACTuple *x) {
         @strongify(self);
         [self.collectionView.mj_footer endRefreshing];
-        NSMutableArray *tmpArr = [x.second mutableCopy];
-        for (int i = 0 ; i < [tmpArr count]; i++) {
-            EFFootPrint *model1 = tmpArr[i];
-            for (int j = 0; j< self.EFData.count; j++) {
-                EFFootPrint *model2 = self.EFData[j];
-                if ([model1.dateTime isEqualToString:model2.dateTime]) {
-                    [model2.goodsList addObjectsFromArray:model1.goodsList];
-                    self.EFData[j] = model2;
-                    [tmpArr removeObject:model1];
+        self.EFData = x.first;
+        //创建一个存储处理结果的可变数组
+        NSMutableArray *copyArr = [NSMutableArray new];
+        //遍历源数组
+        for (int i = 0; i < self.EFData.count; i ++) {
+            //创建一个存储相同元素的可变数组
+            NSMutableArray *tempArray = [NSMutableArray new];
+            //把数组中元素取出
+            EFFootPrint *iModel = self.EFData[i];
+            //把第一个取出来的元素存储数组
+            [tempArray addObject:iModel];
+            
+            //从第一个取出来的元素的i值的下一个元素开始查找，查找和第一个元素相同的元素
+            for (int j = i + 1; j < self.EFData.count; j ++) {
+                //取出i值加1的元素
+                EFFootPrint *jModel = self.EFData[j];
+                //比较i值和i值加1的两个元素是否相同
+                if ([iModel.dateTime isEqualToString:jModel.dateTime]) {
+                    //如果两个元素相同，则把后一个元素添加到存储第一个元素的数组中
+                    NSMutableArray *modelArr = [iModel.goodsList mutableCopy];
+                    [modelArr addObjectsFromArray:jModel.goodsList];
+                    iModel.goodsList = modelArr;
+                    //把源数组中出现重复元素位置的元素移除
+                    [self.EFData removeObjectAtIndex:j];
+                    //出现重复元素的时候，添加完成j值减1，继续查找
+                    j -= 1;
                 }
             }
+            //查找完成一个元素后，把数组添加到处理结果数组，继续查找
+            [copyArr addObjectsFromArray:tempArray];
         }
-        [self.EFData addObjectsFromArray:tmpArr];
+        self.EFData = copyArr;
         [self.collectionView reloadData];
     }];
 }

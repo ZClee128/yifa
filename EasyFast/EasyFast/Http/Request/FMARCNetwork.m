@@ -122,10 +122,11 @@ static FMARCNetwork * _instance = nil;
   
 //            [JDStatusBarNotification showWithStatus:@"网络不给力，请检查网络" styleName:JDStatusBarStyleWarning];
 //            [JDStatusBarNotification showActivityIndicator:YES indicatorStyle:UIActivityIndicatorViewStyleWhite];
-            
+            [[UIViewController getCurrentVC].view ly_showEmptyView];
         }else{
             NSLog(@"--- 有网络 ---");
 //             [JDStatusBarNotification dismiss];
+            [[UIViewController getCurrentVC].view ly_hideEmptyView];
         }
     }];
     [self.manager.reachabilityManager startMonitoring];

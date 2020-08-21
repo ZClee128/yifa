@@ -92,4 +92,5 @@
 #import "WXApi.h"
 #import <EBBannerView.h>
 #import <AlipaySDK/AlipaySDK.h>
+#import "EFEmptyView.h"
 #endif /* Header_h */

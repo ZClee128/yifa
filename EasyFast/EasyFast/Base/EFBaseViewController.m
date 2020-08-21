@@ -40,6 +40,15 @@
     self.gk_navLineHidden = YES;
     self.gk_navShadowColor = RGB16(0xf2f2f2);
     self.gk_interactivePopDisabled = YES;
+    @weakify(self);
+    self.view.ly_emptyView = [EFEmptyView NoNetEmptybtnClickBlock:^{
+        @strongify(self);
+        [self noNetClick];
+    }];
+}
+
+- (void)noNetClick {
+    
 }
 
 - (BOOL)prefersStatusBarHidden {

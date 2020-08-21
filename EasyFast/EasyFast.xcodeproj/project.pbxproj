@@ -106,6 +106,9 @@
 		0C56E0BB24EE5D8D00819D1A /* EFFootprintCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0BA24EE5D8D00819D1A /* EFFootprintCollectionViewCell.m */; };
 		0C56E0BC24EE5D8D00819D1A /* EFFootprintCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0BA24EE5D8D00819D1A /* EFFootprintCollectionViewCell.m */; };
 		0C56E0BD24EE5D8D00819D1A /* EFFootprintCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0BA24EE5D8D00819D1A /* EFFootprintCollectionViewCell.m */; };
+		0C56E0C124EF5E5E00819D1A /* EFEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0C024EF5E5E00819D1A /* EFEmptyView.m */; };
+		0C56E0C224EF5E5E00819D1A /* EFEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0C024EF5E5E00819D1A /* EFEmptyView.m */; };
+		0C56E0C324EF5E5E00819D1A /* EFEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0C024EF5E5E00819D1A /* EFEmptyView.m */; };
 		0C6CB56A24CE688300471A8D /* LRAnimationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56924CE688300471A8D /* LRAnimationProgress.m */; };
 		0C6CB56B24CE688300471A8D /* LRAnimationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56924CE688300471A8D /* LRAnimationProgress.m */; };
 		0C6CB56C24CE688300471A8D /* LRAnimationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56924CE688300471A8D /* LRAnimationProgress.m */; };
@@ -802,6 +805,8 @@
 		0C56E0AC24ED59BA00819D1A /* WhdeSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhdeSession.m; sourceTree = "<group>"; };
 		0C56E0B924EE5D8D00819D1A /* EFFootprintCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFFootprintCollectionViewCell.h; sourceTree = "<group>"; };
 		0C56E0BA24EE5D8D00819D1A /* EFFootprintCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFFootprintCollectionViewCell.m; sourceTree = "<group>"; };
+		0C56E0BF24EF5E5E00819D1A /* EFEmptyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFEmptyView.h; sourceTree = "<group>"; };
+		0C56E0C024EF5E5E00819D1A /* EFEmptyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFEmptyView.m; sourceTree = "<group>"; };
 		0C6CB56824CE688300471A8D /* LRAnimationProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRAnimationProgress.h; sourceTree = "<group>"; };
 		0C6CB56924CE688300471A8D /* LRAnimationProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRAnimationProgress.m; sourceTree = "<group>"; };
 		0C6CB56D24CE7A1400471A8D /* EFOneLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOneLoginViewController.h; sourceTree = "<group>"; };
@@ -1432,6 +1437,15 @@
 				0C56E0AC24ED59BA00819D1A /* WhdeSession.m */,
 			);
 			path = Whde;
+			sourceTree = "<group>";
+		};
+		0C56E0BE24EF5DEC00819D1A /* Empty */ = {
+			isa = PBXGroup;
+			children = (
+				0C56E0BF24EF5E5E00819D1A /* EFEmptyView.h */,
+				0C56E0C024EF5E5E00819D1A /* EFEmptyView.m */,
+			);
+			path = Empty;
 			sourceTree = "<group>";
 		};
 		0C6CB5B924CFBE1C00471A8D /* WebViewPool */ = {
@@ -2342,6 +2356,7 @@
 		84A8219724BF010800EAC652 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0C56E0BE24EF5DEC00819D1A /* Empty */,
 				0C56E0A424ED59BA00819D1A /* Whde */,
 				0CBE6A6D24EB7C17003C300F /* CustomerScrollView.h */,
 				0CBE6A6C24EB7C16003C300F /* CustomerScrollView.m */,
@@ -2776,6 +2791,7 @@
 				0C56E0B624ED59BA00819D1A /* WhdeSession.m in Sources */,
 				0C8A27D524D9341900E40ED8 /* MBProgressHUD+FULI.m in Sources */,
 				0C6CB56A24CE688300471A8D /* LRAnimationProgress.m in Sources */,
+				0C56E0C124EF5E5E00819D1A /* EFEmptyView.m in Sources */,
 				0CCEC48C24CAC2F000976D24 /* EFIMListTableViewCell.m in Sources */,
 				847610CE24C6D898002B34E4 /* PowerTableViewCell.m in Sources */,
 				8476106124C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m in Sources */,
@@ -3020,6 +3036,7 @@
 				0C56E0B724ED59BA00819D1A /* WhdeSession.m in Sources */,
 				0C8A27D624D9341900E40ED8 /* MBProgressHUD+FULI.m in Sources */,
 				0C6CB56B24CE688300471A8D /* LRAnimationProgress.m in Sources */,
+				0C56E0C224EF5E5E00819D1A /* EFEmptyView.m in Sources */,
 				0CCEC48D24CAC2F000976D24 /* EFIMListTableViewCell.m in Sources */,
 				847610CF24C6D898002B34E4 /* PowerTableViewCell.m in Sources */,
 				8476106224C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m in Sources */,
@@ -3264,6 +3281,7 @@
 				0C56E0B824ED59BA00819D1A /* WhdeSession.m in Sources */,
 				0C8A27D724D9341A00E40ED8 /* MBProgressHUD+FULI.m in Sources */,
 				0C6CB56C24CE688300471A8D /* LRAnimationProgress.m in Sources */,
+				0C56E0C324EF5E5E00819D1A /* EFEmptyView.m in Sources */,
 				0CCEC48E24CAC2F000976D24 /* EFIMListTableViewCell.m in Sources */,
 				847610D024C6D898002B34E4 /* PowerTableViewCell.m in Sources */,
 				8476106324C57FCA002B34E4 /* TuanOtherGoodsTableViewCell.m in Sources */,
