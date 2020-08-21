@@ -10,6 +10,7 @@
 #import "EFOrderModel.h"
 #import "EFLogisticsModel.h"
 #import "EFGoodsList.h"
+#import "EFPayStatusModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -33,7 +34,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (RACSignal *)newGoodsRefreshForUp:(NSString *)sssNO;
 
-+ (RACSignal *)refreshOrder:(NSString *)orderNum;
++ (RACSignal *)refreshOrder:(NSString *)orderNum payMethod:(NSInteger)payMethod;
+
++ (RACSignal *)payForOrder:(NSString *)orderNum payMethod:(NSInteger)payMethod;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -10,7 +10,9 @@
 #import <WebKit/WebKit.h>
 #import "EFBridge.h"
 #import "EFH5DownLoadModel.h"
-
+#import "EFPayStatusModel.h"
+#import "EFPayStatusViewController.h"
+#import "EFOrderViewController.h"
 @interface EFBaseWebViewController ()<WKUIDelegate,WKNavigationDelegate>
 
 @property (nonatomic,strong)WebViewJavascriptBridge *bridge;
@@ -84,6 +86,47 @@
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString: @"http://192.168.3.23:8080/"]]];
     [self getFun];
     self.gk_fullScreenPopDisabled = YES;
+    @weakify(self);
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kPaySuccessNoti object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        EFPayStatusModel *model = x.object;
+        @strongify(self);
+        if (kAppDelegate.isPay) {
+            kAppDelegate.isPay = NO;
+            if (model.payState == 2) {
+                EFPayStatusViewController *vc = [[EFPayStatusViewController alloc] initWithsssNo:kAppDelegate.sssNo ? kAppDelegate.sssNo : @""];
+                [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+                    
+                }];
+            }else {
+                if (model.orderType == 1) {
+                    EFOrderViewController *order = [[EFOrderViewController alloc] initWithIndex:0];
+                    @strongify(self);
+                    [self.navigationController qmui_pushViewController:order animated:YES completion:^{
+                        NSMutableArray *marr = [[NSMutableArray alloc] initWithArray:[UIViewController getCurrentVC].navigationController.viewControllers];
+                        for (UIViewController *vc in marr) {
+                            if (![vc isKindOfClass:[[UIViewController getCurrentVC].navigationController.qmui_rootViewController class]]) {
+                                [marr removeObject:vc];
+                                break;
+                            }
+                        }
+                        self.navigationController.viewControllers = marr;
+                    }];
+                }else {
+                    [kH5Manager gotoUrl:@"myGroup" hasNav:NO navTitle:@"" query:@{@"index" : @(0)} completion:^{
+                        NSMutableArray *marr = [[NSMutableArray alloc] initWithArray:[UIViewController getCurrentVC].navigationController.viewControllers];
+                        XYLog(@"$$$$$>>>%@",[UIViewController getCurrentVC].navigationController.qmui_rootViewController);
+                        for (UIViewController *vc in marr) {
+                            if (![vc isKindOfClass:[[UIViewController getCurrentVC].navigationController.qmui_rootViewController class]]) {
+                                [marr removeObject:vc];
+                                break;
+                            }
+                        }
+                        self.navigationController.viewControllers = marr;
+                    }];
+                }
+            }
+        }
+    }];
 }
 
 - (void)getFun {

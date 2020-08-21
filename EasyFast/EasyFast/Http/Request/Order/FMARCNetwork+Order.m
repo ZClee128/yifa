@@ -34,7 +34,11 @@
     return [self fg_getRequest:korderExpress paramters:@{@"expressNum":expressNum,@"orderNum":orderNum}];
 }
 
-- (RACSignal *)refreshOrder:(NSString *)orderNum {
-    return [self fg_getRequest:krefreshOrder paramters:@{@"orderNum":orderNum}];
+- (RACSignal *)refreshOrder:(NSString *)orderNum payMethod:(NSInteger)payMethod {
+    return [self fg_getRequest:krefreshOrder paramters:@{@"orderNum":orderNum,@"payMethod":@(payMethod)}];
+}
+
+- (RACSignal *)payForOrder:(NSString *)orderNum payMethod:(NSInteger)payMethod {
+    return [self fg_postRequest:kpay paramters:@{@"orderNum":orderNum,@"payMethod":@(payMethod)}];
 }
 @end

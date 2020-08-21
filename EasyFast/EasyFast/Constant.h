@@ -150,6 +150,7 @@ fprintf(stderr,"[--%s--]\n[--%s:%d--]\n[--%s--]\n===========================\n",
 #define kwxLogin @"wxLogin" // 微信登录
 #define kwxBing @"kwxBing" // 微信绑定成功
 #define kclassNoti @"kclassNoti" //跳转分类通知
+#define kPaySuccessNoti @"kPaySuccessNoti" //支付结果回调
 
 // 图片
 #define kup UIImageMake(@"up") // 降序

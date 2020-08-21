@@ -231,6 +231,10 @@
                 [kH5Manager deletFile];
                 [kH5Manager downloadZipWithUrl:model.downloadUrl];
             });
+        }else {
+            if (![kH5Manager isTmpExist]) {
+                [kH5Manager downloadZipWithUrl:model.downloadUrl];
+            }
         }
         return @(result.isSuccess);
     }];

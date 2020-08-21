@@ -10,6 +10,7 @@
 #import "EFPayTypeTableViewCell.h"
 #import "EFOrderVM.h"
 #import "EFPayModel.h"
+#import "EFPayStatusViewController.h"
 
 @interface EFToPayDetailViewController ()
 
@@ -30,6 +31,18 @@
     self.EFTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, 50)];
     [self setBottom];
     [self.view addSubview:self.timeLab];
+    @weakify(self);
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kPaySuccessNoti object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        EFPayStatusModel *model = x.object;
+        @strongify(self);
+        if (model.payState == 2) {
+            EFPayStatusViewController *vc = [[EFPayStatusViewController alloc] initWithsssNo:kAppDelegate.sssNo ? kAppDelegate.sssNo : @""];
+            [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+                
+            }];
+        }else {
+        }
+    }];
     
 }
 
@@ -102,8 +115,17 @@
         make.size.mas_equalTo(CGSizeMake(WidthOfScale(109.5), WidthOfScale(60)));
         make.bottom.equalTo(bg);
     }];
+    @weakify(self);
     [[payBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-        
+        @strongify(self);
+        for (int i = 0; i < self.PayArr.count; i++) {
+            EFPayModel *model = self.PayArr[i];
+            if (model.isChoose) {
+                [[EFOrderVM payForOrder:self.model.orderNum payMethod:model.payType] subscribeNext:^(id  _Nullable x) {
+                    
+                }];
+            }
+        }
     }];
     
     QMUILabel *priceLab = [[QMUILabel alloc] init];

@@ -126,7 +126,6 @@ static FMARCNetwork * _instance = nil;
         }else{
             NSLog(@"--- 有网络 ---");
 //             [JDStatusBarNotification dismiss];
-            [[UIViewController getCurrentVC].view ly_hideEmptyView];
         }
     }];
     [self.manager.reachabilityManager startMonitoring];

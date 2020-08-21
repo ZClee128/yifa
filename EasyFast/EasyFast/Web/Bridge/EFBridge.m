@@ -9,7 +9,6 @@
 #import "EFBridge.h"
 #import "TuanListViewController.h"
 #import "EFConversationViewController.h"
-#import "EFPayStatusViewController.h"
 #import "EFAddressViewController.h"
 #import "EFOrderMoreDetailViewController.h"
 #import "EFOrderSearchViewController.h"
@@ -115,9 +114,8 @@
         kAppDelegate.isPay = YES;
         kAppDelegate.orderNum = dict[@"orderNum"];
         kAppDelegate.sssNo = dict[@"sssNo"];
+        kAppDelegate.payMethod = [dict[@"payMethod"] intValue];
         [[PayManager defaultManager] showPay:[dict[@"payMethod"] intValue] == 1 ? wxPay : aliPay resp:dict[@"data"]];
-//        EFPayStatusViewController *vc = [[EFPayStatusViewController alloc] initWithsssNo:dict[@"sssNo"] ? dict[@"sssNo"] : @""];
-//        [self push:vc];
     }];
 }
 

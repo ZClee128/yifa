@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)defaultManager;
 
 - (void)gotoUrl:(NSString *)url hasNav:(BOOL)show navTitle:(NSString *)title query:(id)query;
+- (void)gotoUrl:(NSString *)url hasNav:(BOOL)show navTitle:(NSString *)title query:(id)query completion:(void (^)(void))completion;
 - (NSString *)md5:(NSString *)str;
 
 - (void)downloadZipWithUrl:(NSString *)zipurl;

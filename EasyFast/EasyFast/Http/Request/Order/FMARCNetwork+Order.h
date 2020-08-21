@@ -31,7 +31,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (RACSignal *)orderExpressExpressNum:(NSString *)expressNum orderNum:(NSString *)orderNum;
 
 /// 查询支付结果
-- (RACSignal *)refreshOrder:(NSString *)orderNum;
+- (RACSignal *)refreshOrder:(NSString *)orderNum payMethod:(NSInteger)payMethod;
+
+/// 第三方下单
+- (RACSignal *)payForOrder:(NSString *)orderNum payMethod:(NSInteger)payMethod;
 @end
 
 NS_ASSUME_NONNULL_END

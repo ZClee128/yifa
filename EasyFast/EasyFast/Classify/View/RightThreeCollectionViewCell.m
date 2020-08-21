@@ -99,20 +99,25 @@
 }
 
 -(CGFloat) getCollectionHeight:(NSMutableArray *)dataArray
-{    
+{
     self.dataArray = dataArray;
-    NSInteger a = self.dataArray.count % self.columns;
-    if (a == 0)
-    {
-        self.rowCount = self.dataArray.count / self.columns;
+    if (self.dataArray.count > 0) {
+        NSInteger a = self.dataArray.count % self.columns;
+        if (a == 0)
+        {
+            self.rowCount = self.dataArray.count / self.columns;
+        }
+        else
+        {
+            self.rowCount = (self.dataArray.count / self.columns) + 1;
+        }
+        CGFloat collectionHeight = (self.rowCount * self.itemHeight) + ((self.rowCount - 1) * self.minimumLineSpacing) + self.sectionInsetTop + self.sectionInsetBottom;
+        self.collectionView.height = collectionHeight;
+        return collectionHeight;
+    }else{
+        return 0;
     }
-    else
-    {
-        self.rowCount = (self.dataArray.count / self.columns) + 1;
-    }
-    CGFloat collectionHeight = (self.rowCount * self.itemHeight) + ((self.rowCount - 1) * self.minimumLineSpacing) + self.sectionInsetTop + self.sectionInsetBottom;
-    self.collectionView.height = collectionHeight;
-    return collectionHeight;
+    
 }
 
 -(void) reloadData

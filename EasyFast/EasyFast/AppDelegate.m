@@ -261,8 +261,8 @@
         
     }];
     if (self.isPay) {
-        [[EFOrderVM refreshOrder:self.orderNum] subscribeNext:^(id  _Nullable x) {
-            
+        [[EFOrderVM refreshOrder:self.orderNum payMethod:self.payMethod] subscribeNext:^(EFPayStatusModel *x) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:kPaySuccessNoti object:x];
         }];
     }
     [application setApplicationIconBadgeNumber:0];

@@ -41,7 +41,8 @@
 #define kconfirmReceipt @"api-client/user/order/confirmReceipt" //确认收货接口
 #define kurgedDelivery @"api-client/user/order/urgedDelivery" //催促发货接口
 #define korderExpress @"api-client/user/order/orderExpress" //订单物流接口
-#define krefreshOrder @"api-client/order/refreshOrder" //查询订单支付状态,0:待支付，1：支付成功
+#define krefreshOrder @"api-client/order/queryOrder" //查询订单支付状态,0:待支付，1：支付成功
+#define kpay @"api-client/order/pay" //第三方下单
 
 // 我的
 #define kgoodsMonthFootprint @"api-client/user/footprint/goodsMonthFootprint" //商品当月足迹接口

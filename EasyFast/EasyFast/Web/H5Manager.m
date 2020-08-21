@@ -10,9 +10,7 @@
 #import <ZipArchive.h>
 #import <CommonCrypto/CommonCrypto.h>
 #import "EFBaseWebViewController.h"
-#import "WhdeBreakPoint.h"
-#import "WhdeFileManager.h"
-#import "WhdeNetworkService.h"
+#import "QDNetServerDownLoadTool.h"
 
 #define fileName        @"EasyFast"
 #define pathes   NSSearchPathForDirectoriesInDomains(NSCachesDirectory,NSUserDomainMask,YES)
@@ -50,46 +48,16 @@
     [fileManager removeItemAtPath:finishPath error:nil];
 }
 
-//- (void)downloadZipWithUrl:(NSString *)zipurl
-//{
-//    NSURL    *url        = [NSURL URLWithString:zipurl];
-//    if (![self isExist])
-//    {//本地不存在文件 下载
-//        dispatch_queue_t queue =dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0);
-//        dispatch_async(queue, ^{
-//            NSError *error = nil;
-//            NSData *data = [NSData dataWithContentsOfURL:url options:0 error:&error];
-//            if(!error)
-//            {
-//                [data writeToFile:zipPath options:0 error:nil];
-//                //解压zip文件
-//                if([SSZipArchive unzipFileAtPath:zipPath toDestination:finishPath])
-//                {
-//                    //解压完成 删除压缩包
-//                    NSFileManager *fileManager = [NSFileManager defaultManager];
-//                    [fileManager removeItemAtPath:zipPath error:nil];
-//                    [self migrateDistToTempory];
-//                }
-//            }
-//        });
-//    }
-//}
-
-- (void)downloadZipWithUrl:(NSString *)zipurl {
-    //获取沙盒中的Library/Caches/路径
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDownloadTask *downLoadTask = [session downloadTaskWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:zipurl]] completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        if (!location) {
-            return ;
-        }
-        //下载成功，移除旧资源
-        [fileManager removeItemAtPath:finishPath error:nil];
-        
-        // 文件移动到指定目录中
-        NSError *saveError;
-        [fileManager moveItemAtURL:location toURL:[NSURL fileURLWithPath:zipPath] error:&saveError];
-        //解压zip
+- (void)downloadZipWithUrl:(NSString *)zipurl
+{
+   [[QDNetServerDownLoadTool sharedTool]AFDownLoadFileWithUrl:zipurl progress:^(CGFloat progress) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+        });
+    } fileLocalUrl:[NSURL fileURLWithPath:zipPath] success:^(NSURL *fileUrlPath, NSURLResponse *response) {
+        XYLog(@"下载成功 下载的文档路径是 %@,%@ ",fileUrlPath,response);
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+//        解压
         BOOL success = [SSZipArchive unzipFileAtPath:zipPath toDestination:finishPath];
         if (!success) {
             XYLog(@"pkgfile: unzip file error");
@@ -100,10 +68,12 @@
         //清除临时文件和目录
         [fileManager removeItemAtPath:zipPath error:nil];
         [self migrateDistToTempory];
+    } failure:^(NSError *error, NSInteger statusCode) {
+        XYLog(@"下载失败,下载的data被downLoad工具处理了 ");
+        
     }];
-    [downLoadTask resume];
-    [session finishTasksAndInvalidate];
 }
+
 
 - (NSString *)openIndex {
     //    NSString *zipName    = [[fileName lastPathComponent] stringByDeletingPathExtension];//获取下载链接里的文件名 即123sst文件夹
@@ -121,6 +91,12 @@
     [[UIViewController getCurrentVC].navigationController qmui_pushViewController:web animated:YES completion:^{
         
     }];
+}
+
+- (void)gotoUrl:(NSString *)url hasNav:(BOOL)show navTitle:(NSString *)title query:(id)query completion:(void (^)(void))completion{
+    EFBaseWebViewController *web = [[EFBaseWebViewController alloc] initWithUrl:url navTitle:title hasNav:show query:query];
+    web.hidesBottomBarWhenPushed = YES;
+    [[UIViewController getCurrentVC].navigationController qmui_pushViewController:web animated:YES completion:completion];
 }
 
 - (NSString *)md5:(NSString *)str

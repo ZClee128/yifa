@@ -105,6 +105,12 @@
     self.jxTitleView.indicators = @[lineView];
 }
 
+- (void)backItemClick:(id)sender {
+    [self.navigationController qmui_popToRootViewControllerAnimated:YES completion:^{
+        
+    }];
+}
+
 //返回列表的数量
 - (NSInteger)numberOfListsInlistContainerView:(JXCategoryListContainerView *)listContainerView {
     return self.jxTitleView.titles.count;

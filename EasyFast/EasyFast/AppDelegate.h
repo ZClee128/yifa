@@ -19,5 +19,6 @@
 @property (nonatomic,assign) BOOL isPay; // 是否支付回调
 @property (nonatomic,strong) NSString *orderNum; // 订单号
 @property (nonatomic,strong)NSString *sssNo; //支付成功页面需要的店铺编号
+@property (nonatomic,assign) NSInteger payMethod; // 支付方式，1：wx，2：ali，3：unionpay；默认1：微信
 @end
 

@@ -91,24 +91,18 @@
 		0C56E0A124ED499D00819D1A /* EFH5DownLoadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0A024ED499D00819D1A /* EFH5DownLoadModel.m */; };
 		0C56E0A224ED499D00819D1A /* EFH5DownLoadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0A024ED499D00819D1A /* EFH5DownLoadModel.m */; };
 		0C56E0A324ED499D00819D1A /* EFH5DownLoadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0A024ED499D00819D1A /* EFH5DownLoadModel.m */; };
-		0C56E0AD24ED59BA00819D1A /* WhdeBreakPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0A624ED59BA00819D1A /* WhdeBreakPoint.m */; };
-		0C56E0AE24ED59BA00819D1A /* WhdeBreakPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0A624ED59BA00819D1A /* WhdeBreakPoint.m */; };
-		0C56E0AF24ED59BA00819D1A /* WhdeBreakPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0A624ED59BA00819D1A /* WhdeBreakPoint.m */; };
-		0C56E0B024ED59BA00819D1A /* WhdeFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0A824ED59BA00819D1A /* WhdeFileManager.m */; };
-		0C56E0B124ED59BA00819D1A /* WhdeFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0A824ED59BA00819D1A /* WhdeFileManager.m */; };
-		0C56E0B224ED59BA00819D1A /* WhdeFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0A824ED59BA00819D1A /* WhdeFileManager.m */; };
-		0C56E0B324ED59BA00819D1A /* WhdeNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0AA24ED59BA00819D1A /* WhdeNetworkService.m */; };
-		0C56E0B424ED59BA00819D1A /* WhdeNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0AA24ED59BA00819D1A /* WhdeNetworkService.m */; };
-		0C56E0B524ED59BA00819D1A /* WhdeNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0AA24ED59BA00819D1A /* WhdeNetworkService.m */; };
-		0C56E0B624ED59BA00819D1A /* WhdeSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0AC24ED59BA00819D1A /* WhdeSession.m */; };
-		0C56E0B724ED59BA00819D1A /* WhdeSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0AC24ED59BA00819D1A /* WhdeSession.m */; };
-		0C56E0B824ED59BA00819D1A /* WhdeSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0AC24ED59BA00819D1A /* WhdeSession.m */; };
 		0C56E0BB24EE5D8D00819D1A /* EFFootprintCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0BA24EE5D8D00819D1A /* EFFootprintCollectionViewCell.m */; };
 		0C56E0BC24EE5D8D00819D1A /* EFFootprintCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0BA24EE5D8D00819D1A /* EFFootprintCollectionViewCell.m */; };
 		0C56E0BD24EE5D8D00819D1A /* EFFootprintCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0BA24EE5D8D00819D1A /* EFFootprintCollectionViewCell.m */; };
 		0C56E0C124EF5E5E00819D1A /* EFEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0C024EF5E5E00819D1A /* EFEmptyView.m */; };
 		0C56E0C224EF5E5E00819D1A /* EFEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0C024EF5E5E00819D1A /* EFEmptyView.m */; };
 		0C56E0C324EF5E5E00819D1A /* EFEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0C024EF5E5E00819D1A /* EFEmptyView.m */; };
+		0C56E0C624EF7B8000819D1A /* QDNetServerDownLoadTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0C524EF7B8000819D1A /* QDNetServerDownLoadTool.m */; };
+		0C56E0C724EF7B8000819D1A /* QDNetServerDownLoadTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0C524EF7B8000819D1A /* QDNetServerDownLoadTool.m */; };
+		0C56E0C824EF7B8000819D1A /* QDNetServerDownLoadTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0C524EF7B8000819D1A /* QDNetServerDownLoadTool.m */; };
+		0C56E0CB24EFB81100819D1A /* EFPayStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0CA24EFB81000819D1A /* EFPayStatusModel.m */; };
+		0C56E0CC24EFB81100819D1A /* EFPayStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0CA24EFB81000819D1A /* EFPayStatusModel.m */; };
+		0C56E0CD24EFB81100819D1A /* EFPayStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0CA24EFB81000819D1A /* EFPayStatusModel.m */; };
 		0C6CB56A24CE688300471A8D /* LRAnimationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56924CE688300471A8D /* LRAnimationProgress.m */; };
 		0C6CB56B24CE688300471A8D /* LRAnimationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56924CE688300471A8D /* LRAnimationProgress.m */; };
 		0C6CB56C24CE688300471A8D /* LRAnimationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56924CE688300471A8D /* LRAnimationProgress.m */; };
@@ -795,18 +789,14 @@
 		0C56E09B24ED46D400819D1A /* EFAppUpdateModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFAppUpdateModel.m; sourceTree = "<group>"; };
 		0C56E09F24ED499D00819D1A /* EFH5DownLoadModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFH5DownLoadModel.h; sourceTree = "<group>"; };
 		0C56E0A024ED499D00819D1A /* EFH5DownLoadModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFH5DownLoadModel.m; sourceTree = "<group>"; };
-		0C56E0A524ED59BA00819D1A /* WhdeBreakPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhdeBreakPoint.h; sourceTree = "<group>"; };
-		0C56E0A624ED59BA00819D1A /* WhdeBreakPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhdeBreakPoint.m; sourceTree = "<group>"; };
-		0C56E0A724ED59BA00819D1A /* WhdeFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhdeFileManager.h; sourceTree = "<group>"; };
-		0C56E0A824ED59BA00819D1A /* WhdeFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhdeFileManager.m; sourceTree = "<group>"; };
-		0C56E0A924ED59BA00819D1A /* WhdeNetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhdeNetworkService.h; sourceTree = "<group>"; };
-		0C56E0AA24ED59BA00819D1A /* WhdeNetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhdeNetworkService.m; sourceTree = "<group>"; };
-		0C56E0AB24ED59BA00819D1A /* WhdeSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhdeSession.h; sourceTree = "<group>"; };
-		0C56E0AC24ED59BA00819D1A /* WhdeSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhdeSession.m; sourceTree = "<group>"; };
 		0C56E0B924EE5D8D00819D1A /* EFFootprintCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFFootprintCollectionViewCell.h; sourceTree = "<group>"; };
 		0C56E0BA24EE5D8D00819D1A /* EFFootprintCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFFootprintCollectionViewCell.m; sourceTree = "<group>"; };
 		0C56E0BF24EF5E5E00819D1A /* EFEmptyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFEmptyView.h; sourceTree = "<group>"; };
 		0C56E0C024EF5E5E00819D1A /* EFEmptyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFEmptyView.m; sourceTree = "<group>"; };
+		0C56E0C424EF7B8000819D1A /* QDNetServerDownLoadTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDNetServerDownLoadTool.h; sourceTree = "<group>"; };
+		0C56E0C524EF7B8000819D1A /* QDNetServerDownLoadTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDNetServerDownLoadTool.m; sourceTree = "<group>"; };
+		0C56E0C924EFB81000819D1A /* EFPayStatusModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFPayStatusModel.h; sourceTree = "<group>"; };
+		0C56E0CA24EFB81000819D1A /* EFPayStatusModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFPayStatusModel.m; sourceTree = "<group>"; };
 		0C6CB56824CE688300471A8D /* LRAnimationProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRAnimationProgress.h; sourceTree = "<group>"; };
 		0C6CB56924CE688300471A8D /* LRAnimationProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRAnimationProgress.m; sourceTree = "<group>"; };
 		0C6CB56D24CE7A1400471A8D /* EFOneLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOneLoginViewController.h; sourceTree = "<group>"; };
@@ -1292,6 +1282,8 @@
 				0C0CC40024E23AD3005E50ED /* EFLogisticsModel.m */,
 				0CBE6A6624EA8356003C300F /* EFPayModel.h */,
 				0CBE6A6724EA8356003C300F /* EFPayModel.m */,
+				0C56E0C924EFB81000819D1A /* EFPayStatusModel.h */,
+				0C56E0CA24EFB81000819D1A /* EFPayStatusModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1422,21 +1414,6 @@
 				0C0CC3ED24E12CB0005E50ED /* EFAdsModel.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		0C56E0A424ED59BA00819D1A /* Whde */ = {
-			isa = PBXGroup;
-			children = (
-				0C56E0A524ED59BA00819D1A /* WhdeBreakPoint.h */,
-				0C56E0A624ED59BA00819D1A /* WhdeBreakPoint.m */,
-				0C56E0A724ED59BA00819D1A /* WhdeFileManager.h */,
-				0C56E0A824ED59BA00819D1A /* WhdeFileManager.m */,
-				0C56E0A924ED59BA00819D1A /* WhdeNetworkService.h */,
-				0C56E0AA24ED59BA00819D1A /* WhdeNetworkService.m */,
-				0C56E0AB24ED59BA00819D1A /* WhdeSession.h */,
-				0C56E0AC24ED59BA00819D1A /* WhdeSession.m */,
-			);
-			path = Whde;
 			sourceTree = "<group>";
 		};
 		0C56E0BE24EF5DEC00819D1A /* Empty */ = {
@@ -1848,6 +1825,8 @@
 		84760F9924C196FF002B34E4 /* Web */ = {
 			isa = PBXGroup;
 			children = (
+				0C56E0C424EF7B8000819D1A /* QDNetServerDownLoadTool.h */,
+				0C56E0C524EF7B8000819D1A /* QDNetServerDownLoadTool.m */,
 				0C4BAF9624D0212E0037CDCF /* Bridge */,
 				0C6CB5B924CFBE1C00471A8D /* WebViewPool */,
 				8476102B24C52BDC002B34E4 /* H5Manager.h */,
@@ -2357,7 +2336,6 @@
 			isa = PBXGroup;
 			children = (
 				0C56E0BE24EF5DEC00819D1A /* Empty */,
-				0C56E0A424ED59BA00819D1A /* Whde */,
 				0CBE6A6D24EB7C17003C300F /* CustomerScrollView.h */,
 				0CBE6A6C24EB7C16003C300F /* CustomerScrollView.m */,
 				0CBE6A6024EA3718003C300F /* Pay */,
@@ -2788,7 +2766,6 @@
 				84A8216B24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
 				847610C424C6D44C002B34E4 /* EFBaseWebViewController.m in Sources */,
 				8476119624C82515002B34E4 /* SysManager.m in Sources */,
-				0C56E0B624ED59BA00819D1A /* WhdeSession.m in Sources */,
 				0C8A27D524D9341900E40ED8 /* MBProgressHUD+FULI.m in Sources */,
 				0C6CB56A24CE688300471A8D /* LRAnimationProgress.m in Sources */,
 				0C56E0C124EF5E5E00819D1A /* EFEmptyView.m in Sources */,
@@ -2858,6 +2835,7 @@
 				0C6CB5A224CEC1F000471A8D /* EFCodeLoginTableViewCell.m in Sources */,
 				0C8A2A0624DBEABB00E40ED8 /* EFCollectionVM.m in Sources */,
 				0C6CB5B124CECBC200471A8D /* EFFastRegViewController.m in Sources */,
+				0C56E0C624EF7B8000819D1A /* QDNetServerDownLoadTool.m in Sources */,
 				0C0CC42E24E2BDA2005E50ED /* EFQueryUserInfoCountModel.m in Sources */,
 				0C8A27E024D934E200E40ED8 /* CALayer+Anim.m in Sources */,
 				0CBE6A0B24E3E4E2003C300F /* CQBadgeButton.m in Sources */,
@@ -2889,11 +2867,10 @@
 				0C0CC42324E294B7005E50ED /* FMARCNetwork+Category.m in Sources */,
 				84A820DF24B6CE6B00EAC652 /* UIViewController+Runtime.m in Sources */,
 				0CCEC49724CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */,
-				0C56E0B024ED59BA00819D1A /* WhdeFileManager.m in Sources */,
 				84A821D224C04EAA00EAC652 /* EFClassDetailViewController.m in Sources */,
 				0CE285E024D3AD5F00AAC334 /* ZLPhotoActionSheet+RACSignal.m in Sources */,
+				0C56E0CB24EFB81100819D1A /* EFPayStatusModel.m in Sources */,
 				0C6CB59324CEB3C500471A8D /* EFChangeLoginViewController.m in Sources */,
-				0C56E0B324ED59BA00819D1A /* WhdeNetworkService.m in Sources */,
 				84760FAD24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
 				0CBE6A7324EB85B1003C300F /* EFNotiModel.m in Sources */,
 				84A8214D24BD432B00EAC652 /* TabbarBackView.m in Sources */,
@@ -2911,7 +2888,6 @@
 				84760F8024C1551B002B34E4 /* EFWKWebConfig.m in Sources */,
 				0CCEC45824CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */,
 				0CE2860B24D3EC4F00AAC334 /* LTSCalendarScrollView.m in Sources */,
-				0C56E0AD24ED59BA00819D1A /* WhdeBreakPoint.m in Sources */,
 				84B2437324C83AB000E9967C /* LeftTableViewCell.m in Sources */,
 				0C8A277724D6C44F00E40ED8 /* SKTagView.m in Sources */,
 				841B94ED24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,
@@ -3033,7 +3009,6 @@
 				84A8216C24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
 				847610C524C6D44C002B34E4 /* EFBaseWebViewController.m in Sources */,
 				8476119724C82516002B34E4 /* SysManager.m in Sources */,
-				0C56E0B724ED59BA00819D1A /* WhdeSession.m in Sources */,
 				0C8A27D624D9341900E40ED8 /* MBProgressHUD+FULI.m in Sources */,
 				0C6CB56B24CE688300471A8D /* LRAnimationProgress.m in Sources */,
 				0C56E0C224EF5E5E00819D1A /* EFEmptyView.m in Sources */,
@@ -3103,6 +3078,7 @@
 				0C6CB5A324CEC1F000471A8D /* EFCodeLoginTableViewCell.m in Sources */,
 				0C8A2A0724DBEABB00E40ED8 /* EFCollectionVM.m in Sources */,
 				0C6CB5B224CECBC200471A8D /* EFFastRegViewController.m in Sources */,
+				0C56E0C724EF7B8000819D1A /* QDNetServerDownLoadTool.m in Sources */,
 				0C0CC42F24E2BDA2005E50ED /* EFQueryUserInfoCountModel.m in Sources */,
 				0C8A27E124D934E200E40ED8 /* CALayer+Anim.m in Sources */,
 				0CBE6A0C24E3E4E2003C300F /* CQBadgeButton.m in Sources */,
@@ -3134,11 +3110,10 @@
 				0C0CC42424E294B7005E50ED /* FMARCNetwork+Category.m in Sources */,
 				84A8210924BC4F5400EAC652 /* UIViewController+Runtime.m in Sources */,
 				0CCEC49824CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */,
-				0C56E0B124ED59BA00819D1A /* WhdeFileManager.m in Sources */,
 				84A821D324C04EAA00EAC652 /* EFClassDetailViewController.m in Sources */,
 				0CE285E124D3AD5F00AAC334 /* ZLPhotoActionSheet+RACSignal.m in Sources */,
+				0C56E0CC24EFB81100819D1A /* EFPayStatusModel.m in Sources */,
 				0C6CB59424CEB3C500471A8D /* EFChangeLoginViewController.m in Sources */,
-				0C56E0B424ED59BA00819D1A /* WhdeNetworkService.m in Sources */,
 				84760FAE24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
 				0CBE6A7424EB85B2003C300F /* EFNotiModel.m in Sources */,
 				84A8214324BC55CB00EAC652 /* HttpManager.m in Sources */,
@@ -3156,7 +3131,6 @@
 				84760F8124C1551B002B34E4 /* EFWKWebConfig.m in Sources */,
 				0CCEC45924CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */,
 				0CE2860C24D3EC4F00AAC334 /* LTSCalendarScrollView.m in Sources */,
-				0C56E0AE24ED59BA00819D1A /* WhdeBreakPoint.m in Sources */,
 				84B2437424C83AB000E9967C /* LeftTableViewCell.m in Sources */,
 				0C8A277824D6C44F00E40ED8 /* SKTagView.m in Sources */,
 				841B94EE24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,
@@ -3278,7 +3252,6 @@
 				84A8216D24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
 				847610C624C6D44C002B34E4 /* EFBaseWebViewController.m in Sources */,
 				8476119824C82516002B34E4 /* SysManager.m in Sources */,
-				0C56E0B824ED59BA00819D1A /* WhdeSession.m in Sources */,
 				0C8A27D724D9341A00E40ED8 /* MBProgressHUD+FULI.m in Sources */,
 				0C6CB56C24CE688300471A8D /* LRAnimationProgress.m in Sources */,
 				0C56E0C324EF5E5E00819D1A /* EFEmptyView.m in Sources */,
@@ -3348,6 +3321,7 @@
 				0C6CB5A424CEC1F000471A8D /* EFCodeLoginTableViewCell.m in Sources */,
 				0C8A2A0824DBEABB00E40ED8 /* EFCollectionVM.m in Sources */,
 				0C6CB5B324CECBC200471A8D /* EFFastRegViewController.m in Sources */,
+				0C56E0C824EF7B8000819D1A /* QDNetServerDownLoadTool.m in Sources */,
 				0C0CC43024E2BDA2005E50ED /* EFQueryUserInfoCountModel.m in Sources */,
 				0C8A27E224D934E200E40ED8 /* CALayer+Anim.m in Sources */,
 				0CBE6A0D24E3E4E2003C300F /* CQBadgeButton.m in Sources */,
@@ -3379,11 +3353,10 @@
 				0C0CC42524E294B7005E50ED /* FMARCNetwork+Category.m in Sources */,
 				84A8212D24BC513500EAC652 /* UIViewController+Runtime.m in Sources */,
 				0CCEC49924CAD13900976D24 /* EFTimeAxisTableViewCell.m in Sources */,
-				0C56E0B224ED59BA00819D1A /* WhdeFileManager.m in Sources */,
 				84A821D424C04EAA00EAC652 /* EFClassDetailViewController.m in Sources */,
 				0CE285E224D3AD5F00AAC334 /* ZLPhotoActionSheet+RACSignal.m in Sources */,
+				0C56E0CD24EFB81100819D1A /* EFPayStatusModel.m in Sources */,
 				0C6CB59524CEB3C500471A8D /* EFChangeLoginViewController.m in Sources */,
-				0C56E0B524ED59BA00819D1A /* WhdeNetworkService.m in Sources */,
 				84760FAF24C19779002B34E4 /* MeWebTableViewCell.m in Sources */,
 				0CBE6A7524EB85B2003C300F /* EFNotiModel.m in Sources */,
 				84A8214F24BD43F100EAC652 /* TabbarBackView.m in Sources */,
@@ -3401,7 +3374,6 @@
 				84760F8224C1551B002B34E4 /* EFWKWebConfig.m in Sources */,
 				0CCEC45A24CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */,
 				0CE2860D24D3EC4F00AAC334 /* LTSCalendarScrollView.m in Sources */,
-				0C56E0AF24ED59BA00819D1A /* WhdeBreakPoint.m in Sources */,
 				84B2437524C83AB000E9967C /* LeftTableViewCell.m in Sources */,
 				0C8A277924D6C44F00E40ED8 /* SKTagView.m in Sources */,
 				841B94EF24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,

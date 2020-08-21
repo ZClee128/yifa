@@ -7,6 +7,7 @@
 //
 
 #import "EFOrderVM.h"
+#import "PayManager.h"
 
 @implementation EFOrderVM
 
@@ -98,11 +99,24 @@
     }];
 }
 
-+ (RACSignal *)refreshOrder:(NSString *)orderNum {
++ (RACSignal *)refreshOrder:(NSString *)orderNum payMethod:(NSInteger)payMethod {
     return [self requsetNetwork:^RACSignal * _Nonnull{
-        return [[FMARCNetwork sharedInstance] refreshOrder:orderNum];
+        return [[FMARCNetwork sharedInstance] refreshOrder:orderNum payMethod:payMethod];
     } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
-        return result.reqResult;
+        EFPayStatusModel *model = [EFPayStatusModel modelWithJSON:result.reqResult];
+        return model;
+    }];
+}
+
++ (RACSignal *)payForOrder:(NSString *)orderNum payMethod:(NSInteger)payMethod {
+    return [self requsetNetwork:^RACSignal * _Nonnull{
+        return [[FMARCNetwork sharedInstance] payForOrder:orderNum payMethod:payMethod];
+    } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
+        if (result.isSuccess) {
+            NSDictionary *dict = result.reqResult;
+            [[PayManager defaultManager] showPay:payMethod == 1 ? wxPay : aliPay resp:dict];
+        }
+        return @(result.isSuccess);
     }];
 }
 @end
