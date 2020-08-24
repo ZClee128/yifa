@@ -64,6 +64,9 @@
 		0C0CC42E24E2BDA2005E50ED /* EFQueryUserInfoCountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC42D24E2BDA2005E50ED /* EFQueryUserInfoCountModel.m */; };
 		0C0CC42F24E2BDA2005E50ED /* EFQueryUserInfoCountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC42D24E2BDA2005E50ED /* EFQueryUserInfoCountModel.m */; };
 		0C0CC43024E2BDA2005E50ED /* EFQueryUserInfoCountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0CC42D24E2BDA2005E50ED /* EFQueryUserInfoCountModel.m */; };
+		0C2D28CB24F3C2C8004CF3B1 /* 省市区数据.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C2D28CA24F3C2C7004CF3B1 /* 省市区数据.json */; };
+		0C2D28CC24F3C2C8004CF3B1 /* 省市区数据.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C2D28CA24F3C2C7004CF3B1 /* 省市区数据.json */; };
+		0C2D28CD24F3C2C8004CF3B1 /* 省市区数据.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C2D28CA24F3C2C7004CF3B1 /* 省市区数据.json */; };
 		0C4BAF9324D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
 		0C4BAF9424D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
 		0C4BAF9524D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
@@ -793,6 +796,7 @@
 		0C0CC42824E2953C005E50ED /* EFClassifyVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFClassifyVM.m; sourceTree = "<group>"; };
 		0C0CC42C24E2BDA2005E50ED /* EFQueryUserInfoCountModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFQueryUserInfoCountModel.h; sourceTree = "<group>"; };
 		0C0CC42D24E2BDA2005E50ED /* EFQueryUserInfoCountModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFQueryUserInfoCountModel.m; sourceTree = "<group>"; };
+		0C2D28CA24F3C2C7004CF3B1 /* 省市区数据.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "省市区数据.json"; sourceTree = "<group>"; };
 		0C4BAF9124D0085F0037CDCF /* EFMeRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFMeRefreshHeader.h; sourceTree = "<group>"; };
 		0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFMeRefreshHeader.m; sourceTree = "<group>"; };
 		0C4BAF9724D021440037CDCF /* EFBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFBridge.h; sourceTree = "<group>"; };
@@ -2379,6 +2383,7 @@
 		84A8219724BF010800EAC652 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0C2D28CA24F3C2C7004CF3B1 /* 省市区数据.json */,
 				0C56E0BE24EF5DEC00819D1A /* Empty */,
 				0CBE6A6D24EB7C17003C300F /* CustomerScrollView.h */,
 				0CBE6A6C24EB7C16003C300F /* CustomerScrollView.m */,
@@ -2607,6 +2612,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CBE6A7724EBE83A003C300F /* ef.caf in Resources */,
+				0C2D28CB24F3C2C8004CF3B1 /* 省市区数据.json in Resources */,
 				84A8208624B6C62300EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8208324B6C62300EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -2617,6 +2623,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CBE6A7824EBE83A003C300F /* ef.caf in Resources */,
+				0C2D28CC24F3C2C8004CF3B1 /* 省市区数据.json in Resources */,
 				84A8211324BC4F5400EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8211424BC4F5400EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -2627,6 +2634,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CBE6A7924EBE83A003C300F /* ef.caf in Resources */,
+				0C2D28CD24F3C2C8004CF3B1 /* 省市区数据.json in Resources */,
 				84A8213724BC513500EAC652 /* LaunchScreen.storyboard in Resources */,
 				84A8213824BC513500EAC652 /* Assets.xcassets in Resources */,
 			);
@@ -3751,10 +3759,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WARNING_CFLAGS = (
-					"-Wno-ambiguous-macro",
-					" ",
-				);
+				WARNING_CFLAGS = "-Wno-ambiguous-macro  ";
 			};
 			name = Debug;
 		};
@@ -3788,10 +3793,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "EasyFast/EasyFast-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WARNING_CFLAGS = (
-					"-Wno-ambiguous-macro",
-					" ",
-				);
+				WARNING_CFLAGS = "-Wno-ambiguous-macro  ";
 			};
 			name = Release;
 		};
@@ -3825,10 +3827,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WARNING_CFLAGS = (
-					"-Wno-ambiguous-macro",
-					" ",
-				);
+				WARNING_CFLAGS = "-Wno-ambiguous-macro  ";
 			};
 			name = Debug;
 		};
@@ -3861,10 +3860,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "EasyFast/EasyFast_Dev-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WARNING_CFLAGS = (
-					"-Wno-ambiguous-macro",
-					" ",
-				);
+				WARNING_CFLAGS = "-Wno-ambiguous-macro  ";
 			};
 			name = Release;
 		};
@@ -3897,10 +3893,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WARNING_CFLAGS = (
-					"-Wno-ambiguous-macro",
-					" ",
-				);
+				WARNING_CFLAGS = "-Wno-ambiguous-macro  ";
 			};
 			name = Debug;
 		};
@@ -3932,10 +3925,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "EasyFast/EasyFast_Test-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WARNING_CFLAGS = (
-					"-Wno-ambiguous-macro",
-					" ",
-				);
+				WARNING_CFLAGS = "-Wno-ambiguous-macro  ";
 			};
 			name = Release;
 		};

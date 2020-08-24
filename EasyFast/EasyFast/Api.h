@@ -86,6 +86,6 @@
 
 
 // app
-#define kqueryVersion @"api-client/app/queryAppVersion" //查询APP版本接口
-#define kdownloadWebPage @"api-client/app/queryAppWebVersion" // 下载网页包接口
+#define kqueryVersion @"api-client/application/queryAppVersion" //查询APP版本接口
+#define kdownloadWebPage @"api-client/application/queryAppWebVersion" // 下载网页包接口
 #endif /* Api_h */

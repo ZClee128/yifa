@@ -23,6 +23,6 @@
 @property (nonatomic,strong)NSString *sssNo; //支付成功页面需要的店铺编号
 @property (nonatomic,assign) NSInteger payMethod; // 支付方式，1：wx，2：ali，3：unionpay；默认1：微信
 @property (nonatomic, strong)MonkeyPaws * paws;
-
+@property (nonatomic,assign)BOOL isOut; //401退出标志
 @end
 

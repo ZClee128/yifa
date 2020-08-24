@@ -221,8 +221,9 @@ static FMARCNetwork * _instance = nil;
                 [subscriber sendCompleted];
                 //错误可以在此处处理---比如加入自己弹窗，主要是服务器错误、和请求超时、网络开小差
                 if (code == 401) {
-                    if (!self.isOut) {
-                        self.isOut = YES;
+                    [task cancel];
+                    if (!kAppDelegate.isOut) {
+                        kAppDelegate.isOut = YES;
                         NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
                         userInfo[HTTPServiceErrorHTTPStatusCodeKey] = @(code);
                         userInfo[HTTPServiceErrorDescriptionKey] = @"请登录!";
@@ -234,16 +235,15 @@ static FMARCNetwork * _instance = nil;
                         [subscriber sendCompleted];
                         //错误提示
                         [self showMsgtext:@"请登录!"];
-                        [[LoginVM loginOut] subscribeNext:^(id  _Nullable x) {
-                            
-                        }];
+                        [LoginVM deletLoction];
                     }
+                    XYLog(@">>>>>>%ld>>>>>%@",code,req.path);
                 }else {
                     [self showMsgtext:msgStr];
+                    XYLog(@">>>>>>%ld>>>>>%@",code,req.path);
                 }
                 
             } else {
-                self.isOut = NO;
                 /// 判断
                 NSInteger statusCode = [responseObject[HTTPServiceResponseCodeKey] integerValue];
                 if (statusCode == HTTPResponseCodeSuccess) {
@@ -260,7 +260,7 @@ static FMARCNetwork * _instance = nil;
                     if ((msgTips.length == 0 || msgTips == nil || [msgTips isKindOfClass:[NSNull class]])) {
                         msgTips = @"服务器出错了，请稍后重试~";
                     }
-                    
+                    XYLog(@">>>>>>%ld>>>>>%@",statusCode,req.path);
                     userInfo[HTTPServiceErrorMessagesKey] = msgTips;
                     if (task.currentRequest.URL != nil) userInfo[HTTPServiceErrorRequestURLKey] = task.currentRequest.URL.absoluteString;
                     if (task.error != nil) userInfo[NSUnderlyingErrorKey] = task.error;

@@ -40,6 +40,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (RACSignal *)setNewPasswordNewPassword:(NSString *)password confirmPassword:(NSString *)confirmPassword;
 
 + (RACSignal *)downloadWebPage;
+
+/// 本地清除
++ (void)deletLoction;
 @end
 
 NS_ASSUME_NONNULL_END

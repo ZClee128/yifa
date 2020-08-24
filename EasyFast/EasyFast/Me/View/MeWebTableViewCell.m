@@ -71,7 +71,7 @@
         NSURL *fileURL = [NSURL fileURLWithPath:[kH5Manager openIndex]];
         [self.webView loadFileURL:fileURL allowingReadAccessToURL:fileURL];
     }else {
-        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[kH5Manager getModel] ? [kH5Manager getModel].loadingUrl : @"http://192.168.3.23:8080/"]]];
+        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[kH5Manager getModel] ? [kH5Manager getModel].loadingUrl : @"https://api.one-fast.com/"]]];
     }
     [self.bridge callHandler:@"goTo" data:@{@"page":@"recom",@"query":@{},} responseCallback:^(id responseData) {
 

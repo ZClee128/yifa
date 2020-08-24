@@ -190,7 +190,7 @@
 
 - (BOOL)tabBarController:(UITabBarController*)tabBarController shouldSelectViewController:(UIViewController*)viewController
 {
-    NSLog(@"viewcontoller===%@",kUserManager.userModel);
+    XYLog(@"viewcontoller===%@",kUserManager.userModel);
     if ([viewController.childViewControllers[0] isKindOfClass:[EFMeViewController class]] || [viewController.childViewControllers[0] isKindOfClass:[EFFollowViewController class]]) {
         if (kUserManager.userModel == nil || !kUserManager.userModel.isLogin) {
             [EFOnePhoneLoginManager show];

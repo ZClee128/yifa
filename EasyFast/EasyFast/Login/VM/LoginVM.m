@@ -60,6 +60,7 @@
         return [[FMARCNetwork sharedInstance] userLogin:account code:code loginToken:loginToken password:password phone:phone type:type];
     } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
         if (result.isSuccess) {
+            kAppDelegate.isOut = NO;
             EFUserModel *model = [EFUserModel modelWithJSON:result.reqResult];
             [[UserManager defaultManager] saveUserModel:model];
             [model bg_saveOrUpdate];
@@ -76,6 +77,7 @@
         return [[FMARCNetwork sharedInstance] userregister:phone code:code];
     } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
         if (result.isSuccess) {
+            kAppDelegate.isOut = NO;
             EFUserModel *model = [EFUserModel modelWithJSON:result.reqResult];
             [[UserManager defaultManager] saveUserModel:model];
             [model bg_saveOrUpdate];
@@ -89,25 +91,60 @@
     return [self requsetNetwork:^RACSignal * _Nonnull{
         return [[FMARCNetwork sharedInstance] loginOut];
     } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
+        [self deletLoction];
+        return @(result.isSuccess);
+    }];
+}
+
++ (void)deletLoction {
+    if (kUserManager.userModel == nil) {
+        for (EFUserModel *model in [EFUserModel bg_findAll:nil]) {
+            model.isLogin = NO;
+            model.token = @"";
+            [model bg_saveOrUpdateAsync:^(BOOL isSuccess) {
+                if (isSuccess) {
+                    XYLog(@"dddddddd");
+                    [[RACScheduler mainThreadScheduler] schedule:^{
+                        [[NSNotificationCenter defaultCenter] postNotificationName:kLoginNoti object:nil];
+                        [[UIViewController getCurrentVC].navigationController qmui_popToRootViewControllerAnimated:NO completion:^{
+                        }];
+                        kAppDelegate.efTabbar.selectedIndex = 0;
+                        [EFOnePhoneLoginManager show];
+                    }];
+                }else {
+                    XYLog(@"vvvvvvv5");
+                }
+            }];
+            [JPUSHService deleteAlias:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
+                
+            } seq:1];
+        }
+    }else{
         for (EFUserModel *model in [EFUserModel bg_findAll:nil]) {
             if ([model.username isEqualToString:kUserManager.userModel.username]) {
                 model.isLogin = NO;
                 model.token = @"";
-                [model bg_saveOrUpdate];
+                [model bg_saveOrUpdateAsync:^(BOOL isSuccess) {
+                    if (isSuccess) {
+                        XYLog(@"????");
+                        [[RACScheduler mainThreadScheduler] schedule:^{
+                            [[NSNotificationCenter defaultCenter] postNotificationName:kLoginNoti object:nil];
+                            [[UIViewController getCurrentVC].navigationController qmui_popToRootViewControllerAnimated:NO completion:^{
+                            }];
+                            kAppDelegate.efTabbar.selectedIndex = 0;
+                            [EFOnePhoneLoginManager show];
+                        }];
+                    }else {
+                        XYLog(@"55555");
+                    }
+                }];
                 [JPUSHService deleteAlias:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
                     
                 } seq:1];
             }
         }
-        [[NSNotificationCenter defaultCenter] postNotificationName:kLoginNoti object:nil];
-        [[UIViewController getCurrentVC].navigationController qmui_popToRootViewControllerAnimated:NO completion:^{
-        }];
-        kAppDelegate.efTabbar.selectedIndex = 0;
-        [EFOnePhoneLoginManager show];
-        return @(result.isSuccess);
-    }];
+    }
 }
-
 
 + (RACSignal *)unbindPhone:(NSString *)phone code:(NSString *)code {
     return [self requsetNetwork:^RACSignal * _Nonnull{
@@ -150,6 +187,7 @@
         if (result.isSuccess) {
             EFUserModel *model = [EFUserModel modelWithJSON:result.reqResult];
             if (model.isPhone) {
+                kAppDelegate.isOut = NO;
                 [[UserManager defaultManager] saveUserModel:model];
                 [model bg_saveOrUpdate];
                 XYLog(@"model = >%@",model);
@@ -177,6 +215,7 @@
         return [[FMARCNetwork sharedInstance] thirdLoginBindingMessage:code phone:phone];
     } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
         if (result.isSuccess) {
+            kAppDelegate.isOut = NO;
             EFUserModel *model = [EFUserModel modelWithJSON:result.reqResult];
             [[UserManager defaultManager] saveUserModel:model];
             [model bg_saveOrUpdate];
