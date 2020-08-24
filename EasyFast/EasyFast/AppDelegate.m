@@ -11,6 +11,7 @@
 #import <BaiduMapAPI_Map/BMKMapView.h>
 #import "LoginVM.h"
 #import "EFOrderVM.h"
+
 @interface AppDelegate ()<WXApiDelegate,JPUSHRegisterDelegate>
 
 @property (nonatomic,strong)BMKMapManager *mapManager;
@@ -114,6 +115,11 @@
     [[[NSNotificationCenter defaultCenter] rac_addObserverForName:EBBannerViewDidClickNotification object:nil] subscribeNext:^(NSNotification * _Nullable x) {
         XYLog(@"%@",x.object);
     }];
+    
+    #ifdef DEBUG
+//        self.paws = [[MonkeyPaws alloc]initWithView:self.window tapUIApplication:YES];
+    #endif
+
     return YES;
 }
 

@@ -22,7 +22,7 @@ float height;
  **/
 - (RACSignal *)createAlertViewTitleArray:(NSArray *)array textColor:(id)color font:(UIFont *)font {
     return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
-        [self createAlertViewTitleArray:array arrayImage:nil textColor:color font:font spacing:0 actionBlock:^(UIButton * _Nullable button, NSInteger didRow) {
+        [self createAlertViewTitleArray:array arrayImage:nil textColor:color font:font spacing:0 topTitle:@"请选择时段" actionBlock:^(UIButton * _Nullable button, NSInteger didRow) {
             [subscriber sendNext:@(didRow)];
             [subscriber sendCompleted];
         }];
@@ -40,7 +40,7 @@ float height;
  *  spacing ：文字与图片间距自行调试（无图片可填0）
  *  取消 按钮字体请到.m文件自行设置。默认黑色-16号
  **/
--(void)createAlertViewTitleArray:(NSArray* _Nullable )array arrayImage:(NSArray* _Nullable )arrayImage textColor:(id _Nullable )color font:(UIFont*_Nullable)font spacing:(CGFloat)spacing actionBlock:(XQCAlertPopBlock _Nullable )actionBlock{
+-(void)createAlertViewTitleArray:(NSArray* _Nullable )array arrayImage:(NSArray* _Nullable )arrayImage textColor:(id _Nullable )color font:(UIFont*_Nullable)font spacing:(CGFloat)spacing topTitle:(NSString *)title actionBlock:(XQCAlertPopBlock _Nullable )actionBlock{
     
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     
@@ -112,7 +112,7 @@ float height;
     line.backgroundColor = UIColor.whiteColor;
     [bottomView addSubview:line];
     UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, WidthOfScale(48.5))];
-    [btn setTitle:@"请选择时段" forState:UIControlStateNormal];
+    [btn setTitle:title forState:UIControlStateNormal];
     [btn setTitleColor:tabbarBlackColor forState:UIControlStateNormal];
     btn.titleLabel.font = MedFont15;
     [bottomView addSubview:btn];

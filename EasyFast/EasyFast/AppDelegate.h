@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "EFBaseTabBarViewController.h"
+#import <SwiftMonkeyPaws/SwiftMonkeyPaws-Swift.h>
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
@@ -20,5 +22,7 @@
 @property (nonatomic,strong) NSString *orderNum; // 订单号
 @property (nonatomic,strong)NSString *sssNo; //支付成功页面需要的店铺编号
 @property (nonatomic,assign) NSInteger payMethod; // 支付方式，1：wx，2：ali，3：unionpay；默认1：微信
+@property (nonatomic, strong)MonkeyPaws * paws;
+
 @end
 

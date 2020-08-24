@@ -39,6 +39,6 @@
 }
 
 - (RACSignal *)payForOrder:(NSString *)orderNum payMethod:(NSInteger)payMethod {
-    return [self fg_postRequest:kpay paramters:@{@"orderNum":orderNum,@"payMethod":@(payMethod)}];
+    return [self fg_postRequest:kpay paramters:@{@"orderNum":orderNum ? orderNum : @"",@"payMethod":@(payMethod)}];
 }
 @end

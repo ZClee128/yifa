@@ -85,6 +85,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong)NSDate *endTime;
 /// 当前时间
 @property (nonatomic,strong)NSDate *currentTime;
+/// 评价状态, 0：待评价、1：已评价
+@property (nonatomic,assign)BOOL evalState;
+
 @end
 
 NS_ASSUME_NONNULL_END

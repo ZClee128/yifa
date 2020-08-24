@@ -147,6 +147,7 @@
     [self.efbridge login];
     [self.efbridge recomListClick];
     [self.efbridge tel];
+    [self.efbridge TeamListPay];
 }
 
 

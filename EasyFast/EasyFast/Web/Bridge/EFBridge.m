@@ -13,6 +13,7 @@
 #import "EFOrderMoreDetailViewController.h"
 #import "EFOrderSearchViewController.h"
 #import "PayManager.h"
+#import "EFOrderVM.h"
 @interface EFBridge ()
 @property (nonatomic,strong)WebViewJavascriptBridge *bridge;
 @end
@@ -117,6 +118,23 @@
         kAppDelegate.payMethod = [dict[@"payMethod"] intValue];
         [[PayManager defaultManager] showPay:[dict[@"payMethod"] intValue] == 1 ? wxPay : aliPay resp:dict[@"data"]];
     }];
+}
+
+- (void)TeamListPay {
+     @weakify(self);
+        [self.bridge registerHandler:@"TeamListPay" handler:^(id data, WVJBResponseCallback responseCallback) {
+            @strongify(self);
+    //        //item
+            NSDictionary *dict = [self identifyData:data];
+            kAppDelegate.isPay = YES;
+            kAppDelegate.orderNum = dict[@"item"][@"orderNum"];
+            kAppDelegate.sssNo = dict[@"item"][@"shopNo"];
+            [[UIViewController getCurrentVC].view createAlertViewTitleArray:@[@"微信支付",@"支付宝支付"] arrayImage:@[@"wxpay",@"alipay"] textColor:tabbarBlackColor font:RegularFont14 spacing:5 topTitle:@"请选择支付方式" actionBlock:^(UIButton * _Nullable button, NSInteger didRow) {
+                [[EFOrderVM payForOrder:kAppDelegate.orderNum payMethod:didRow == 0 ? 1 : 2] subscribeNext:^(id  _Nullable x) {
+                    
+                }];
+            }];
+        }];
 }
 
 - (void)ChooseAddress {

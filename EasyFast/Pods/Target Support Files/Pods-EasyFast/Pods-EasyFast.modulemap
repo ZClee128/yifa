@@ -1,4 +1,4 @@
-framework module Pods_EasyFast {
+module Pods_EasyFast {
   umbrella header "Pods-EasyFast-umbrella.h"
 
   export *

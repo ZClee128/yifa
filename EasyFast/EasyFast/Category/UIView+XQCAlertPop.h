@@ -19,6 +19,8 @@ typedef void (^XQCAlertPopBlock)(UIButton * _Nullable button,NSInteger didRow);
  *  取消 按钮字体请到.m文件自行设置。默认黑色-16号
  **/
 -(RACSignal *)createAlertViewTitleArray:(NSArray* _Nullable )array textColor:(id _Nullable )color font:(UIFont*_Nullable)font;
+
+-(void)createAlertViewTitleArray:(NSArray* _Nullable )array arrayImage:(NSArray* _Nullable )arrayImage textColor:(id _Nullable )color font:(UIFont*_Nullable)font spacing:(CGFloat)spacing topTitle:(NSString *)title actionBlock:(XQCAlertPopBlock _Nullable )actionBlock;
 @end
 
 NS_ASSUME_NONNULL_END

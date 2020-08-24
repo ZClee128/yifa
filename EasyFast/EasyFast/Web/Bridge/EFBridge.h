@@ -60,6 +60,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 电话
 - (void)tel;
+
+/// 拼团支付
+- (void)TeamListPay;
+
 - (NSDictionary *)identifyData:(id)data;
 
 

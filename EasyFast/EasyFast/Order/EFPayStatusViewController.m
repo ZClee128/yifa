@@ -128,9 +128,10 @@
     @weakify(self);
     [[goHome rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self);
-        [self.navigationController qmui_popToRootViewControllerAnimated:YES completion:^{
+        [self.navigationController qmui_popToRootViewControllerAnimated:NO completion:^{
             
         }];
+        kAppDelegate.efTabbar.selectedIndex = 0;
     }];
     
     QMUIButton *lookOrder = [QMUIButton buttonWithType:(UIButtonTypeCustom)];

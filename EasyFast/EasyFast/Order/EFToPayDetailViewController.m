@@ -121,6 +121,9 @@
         for (int i = 0; i < self.PayArr.count; i++) {
             EFPayModel *model = self.PayArr[i];
             if (model.isChoose) {
+                kAppDelegate.isPay = YES;
+                kAppDelegate.orderNum = self.model.orderNum;
+                kAppDelegate.sssNo = self.model.shopNo;
                 [[EFOrderVM payForOrder:self.model.orderNum payMethod:model.payType] subscribeNext:^(id  _Nullable x) {
                     
                 }];

@@ -55,7 +55,9 @@ targets.each do |t|
     pod 'TABAnimated'
     pod 'WechatOpenSDK'
     pod  'AlipaySDK-iOS'
+    
     # Pods for EasyFast
   end
 
 end
+

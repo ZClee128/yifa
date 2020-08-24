@@ -208,14 +208,13 @@
                     [kH5Manager gotoUrl:@"returnApply" hasNav:NO navTitle:@"" query:@{@"expressNum":model.expressNum,@"orderNum":model.orderNum}];
                     break;
                 }
-                case 400:
-                {
-                    [kH5Manager gotoUrl:@"evalWriting" hasNav:NO navTitle:@"" query:@{@"expressNum":model.expressNum,@"orderNum":model.orderNum}];
-                    break;
-                }
                 case 600:
                 {
-                    [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO),@"ggNo":model.goodsList[0].goodsNo}];
+                    if (!model.evalState) {
+                        [kH5Manager gotoUrl:@"evalWriting" hasNav:NO navTitle:@"" query:@{@"expressNum":model.expressNum,@"orderNum":model.orderNum}];
+                    }else {
+                        [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO),@"ggNo":model.goodsList[0].goodsNo}];
+                    }
                     break;
                 }
                 case 800:
