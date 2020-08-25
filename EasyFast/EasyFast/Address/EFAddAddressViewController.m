@@ -182,7 +182,7 @@
         case 2:
         {
             /// 地址选择器
-            BRAddressPickerView *addressPickerView = [[BRAddressPickerView alloc]init];
+            EFAddressPickerView *addressPickerView = [[EFAddressPickerView alloc]init];
             addressPickerView.pickerMode = BRAddressPickerModeArea;
             addressPickerView.title = @"请选择地区";
             //addressPickerView.selectValues = @[@"浙江省", @"杭州市", @"西湖区"];

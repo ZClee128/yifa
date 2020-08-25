@@ -186,40 +186,10 @@
         {
             /// 地址选择器
             @weakify(self);
-            BRAddressPickerView *addressPickerView = [[BRAddressPickerView alloc]init];
+            EFAddressPickerView *addressPickerView = [[EFAddressPickerView alloc]init];
             addressPickerView.pickerMode = BRAddressPickerModeCity;
             addressPickerView.title = @"请选择地区";
             addressPickerView.isAutoSelect = YES;
-            NSArray *dataSourceArr = [self readLocalFileWithName:@"省市区数据"];
-            NSMutableArray *tempArr1 = [NSMutableArray array];
-            for (NSDictionary *proviceDic in dataSourceArr) {
-                BRProvinceModel *proviceModel = [[BRProvinceModel alloc]init];
-//                proviceModel.code = [proviceDic objectForKey:@"code"];
-                proviceModel.name = [proviceDic objectForKey:@"name"];
-                proviceModel.index = [dataSourceArr indexOfObject:proviceDic];
-                NSArray *cityList = [proviceDic objectForKey:@"city"];
-                NSMutableArray *tempArr2 = [NSMutableArray array];
-                for (NSDictionary *cityDic in cityList) {
-                    BRCityModel *cityModel = [[BRCityModel alloc]init];
-//                    cityModel.code = [cityDic objectForKey:@"code"];
-                    cityModel.name = [cityDic objectForKey:@"name"];
-                    cityModel.index = [cityList indexOfObject:cityDic];
-                    NSArray *areaList = [cityDic objectForKey:@"area"];
-                    NSMutableArray *tempArr3 = [NSMutableArray array];
-                    for (NSString *areaDic in areaList) {
-                        BRAreaModel *areaModel = [[BRAreaModel alloc]init];
-//                        areaModel.code = [areaDic objectForKey:@"code"];
-                        areaModel.name = areaDic;
-                        areaModel.index = [areaList indexOfObject:areaDic];
-                        [tempArr3 addObject:areaModel];
-                    }
-                    cityModel.arealist = [tempArr3 copy];
-                    [tempArr2 addObject:cityModel];
-                }
-                proviceModel.citylist = [tempArr2 copy];
-                [tempArr1 addObject:proviceModel];
-            }
-            addressPickerView.dataSourceArr = tempArr1;
             addressPickerView.resultBlock = ^(BRProvinceModel *province, BRCityModel *city, BRAreaModel *area) {
                 @strongify(self);
                 [[MeVM updateUserInfo:city.name headImgUrl:@"" nickname:@"" province:province.name sex:4 type:4] subscribeNext:^(NSNumber *x) {
@@ -265,17 +235,7 @@
     }
 }
 
-- (id)readLocalFileWithName:(NSString *)name
-{
-    // 获取文件路径
-    NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:@"json"];
-    // 将文件数据化
-    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
-    
-    return [NSJSONSerialization JSONObjectWithData:data
-                                           options:kNilOptions
-                                             error:nil];
-}
+
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     NSInteger strLength = textField.text.length - range.length + string.length;

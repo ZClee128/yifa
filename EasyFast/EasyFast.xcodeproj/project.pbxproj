@@ -67,6 +67,9 @@
 		0C2D28CB24F3C2C8004CF3B1 /* 省市区数据.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C2D28CA24F3C2C7004CF3B1 /* 省市区数据.json */; };
 		0C2D28CC24F3C2C8004CF3B1 /* 省市区数据.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C2D28CA24F3C2C7004CF3B1 /* 省市区数据.json */; };
 		0C2D28CD24F3C2C8004CF3B1 /* 省市区数据.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C2D28CA24F3C2C7004CF3B1 /* 省市区数据.json */; };
+		0C2D28D624F4E518004CF3B1 /* EFAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D28D524F4E518004CF3B1 /* EFAddressPickerView.m */; };
+		0C2D28D724F4E518004CF3B1 /* EFAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D28D524F4E518004CF3B1 /* EFAddressPickerView.m */; };
+		0C2D28D824F4E518004CF3B1 /* EFAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D28D524F4E518004CF3B1 /* EFAddressPickerView.m */; };
 		0C4BAF9324D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
 		0C4BAF9424D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
 		0C4BAF9524D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
@@ -797,6 +800,8 @@
 		0C0CC42C24E2BDA2005E50ED /* EFQueryUserInfoCountModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFQueryUserInfoCountModel.h; sourceTree = "<group>"; };
 		0C0CC42D24E2BDA2005E50ED /* EFQueryUserInfoCountModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFQueryUserInfoCountModel.m; sourceTree = "<group>"; };
 		0C2D28CA24F3C2C7004CF3B1 /* 省市区数据.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "省市区数据.json"; sourceTree = "<group>"; };
+		0C2D28D424F4E518004CF3B1 /* EFAddressPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFAddressPickerView.h; sourceTree = "<group>"; };
+		0C2D28D524F4E518004CF3B1 /* EFAddressPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFAddressPickerView.m; sourceTree = "<group>"; };
 		0C4BAF9124D0085F0037CDCF /* EFMeRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFMeRefreshHeader.h; sourceTree = "<group>"; };
 		0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFMeRefreshHeader.m; sourceTree = "<group>"; };
 		0C4BAF9724D021440037CDCF /* EFBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFBridge.h; sourceTree = "<group>"; };
@@ -1431,6 +1436,15 @@
 				0C0CC42824E2953C005E50ED /* EFClassifyVM.m */,
 			);
 			path = VM;
+			sourceTree = "<group>";
+		};
+		0C2D28D324F4E4F3004CF3B1 /* AddressTool */ = {
+			isa = PBXGroup;
+			children = (
+				0C2D28D424F4E518004CF3B1 /* EFAddressPickerView.h */,
+				0C2D28D524F4E518004CF3B1 /* EFAddressPickerView.m */,
+			);
+			path = AddressTool;
 			sourceTree = "<group>";
 		};
 		0C4BAF9624D0212E0037CDCF /* Bridge */ = {
@@ -2383,6 +2397,7 @@
 		84A8219724BF010800EAC652 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0C2D28D324F4E4F3004CF3B1 /* AddressTool */,
 				0C2D28CA24F3C2C7004CF3B1 /* 省市区数据.json */,
 				0C56E0BE24EF5DEC00819D1A /* Empty */,
 				0CBE6A6D24EB7C17003C300F /* CustomerScrollView.h */,
@@ -3003,6 +3018,7 @@
 				841B94F324C979790054D8D5 /* FTPopOverMenu.m in Sources */,
 				0C0CC3E424E12C0A005E50ED /* EFAddressVM.m in Sources */,
 				0C4BAF9E24D1013D0037CDCF /* EFFollowTuanTableViewCell.m in Sources */,
+				0C2D28D624F4E518004CF3B1 /* EFAddressPickerView.m in Sources */,
 				84A8216624BE92B900EAC652 /* HotTabTableViewCell.m in Sources */,
 				0C6CB57924CE7E2D00471A8D /* EFOneLoginPhoneTableViewCell.m in Sources */,
 				84A8217524BEAE3000EAC652 /* EFHeaderView.m in Sources */,
@@ -3246,6 +3262,7 @@
 				841B94F424C979790054D8D5 /* FTPopOverMenu.m in Sources */,
 				0C0CC3E524E12C0A005E50ED /* EFAddressVM.m in Sources */,
 				0C4BAF9F24D1013D0037CDCF /* EFFollowTuanTableViewCell.m in Sources */,
+				0C2D28D724F4E518004CF3B1 /* EFAddressPickerView.m in Sources */,
 				84A8216724BE92B900EAC652 /* HotTabTableViewCell.m in Sources */,
 				0C6CB57A24CE7E2D00471A8D /* EFOneLoginPhoneTableViewCell.m in Sources */,
 				84A8217624BEAE3000EAC652 /* EFHeaderView.m in Sources */,
@@ -3489,6 +3506,7 @@
 				841B94F524C979790054D8D5 /* FTPopOverMenu.m in Sources */,
 				0C0CC3E624E12C0A005E50ED /* EFAddressVM.m in Sources */,
 				0C4BAFA024D1013D0037CDCF /* EFFollowTuanTableViewCell.m in Sources */,
+				0C2D28D824F4E518004CF3B1 /* EFAddressPickerView.m in Sources */,
 				84A8216824BE92B900EAC652 /* HotTabTableViewCell.m in Sources */,
 				0C6CB57B24CE7E2D00471A8D /* EFOneLoginPhoneTableViewCell.m in Sources */,
 				84A8217724BEAE3000EAC652 /* EFHeaderView.m in Sources */,

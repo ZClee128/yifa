@@ -13,6 +13,7 @@
 #import "EFPayStatusModel.h"
 #import "EFPayStatusViewController.h"
 #import "EFOrderViewController.h"
+
 @interface EFBaseWebViewController ()<WKUIDelegate,WKNavigationDelegate>
 
 @property (nonatomic,strong)WebViewJavascriptBridge *bridge;
@@ -76,20 +77,20 @@
     // 给webview建立JS与OjbC的沟通桥梁
     self.bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView];
     [self.bridge setWebViewDelegate:self];
-    [self.webView.configuration.preferences setValue:@YES forKey:@"allowFileAccessFromFileURLs"];
 //
-    if ([kH5Manager isTmpExist]) {
-        NSURL *fileURL = [NSURL fileURLWithPath:[kH5Manager openIndex]];
-        [_webView loadFileURL:fileURL allowingReadAccessToURL:fileURL];
-    }else {
-        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[kH5Manager getModel] ? [kH5Manager getModel].loadingUrl : @"https://api.one-fast.com/"]]];
-    }
-//    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString: @"https://api.one-fast.com/"]]];
+//    if ([kH5Manager isTmpExist]) {
+//        NSURL *fileURL = [NSURL fileURLWithPath:[kH5Manager openIndex]];
+//        [_webView loadFileURL:fileURL allowingReadAccessToURL:fileURL];
+//    }else {
+//        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[kH5Manager getModel] ? [kH5Manager getModel].loadingUrl : @"https://api.one-fast.com/"]]];
+//    }
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString: @"http://192.168.3.23:8080/"]]];
     [self getFun];
     self.gk_fullScreenPopDisabled = YES;
     @weakify(self);
     [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kPaySuccessNoti object:nil] subscribeNext:^(NSNotification * _Nullable x) {
         EFPayStatusModel *model = x.object;
+        XYLog(@"model>>>>%@",model);
         @strongify(self);
         if (kAppDelegate.isPay) {
             kAppDelegate.isPay = NO;
@@ -112,7 +113,7 @@
                         }
                         [UIViewController getCurrentVC].navigationController.viewControllers = marr;
                     }];
-                }else {
+                }else if (model.orderType == 2){
                     [kH5Manager gotoUrl:@"myGroup" hasNav:NO navTitle:@"" query:@{@"index" : @(0)} completion:^{
                         NSMutableArray *marr = [[NSMutableArray alloc] initWithArray:[UIViewController getCurrentVC].navigationController.viewControllers];
                         XYLog(@"$$$$$>>>%@",[UIViewController getCurrentVC].navigationController.qmui_rootViewController);
@@ -124,6 +125,8 @@
                         }
                         [UIViewController getCurrentVC].navigationController.viewControllers = marr;
                     }];
+                }else {
+                    
                 }
             }
         }

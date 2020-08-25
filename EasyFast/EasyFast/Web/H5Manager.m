@@ -54,6 +54,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             
         });
+       XYLog(@"进度》>>>>>>%f",progress);
     } fileLocalUrl:[NSURL fileURLWithPath:zipPath] success:^(NSURL *fileUrlPath, NSURLResponse *response) {
         XYLog(@"下载成功 下载的文档路径是 %@,%@ ",fileUrlPath,response);
         NSFileManager *fileManager = [NSFileManager defaultManager];

@@ -204,7 +204,9 @@
     [self.bridge registerHandler:@"login" handler:^(id data, WVJBResponseCallback responseCallback) {
         [EFOnePhoneLoginManager show];
         [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kLoginNoti object:nil] subscribeNext:^(NSNotification * _Nullable x) {
-            responseCallback(@{@"token":kUserManager.userModel.token});
+            if (kUserManager.userModel != nil) {
+                responseCallback(@{@"token":kUserManager.userModel.token});
+            }
         }];
     }];
 }

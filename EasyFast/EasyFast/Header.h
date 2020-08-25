@@ -93,4 +93,5 @@
 #import <EBBannerView.h>
 #import <AlipaySDK/AlipaySDK.h>
 #import "EFEmptyView.h"
+#import "EFAddressPickerView.h"
 #endif /* Header_h */

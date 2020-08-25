@@ -12,7 +12,7 @@
 @implementation FMARCNetwork (Login)
 
 - (RACSignal *)userLogin:(NSString *)account code:(NSString *)code loginToken:(NSString *)loginToken password:(NSString *)password phone:(NSString *)phone type:(NSInteger)type {
-    return [self fg_postRequest:kUserLogin paramters:@{@"account":account,@"code":code,@"loginToken":loginToken,@"password":password.md5,@"phone":phone,@"type":@(type)}];
+    return [self fg_postRequest:kUserLogin paramters:@{@"account":account,@"code":code ? code : @"",@"loginToken":loginToken,@"password":password.md5,@"phone":phone ? phone : @"",@"type":@(type)}];
 }
 
 - (RACSignal *)userregister:(NSString *)phone code:(NSString *)code {
