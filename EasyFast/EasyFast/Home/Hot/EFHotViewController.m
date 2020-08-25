@@ -108,18 +108,18 @@
     [self.EFTableView registerClass:[EFNoticeTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFNoticeTableViewCell class])];
     [self.EFTableView registerClass:[EFFastTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFFastTableViewCell class])];
     [self.EFTableView registerClass:[EFGoodsTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFGoodsTableViewCell class])];
-    self.EFTableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[HotTabTableViewCell class] cellHeight:WidthOfScale(123.5)];
-    self.EFTableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[EFNoticeTableViewCell class] cellHeight:WidthOfScale(30)];
-    self.EFTableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[EFFastTableViewCell class] cellHeight:140+14.5+16+8+15+20];
-    self.EFTableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[EFGoodsTableViewCell class] cellHeight:WidthOfScale(140)+15];
+//    self.EFTableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[HotTabTableViewCell class] cellHeight:WidthOfScale(123.5)];
+//    self.EFTableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[EFNoticeTableViewCell class] cellHeight:WidthOfScale(30)];
+//    self.EFTableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[EFFastTableViewCell class] cellHeight:140+14.5+16+8+15+20];
+//    self.EFTableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[EFGoodsTableViewCell class] cellHeight:WidthOfScale(140)+15];
     self.EFTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, 10)];
     [self addRefshDown];
     [self addRefshUp];
-    @weakify(self);
-    [self.EFTableView tab_startAnimationWithCompletion:^{
-        @strongify(self);
+//    @weakify(self);
+//    [self.EFTableView tab_startAnimationWithCompletion:^{
+//        @strongify(self);
        [self loadList];
-    }];
+//    }];
 }
 
 - (void)loadList {
@@ -145,7 +145,7 @@
     
     [[self.viewModel refreshForDown] subscribeNext:^(RACTuple *x) {
         [self.EFTableView.mj_header endRefreshing];
-        [self.EFTableView tab_endAnimation];
+//        [self.EFTableView tab_endAnimation];
         self.EFData = x.first;
         [self.EFTableView reloadData];
     }];

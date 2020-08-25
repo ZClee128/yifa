@@ -114,7 +114,9 @@
     } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
         if (result.isSuccess) {
             NSDictionary *dict = result.reqResult;
-            [[PayManager defaultManager] showPay:payMethod == 1 ? wxPay : aliPay resp:dict];
+            if ([dict[@"success"] boolValue]) {
+                [[PayManager defaultManager] showPay:payMethod == 1 ? wxPay : aliPay resp:dict];
+            }
         }
         return @(result.isSuccess);
     }];

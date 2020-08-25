@@ -51,7 +51,7 @@
 {
     if (self = [super initWithFrame:frame]) {
         // 属性初始值
-        self.viewSize = CGSizeMake([QMUIHelper is40InchScreen] ? 80 : 55, BtnWH);
+        self.viewSize = CGSizeMake([QMUIHelper is40InchScreen] ? 80 : 60, BtnWH);
         self.numberOfSinglePage = NumberOfSinglePage;
         self.viewGap = ViewGap;
         self.viewMargin = ViewMargin;
@@ -151,7 +151,7 @@
         btn.titleLabel.font = RegularFont14;
         btn.titleLabel.textAlignment = NSTextAlignmentCenter;
         // 设置图片frame
-        btn.x = col * (btnW + ([QMUIHelper is40InchScreen] ? WidthOfScale(0) : WidthOfScale(34))) + WidthOfScale(27) + number * self.width;
+        btn.x = col * (btnW + ([QMUIHelper is40InchScreen] ? WidthOfScale(0) : WidthOfScale(29))) + WidthOfScale(27) + number * self.width;
         btn.y = row * (btnH + WidthOfScale(15)) + WidthOfScale(19.5);
         
         btn.width = btnW;

@@ -48,6 +48,7 @@ PODS:
   - JVerification (2.6.4):
     - JCore (< 6.0.0, >= 2.1.6)
   - JXCategoryView (1.5.6)
+  - Kiwi (3.0.0)
   - LYEmptyView (1.3.1)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
@@ -135,6 +136,7 @@ DEPENDENCIES:
   - JSBadgeView
   - JVerification
   - JXCategoryView
+  - Kiwi
   - LYEmptyView
   - Masonry
   - MBProgressHUD
@@ -180,6 +182,7 @@ SPEC REPOS:
     - JSBadgeView
     - JVerification
     - JXCategoryView
+    - Kiwi
     - LYEmptyView
     - Masonry
     - MBProgressHUD
@@ -221,6 +224,7 @@ SPEC CHECKSUMS:
   JSBadgeView: 3f5691b7d1bfacfb0237d0eb3b8b1f9a10ecb3f7
   JVerification: 85c0b1ae2a55f167b97f9d831bb8c2e03d3da22d
   JXCategoryView: 603ccd8277a89b1a73e9cedb9d8ed4b294576008
+  Kiwi: fbeafef0f00e4d8f7dcb3420a4930afe70af77f7
   LYEmptyView: b6d418cfa38b78df0cf243f9a9c25ccbdc399922
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
@@ -246,6 +250,6 @@ SPEC CHECKSUMS:
   YZTagList: 43dc1909e38d88124e3256ffc51c62cc904d8240
   ZLPhotoBrowser: 3748fdbeb2b28961c2495d15131dbf413082e1b9
 
-PODFILE CHECKSUM: 6b845a469ca52b4d05b3db78de6add1e365bff6e
+PODFILE CHECKSUM: cccf97a1a4ed8550f6f988c4be345b7da4eefbd3
 
 COCOAPODS: 1.9.3

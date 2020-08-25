@@ -302,7 +302,7 @@
 - (void)nextClick {
 //    设置新密码
     @weakify(self);
-    [[LoginVM setNewPasswordNewPassword:self.newsTextField.text confirmPassword:self.comfirTextField.text] subscribeNext:^(NSNumber *x) {
+    [[LoginVM setNewPasswordNewPassword:self.newsTextField.text confirmPassword:self.comfirTextField.text code:self.code phone:self.phone] subscribeNext:^(NSNumber *x) {
         @strongify(self);
         if ([x boolValue]) {
             [self.navigationController qmui_popViewControllerAnimated:YES completion:^{

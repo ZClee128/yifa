@@ -141,19 +141,19 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        @weakify(self);
-        QPDialCodePickerView *pickerView = [[QPDialCodePickerView alloc] initWithAreaFormat:QPDialCodeAreaNameFormatCurrentLocale complete:^(QPDialCodeObject *item) {
-            @strongify(self);
-            self.qpString = [NSString stringWithFormat:@"%@+%@", item.area_name,item.dial_code];
-            [[RACScheduler mainThreadScheduler] schedule:^{
-                [self.EFTableView reloadRow:0 inSection:0 withRowAnimation:(UITableViewRowAnimationNone)];
-            }];
-        }];
-        pickerView.doneButtonColor = colorF14745;
-        pickerView.doneButtonTitle = @"确定";
-        [pickerView show];
-    }
+//    if (indexPath.row == 0) {
+//        @weakify(self);
+//        QPDialCodePickerView *pickerView = [[QPDialCodePickerView alloc] initWithAreaFormat:QPDialCodeAreaNameFormatCurrentLocale complete:^(QPDialCodeObject *item) {
+//            @strongify(self);
+//            self.qpString = [NSString stringWithFormat:@"%@+%@", item.area_name,item.dial_code];
+//            [[RACScheduler mainThreadScheduler] schedule:^{
+//                [self.EFTableView reloadRow:0 inSection:0 withRowAnimation:(UITableViewRowAnimationNone)];
+//            }];
+//        }];
+//        pickerView.doneButtonColor = colorF14745;
+//        pickerView.doneButtonTitle = @"确定";
+//        [pickerView show];
+//    }
 }
 
 @end

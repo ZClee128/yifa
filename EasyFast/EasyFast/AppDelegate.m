@@ -267,7 +267,9 @@
         
     }];
     if (self.isPay) {
+        self.isPay = NO;
         [[EFOrderVM refreshOrder:self.orderNum payMethod:self.payMethod] subscribeNext:^(EFPayStatusModel *x) {
+            self.isPayOverNoti = YES;
             [[NSNotificationCenter defaultCenter] postNotificationName:kPaySuccessNoti object:x];
         }];
     }

@@ -217,11 +217,9 @@
         }
             case 4:
         {
-//            EFOnePhoneViewController *one = [[EFOnePhoneViewController alloc] init];
-//            [self.navigationController qmui_pushViewController:one animated:YES completion:^{
-//
-//            }];
-            [EFOnePhoneLoginManager showBindPhone];
+            if (!kUserManager.userModel.isPhone) {
+                [EFOnePhoneLoginManager showBindPhone];
+            }
             break;
         }
         case 5:{

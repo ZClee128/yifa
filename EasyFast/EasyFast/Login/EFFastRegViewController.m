@@ -283,6 +283,8 @@
     [[LoginVM verifyMessage:self.codeStr phone:self.phoneText type:4] subscribeNext:^(NSNumber *x) {
         if ([x boolValue]) {
             EFSetNewPasswordViewController *vc = [[EFSetNewPasswordViewController alloc] init];
+            vc.code = self.codeStr;
+            vc.phone = self.phoneText;
             [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
                 [self removeFromParentViewController];
             }];

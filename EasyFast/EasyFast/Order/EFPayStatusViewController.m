@@ -9,6 +9,7 @@
 #import "EFPayStatusViewController.h"
 #import "TuanOtherGoodsTableViewCell.h"
 #import "EFOrderVM.h"
+#import "EFOrderViewController.h"
 @interface EFPayStatusViewController ()
 
 @property (nonatomic,strong)UIView *otherView;
@@ -146,6 +147,26 @@
     lookOrder.titleLabel.font = MedFont13;
     [lookOrder layoutIfNeeded];
     [lookOrder AddImageRadiusBorderWithColor:UIColor.whiteColor lineWidth:1 radius:WidthOfScale(35)/2];
+    [[lookOrder rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        @strongify(self);
+        if (self.sModel.orderType == 1) {
+            EFOrderViewController *order = [[EFOrderViewController alloc] initWithIndex:0];
+            [[UIViewController getCurrentVC].navigationController qmui_pushViewController:order animated:NO completion:^{
+                NSMutableArray *marr = [[NSMutableArray alloc] initWithArray:[UIViewController getCurrentVC].navigationController.viewControllers];
+                for (UIViewController *vc in marr) {
+                    if (![vc isKindOfClass:[[UIViewController getCurrentVC].navigationController.qmui_rootViewController class]]) {
+                        [marr removeObject:vc];
+                        break;
+                    }
+                }
+                [UIViewController getCurrentVC].navigationController.viewControllers = marr;
+            }];
+        }else if (self.sModel.orderType == 2){
+            [kH5Manager gotoUrl:@"myGroup" hasNav:NO navTitle:@"" query:@{@"index" : @(0)} completion:^{
+                [self removeFromParentViewController];
+            }];
+        }
+    }];
     return view;
 }
 

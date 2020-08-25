@@ -89,21 +89,22 @@
     self.gk_fullScreenPopDisabled = YES;
     @weakify(self);
     [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kPaySuccessNoti object:nil] subscribeNext:^(NSNotification * _Nullable x) {
-        EFPayStatusModel *model = x.object;
-        XYLog(@"model>>>>%@",model);
-        @strongify(self);
-        if (kAppDelegate.isPay) {
-            kAppDelegate.isPay = NO;
+        if (kAppDelegate.isPayOverNoti) {
+            EFPayStatusModel *model = x.object;
+            XYLog(@"model>>>>%@",model);
+            @strongify(self);
             if (model.payState == 2) {
                 EFPayStatusViewController *vc = [[EFPayStatusViewController alloc] initWithsssNo:kAppDelegate.sssNo ? kAppDelegate.sssNo : @""];
+                vc.sModel = model;
                 [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
-                    
+                    kAppDelegate.isPayOverNoti = NO;
+                    [self removeFromParentViewController];
                 }];
             }else {
                 if (model.orderType == 1) {
                     EFOrderViewController *order = [[EFOrderViewController alloc] initWithIndex:0];
-                    @strongify(self);
-                    [self.navigationController qmui_pushViewController:order animated:YES completion:^{
+                    [[UIViewController getCurrentVC].navigationController qmui_pushViewController:order animated:NO completion:^{
+                        kAppDelegate.isPayOverNoti = NO;
                         NSMutableArray *marr = [[NSMutableArray alloc] initWithArray:[UIViewController getCurrentVC].navigationController.viewControllers];
                         for (UIViewController *vc in marr) {
                             if (![vc isKindOfClass:[[UIViewController getCurrentVC].navigationController.qmui_rootViewController class]]) {
@@ -115,6 +116,7 @@
                     }];
                 }else if (model.orderType == 2){
                     [kH5Manager gotoUrl:@"myGroup" hasNav:NO navTitle:@"" query:@{@"index" : @(0)} completion:^{
+                        kAppDelegate.isPayOverNoti = NO;
                         NSMutableArray *marr = [[NSMutableArray alloc] initWithArray:[UIViewController getCurrentVC].navigationController.viewControllers];
                         XYLog(@"$$$$$>>>%@",[UIViewController getCurrentVC].navigationController.qmui_rootViewController);
                         for (UIViewController *vc in marr) {
@@ -126,7 +128,7 @@
                         [UIViewController getCurrentVC].navigationController.viewControllers = marr;
                     }];
                 }else {
-                    
+                    kAppDelegate.isPayOverNoti = NO;
                 }
             }
         }

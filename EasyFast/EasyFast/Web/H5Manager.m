@@ -97,7 +97,7 @@
 - (void)gotoUrl:(NSString *)url hasNav:(BOOL)show navTitle:(NSString *)title query:(id)query completion:(void (^)(void))completion{
     EFBaseWebViewController *web = [[EFBaseWebViewController alloc] initWithUrl:url navTitle:title hasNav:show query:query];
     web.hidesBottomBarWhenPushed = YES;
-    [[UIViewController getCurrentVC].navigationController qmui_pushViewController:web animated:YES completion:completion];
+    [[UIViewController getCurrentVC].navigationController qmui_pushViewController:web animated:[url isEqualToString:@"myGroup"] ? NO : YES completion:completion];
 }
 
 - (NSString *)md5:(NSString *)str

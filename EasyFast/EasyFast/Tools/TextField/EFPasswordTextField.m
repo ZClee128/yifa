@@ -19,6 +19,7 @@
 //            self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.placeholder attributes:@{NSFontAttributeName : RegularFont15, NSForegroundColorAttributeName : [tabbarBlackColor colorWithAlphaComponent:0.7]}];
 //        }
         self.placeholderColor = [tabbarBlackColor colorWithAlphaComponent:0.7];
+        self.secureTextEntry = YES;
         @weakify(self);
         [self setRightViewWithimageName:@"no_see" click:^(QMUIButton *x) {
             @strongify(self);

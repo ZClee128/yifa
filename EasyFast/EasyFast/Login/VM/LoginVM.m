@@ -245,9 +245,9 @@
     }];
 }
 
-+ (RACSignal *)setNewPasswordNewPassword:(NSString *)password confirmPassword:(NSString *)confirmPassword {
++ (RACSignal *)setNewPasswordNewPassword:(NSString *)password confirmPassword:(NSString *)confirmPassword code:(NSString *)code phone:(NSString *)phone{
     return [self requsetNetwork:^RACSignal * _Nonnull{
-        return [[FMARCNetwork sharedInstance] setNewPasswordNewPassword:password confirmPassword:confirmPassword];
+        return [[FMARCNetwork sharedInstance] setNewPasswordNewPassword:password confirmPassword:confirmPassword code:code phone:phone];
     } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
         return @(result.isSuccess);
     }];

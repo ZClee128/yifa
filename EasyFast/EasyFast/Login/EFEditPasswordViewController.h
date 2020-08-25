@@ -19,6 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EFSetNewPasswordViewController : EFEditPasswordViewController
 
+@property (nonatomic,strong)NSString *phone;
+@property (nonatomic,strong)NSString *code;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -37,7 +37,7 @@
         @strongify(self);
         if (model.payState == 2) {
             EFPayStatusViewController *vc = [[EFPayStatusViewController alloc] initWithsssNo:kAppDelegate.sssNo ? kAppDelegate.sssNo : @""];
-            [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+            [self.navigationController qmui_pushViewController:vc animated:NO completion:^{
                 
             }];
         }else {

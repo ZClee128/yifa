@@ -70,6 +70,7 @@
 		0C2D28D624F4E518004CF3B1 /* EFAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D28D524F4E518004CF3B1 /* EFAddressPickerView.m */; };
 		0C2D28D724F4E518004CF3B1 /* EFAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D28D524F4E518004CF3B1 /* EFAddressPickerView.m */; };
 		0C2D28D824F4E518004CF3B1 /* EFAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D28D524F4E518004CF3B1 /* EFAddressPickerView.m */; };
+		0C2D28E024F4E93E004CF3B1 /* EasyFaseUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D28DF24F4E93E004CF3B1 /* EasyFaseUITests.m */; };
 		0C4BAF9324D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
 		0C4BAF9424D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
 		0C4BAF9524D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
@@ -109,7 +110,6 @@
 		0C56E0CB24EFB81100819D1A /* EFPayStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0CA24EFB81000819D1A /* EFPayStatusModel.m */; };
 		0C56E0CC24EFB81100819D1A /* EFPayStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0CA24EFB81000819D1A /* EFPayStatusModel.m */; };
 		0C56E0CD24EFB81100819D1A /* EFPayStatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E0CA24EFB81000819D1A /* EFPayStatusModel.m */; };
-		0C56E11D24F38FC900819D1A /* EasyFaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C56E11C24F38FC900819D1A /* EasyFaseUITests.swift */; };
 		0C6CB56A24CE688300471A8D /* LRAnimationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56924CE688300471A8D /* LRAnimationProgress.m */; };
 		0C6CB56B24CE688300471A8D /* LRAnimationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56924CE688300471A8D /* LRAnimationProgress.m */; };
 		0C6CB56C24CE688300471A8D /* LRAnimationProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB56924CE688300471A8D /* LRAnimationProgress.m */; };
@@ -412,6 +412,7 @@
 		0CE2861A24D3ECA400AAC334 /* EFFootprintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE2861824D3ECA400AAC334 /* EFFootprintViewController.m */; };
 		0CE2861B24D3ECA400AAC334 /* EFFootprintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE2861824D3ECA400AAC334 /* EFFootprintViewController.m */; };
 		3DD6FC3B30071BBFC7670DF0 /* libPods-EasyFast_Test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0E9DAC2B83A38562800432 /* libPods-EasyFast_Test.a */; };
+		3F5FF38FB88D33D59A97E8AF /* libPods-EasyFaseUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A70C89C6CF221DCD6FF19384 /* libPods-EasyFaseUITests.a */; };
 		84187CA424C05D0200ED3F96 /* MeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84187CA324C05D0200ED3F96 /* MeHeaderView.m */; };
 		84187CA524C05D0200ED3F96 /* MeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84187CA324C05D0200ED3F96 /* MeHeaderView.m */; };
 		84187CA624C05D0200ED3F96 /* MeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84187CA324C05D0200ED3F96 /* MeHeaderView.m */; };
@@ -738,7 +739,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0C56E11F24F38FC900819D1A /* PBXContainerItemProxy */ = {
+		0C2D28E224F4E93E004CF3B1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 84A8206B24B6C61800EAC652 /* Project object */;
 			proxyType = 1;
@@ -802,6 +803,9 @@
 		0C2D28CA24F3C2C7004CF3B1 /* 省市区数据.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "省市区数据.json"; sourceTree = "<group>"; };
 		0C2D28D424F4E518004CF3B1 /* EFAddressPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFAddressPickerView.h; sourceTree = "<group>"; };
 		0C2D28D524F4E518004CF3B1 /* EFAddressPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFAddressPickerView.m; sourceTree = "<group>"; };
+		0C2D28DD24F4E93E004CF3B1 /* EasyFaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyFaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C2D28DF24F4E93E004CF3B1 /* EasyFaseUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyFaseUITests.m; sourceTree = "<group>"; };
+		0C2D28E124F4E93E004CF3B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C4BAF9124D0085F0037CDCF /* EFMeRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFMeRefreshHeader.h; sourceTree = "<group>"; };
 		0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFMeRefreshHeader.m; sourceTree = "<group>"; };
 		0C4BAF9724D021440037CDCF /* EFBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFBridge.h; sourceTree = "<group>"; };
@@ -829,9 +833,6 @@
 		0C56E0C524EF7B8000819D1A /* QDNetServerDownLoadTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDNetServerDownLoadTool.m; sourceTree = "<group>"; };
 		0C56E0C924EFB81000819D1A /* EFPayStatusModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFPayStatusModel.h; sourceTree = "<group>"; };
 		0C56E0CA24EFB81000819D1A /* EFPayStatusModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFPayStatusModel.m; sourceTree = "<group>"; };
-		0C56E11A24F38FC900819D1A /* EasyFaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyFaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C56E11C24F38FC900819D1A /* EasyFaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyFaseUITests.swift; sourceTree = "<group>"; };
-		0C56E11E24F38FC900819D1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C6CB56824CE688300471A8D /* LRAnimationProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRAnimationProgress.h; sourceTree = "<group>"; };
 		0C6CB56924CE688300471A8D /* LRAnimationProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRAnimationProgress.m; sourceTree = "<group>"; };
 		0C6CB56D24CE7A1400471A8D /* EFOneLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFOneLoginViewController.h; sourceTree = "<group>"; };
@@ -1262,15 +1263,19 @@
 		84B2437B24C8425700E9967C /* ThreeCollectionViewCellItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreeCollectionViewCellItem.h; sourceTree = "<group>"; };
 		84B2437C24C8425700E9967C /* ThreeCollectionViewCellItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreeCollectionViewCellItem.m; sourceTree = "<group>"; };
 		9B0E9DAC2B83A38562800432 /* libPods-EasyFast_Test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EasyFast_Test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A70C89C6CF221DCD6FF19384 /* libPods-EasyFaseUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EasyFaseUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA53EB76E1528E46E8ADF203 /* Pods-EasyFast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast.release.xcconfig"; path = "Target Support Files/Pods-EasyFast/Pods-EasyFast.release.xcconfig"; sourceTree = "<group>"; };
+		BE1856A707510105E33986A7 /* Pods-EasyFaseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFaseUITests.debug.xcconfig"; path = "Target Support Files/Pods-EasyFaseUITests/Pods-EasyFaseUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F6A47CB9B54B954897550C36 /* Pods-EasyFaseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFaseUITests.release.xcconfig"; path = "Target Support Files/Pods-EasyFaseUITests/Pods-EasyFaseUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FF8E5FE1C44408BDAF6A9C97 /* Pods-EasyFast_Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyFast_Test.debug.xcconfig"; path = "Target Support Files/Pods-EasyFast_Test/Pods-EasyFast_Test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0C56E11724F38FC900819D1A /* Frameworks */ = {
+		0C2D28DA24F4E93E004CF3B1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F5FF38FB88D33D59A97E8AF /* libPods-EasyFaseUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1441,10 +1446,20 @@
 		0C2D28D324F4E4F3004CF3B1 /* AddressTool */ = {
 			isa = PBXGroup;
 			children = (
+				0C2D28CA24F3C2C7004CF3B1 /* 省市区数据.json */,
 				0C2D28D424F4E518004CF3B1 /* EFAddressPickerView.h */,
 				0C2D28D524F4E518004CF3B1 /* EFAddressPickerView.m */,
 			);
 			path = AddressTool;
+			sourceTree = "<group>";
+		};
+		0C2D28DE24F4E93E004CF3B1 /* EasyFaseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0C2D28DF24F4E93E004CF3B1 /* EasyFaseUITests.m */,
+				0C2D28E124F4E93E004CF3B1 /* Info.plist */,
+			);
+			path = EasyFaseUITests;
 			sourceTree = "<group>";
 		};
 		0C4BAF9624D0212E0037CDCF /* Bridge */ = {
@@ -1474,15 +1489,6 @@
 				0C56E0C024EF5E5E00819D1A /* EFEmptyView.m */,
 			);
 			path = Empty;
-			sourceTree = "<group>";
-		};
-		0C56E11B24F38FC900819D1A /* EasyFaseUITests */ = {
-			isa = PBXGroup;
-			children = (
-				0C56E11C24F38FC900819D1A /* EasyFaseUITests.swift */,
-				0C56E11E24F38FC900819D1A /* Info.plist */,
-			);
-			path = EasyFaseUITests;
 			sourceTree = "<group>";
 		};
 		0C6CB5B924CFBE1C00471A8D /* WebViewPool */ = {
@@ -1773,6 +1779,8 @@
 				7454F79293B3C25FC11219D6 /* Pods-EasyFast_Dev.release.xcconfig */,
 				FF8E5FE1C44408BDAF6A9C97 /* Pods-EasyFast_Test.debug.xcconfig */,
 				1304519AEDDDA76585AAC941 /* Pods-EasyFast_Test.release.xcconfig */,
+				BE1856A707510105E33986A7 /* Pods-EasyFaseUITests.debug.xcconfig */,
+				F6A47CB9B54B954897550C36 /* Pods-EasyFaseUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1785,6 +1793,7 @@
 				6E09AFAC86DE93F633083A99 /* libPods-EasyFast.a */,
 				00D88C6799F2691F0B67B541 /* libPods-EasyFast_Dev.a */,
 				9B0E9DAC2B83A38562800432 /* libPods-EasyFast_Test.a */,
+				A70C89C6CF221DCD6FF19384 /* libPods-EasyFaseUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2068,7 +2077,7 @@
 			isa = PBXGroup;
 			children = (
 				84A8207524B6C61800EAC652 /* EasyFast */,
-				0C56E11B24F38FC900819D1A /* EasyFaseUITests */,
+				0C2D28DE24F4E93E004CF3B1 /* EasyFaseUITests */,
 				84A8207424B6C61800EAC652 /* Products */,
 				27EE066D901F23C4C9063CDC /* Pods */,
 				450A170569CB954BCEB29555 /* Frameworks */,
@@ -2083,7 +2092,7 @@
 				84A8207324B6C61800EAC652 /* 易发拼货.app */,
 				84A8211924BC4F5400EAC652 /* EasyFast_Dev.app */,
 				84A8213D24BC513500EAC652 /* EasyFast_Test.app */,
-				0C56E11A24F38FC900819D1A /* EasyFaseUITests.xctest */,
+				0C2D28DD24F4E93E004CF3B1 /* EasyFaseUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2398,7 +2407,6 @@
 			isa = PBXGroup;
 			children = (
 				0C2D28D324F4E4F3004CF3B1 /* AddressTool */,
-				0C2D28CA24F3C2C7004CF3B1 /* 省市区数据.json */,
 				0C56E0BE24EF5DEC00819D1A /* Empty */,
 				0CBE6A6D24EB7C17003C300F /* CustomerScrollView.h */,
 				0CBE6A6C24EB7C16003C300F /* CustomerScrollView.m */,
@@ -2487,22 +2495,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0C56E11924F38FC900819D1A /* EasyFaseUITests */ = {
+		0C2D28DC24F4E93E004CF3B1 /* EasyFaseUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0C56E12124F38FC900819D1A /* Build configuration list for PBXNativeTarget "EasyFaseUITests" */;
+			buildConfigurationList = 0C2D28E424F4E93E004CF3B1 /* Build configuration list for PBXNativeTarget "EasyFaseUITests" */;
 			buildPhases = (
-				0C56E11624F38FC900819D1A /* Sources */,
-				0C56E11724F38FC900819D1A /* Frameworks */,
-				0C56E11824F38FC900819D1A /* Resources */,
+				FE69F3CDD02A81CCD2FBBAD3 /* [CP] Check Pods Manifest.lock */,
+				0C2D28D924F4E93E004CF3B1 /* Sources */,
+				0C2D28DA24F4E93E004CF3B1 /* Frameworks */,
+				0C2D28DB24F4E93E004CF3B1 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0C56E12024F38FC900819D1A /* PBXTargetDependency */,
+				0C2D28E324F4E93E004CF3B1 /* PBXTargetDependency */,
 			);
 			name = EasyFaseUITests;
 			productName = EasyFaseUITests;
-			productReference = 0C56E11A24F38FC900819D1A /* EasyFaseUITests.xctest */;
+			productReference = 0C2D28DD24F4E93E004CF3B1 /* EasyFaseUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		84A8207224B6C61800EAC652 /* EasyFast */ = {
@@ -2577,7 +2586,7 @@
 				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = EasyFast;
 				TargetAttributes = {
-					0C56E11924F38FC900819D1A = {
+					0C2D28DC24F4E93E004CF3B1 = {
 						CreatedOnToolsVersion = 11.6;
 						TestTargetID = 84A8207224B6C61800EAC652;
 					};
@@ -2609,13 +2618,13 @@
 				84A8207224B6C61800EAC652 /* EasyFast */,
 				84A820F724BC4F5400EAC652 /* EasyFast_Dev */,
 				84A8211B24BC513500EAC652 /* EasyFast_Test */,
-				0C56E11924F38FC900819D1A /* EasyFaseUITests */,
+				0C2D28DC24F4E93E004CF3B1 /* EasyFaseUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0C56E11824F38FC900819D1A /* Resources */ = {
+		0C2D28DB24F4E93E004CF3B1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2826,14 +2835,36 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EasyFast/Pods-EasyFast-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FE69F3CDD02A81CCD2FBBAD3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EasyFaseUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0C56E11624F38FC900819D1A /* Sources */ = {
+		0C2D28D924F4E93E004CF3B1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C56E11D24F38FC900819D1A /* EasyFaseUITests.swift in Sources */,
+				0C2D28E024F4E93E004CF3B1 /* EasyFaseUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3572,10 +3603,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0C56E12024F38FC900819D1A /* PBXTargetDependency */ = {
+		0C2D28E324F4E93E004CF3B1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 84A8207224B6C61800EAC652 /* EasyFast */;
-			targetProxy = 0C56E11F24F38FC900819D1A /* PBXContainerItemProxy */;
+			targetProxy = 0C2D28E224F4E93E004CF3B1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -3591,8 +3622,9 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		0C56E12224F38FC900819D1A /* Debug */ = {
+		0C2D28E524F4E93E004CF3B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE1856A707510105E33986A7 /* Pods-EasyFaseUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B2593LDC7H;
@@ -3605,16 +3637,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = easyfast.test.EasyFaseUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = EasyFast;
 			};
 			name = Debug;
 		};
-		0C56E12324F38FC900819D1A /* Release */ = {
+		0C2D28E624F4E93E004CF3B1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6A47CB9B54B954897550C36 /* Pods-EasyFaseUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B2593LDC7H;
@@ -3627,9 +3657,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = easyfast.test.EasyFaseUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = EasyFast;
 			};
@@ -3777,7 +3804,10 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WARNING_CFLAGS = "-Wno-ambiguous-macro  ";
+				WARNING_CFLAGS = (
+					"-Wno-ambiguous-macro",
+					" ",
+				);
 			};
 			name = Debug;
 		};
@@ -3811,7 +3841,10 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "EasyFast/EasyFast-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WARNING_CFLAGS = "-Wno-ambiguous-macro  ";
+				WARNING_CFLAGS = (
+					"-Wno-ambiguous-macro",
+					" ",
+				);
 			};
 			name = Release;
 		};
@@ -3845,7 +3878,10 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WARNING_CFLAGS = "-Wno-ambiguous-macro  ";
+				WARNING_CFLAGS = (
+					"-Wno-ambiguous-macro",
+					" ",
+				);
 			};
 			name = Debug;
 		};
@@ -3878,7 +3914,10 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "EasyFast/EasyFast_Dev-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WARNING_CFLAGS = "-Wno-ambiguous-macro  ";
+				WARNING_CFLAGS = (
+					"-Wno-ambiguous-macro",
+					" ",
+				);
 			};
 			name = Release;
 		};
@@ -3911,7 +3950,10 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WARNING_CFLAGS = "-Wno-ambiguous-macro  ";
+				WARNING_CFLAGS = (
+					"-Wno-ambiguous-macro",
+					" ",
+				);
 			};
 			name = Debug;
 		};
@@ -3943,18 +3985,21 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "EasyFast/EasyFast_Test-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				WARNING_CFLAGS = "-Wno-ambiguous-macro  ";
+				WARNING_CFLAGS = (
+					"-Wno-ambiguous-macro",
+					" ",
+				);
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0C56E12124F38FC900819D1A /* Build configuration list for PBXNativeTarget "EasyFaseUITests" */ = {
+		0C2D28E424F4E93E004CF3B1 /* Build configuration list for PBXNativeTarget "EasyFaseUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0C56E12224F38FC900819D1A /* Debug */,
-				0C56E12324F38FC900819D1A /* Release */,
+				0C2D28E524F4E93E004CF3B1 /* Debug */,
+				0C2D28E624F4E93E004CF3B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

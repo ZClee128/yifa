@@ -51,8 +51,8 @@
     return [self fg_postRequest:kbindingWechat paramters:@{@"type":@(type),@"city":city,@"province":province,@"headImgUrl":headImgUrl,@"nickname":nickname,@"openid":openid,@"sex":@(sex),@"uid":uid,@"unionid":unionid}];
 }
 
-- (RACSignal *)setNewPasswordNewPassword:(NSString *)password confirmPassword:(NSString *)confirmPassword {
-    return [self fg_postRequest:ksetNewPassword paramters:@{@"password":password,@"confirmPassword":confirmPassword}];
+- (RACSignal *)setNewPasswordNewPassword:(NSString *)password confirmPassword:(NSString *)confirmPassword code:(NSString *)code phone:(NSString *)phone{
+    return [self fg_postRequest:ksetNewPassword paramters:@{@"password":password,@"confirmPassword":confirmPassword,@"code":code,@"phone":phone}];
 }
 
 - (RACSignal *)queryVersion {

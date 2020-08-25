@@ -24,5 +24,6 @@
 @property (nonatomic,assign) NSInteger payMethod; // 支付方式，1：wx，2：ali，3：unionpay；默认1：微信
 @property (nonatomic, strong)MonkeyPaws * paws;
 @property (nonatomic,assign)BOOL isOut; //401退出标志
+@property (nonatomic,assign)BOOL isPayOverNoti; //支付通知回调
 @end
 
