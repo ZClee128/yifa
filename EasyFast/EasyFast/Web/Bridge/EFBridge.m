@@ -52,9 +52,15 @@
 
 - (void)goback {
     [self.bridge registerHandler:@"goback" handler:^(id data, WVJBResponseCallback responseCallback) {
-        [[UIViewController getCurrentVC].navigationController qmui_popViewControllerAnimated:YES completion:^{
-            
-        }];
+        if (kAppDelegate.isGoToRoot) {
+            [[UIViewController getCurrentVC].navigationController qmui_popToRootViewControllerAnimated:YES completion:^{
+                kAppDelegate.isGoToRoot = NO;
+            }];
+        }else {
+            [[UIViewController getCurrentVC].navigationController qmui_popViewControllerAnimated:YES completion:^{
+                
+            }];
+        }
     }];
 }
 

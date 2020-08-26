@@ -67,6 +67,7 @@
     [super viewDidLoad];
 //    self.gk_backImage = [UIImageMake(@"btn_back_black") qmui_imageWithTintColor:UIColor.whiteColor];
     self.gk_navigationBar.hidden = YES;
+    kAppDelegate.isGoToRoot = YES;
     self.gk_navTitle = @"";
     self.gk_navBackgroundColor = UIColor.clearColor;
     self.EFTableView.frame = CGRectMake(0, 0, kPHONE_WIDTH, kPHONE_HEIGHT - TAB_SAFE_HEIGHT);
@@ -151,19 +152,12 @@
         @strongify(self);
         if (self.sModel.orderType == 1) {
             EFOrderViewController *order = [[EFOrderViewController alloc] initWithIndex:0];
-            [[UIViewController getCurrentVC].navigationController qmui_pushViewController:order animated:NO completion:^{
-                NSMutableArray *marr = [[NSMutableArray alloc] initWithArray:[UIViewController getCurrentVC].navigationController.viewControllers];
-                for (UIViewController *vc in marr) {
-                    if (![vc isKindOfClass:[[UIViewController getCurrentVC].navigationController.qmui_rootViewController class]]) {
-                        [marr removeObject:vc];
-                        break;
-                    }
-                }
-                [UIViewController getCurrentVC].navigationController.viewControllers = marr;
+            [[UIViewController jsd_findVisibleViewController].navigationController qmui_pushViewController:order animated:NO completion:^{
+                
             }];
         }else if (self.sModel.orderType == 2){
             [kH5Manager gotoUrl:@"myGroup" hasNav:NO navTitle:@"" query:@{@"index" : @(0)} completion:^{
-                [self removeFromParentViewController];
+               
             }];
         }
     }];

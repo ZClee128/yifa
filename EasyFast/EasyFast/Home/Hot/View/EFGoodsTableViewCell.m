@@ -31,7 +31,7 @@
         _goods.size = CGSizeMake(WidthOfScale(140), WidthOfScale(140));
         [_goods ViewRadius:5];
         _goods.backgroundColor = colorEFEFEF;
-        _goods.image = UIImageMake(@"gg");
+//        _goods.image = UIImageMake(@"gg");
     }
     return _goods;
 }
@@ -224,8 +224,8 @@
     }
     self.numLab.text = [NSString stringWithFormat:@"最低采购量：%ld",model.miniOrderLimit];
     self.sellLab.text = [NSString stringWithFormat:@"成交量：%ld",model.sales];
-    self.priceLab.attributedText = [[NSString stringWithFormat:@"¥%.1f",model.price] getAttributeWithChangeString:@"¥" ChangeFont:RegularFont12 textColor:self.priceLab.textColor];
-    [self.goods sd_setImageWithURL:[NSURL URLWithString:model.url] placeholderImage:UIImageMake(@"gg")];
+    self.priceLab.attributedText = [[NSString stringWithFormat:@"¥%.2f",model.price] getAttributeWithChangeString:@"¥" ChangeFont:RegularFont12 textColor:self.priceLab.textColor];
+    [self.goods sd_setImageWithURL:[NSURL URLWithString:model.url] placeholderImage:UIImageMake(@"")];
 }
 
 - (CGFloat )cellHeight {

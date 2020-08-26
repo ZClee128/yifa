@@ -78,61 +78,15 @@
     self.bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView];
     [self.bridge setWebViewDelegate:self];
 //
-//    if ([kH5Manager isTmpExist]) {
-//        NSURL *fileURL = [NSURL fileURLWithPath:[kH5Manager openIndex]];
-//        [_webView loadFileURL:fileURL allowingReadAccessToURL:fileURL];
-//    }else {
-//        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[kH5Manager getModel] ? [kH5Manager getModel].loadingUrl : @"https://api.one-fast.com/"]]];
-//    }
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString: @"http://192.168.3.23:8080/"]]];
+    if ([kH5Manager isTmpExist]) {
+        NSURL *fileURL = [NSURL fileURLWithPath:[kH5Manager openIndex]];
+        [_webView loadFileURL:fileURL allowingReadAccessToURL:fileURL];
+    }else {
+        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[kH5Manager getModel] ? [kH5Manager getModel].loadingUrl : @"https://api.one-fast.com/"]]];
+    }
+//    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString: @"http://192.168.3.23:8080/"]]];
     [self getFun];
     self.gk_fullScreenPopDisabled = YES;
-    @weakify(self);
-    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kPaySuccessNoti object:nil] subscribeNext:^(NSNotification * _Nullable x) {
-        if (kAppDelegate.isPayOverNoti) {
-            EFPayStatusModel *model = x.object;
-            XYLog(@"model>>>>%@",model);
-            @strongify(self);
-            if (model.payState == 2) {
-                EFPayStatusViewController *vc = [[EFPayStatusViewController alloc] initWithsssNo:kAppDelegate.sssNo ? kAppDelegate.sssNo : @""];
-                vc.sModel = model;
-                [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
-                    kAppDelegate.isPayOverNoti = NO;
-                    [self removeFromParentViewController];
-                }];
-            }else {
-                if (model.orderType == 1) {
-                    EFOrderViewController *order = [[EFOrderViewController alloc] initWithIndex:0];
-                    [[UIViewController getCurrentVC].navigationController qmui_pushViewController:order animated:NO completion:^{
-                        kAppDelegate.isPayOverNoti = NO;
-                        NSMutableArray *marr = [[NSMutableArray alloc] initWithArray:[UIViewController getCurrentVC].navigationController.viewControllers];
-                        for (UIViewController *vc in marr) {
-                            if (![vc isKindOfClass:[[UIViewController getCurrentVC].navigationController.qmui_rootViewController class]]) {
-                                [marr removeObject:vc];
-                                break;
-                            }
-                        }
-                        [UIViewController getCurrentVC].navigationController.viewControllers = marr;
-                    }];
-                }else if (model.orderType == 2){
-                    [kH5Manager gotoUrl:@"myGroup" hasNav:NO navTitle:@"" query:@{@"index" : @(0)} completion:^{
-                        kAppDelegate.isPayOverNoti = NO;
-                        NSMutableArray *marr = [[NSMutableArray alloc] initWithArray:[UIViewController getCurrentVC].navigationController.viewControllers];
-                        XYLog(@"$$$$$>>>%@",[UIViewController getCurrentVC].navigationController.qmui_rootViewController);
-                        for (UIViewController *vc in marr) {
-                            if (![vc isKindOfClass:[[UIViewController getCurrentVC].navigationController.qmui_rootViewController class]]) {
-                                [marr removeObject:vc];
-                                break;
-                            }
-                        }
-                        [UIViewController getCurrentVC].navigationController.viewControllers = marr;
-                    }];
-                }else {
-                    kAppDelegate.isPayOverNoti = NO;
-                }
-            }
-        }
-    }];
 }
 
 - (void)getFun {

@@ -21,8 +21,8 @@
 {
     if (_goods == nil) {
         _goods = [[UIImageView alloc] init];
-        _goods.backgroundColor = colorF14745;
-        _goods.image = UIImageMake(@"gg");
+        _goods.backgroundColor = colorEFEFEF;
+//        _goods.image = UIImageMake(@"gg");
     }
     return _goods;
 }
@@ -68,24 +68,24 @@
 - (void)setModel:(id)model {
     if ([model isKindOfClass:[EFGoodsList class]]) {
         EFGoodsList *gModel = (EFGoodsList *)model;
-        self.priceLab.attributedText = [[NSString stringWithFormat:@"¥%.1f",gModel.price] getAttributeWithChangeString:@"¥" ChangeFont:RegularFont10 textColor:[UIColor whiteColor]];
+        self.priceLab.attributedText = [[NSString stringWithFormat:@"¥%.2f",gModel.price] getAttributeWithChangeString:@"¥" ChangeFont:RegularFont10 textColor:[UIColor whiteColor]];
         [self.priceLab mas_updateConstraints:^(MASConstraintMaker *make) {
             make.width.equalTo(@([self.priceLab.attributedText AttributedStringFont:RegularFont11 maxHeight:WidthOfScale(20)] + 18));
         }];
         [self.priceLab layoutIfNeeded];
         [self.contentView layoutIfNeeded];
         [self.priceLab ViewRadius:WidthOfScale(20)/2];
-        [self.goods sd_setImageWithURL:[NSURL URLWithString:gModel.url] placeholderImage:UIImageMake(@"gg")];
+        [self.goods sd_setImageWithURL:[NSURL URLWithString:gModel.url] placeholderImage:UIImageMake(@"")];
     }else if ([model isKindOfClass:[EFOrderGoodsModel class]]) {
         EFOrderGoodsModel *gModel = (EFOrderGoodsModel *)model;
-        self.priceLab.attributedText = [[NSString stringWithFormat:@"¥%.1f",gModel.goodsPrice] getAttributeWithChangeString:@"¥" ChangeFont:RegularFont10 textColor:[UIColor whiteColor]];
+        self.priceLab.attributedText = [[NSString stringWithFormat:@"¥%.2f",gModel.goodsPrice] getAttributeWithChangeString:@"¥" ChangeFont:RegularFont10 textColor:[UIColor whiteColor]];
         [self.priceLab mas_updateConstraints:^(MASConstraintMaker *make) {
             make.width.equalTo(@([self.priceLab.attributedText AttributedStringFont:RegularFont11 maxHeight:WidthOfScale(20)] + 18));
         }];
         [self.priceLab layoutIfNeeded];
         [self.contentView layoutIfNeeded];
         [self.priceLab ViewRadius:WidthOfScale(20)/2];
-        [self.goods sd_setImageWithURL:[NSURL URLWithString:gModel.goodsImage] placeholderImage:UIImageMake(@"gg")];
+        [self.goods sd_setImageWithURL:[NSURL URLWithString:gModel.goodsImage] placeholderImage:UIImageMake(@"")];
     }
     
 }

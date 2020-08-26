@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIViewController (Runtime)
 
 + (UIViewController *)getCurrentVC;
+
++ (UIViewController *)jsd_findVisibleViewController;
 @end
 
 NS_ASSUME_NONNULL_END

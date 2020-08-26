@@ -98,8 +98,8 @@
 
 - (void)setModel:(EFOrderModel *)model {
     self.numLab.text = [NSString stringWithFormat:@"共%ld件",model.quantity];
-    self.priceLab.text = [NSString stringWithFormat:@"¥%.1f",model.totalAmount];
-    self.yunfeiLab.text = model.postageAmount ? [NSString stringWithFormat:@"（含运费 ¥%.f）",model.postageAmount] : @"";
+    self.priceLab.text = [NSString stringWithFormat:@"¥%.2f",model.totalAmount];
+    self.yunfeiLab.text = model.postageAmount ? [NSString stringWithFormat:@"（含运费 ¥%.2f）",model.postageAmount] : @"";
     self.payStatusLab.text = @"已付款";
     NSString *status = @"";
     switch (model.payState) {

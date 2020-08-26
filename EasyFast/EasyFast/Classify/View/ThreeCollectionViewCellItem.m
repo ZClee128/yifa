@@ -35,7 +35,7 @@
         self.logoImgView.contentMode = UIViewContentModeScaleAspectFill;
         self.logoImgView.clipsToBounds = YES;
         self.logoImgView.backgroundColor = colorEFEFEF;
-        self.logoImgView.image = UIImageMake(@"gg");
+//        self.logoImgView.image = UIImageMake(@"gg");
         [self.contentView addSubview:self.logoImgView];
         
         self.nameLabel = [[QMUILabel alloc] init];

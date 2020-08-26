@@ -11,6 +11,8 @@
 #import <BaiduMapAPI_Map/BMKMapView.h>
 #import "LoginVM.h"
 #import "EFOrderVM.h"
+#import "EFPayStatusViewController.h"
+#import "EFOrderViewController.h"
 
 @interface AppDelegate ()<WXApiDelegate,JPUSHRegisterDelegate>
 
@@ -269,8 +271,39 @@
     if (self.isPay) {
         self.isPay = NO;
         [[EFOrderVM refreshOrder:self.orderNum payMethod:self.payMethod] subscribeNext:^(EFPayStatusModel *x) {
-            self.isPayOverNoti = YES;
-            [[NSNotificationCenter defaultCenter] postNotificationName:kPaySuccessNoti object:x];
+            if (self.isPayOverNoti) {
+                self.isPayOverNoti = NO;
+                [[NSNotificationCenter defaultCenter] postNotificationName:kPaySuccessNoti object:x];
+            }else {
+                EFPayStatusModel *model = x;
+                XYLog(@"model>>>>%@",model);
+                if (model.payState == 2) {
+                    EFPayStatusViewController *vc = [[EFPayStatusViewController alloc] initWithsssNo:kAppDelegate.sssNo ? kAppDelegate.sssNo : @""];
+                    vc.hidesBottomBarWhenPushed = YES;
+                    vc.sModel = model;
+                    [[UIViewController jsd_findVisibleViewController].navigationController qmui_pushViewController:vc animated:YES completion:^{
+                        
+                    }];
+                }else {
+                    if (model.orderType == 1) {
+                        EFOrderViewController *order = [[EFOrderViewController alloc] initWithIndex:0];
+                        self.isGoToRoot = YES;
+                        order.hidesBottomBarWhenPushed = YES;
+                        [[UIViewController jsd_findVisibleViewController].navigationController qmui_pushViewController:order animated:NO completion:^{
+                            
+                        }];
+                    }else if (model.orderType == 2){
+                        self.isGoToRoot = YES;
+                        EFBaseWebViewController *web = [[EFBaseWebViewController alloc] initWithUrl:@"myGroup" navTitle:@"" hasNav:NO query:@{@"index" : @(0)}];
+                        web.hidesBottomBarWhenPushed = YES;
+                        [[UIViewController jsd_findVisibleViewController].navigationController qmui_pushViewController:web animated:NO completion:^{
+                            
+                        }];
+                    }else {
+
+                    }
+                }
+            }
         }];
     }
     [application setApplicationIconBadgeNumber:0];

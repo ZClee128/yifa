@@ -226,9 +226,9 @@
         }
         self.numLab.text = [NSString stringWithFormat:@"最低采购量：%ld",(long)goodModel.miniOrderLimit];
         self.sellLab.text = [NSString stringWithFormat:@"成交量：%ld",(long)goodModel.sales];
-        self.priceLab.text = [NSString stringWithFormat:@"¥%.1f",goodModel.price];
+        self.priceLab.text = [NSString stringWithFormat:@"¥%.2f",goodModel.price];
         self.buyBtn.selected = goodModel.isCollect;
-        [self.goods sd_setImageWithURL:[NSURL URLWithString:goodModel.url] placeholderImage:UIImageMake(@"gg")];
+        [self.goods sd_setImageWithURL:[NSURL URLWithString:goodModel.url] placeholderImage:UIImageMake(@"")];
     }
 }
 

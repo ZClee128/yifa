@@ -57,7 +57,7 @@
 }
 
 - (void)setModel:(EFFastModel *)model {
-    self.priceLab.attributedText = [[NSString stringWithFormat:@"¥%.1f",model.groupPrice] getAttributeWithChangeString:@"¥" ChangeFont:RegularFont12 textColor:self.priceLab.textColor];
+    self.priceLab.attributedText = [[NSString stringWithFormat:@"¥%.2f",model.groupPrice] getAttributeWithChangeString:@"¥" ChangeFont:RegularFont12 textColor:self.priceLab.textColor];
     self.progressView.progress = model.teamProcess / 100;
     [self.progressView setTitle:[NSString stringWithFormat:@"剩余%.f%%",100-model.teamProcess]];
     self.goodsNameLab.text = model.title;

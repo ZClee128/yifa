@@ -21,7 +21,7 @@
     if (_goods == nil) {
         _goods = [[UIImageView alloc] init];
         _goods.backgroundColor = colorAEAEAE;
-        _goods.image = UIImageMake(@"gg");
+//        _goods.image = UIImageMake(@"gg");
     }
     return _goods;
 }
@@ -132,11 +132,11 @@
 - (void)setModel:(EFOrderGoodsModel *)model {
     self.goodsNameLab.text = model.goodsTitle;
     self.goodsSizeLab.text = model.goodsProperty;
-    self.goodsPriceLab.text = [NSString stringWithFormat:@"￥%.1f/件",model.goodsPrice];
+    self.goodsPriceLab.text = [NSString stringWithFormat:@"￥%.2f/件",model.goodsPrice];
 //    self.goodsStatusLab.text = model.isAftersale ? @"已退款" : @"";
     self.goodsStatusLab.text = @"";
     self.goodsNumLab.text = [NSString stringWithFormat:@"X %ld",(long)model.quantity];
-    [self.goods sd_setImageWithURL:[NSURL URLWithString:model.goodsImage] placeholderImage:UIImageMake(@"gg")];
+    [self.goods sd_setImageWithURL:[NSURL URLWithString:model.goodsImage] placeholderImage:UIImageMake(@"")];
 }
 
 - (void)awakeFromNib {

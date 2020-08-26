@@ -74,6 +74,18 @@
     }];
 }
 
+- (void)backItemClick:(id)sender {
+    if (kAppDelegate.isGoToRoot) {
+        [self.navigationController qmui_popToRootViewControllerAnimated:YES completion:^{
+            kAppDelegate.isGoToRoot = NO;
+        }];
+    }else {
+        [self.navigationController qmui_popViewControllerAnimated:YES completion:^{
+            
+        }];
+    }
+}
+
 - (void)loadList {
     @weakify(self);
     [self.EFTableView tab_startAnimation];

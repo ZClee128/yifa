@@ -31,13 +31,13 @@
     self.EFTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, 50)];
     [self setBottom];
     [self.view addSubview:self.timeLab];
-    @weakify(self);
     [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kPaySuccessNoti object:nil] subscribeNext:^(NSNotification * _Nullable x) {
         EFPayStatusModel *model = x.object;
-        @strongify(self);
         if (model.payState == 2) {
             EFPayStatusViewController *vc = [[EFPayStatusViewController alloc] initWithsssNo:kAppDelegate.sssNo ? kAppDelegate.sssNo : @""];
-            [self.navigationController qmui_pushViewController:vc animated:NO completion:^{
+            vc.hidesBottomBarWhenPushed = YES;
+            vc.sModel = model;
+            [[UIViewController jsd_findVisibleViewController].navigationController qmui_pushViewController:vc animated:NO completion:^{
                 
             }];
         }else {
@@ -121,6 +121,7 @@
         for (int i = 0; i < self.PayArr.count; i++) {
             EFPayModel *model = self.PayArr[i];
             if (model.isChoose) {
+                kAppDelegate.isPayOverNoti = YES;
                 kAppDelegate.isPay = YES;
                 kAppDelegate.orderNum = self.model.orderNum;
                 kAppDelegate.sssNo = self.model.shopNo;
@@ -134,7 +135,7 @@
     QMUILabel *priceLab = [[QMUILabel alloc] init];
     priceLab.font = MedFont16;
     priceLab.textColor = colorF14745;
-    priceLab.attributedText = [[NSString stringWithFormat:@"合计：￥%.1f",self.model.totalAmount] getAttributeWithChangeString:@"合计：" ChangeFont:priceLab.font textColor:tabbarBlackColor];
+    priceLab.attributedText = [[NSString stringWithFormat:@"合计：￥%.2f",self.model.totalAmount] getAttributeWithChangeString:@"合计：" ChangeFont:priceLab.font textColor:tabbarBlackColor];
     [bg addSubview:priceLab];
     [priceLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@(15.5));

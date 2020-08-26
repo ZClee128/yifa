@@ -22,7 +22,7 @@
                                 @{@"title":@"我的支付",@"subTitle":@""},
                                 @{@"title":@"当前版本",@"subTitle":kVersion},
                                 @{@"title":@"意见反馈",@"subTitle":@""},
-                                @{@"title":@"关于我们",@"subTitle":@"客服电话：4008808880"}
+                                @{@"title":@"关于我们",@"subTitle":@""} //客服电话：4008808880
                               ]] mutableCopy];
     }
     return self;

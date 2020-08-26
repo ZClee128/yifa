@@ -27,7 +27,7 @@
         _goods = [[UIImageView alloc] init];
         _goods.size = CGSizeMake(WidthOfScale(167), WidthOfScale(165));
         _goods.backgroundColor = colorEFEFEF;
-        _goods.image = UIImageMake(@"gg");
+//        _goods.image = UIImageMake(@"gg");
     }
     return _goods;
 }
@@ -112,7 +112,7 @@
 - (void)setModel:(EFGoodsList *)model {
     self.goodsNameLab.text = model.title;
     self.sellLab.text = [NSString stringWithFormat:@"成交量：%ld",(long)model.sales];
-    self.priceLab.attributedText = [[NSString stringWithFormat:@"¥%.1f",model.price] getAttributeWithChangeString:@"¥" ChangeFont:RegularFont12 textColor:self.priceLab.textColor];
+    self.priceLab.attributedText = [[NSString stringWithFormat:@"¥%.2f",model.price] getAttributeWithChangeString:@"¥" ChangeFont:RegularFont12 textColor:self.priceLab.textColor];
     [self.goods sd_setImageWithURL:[NSURL URLWithString:model.url ? model.url : @""] placeholderImage:UIImageMake(@"")];
 }
 

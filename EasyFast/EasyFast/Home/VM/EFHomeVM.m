@@ -44,7 +44,7 @@
         return [[FMARCNetwork sharedInstance] HomePageNum:self.firstPage pageSize:self.branches];
     } toMap:^NSArray * _Nonnull(FMHttpResonse * _Nonnull result) {
         NSArray *list = [NSArray modelArrayWithClass:[EFGoodsList class] json:result.reqResult];
-        XYLog(@"list >> %@",list);
+//        XYLog(@"list >> %@",list);
         return list;
     }];
 }

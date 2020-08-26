@@ -30,7 +30,7 @@
         _goods = [[UIImageView alloc] init];
         _goods.size = CGSizeMake(WidthOfScale(167), WidthOfScale(165));
         _goods.backgroundColor = colorEFEFEF;
-        _goods.image = UIImageMake(@"gg");
+//        _goods.image = UIImageMake(@"gg");
     }
     return _goods;
 }
@@ -195,8 +195,8 @@
         }
         self.numLab.text = [NSString stringWithFormat:@"最低采购量：%ld",(long)goodModel.miniOrderLimit];
         self.sellLab.text = [NSString stringWithFormat:@"成交量：%ld",(long)goodModel.sales];
-        self.priceLab.text = [NSString stringWithFormat:@"¥%.1f",goodModel.price];
-        [self.goods sd_setImageWithURL:[NSURL URLWithString:goodModel.url] placeholderImage:UIImageMake(@"gg")];
+        self.priceLab.text = [NSString stringWithFormat:@"¥%.2f",goodModel.price];
+        [self.goods sd_setImageWithURL:[NSURL URLWithString:goodModel.url] placeholderImage:UIImageMake(@"")];
     }
 }
 

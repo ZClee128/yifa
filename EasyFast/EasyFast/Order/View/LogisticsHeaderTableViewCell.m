@@ -105,7 +105,7 @@
 
 - (void)setModel:(EFOrderModel *)model {
     self.numLab.text = [NSString stringWithFormat:@"共%ld件",model.quantity];
-    self.priceLab.text = [NSString stringWithFormat:@"合计 ¥%.1f",model.totalAmount];
+    self.priceLab.text = [NSString stringWithFormat:@"合计 ¥%.2f",model.totalAmount];
     self.data = [model.goodsList mutableCopy];
     [self.collect reloadData];
 }

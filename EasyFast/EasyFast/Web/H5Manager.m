@@ -22,7 +22,7 @@
 @implementation H5Manager
 
 
-+ (instancetype)defaultManager {
++ (H5Manager *)defaultManager {
     static H5Manager *_sharedManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
