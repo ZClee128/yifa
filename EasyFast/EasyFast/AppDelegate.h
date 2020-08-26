@@ -26,5 +26,7 @@
 @property (nonatomic,assign)BOOL isOut; //401退出标志
 @property (nonatomic,assign)BOOL isPayOverNoti; //订单列表支付通知回调
 @property (nonatomic,assign)BOOL isGoToRoot; //h5回到根页面
+
+- (UIViewController *)nextRootViewController:(BOOL)bootPage;
 @end
 

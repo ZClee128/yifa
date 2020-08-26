@@ -165,17 +165,12 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-//    if (textField.text.length != 0) {
-//        [self recordSearch:textField.text];
-//        [self.view addSubview:self.tableView];
-//    }else {
-//        [self.tableView removeFromSuperview];
-//    }
-    if (textField.text.length != 0) {
-        [self recordSearch:textField.text];
-        EFSearchResultViewController *resultVC = [[EFSearchResultViewController alloc] initWithSearchTitle:textField.text];
-        [self.navigationController pushViewController:resultVC animated:NO];
+    if (textField.text.length == 0) {
+        textField.text = self.searchField.placeholder;
     }
+    [self recordSearch:textField.text];
+    EFSearchResultViewController *resultVC = [[EFSearchResultViewController alloc] initWithSearchTitle:textField.text];
+    [self.navigationController pushViewController:resultVC animated:NO];
     return YES;
 }
 

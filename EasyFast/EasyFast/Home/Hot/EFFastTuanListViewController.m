@@ -110,6 +110,7 @@
         }
         [leftBtn setImage:knormal forState:(UIControlStateNormal)];
         leftBtn.selected = NO;
+        [self.collectionView scrollToTop];
         [self loadList];
     }];
     
@@ -126,6 +127,7 @@
         }
         [rightBtn setImage:knormal forState:(UIControlStateNormal)];
         rightBtn.selected = NO;
+        [self.collectionView scrollToTop];
         [self loadList];
     }];
     return bg;

@@ -34,6 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loadNewData;
 - (void)addRefshUp;
 - (void)loadMoreData;
+- (void)addEmpty;
 @end
 
 NS_ASSUME_NONNULL_END

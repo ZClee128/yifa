@@ -85,7 +85,25 @@ fprintf(stderr,"[--%s--]\n[--%s:%d--]\n[--%s--]\n===========================\n",
 #define kGetImage(imageName) [UIImage imageNamed:[NSString stringWithFormat:@"%@",imageName]]
 
 
-#define udInstance [NSUserDefaults standardUserDefaults]
+//永久存储对象
+#define kSetUserDefaults(object, key)                                                                                                 \
+({                                                                                                                                             \
+NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];                                                                         \
+[defaults setObject:object forKey:key];                                                                                                    \
+[defaults synchronize];                                                                                                                    \
+})
+//获取对象
+#define kGetUserDefaults(key) [[NSUserDefaults standardUserDefaults] objectForKey:key]
+//删除某一个对象
+#define kRemoveUserDefaults(key)                                         \
+({                                                                          \
+NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];       \
+[defaults removeObjectForKey:key];                                     \
+[defaults synchronize];                                                 \
+})
+//清除 NSUserDefaults 保存的所有数据
+#define kRemoveAllUserDefaults  [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:[[NSBundle mainBundle] bundleIdentifier]]
+
 
 // color
 #define tabbarRedColor RGB16(0xFF3B37)
@@ -134,7 +152,7 @@ fprintf(stderr,"[--%s--]\n[--%s:%d--]\n[--%s--]\n===========================\n",
 // 持久化key
 // 用户信息
 #define udUserInfo      @"FGUserDefaultsDefineUserInfo"
-
+#define kfirstApp       @"kfirstApp"
 
 // 通知
 #define kTabFollow @"TabFollow" //个人中心关注通知
@@ -151,6 +169,7 @@ fprintf(stderr,"[--%s--]\n[--%s:%d--]\n[--%s--]\n===========================\n",
 #define kwxBing @"kwxBing" // 微信绑定成功
 #define kclassNoti @"kclassNoti" //跳转分类通知
 #define kPaySuccessNoti @"kPaySuccessNoti" //支付结果回调
+#define kNetNoti @"kNetNoti" //网络状态回调
 
 // 图片
 #define kup UIImageMake(@"up") // 降序

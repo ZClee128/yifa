@@ -152,7 +152,7 @@
         btn.titleLabel.textAlignment = NSTextAlignmentCenter;
         // 设置图片frame
         btn.x = col * (btnW + ([QMUIHelper is40InchScreen] ? WidthOfScale(0) : WidthOfScale(29))) + WidthOfScale(27) + number * self.width;
-        btn.y = row * (btnH + WidthOfScale(15)) + WidthOfScale(19.5);
+        btn.y = row * (btnH + WidthOfScale(15)) + WidthOfScale(9.5);
         
         btn.width = btnW;
         btn.height = btnH;

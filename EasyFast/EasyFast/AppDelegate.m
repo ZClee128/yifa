@@ -13,6 +13,7 @@
 #import "EFOrderVM.h"
 #import "EFPayStatusViewController.h"
 #import "EFOrderViewController.h"
+#import "AppFirstViewController.h"
 
 @interface AppDelegate ()<WXApiDelegate,JPUSHRegisterDelegate>
 
@@ -46,8 +47,8 @@
     }];
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    self.efTabbar = [[EFBaseTabBarViewController alloc] initWithContext:@""];
-    self.window.rootViewController = self.efTabbar;
+    BOOL isfirst = [kGetUserDefaults(kfirstApp) boolValue];
+    self.window.rootViewController = [self nextRootViewController:isfirst];
 //    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[EFOneLoginViewController alloc] init]];
     [self.window makeKeyAndVisible];
     
@@ -125,31 +126,15 @@
     return YES;
 }
 
-//- (void)confitUShareSettings
-//{
-//    /*
-//     * 打开图片水印
-//     */
-//    //[UMSocialGlobal shareInstance].isUsingWaterMark = YES;
-//    /*
-//     * 关闭强制验证https，可允许http图片分享，但需要在info.plist设置安全域名
-//     <key>NSAppTransportSecurity</key>
-//     <dict>
-//     <key>NSAllowsArbitraryLoads</key>
-//     <true/>
-//     </dict>
-//     */
-//    //[UMSocialGlobal shareInstance].isUsingHttpsWhenShareContent = NO;
-//        //配置微信平台的Universal Links
-//    //微信和QQ完整版会校验合法的universalLink，不设置会在初始化平台失败
-//    [UMSocialGlobal shareInstance].universalLinkDic = @{@(UMSocialPlatformType_WechatSession):@"https://umplus-sdk-download.oss-cn-shanghai.aliyuncs.com/",
-//                                                        @(UMSocialPlatformType_QQ):@"https://umplus-sdk-download.oss-cn-shanghai.aliyuncs.com/qq_conn/101830139"
-//                                                        };
-//    //extraInitDic
-//    [UMSocialGlobal shareInstance].extraInitDic = @{
-//                                                    @(UMSocialPlatformType_WechatWork):@{@"corpId":@"wwac6ffb259ff6f66a",@"agentId":@"1000002"}
-//                                                    };
-//}
+- (UIViewController *)nextRootViewController:(BOOL)bootPage
+{
+    if (!bootPage) {
+        AppFirstViewController *bootPage = [[AppFirstViewController alloc] init];
+        return bootPage;
+    }
+    self.efTabbar = [[EFBaseTabBarViewController alloc] initWithContext:@""];
+    return self.efTabbar;
+}
 
 - (void)configUSharePlatforms
 {

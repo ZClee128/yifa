@@ -43,6 +43,12 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)addEmpty {
+    self.collectionView.ly_emptyView = [EFEmptyView NoDataEmptybtnClickBlock:^{
+
+    }];
+}
+
 #pragma mark - Methods
 
 - (void)reloadDataCompleted:(void(^)(EFBaseUICollectionView *collection))completed

@@ -50,6 +50,7 @@
         [self.view addSubview:calendarView];
         calendarView.seletDay = ^(CalendarModel * _Nonnull model) {
             ((MeVM *)self.viewModel).dateStr = model.dayStr;
+            [self.collectionView scrollToTop];
             [self loadList];
         };
     }];
@@ -83,7 +84,7 @@
         @strongify(self);
         [self.collectionView.mj_header endRefreshing];
         self.EFData = x.first;
-        XYLog(@"%@",self.EFData);
+//        XYLog(@"%@",self.EFData);
         [self.collectionView reloadData];
     }];
 }

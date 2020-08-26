@@ -72,6 +72,12 @@
 		0C2D28D824F4E518004CF3B1 /* EFAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D28D524F4E518004CF3B1 /* EFAddressPickerView.m */; };
 		0C2D28E024F4E93E004CF3B1 /* EasyFaseUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D28DF24F4E93E004CF3B1 /* EasyFaseUITests.m */; };
 		0C2D28E824F63639004CF3B1 /* SimpleString.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D28E724F63639004CF3B1 /* SimpleString.m */; };
+		0C2D28EE24F66CE2004CF3B1 /* AppFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D28ED24F66CE2004CF3B1 /* AppFirstViewController.m */; };
+		0C2D28EF24F66CE3004CF3B1 /* AppFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D28ED24F66CE2004CF3B1 /* AppFirstViewController.m */; };
+		0C2D28F024F66CE3004CF3B1 /* AppFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D28ED24F66CE2004CF3B1 /* AppFirstViewController.m */; };
+		0C2D28F524F66D83004CF3B1 /* EFBootPageVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D28F424F66D83004CF3B1 /* EFBootPageVM.m */; };
+		0C2D28F624F66D83004CF3B1 /* EFBootPageVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D28F424F66D83004CF3B1 /* EFBootPageVM.m */; };
+		0C2D28F724F66D83004CF3B1 /* EFBootPageVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D28F424F66D83004CF3B1 /* EFBootPageVM.m */; };
 		0C4BAF9324D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
 		0C4BAF9424D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
 		0C4BAF9524D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
@@ -808,6 +814,10 @@
 		0C2D28DF24F4E93E004CF3B1 /* EasyFaseUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyFaseUITests.m; sourceTree = "<group>"; };
 		0C2D28E124F4E93E004CF3B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C2D28E724F63639004CF3B1 /* SimpleString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleString.m; sourceTree = "<group>"; };
+		0C2D28EC24F66CE2004CF3B1 /* AppFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppFirstViewController.h; sourceTree = "<group>"; };
+		0C2D28ED24F66CE2004CF3B1 /* AppFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppFirstViewController.m; sourceTree = "<group>"; };
+		0C2D28F324F66D83004CF3B1 /* EFBootPageVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFBootPageVM.h; sourceTree = "<group>"; };
+		0C2D28F424F66D83004CF3B1 /* EFBootPageVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFBootPageVM.m; sourceTree = "<group>"; };
 		0C4BAF9124D0085F0037CDCF /* EFMeRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFMeRefreshHeader.h; sourceTree = "<group>"; };
 		0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFMeRefreshHeader.m; sourceTree = "<group>"; };
 		0C4BAF9724D021440037CDCF /* EFBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFBridge.h; sourceTree = "<group>"; };
@@ -1463,6 +1473,25 @@
 				0C2D28E724F63639004CF3B1 /* SimpleString.m */,
 			);
 			path = EasyFaseUITests;
+			sourceTree = "<group>";
+		};
+		0C2D28EB24F66C43004CF3B1 /* AppFirstView */ = {
+			isa = PBXGroup;
+			children = (
+				0C2D28F224F66D59004CF3B1 /* VM */,
+				0C2D28EC24F66CE2004CF3B1 /* AppFirstViewController.h */,
+				0C2D28ED24F66CE2004CF3B1 /* AppFirstViewController.m */,
+			);
+			path = AppFirstView;
+			sourceTree = "<group>";
+		};
+		0C2D28F224F66D59004CF3B1 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				0C2D28F324F66D83004CF3B1 /* EFBootPageVM.h */,
+				0C2D28F424F66D83004CF3B1 /* EFBootPageVM.m */,
+			);
+			path = VM;
 			sourceTree = "<group>";
 		};
 		0C4BAF9624D0212E0037CDCF /* Bridge */ = {
@@ -2409,6 +2438,7 @@
 		84A8219724BF010800EAC652 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				0C2D28EB24F66C43004CF3B1 /* AppFirstView */,
 				0C2D28D324F4E4F3004CF3B1 /* AddressTool */,
 				0C56E0BE24EF5DEC00819D1A /* Empty */,
 				0CBE6A6D24EB7C17003C300F /* CustomerScrollView.h */,
@@ -3050,6 +3080,7 @@
 				84760F9624C1806D002B34E4 /* NSMutableAttributedString+Size.m in Sources */,
 				0C8A2A0124DBA4A700E40ED8 /* EFGoodsList.m in Sources */,
 				8476119D24C838A6002B34E4 /* EFClassifyModel.m in Sources */,
+				0C2D28F524F66D83004CF3B1 /* EFBootPageVM.m in Sources */,
 				841B94F324C979790054D8D5 /* FTPopOverMenu.m in Sources */,
 				0C0CC3E424E12C0A005E50ED /* EFAddressVM.m in Sources */,
 				0C4BAF9E24D1013D0037CDCF /* EFFollowTuanTableViewCell.m in Sources */,
@@ -3077,6 +3108,7 @@
 				0C8A277124D6C44F00E40ED8 /* SKTagButton.m in Sources */,
 				0CBE6A3124E4E8A5003C300F /* EFSearchVM.m in Sources */,
 				0CBE6A0024E3D39D003C300F /* EFBaseUICollectionView.m in Sources */,
+				0C2D28EE24F66CE2004CF3B1 /* AppFirstViewController.m in Sources */,
 				8476117124C6E21C002B34E4 /* EFNotiViewController.m in Sources */,
 				8476105224C574E5002B34E4 /* TuanListDetailTableViewCell.m in Sources */,
 				0CE2861124D3EC4F00AAC334 /* LTSCalendarWeekDayView.m in Sources */,
@@ -3294,6 +3326,7 @@
 				84760F9724C1806D002B34E4 /* NSMutableAttributedString+Size.m in Sources */,
 				0C8A2A0224DBA4A700E40ED8 /* EFGoodsList.m in Sources */,
 				8476119E24C838A7002B34E4 /* EFClassifyModel.m in Sources */,
+				0C2D28F624F66D83004CF3B1 /* EFBootPageVM.m in Sources */,
 				841B94F424C979790054D8D5 /* FTPopOverMenu.m in Sources */,
 				0C0CC3E524E12C0A005E50ED /* EFAddressVM.m in Sources */,
 				0C4BAF9F24D1013D0037CDCF /* EFFollowTuanTableViewCell.m in Sources */,
@@ -3321,6 +3354,7 @@
 				0C8A277224D6C44F00E40ED8 /* SKTagButton.m in Sources */,
 				0CBE6A3224E4E8A5003C300F /* EFSearchVM.m in Sources */,
 				0CBE6A0124E3D39D003C300F /* EFBaseUICollectionView.m in Sources */,
+				0C2D28EF24F66CE3004CF3B1 /* AppFirstViewController.m in Sources */,
 				8476117224C6E21C002B34E4 /* EFNotiViewController.m in Sources */,
 				8476105324C574E5002B34E4 /* TuanListDetailTableViewCell.m in Sources */,
 				0CE2861224D3EC4F00AAC334 /* LTSCalendarWeekDayView.m in Sources */,
@@ -3538,6 +3572,7 @@
 				84760F9824C1806D002B34E4 /* NSMutableAttributedString+Size.m in Sources */,
 				0C8A2A0324DBA4A700E40ED8 /* EFGoodsList.m in Sources */,
 				8476119F24C838A7002B34E4 /* EFClassifyModel.m in Sources */,
+				0C2D28F724F66D83004CF3B1 /* EFBootPageVM.m in Sources */,
 				841B94F524C979790054D8D5 /* FTPopOverMenu.m in Sources */,
 				0C0CC3E624E12C0A005E50ED /* EFAddressVM.m in Sources */,
 				0C4BAFA024D1013D0037CDCF /* EFFollowTuanTableViewCell.m in Sources */,
@@ -3565,6 +3600,7 @@
 				0C8A277324D6C44F00E40ED8 /* SKTagButton.m in Sources */,
 				0CBE6A3324E4E8A5003C300F /* EFSearchVM.m in Sources */,
 				0CBE6A0224E3D39D003C300F /* EFBaseUICollectionView.m in Sources */,
+				0C2D28F024F66CE3004CF3B1 /* AppFirstViewController.m in Sources */,
 				8476117324C6E21C002B34E4 /* EFNotiViewController.m in Sources */,
 				8476105424C574E5002B34E4 /* TuanListDetailTableViewCell.m in Sources */,
 				0CE2861324D3EC4F00AAC334 /* LTSCalendarWeekDayView.m in Sources */,

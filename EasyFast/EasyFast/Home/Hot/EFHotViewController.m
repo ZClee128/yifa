@@ -170,7 +170,7 @@
 }
 
 - (UIView *)headerView {
-    UIView *bg = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, WidthOfScale(130))];
+    UIView *bg = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, WidthOfScale(130) +10)];
     bg.backgroundColor = colorfafafa;
     [bg addSubview:self.cycleScrollView];
     [self.cycleScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -214,12 +214,22 @@
                 [hotCell setCollectData:self.activityArr];
                 self.isLoadActivity = NO;
             }
+            if (!self.activityArr.count) {
+                hotCell.hidden = YES;
+            }else {
+                hotCell.hidden = NO;
+            }
             return hotCell;
         }
         case 1:
         {
             EFNoticeTableViewCell *noticeCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFNoticeTableViewCell class])];
             [noticeCell setModel:self.noticeArr];
+            if (self.noticeArr.count) {
+                noticeCell.hidden = NO;
+            }else {
+                noticeCell.hidden = YES;
+            }
             return noticeCell;
         }
             case 2:
@@ -229,6 +239,11 @@
             fastCell.selectIndex = ^(EFFastModel *model) {
                 [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(YES),@"ggNo":model.ggNo}];
             };
+            if (!self.fastArr.count) {
+                fastCell.hidden = YES;
+            }else {
+                fastCell.hidden = NO;
+            }
             return fastCell;
         }
         default:
@@ -255,14 +270,14 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.section) {
         case 0:
-            return self.activityArr.count <= 4 ? WidthOfScale(123.5) : WidthOfScale(208);
+            return self.activityArr.count > 0 ? (self.activityArr.count <= 4 ? WidthOfScale(123.5) : WidthOfScale(208)) : 0.001;
             case 1:
         {
-            return WidthOfScale(30);
+            return self.noticeArr.count > 0 ? WidthOfScale(30) : 0;
         }
             case 2:
         {
-            return 140+14.5+16+8+15+20;
+            return self.fastArr.count > 0 ? 140+14.5+16+8+15+20 : 0;
         }
         default:
             return self.goodsCellHeight;
@@ -273,7 +288,7 @@
     switch (section) {
         case 2:
         {
-            return self.fastHeader;
+            return self.fastArr.count > 0 ? self.fastHeader : nil;
         }
         case 3:
         {
@@ -287,7 +302,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     switch (section) {
         case 2:
-            return WidthOfScale(52);
+            return self.fastArr.count > 0 ? WidthOfScale(52) : 0.001;
         case 3:
         {
             return WidthOfScale(52);

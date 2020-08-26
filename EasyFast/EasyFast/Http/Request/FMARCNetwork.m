@@ -118,11 +118,12 @@ static FMARCNetwork * _instance = nil;
             NSLog(@"--- 未知网络 ---");
 //            [JDStatusBarNotification showWithStatus:@"网络状态未知" styleName:JDStatusBarStyleWarning];
 //            [JDStatusBarNotification showActivityIndicator:YES indicatorStyle:UIActivityIndicatorViewStyleWhite];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kNetNoti object:nil];
         }else if (status == AFNetworkReachabilityStatusNotReachable) {
-  
+            [[NSNotificationCenter defaultCenter] postNotificationName:kNetNoti object:nil];
 //            [JDStatusBarNotification showWithStatus:@"网络不给力，请检查网络" styleName:JDStatusBarStyleWarning];
 //            [JDStatusBarNotification showActivityIndicator:YES indicatorStyle:UIActivityIndicatorViewStyleWhite];
-            [[UIViewController getCurrentVC].view ly_showEmptyView];
+//            [[UIViewController getCurrentVC].view ly_showEmptyView];
         }else{
             NSLog(@"--- 有网络 ---");
 //             [JDStatusBarNotification dismiss];

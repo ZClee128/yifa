@@ -105,7 +105,7 @@ const NSTimeInterval LRProgressAnimationTime    = 0.5f;
         if (progress > 1.0f){
             progress = 1.0f;
         }
-        else if (progress < 0.1f){
+        else if (progress < 0.1f && progress > 0){
             progress = 0.1f;
         }
         

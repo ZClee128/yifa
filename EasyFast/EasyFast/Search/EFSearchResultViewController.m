@@ -105,6 +105,7 @@
     [self loadList];
     [self addRefshUp];
     [self addRefshDown];
+    [self addEmpty];
 }
 
 - (void)loadList {

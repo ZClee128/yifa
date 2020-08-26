@@ -43,6 +43,26 @@
     self.EFTableView = [EFBaseTableView defaultTableView:self dataSource:self style:self.tableViewStyle];
     self.EFTableView.separatorStyle = (self.lineHidden ? UITableViewCellSeparatorStyleNone : UITableViewCellSeparatorStyleSingleLine);
     [self.view addSubview:self.EFTableView];
+    @weakify(self);
+    self.EFTableView.ly_emptyView = [EFEmptyView NoNetEmptybtnClickBlock:^{
+        @strongify(self);
+        [self noNetClick];
+    }];
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kNetNoti object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        @strongify(self);
+        [self.EFTableView ly_showEmptyView];
+    }];
+}
+
+- (void)addEmpty {
+    self.EFTableView.ly_emptyView = [EFEmptyView NoDataEmptybtnClickBlock:^{
+
+    }];
+}
+
+- (void)noNetClick {
+    [self.EFTableView ly_hideEmptyView];
+    [self loadNewData];
 }
 
 - (void)addRefshDown {

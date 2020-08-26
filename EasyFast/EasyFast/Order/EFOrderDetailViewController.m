@@ -72,6 +72,7 @@
             [self loadList];
         }
     }];
+    [self addEmpty];
 }
 
 - (void)backItemClick:(id)sender {
