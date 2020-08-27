@@ -17,12 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface EFBootpageModel : EFBaseModel
 
 @property (nonatomic,copy)NSString *bgImage;
-@property (nonatomic,copy)NSString *bfImage;
 @property (nonatomic,copy)NSString *title;
 @property (nonatomic,copy)NSString *subTitle;
-@property (nonatomic,assign) CGFloat  bgtop;
-@property (nonatomic,assign) CGFloat  bgleft;
-@property (nonatomic,assign) CGFloat  bgright;
+@property (nonatomic,assign) CGFloat  titletop;
+@property (nonatomic,strong)UIColor *bacgroudColor;
 
 @end
 

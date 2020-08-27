@@ -148,6 +148,7 @@ NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];       \
 #define MedFont14 [UIFont runtimeFitFont:14 weight:(UIFontWeightMedium)]
 #define MedFont30 [UIFont runtimeFitFont:30 weight:(UIFontWeightMedium)]
 #define MedFont20 [UIFont runtimeFitFont:20 weight:(UIFontWeightMedium)]
+#define MedFont23 [UIFont runtimeFitFont:23 weight:(UIFontWeightMedium)]
 
 // 持久化key
 // 用户信息

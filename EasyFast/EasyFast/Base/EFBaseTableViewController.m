@@ -43,25 +43,35 @@
     self.EFTableView = [EFBaseTableView defaultTableView:self dataSource:self style:self.tableViewStyle];
     self.EFTableView.separatorStyle = (self.lineHidden ? UITableViewCellSeparatorStyleNone : UITableViewCellSeparatorStyleSingleLine);
     [self.view addSubview:self.EFTableView];
-    @weakify(self);
-    self.EFTableView.ly_emptyView = [EFEmptyView NoNetEmptybtnClickBlock:^{
-        @strongify(self);
-        [self noNetClick];
-    }];
-    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kNetNoti object:nil] subscribeNext:^(NSNotification * _Nullable x) {
-        @strongify(self);
-        [self.EFTableView ly_showEmptyView];
-    }];
+//    @weakify(self);
+//    self.EFTableView.ly_emptyView = [EFEmptyView NoNetEmptybtnClickBlock:^{
+//        @strongify(self);
+//        [self noNetClick];
+//    }];
+//    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kNetNoti object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+//        @strongify(self);
+//        [self.EFTableView ly_showEmptyView];
+//    }];
+    [self addEmpty];
 }
 
 - (void)addEmpty {
+    @weakify(self);
     self.EFTableView.ly_emptyView = [EFEmptyView NoDataEmptybtnClickBlock:^{
 
+    }];
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kNetNoti object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        self.EFTableView.ly_emptyView = [EFEmptyView NoNetEmptybtnClickBlock:^{
+            @strongify(self);
+            [self noNetClick];
+        }];
     }];
 }
 
 - (void)noNetClick {
-    [self.EFTableView ly_hideEmptyView];
+    self.EFTableView.ly_emptyView = [EFEmptyView NoDataEmptybtnClickBlock:^{
+
+    }];
     [self loadNewData];
 }
 

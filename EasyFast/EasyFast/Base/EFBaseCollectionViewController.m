@@ -39,14 +39,28 @@
     NSParameterAssert(self.registerClasses);
     _collectionView = [EFBaseUICollectionView defaultCollectionView:self dataSource:self flowLayout:self.defaultCollectionFlowLayout registerClasses:self.registerClasses];
     [self.view addSubview:self.collectionView];
-    
+    [self addEmpty];
     // Do any additional setup after loading the view.
 }
 
 - (void)addEmpty {
+    @weakify(self);
     self.collectionView.ly_emptyView = [EFEmptyView NoDataEmptybtnClickBlock:^{
 
     }];
+    [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kNetNoti object:nil] subscribeNext:^(NSNotification * _Nullable x) {
+        self.collectionView.ly_emptyView = [EFEmptyView NoNetEmptybtnClickBlock:^{
+            @strongify(self);
+            [self noNetClick];
+        }];
+    }];
+}
+
+- (void)noNetClick {
+    self.collectionView.ly_emptyView = [EFEmptyView NoDataEmptybtnClickBlock:^{
+
+    }];
+    [self loadNewData];
 }
 
 #pragma mark - Methods

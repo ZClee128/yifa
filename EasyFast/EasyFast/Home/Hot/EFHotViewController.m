@@ -123,35 +123,33 @@
 }
 
 - (void)loadList {
-    [[EFHomeVM activity] subscribeNext:^(NSArray *x) {
-        self.activityArr = [x mutableCopy];
+    @weakify(self);
+    [[RACSignal zip:@[[EFHomeVM activity],[EFHomeVM banner],[EFHomeVM notice],[self.viewModel refreshForDown],[EFHomeVM fastOrderBy:@1 type:@1 PageNum:@1 pageSize:@3]]] subscribeNext:^(RACTuple * _Nullable x) {
+        @strongify(self);
+        [self.EFTableView.mj_header endRefreshing];
+        /// 活动
+        self.activityArr = [x.first mutableCopy];
         self.isLoadActivity = YES;
-        [self.EFTableView reloadData];
-    }];
-    
-    [[EFHomeVM banner] subscribeNext:^(NSArray *x) {
+        
+        /// banner
         NSMutableArray *images = [[NSMutableArray alloc] init];
-        for (int i = 0 ; i < x.count; i++) {
-            EFBannerModel *model = x[i];
+        for (int i = 0 ; i < [x.second count]; i++) {
+            EFBannerModel *model = x.second[i];
             [images addObject:model.url];
         }
         self.cycleScrollView.imageURLStringsGroup = images;
-    }];
-    
-    [[EFHomeVM notice] subscribeNext:^(NSArray *x) {
-        self.noticeArr = [x mutableCopy];
+        
+        /// 公告
+        self.noticeArr = [x.third mutableCopy];
+        
+        /// 批发
+        self.EFData = [((RACTuple *)x.fourth).first mutableCopy];
+        
+        /// 急速拼团
+        self.fastArr = [x.last mutableCopy];
         [self.EFTableView reloadData];
-    }];
-    
-    [[self.viewModel refreshForDown] subscribeNext:^(RACTuple *x) {
+    } error:^(NSError * _Nullable error) {
         [self.EFTableView.mj_header endRefreshing];
-//        [self.EFTableView tab_endAnimation];
-        self.EFData = x.first;
-        [self.EFTableView reloadData];
-    }];
-    
-    [[EFHomeVM fastOrderBy:@1 type:@1 PageNum:@1 pageSize:@3] subscribeNext:^(NSArray *x) {
-        self.fastArr = [x mutableCopy];
         [self.EFTableView reloadData];
     }];
     
@@ -198,6 +196,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     switch (section) {
+        case 0:
+            return self.activityArr.count > 0 ? 1 : 0;
+        case 1:
+            return self.noticeArr.count > 0 ? 1 : 0;
+        case 2:
+            return self.fastArr.count > 0 ? 1 : 0;
         case 3:
             return self.EFData.count;
         default:

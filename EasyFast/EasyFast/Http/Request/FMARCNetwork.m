@@ -15,6 +15,7 @@
 #import "MBProgressHUD.h"
 #import "NSMutableURLRequest+FormData.h"
 #import "LoginVM.h"
+
 /// 请求数据返回的状态码、根据自己的服务端数据来
 typedef NS_ENUM(NSUInteger, HTTPResponseCode) {
     HTTPResponseCodeSuccess = 200,           /// 请求成功
@@ -113,24 +114,30 @@ static FMARCNetwork * _instance = nil;
     /// 开启网络监测
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     [self.manager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-        
-        if (status == AFNetworkReachabilityStatusUnknown) {
-            NSLog(@"--- 未知网络 ---");
-//            [JDStatusBarNotification showWithStatus:@"网络状态未知" styleName:JDStatusBarStyleWarning];
-//            [JDStatusBarNotification showActivityIndicator:YES indicatorStyle:UIActivityIndicatorViewStyleWhite];
-            [[NSNotificationCenter defaultCenter] postNotificationName:kNetNoti object:nil];
-        }else if (status == AFNetworkReachabilityStatusNotReachable) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:kNetNoti object:nil];
-//            [JDStatusBarNotification showWithStatus:@"网络不给力，请检查网络" styleName:JDStatusBarStyleWarning];
-//            [JDStatusBarNotification showActivityIndicator:YES indicatorStyle:UIActivityIndicatorViewStyleWhite];
-//            [[UIViewController getCurrentVC].view ly_showEmptyView];
-        }else{
-            NSLog(@"--- 有网络 ---");
-//             [JDStatusBarNotification dismiss];
+        switch (status) {
+            case AFNetworkReachabilityStatusUnknown: // 未知网络
+                NSLog(@"未知网络");
+                [[NSNotificationCenter defaultCenter] postNotificationName:kNetNoti object:nil];
+                break;
+            case AFNetworkReachabilityStatusNotReachable: // 没有网络(断网)
+                NSLog(@"没有网络(断网)");
+                [[NSNotificationCenter defaultCenter] postNotificationName:kNetNoti object:nil];
+                break;
+                
+            case AFNetworkReachabilityStatusReachableViaWWAN: // 手机自带网络
+                NSLog(@"手机自带网络");
+                break;
+                
+            case AFNetworkReachabilityStatusReachableViaWiFi: // WIFI
+                NSLog(@"WIFI");
+                break;
         }
     }];
     [self.manager.reachabilityManager startMonitoring];
 }
+
+
+
 
 - (RACSignal *)requestSimpleNetworkPath:(NSString *)path params:(NSDictionary *)params
 {

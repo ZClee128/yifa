@@ -78,6 +78,12 @@
 		0C2D28F524F66D83004CF3B1 /* EFBootPageVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D28F424F66D83004CF3B1 /* EFBootPageVM.m */; };
 		0C2D28F624F66D83004CF3B1 /* EFBootPageVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D28F424F66D83004CF3B1 /* EFBootPageVM.m */; };
 		0C2D28F724F66D83004CF3B1 /* EFBootPageVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D28F424F66D83004CF3B1 /* EFBootPageVM.m */; };
+		0C2D28FB24F7C466004CF3B1 /* EFBootPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D28FA24F7C466004CF3B1 /* EFBootPageView.m */; };
+		0C2D28FC24F7C467004CF3B1 /* EFBootPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D28FA24F7C466004CF3B1 /* EFBootPageView.m */; };
+		0C2D28FD24F7C467004CF3B1 /* EFBootPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D28FA24F7C466004CF3B1 /* EFBootPageView.m */; };
+		0C2D290024F7C919004CF3B1 /* EFPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D28FF24F7C919004CF3B1 /* EFPageControl.m */; };
+		0C2D290124F7C919004CF3B1 /* EFPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D28FF24F7C919004CF3B1 /* EFPageControl.m */; };
+		0C2D290224F7C919004CF3B1 /* EFPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2D28FF24F7C919004CF3B1 /* EFPageControl.m */; };
 		0C4BAF9324D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
 		0C4BAF9424D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
 		0C4BAF9524D0085F0037CDCF /* EFMeRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */; };
@@ -818,6 +824,10 @@
 		0C2D28ED24F66CE2004CF3B1 /* AppFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppFirstViewController.m; sourceTree = "<group>"; };
 		0C2D28F324F66D83004CF3B1 /* EFBootPageVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFBootPageVM.h; sourceTree = "<group>"; };
 		0C2D28F424F66D83004CF3B1 /* EFBootPageVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFBootPageVM.m; sourceTree = "<group>"; };
+		0C2D28F924F7C466004CF3B1 /* EFBootPageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFBootPageView.h; sourceTree = "<group>"; };
+		0C2D28FA24F7C466004CF3B1 /* EFBootPageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFBootPageView.m; sourceTree = "<group>"; };
+		0C2D28FE24F7C919004CF3B1 /* EFPageControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFPageControl.h; sourceTree = "<group>"; };
+		0C2D28FF24F7C919004CF3B1 /* EFPageControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFPageControl.m; sourceTree = "<group>"; };
 		0C4BAF9124D0085F0037CDCF /* EFMeRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFMeRefreshHeader.h; sourceTree = "<group>"; };
 		0C4BAF9224D0085F0037CDCF /* EFMeRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFMeRefreshHeader.m; sourceTree = "<group>"; };
 		0C4BAF9724D021440037CDCF /* EFBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFBridge.h; sourceTree = "<group>"; };
@@ -1478,6 +1488,7 @@
 		0C2D28EB24F66C43004CF3B1 /* AppFirstView */ = {
 			isa = PBXGroup;
 			children = (
+				0C2D28F824F7C27C004CF3B1 /* View */,
 				0C2D28F224F66D59004CF3B1 /* VM */,
 				0C2D28EC24F66CE2004CF3B1 /* AppFirstViewController.h */,
 				0C2D28ED24F66CE2004CF3B1 /* AppFirstViewController.m */,
@@ -1492,6 +1503,17 @@
 				0C2D28F424F66D83004CF3B1 /* EFBootPageVM.m */,
 			);
 			path = VM;
+			sourceTree = "<group>";
+		};
+		0C2D28F824F7C27C004CF3B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0C2D28F924F7C466004CF3B1 /* EFBootPageView.h */,
+				0C2D28FA24F7C466004CF3B1 /* EFBootPageView.m */,
+				0C2D28FE24F7C919004CF3B1 /* EFPageControl.h */,
+				0C2D28FF24F7C919004CF3B1 /* EFPageControl.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		0C4BAF9624D0212E0037CDCF /* Bridge */ = {
@@ -3033,6 +3055,7 @@
 				0C6CB59824CEB52C00471A8D /* EFChangeLoginHeaderView.m in Sources */,
 				8476109224C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */,
 				8476103924C54200002B34E4 /* TuanGoodsView.m in Sources */,
+				0C2D290024F7C919004CF3B1 /* EFPageControl.m in Sources */,
 				8476118824C6FCF8002B34E4 /* EFMeDataViewController.m in Sources */,
 				0C4BAFD924D26A640037CDCF /* EFMapViewController.m in Sources */,
 				0C6CB56F24CE7A1400471A8D /* EFOneLoginViewController.m in Sources */,
@@ -3068,6 +3091,7 @@
 				84760F8024C1551B002B34E4 /* EFWKWebConfig.m in Sources */,
 				0CCEC45824CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */,
 				0CE2860B24D3EC4F00AAC334 /* LTSCalendarScrollView.m in Sources */,
+				0C2D28FB24F7C466004CF3B1 /* EFBootPageView.m in Sources */,
 				84B2437324C83AB000E9967C /* LeftTableViewCell.m in Sources */,
 				0C8A277724D6C44F00E40ED8 /* SKTagView.m in Sources */,
 				841B94ED24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,
@@ -3279,6 +3303,7 @@
 				0C6CB59924CEB52C00471A8D /* EFChangeLoginHeaderView.m in Sources */,
 				8476109324C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */,
 				8476103A24C54200002B34E4 /* TuanGoodsView.m in Sources */,
+				0C2D290124F7C919004CF3B1 /* EFPageControl.m in Sources */,
 				8476118924C6FCF8002B34E4 /* EFMeDataViewController.m in Sources */,
 				0C4BAFDA24D26A640037CDCF /* EFMapViewController.m in Sources */,
 				0C6CB57024CE7A1400471A8D /* EFOneLoginViewController.m in Sources */,
@@ -3314,6 +3339,7 @@
 				84760F8124C1551B002B34E4 /* EFWKWebConfig.m in Sources */,
 				0CCEC45924CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */,
 				0CE2860C24D3EC4F00AAC334 /* LTSCalendarScrollView.m in Sources */,
+				0C2D28FC24F7C467004CF3B1 /* EFBootPageView.m in Sources */,
 				84B2437424C83AB000E9967C /* LeftTableViewCell.m in Sources */,
 				0C8A277824D6C44F00E40ED8 /* SKTagView.m in Sources */,
 				841B94EE24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,
@@ -3525,6 +3551,7 @@
 				0C6CB59A24CEB52C00471A8D /* EFChangeLoginHeaderView.m in Sources */,
 				8476109424C5AD69002B34E4 /* EFChangeAccountViewController.m in Sources */,
 				8476103B24C54200002B34E4 /* TuanGoodsView.m in Sources */,
+				0C2D290224F7C919004CF3B1 /* EFPageControl.m in Sources */,
 				8476118A24C6FCF8002B34E4 /* EFMeDataViewController.m in Sources */,
 				0C4BAFDB24D26A640037CDCF /* EFMapViewController.m in Sources */,
 				0C6CB57124CE7A1400471A8D /* EFOneLoginViewController.m in Sources */,
@@ -3560,6 +3587,7 @@
 				84760F8224C1551B002B34E4 /* EFWKWebConfig.m in Sources */,
 				0CCEC45A24CA7D8900976D24 /* EFOrderMoreDetailViewController.m in Sources */,
 				0CE2860D24D3EC4F00AAC334 /* LTSCalendarScrollView.m in Sources */,
+				0C2D28FD24F7C467004CF3B1 /* EFBootPageView.m in Sources */,
 				84B2437524C83AB000E9967C /* LeftTableViewCell.m in Sources */,
 				0C8A277924D6C44F00E40ED8 /* SKTagView.m in Sources */,
 				841B94EF24C9637E0054D8D5 /* EFOrderBtnTableViewCell.m in Sources */,
