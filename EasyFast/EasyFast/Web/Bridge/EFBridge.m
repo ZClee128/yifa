@@ -15,12 +15,12 @@
 #import "PayManager.h"
 #import "EFOrderVM.h"
 @interface EFBridge ()
-@property (nonatomic,strong)WebViewJavascriptBridge *bridge;
+@property (nonatomic,strong)WKWebViewJavascriptBridge *bridge;
 @end
 
 @implementation EFBridge
 
-- (instancetype)initWithBridge:(WebViewJavascriptBridge *)bridge
+- (instancetype)initWithBridge:(WKWebViewJavascriptBridge *)bridge
 {
     self = [super init];
     if (self) {
@@ -80,6 +80,7 @@
     if (kUserManager.userModel != nil) {
         [dict setValue:kUserManager.userModel.token forKey:@"token"];
     }
+    
     [self.bridge callHandler:@"goTo" data:@{@"page":page,@"query":dict,} responseCallback:^(id responseData) {
         XYLog(@">>>>>>%@",responseData);
     }];

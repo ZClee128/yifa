@@ -138,6 +138,10 @@
             [images addObject:model.url];
         }
         self.cycleScrollView.imageURLStringsGroup = images;
+        self.cycleScrollView.clickItemOperationBlock = ^(NSInteger currentIndex) {
+            EFBannerModel *model = x.second[currentIndex];
+            XYLog(@"model===>%@",model);
+        };
         
         /// 公告
         self.noticeArr = [x.third mutableCopy];

@@ -65,6 +65,10 @@
 - (void)selectBtnIndex:(NSInteger)index {
     EFActivityModel *model = self.data[index];
     XYLog(@"%@",model);
+    NSDictionary *dict = [model modelToJSONObject];
+    if (model.url.length) {
+        [kH5Manager gotoUrl:model.url hasNav:YES navTitle:model.title query:dict];
+    }
 }
 
 

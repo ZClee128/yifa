@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EFBridge : NSObject
 
-- (instancetype)initWithBridge:(WebViewJavascriptBridge *)bridge;
+- (instancetype)initWithBridge:(WKWebViewJavascriptBridge *)bridge;
 
 // 获取导航栏高度
 - (void)GetNavHeight;

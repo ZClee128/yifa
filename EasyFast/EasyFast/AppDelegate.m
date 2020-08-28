@@ -243,9 +243,10 @@
 //程序在后台时收到通知，点击通知栏进入app
 
 - (void)jpushNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
-    
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     [JPUSHService setBadge:0];
+    NSDictionary * userInfo = response.notification.request.content.userInfo;
+    XYLog(@"user>>>%@",userInfo);
     
 }
 

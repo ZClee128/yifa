@@ -36,7 +36,14 @@
     [[EFClassifyVM category] subscribeNext:^(NSArray *x) {
         @strongify(self);
         [self.tableView tab_endAnimation];
-        self.leftDataArray = [x mutableCopy];
+        if (x.count > 0) {
+            [NSArray bg_clearArrayWithName:kClassCategory];
+            [x bg_saveArrayWithName:kClassCategory];
+            self.leftDataArray = [x mutableCopy];
+        }else {
+            NSArray* testResult = [NSArray bg_arrayWithName:kClassCategory];
+            self.leftDataArray = [testResult mutableCopy];
+        }
         [self.tableView reloadData];
         if (self.leftDataArray.count > 0) {
             EFClassifyModel *model = [self.leftDataArray objectAtIndex:0];

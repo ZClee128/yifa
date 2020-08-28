@@ -16,7 +16,7 @@
 
 @interface EFBaseWebViewController ()<WKUIDelegate,WKNavigationDelegate>
 
-@property (nonatomic,strong)WebViewJavascriptBridge *bridge;
+@property (nonatomic,strong)WKWebViewJavascriptBridge *bridge;
 @property (nonatomic,strong)NSString *url;
 @property (nonatomic,strong)NSString *Webtitle;
 
@@ -72,10 +72,13 @@
     self.webView = [[EFCustomWebViewPool sharedInstance] getWKWebViewFromPool];
     self.webView.frame = CGRectMake(0, self.show ? NAVIGATION_BAR_HEIGHT : 0, SCREEN_WIDTH, SCREEN_HEIGHT- (self.show ? NAVIGATION_BAR_HEIGHT : 0));
     [self.view  addSubview:self.webView];
+    self.webView.UIDelegate = self;
+    self.webView.navigationDelegate = self;
     // 开启日志
-    [WebViewJavascriptBridge enableLogging];
+//    self.bridge = [WKWebViewJavascriptBridge bridgeForWebView:self.webView showJSconsole:YES enableLogging:YES];
+    [WKWebViewJavascriptBridge enableLogging];
     // 给webview建立JS与OjbC的沟通桥梁
-    self.bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView];
+    self.bridge = [WKWebViewJavascriptBridge bridgeForWebView:self.webView];
     [self.bridge setWebViewDelegate:self];
 //
     if ([kH5Manager isTmpExist]) {

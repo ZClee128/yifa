@@ -12,7 +12,7 @@
 @interface MeWebTableViewCell ()
 
 @property (nonatomic,strong)WKWebView *webView;
-@property (nonatomic,strong)WebViewJavascriptBridge *bridge;
+@property (nonatomic,strong)WKWebViewJavascriptBridge *bridge;
 @property (nonatomic,strong)EFBridge *efbridge;
 
 @end
@@ -62,9 +62,10 @@
         make.edges.mas_equalTo(self.contentView);
     }];
     // 开启日志
-    [WebViewJavascriptBridge enableLogging];
+//    self.bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView showJSconsole:YES enableLogging:YES];
+    [WKWebViewJavascriptBridge enableLogging];
     // 给webview建立JS与OjbC的沟通桥梁
-    self.bridge = [WebViewJavascriptBridge bridgeForWebView:self.webView];
+    self.bridge = [WKWebViewJavascriptBridge bridgeForWebView:self.webView];
     self.efbridge = [[EFBridge alloc] initWithBridge:self.bridge];
     [self.bridge setWebViewDelegate:self];
     if ([kH5Manager isTmpExist]) {

@@ -105,7 +105,12 @@
 }
 
 - (void)didClickRollingNoticeView:(GYRollingNoticeView *)rollingView forIndex:(NSUInteger)index {
-    
+    EFNoticeModel *model = self.data[index];
+    XYLog(@"model>>%@",model);
+    NSDictionary *dict = [model modelToJSONObject];
+    if (model.url.length) {
+        [kH5Manager gotoUrl:model.url hasNav:YES navTitle:model.title query:dict];
+    }
 }
 
 - (void)awakeFromNib {

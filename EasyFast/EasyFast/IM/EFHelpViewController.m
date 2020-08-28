@@ -174,4 +174,12 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return WidthOfScale(59);
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    EFHelpModel *model = self.EFData[indexPath.row];
+    NSDictionary *dict = [model modelToJSONObject];
+    if (model.url.length) {
+        [kH5Manager gotoUrl:model.url hasNav:YES navTitle:@"常见问题" query:dict];
+    }
+}
 @end

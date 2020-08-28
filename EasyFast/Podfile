@@ -32,6 +32,7 @@ targets.each do |t|
     pod 'RollingNotice'
     pod 'YZTagList'
     pod 'WebViewJavascriptBridge', '~> 6.0'
+#    pod 'SKJavaScriptBridge', '~> 1.0.3'
     pod 'BGFMDB', '~> 2.0.9'
     pod 'SSZipArchive'
     pod "QPDialCodePickerView"
@@ -57,6 +58,17 @@ targets.each do |t|
     pod  'AlipaySDK-iOS'
     
     # Pods for EasyFast
+    pre_install do |installer|
+      dir_web = File.join(installer.sandbox.pod_dir('WebViewJavascriptBridge'), 'WebViewJavascriptBridge')
+      Dir.foreach(dir_web) {|x|
+        real_path = File.join(dir_web, x)
+        if (!File.directory?(real_path) && File.exists?(real_path))
+          if(x == 'WebViewJavascriptBridge.h' || x == 'WebViewJavascriptBridge.m')
+            File.delete(real_path)
+          end
+        end
+      }
+    end
   end
 
 end

@@ -19,7 +19,7 @@
                                 @{@"title":@"隐私",@"subTitle":@""}],
                               @[@{@"title":@"消息提醒通知",@"subTitle":@""},
                                 @{@"title":@"清除缓存",@"subTitle":@""},
-                                @{@"title":@"我的支付",@"subTitle":@""},
+                                //@{@"title":@"我的支付",@"subTitle":@""},
                                 @{@"title":@"当前版本",@"subTitle":kVersion},
                                 @{@"title":@"意见反馈",@"subTitle":@""},
                                 @{@"title":@"关于我们",@"subTitle":@""} //客服电话：4008808880

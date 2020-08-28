@@ -181,6 +181,8 @@ NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];       \
 
 /// 首页分类
 #define kHomeCategory @"HomeCategory"
+/// 分类表
+#define kClassCategory @"kClassCategory"
 
 
 
