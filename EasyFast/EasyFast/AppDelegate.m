@@ -115,6 +115,7 @@
         }];
     });
     
+    /// 通知烂
     [[[NSNotificationCenter defaultCenter] rac_addObserverForName:EBBannerViewDidClickNotification object:nil] subscribeNext:^(NSNotification * _Nullable x) {
         XYLog(@"%@",x.object);
     }];

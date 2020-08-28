@@ -68,7 +68,7 @@
             @strongify(self);
             EFSearchViewController *searchVC = [[EFSearchViewController alloc] init];
             [self.navigationController qmui_pushViewController:searchVC animated:NO completion:^{
-                [self removeFromParentViewController];
+
             }];
         }];
         [_searchField addGestureRecognizer:tap];
@@ -105,8 +105,8 @@
     [self loadList];
     [self addRefshUp];
     [self addRefshDown];
-//    [self addEmpty];
 }
+
 
 - (void)loadList {
     @weakify(self);

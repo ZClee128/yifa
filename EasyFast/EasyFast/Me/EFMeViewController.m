@@ -129,8 +129,18 @@
         make.height.equalTo(@(kPHONE_HEIGHT/2));
     }];
     self.EFTableView.backgroundColor = [UIColor clearColor];
-    [self loadOrder];
+    
+    MeWebTableViewCell *webCell = [[MeWebTableViewCell alloc] init];
     @weakify(self);
+    [[webCell getCellHeight] subscribeNext:^(NSNumber *x) {
+        @strongify(self);
+        webCell.height = [x floatValue];
+        [self.EFTableView reloadData];
+    }];
+    self.EFTableView.tableFooterView = webCell;
+    
+    
+    [self loadOrder];
     [[[NSNotificationCenter defaultCenter] rac_addObserverForName:knickName object:nil] subscribeNext:^(NSNotification * _Nullable x) {
         @strongify(self);
         [self.headerView setData];
@@ -184,7 +194,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -239,23 +249,12 @@
             };
             return MeCell;
         }
-            case 2:
+        default:
         {
             MeListTableViewCell *listCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MeListTableViewCell class])];
             NSDictionary *dict = self.list[indexPath.row];
             [listCell setModel:dict];
             return listCell;
-        }
-        default:
-        {
-            MeWebTableViewCell *webCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MeWebTableViewCell class])];
-            @weakify(self);
-            [[webCell getCellHeight] subscribeNext:^(NSNumber *x) {
-                @strongify(self);
-                self.cellHeight = [x floatValue];
-                [self.EFTableView reloadSection:3 withRowAnimation:(UITableViewRowAnimationNone)];
-            }];
-            return webCell;
         }
     }
 }
@@ -264,8 +263,6 @@
     switch (indexPath.section) {
         case 2:
             return 50;
-        case 3:
-            return self.cellHeight;
         default:
             return WidthOfScale(134);
     }

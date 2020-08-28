@@ -17,6 +17,7 @@
 @property (nonatomic,strong)QMUIButton *cancle;
 @property (nonatomic,strong)QMUITableView *tableView;
 @property (nonatomic,strong)SKTagView *tagView;
+@property (nonatomic,assign)BOOL isRoot;
 
 @end
 
@@ -69,7 +70,15 @@
         @weakify(self);
         [[_cancle rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self);
-            [self.navigationController popViewControllerAnimated:YES];
+            if (self.isRoot) {
+                [self.navigationController qmui_popToRootViewControllerAnimated:YES completion:^{
+                    
+                }];
+            }else {
+                [self.navigationController qmui_popViewControllerAnimated:YES completion:^{
+                    
+                }];
+            }
         }];
     }
     return _cancle;
@@ -136,6 +145,7 @@
             @strongify(self);
             NSString *searchTitle = x[idx];
             EFSearchResultViewController *resultVC = [[EFSearchResultViewController alloc] initWithSearchTitle:searchTitle];
+            self.isRoot = YES;
             [self.navigationController pushViewController:resultVC animated:NO];
         };
         // 获取刚才加入所有tag之后的内在高度
@@ -170,6 +180,7 @@
     }
     [self recordSearch:textField.text];
     EFSearchResultViewController *resultVC = [[EFSearchResultViewController alloc] initWithSearchTitle:textField.text];
+    self.isRoot = YES;
     [self.navigationController pushViewController:resultVC animated:NO];
     return YES;
 }
