@@ -11,44 +11,32 @@
 #import "SearchTwoCollectionViewCell.h"
 #import "SeachOneCollectionViewCell.h"
 #import "EFSearchVM.h"
+#import "XRWaterfallLayout.h"
 
-@interface EFSearchResultViewController ()
+@interface EFSearchResultViewController ()<XRWaterfallLayoutDelegate>
 
 @property (nonatomic,strong)QMUILabel *searchField;
 @property (nonatomic,assign)CGFloat cellHeight;
-
+@property (nonatomic,strong)NSMutableDictionary *cellHeightDict;
+@property (nonatomic,strong)NSMutableDictionary *twocellHeightDict;
+@property (nonatomic,strong)XRWaterfallLayout *fallLayout;
 @end
 
 @implementation EFSearchResultViewController
 
-//-(NSMutableArray *)data
-//{
-//    if (_data == nil) {
-//        _data = [[NSMutableArray alloc]init];
-//    }
-//    return _data;
-//}
-//
-//-(UICollectionView *)collect
-//{
-//    if (_collect == nil) {
-//        self.flow = [[UICollectionViewFlowLayout alloc] init];
-//        [self.flow setScrollDirection:UICollectionViewScrollDirectionVertical];//竖滑动
-//        self.flow.minimumLineSpacing = WidthOfScale(11);
-//        self.flow.minimumInteritemSpacing = WidthOfScale(10);
-//        self.flow.itemSize = CGSizeMake(WidthOfScale(167), WidthOfScale(280));
-//        _collect = [[UICollectionView alloc] initWithFrame:CGRectMake(0, NAVIGATION_BAR_HEIGHT + 45, kPHONE_WIDTH,kPHONE_HEIGHT - NAVIGATION_BAR_HEIGHT - 45) collectionViewLayout:self.flow];
-//        _collect.backgroundColor = [UIColor clearColor];
-//        _collect.delegate = self;
-//        _collect.dataSource = self;
-//        _collect.showsHorizontalScrollIndicator = NO;
-//        _collect.showsVerticalScrollIndicator = NO;
-//        _collect.contentInset = UIEdgeInsetsMake(WidthOfScale(15), WidthOfScale(15), WidthOfScale(15), WidthOfScale(15));
-//        [_collect registerClass:[SearchTwoCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([SearchTwoCollectionViewCell class])];
-//        [_collect registerClass:[SeachOneCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([SeachOneCollectionViewCell class])];
-//    }
-//    return _collect;
-//}
+- (NSMutableDictionary *)cellHeightDict {
+    if (_cellHeightDict == nil) {
+        _cellHeightDict = [[NSMutableDictionary alloc] init];
+    }
+    return _cellHeightDict;
+}
+
+- (NSMutableDictionary *)twocellHeightDict {
+    if (_twocellHeightDict == nil) {
+        _twocellHeightDict = [[NSMutableDictionary alloc] init];
+    }
+    return _twocellHeightDict;
+}
 
 
 -(QMUILabel *)searchField
@@ -68,7 +56,7 @@
             @strongify(self);
             EFSearchViewController *searchVC = [[EFSearchViewController alloc] init];
             [self.navigationController qmui_pushViewController:searchVC animated:NO completion:^{
-
+                
             }];
         }];
         [_searchField addGestureRecognizer:tap];
@@ -88,22 +76,25 @@
 
 - (void)viewDidLoad {
     self.viewModel = [[EFSearchVM alloc] init];
-    self.lineSpacing = WidthOfScale(11);
-    self.interitemSpacing = WidthOfScale(10);
-//    self.itemSize = CGSizeMake(WidthOfScale(167), WidthOfScale(280));
+    //    self.lineSpacing = WidthOfScale(11);
+    //    self.interitemSpacing = WidthOfScale(10);
+    //    self.itemSize = CGSizeMake(WidthOfScale(167), WidthOfScale(280));
     self.registerClasses = @[@{@"SearchTwoCollectionViewCell":@"SearchTwoCollectionViewCell"},@{@"SeachOneCollectionViewCell":@"SeachOneCollectionViewCell"}];
     self.collectionEdgeInsets = UIEdgeInsetsMake(WidthOfScale(15), WidthOfScale(15), WidthOfScale(15), WidthOfScale(15));
     ((EFSearchVM *)self.viewModel).title = self.searchField.text;
     ((EFSearchVM *)self.viewModel).sortType = 0;
     [super viewDidLoad];
     self.collectionView.frame = CGRectMake(0, NAVIGATION_BAR_HEIGHT + 45, kPHONE_WIDTH,kPHONE_HEIGHT - NAVIGATION_BAR_HEIGHT - 45);
+    self.fallLayout = [XRWaterfallLayout waterFallLayoutWithColumnCount:2];
+    [self.fallLayout setColumnSpacing:WidthOfScale(10) rowSpacing:WidthOfScale(11) sectionInset:UIEdgeInsetsMake(WidthOfScale(15), WidthOfScale(15), WidthOfScale(15), WidthOfScale(15))];
+    self.fallLayout.delegate = self;
+    self.collectionView.collectionViewLayout = self.fallLayout;
     self.isOne = NO;
     self.gk_navigationBar.hidden = NO;
     self.gk_navLineHidden = YES;
     [self setSearch];
     [self.view addSubview:[self headerView]];
     [self loadList];
-    [self addRefshUp];
     [self addRefshDown];
 }
 
@@ -114,6 +105,8 @@
         @strongify(self);
         [self.collectionView.mj_header endRefreshing];
         self.EFData = x.first;
+        [self addRefshUp];
+        [self.collectionView layoutIfNeeded];
         [self.collectionView reloadData];
     }];
 }
@@ -163,19 +156,26 @@
         @strongify(self);
         self.isOne = x.selected;
         if (self.isOne) {
-            self.collectionEdgeInsets = UIEdgeInsetsMake(15,0,0,0);
-            [self defaultCollectionFlowLayout].minimumLineSpacing = WidthOfScale(0);
-            [self defaultCollectionFlowLayout].minimumInteritemSpacing = WidthOfScale(0);
-//            [self defaultCollectionFlowLayout].itemSize = CGSizeMake(kPHONE_WIDTH, WidthOfScale(155));
+            //            self.collectionEdgeInsets = UIEdgeInsetsMake(15,0,0,0);
+            //            [self defaultCollectionFlowLayout].minimumLineSpacing = WidthOfScale(0);
+            //            [self defaultCollectionFlowLayout].minimumInteritemSpacing = WidthOfScale(0);
+            //            [self defaultCollectionFlowLayout].itemSize = CGSizeMake(kPHONE_WIDTH, WidthOfScale(155));
+            self.fallLayout.columnCount = 1;
+            [self.fallLayout setColumnSpacing:0 rowSpacing:0 sectionInset:UIEdgeInsetsMake(15, 0, 0, 0)];
+            [self.fallLayout.maxYDic removeAllObjects];
         }else {
-            self.collectionEdgeInsets = UIEdgeInsetsMake(WidthOfScale(15), WidthOfScale(15), WidthOfScale(15), WidthOfScale(15));
-            [self defaultCollectionFlowLayout].minimumLineSpacing  = WidthOfScale(11);
-            [self defaultCollectionFlowLayout].minimumInteritemSpacing = WidthOfScale(10);
-//            [self defaultCollectionFlowLayout].itemSize = CGSizeMake(WidthOfScale(167), WidthOfScale(280));
-            
+            //            self.collectionEdgeInsets = UIEdgeInsetsMake(WidthOfScale(15), WidthOfScale(15), WidthOfScale(15), WidthOfScale(15));
+            //            [self defaultCollectionFlowLayout].minimumLineSpacing  = WidthOfScale(11);
+            //            [self defaultCollectionFlowLayout].minimumInteritemSpacing = WidthOfScale(10);
+            //            [self defaultCollectionFlowLayout].itemSize = CGSizeMake(WidthOfScale(167), WidthOfScale(280));
+            self.fallLayout.columnCount = 2;
+            [self.fallLayout setColumnSpacing:WidthOfScale(10) rowSpacing:WidthOfScale(11) sectionInset:UIEdgeInsetsMake(WidthOfScale(15), WidthOfScale(15), WidthOfScale(15), WidthOfScale(15))];
+            [self.fallLayout.maxYDic removeAllObjects];
         }
-        [[RACScheduler mainThreadScheduler] schedule:^{
-            [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
+        [self reloadDataCompleted:^(EFBaseUICollectionView * _Nonnull collection) {
+            [[RACScheduler mainThreadScheduler] schedule:^{
+                [collection reloadData];
+            }];
         }];
     }];
     
@@ -250,18 +250,19 @@
     }
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+- (CGFloat)waterfallLayout:(XRWaterfallLayout *)waterfallLayout itemHeightForWidth:(CGFloat)itemWidth atIndexPath:(NSIndexPath *)indexPath {
     EFGoodsList *model = self.EFData[indexPath.item];
     if (self.isOne) {
-        SeachOneCollectionViewCell *oneCell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([SeachOneCollectionViewCell class]) forIndexPath:indexPath];
+        SeachOneCollectionViewCell *oneCell = [[SeachOneCollectionViewCell alloc] init];
         [oneCell setModel:model];
-        return CGSizeMake(kPHONE_WIDTH, [oneCell cellHeight]);
+        return [oneCell cellHeight];
     }else {
-        SearchTwoCollectionViewCell *twoCell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([SearchTwoCollectionViewCell class]) forIndexPath:indexPath];
+        SearchTwoCollectionViewCell *twoCell = [[SearchTwoCollectionViewCell alloc] init];
         [twoCell setModel:model];
-        return CGSizeMake(WidthOfScale(167), [twoCell cellHeight]);
+        return [twoCell cellHeight];
     }
 }
+
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     EFGoodsList *model = self.EFData[indexPath.item];

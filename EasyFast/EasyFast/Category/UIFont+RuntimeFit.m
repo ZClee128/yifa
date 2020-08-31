@@ -25,13 +25,13 @@
 + (UIFont *)runtimeFitFont:(CGFloat)fontSize {
     UIFont *fitFont = nil;
     //这里并不会造成递归调用,方法已经被交换
-    fitFont = [UIFont runtimeFitFont: floor(fontSize *(kPHONE_WIDTH / 375 ))];
+    fitFont = [UIFont runtimeFitFont: fontSize *(kPHONE_WIDTH / 375 )];
     return fitFont;
 }
 
 + (UIFont *)runtimeFitFont:(CGFloat)fontSize weight:(UIFontWeight)fontWeight {
     UIFont *fitFont = nil;
-    fitFont = [UIFont runtimeFitFont: floor(fontSize *(kPHONE_WIDTH / 375 )) weight:fontWeight];
+    fitFont = [UIFont runtimeFitFont: fontSize *(kPHONE_WIDTH / 375 ) weight:fontWeight];
     return fitFont;
 }
 

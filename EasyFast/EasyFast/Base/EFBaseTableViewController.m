@@ -101,7 +101,9 @@
 
 - (void)addRefshUp {
     MJRefreshBackGifFooter *footer = [MJRefreshBackGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
-    self.EFTableView.mj_footer = footer;
+    if (self.EFData.count > 0) {
+        self.EFTableView.mj_footer = footer;
+    }
 }
 
 - (void)loadMoreData {

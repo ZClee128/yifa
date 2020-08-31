@@ -32,30 +32,41 @@
     self.gk_navTitle = @"分类";
     [self initView];
     @weakify(self);
-    [self.tableView tab_startAnimation];
-    [[EFClassifyVM category] subscribeNext:^(NSArray *x) {
-        @strongify(self);
-        [self.tableView tab_endAnimation];
-        if (x.count > 0) {
-            [NSArray bg_clearArrayWithName:kClassCategory];
-            [x bg_saveArrayWithName:kClassCategory];
-            self.leftDataArray = [x mutableCopy];
-        }else {
-            NSArray* testResult = [NSArray bg_arrayWithName:kClassCategory];
-            self.leftDataArray = [testResult mutableCopy];
-        }
-        [self.tableView reloadData];
-        if (self.leftDataArray.count > 0) {
-            EFClassifyModel *model = [self.leftDataArray objectAtIndex:0];
-            self.currentSelectModel = model;
-            [self.collectionView scrollToTop];
-            [self.collectionView reloadData];
-        }
-        [[RACScheduler mainThreadScheduler] schedule:^{
-           [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:(UITableViewScrollPositionNone)];
-            [self chooseLeftClass];
-        }];
-    }];
+    self.leftDataArray = kAppDelegate.classifyArr;
+    [self.tableView reloadData];
+    if (self.leftDataArray.count > 0) {
+        EFClassifyModel *model = [self.leftDataArray objectAtIndex:0];
+        self.currentSelectModel = model;
+        [self.collectionView scrollToTop];
+        [self.collectionView reloadData];
+    }
+    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:(UITableViewScrollPositionNone)];
+    [self chooseLeftClass];
+
+    
+//    [[EFClassifyVM category] subscribeNext:^(NSArray *x) {
+//        @strongify(self);
+//        [self.tableView tab_endAnimation];
+//        if (x.count > 0) {
+//            [NSArray bg_clearArrayWithName:kClassCategory];
+//            [x bg_saveArrayWithName:kClassCategory];
+//            self.leftDataArray = [x mutableCopy];
+//        }else {
+//            NSArray* testResult = [NSArray bg_arrayWithName:kClassCategory];
+//            self.leftDataArray = [testResult mutableCopy];
+//        }
+//        [self.tableView reloadData];
+//        if (self.leftDataArray.count > 0) {
+//            EFClassifyModel *model = [self.leftDataArray objectAtIndex:0];
+//            self.currentSelectModel = model;
+//            [self.collectionView scrollToTop];
+//            [self.collectionView reloadData];
+//        }
+//        [[RACScheduler mainThreadScheduler] schedule:^{
+//           [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:(UITableViewScrollPositionNone)];
+//            [self chooseLeftClass];
+//        }];
+//    }];
     [[[NSNotificationCenter defaultCenter] rac_addObserverForName:kclassNoti object:nil] subscribeNext:^(NSNotification * _Nullable x) {
         @strongify(self);
         [self chooseLeftClass];
@@ -92,7 +103,7 @@
         _tableView.dataSource = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_tableView registerClass:[LeftTableViewCell class] forCellReuseIdentifier:NSStringFromClass([LeftTableViewCell class])];
-        _tableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[LeftTableViewCell class] cellHeight:WidthOfScale(50)];
+//        _tableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[LeftTableViewCell class] cellHeight:WidthOfScale(50)];
     }
     return _tableView;
 }

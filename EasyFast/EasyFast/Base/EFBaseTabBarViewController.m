@@ -15,6 +15,7 @@
 #import "TabbarBackView.h"
 #import "EFAppUpdateModel.h"
 #import "LoginVM.h"
+#import "EFClassifyVM.h"
 @interface EFBaseTabBarViewController ()
 {
     CGFloat _tabbarheight;
@@ -54,6 +55,16 @@
     
     [[LoginVM downloadWebPage] subscribeNext:^(id  _Nullable x) {
         
+    }];
+    [[EFClassifyVM category] subscribeNext:^(NSArray *x) {
+        if (x.count > 0) {
+            [NSArray bg_clearArrayWithName:kClassCategory];
+            [x bg_saveArrayWithName:kClassCategory];
+            kAppDelegate.classifyArr = [x mutableCopy];
+        }else {
+            NSArray* testResult = [NSArray bg_arrayWithName:kClassCategory];
+            kAppDelegate.classifyArr = [testResult mutableCopy];
+        }
     }];
 }
 

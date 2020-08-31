@@ -72,7 +72,6 @@
             [self loadList];
         }
     }];
-//    [self addEmpty];
 }
 
 - (void)backItemClick:(id)sender {
@@ -95,6 +94,7 @@
         [self.EFTableView tab_endAnimation];
         [self.EFTableView.mj_header endRefreshing];
         self.EFData = x.first;
+        [self addRefshUp];
         [[RACScheduler mainThreadScheduler] schedule:^{
            [self.EFTableView reloadData];
         }];

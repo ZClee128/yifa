@@ -177,6 +177,9 @@
 		0C6CB5C124CFD6B200471A8D /* EFRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5C024CFD6B200471A8D /* EFRefreshHeader.m */; };
 		0C6CB5C224CFD6B200471A8D /* EFRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5C024CFD6B200471A8D /* EFRefreshHeader.m */; };
 		0C6CB5C324CFD6B200471A8D /* EFRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CB5C024CFD6B200471A8D /* EFRefreshHeader.m */; };
+		0C78AA8424FCAE770001D670 /* XRWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C78AA8324FCAE770001D670 /* XRWaterfallLayout.m */; };
+		0C78AA8524FCAE770001D670 /* XRWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C78AA8324FCAE770001D670 /* XRWaterfallLayout.m */; };
+		0C78AA8624FCAE770001D670 /* XRWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C78AA8324FCAE770001D670 /* XRWaterfallLayout.m */; };
 		0C8A274C24D6711F00E40ED8 /* EFCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A274B24D6711F00E40ED8 /* EFCalendarView.m */; };
 		0C8A274D24D6711F00E40ED8 /* EFCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A274B24D6711F00E40ED8 /* EFCalendarView.m */; };
 		0C8A274E24D6711F00E40ED8 /* EFCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A274B24D6711F00E40ED8 /* EFCalendarView.m */; };
@@ -891,6 +894,8 @@
 		0C6CB5BB24CFBE3800471A8D /* EFCustomWebViewPool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFCustomWebViewPool.m; sourceTree = "<group>"; };
 		0C6CB5BF24CFD6B200471A8D /* EFRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFRefreshHeader.h; sourceTree = "<group>"; };
 		0C6CB5C024CFD6B200471A8D /* EFRefreshHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFRefreshHeader.m; sourceTree = "<group>"; };
+		0C78AA8224FCAE770001D670 /* XRWaterfallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRWaterfallLayout.h; sourceTree = "<group>"; };
+		0C78AA8324FCAE770001D670 /* XRWaterfallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRWaterfallLayout.m; sourceTree = "<group>"; };
 		0C8A274A24D6711F00E40ED8 /* EFCalendarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFCalendarView.h; sourceTree = "<group>"; };
 		0C8A274B24D6711F00E40ED8 /* EFCalendarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFCalendarView.m; sourceTree = "<group>"; };
 		0C8A274F24D672A200E40ED8 /* EFCalendarCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFCalendarCollectionViewCell.h; sourceTree = "<group>"; };
@@ -2515,6 +2520,8 @@
 		84A821BB24C033CC00EAC652 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0C78AA8224FCAE770001D670 /* XRWaterfallLayout.h */,
+				0C78AA8324FCAE770001D670 /* XRWaterfallLayout.m */,
 				84A821BC24C033EC00EAC652 /* SearchTwoCollectionViewCell.h */,
 				84A821BD24C033EC00EAC652 /* SearchTwoCollectionViewCell.m */,
 				84A821C124C03BB800EAC652 /* SeachOneCollectionViewCell.h */,
@@ -2928,6 +2935,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C78AA8424FCAE770001D670 /* XRWaterfallLayout.m in Sources */,
 				0C8A277424D6C44F00E40ED8 /* SKTag.m in Sources */,
 				0C8A278824D79BCE00E40ED8 /* EFFastTuanListViewController.m in Sources */,
 				0C0CC27524DC3202005E50ED /* CountDown.m in Sources */,
@@ -3176,6 +3184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C78AA8524FCAE770001D670 /* XRWaterfallLayout.m in Sources */,
 				0C8A277524D6C44F00E40ED8 /* SKTag.m in Sources */,
 				0C8A278924D79BCE00E40ED8 /* EFFastTuanListViewController.m in Sources */,
 				0C0CC27624DC3202005E50ED /* CountDown.m in Sources */,
@@ -3424,6 +3433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C78AA8624FCAE770001D670 /* XRWaterfallLayout.m in Sources */,
 				0C8A277624D6C44F00E40ED8 /* SKTag.m in Sources */,
 				0C8A278A24D79BCE00E40ED8 /* EFFastTuanListViewController.m in Sources */,
 				0C0CC27724DC3202005E50ED /* CountDown.m in Sources */,

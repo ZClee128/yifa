@@ -19,6 +19,12 @@
 #define zipPath    [NSString stringWithFormat:@"%@/%@.zip",path,fileName]
 #define tmpFilePath [NSTemporaryDirectory() stringByAppendingPathComponent:@"dist"]  //临时文件
 
+@interface H5Manager()
+
+@property (nonatomic,assign)BOOL isOk;
+
+@end
+
 @implementation H5Manager
 
 
@@ -83,6 +89,9 @@
     //    NSString * webPath = [NSString stringWithFormat:@"%@/zipDownload/%@/dist/index.html",cachesDir,fileName];
     //    NSString *webPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"dist"];
     //    XYLog(@"%@",webPath);
+    if (![self isTmpExist]) {
+        [self migrateDistToTempory];
+    }
     return [NSString stringWithFormat:@"%@/index.html",tmpFilePath];
 }
 
@@ -128,6 +137,7 @@
     // 从caches拷贝dist到tempory临时文件夹
     [[NSFileManager defaultManager] copyItemAtURL:[NSURL fileURLWithPath:cacheFilePath] toURL:[NSURL fileURLWithPath:tmpFilePath] error:&saveError];
     XYLog(@"%@",saveError);
+    self.isOk = saveError == nil;
 }
 
 @end

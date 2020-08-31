@@ -13,9 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIFont (RuntimeFit)
 
-+ (UIFont *)runtimeFitFont:(CGFloat)fontSize;
-
-+ (UIFont *)runtimeFitFont:(CGFloat)fontSize weight:(UIFontWeight)fontWeight;
+//+ (UIFont *)runtimeFitFont:(CGFloat)fontSize;
+//
+//+ (UIFont *)runtimeFitFont:(CGFloat)fontSize weight:(UIFontWeight)fontWeight;
 @end
 
 NS_ASSUME_NONNULL_END
