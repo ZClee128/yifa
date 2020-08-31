@@ -112,12 +112,17 @@
     self.cellHeight = [cell getCellHeight];
     @weakify(self);
     cell.deletBlcok = ^{
-        [[EFAddressVM delAddress:model.uuaNo] subscribeNext:^(NSNumber *x) {
-            @strongify(self);
-            if ([x boolValue]) {
-                [self loadList];
-            }
+        [[XQCAlertTool showAlertTitle:@"" message:@"是否删除该地址" cancle:@"取消" sure:@"确认"] subscribeNext:^(id  _Nullable x) {
+            [[EFAddressVM delAddress:model.uuaNo] subscribeNext:^(NSNumber *x) {
+                @strongify(self);
+                if ([x boolValue]) {
+                    [self loadList];
+                }
+            }];
+        } error:^(NSError * _Nullable error) {
+            
         }];
+        
     };
     
     cell.editBlock = ^{

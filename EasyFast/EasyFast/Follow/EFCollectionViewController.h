@@ -6,11 +6,11 @@
 //  Copyright © 2020 EasyFast. All rights reserved.
 //
 
-#import "EFBaseViewController.h"
+#import "EFBaseCollectionViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EFCollectionViewController : EFBaseViewController<JXCategoryListContentViewDelegate>
+@interface EFCollectionViewController : EFBaseCollectionViewController<JXCategoryListContentViewDelegate>
 
 @end
 

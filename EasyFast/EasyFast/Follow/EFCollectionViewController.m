@@ -12,12 +12,9 @@
 #import "EFCollectionVM.h"
 #import "EFRefreshHeader.h"
 
-@interface EFCollectionViewController ()<UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface EFCollectionViewController ()
 
 @property (nonatomic,assign) BOOL isOne;
-@property (nonatomic,strong)UICollectionView *collect;
-@property (nonatomic,strong)NSMutableArray *data;
-@property (nonatomic,strong)UICollectionViewFlowLayout *flow;
 @property (nonatomic,strong) QMUIButton *leftBtn;
 @property (nonatomic,strong)QMUIButton *MiddleBtn;
 @property (nonatomic,strong)EFCollectionVM *collectVM;
@@ -25,101 +22,64 @@
 
 @implementation EFCollectionViewController
 
--(NSMutableArray *)data
-{
-    if (_data == nil) {
-        _data = [[NSMutableArray alloc]init];
-    }
-    return _data;
-}
-
--(UICollectionView *)collect
-{
-    if (_collect == nil) {
-        self.flow = [[UICollectionViewFlowLayout alloc] init];
-        [self.flow setScrollDirection:UICollectionViewScrollDirectionVertical];//竖滑动
-        self.flow.minimumLineSpacing = WidthOfScale(0);
-//        self.flow.minimumInteritemSpacing = WidthOfScale(10);
-        self.flow.itemSize = CGSizeMake(kPHONE_WIDTH, WidthOfScale(155));
-        _collect = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 47, kPHONE_WIDTH,kPHONE_HEIGHT - NAVIGATION_BAR_HEIGHT - 47 - TAB_BAR_HEIGHT - 45) collectionViewLayout:self.flow];
-        _collect.backgroundColor = [UIColor clearColor];
-        _collect.delegate = self;
-        _collect.dataSource = self;
-        _collect.showsHorizontalScrollIndicator = NO;
-        _collect.showsVerticalScrollIndicator = NO;
-        _collect.contentInset = UIEdgeInsetsMake(0,0,0,0);
-//        [_collect registerClass:[SearchTwoCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([SearchTwoCollectionViewCell class])];
-        [_collect registerClass:[SeachOneCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([SeachOneCollectionViewCell class])];
-        _collect.tabAnimated = [TABCollectionAnimated animatedWithCellClass:[SeachOneCollectionViewCell class] cellSize:CGSizeMake(kPHONE_WIDTH, WidthOfScale(155))];
-        _collect.tabAnimated.canLoadAgain = YES;
-    }
-    return _collect;
-}
-
 
 - (void)viewDidLoad {
     self.viewModel = [[EFCollectionVM alloc] init];
+    self.lineSpacing = 0;
+    self.interitemSpacing = WidthOfScale(10);
+    self.itemSize = CGSizeMake(kPHONE_WIDTH, WidthOfScale(155));
+    self.registerClasses = @[@{@"SeachOneCollectionViewCell":NSStringFromClass([SeachOneCollectionViewCell class])}];
     [super viewDidLoad];
+    self.collectionView.frame = CGRectMake(0, 47, kPHONE_WIDTH,kPHONE_HEIGHT - NAVIGATION_BAR_HEIGHT - 47 - TAB_BAR_HEIGHT - 45);
+    self.collectionView.tabAnimated = [TABCollectionAnimated animatedWithCellClass:[SeachOneCollectionViewCell class] cellSize:CGSizeMake(kPHONE_WIDTH, WidthOfScale(155))];
+    self.collectionView.tabAnimated.canLoadAgain = YES;
     self.collectVM = (EFCollectionVM *)self.viewModel;
     self.view.backgroundColor = UIColor.whiteColor;
     self.isOne = NO;
     self.gk_navigationBar.hidden = YES;
     [self.view addSubview:[self headerView]];
-    [self.view addSubview:self.collect];
-    [self addRefshUp];
-    [self addRefshDown];
-    
     [self loadCollectionWith:1 sortType:0];
+    [self addRefshDown];
 }
 
 - (void)loadCollectionWith:(NSInteger )type sortType:(NSInteger )sortType {
     self.collectVM.type = type;
     self.collectVM.sortType = sortType;
     @weakify(self);
-    [self.collect tab_startAnimationWithCompletion:^{
-    [[self.collectVM refreshForDown] subscribeNext:^(RACTuple *x) {
-        @strongify(self);
-        [self.collect.mj_header endRefreshing];
-        [self.collect tab_endAnimation];
-        self.data = x.first;
-        [self.collect reloadData];
+    [self.collectionView tab_startAnimationWithCompletion:^{
+        [[self.collectVM refreshForDown] subscribeNext:^(RACTuple *x) {
+            @strongify(self);
+            [self.collectionView.mj_header endRefreshing];
+            [self.collectionView tab_endAnimation];
+            self.EFData = x.first;
+            [self addRefshUp];
+            [self reloadDataCompleted:^(EFBaseUICollectionView * _Nonnull collection) {
+                [collection reloadData];
+            }];
+        }];
     }];
-    }];
-}
-
-- (void)addRefshDown {
-    // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
-    EFRefreshHeader *header = [EFRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
-    header.lastUpdatedTimeLabel.hidden = YES;
-    // 设置header
-    self.collect.mj_header = header;
-    
 }
 
 - (void)loadNewData {
     @weakify(self);
-    [self.collect tab_stopPullLoading];
+    [self.collectionView tab_stopPullLoading];
     [[self.collectVM refreshForDown] subscribeNext:^(RACTuple *x) {
         @strongify(self);
-        [self.collect.mj_header endRefreshing];
-        [self.collect tab_endAnimation];
-        self.data = x.first;
-        [self.collect reloadData];
+        [self.collectionView.mj_header endRefreshing];
+        [self.collectionView tab_endAnimation];
+        self.EFData = x.first;
+        [self addRefshUp];
+        [self.collectionView reloadData];
     }];
-}
-
-- (void)addRefshUp {
-    MJRefreshBackGifFooter *footer = [MJRefreshBackGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
-    self.collect.mj_footer = footer;
 }
 
 - (void)loadMoreData {
     @weakify(self);
     [[self.collectVM refreshForUp] subscribeNext:^(RACTuple *x) {
         @strongify(self);
-        [self.collect.mj_footer endRefreshing];
-        self.data = x.first;
-        [self.collect reloadData];
+        [self.collectionView.mj_footer endRefreshing];
+        self.EFData = x.first;
+        [self.collectionView reloadData];
     }];
 }
 
@@ -252,13 +212,13 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.data.count;
+    return self.EFData.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     //    if (self.isOne) {
     SeachOneCollectionViewCell *oneCell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([SeachOneCollectionViewCell class]) forIndexPath:indexPath];
-    EFGoodsList *model = self.data[indexPath.item];
+    EFGoodsList *model = self.EFData[indexPath.item];
     [oneCell setModel:model];
     [oneCell setBtnStyle];
     oneCell.seletBtnBlock = ^(QMUIButton * _Nonnull sender) {
@@ -278,6 +238,7 @@
             }];
         }
     };
+    XYLog(@"dddfd>>>%@",oneCell);
     return oneCell;
     //    }else{
     //        SearchTwoCollectionViewCell *twoCell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([SearchTwoCollectionViewCell class]) forIndexPath:indexPath];
@@ -286,16 +247,16 @@
     //    }
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
-    return CGSizeMake(0, 50);
-}
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
-    return CGSizeMake(0, 0);
-}
+//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
+//    return CGSizeMake(0, 50);
+//}
+//
+//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+//    return CGSizeMake(0, 0);
+//}
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    EFGoodsList *model = self.data[indexPath.item];
+    EFGoodsList *model = self.EFData[indexPath.item];
     [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(NO),@"ggNo":model.ggNo}];
 }
 @end
