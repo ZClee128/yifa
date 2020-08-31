@@ -154,6 +154,31 @@
             [alertController addTextFieldWithConfigurationHandler:^(UITextField *_Nonnull textField) {
                 textField.placeholder=@"请输入昵称";
                 textField.delegate = self;
+                [[textField rac_signalForControlEvents:(UIControlEventEditingChanged)] subscribeNext:^(UITextField *x) {
+                    NSString *toBeString = textField.text;
+                    
+                    //获取高亮部分
+                    UITextRange *selectedRange = [textField markedTextRange];
+                    UITextPosition *position = [textField positionFromPosition:selectedRange.start offset:0];
+                    
+                    // 没有高亮选择的字，则对已输入的文字进行字数统计和限制
+                    if (!position)
+                    {
+                        if (toBeString.length > 8)
+                        {
+                            NSRange rangeIndex = [toBeString rangeOfComposedCharacterSequenceAtIndex:8];
+                            if (rangeIndex.length == 1)
+                            {
+                                textField.text = [toBeString substringToIndex:8];
+                            }
+                            else
+                            {
+                                NSRange rangeRange = [toBeString rangeOfComposedCharacterSequencesForRange:NSMakeRange(0, 8)];
+                                textField.text = [toBeString substringWithRange:rangeRange];
+                            }
+                        }
+                    }
+                }];
             }];
             [self presentViewController:alertController animated:YES completion:nil];
             break;
@@ -234,10 +259,10 @@
 }
 
 
+//- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+//    NSInteger strLength = textField.text.length - range.length + string.length;
+//    return (strLength <= 8);
+//}
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    NSInteger strLength = textField.text.length - range.length + string.length;
-    return (strLength <= 8);
-}
 
 @end

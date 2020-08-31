@@ -22,6 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 密码规则
 - (BOOL)deptNumInputShouldNumber;
+
+/// 是否中文
+- (BOOL)isChinese;
 @end
 
 NS_ASSUME_NONNULL_END
