@@ -82,7 +82,7 @@
     [self.bridge setWebViewDelegate:self];
 //
     if ([kH5Manager isExist]) {
-        if ([[kH5Manager openIndex] isEqualToString:@""] || [kH5Manager openIndex]) {
+        if ([[kH5Manager openIndex] isEqualToString:@""] || [kH5Manager openIndex] == nil) {
             [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[kH5Manager getModel] ? [kH5Manager getModel].loadingUrl : @"https://api.one-fast.com/"]]];
             return;
         }

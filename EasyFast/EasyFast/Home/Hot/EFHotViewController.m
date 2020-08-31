@@ -114,7 +114,6 @@
 //    self.EFTableView.tabAnimated = [TABTableAnimated animatedWithCellClass:[EFGoodsTableViewCell class] cellHeight:WidthOfScale(140)+15];
     self.EFTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, 10)];
     [self addRefshDown];
-    [self addRefshUp];
 //    @weakify(self);
 //    [self.EFTableView tab_startAnimationWithCompletion:^{
 //        @strongify(self);
@@ -148,7 +147,7 @@
         
         /// 批发
         self.EFData = [((RACTuple *)x.fourth).first mutableCopy];
-        
+        [self addRefshUp];
         /// 急速拼团
         self.fastArr = [x.last mutableCopy];
         [self.EFTableView reloadData];

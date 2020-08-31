@@ -113,56 +113,60 @@
 
 - (void)loadHistory {
     @weakify(self);
-    [[EFSearchVM getSearchHistoryList] subscribeNext:^(NSArray *x) {
-        @strongify(self);
-//        self.tagView.tagTitleArray = x;
-//        [self.tagView createTags];
-        [x enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-           // 初始化标签
-            SKTag *tag = [[SKTag alloc] initWithText:x[idx]];
-            // 标签相对于自己容器的上左下右的距离
-            tag.padding = UIEdgeInsetsMake(8, 21, 8, 21);
-            // 弧度
-            tag.cornerRadius = 5.0f;
-            // 字体
-            tag.font = RegularFont14;
-            // 边框宽度
-            tag.borderWidth = 0;
-            // 背景
-            tag.bgColor = colorfafafa;
-            // 边框颜色
-//            tag.borderColor = [UIColor colorWithRed:191/255.0 green:191/255.0 blue:191/255.0 alpha:1];
-            // 字体颜色
-            tag.textColor = tabbarBlackColor;
-            // 是否可点击
-            tag.enable = YES;
-            // 加入到tagView
-            [self.tagView addTag:tag];
-        }];
-        // 点击事件回调
-        self.tagView.didTapTagAtIndex = ^(NSUInteger idx){
-            XYLog(@"点击了第%ld个",idx);
+    if (kUserManager.userModel != nil && kUserManager.userModel.isLogin) {
+        [[EFSearchVM getSearchHistoryList] subscribeNext:^(NSArray *x) {
             @strongify(self);
-            NSString *searchTitle = x[idx];
-            EFSearchResultViewController *resultVC = [[EFSearchResultViewController alloc] initWithSearchTitle:searchTitle];
-            self.isRoot = YES;
-            [self.navigationController pushViewController:resultVC animated:NO];
-        };
-        // 获取刚才加入所有tag之后的内在高度
-        CGFloat tagHeight = self.tagView.intrinsicContentSize.height;
-        XYLog(@"高度%lf",tagHeight);
-        self.tagView.frame = CGRectMake(0, NAVIGATION_BAR_HEIGHT + 20, kPHONE_WIDTH, tagHeight);
-        [self.tagView layoutSubviews];
-        [self.view addSubview:self.tagView];
-    }];
+            //        self.tagView.tagTitleArray = x;
+            //        [self.tagView createTags];
+            [x enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                // 初始化标签
+                SKTag *tag = [[SKTag alloc] initWithText:x[idx]];
+                // 标签相对于自己容器的上左下右的距离
+                tag.padding = UIEdgeInsetsMake(8, 21, 8, 21);
+                // 弧度
+                tag.cornerRadius = 5.0f;
+                // 字体
+                tag.font = RegularFont14;
+                // 边框宽度
+                tag.borderWidth = 0;
+                // 背景
+                tag.bgColor = colorfafafa;
+                // 边框颜色
+                //            tag.borderColor = [UIColor colorWithRed:191/255.0 green:191/255.0 blue:191/255.0 alpha:1];
+                // 字体颜色
+                tag.textColor = tabbarBlackColor;
+                // 是否可点击
+                tag.enable = YES;
+                // 加入到tagView
+                [self.tagView addTag:tag];
+            }];
+            // 点击事件回调
+            self.tagView.didTapTagAtIndex = ^(NSUInteger idx){
+                XYLog(@"点击了第%ld个",idx);
+                @strongify(self);
+                NSString *searchTitle = x[idx];
+                EFSearchResultViewController *resultVC = [[EFSearchResultViewController alloc] initWithSearchTitle:searchTitle];
+                self.isRoot = YES;
+                [self.navigationController pushViewController:resultVC animated:NO];
+            };
+            // 获取刚才加入所有tag之后的内在高度
+            CGFloat tagHeight = self.tagView.intrinsicContentSize.height;
+            XYLog(@"高度%lf",tagHeight);
+            self.tagView.frame = CGRectMake(0, NAVIGATION_BAR_HEIGHT + 20, kPHONE_WIDTH, tagHeight);
+            [self.tagView layoutSubviews];
+            [self.view addSubview:self.tagView];
+        }];
+    }
 }
 
 - (void)recordSearch:(NSString *)text {
     @weakify(self);
-    [[[FMARCNetwork sharedInstance] recordGoodsLogType:1 category:@"" goodsNo:@"" searchText:text] subscribeNext:^(FMHttpResonse *x) {
-        @strongify(self);
-       [self loadHistory];
-    }];
+    if (kUserManager.userModel != nil && kUserManager.userModel.isLogin) {
+        [[[FMARCNetwork sharedInstance] recordGoodsLogType:1 category:@"" goodsNo:@"" searchText:text] subscribeNext:^(FMHttpResonse *x) {
+            @strongify(self);
+            [self loadHistory];
+        }];
+    }
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
