@@ -202,9 +202,15 @@
         if (kAppDelegate.isOneBindPhone) {
             [[LoginVM thirdLoginBindingMessage:self.codeStr phone:self.phone] subscribeNext:^(NSNumber *x) {
                 if ([x boolValue]) {
-                    [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:^{
-                        
-                    }];
+                    if (kAppDelegate.isOkOnePhone) {
+                        [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:^{
+                            
+                        }];
+                    }else {
+                        [self.navigationController qmui_popToRootViewControllerAnimated:YES completion:^{
+                            
+                        }];
+                    }
                 }
             }];
         }else {

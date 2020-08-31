@@ -17,26 +17,10 @@
 
 @property (nonatomic,strong)QMUILabel *searchField;
 @property (nonatomic,assign)CGFloat cellHeight;
-@property (nonatomic,strong)NSMutableDictionary *cellHeightDict;
-@property (nonatomic,strong)NSMutableDictionary *twocellHeightDict;
 @property (nonatomic,strong)XRWaterfallLayout *fallLayout;
 @end
 
 @implementation EFSearchResultViewController
-
-- (NSMutableDictionary *)cellHeightDict {
-    if (_cellHeightDict == nil) {
-        _cellHeightDict = [[NSMutableDictionary alloc] init];
-    }
-    return _cellHeightDict;
-}
-
-- (NSMutableDictionary *)twocellHeightDict {
-    if (_twocellHeightDict == nil) {
-        _twocellHeightDict = [[NSMutableDictionary alloc] init];
-    }
-    return _twocellHeightDict;
-}
 
 
 -(QMUILabel *)searchField

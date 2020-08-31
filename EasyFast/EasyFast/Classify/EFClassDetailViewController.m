@@ -10,11 +10,12 @@
 #import "EFHomeVM.h"
 #import "SearchTwoCollectionViewCell.h"
 #import "SeachOneCollectionViewCell.h"
-
-@interface EFClassDetailViewController ()
+#import "XRWaterfallLayout.h"
+@interface EFClassDetailViewController ()<XRWaterfallLayoutDelegate>
 
 @property (nonatomic,strong)EFClassifyModel *model;
 @property (nonatomic,assign) BOOL isOne;
+@property (nonatomic,strong)XRWaterfallLayout *fallLayout;
 @end
 
 @implementation EFClassDetailViewController
@@ -31,25 +32,43 @@
 - (void)viewDidLoad {
     self.viewModel = [[EFHomeVM alloc] init];
     ((EFHomeVM *)self.viewModel).orderBy = @(0);
-    self.lineSpacing = WidthOfScale(11);
-    self.interitemSpacing = WidthOfScale(10);
-    self.itemSize = CGSizeMake(WidthOfScale(167), WidthOfScale(280));
+//    self.lineSpacing = WidthOfScale(11);
+//    self.interitemSpacing = WidthOfScale(10);
+//    self.itemSize = CGSizeMake(WidthOfScale(167), WidthOfScale(280));
     self.registerClasses = @[@{@"SearchTwoCollectionViewCell":@"SearchTwoCollectionViewCell"},@{@"SeachOneCollectionViewCell":@"SeachOneCollectionViewCell"}];
     self.collectionEdgeInsets = UIEdgeInsetsMake(0, WidthOfScale(15), WidthOfScale(15), WidthOfScale(15));
     [super viewDidLoad];
     self.collectionView.frame = CGRectMake(0, NAVIGATION_BAR_HEIGHT + 45, kPHONE_WIDTH,kPHONE_HEIGHT - NAVIGATION_BAR_HEIGHT - 45);
+    self.fallLayout = [XRWaterfallLayout waterFallLayoutWithColumnCount:2];
+    [self.fallLayout setColumnSpacing:WidthOfScale(10) rowSpacing:WidthOfScale(11) sectionInset:UIEdgeInsetsMake(WidthOfScale(15), WidthOfScale(15), WidthOfScale(15), WidthOfScale(15))];
+    self.fallLayout.delegate = self;
+    self.collectionView.collectionViewLayout = self.fallLayout;
     self.gk_navTitle = self.model.title;
     [self.view addSubview:[self headerView]];
     [self loadList];
+    [self addRefshDown];
 }
 
 - (void)loadList {
     [[(EFHomeVM *)self.viewModel refreshOtherForDown:self.model.ggcsCode] subscribeNext:^(RACTuple *x) {
+        [self.collectionView.mj_header endRefreshing];
         self.EFData = [x.first mutableCopy];
+        [self addRefshUp];
         [self.collectionView reloadData];
     }];
 }
 
+- (void)loadNewData {
+    [self loadList];
+}
+
+- (void)loadMoreData {
+    [[(EFHomeVM *)self.viewModel refreshOtherForUp:self.model.ggcsCode] subscribeNext:^(RACTuple *x) {
+        [self.collectionView.mj_footer endRefreshing];
+        self.EFData = [x.first mutableCopy];
+        [self.collectionView reloadData];
+    }];
+}
 
 
 - (UIView *)headerView {
@@ -92,19 +111,19 @@
         @strongify(self);
         self.isOne = x.selected;
         if (self.isOne) {
-            self.collectionEdgeInsets = UIEdgeInsetsMake(15,0,0,0);
-            [self defaultCollectionFlowLayout].minimumLineSpacing = WidthOfScale(0);
-            [self defaultCollectionFlowLayout].minimumInteritemSpacing = WidthOfScale(0);
-            [self defaultCollectionFlowLayout].itemSize = CGSizeMake(kPHONE_WIDTH, WidthOfScale(155));
+            self.fallLayout.columnCount = 1;
+            [self.fallLayout setColumnSpacing:0 rowSpacing:0 sectionInset:UIEdgeInsetsMake(15, 0, 0, 0)];
+            [self.fallLayout.maxYDic removeAllObjects];
         }else {
-            self.collectionEdgeInsets = UIEdgeInsetsMake(0, WidthOfScale(15), WidthOfScale(15), WidthOfScale(15));
-            [self defaultCollectionFlowLayout].minimumLineSpacing  = WidthOfScale(11);
-            [self defaultCollectionFlowLayout].minimumInteritemSpacing = WidthOfScale(10);
-            [self defaultCollectionFlowLayout].itemSize = CGSizeMake(WidthOfScale(167), WidthOfScale(280));
+            self.fallLayout.columnCount = 2;
+            [self.fallLayout setColumnSpacing:WidthOfScale(10) rowSpacing:WidthOfScale(11) sectionInset:UIEdgeInsetsMake(WidthOfScale(15), WidthOfScale(15), WidthOfScale(15), WidthOfScale(15))];
+            [self.fallLayout.maxYDic removeAllObjects];
             
         }
-        [[RACScheduler mainThreadScheduler] schedule:^{
-            [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
+        [self reloadDataCompleted:^(EFBaseUICollectionView * _Nonnull collection) {
+            [[RACScheduler mainThreadScheduler] schedule:^{
+                [collection reloadData];
+            }];
         }];
     }];
     
@@ -228,6 +247,18 @@
     }
 }
 
+- (CGFloat)waterfallLayout:(XRWaterfallLayout *)waterfallLayout itemHeightForWidth:(CGFloat)itemWidth atIndexPath:(NSIndexPath *)indexPath {
+    EFGoodsList *model = self.EFData[indexPath.item];
+    if (self.isOne) {
+        SeachOneCollectionViewCell *oneCell = [[SeachOneCollectionViewCell alloc] init];
+        [oneCell setModel:model];
+        return [oneCell cellHeight];
+    }else {
+        SearchTwoCollectionViewCell *twoCell = [[SearchTwoCollectionViewCell alloc] init];
+        [twoCell setModel:model];
+        return [twoCell cellHeight];
+    }
+}
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     EFGoodsList *model = self.EFData[indexPath.item];

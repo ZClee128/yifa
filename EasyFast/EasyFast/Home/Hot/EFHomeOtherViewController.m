@@ -51,7 +51,6 @@
     [self.EFTableView tab_startAnimationWithCompletion:^{
        [self loadList];
     }];
-    [self addRefshUp];
     [self addRefshDown];
 }
 
@@ -65,6 +64,7 @@
             [self.EFTableView.mj_header endRefreshing];
             [self.EFTableView tab_endAnimation];
             self.EFData = [x.first mutableCopy];
+            [self addRefshUp];
             [self.EFTableView reloadData];
         }];
     }];

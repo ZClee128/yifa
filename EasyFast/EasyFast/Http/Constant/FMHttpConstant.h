@@ -15,8 +15,8 @@
 
 
 /*******URL******/
-//#define BaseUrl @"http://192.168.3.36:9010/"
-#define BaseUrl @"https://api.one-fast.com/"
+#define BaseUrl @"http://192.168.3.16:9010/"
+//#define BaseUrl @"https://api.one-fast.com/"
 
 #define DevUrl @"http://47.111.173.179/"
 #define TestUrl @"http://47.111.173.179/"

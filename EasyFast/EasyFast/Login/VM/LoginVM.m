@@ -192,9 +192,15 @@
                 [model bg_saveOrUpdate];
                 XYLog(@"model = >%@",model);
                 [self setAlias:model.username];
-                [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:^{
-                    
-                }];
+                if (kAppDelegate.isOkOnePhone) {
+                    [JVERIFICATIONService dismissLoginControllerAnimated:YES completion:^{
+                        
+                    }];
+                }else {
+                    [[UIViewController getCurrentVC].navigationController qmui_popToRootViewControllerAnimated:YES completion:^{
+                        
+                    }];
+                }
                 [[NSNotificationCenter defaultCenter] postNotificationName:kLoginNoti object:nil];
             }else {
                 kAppDelegate.isOneBindPhone = YES;
