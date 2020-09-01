@@ -92,6 +92,7 @@
         return [[FMARCNetwork sharedInstance] loginOut];
     } toMap:^id _Nonnull(FMHttpResonse * _Nonnull result) {
         [self deletLoction];
+        [self loginOutIM];
         return @(result.isSuccess);
     }];
 }
@@ -263,6 +264,7 @@
     [JPUSHService setAlias:alias completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
         
     } seq:1];
+    [self loginIM:@"" sig:@""];
 }
 
 + (RACSignal *)downloadWebPage {
@@ -282,6 +284,22 @@
             }
         }
         return @(result.isSuccess);
+    }];
+}
+
++ (void)loginIM:(NSString *)userId sig:(NSString *)sig {
+    [[V2TIMManager sharedInstance] login:userId userSig:sig succ:^{
+        XYLog(@"登录IM成功");
+    } fail:^(int code, NSString *desc) {
+        XYLog(@"IMFail=>%d,%@",code,desc);
+    }];
+}
+
++ (void)loginOutIM {
+    [[V2TIMManager sharedInstance] logout:^{
+        XYLog(@"退出IM成功");
+    } fail:^(int code, NSString *desc) {
+        XYLog(@"IMFail=>%d,%@",code,desc);
     }];
 }
 @end

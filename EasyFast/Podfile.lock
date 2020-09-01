@@ -22,17 +22,17 @@ PODS:
   - BGFMDB/BG (2.0.13):
     - BGFMDB/FMDB
   - BGFMDB/FMDB (2.0.13)
-  - BRPickerView (2.6.8):
-    - BRPickerView/AddressPickerView (= 2.6.8)
-    - BRPickerView/Base (= 2.6.8)
-    - BRPickerView/DatePickerView (= 2.6.8)
-    - BRPickerView/StringPickerView (= 2.6.8)
-  - BRPickerView/AddressPickerView (2.6.8):
+  - BRPickerView (2.7.0):
+    - BRPickerView/AddressPickerView (= 2.7.0)
+    - BRPickerView/Base (= 2.7.0)
+    - BRPickerView/DatePickerView (= 2.7.0)
+    - BRPickerView/StringPickerView (= 2.7.0)
+  - BRPickerView/AddressPickerView (2.7.0):
     - BRPickerView/Base
-  - BRPickerView/Base (2.6.8)
-  - BRPickerView/DatePickerView (2.6.8):
+  - BRPickerView/Base (2.7.0)
+  - BRPickerView/DatePickerView (2.7.0):
     - BRPickerView/Base
-  - BRPickerView/StringPickerView (2.6.8):
+  - BRPickerView/StringPickerView (2.7.0):
     - BRPickerView/Base
   - CYLTabBarController (1.29.0):
     - CYLTabBarController/Core (= 1.29.0)
@@ -42,10 +42,10 @@ PODS:
   - GKNavigationBar (1.1.5)
   - IQKeyboardManager (6.5.6)
   - JCore (2.3.4)
-  - JPush (3.3.4):
+  - JPush (3.3.6):
     - JCore (< 3.0.0, >= 2.0.0)
   - JSBadgeView (2.0.0)
-  - JVerification (2.6.4):
+  - JVerification (2.6.5):
     - JCore (< 6.0.0, >= 2.1.6)
   - JXCategoryView (1.5.6)
   - Kiwi (3.0.0)
@@ -85,7 +85,7 @@ PODS:
     - SDWebImage/Core (= 5.5.2)
   - SDWebImage/Core (5.5.2)
   - SSZipArchive (2.2.3)
-  - TABAnimated (2.4.5)
+  - TABAnimated (2.4.6)
   - Toast (4.0.0)
   - TXIMSDK_iOS (4.9.1)
   - TXIMSDK_TUIKit_iOS (4.9.1):
@@ -213,16 +213,16 @@ SPEC CHECKSUMS:
   AlipaySDK-iOS: 94ff4c0e17c5e7d126b8207596d5033006534c25
   BaiduMapKit: b1706a062597c70ec62a0cca93212cba1d3017e1
   BGFMDB: 48e6823027232402a678acc7f71484b1fc9171d0
-  BRPickerView: a5b042396a183cf4c7b211759d8fd217da8a5a5e
+  BRPickerView: 882991201e8a27b9f41e4b6888d2871418e71f84
   CYLTabBarController: f5460b8446f82d016945d4d53895a1ef185b79e3
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
   EBBannerView: 268002f8d9d3e979cb8649cbfefd0da5ddef72b3
   GKNavigationBar: 8a3c9a1839b7aef2b5bd41a9c0c388c675919162
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   JCore: 8aa29dc57ba3730dd9fe7544ce1a4e1cbe221135
-  JPush: 6188b8f375a7113f4b62bb33e96e280dbcfa06be
+  JPush: a401b946dcc76b37335422487201bc1ecc8dd296
   JSBadgeView: 3f5691b7d1bfacfb0237d0eb3b8b1f9a10ecb3f7
-  JVerification: 85c0b1ae2a55f167b97f9d831bb8c2e03d3da22d
+  JVerification: c2da4dc895b77854245dfd83ab6a7a34c3741725
   JXCategoryView: 603ccd8277a89b1a73e9cedb9d8ed4b294576008
   Kiwi: fbeafef0f00e4d8f7dcb3420a4930afe70af77f7
   LYEmptyView: b6d418cfa38b78df0cf243f9a9c25ccbdc399922
@@ -237,7 +237,7 @@ SPEC CHECKSUMS:
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: 4d5c027c935438f341ed33dbac53ff9f479922ca
   SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
-  TABAnimated: 496f3836b5922923899865644167cda7f3ed3465
+  TABAnimated: 46b764df4fb4c3450a10dd2200d14382f62ca916
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   TXIMSDK_iOS: 587e25fa8b42c9f228bb9065084270fa6990190f
   TXIMSDK_TUIKit_iOS: 6bb8125bd29debc723bb64e3514e7c2f11bc538a

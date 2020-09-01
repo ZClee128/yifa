@@ -56,6 +56,7 @@
 #import "TABAnimatedProductDefines.h"
 #import "TABAnimatedProductInterface.h"
 #import "TABComponentLayerSerializationInterface.h"
+#import "TABAnimatedNormalViewProductImpl.h"
 #import "TABAnimatedProductHelper.h"
 #import "TABAnimatedProductImpl.h"
 #import "TABAnimatedProduction.h"

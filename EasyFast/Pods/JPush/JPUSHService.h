@@ -9,7 +9,7 @@
  * Copyright (c) 2011 ~ 2017 Shenzhen HXHG. All rights reserved.
  */
 
-#define JPUSH_VERSION_NUMBER 3.3.4
+#define JPUSH_VERSION_NUMBER 3.3.6
 
 #import <Foundation/Foundation.h>
 
@@ -27,6 +27,7 @@
 typedef void (^JPUSHTagsOperationCompletion)(NSInteger iResCode, NSSet *iTags, NSInteger seq);
 typedef void (^JPUSHTagValidOperationCompletion)(NSInteger iResCode, NSSet *iTags, NSInteger seq, BOOL isBind);
 typedef void (^JPUSHAliasOperationCompletion)(NSInteger iResCode, NSString *iAlias, NSInteger seq);
+typedef void (^JPUSHInMssageCompletion)(NSInteger iResCode);
 
 extern NSString *const kJPFNetworkIsConnectingNotification; // 正在连接中
 extern NSString *const kJPFNetworkDidSetupNotification;     // 建立连接
@@ -650,6 +651,15 @@ typedef NS_ENUM(NSUInteger, JPAuthorizationStatus) {
 */
 + (void)setInMessageDelegate:(id<JPushInMessageDelegate>)inMessageDelegate;
 
+
+/*!
+* @abstract 主动拉取应用内消息的接口
+*
+* @discussion 拉取结果的回调
+*
+*/
++ (void)pullInMessageCompletion:(JPUSHInMssageCompletion)completion;
+
 ///----------------------------------------------------
 ///********************下列方法已过期********************
 ///**************请使用新版tag/alias操作接口**************
@@ -759,6 +769,6 @@ callbackSelector:(SEL)cbSelector
 /**
  *应用内消息已消失
 */
-- (void)jPushInMessageAlreadyDisapperar;
+- (void)jPushInMessageAlreadyDisappear;
 
 @end
