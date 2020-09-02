@@ -9,7 +9,7 @@
 #import "EFHelpViewController.h"
 #import "EFHelpTableViewCell.h"
 #import "EFHelpVM.h"
-
+#import "EFConversationViewController.h"
 @interface EFHelpViewController ()<QMUITextFieldDelegate>
 
 @end
@@ -80,8 +80,13 @@
     self.kefu.imagePosition = QMUIButtonImagePositionLeft;
     self.kefu.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, WidthOfScale(10.5));
     [self.view addSubview:self.kefu];
+    @weakify(self);
     [[self.kefu rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-        
+        @strongify(self);
+        EFConversationViewController *vc = [[EFConversationViewController alloc] init];
+        [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+            
+        }];
     }];
     [self.kefu mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.view);

@@ -195,6 +195,12 @@
 		0C78AAAD24FFC32C0001D670 /* EFMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C78AAAC24FFC32C0001D670 /* EFMessageCellData.m */; };
 		0C78AAAE24FFC32C0001D670 /* EFMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C78AAAC24FFC32C0001D670 /* EFMessageCellData.m */; };
 		0C78AAAF24FFC32C0001D670 /* EFMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C78AAAC24FFC32C0001D670 /* EFMessageCellData.m */; };
+		0C78AAB624FFC9940001D670 /* PAirSandbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C78AAB224FFC9930001D670 /* PAirSandbox.m */; };
+		0C78AAB724FFC9940001D670 /* PAirSandbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C78AAB224FFC9930001D670 /* PAirSandbox.m */; };
+		0C78AAB824FFC9940001D670 /* PAirSandbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C78AAB224FFC9930001D670 /* PAirSandbox.m */; };
+		0C78AAB924FFC9940001D670 /* TCUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C78AAB524FFC9930001D670 /* TCUtil.m */; };
+		0C78AABA24FFC9940001D670 /* TCUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C78AAB524FFC9930001D670 /* TCUtil.m */; };
+		0C78AABB24FFC9940001D670 /* TCUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C78AAB524FFC9930001D670 /* TCUtil.m */; };
 		0C8A274C24D6711F00E40ED8 /* EFCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A274B24D6711F00E40ED8 /* EFCalendarView.m */; };
 		0C8A274D24D6711F00E40ED8 /* EFCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A274B24D6711F00E40ED8 /* EFCalendarView.m */; };
 		0C8A274E24D6711F00E40ED8 /* EFCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A274B24D6711F00E40ED8 /* EFCalendarView.m */; };
@@ -921,6 +927,10 @@
 		0C78AAA724FFC10A0001D670 /* EFMessageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFMessageTableViewCell.m; sourceTree = "<group>"; };
 		0C78AAAB24FFC32C0001D670 /* EFMessageCellData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFMessageCellData.h; sourceTree = "<group>"; };
 		0C78AAAC24FFC32C0001D670 /* EFMessageCellData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFMessageCellData.m; sourceTree = "<group>"; };
+		0C78AAB124FFC9930001D670 /* PAirSandbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAirSandbox.h; sourceTree = "<group>"; };
+		0C78AAB224FFC9930001D670 /* PAirSandbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAirSandbox.m; sourceTree = "<group>"; };
+		0C78AAB424FFC9930001D670 /* TCUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCUtil.h; sourceTree = "<group>"; };
+		0C78AAB524FFC9930001D670 /* TCUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCUtil.m; sourceTree = "<group>"; };
 		0C8A274A24D6711F00E40ED8 /* EFCalendarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFCalendarView.h; sourceTree = "<group>"; };
 		0C8A274B24D6711F00E40ED8 /* EFCalendarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFCalendarView.m; sourceTree = "<group>"; };
 		0C8A274F24D672A200E40ED8 /* EFCalendarCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFCalendarCollectionViewCell.h; sourceTree = "<group>"; };
@@ -1584,6 +1594,17 @@
 			path = WebViewPool;
 			sourceTree = "<group>";
 		};
+		0C78AAB024FFC9930001D670 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				0C78AAB124FFC9930001D670 /* PAirSandbox.h */,
+				0C78AAB224FFC9930001D670 /* PAirSandbox.m */,
+				0C78AAB424FFC9930001D670 /* TCUtil.h */,
+				0C78AAB524FFC9930001D670 /* TCUtil.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		0C8A274924D670BC00E40ED8 /* MyCalendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -1795,6 +1816,7 @@
 		0CCEC47924CABB9700976D24 /* IM */ = {
 			isa = PBXGroup;
 			children = (
+				0C78AAB024FFC9930001D670 /* Util */,
 				0CBE6A2324E405D3003C300F /* Model */,
 				0CBE6A1D24E3FE9C003C300F /* VM */,
 				0CCEC47F24CABDBC00976D24 /* View */,
@@ -2978,6 +3000,7 @@
 				0C6CB5C124CFD6B200471A8D /* EFRefreshHeader.m in Sources */,
 				0C0CC3DA24E12148005E50ED /* EFExpressModel.m in Sources */,
 				0C8A27D024D8F28500E40ED8 /* EFUserModel.m in Sources */,
+				0C78AAB924FFC9940001D670 /* TCUtil.m in Sources */,
 				0C8A27CA24D8F15000E40ED8 /* UserManager.m in Sources */,
 				0C0CC41D24E28516005E50ED /* EFNoticeModel.m in Sources */,
 				0C6CB58E24CEB19000471A8D /* UITextField+MyExtension.m in Sources */,
@@ -3029,6 +3052,7 @@
 				84187CA924C05E8200ED3F96 /* VerticalLabelBotton.m in Sources */,
 				0CBE6A2B24E4111D003C300F /* EFOrderSearchViewController.m in Sources */,
 				84A820E224B6EADF00EAC652 /* EFBaseTabBarViewController.m in Sources */,
+				0C78AAB624FFC9940001D670 /* PAirSandbox.m in Sources */,
 				0C8A29D624DAAF5E00E40ED8 /* NSString+base64.m in Sources */,
 				8476117F24C6F3A9002B34E4 /* UIView+XQCAlertPop.m in Sources */,
 				0C6CB5A724CEC61100471A8D /* EFOneBtnLoginTableViewCell.m in Sources */,
@@ -3232,6 +3256,7 @@
 				0C6CB5C224CFD6B200471A8D /* EFRefreshHeader.m in Sources */,
 				0C0CC3DB24E12148005E50ED /* EFExpressModel.m in Sources */,
 				0C8A27D124D8F28500E40ED8 /* EFUserModel.m in Sources */,
+				0C78AABA24FFC9940001D670 /* TCUtil.m in Sources */,
 				0C8A27CB24D8F15000E40ED8 /* UserManager.m in Sources */,
 				0C0CC41E24E28516005E50ED /* EFNoticeModel.m in Sources */,
 				0C6CB58F24CEB19000471A8D /* UITextField+MyExtension.m in Sources */,
@@ -3283,6 +3308,7 @@
 				84187CAA24C05E8200ED3F96 /* VerticalLabelBotton.m in Sources */,
 				0CBE6A2C24E4111D003C300F /* EFOrderSearchViewController.m in Sources */,
 				84A8210024BC4F5400EAC652 /* EFMeViewController.m in Sources */,
+				0C78AAB724FFC9940001D670 /* PAirSandbox.m in Sources */,
 				0C8A29D724DAAF5F00E40ED8 /* NSString+base64.m in Sources */,
 				8476118024C6F3A9002B34E4 /* UIView+XQCAlertPop.m in Sources */,
 				0C6CB5A824CEC61100471A8D /* EFOneBtnLoginTableViewCell.m in Sources */,
@@ -3486,6 +3512,7 @@
 				0C6CB5C324CFD6B200471A8D /* EFRefreshHeader.m in Sources */,
 				0C0CC3DC24E12148005E50ED /* EFExpressModel.m in Sources */,
 				0C8A27D224D8F28500E40ED8 /* EFUserModel.m in Sources */,
+				0C78AABB24FFC9940001D670 /* TCUtil.m in Sources */,
 				0C8A27CC24D8F15000E40ED8 /* UserManager.m in Sources */,
 				0C0CC41F24E28516005E50ED /* EFNoticeModel.m in Sources */,
 				0C6CB59024CEB19000471A8D /* UITextField+MyExtension.m in Sources */,
@@ -3537,6 +3564,7 @@
 				84187CAB24C05E8200ED3F96 /* VerticalLabelBotton.m in Sources */,
 				0CBE6A2D24E4111D003C300F /* EFOrderSearchViewController.m in Sources */,
 				84A8212324BC513500EAC652 /* EFBaseTabBarViewController.m in Sources */,
+				0C78AAB824FFC9940001D670 /* PAirSandbox.m in Sources */,
 				0C8A29D824DAAF5F00E40ED8 /* NSString+base64.m in Sources */,
 				8476118124C6F3A9002B34E4 /* UIView+XQCAlertPop.m in Sources */,
 				0C6CB5A924CEC61100471A8D /* EFOneBtnLoginTableViewCell.m in Sources */,

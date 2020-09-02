@@ -23,7 +23,7 @@
 #import "THelper.h"
 #import "EFMessageTableViewCell.h"
 #import "EFMessageCellData.h"
-
+#import "TCUtil.h"
 // MLeaksFinder 会对这个类误报，这里需要关闭一下
 @implementation UIImagePickerController (Leak)
 
@@ -168,7 +168,7 @@
         NSString *text = @"欢迎加入腾讯·云通信大家庭！";
         EFMessageCellData *cellData = [[EFMessageCellData alloc] initWithDirection:MsgDirectionOutgoing];
         cellData.text = text;
-//        cellData.innerMessage = [[V2TIMManager sharedInstance] createCustomMessage:[TCUtil dictionary2JsonData:@{@"version": @(Version),@"businessID": @"text_link",@"text":text,@"link":link}]];
+        cellData.innerMessage = [[V2TIMManager sharedInstance] createCustomMessage:[TCUtil dictionary2JsonData:@{@"businessID": @"text_link",@"text":text}]];
         [chatController sendMessage:cellData];
     }
 }
