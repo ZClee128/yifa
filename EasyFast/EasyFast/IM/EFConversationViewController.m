@@ -32,7 +32,7 @@
 
 @end
 
-@interface EFConversationViewController ()<TUIChatControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate>
+@interface EFConversationViewController ()<TUIChatControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate,V2TIMAdvancedMsgListener>
 @property (nonatomic, strong) TUIChatController *chat;
 @end
 
@@ -85,6 +85,7 @@
     _chat.inputController.menuView.backgroundColor = UIColor.whiteColor;
     RAC(self, title) = [RACObserve(_conversationData, title) distinctUntilChanged];
     [self checkTitle];
+    [[V2TIMManager sharedInstance] addAdvancedMsgListener:self];
 }
 
 - (void)checkTitle {
@@ -290,5 +291,9 @@
 
 - (void)sendMessage:(TUIMessageCellData*)msg {
     [_chat sendMessage:msg];
+}
+
+- (void)onRecvNewMessage:(V2TIMMessage *)msg{
+    XYLog(@"收到消息了>>>%@",msg);
 }
 @end

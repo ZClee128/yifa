@@ -54,7 +54,13 @@
 }
 
 - (void)setUI {
-    self.contentView.backgroundColor = colorfafafa;
+    CAGradientLayer *gl = [CAGradientLayer layer];
+    gl.frame = CGRectMake(0, 0, kPHONE_WIDTH, self.collect.height);
+    gl.startPoint = CGPointMake(0, 0);
+    gl.endPoint = CGPointMake(1, 1);
+    gl.colors = @[(__bridge id)[UIColor colorWithRed:239/255.0 green:225/255.0 blue:217/255.0 alpha:1.0].CGColor,(__bridge id)[UIColor colorWithRed:250/255.0 green:250/255.0 blue:250/255.0 alpha:1.0].CGColor];
+    gl.locations = @[@(0.0),@(1.0f)];
+    [self.layer addSublayer:gl];
     [self.contentView addSubview:self.collect];
 }
 

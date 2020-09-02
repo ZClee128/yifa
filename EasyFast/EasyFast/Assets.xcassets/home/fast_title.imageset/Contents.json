@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "搜索.png",
+      "filename" : "fast_title.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "搜索@2x.png",
+      "filename" : "fast_title@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "搜索@3x.png",
+      "filename" : "fast_title@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

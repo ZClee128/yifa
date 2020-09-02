@@ -8,7 +8,7 @@
 
 #import "CustomerScrollView.h"
 #import "EFActivityModel.h"
-#define NumberOfSinglePage 8 // 一个页面可容纳的最多按钮数
+#define NumberOfSinglePage 4 // 一个页面可容纳的最多按钮数
 #define ViewGap WidthOfScale(34)
 #define ViewMargin 0
 #define BtnWH WidthOfScale(69.5)
@@ -72,7 +72,6 @@
     
     NSLog(@"pageCount:%ld",pageCount);
     
-    self.indicatorView.width = self.indicatorBackView.width / pageCount;
     UIScrollView * contentScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     _contentScrollView = contentScrollView;
     _contentScrollView.delegate = self;
@@ -89,7 +88,7 @@
     [self addSubview:contentScrollView];
     
     if (pageCount > 1) {
-        self.indicatorBackView.center = CGPointMake(self.center.x, self.height-WidthOfScale(20));
+        self.indicatorBackView.center = CGPointMake(self.center.x, self.height-WidthOfScale(4));
         [self addSubview:self.indicatorBackView];
         [self.indicatorBackView addSubview:self.indicatorView];
     }
@@ -121,31 +120,32 @@
     NSInteger count = self.dataArr.count - (number * self.numberOfSinglePage);
     NSInteger indexCount;
     if (count > 0 && count <= self.numberOfSinglePage) {
-        
         indexCount = count;
     }else if(count > self.numberOfSinglePage){
-        
         indexCount = self.numberOfSinglePage;
     }else{
         
         return;
     }
-    
+    [self addTwoLine:indexCount maxCol:maxCol number:number btnW:btnW btnH:btnH];
     NSLog(@"btnCount:%ld",indexCount);
+}
 
+
+- (void)addTwoLine:(NSInteger)indexCount maxCol:(NSInteger)maxCol number:(NSInteger)number btnW:(CGFloat)btnW btnH:(CGFloat)btnH{
     for (int i = 0; i<indexCount; i++) {
         QMUIButton  * btn = [[QMUIButton alloc] init];
         
         int col = i % maxCol;
         int row = i / maxCol;
         NSInteger index = i + number * self.numberOfSinglePage;
-//        NSDictionary * btnDic = self.dataArr[index];
+        //        NSDictionary * btnDic = self.dataArr[index];
         EFActivityModel *model = self.dataArr[index];
         //设置图片内容（使图片和文字水平居中显示）
         btn.contentHorizontalAlignment = UIControlContentVerticalAlignmentCenter;
         //btn.backgroundColor = [UIColor orangeColor];
         [btn setTitle:model.iconTitle forState:UIControlStateNormal];
-//        [btn setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:model.icon]]] forState:UIControlStateNormal];
+        //        [btn setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:model.icon]]] forState:UIControlStateNormal];
         [btn setImage:[UIImage imageNamed:model.icon] forState:UIControlStateNormal];
         [btn setTitleColor:tabbarBlackColor forState:UIControlStateNormal];
         btn.titleLabel.font = RegularFont14;
@@ -163,8 +163,8 @@
         
         [_contentScrollView addSubview:btn];
     }
-
 }
+
 
 // 按钮点击事件
 

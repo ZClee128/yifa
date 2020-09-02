@@ -171,7 +171,9 @@ NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];       \
 #define kclassNoti @"kclassNoti" //跳转分类通知
 #define kPaySuccessNoti @"kPaySuccessNoti" //支付结果回调
 #define kNetNoti @"kNetNoti" //网络状态回调
-
+#define kscrollYes @"kscrollYes" //首页企业批发/新品上市可以滚动
+#define kscrollNO @"kscrollNO" //首页企业批发/新品上市不可以滚动
+#define kloadNewGoodsNoti @"kloadNewGoodsNoti" //首页刷新通知
 // 图片
 #define kup UIImageMake(@"up") // 降序
 #define kdown UIImageMake(@"down") // 升序

@@ -118,6 +118,7 @@
             @strongify(self);
             //        self.tagView.tagTitleArray = x;
             //        [self.tagView createTags];
+            [self.tagView removeAllTags];
             [x enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 // 初始化标签
                 SKTag *tag = [[SKTag alloc] initWithText:x[idx]];

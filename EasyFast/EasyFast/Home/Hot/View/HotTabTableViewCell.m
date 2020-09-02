@@ -45,7 +45,8 @@
     [self.scrollViewHorizontalItem removeFromSuperview];
     self.scrollViewHorizontalItem = nil;
     if (self.scrollViewHorizontalItem == nil) {
-        self.scrollViewHorizontalItem = [[CustomerScrollView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, self.data.count > 4 ? (self.scrollViewHorizontalItem.height = WidthOfScale(208)) : (self.scrollViewHorizontalItem.height = WidthOfScale(123.5))) withData:data];
+//        self.scrollViewHorizontalItem = [[CustomerScrollView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, self.data.count > 4 ? (self.scrollViewHorizontalItem.height = WidthOfScale(208)) : (self.scrollViewHorizontalItem.height = WidthOfScale(123.5))) withData:data];
+        self.scrollViewHorizontalItem = [[CustomerScrollView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, WidthOfScale(102.5)) withData:data];
         self.scrollViewHorizontalItem.delegate = self;
         [self.contentView addSubview:self.scrollViewHorizontalItem];
     }
