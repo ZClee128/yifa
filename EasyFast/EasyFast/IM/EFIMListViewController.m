@@ -46,7 +46,7 @@
         [_searchBtn setTitleColor:colorAEAEAE forState:(UIControlStateNormal)];
         [_searchBtn setTitle:@"搜索店铺名称" forState:(UIControlStateNormal)];
         _searchBtn.backgroundColor = colorEFEFEF;
-        [_searchBtn setImage:UIImageMake(@"search") forState:(UIControlStateNormal)];
+        [_searchBtn setImage:UIImageMake(@"grey_search") forState:(UIControlStateNormal)];
         _searchBtn.imageEdgeInsets = UIEdgeInsetsMake(0, WidthOfScale(6.5), 0, 0);
         @weakify(self);
         [[_searchBtn rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
