@@ -74,6 +74,7 @@
         // 下划线宽度
         lineView.indicatorWidth = WidthOfScale(40);
         lineView.indicatorHeight = WidthOfScale(3);
+        lineView.indicatorCornerRadius = 0;
         _wholesaleHeader.indicators = @[lineView];
         _wholesaleHeader.titles = @[@"企业批发",@"新品上市"];
         _wholesaleHeader.defaultSelectedIndex = 0;

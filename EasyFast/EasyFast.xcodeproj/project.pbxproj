@@ -189,6 +189,12 @@
 		0C78AAA324FF7D570001D670 /* EFNewGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C78AAA224FF7D570001D670 /* EFNewGoodsViewController.m */; };
 		0C78AAA424FF7D570001D670 /* EFNewGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C78AAA224FF7D570001D670 /* EFNewGoodsViewController.m */; };
 		0C78AAA524FF7D570001D670 /* EFNewGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C78AAA224FF7D570001D670 /* EFNewGoodsViewController.m */; };
+		0C78AAA824FFC10A0001D670 /* EFMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C78AAA724FFC10A0001D670 /* EFMessageTableViewCell.m */; };
+		0C78AAA924FFC10A0001D670 /* EFMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C78AAA724FFC10A0001D670 /* EFMessageTableViewCell.m */; };
+		0C78AAAA24FFC10A0001D670 /* EFMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C78AAA724FFC10A0001D670 /* EFMessageTableViewCell.m */; };
+		0C78AAAD24FFC32C0001D670 /* EFMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C78AAAC24FFC32C0001D670 /* EFMessageCellData.m */; };
+		0C78AAAE24FFC32C0001D670 /* EFMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C78AAAC24FFC32C0001D670 /* EFMessageCellData.m */; };
+		0C78AAAF24FFC32C0001D670 /* EFMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C78AAAC24FFC32C0001D670 /* EFMessageCellData.m */; };
 		0C8A274C24D6711F00E40ED8 /* EFCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A274B24D6711F00E40ED8 /* EFCalendarView.m */; };
 		0C8A274D24D6711F00E40ED8 /* EFCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A274B24D6711F00E40ED8 /* EFCalendarView.m */; };
 		0C8A274E24D6711F00E40ED8 /* EFCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8A274B24D6711F00E40ED8 /* EFCalendarView.m */; };
@@ -911,6 +917,10 @@
 		0C78AA9D24FF7D200001D670 /* EFPiFaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFPiFaViewController.m; sourceTree = "<group>"; };
 		0C78AAA124FF7D570001D670 /* EFNewGoodsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFNewGoodsViewController.h; sourceTree = "<group>"; };
 		0C78AAA224FF7D570001D670 /* EFNewGoodsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFNewGoodsViewController.m; sourceTree = "<group>"; };
+		0C78AAA624FFC10A0001D670 /* EFMessageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFMessageTableViewCell.h; sourceTree = "<group>"; };
+		0C78AAA724FFC10A0001D670 /* EFMessageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFMessageTableViewCell.m; sourceTree = "<group>"; };
+		0C78AAAB24FFC32C0001D670 /* EFMessageCellData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFMessageCellData.h; sourceTree = "<group>"; };
+		0C78AAAC24FFC32C0001D670 /* EFMessageCellData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFMessageCellData.m; sourceTree = "<group>"; };
 		0C8A274A24D6711F00E40ED8 /* EFCalendarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFCalendarView.h; sourceTree = "<group>"; };
 		0C8A274B24D6711F00E40ED8 /* EFCalendarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EFCalendarView.m; sourceTree = "<group>"; };
 		0C8A274F24D672A200E40ED8 /* EFCalendarCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EFCalendarCollectionViewCell.h; sourceTree = "<group>"; };
@@ -1716,6 +1726,8 @@
 			children = (
 				0CBE6A2424E405E5003C300F /* EFIMModel.h */,
 				0CBE6A2524E405E5003C300F /* EFIMModel.m */,
+				0C78AAAB24FFC32C0001D670 /* EFMessageCellData.h */,
+				0C78AAAC24FFC32C0001D670 /* EFMessageCellData.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1803,6 +1815,8 @@
 				0CCEC48124CABDC900976D24 /* EFHelpTableViewCell.m */,
 				0CCEC48A24CAC2F000976D24 /* EFIMListTableViewCell.h */,
 				0CCEC48B24CAC2F000976D24 /* EFIMListTableViewCell.m */,
+				0C78AAA624FFC10A0001D670 /* EFMessageTableViewCell.h */,
+				0C78AAA724FFC10A0001D670 /* EFMessageTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2995,6 +3009,7 @@
 				84A820CF24B6CCC600EAC652 /* FMHttpResonse.m in Sources */,
 				8476108824C5A29D002B34E4 /* EFSetUpTableViewCell.m in Sources */,
 				84A8216B24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
+				0C78AAAD24FFC32C0001D670 /* EFMessageCellData.m in Sources */,
 				847610C424C6D44C002B34E4 /* EFBaseWebViewController.m in Sources */,
 				8476119624C82515002B34E4 /* SysManager.m in Sources */,
 				0C8A27D524D9341900E40ED8 /* MBProgressHUD+FULI.m in Sources */,
@@ -3006,6 +3021,7 @@
 				0C6CB5B624CEDCAD00471A8D /* EFAddAddressViewController.m in Sources */,
 				0CBE69FB24E3D2FF003C300F /* EFBaseCollectionViewController.m in Sources */,
 				0C0CC3C924DD4CA3005E50ED /* FMARCNetwork+Order.m in Sources */,
+				0C78AAA824FFC10A0001D670 /* EFMessageTableViewCell.m in Sources */,
 				841B94E324C93F980054D8D5 /* EFOrderGoodsTableViewCell.m in Sources */,
 				847610AF24C6A011002B34E4 /* LoginVM.m in Sources */,
 				0C0CC41824E2827E005E50ED /* EFBannerModel.m in Sources */,
@@ -3247,6 +3263,7 @@
 				84A820FE24BC4F5400EAC652 /* FMHttpResonse.m in Sources */,
 				8476108924C5A29D002B34E4 /* EFSetUpTableViewCell.m in Sources */,
 				84A8216C24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
+				0C78AAAE24FFC32C0001D670 /* EFMessageCellData.m in Sources */,
 				847610C524C6D44C002B34E4 /* EFBaseWebViewController.m in Sources */,
 				8476119724C82516002B34E4 /* SysManager.m in Sources */,
 				0C8A27D624D9341900E40ED8 /* MBProgressHUD+FULI.m in Sources */,
@@ -3258,6 +3275,7 @@
 				0C6CB5B724CEDCAD00471A8D /* EFAddAddressViewController.m in Sources */,
 				0CBE69FC24E3D2FF003C300F /* EFBaseCollectionViewController.m in Sources */,
 				0C0CC3CA24DD4CA3005E50ED /* FMARCNetwork+Order.m in Sources */,
+				0C78AAA924FFC10A0001D670 /* EFMessageTableViewCell.m in Sources */,
 				841B94E424C93F980054D8D5 /* EFOrderGoodsTableViewCell.m in Sources */,
 				847610B024C6A012002B34E4 /* LoginVM.m in Sources */,
 				0C0CC41924E2827E005E50ED /* EFBannerModel.m in Sources */,
@@ -3499,6 +3517,7 @@
 				84A8212224BC513500EAC652 /* FMHttpResonse.m in Sources */,
 				8476108A24C5A29D002B34E4 /* EFSetUpTableViewCell.m in Sources */,
 				84A8216D24BEA2FD00EAC652 /* EFNoticeTableViewCell.m in Sources */,
+				0C78AAAF24FFC32C0001D670 /* EFMessageCellData.m in Sources */,
 				847610C624C6D44C002B34E4 /* EFBaseWebViewController.m in Sources */,
 				8476119824C82516002B34E4 /* SysManager.m in Sources */,
 				0C8A27D724D9341A00E40ED8 /* MBProgressHUD+FULI.m in Sources */,
@@ -3510,6 +3529,7 @@
 				0C6CB5B824CEDCAD00471A8D /* EFAddAddressViewController.m in Sources */,
 				0CBE69FD24E3D2FF003C300F /* EFBaseCollectionViewController.m in Sources */,
 				0C0CC3CB24DD4CA3005E50ED /* FMARCNetwork+Order.m in Sources */,
+				0C78AAAA24FFC10A0001D670 /* EFMessageTableViewCell.m in Sources */,
 				841B94E524C93F980054D8D5 /* EFOrderGoodsTableViewCell.m in Sources */,
 				847610B124C6A012002B34E4 /* LoginVM.m in Sources */,
 				0C0CC41A24E2827E005E50ED /* EFBannerModel.m in Sources */,

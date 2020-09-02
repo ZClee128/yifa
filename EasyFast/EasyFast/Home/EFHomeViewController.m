@@ -33,7 +33,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self addSearchBtn];
     self.jxTitleView = [[JXCategoryTitleView alloc] initWithFrame:CGRectMake(0, NAVIGATION_BAR_HEIGHT, kPHONE_WIDTH, 45)];
     self.jxTitleView.delegate = self;
     [self.view addSubview:self.jxTitleView];
@@ -76,7 +75,7 @@
                 [Temtitles addObject:model.title];
             }
         }
-        
+        [self addSearchBtn];
         self.jxTitleView.titles = Temtitles;
         [self.jxTitleView reloadData];
     }];
@@ -84,7 +83,7 @@
 
 - (void)addSearchBtn {
     UIImageView *bg = [[UIImageView alloc] initWithImage:UIImageMake(@"home_bg")];
-    [self.view addSubview:bg];
+    [self.view insertSubview:bg belowSubview:self.jxTitleView];
     [bg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(@(0));
         make.centerX.equalTo(self.view);

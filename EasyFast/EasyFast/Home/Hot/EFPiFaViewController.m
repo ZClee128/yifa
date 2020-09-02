@@ -37,13 +37,14 @@
         [self loadNewData];
     }];
     self.EFTableView.showsVerticalScrollIndicator = NO;
+    self.EFTableView.backgroundColor = UIColor.whiteColor;
+    self.EFTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kPHONE_WIDTH, 20)];
 }
 
 - (void)loadNewData {
     [[self.viewModel refreshForDown] subscribeNext:^(RACTuple *x) {
         /// 批发
         self.EFData = x.first;
-        XYLog(@"data>>>>%@",self.EFData);
         [[RACScheduler mainThreadScheduler]schedule:^{
             [self addRefshUp];
             [self.EFTableView reloadData];

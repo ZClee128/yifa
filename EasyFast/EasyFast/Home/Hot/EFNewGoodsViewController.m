@@ -34,6 +34,7 @@
         [self loadNewData];
     }];
     self.EFTableView.showsVerticalScrollIndicator = NO;
+    self.EFTableView.backgroundColor = UIColor.whiteColor;
 }
 
 - (UIView *)listView {

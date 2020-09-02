@@ -21,7 +21,8 @@
 #import "TUIKit.h"
 #import "MMLayout/UIView+MMLayout.h"
 #import "THelper.h"
-
+#import "EFMessageTableViewCell.h"
+#import "EFMessageCellData.h"
 
 // MLeaksFinder 会对这个类误报，这里需要关闭一下
 @implementation UIImagePickerController (Leak)
@@ -32,7 +33,7 @@
 
 @end
 
-@interface EFConversationViewController ()<TUIChatControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate,V2TIMAdvancedMsgListener>
+@interface EFConversationViewController ()<TUIChatControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate,V2TIMAdvancedMsgListener,TMessageControllerDelegate>
 @property (nonatomic, strong) TUIChatController *chat;
 @end
 
@@ -57,6 +58,8 @@
         [array addObject:data];
     }
     _chat.moreMenus = array; // 重新设置属性，立即生效
+    _chat.messageController.delegate = self;
+    
 
     [TUITextMessageCellData setOutgoingTextFont:RegularFont15];
     [TUITextMessageCellData setOutgoingTextColor:[UIColor whiteColor]];
@@ -146,73 +149,13 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-//- (void)setupNavigator
-//{
-//    //left
-//    _unRead = [[TUnReadView alloc] init];
-//
-//    //_unRead.backgroundColor = [UIColor grayColor];//可通过此处将未读标记设置为灰色，类似微信，但目前仍使用红色未读视图
-//    UIBarButtonItem *urBtn = [[UIBarButtonItem alloc] initWithCustomView:_unRead];
-//    self.navigationItem.leftBarButtonItems = @[urBtn];
-//    //既显示返回按钮，又显示未读视图
-//    self.navigationItem.leftItemsSupplementBackButton = YES;
-//
-//    //right，根据当前聊天页类型设置右侧按钮格式
-//    UIButton *rightButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
-//    [rightButton addTarget:self action:@selector(rightBarButtonClick) forControlEvents:UIControlEventTouchUpInside];
-//    if(_conversationData.userID.length > 0){
-//        [rightButton setImage:[UIImage tk_imageNamed:@"person_nav"] forState:UIControlStateNormal];
-//        //[rightButton setImage:[UIImage tk_imageNamed:@"person_nav_hover"] forState:UIControlStateHighlighted];
-//    }
-//    else if(_conversationData.groupID.length > 0){
-//        [rightButton setImage:[UIImage tk_imageNamed:(@"group_nav")] forState:UIControlStateNormal];
-//        //[rightButton setImage:[UIImage tk_imageNamed:(@"group_nav_hover")] forState:UIControlStateHighlighted];
-//    }
-//    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
-//    self.navigationItem.rightBarButtonItems = @[rightItem];
-//}
 
 -(void)leftBarButtonClick
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)rightBarButtonClick
-{
-    //当前为用户和用户之间通信时，右侧按钮响应为用户信息视图入口
-    if (_conversationData.userID.length > 0) {
-        @weakify(self)
-        [[V2TIMManager sharedInstance] getFriendList:^(NSArray<V2TIMFriendInfo *> *infoList) {
-            @strongify(self)
-            for (V2TIMFriendInfo *firend in infoList) {
-                if ([firend.userFullInfo.userID isEqualToString:self.conversationData.userID]) {
-                    id<TUIFriendProfileControllerServiceProtocol> vc = [[TCServiceManager shareInstance] createService:@protocol(TUIFriendProfileControllerServiceProtocol)];
-                    if ([vc isKindOfClass:[UIViewController class]]) {
-                        vc.friendProfile = firend;
-                        [self.navigationController pushViewController:(UIViewController *)vc animated:YES];
-                        return;
-                    }
-                }
-            }
-            [[V2TIMManager sharedInstance] getUsersInfo:@[self.conversationData.userID] succ:^(NSArray<V2TIMUserFullInfo *> *infoList) {
-//                TUserProfileController *myProfile = [[TUserProfileController alloc] init];
-//                myProfile.userFullInfo = infoList.firstObject;
-//                myProfile.actionType = PCA_ADD_FRIEND;
-//                [self.navigationController pushViewController:myProfile animated:YES];
-            } fail:^(int code, NSString *msg) {
-                NSLog(@"拉取用户资料失败！");
-            }];
-        } fail:^(int code, NSString *msg) {
-            NSLog(@"拉取好友列表失败！");
-        }];
 
-    //当前为群组通信时，右侧按钮响应为群组信息入口
-    } else {
-//        GroupInfoController *groupInfo = [[GroupInfoController alloc] init];
-//        groupInfo.groupId = _conversationData.groupID;
-//        [self.navigationController pushViewController:groupInfo animated:YES];
-    }
-}
 
 - (void)chatController:(TUIChatController *)controller didSendMessage:(TUIMessageCellData *)msgCellData
 {
@@ -223,18 +166,16 @@
 {
     if ([cell.data.title isEqualToString:@"自定义"]) {
         NSString *text = @"欢迎加入腾讯·云通信大家庭！";
-        NSString *link = @"https://cloud.tencent.com/document/product/269/3794";
-//        MyCustomCellData *cellData = [[MyCustomCellData alloc] initWithDirection:MsgDirectionOutgoing];
-//        cellData.text = text;
-//        cellData.link = link;
+        EFMessageCellData *cellData = [[EFMessageCellData alloc] initWithDirection:MsgDirectionOutgoing];
+        cellData.text = text;
 //        cellData.innerMessage = [[V2TIMManager sharedInstance] createCustomMessage:[TCUtil dictionary2JsonData:@{@"version": @(Version),@"businessID": @"text_link",@"text":text,@"link":link}]];
-//        [chatController sendMessage:cellData];
+        [chatController sendMessage:cellData];
     }
 }
 
 - (TUIMessageCellData *)chatController:(TUIChatController *)controller onNewMessage:(V2TIMMessage *)msg
 {
-    if (msg.elemType == V2TIM_ELEM_TYPE_CUSTOM) {
+//    if (msg.elemType == V2TIM_ELEM_TYPE_CUSTOM) {
 //        NSDictionary *param = [TCUtil jsonData2Dictionary:msg.customElem.data];
 //        if (param != nil) {
 //            NSInteger version = [param[@"version"] integerValue];
@@ -259,34 +200,44 @@
 //                return cellData;
 //            }
 //        }
-    }
+//    }
+//    EFMessageCellData *cellData = [[EFMessageCellData alloc] initWithDirection:msg.isSelf ? MsgDirectionOutgoing : MsgDirectionIncoming];
+//    cellData.innerMessage = msg;
+//    cellData.msgID = msg.msgID;
+//    cellData.text = param[@"text"];
+//    cellData.avatarUrl = [NSURL URLWithString:msg.faceURL];
+//    return cellData;
+    XYLog(@"msg.customElem.data%@",msg.customElem.data);
     return nil;
 }
 
 - (TUIMessageCell *)chatController:(TUIChatController *)controller onShowMessageData:(TUIMessageCellData *)data
 {
-//    if ([data isKindOfClass:[MyCustomCellData class]]) {
-//        MyCustomCell *myCell = [[MyCustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MyCell"];
-//        [myCell fillWithData:(MyCustomCellData *)data];
-//        return myCell;
-//    }
+    if ([data isKindOfClass:[EFMessageCellData class]]) {
+        EFMessageTableViewCell *cell = [[EFMessageTableViewCell alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"EFMessageTableViewCell"];
+        return cell;
+    }
     return nil;
 }
 
 - (void)chatController:(TUIChatController *)controller onSelectMessageContent:(TUIMessageCell *)cell
 {
-//    if ([cell isKindOfClass:[MyCustomCell class]]) {
-//        MyCustomCellData *cellData = [(MyCustomCell *)cell customData];
-//        if (cellData.link) {
-//            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:cellData.link]];
-//        }
-//    }
+    if ([cell isKindOfClass:[EFMessageTableViewCell class]]) {
+        
+    }
 }
+
+- (void)chatController:(TUIChatController *)controller onSelectMessageAvatar:(TUIMessageCell *)cell {
+    
+}
+
 
 - (void) onChangeUnReadCount:(NSNotification *)notifi{
     NSInteger count = [notifi.object integerValue];
     [_unRead setNum:MAX(0, count - self.conversationData.unreadCount)];
 }
+
+
 
 
 - (void)sendMessage:(TUIMessageCellData*)msg {
@@ -296,4 +247,15 @@
 - (void)onRecvNewMessage:(V2TIMMessage *)msg{
     XYLog(@"收到消息了>>>%@",msg);
 }
+
+- (BOOL)messageController:(TUIMessageController *)controller willShowMenuInCell:(UIView *)view {
+    return NO;
+}
+
+- (void)didHideMenuInMessageController:(TUIMessageController *)controller {
+    
+}
+
+
+
 @end
