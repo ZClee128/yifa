@@ -64,9 +64,9 @@
     
     QMUIButton *noticeBtn = [QMUIButton buttonWithType:(UIButtonTypeCustom)];
     [noticeBtn setImage:[UIImage imageNamed:@"notice"] forState:(UIControlStateNormal)];
-    [noticeBtn setTitle:@"公告：" forState:(UIControlStateNormal)];
+//    [noticeBtn setTitle:@"公告：" forState:(UIControlStateNormal)];
     noticeBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10.5);
-    noticeBtn.titleLabel.font = RegularFont13;
+//    noticeBtn.titleLabel.font = RegularFont13;
     [noticeBtn setTitleColor:RGB16(0x6C5E3D) forState:(UIControlStateNormal)];
     [bg addSubview:noticeBtn];
     [noticeBtn mas_makeConstraints:^(MASConstraintMaker *make) {

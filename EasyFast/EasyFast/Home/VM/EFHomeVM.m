@@ -85,5 +85,36 @@
     }];
 }
 
-
+- (RACSignal *)zipLoadUrl {
+    @weakify(self);
+    return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        [[RACSignal zip:@[[EFHomeVM activity],[EFHomeVM banner],[EFHomeVM notice],[EFHomeVM fastOrderBy:@1 type:@1 PageNum:@1 pageSize:@3]]] subscribeNext:^(RACTuple * _Nullable x) {
+            @strongify(self);
+            NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+            /// 活动
+            [dict setValue:x.first forKey:Homeactivity];
+            
+            /// banner
+            NSMutableArray *images = [[NSMutableArray alloc] init];
+            for (int i = 0 ; i < [x.second count]; i++) {
+                EFBannerModel *model = x.second[i];
+                [images addObject:model.url];
+            }
+            [dict setValue:images forKey:Homebanner];
+            [dict setValue:x.second forKey:HomebannerData];
+            /// 公告
+            [dict setValue:x.third forKey:Homenotice];
+            /// 急速拼团
+            [dict setValue:x.last forKey:Homefast];
+            [self.dataSources addObject:dict];
+            [subscriber sendNext:@(YES)];
+            [subscriber sendCompleted];
+        } error:^(NSError * _Nullable error) {
+            [subscriber sendError:error];
+        }];
+        return [RACDisposable disposableWithBlock:^{
+            
+        }];
+    }];
+}
 @end

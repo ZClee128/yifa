@@ -67,7 +67,7 @@
             }
         }
     }
-//        XYLog(@"dic ==> %@",self);
+        XYLog(@"dic ==> %@",self);
     return YES;
 }
 

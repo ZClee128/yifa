@@ -14,6 +14,16 @@
 #import "EFFastModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
+/// 活动
+static NSString *Homeactivity = @"activity";
+/// banner
+static NSString *Homebanner = @"banner";
+/// banner原始数据
+static NSString *HomebannerData = @"HomebannerData";
+/// 公告
+static NSString *Homenotice = @"notice";
+/// 急速拼团
+static NSString *Homefast = @"Homefast";
 @interface EFHomeVM : EFBaseRefreshVM
 
 @property (nonatomic,strong)NSNumber *orderBy;
@@ -30,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (RACSignal *)fastOrderBy:(NSNumber *)orderBy type:(NSNumber *)type PageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize;
 
-
+- (RACSignal *)zipLoadUrl;
 @end
 
 NS_ASSUME_NONNULL_END

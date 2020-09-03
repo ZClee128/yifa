@@ -24,10 +24,6 @@
 @property (nonatomic,strong)SDCycleScrollView *cycleScrollView;
 @property (nonatomic,strong)EFFastHeaderView *fastHeader;
 @property (nonatomic,strong)JXCategoryTitleView *wholesaleHeader;
-@property (nonatomic,strong)NSMutableArray *activityArr;
-@property (nonatomic,strong)NSMutableArray *noticeArr;
-@property (nonatomic,strong)NSMutableArray *fastArr;
-@property (nonatomic,strong)EFFastVM *fastVM;
 @property (nonatomic,assign)BOOL isLoadActivity;
 @property (nonatomic,assign)CGFloat goodsCellHeight;
 @property (nonatomic,strong)JXCategoryListContainerView *listContainerView;
@@ -35,27 +31,6 @@
 @end
 
 @implementation EFHotViewController
-
-- (NSMutableArray *)activityArr {
-    if (_activityArr == nil) {
-        _activityArr = [[NSMutableArray alloc] init];
-    }
-    return _activityArr;
-}
-
-- (NSMutableArray *)noticeArr {
-    if (_noticeArr == nil) {
-        _noticeArr = [[NSMutableArray alloc] init];
-    }
-    return _noticeArr;
-}
-
-- (NSMutableArray *)fastArr {
-    if (_fastArr== nil) {
-        _fastArr = [[NSMutableArray alloc] init];
-    }
-    return _fastArr;
-}
 
 -(JXCategoryTitleView *)wholesaleHeader
 {
@@ -137,10 +112,6 @@
     self.viewModel = [[EFHomeVM alloc] init];
     self.tableViewStyle = UITableViewStylePlain;
     [super viewDidLoad];
-    self.fastVM = [[EFFastVM alloc] init];
-    self.fastVM.orderBy = @1;
-    self.fastVM.type = @1;
-    self.fastVM.branches = @3;
     self.gk_navigationBar.hidden = YES;
     self.EFTableView.frame = CGRectMake(0, 0, kPHONE_WIDTH, kPHONE_HEIGHT-NAVIGATION_BAR_HEIGHT-45-TAB_BAR_HEIGHT);
     self.EFTableView.tableHeaderView = [self headerView];
@@ -164,37 +135,22 @@
 
 - (void)loadList {
     @weakify(self);
-    [[RACSignal zip:@[[EFHomeVM activity],[EFHomeVM banner],[EFHomeVM notice],[EFHomeVM fastOrderBy:@1 type:@1 PageNum:@1 pageSize:@3]]] subscribeNext:^(RACTuple * _Nullable x) {
+    [[(EFHomeVM *)self.viewModel zipLoadUrl] subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         [self.EFTableView.mj_header endRefreshing];
         [self.EFTableView tab_endAnimation];
-        /// 活动
-        self.activityArr = [x.first mutableCopy];
         self.isLoadActivity = YES;
-        
-        /// banner
-        NSMutableArray *images = [[NSMutableArray alloc] init];
-        for (int i = 0 ; i < [x.second count]; i++) {
-            EFBannerModel *model = x.second[i];
-            [images addObject:model.url];
-        }
-        self.cycleScrollView.imageURLStringsGroup = images;
+        self.cycleScrollView.imageURLStringsGroup = self.viewModel.dataSources[0][Homebanner];
         self.cycleScrollView.clickItemOperationBlock = ^(NSInteger currentIndex) {
-            EFBannerModel *model = x.second[currentIndex];
+            @strongify(self);
+            EFBannerModel *model = self.viewModel.dataSources[0][HomebannerData][currentIndex];
             XYLog(@"model===>%@",model);
         };
-        
-        /// 公告
-        self.noticeArr = [x.third mutableCopy];
-        
-        /// 急速拼团
-        self.fastArr = [x.last mutableCopy];
         [self.EFTableView reloadData];
     } error:^(NSError * _Nullable error) {
         [self.EFTableView.mj_header endRefreshing];
         [self.EFTableView reloadData];
     }];
-    
 }
 
 - (void)loadNewData {
@@ -227,17 +183,20 @@
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+    return self.viewModel.dataSources.count > 0 ? 4 : 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (!self.viewModel.dataSources.count) {
+        return 0;
+    }
     switch (section) {
         case 0:
-            return self.activityArr.count > 0 ? 1 : 0;
+            return [self.viewModel.dataSources[0][Homeactivity] count] > 0 ? 1 : 0;
         case 1:
-            return self.noticeArr.count > 0 ? 1 : 0;
+            return [self.viewModel.dataSources[0][Homenotice] count] > 0 ? 1 : 0;
         case 2:
-            return self.fastArr.count > 0 ? 2 : 0;
+            return [self.viewModel.dataSources[0][Homefast] count] > 0 ? 1 : 0;
         case 3:
             return 1;
         default:
@@ -251,10 +210,10 @@
         {
             HotTabTableViewCell *hotCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HotTabTableViewCell class])];
             if (self.isLoadActivity) {
-                [hotCell setCollectData:self.activityArr];
+                [hotCell setCollectData:self.viewModel.dataSources[0][Homeactivity]];
                 self.isLoadActivity = NO;
             }
-            if (!self.activityArr.count) {
+            if (![self.viewModel.dataSources[0][Homeactivity] count]) {
                 hotCell.hidden = YES;
             }else {
                 hotCell.hidden = NO;
@@ -264,8 +223,8 @@
         case 1:
         {
             EFNoticeTableViewCell *noticeCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFNoticeTableViewCell class])];
-            [noticeCell setModel:self.noticeArr];
-            if (self.noticeArr.count) {
+            [noticeCell setModel:self.viewModel.dataSources[0][Homenotice]];
+            if ([self.viewModel.dataSources[0][Homenotice] count]) {
                 noticeCell.hidden = NO;
             }else {
                 noticeCell.hidden = YES;
@@ -283,7 +242,7 @@
                         [cell.contentView addSubview:self.fastHeader];
                         self.fastHeader.tag = 666;
                     }
-                    if (!self.fastArr.count) {
+                    if (![self.viewModel.dataSources[0][Homefast] count]) {
                         cell.hidden = YES;
                     }else {
                         cell.hidden = NO;
@@ -293,11 +252,11 @@
                 default:
                 {
                     EFFastTableViewCell *fastCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFFastTableViewCell class])];
-                    [fastCell setCollectData:self.fastArr];
+                    [fastCell setCollectData:self.viewModel.dataSources[0][Homefast]];
                     fastCell.selectIndex = ^(EFFastModel *model) {
                         [kH5Manager gotoUrl:@"detail" hasNav:NO navTitle:@"" query:@{@"show":@(YES),@"ggNo":model.ggNo}];
                     };
-                    if (!self.fastArr.count) {
+                    if (![self.viewModel.dataSources[0][Homefast] count]) {
                         fastCell.hidden = YES;
                     }else {
                         fastCell.hidden = NO;
@@ -324,14 +283,14 @@
     switch (indexPath.section) {
         case 0:
 //            return self.activityArr.count > 0 ? (self.activityArr.count <= 4 ? WidthOfScale(123.5) : WidthOfScale(208)) : 0.001;
-            return self.activityArr.count > 0 ? WidthOfScale(102.5)+20 : 0;
+            return [self.viewModel.dataSources[0][Homeactivity] count] > 0 ? WidthOfScale(102.5)+20 : 0;
             case 1:
         {
-            return self.noticeArr.count > 0 ? WidthOfScale(30) : 0;
+            return [self.viewModel.dataSources[0][Homenotice] count] > 0 ? WidthOfScale(30) : 0;
         }
             case 2:
         {
-            if (self.fastArr.count > 0) {
+            if ([self.viewModel.dataSources[0][Homefast] count] > 0) {
                 switch (indexPath.row) {
                     case 0:
                         return WidthOfScale(44);

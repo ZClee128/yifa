@@ -184,14 +184,11 @@
 - (void)setModel:(EFGoodsList *)model {
     self.goodsNameLab.text = model.title;
     if (model.tags.count != 0) {
-        NSMutableArray *titles = [[NSMutableArray alloc] init];
         [self.listView removeAllTags];
-        for (EFTagsModel *tag in model.tags) {
-            [titles addObject:tag.title];
-        }
-        [titles enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [model.tags enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             // 初始化标签
-            SKTag *tag = [[SKTag alloc] initWithText:titles[idx]];
+            EFTagsModel *t = model.tags[idx];
+            SKTag *tag = [[SKTag alloc] initWithText:t.title];
             // 标签相对于自己容器的上左下右的距离
             tag.padding = UIEdgeInsetsMake(2, 7, 2, 7);
             // 弧度
