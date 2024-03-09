@@ -40,6 +40,7 @@ static NSString *Homefast = @"Homefast";
 
 + (RACSignal *)fastOrderBy:(NSNumber *)orderBy type:(NSNumber *)type PageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize;
 
+/// 首页热门组合请求
 - (RACSignal *)zipLoadUrl;
 @end
 

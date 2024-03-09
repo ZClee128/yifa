@@ -24,6 +24,7 @@
 #import "EFMessageTableViewCell.h"
 #import "EFMessageCellData.h"
 #import "TCUtil.h"
+#import "EFIMVM.h"
 // MLeaksFinder 会对这个类误报，这里需要关闭一下
 @implementation UIImagePickerController (Leak)
 
@@ -33,7 +34,7 @@
 
 @end
 
-@interface EFConversationViewController ()<TUIChatControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate,V2TIMAdvancedMsgListener,TMessageControllerDelegate>
+@interface EFConversationViewController ()<TUIChatControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate,TMessageControllerDelegate,V2TIMAdvancedMsgListener>
 @property (nonatomic, strong) TUIChatController *chat;
 @end
 
@@ -88,6 +89,9 @@
     _chat.inputController.menuView.backgroundColor = UIColor.whiteColor;
     RAC(self, title) = [RACObserve(_conversationData, title) distinctUntilChanged];
     [self checkTitle];
+//    [[EFIMVM msgReaduserId:self.conversationData.userID] subscribeNext:^(id  _Nullable x) {
+//        
+//    }];
     [[V2TIMManager sharedInstance] addAdvancedMsgListener:self];
 }
 
@@ -238,15 +242,15 @@
 }
 
 
-
+- (void)onRecvNewMessage:(V2TIMMessage *)msg{
+    XYLog(@"收到消息》〉》%@",msg);
+}
 
 - (void)sendMessage:(TUIMessageCellData*)msg {
     [_chat sendMessage:msg];
 }
 
-- (void)onRecvNewMessage:(V2TIMMessage *)msg{
-    XYLog(@"收到消息了>>>%@",msg);
-}
+
 
 - (BOOL)messageController:(TUIMessageController *)controller willShowMenuInCell:(UIView *)view {
     return NO;

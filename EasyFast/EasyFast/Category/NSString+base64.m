@@ -57,4 +57,57 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF matches %@", match];
     return [predicate evaluateWithObject:self];
 }
+
+
+- (id)parseJSONStringToNSDictionary {
+    
+    NSData *JSONData = [self dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSError *error = nil;
+    
+    id jsonObject = [NSJSONSerialization
+                     
+                     JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments
+                     
+                     error:&error];
+    
+    if (jsonObject != nil && error == nil){
+        
+        NSLog(@"反序列化成功...");
+        
+        if ([jsonObject isKindOfClass:[NSDictionary class]]){
+            
+            NSDictionary *deserializedDictionary = (NSDictionary *)jsonObject;
+            
+            NSLog(@"反序列化后的dictionary数据 = %@", deserializedDictionary);
+            
+            return deserializedDictionary;
+            
+        }
+        
+        else if ([jsonObject isKindOfClass:[NSArray class]]){
+            
+            NSArray *deserializedArray = (NSArray *)jsonObject;
+            
+            NSLog(@"反序列化json后的数组 = %@", deserializedArray);
+            
+            return deserializedArray;
+            
+        }else {
+            
+            return nil;
+            
+        }
+        
+    }else{
+        
+        NSLog(@"%@", error);
+        
+        NSLog(@"反序列化时发生一个错误");
+        
+        return nil;
+        
+    }
+    
+}
 @end

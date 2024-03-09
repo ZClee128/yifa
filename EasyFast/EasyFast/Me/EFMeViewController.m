@@ -191,6 +191,7 @@
 
 - (void)loadNewData {
     [self loadOrder];
+    [self.headerView loadNum];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

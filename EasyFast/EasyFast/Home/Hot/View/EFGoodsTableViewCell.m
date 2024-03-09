@@ -44,7 +44,7 @@
         // 上下行之间的距离
         _listView.lineSpacing = WidthOfScale(7.5);
         // item之间的距离
-        _listView.interitemSpacing = WidthOfScale(6.5);
+        _listView.interitemSpacing = WidthOfScale(5);
         // 最大宽度
         _listView.preferredMaxLayoutWidth = WidthOfScale(190);
     }
@@ -190,7 +190,7 @@
             EFTagsModel *t = model.tags[idx];
             SKTag *tag = [[SKTag alloc] initWithText:t.title];
             // 标签相对于自己容器的上左下右的距离
-            tag.padding = UIEdgeInsetsMake(2, 7, 2, 7);
+            tag.padding = UIEdgeInsetsMake(2, 6.5, 2, 6.5);
             // 弧度
             tag.cornerRadius = 0.0f;
             // 字体

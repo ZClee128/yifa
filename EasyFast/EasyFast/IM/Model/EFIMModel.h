@@ -7,30 +7,35 @@
 //
 
 #import "EFBaseModel.h"
-
+#import "EFMsgBody.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EFIMModel : EFBaseModel
 
-/// 消息数量
-@property (nonatomic,strong)NSString *msgCount;
-/// 消息编号
-@property (nonatomic,strong)NSString *msgNo;
-/// 消息内容
-@property (nonatomic,strong)NSString *msgText;
-/// 消息链接
-@property (nonatomic,strong)NSString *msgUrl;
-/// 店铺账号
-@property (nonatomic,strong)NSString *shopAccount;
+/// 未读消息数量
+@property (nonatomic,strong)NSString *unRead;
+/// 最后会话时间yyyy-MM-dd HH:mm:ss
+@property (nonatomic,strong)NSString *updateTime;
+/// 会话更新时间戳毫秒值
+@property (nonatomic,strong)NSString *updateTimeMills;
+/// 商家Im账号UserID
+@property (nonatomic,strong)NSString *ssuNo;
+/// 商家编号
+@property (nonatomic,strong)NSString *ssNo;
 /// 店铺图标
-@property (nonatomic,strong)NSString *shopIcon;
+@property (nonatomic,strong)NSString *sssIcon;
 /// 店铺名称
-@property (nonatomic,strong)NSString *shopName;
+@property (nonatomic,strong)NSString *sssTitle;
 /// 店铺编号
-@property (nonatomic,strong)NSString *shopNo;
+@property (nonatomic,strong)NSString *sssNo;
 /// 消息类型，1：客服、2：链接
 @property (nonatomic,assign)NSInteger type;
-
+/// 商家账号昵称
+@property (nonatomic,strong)NSString *ssuNickName;
+/// 客户Im账号UserID
+@property (nonatomic,strong)NSString *uuNo;
+/// 最后一次会话消息体
+@property (nonatomic,strong)NSArray<EFMsgBody *> *msgBody;
 @end
 
 NS_ASSUME_NONNULL_END

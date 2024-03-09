@@ -48,7 +48,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (RACSignal *)queryUserTeamCount;
 
-- (RACSignal *)myMessageListPageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize shopName:(NSString *)shopName;
+- (RACSignal *)myMessageListshopName:(NSString *)shopName;
 
 - (RACSignal *)helpCenterListPageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize title:(NSString *)title;
 
@@ -72,6 +72,27 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param isVibrationRemind 是否震动提醒
 /// @param isVoiceRemind 是否声音提醒
 - (RACSignal *)messageRemindType:(NSInteger )type endTime:(NSString *)endTime startTime:(NSString *)startTime isMessageRemind:(BOOL)isMessageRemind isVibrationRemind:(BOOL)isVibrationRemind isVoiceRemind:(BOOL)isVoiceRemind;
+
+
+/// IM 生成userSig
+- (RACSignal *)genUserSig;
+
+
+/// IM 消息已读
+/// @param userId 对方的IM账号
+- (RACSignal *)msgReaduserId:(NSString *)userId;
+
+
+/// IM 生成会话,创建成功返回会话id
+/// @param toAccount 对方的IM编码
+- (RACSignal *)createSessiontoAccount:(NSString *)toAccount;
+
+
+/// 分页查询历史消息列表
+/// @param dateTimeMills 起始时间戳，单位为毫秒
+/// @param userId 对方的IM账号
+/// @param pageSize 消息数量
+- (RACSignal *)pageMsgHistoryDateTimeMills:(NSString *)dateTimeMills userId:(NSString *)userId pageSize:(NSNumber *)pageSize;
 @end
 
 NS_ASSUME_NONNULL_END

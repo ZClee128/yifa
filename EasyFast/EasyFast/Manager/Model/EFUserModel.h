@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign)NSInteger isPassword;
 @property (nonatomic,assign)NSInteger isWeChat;
 @property (nonatomic,strong)NSString *username;
+@property (nonatomic,strong)NSString *userSig;
+@property (nonatomic,strong)NSString *uuNo;
 
 //自己参数
 @property (nonatomic,assign)NSInteger isLogin;

@@ -115,10 +115,20 @@
 }
 
 - (void)setModel:(EFIMModel *)model {
-    self.nameLab.text = model.shopName;
-    self.contentLab.text = model.msgText;
-    self.timeLab.text = @"12:22";
-    self.numLab.text = model.msgCount;
+    self.nameLab.text = model.sssTitle;
+    if (model.msgBody.count) {
+        self.contentLab.text = model.msgBody[0].MsgContent.Text;
+    }
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSTimeZone *zone = [NSTimeZone systemTimeZone];
+    [formatter setTimeZone:zone];
+    NSDate *date = [formatter dateFromString:model.updateTime];
+    NSInteger interval = [zone secondsFromGMTForDate: date];
+    NSDate *localeDate = [date dateByAddingTimeInterval: interval];
+    self.timeLab.text = [localeDate timeAgoSinceNow];
+    self.numLab.hidden = ![model.unRead intValue];
+    self.numLab.text = [model.unRead intValue] == 0 ? @"" : model.unRead;
     CGSize size = [self.numLab.text boundingRectWithSize:CGSizeMake(MAXFLOAT,WidthOfScale(22)) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:RegularFont13 } context:nil].size;
     if (self.numLab.text.length != 1) {
         if (size.width) {
@@ -127,7 +137,7 @@
             }];
         }
     }
-    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:model.shopIcon] placeholderImage:UIImageMake(@"")];
+    [self.headerImageView sd_setImageWithURL:[NSURL URLWithString:model.sssIcon] placeholderImage:UIImageMake(@"")];
 }
 
 - (void)awakeFromNib {

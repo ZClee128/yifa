@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithFrame:(CGRect)frame headerBlcok:(void(^)(void))header setUpBlock:(void(^)(void))setup becomeBlock:(void(^)(void))become messageBlock:(void(^)(NSInteger index))message vipBlock:(void(^)(void))vip;
 - (void)setData;
+- (void)loadNum;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -47,7 +47,7 @@
         _searchField.tintColor = colorFE851E;
         _searchField.font = RegularFont15;
         [_searchField setPlaceholderColor:colorAEAEAE];
-        _searchField.placeholder = @"滑板车";
+        _searchField.placeholder = @"搜索";
         _searchField.backgroundColor = colorEFEFEF;
         _searchField.textInsets = UIEdgeInsetsMake(0, WidthOfScale(21), 0, WidthOfScale(21));
         [_searchField becomeFirstResponder];
@@ -181,7 +181,8 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if (textField.text.length == 0) {
-        textField.text = self.searchField.placeholder;
+//        textField.text = self.searchField.placeholder;
+        return NO;
     }
     [self recordSearch:textField.text];
     EFSearchResultViewController *resultVC = [[EFSearchResultViewController alloc] initWithSearchTitle:textField.text];

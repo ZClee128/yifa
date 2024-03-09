@@ -264,7 +264,7 @@
     [JPUSHService setAlias:alias completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
         
     } seq:1];
-    [self loginIM:@"" sig:@""];
+//    [self loginIM:kUserManager.userModel.uuNo sig:kUserManager.userModel.userSig];
 }
 
 + (RACSignal *)downloadWebPage {

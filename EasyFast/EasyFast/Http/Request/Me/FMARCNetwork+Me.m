@@ -67,8 +67,8 @@
     return [self fg_getRequest:kqueryUserTeamCount paramters:@{}];
 }
 
-- (RACSignal *)myMessageListPageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize shopName:(NSString *)shopName{
-    return [self fg_getRequest:kmyMessageList paramters:@{@"pageNum":pageNum,@"pageSize":pageSize,@"shopName":shopName}];
+- (RACSignal *)myMessageListshopName:(NSString *)shopName {
+    return [self fg_getRequest:kmyMessageList paramters:@{@"shopTitle":shopName,@"uuNo":@"ssu_322506559848448012"}];
 }
 
 - (RACSignal *)helpCenterListPageNum:(NSNumber *)pageNum pageSize:(NSNumber *)pageSize title:(NSString *)title {
@@ -85,5 +85,22 @@
 
 - (RACSignal *)messageRemindType:(NSInteger )type endTime:(NSString *)endTime startTime:(NSString *)startTime isMessageRemind:(BOOL)isMessageRemind isVibrationRemind:(BOOL)isVibrationRemind isVoiceRemind:(BOOL)isVoiceRemind {
     return [self fg_postRequest:kmessageRemind paramters:@{@"type":@(type),@"endTime":endTime,@"startTime":startTime,@"isMessageRemind":@(isMessageRemind),@"isVibrationRemind":@(isVibrationRemind),@"isVoiceRemind":@(isVoiceRemind)}];
+}
+
+
+- (RACSignal *)genUserSig {
+    return [self fg_getRequest:kgenUserSig paramters:@{@"uuNo":@"ssu_322506559848448012"}];
+}
+
+- (RACSignal *)msgReaduserId:(NSString *)userId {
+    return [self fg_getRequest:kmsgRead paramters:@{@"userId":userId}];
+}
+
+- (RACSignal *)createSessiontoAccount:(NSString *)toAccount {
+    return [self fg_getRequest:kcreateSession paramters:@{@"toAccount":toAccount}];
+}
+
+- (RACSignal *)pageMsgHistoryDateTimeMills:(NSString *)dateTimeMills userId:(NSString *)userId pageSize:(NSNumber *)pageSize {
+    return [self fg_getRequest:kpageMsgHistory paramters:@{@"dateTimeMills":dateTimeMills,@"userId":userId,@"pageSize":pageSize}];
 }
 @end

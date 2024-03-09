@@ -10,6 +10,8 @@
 #import "EFHelpTableViewCell.h"
 #import "EFHelpVM.h"
 #import "EFConversationViewController.h"
+#import "SSChatController.h"
+#import "EFIMVM.h"
 @interface EFHelpViewController ()<QMUITextFieldDelegate>
 
 @end
@@ -82,11 +84,23 @@
     [self.view addSubview:self.kefu];
     @weakify(self);
     [[self.kefu rac_signalForControlEvents:(UIControlEventTouchUpInside)] subscribeNext:^(__kindof UIControl * _Nullable x) {
-        @strongify(self);
-        EFConversationViewController *vc = [[EFConversationViewController alloc] init];
-        [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
-            
+        [[EFIMVM createSessiontoAccount:@"ssu_322506559848448012"] subscribeNext:^(id  _Nullable x) {
+            @strongify(self);
+            TUIConversationCellData *conversationData = [[TUIConversationCellData alloc] init];
+            conversationData.userID = @"ssu_322506559848448012";
+            EFConversationViewController *vc = [[EFConversationViewController alloc] init];
+            vc.conversationData = conversationData;
+            [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+
+            }];
         }];
+//        SSChatController *vc = [[SSChatController alloc] init];
+//        vc.chatType = (SSChatConversationTypeChat);
+//        vc.sessionId = @"ddddd";
+//        vc.titleString = @"成都市";
+//        [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+//        
+//        }];
     }];
     [self.kefu mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.view);

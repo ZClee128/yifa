@@ -25,6 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 是否中文
 - (BOOL)isChinese;
+
+/// 序列化json
+- (id)parseJSONStringToNSDictionary;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -56,12 +56,16 @@
 #define kqueryUserInfoCount @"api-client/user/info/queryUserInfoCount" //我的信息数量接口
 #define kqueryUserOrderCount @"api-client/user/info/queryUserOrderCount" // 我的订单数量接口
 #define kqueryUserTeamCount @"api-client/user/info/queryUserTeamCount" // 我的团购数量接口
-#define kmyMessageList @"api-client/user/message/myMessageList" //我的消息列表接口
+#define kmyMessageList @"api-client/imManager/msgList" //我的消息列表接口
 #define khelpCenterList @"api-client/user/help/helpCenterList" // 帮助中心
 #define krecordGoodsLog @"api-client/user/log/recordGoodsLog" //记录商品日志接口
 #define kmessageRemind @"api-client/user/set/messageRemind" //消息提醒
 #define kqueyMessageRemind @"api-client/user/set/queyMessageRemind" //查看消息提醒设置接口
 #define kmessageRemind @"api-client/user/set/messageRemind" // 设置消息提醒接口
+#define kgenUserSig @"api-client/imManager/genUserSig" // IM 生成userSig
+#define kmsgRead @"api-client/imManager/msgRead" //IM 消息已读
+#define kcreateSession @"api-client/imManager/createSession" // IM 生成会话,创建成功返回会话id
+#define kpageMsgHistory @"api-client/imManager/pageMsgHistory" // 分页查询历史消息列表
 
 // 首页
 #define kactivity @"api-client/index/activity" // 查询活动信息

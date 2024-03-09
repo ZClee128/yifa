@@ -43,6 +43,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 本地清除
 + (void)deletLoction;
+
++ (void)loginIM:(NSString *)userId sig:(NSString *)sig;
++ (void)loginOutIM;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -25,6 +25,7 @@
 @property (nonatomic,strong)EFFastHeaderView *fastHeader;
 @property (nonatomic,strong)JXCategoryTitleView *wholesaleHeader;
 @property (nonatomic,assign)BOOL isLoadActivity;
+@property (nonatomic,assign)BOOL isLoadnotice;
 @property (nonatomic,assign)CGFloat goodsCellHeight;
 @property (nonatomic,strong)JXCategoryListContainerView *listContainerView;
 @property (nonatomic,strong)UIView *goodsHeader;
@@ -140,6 +141,7 @@
         [self.EFTableView.mj_header endRefreshing];
         [self.EFTableView tab_endAnimation];
         self.isLoadActivity = YES;
+        self.isLoadnotice = YES;
         self.cycleScrollView.imageURLStringsGroup = self.viewModel.dataSources[0][Homebanner];
         self.cycleScrollView.clickItemOperationBlock = ^(NSInteger currentIndex) {
             @strongify(self);
@@ -223,7 +225,10 @@
         case 1:
         {
             EFNoticeTableViewCell *noticeCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EFNoticeTableViewCell class])];
-            [noticeCell setModel:self.viewModel.dataSources[0][Homenotice]];
+            if (self.isLoadnotice) {
+                [noticeCell setModel:self.viewModel.dataSources[0][Homenotice]];
+                self.isLoadnotice = NO;
+            }
             if ([self.viewModel.dataSources[0][Homenotice] count]) {
                 noticeCell.hidden = NO;
             }else {

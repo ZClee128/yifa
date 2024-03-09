@@ -10,8 +10,10 @@
 #import "EFIMListTableViewCell.h"
 #import "EFConversationViewController.h"
 #import "EFIMVM.h"
+#import "LoginVM.h"
+#import "SSChatController.h"
 
-@interface EFIMListViewController ()<QMUITextFieldDelegate>
+@interface EFIMListViewController ()<QMUITextFieldDelegate,V2TIMAdvancedMsgListener>
 
 @property (nonatomic,strong)QMUITextField *searchField;
 @property (nonatomic,strong)QMUIButton *searchBtn;
@@ -76,6 +78,12 @@
     [self.EFTableView registerClass:[EFIMListTableViewCell class] forCellReuseIdentifier:NSStringFromClass([EFIMListTableViewCell class])];
     
     [self loadList];
+    [[EFIMVM genUserSig] subscribeNext:^(id  _Nullable x) {
+        XYLog(@"xx>>%@",x);
+        [LoginVM loginIM:@"ssu_322506559848448012" sig:x];
+    }];
+    [[V2TIMManager sharedInstance] addAdvancedMsgListener:self];
+    [self addRefshDown];
 }
 
 - (void)loadList {
@@ -93,15 +101,15 @@
     [self loadList];
 }
 
-- (void)loadMoreData {
-    @weakify(self);
-    [[self.viewModel refreshForUp] subscribeNext:^(RACTuple  *x) {
-        @strongify(self);
-        [self.EFTableView.mj_footer endRefreshing];
-        self.EFData = x.first;
-        [self.EFTableView reloadData];
-    }];
-}
+//- (void)loadMoreData {
+//    @weakify(self);
+//    [[self.viewModel refreshForUp] subscribeNext:^(RACTuple  *x) {
+//        @strongify(self);
+//        [self.EFTableView.mj_footer endRefreshing];
+//        self.EFData = x.first;
+//        [self.EFTableView reloadData];
+//    }];
+//}
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     if (textField.text.length == 0) {
@@ -149,10 +157,39 @@
 //    TIMConversation *conv = [[TIMManager sharedInstance] getConversation:TIM_C2C receiver:@"abc"];
 //    TUIChatController *vc = [[TUIChatController alloc] initWithConversation:conv];
     
-    EFConversationViewController *vc = [[EFConversationViewController alloc] init];
+//    EFIMModel *model = self.EFData[indexPath.row];
+//    TUIConversationCellData *conversationData = [[TUIConversationCellData alloc] init];
+//    conversationData.userID = @"uu_322506559848448000";
+//    EFConversationViewController *vc = [[EFConversationViewController alloc] init];
+//    vc.conversationData = conversationData;
+//    [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
+//
+//    }];
+    
+    SSChatController *vc = [[SSChatController alloc] init];
+    vc.chatType = (SSChatConversationTypeChat);
+    vc.sessionId = @"uu_322506559848448000";
+    vc.titleString = @"成都市";
     [self.navigationController qmui_pushViewController:vc animated:YES completion:^{
     
     }];
+    
+}
+
+// 收到会话新增的回调
+- (void)onNewConversation:(NSArray<V2TIMConversation*> *) conversationList {
+    [self updateConversation:conversationList];
+}
+
+// 收到会话更新的回调
+- (void)onConversationChanged:(NSArray<V2TIMConversation*> *) conversationList {
+    [self updateConversation:conversationList];
+}
+
+// 更新 UI 会话列表
+- (void)updateConversation:(NSArray *)convList
+{
+    [self loadList];
 }
 
 @end

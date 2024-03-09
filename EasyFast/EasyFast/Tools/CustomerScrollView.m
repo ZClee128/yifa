@@ -51,7 +51,8 @@
 {
     if (self = [super initWithFrame:frame]) {
         // 属性初始值
-        self.viewSize = CGSizeMake([QMUIHelper is40InchScreen] ? 80 : 60, BtnWH);
+//        self.viewSize = CGSizeMake([QMUIHelper is40InchScreen] ? 80 : 60, BtnWH);
+        self.viewSize = CGSizeMake((kPHONE_WIDTH )/4, BtnWH);
         self.numberOfSinglePage = NumberOfSinglePage;
         self.viewGap = ViewGap;
         self.viewMargin = ViewMargin;
@@ -114,7 +115,7 @@
     //NSInteger maxRow = 2;
 //    CGFloat gap = WidthOfScale(self.viewGap); //按钮之间的间隙
     
-    CGFloat btnW = WidthOfScale(self.viewSize.width);
+    CGFloat btnW = self.viewSize.width;
     CGFloat btnH = self.viewSize.height;
 //    CGFloat margin = WidthOfScale(26.5); // 内边距
     NSInteger count = self.dataArr.count - (number * self.numberOfSinglePage);
@@ -151,9 +152,10 @@
         btn.titleLabel.font = RegularFont14;
         btn.titleLabel.textAlignment = NSTextAlignmentCenter;
         // 设置图片frame
-        btn.x = col * (btnW + ([QMUIHelper is40InchScreen] ? WidthOfScale(0) : WidthOfScale(29))) + WidthOfScale(27) + number * self.width;
+//        btn.x = col * (btnW + ([QMUIHelper is40InchScreen] ? WidthOfScale(0) : WidthOfScale(29))) + WidthOfScale(27) + number * self.width;
+//        btn.y = row * (btnH + WidthOfScale(15)) + WidthOfScale(9.5);
+        btn.x = col * btnW + number * self.width;
         btn.y = row * (btnH + WidthOfScale(15)) + WidthOfScale(9.5);
-        
         btn.width = btnW;
         btn.height = btnH;
         btn.tag = index;
